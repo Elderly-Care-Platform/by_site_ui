@@ -189,6 +189,6 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'replace:version', 'clean:concatCss']);
     grunt.registerTask('cp', ['clean', 'copy']);
     grunt.registerTask('min', ['cssmin']);
-    grunt.registerTask('build', ['war']);
+    grunt.registerTask('build', ['default','war']);
 
 };
