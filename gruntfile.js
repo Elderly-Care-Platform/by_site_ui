@@ -152,6 +152,22 @@ module.exports = function (grunt) {
                 files: [
                     {expand: true, flatten: false, src: ['dist/assets/css/final.css'], dest: ''}
                 ]
+            },
+            prodCss:{
+                files:[{
+                    cwd:'src/main/webapp',
+                    expand:true,
+                    dest:'dist',
+                    src:['index.html']
+                }],
+                options:{
+                    patterns:[{
+                        match:/\<\!--\s?@@dev-css\s?starts[\s\S]*@@dev-css\s?ends\s?-->/,
+                        replacement:function(){
+                            return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%"> \n <link rel="stylesheet" href="assets/css/finalLib.css?versionTimeStamp=%PROJECT_VERSION%">';
+                        }
+                    }]
+                }
             }
         },
 
@@ -186,9 +202,7 @@ module.exports = function (grunt) {
 
 
     // Default task(s).
-    grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'replace:version', 'clean:concatCss']);
-    grunt.registerTask('cp', ['clean', 'copy']);
-    grunt.registerTask('min', ['cssmin']);
-    grunt.registerTask('build', ['war']);
+    grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
+    grunt.registerTask('build', ['default', 'war']);
 
 };
