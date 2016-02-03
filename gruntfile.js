@@ -3,6 +3,7 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         timeStamp: Date.now(),
+        cssBaseUrl: "src/main/webapp/assets/css",
         pkg: grunt.file.readJSON('package.json'),
         /*
          * Build a WAR (web archive) without Maven or the JVM installed.
@@ -24,21 +25,61 @@ module.exports = function (grunt) {
             build: {
                 src: ["dist/*"]
             },
-            concatCss :{
-                src : ["dist/assets/css/final.css"]
+            concatCss: {
+                src: ["dist/assets/css/final.css"]
             }
         },
         copy: {
             main: {
                 files: [
                     // includes files within path and its sub-directories
-                    {expand: true, cwd:'src/main/webapp/', src: ['**', '!**/assets/css/**'], dest: 'dist/'}
+                    {expand: true, cwd: 'src/main/webapp/', src: ['**', '!**/assets/css/**'], dest: 'dist/'}
                 ]
             }
         },
         concat: {
             byCSS: {
-                src: ['src/main/webapp/assets/css/**/*.css'],
+                src: ['<%= cssBaseUrl %>/headers/header-default.css',
+                    '<%= cssBaseUrl %>/by-header.css',
+                    '<%= cssBaseUrl %>/footers/footer-v1.css',
+                    '<%= cssBaseUrl %>/main.css',
+                    '<%= cssBaseUrl %>/custom.css',
+                    '<%= cssBaseUrl %>/psc.css',
+                    '<%= cssBaseUrl %>/style.css',
+                    '<%= cssBaseUrl %>/aboutUs.css',
+                    '<%= cssBaseUrl %>/by/by_editor.css',
+                    '<%= cssBaseUrl %>/login.css',
+                    '<%= cssBaseUrl %>/by/discussDetail.css',
+                    '<%= cssBaseUrl %>/services.css',
+                    '<%= cssBaseUrl %>/profile.css',
+                    '<%= cssBaseUrl %>/by/replyCard.css',
+                    '<%= cssBaseUrl %>/productSearch.css',
+                    '<%= cssBaseUrl %>/image-gallery.css',
+                    '<%= cssBaseUrl %>/by_quad.css',
+                    '<%= cssBaseUrl %>/by/by_section_headers.css',
+                    '<%= cssBaseUrl %>/by-menu.css',
+                    '<%= cssBaseUrl %>/by-modalLogin.css',
+                    '<%= cssBaseUrl %>/by_userType.css',
+                    '<%= cssBaseUrl %>/by_regIndvLogin.css',
+                    '<%= cssBaseUrl %>/by_sprite.css',
+                    '<%= cssBaseUrl %>/by/by_discussCard.css',
+                    '<%= cssBaseUrl %>/by/discuss_list_grid.css',
+                    '<%= cssBaseUrl %>/by/housing.css',
+                    '<%= cssBaseUrl %>/byProducts/product-style.css',
+                    '<%= cssBaseUrl %>/byProducts/product.css',
+                    '<%= cssBaseUrl %>/byProducts/product_housing.css',
+                    '<%= cssBaseUrl %>/byProducts/shop-style.css',
+                    '<%= cssBaseUrl %>/byProducts/productHome.css',
+                    '<%= cssBaseUrl %>/byProducts/by_product_listing.css',
+                    '<%= cssBaseUrl %>/byProducts/cart.css',
+                    '<%= cssBaseUrl %>/byProducts/cartCheckout.css',
+                    '<%= cssBaseUrl %>/byProducts/productDetailed.css',
+                    '<%= cssBaseUrl %>/byProducts/order_history.css',
+                    '<%= cssBaseUrl %>/share-modal.css',
+                    '<%= cssBaseUrl %>/by/header.css',
+                    '<%= cssBaseUrl %>/by/homeNew.css',
+                    '<%= cssBaseUrl %>/by/menu.css',
+                ],
                 dest: 'dist/assets/css/final.css'
             },
             libCSS: {
@@ -71,7 +112,7 @@ module.exports = function (grunt) {
         war: {
             target: {
                 options: {
-                    war_dist_folder: 'target', /* Folder where to generate the WAR. */
+                    war_dist_folder: 'dist', /* Folder where to generate the WAR. */
                     war_name: 'ROOT', /* The name fo the WAR file (.war will be the extension) */
                     webxml_welcome: 'index.html'
                 },
@@ -86,12 +127,12 @@ module.exports = function (grunt) {
             }
         },
         replace: {
-            version:{
+            version: {
                 options: {
                     patterns: [
                         {
                             match: /%PROJECT_VERSION%/g,
-                            replacement:'<%= timeStamp %>'
+                            replacement: '<%= timeStamp %>'
                         }
                     ]
                 },
@@ -99,12 +140,12 @@ module.exports = function (grunt) {
                     {expand: true, flatten: false, src: ['dist/**/*.html', 'dist/**/*.js', 'dist/**/*.css'], dest: ''}
                 ]
             },
-            cssImagePath:{
+            cssImagePath: {
                 options: {
                     patterns: [
                         {
                             match: /\.\.\/\.\.\//g,
-                            replacement:'../'
+                            replacement: '../'
                         }
                     ]
                 },
