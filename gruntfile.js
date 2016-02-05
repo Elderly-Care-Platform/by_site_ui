@@ -33,19 +33,23 @@ module.exports = function (grunt) {
             main: {
                 files: [
                     // includes files within path and its sub-directories
-                    {expand: true, cwd: 'src/main/webapp/', src: ['**', '!**/assets/css/**'], dest: 'dist/'}
+                    {expand: true, cwd: 'src/main/webapp/', src: ['**', '!**/assets/css/**', '**/assets/css/tinyMce_custom.css'], dest: 'dist/'}
                 ]
             }
         },
         concat: {
             byCSS: {
-                src: ['<%= cssBaseUrl %>/headers/header-default.css',
+                src: ['<%= cssBaseUrl %>/ie8.css',
+                    '<%= cssBaseUrl %>/blocks.css',
+                    '<%= cssBaseUrl %>/plugins.css',
+                    '<%= cssBaseUrl %>/app.css',
+                    '<%= cssBaseUrl %>/style.css',
+                    '<%= cssBaseUrl %>/headers/header-default.css',
                     '<%= cssBaseUrl %>/by-header.css',
                     '<%= cssBaseUrl %>/footers/footer-v1.css',
                     '<%= cssBaseUrl %>/main.css',
                     '<%= cssBaseUrl %>/custom.css',
                     '<%= cssBaseUrl %>/psc.css',
-                    '<%= cssBaseUrl %>/style.css',
                     '<%= cssBaseUrl %>/aboutUs.css',
                     '<%= cssBaseUrl %>/by/by_editor.css',
                     '<%= cssBaseUrl %>/login.css',
@@ -94,6 +98,7 @@ module.exports = function (grunt) {
                     'src/main/webapp/lib/tagmanager-master/tagmanager.css'],
                 dest: 'dist/assets/css/finalLib.css'
             }
+
         },
         cssmin: {
             options: {
@@ -103,7 +108,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     //cwd: 'dist/assets/css',
-                    src: ['dist/assets/css/final.css'],
+                    src: ['dist/**/final.css'],
                     dest: '',
                     ext: '.min.css'
                 }]
@@ -164,31 +169,13 @@ module.exports = function (grunt) {
                     patterns:[{
                         match:/\<\!--\s?@@dev-css\s?starts[\s\S]*@@dev-css\s?ends\s?-->/,
                         replacement:function(){
-                            return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%"> \n <link rel="stylesheet" href="assets/css/finalLib.css?versionTimeStamp=%PROJECT_VERSION%">';
+                            return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
                         }
                     }]
                 }
             }
-        },
+        }
 
-        //resolvePath: {
-        //    dist: {
-        //        options: {
-        //            patterns: [
-        //                {
-        //                    match: '../../',
-        //                    replacement:'../'
-        //                    //replacement: function () {
-        //                    //    return '<%= timeStamp %>'; // replaces "foo" to "bar"
-        //                    //}
-        //                }
-        //            ]
-        //        },
-        //        files: [
-        //            {expand: false, flatten: false, src: ['dist/assets/css/final.css'], dest: ''}
-        //        ]
-        //    }
-        //}
     });
 
     // Load the plugin that provides the "uglify" task.
@@ -202,7 +189,8 @@ module.exports = function (grunt) {
 
 
     // Default task(s).
-    grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
+    //grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
+    grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
     grunt.registerTask('build', ['default', 'war']);
 
 };
