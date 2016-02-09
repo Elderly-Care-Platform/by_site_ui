@@ -27,13 +27,21 @@ module.exports = function (grunt) {
             },
             concatCss: {
                 src: ["dist/assets/css/final.css"]
+            },
+            removeByJs: {
+                src: ["dist/app/components/**/*.js", "dist/app/main/**/*.js", "dist/app/shared/**/*.js"]
             }
         },
         copy: {
             main: {
                 files: [
                     // includes files within path and its sub-directories
-                    {expand: true, cwd: 'src/main/webapp/', src: ['**', '!**/assets/css/**', '**/assets/css/tinyMce_custom.css'], dest: 'dist/'}
+                    {
+                        expand: true,
+                        cwd: 'src/main/webapp/',
+                        src: ['**', '!**/assets/css/**', '**/assets/css/tinyMce_custom.css'],
+                        dest: 'dist/'
+                    }
                 ]
             }
         },
@@ -114,23 +122,6 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        war: {
-            target: {
-                options: {
-                    war_dist_folder: 'dist', /* Folder where to generate the WAR. */
-                    war_name: 'ROOT', /* The name fo the WAR file (.war will be the extension) */
-                    webxml_welcome: 'index.html'
-                },
-                files: [
-                    {
-                        expand: true,
-                        cwd: 'dist',
-                        src: ['**'],
-                        dest: ''
-                    }
-                ]
-            }
-        },
         replace: {
             version: {
                 options: {
@@ -158,21 +149,48 @@ module.exports = function (grunt) {
                     {expand: true, flatten: false, src: ['dist/assets/css/final.css'], dest: ''}
                 ]
             },
-            prodCss:{
-                files:[{
-                    cwd:'src/main/webapp',
-                    expand:true,
-                    dest:'dist',
-                    src:['index.html']
+            prodCss: {
+                files: [{
+                    cwd: 'src/main/webapp',
+                    expand: true,
+                    dest: 'dist',
+                    src: ['index.html']
                 }],
-                options:{
-                    patterns:[{
-                        match:/\<\!--\s?@@dev-css\s?starts[\s\S]*@@dev-css\s?ends\s?-->/,
-                        replacement:function(){
+                options: {
+                    patterns: [{
+                        match: /\<\!--\s?@@dev-css\s?starts[\s\S]*@@dev-css\s?ends\s?-->/,
+                        replacement: function () {
                             return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
                         }
                     }]
                 }
+            }
+        },
+        requirejs: {
+            compile: {
+                options: {
+                    baseUrl: "src/main/webapp/",
+                    mainConfigFile: "src/main/webapp/app/shared/main.js",
+                    optimize:"none",
+                    out: "dist/app/final/optimized.js"
+                }
+            }
+        },
+        war: {
+            target: {
+                options: {
+                    war_dist_folder: 'dist', /* Folder where to generate the WAR. */
+                    war_name: 'ROOT', /* The name fo the WAR file (.war will be the extension) */
+                    webxml_welcome: 'index.html'
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'dist',
+                        src: ['**'],
+                        dest: ''
+                    }
+                ]
             }
         }
 
@@ -186,11 +204,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
 
 
     // Default task(s).
     //grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
-    grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
+    grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version', 'require', 'clean:removeByJs']);
     grunt.registerTask('build', ['default', 'war']);
+    grunt.registerTask('require', ['requirejs']);
 
 };

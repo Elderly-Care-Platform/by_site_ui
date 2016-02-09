@@ -92,6 +92,58 @@ define(['byApp', 'menuConfig', 'discussCtrl', 'discussLeftCtrl'], function (byAp
             } 
         };
 
+        $scope.selectedMenu         = $rootScope.menuCategoryMap[$scope.selectedMenuId];
+        $scope.selectedParent       = $rootScope.menuCategoryMap[$scope.selectedMenu.ancestorIds[$scope.selectedMenu.ancestorIds.length - 1]];
+
+        $scope.expandParent = function (menuId) {
+            if (menuId && menuId.toString() == $scope.selectedMenuId) {
+                $scope.selectedParent = $rootScope.menuCategoryMap[$scope.selectedMenu.ancestorIds[$scope.selectedMenu.ancestorIds.length - 1]];
+                if($scope.selectedParent.ancestorIds.length === 0){
+                    $scope.selectedParent = $rootScope.menuCategoryMap[menuId];
+                }else if($scope.selectedParent.ancestorIds.length === 2){
+                    $scope.selectedParent = $rootScope.menuCategoryMap[$scope.selectedParent.ancestorIds[$scope.selectedParent.ancestorIds.length - 1]];
+                }else {
+                    //nothing
+                }
+                var target = $("#" + $scope.selectedParent.id).children('ul.tree');
+                target.toggle(200, function () {
+                    if (target.is(':visible')) {
+                        $("#" + $scope.selectedParent.id).children('.by_treeMenuIcon').addClass('by_treeMenuIconMinus');
+                    } else {
+                        $("#" + $scope.selectedParent.id).children('.by_treeMenuIcon').removeClass('by_treeMenuIconMinus');
+                    }
+                });
+            }
+        };
+
+        $scope.getLeafCategories = function(menu){
+            var leafCategories = [],
+            iterateMenu = function(selMenu){
+                for(var i=0; i<selMenu.children.length; i++){
+                    if(selMenu.children[i].children.length === 0){
+                        leafCategories.push(selMenu.children[i]);
+                    }else{
+                        iterateMenu(selMenu.children[i]);
+                    }
+                }
+            }
+            iterateMenu(menu);
+            menu.leafCategories = leafCategories;
+            $scope.expandParent(menu.id);
+        };
+
+        $scope.toggleMenu = function ($event) {
+            //console.log($($event.target).parent().children('ul.tree'));
+            var target = $($event.target).parent().children('ul.tree');
+            target.toggle(200, function () {
+                if (target.is(':visible')) {
+                    $($event.target).parent().children('.by_treeMenuIcon').addClass('by_treeMenuIconMinus');
+                } else {
+                    $($event.target).parent().children('.by_treeMenuIcon').removeClass('by_treeMenuIconMinus');
+                }
+            });
+        }
+
         
         $scope.showAllMenu = function ($event, menu) {               
             $scope.showMoreMenu = ($scope.showMoreMenu === false) ? true : false;
