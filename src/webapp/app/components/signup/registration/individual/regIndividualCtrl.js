@@ -25,6 +25,22 @@ define(['byApp'], function(byApp){
         $scope.showOtherInterest = false;
         $scope.showAddNewLang = false;
 
+        $scope.getLeafCategories = function(menu){
+            var leafCategories = [],
+            iterateMenu = function(selMenu){
+                for(var i=0; i<selMenu.children.length; i++){
+                    if(selMenu.children[i].children.length === 0){
+                        leafCategories.push(selMenu.children[i]);
+                    }else{
+                        iterateMenu(selMenu.children[i]);
+                    }
+                }
+            }
+            iterateMenu(menu);
+            menu.leafCategories = leafCategories;
+            $scope.expandParent(menu.id);
+        };
+
         $scope.showOtherHobby = function(){
             $scope.showOtherHobbies = true;
         };

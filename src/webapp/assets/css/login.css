@@ -443,8 +443,9 @@ button.login-btn {
 	color: #449d44;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 18px;
-    line-height: 22px;
+	font-size: 22px;
+    line-height: 29px;
+    font-weight: bold;
 }
 .by_registerLogin button.register-btn {
     padding: 7px 17px 7px 17px;
@@ -477,4 +478,21 @@ button.login-btn {
 		height: auto;
 	}
 }
-	
+
+.by_indvRadioBoxWidth input
+{
+	width: 20px;
+	height: 20px;
+}
+.by_interestCheckBox
+{
+	margin-top: 3px !important;
+}
+#interests a.accordion-toggle
+{
+	width: calc(100% - 40px) !important;
+}
+#interests a.by-reg-triangle
+{
+	width: 10px !important;
+}

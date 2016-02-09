@@ -34,7 +34,7 @@
             <!-- profile types with housing -->
 
             <!-- order history -->
-            <div class="by_profileDetailed_menu orderHistory" ng-if="userTypeConfig && userTypeConfig.showOrderHistory">
+            <div class="by_profileDetailed_menu orderHistory" ng-if="userTypeConfig && userTypeConfig.showOrderHistory && profile.userTypes.length>0">
                 <a href="#!/users/registrationProfile/orderHistory?showOrderHistory=true">{{userTypeConfig.orderHistoryLabel}}</a>
             </div>
             <!-- order history ends --> 
@@ -88,7 +88,7 @@
             <!-- profile types with housing -->
 
             <!-- order history -->     
-            <div class="by_profileDetailed_menu orderHistory" ng-if="userTypeConfig && userTypeConfig.showOrderHistory">
+            <div class="by_profileDetailed_menu orderHistory" ng-if="userTypeConfig && userTypeConfig.showOrderHistory && profile.userTypes.length>0">
                 <a href="#!/users/registrationProfile/orderHistory?showOrderHistory=true">{{userTypeConfig.orderHistoryLabel}}</a>
             </div>
             <!-- order history ends --> 
