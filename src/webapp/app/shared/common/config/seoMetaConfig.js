@@ -5,10 +5,10 @@ BY.config.seo = BY.config.seo || {};
 
 BY.config.seo = {
     'home': {
-        title: "BeautifulYears - Everything about elderly care & senior citizens in India",
+        title: "BeautifulYears - Everything about senior care & aging in India",
         imageUrl: "",
-        "description": "<p>Information on geriatric care and aging. Find old age homes, senior living options & services for seniors. Buy products that improve lives of seniors.</p>",
-        keywords: ['senior citizen', 'elderly', 'old age home', 'aging', 'ageing', 'aged', 'old age home', 'geriatric care', 'elderly care', 'elder care', 'BeautifulYears', 'Senior living']
+        "description": "<p>Information, tips and advices on senior care and aging. Find old age homes, retirement home & services like nurse and physiotherapist for seniors. Buy or rent products online that improve lives of seniors.</p>",
+        keywords: ['senior citizen india', 'aging', 'geriatric care', 'elderly care', 'elder care', 'BeautifulYears', 'Senior living', 'old age home', 'elder care services']
     },
 
     'communities': {
