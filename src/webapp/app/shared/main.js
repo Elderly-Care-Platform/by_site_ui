@@ -163,7 +163,7 @@ require.config({
 		aboutUsCtrl : 'app/components/aboutUs/aboutUsController',
 		SearchCtrl : 'app/components/search/SearchController',
 		errorCtrl : 'app/components/error/errorController',
-		expStoreCtrl: '../components/experienceStore/expStoreController'
+		expStoreCtrl: 'app/components/experienceStore/expStoreController'
 
 	},
 

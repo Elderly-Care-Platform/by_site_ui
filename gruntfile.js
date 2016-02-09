@@ -3,7 +3,7 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
         timeStamp: Date.now(),
-        cssBaseUrl: "src/main/webapp/assets/css",
+        cssBaseUrl: "src/webapp/assets/css",
         pkg: grunt.file.readJSON('package.json'),
         /*
          * Build a WAR (web archive) without Maven or the JVM installed.
@@ -11,7 +11,7 @@ module.exports = function (grunt) {
         config: {
             path: {
                 webapp: {
-                    root: 'src/main/webapp'
+                    root: 'src/webapp'
                 },
                 temp: {
                     root: 'temp'
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
                     // includes files within path and its sub-directories
                     {
                         expand: true,
-                        cwd: 'src/main/webapp/',
+                        cwd: 'src/webapp/',
                         src: ['**', '!**/assets/css/**', '**/assets/css/tinyMce_custom.css'],
                         dest: 'dist/'
                     }
@@ -95,15 +95,15 @@ module.exports = function (grunt) {
                 dest: 'dist/assets/css/final.css'
             },
             libCSS: {
-                src: ['src/main/webapp/lib/unify/plugins/bootstrap/css/bootstrap.min.css',
-                    'src/main/webapp/lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css',
-                    'src/main/webapp/lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css',
-                    'src/main/webapp/lib/unify/plugins/animate.css',
-                    'src/main/webapp/lib/unify/plugins/line-icons/line-icons.css',
-                    'src/main/webapp/lib/unify/plugins/font-awesome/css/font-awesome.min.css',
-                    'src/main/webapp/lib/unify/plugins/flexslider/flexslider.css',
-                    'src/main/webapp/lib/unify/plugins/parallax-slider/css/parallax-slider.css',
-                    'src/main/webapp/lib/tagmanager-master/tagmanager.css'],
+                src: ['src/webapp/lib/unify/plugins/bootstrap/css/bootstrap.min.css',
+                    'src/webapp/lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css',
+                    'src/webapp/lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css',
+                    'src/webapp/lib/unify/plugins/animate.css',
+                    'src/webapp/lib/unify/plugins/line-icons/line-icons.css',
+                    'src/webapp/lib/unify/plugins/font-awesome/css/font-awesome.min.css',
+                    'src/webapp/lib/unify/plugins/flexslider/flexslider.css',
+                    'src/webapp/lib/unify/plugins/parallax-slider/css/parallax-slider.css',
+                    'src/webapp/lib/tagmanager-master/tagmanager.css'],
                 dest: 'dist/assets/css/finalLib.css'
             }
 
@@ -151,7 +151,7 @@ module.exports = function (grunt) {
             },
             prodCss: {
                 files: [{
-                    cwd: 'src/main/webapp',
+                    cwd: 'src/webapp',
                     expand: true,
                     dest: 'dist',
                     src: ['index.html']
@@ -169,8 +169,8 @@ module.exports = function (grunt) {
         requirejs: {
             compile: {
                 options: {
-                    baseUrl: "src/main/webapp/",
-                    mainConfigFile: "src/main/webapp/app/shared/main.js",
+                    baseUrl: "src/webapp/",
+                    mainConfigFile: "src/webapp/app/shared/main.js",
                     optimize:"none",
                     out: "dist/app/final/optimized.js"
                 }
