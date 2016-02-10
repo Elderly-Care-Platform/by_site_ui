@@ -79,30 +79,32 @@
 }
 
 .profileRateValues {
-	width: 35px;
-	height: 35px;
+	width: 34px;
+	height: 34px;
 	padding: 8px 0px 0px 0px;
 	text-align: center;
 	line-height: 20px;
-	background-image: url('../img/profile/blank_star_big.png?versionTimeStamp=%PROJECT_VERSION%');
+	background-image: url('../img/profile/star_ratingIcons.png?versionTimeStamp=%PROJECT_VERSION%');
 	float: left;
 	cursor: pointer;
 	opacity: 1;
 }
 .profileRateValuesProduct
 {
-	background-image: url('../img/profile/blankStar_product.png?versionTimeStamp=%PROJECT_VERSION%');
+	background-image: url('../img/profile/star_ratingIcons.png?versionTimeStamp=%PROJECT_VERSION%');
 }
 .profileRating i.profileStar, .reviewCardRating i.profileStar
 {
-	width: 29px !important;
-    height: 29px !important;
+	width: 34px !important;
+    height: 34px !important;
     border-radius: 0% !important;
-    padding: 0px 2px 0px 1px;  
+    padding: 5px 2px 0px 1px;  
     line-height: 29px; 
     font-size: 12px;
     margin-left: -6px;
-    background-image: url('../img/profile/blank_star.png?versionTimeStamp=%PROJECT_VERSION%');
+    letter-spacing: -1px;
+    background-image: url('../img/profile/star_ratingIcons.png?versionTimeStamp=%PROJECT_VERSION%');
+   
 }
 .profileRateValues:hover {
 	opacity: 1;
@@ -116,23 +118,23 @@
 }
 
 .profileRate1 {
-	background-color: #F51B09 ;
+	background-position: 0px 0px;	 
 }
 
 .profileRate2 {
-	background-color: #F59809;
+	background-position: -32px 0px;	
 }
 
 .profileRate3 {
-	background-color: #F5D709;
+	background-position: -64px 0px;	
 }
 
 .profileRate4 {
-	background-color: #B7E01F;
+	background-position: -96px 0px;	
 }
 
 .profileRate5 {
-	background-color: #1FE021;
+	background-position: -128px 0px;	
 }
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {

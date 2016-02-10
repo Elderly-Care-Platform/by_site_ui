@@ -486,6 +486,12 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
 
         // ********** rate & review for products
 
+        $scope.showAllReviews =  true;
+
+        $scope.showAllReviewsForm = function ($event) {               
+            $scope.showAllReviews = ($scope.showAllReviews === false) ? true : false;
+        }
+
         var reviewDetails = new ReviewRateProfile();
         $scope.showReviews = showReviews;
         var init = initialize();

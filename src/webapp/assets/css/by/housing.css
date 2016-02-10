@@ -124,14 +124,15 @@
 }
 .by_housingCard_contentIconWrap i.profileStar
 {
-	width: 29px !important;
-    height: 29px !important;
+	width: 34px !important;
+    height: 34px !important;
     border-radius: 0% !important;
-    padding: 5px 2px 0px 1px;   
+    padding: 9px 2px 0px 1px;   
     font-size: 12px;
     margin-left: -6px;
-    margin-top: -3px;
-    background-image: url('../../img/profile/blank_star.png?versionTimeStamp=%PROJECT_VERSION%');
+    margin-top: -6px;
+    letter-spacing: -1px;
+    background-image: url('../../img/profile/star_ratingIcons.png?versionTimeStamp=%PROJECT_VERSION%');
 }
 @media screen and (max-width: 780px){
 	.by_housingCard_profileImage {

@@ -80,6 +80,11 @@
   background:#f9f9f9;
   padding-top: 20px;
 }
+.by_product_divider
+{
+  border-top: 1px solid #ccc;
+  margin-bottom: 10px;
+}
 .by_productDetail_contentHead
 {
   font-size: 17px;
@@ -111,12 +116,19 @@
 {
   font-size: 14px;
   padding-bottom:15px;
-  padding-left:26px;
   margin-top: 7px;
 }
 .by_productDetail_contentDescText ul
 {
   margin-bottom:0px;
+  padding: 0px;
+  widows: 100%;
+  margin: 0px;
+}
+.by_productDetail_contentDescText ul li
+{
+  list-style-image: url('../../img/product/left_menu_arrow.png?versionTimeStamp=%PROJECT_VERSION%');
+  margin-left: 22px;
 }
 .by_productDetail_contentDescText strong
 {
@@ -240,4 +252,69 @@
   font-size: 15px;
   margin-bottom: 10px;
   margin-top: -6px;
+}
+.by_product_accordian
+{
+  background: #f9f9f9;
+}
+.by_product_accordian .accordion-heading .accordion-toggle:after {    
+    content: "-";    
+    float: right;   
+    font-family: 'FontAwesome';
+    background: green;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.by_product_accordian .accordion-heading .collapsed:after {
+    font-family: 'FontAwesome';
+    content: "+";    
+    float: right;
+    background: #103E10;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+.by_product_accordian a.accordion-toggle
+{
+  width: 100%;
+  padding:0px 0px 0px 15px;
+  font-size: 16px !important;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 40px;
+  border-bottom: 1px solid #EFEEEE;
+}
+.by_product_accordian .accordion-body
+{
+  padding-top: 10px;
+}
+.by_product_accordian .accordion-body li
+{
+  list-style-image: url('../../img/product/left_menu_arrow.png?versionTimeStamp=%PROJECT_VERSION%');
+}
+.by_proSimilarProduct
+{
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 10px;
+  line-height: 100px;
+}
+.by_proSimilarProduct img
+{
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
 }

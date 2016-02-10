@@ -4,6 +4,9 @@
 </div>
 <div class="clearfix"></div>
 <div class="col-md-12 product-main margin-bottom-15 by_pruductDetailed_bgWhite" style="border:0px;">
+    
+    <div class="by_productCard_ImageOffer" style="right:0px;"  ng-if="uiData.salePrice.amount && (uiData.retailPrice.amount - uiData.salePrice.amount) > 0">{{((uiData.retailPrice.amount - uiData.salePrice.amount)/uiData.retailPrice.amount * 100).toFixed(1)}}% <br/><small>off</small></div>
+    
 
     <div class="col-md-5" style="padding:0px;">
         <div class="main-image" style="text-align:center;">
@@ -17,7 +20,7 @@
 
             <div class="clearfix"></div>
         </div>
-        <div class="col-md-12 by-imageGallery margin-top-20 row" style="padding-left:0px; border:0px;">
+        <div class="col-md-12 by-imageGallery margin-top-20 row" style="padding-left:0px; border:0px;" ng-if="uiData.mediaItems.length > 1">
             <div id="arrow_left" ng-click="slideGallery('l')">
                 <img src="assets/img/icons/arrow_left.gif" style=" height: 40px;  margin-top:10px;" usemap="#Map" border="0" alt="Product Gallery Left Arrow">
             </div>
@@ -52,12 +55,10 @@
             {{uiData.name.toLowerCase()}}
         </h1>
 
-        <div class="by_productDetail_contentAuthor">
-            <span ng-if="uiData.manufacturer">Manfactured by {{uiData.manufacturer}}</span>
-        </div>
-        <div class="by_productDetail_contentModelNumber">
+      
+        <!--<div class="by_productDetail_contentModelNumber">
             Product ID: {{uiData.id}}
-        </div>
+        </div>-->
         <div class="by_productDetail_contentAvilable">
             <span ng-if="quantityAvailable == 0">Not available in stock</span>
             <span ng-if="undefined !== inventoryType && inventoryType !== constant.alwaysAvailable && quantityAvailable > 0">
@@ -247,36 +248,105 @@
             in cart!
         </span>
 
-            <div class="clearfix" style="height:20px;"></div>
+            <div class="clearfix" style="height:10px;"></div>
         </div>
     </div>
 
+    <div class="clearfix"></div>
+
+    <div class="by_product_divider"></div>
+
+    <div ng-if="uiData.longDescription" class="by_productDetail_contentHead ">Usage</div>
+    <div class="by_productDetail_contentDescText" ng-if="uiData.longDescription" ng-bind-html="uiData.longDescription"></div>
+
+    <div class="by_product_divider"></div>
+
+    <div ng-if="uiData.productDescription" class="by_productDetail_contentHead ">Description</div>
+    <div class="by_productDetail_contentDescText" ng-if="uiData.productDescription" ng-bind-html="uiData.productDescription"></div>
+
 </div>
 
 
-<div class="by_productDetail_contentHead" ng-if="uiData.longDescription || uiData.productDetails || uiData.productDescription">
-    Item Details
+<div class="clearfix"></div>
+<div class="accordion by_product_accordian" id="by_pro_accSpecification" ng-if="uiData.productDetails">
+    <div class="accordion-group">
+        <div class="accordion-heading ">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#by_pro_accSpecification" href="#by_pro_accSpecificationOne">
+            Specifications
+            </a>
+        </div>
+        <div id="by_pro_accSpecificationOne" class="accordion-body  collapse">
+            <div class="accordion-inner" >
+            <div ng-if="uiData.manufacturer" class="col-md-12">Manfactured by {{uiData.manufacturer}}</div><div class="clearfix"></div>
+            <div ng-bind-html="uiData.productDetails"></div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
 </div>
-<div class="by_productDetail_contentBg">
 
-    <div ng-if="uiData.productDescription">
-        <div class="by_productDetail_contentDescHead">Product Description</div>
-        <div class="by_productDetail_contentDescText" ng-bind-html="uiData.productDescription"></div>
+<div class="clearfix " id="userReviews"></div>
+
+<div class="accordion by_product_accordian  margin-top-20" id="by_pro_accReview" ng-if="reviews && reviews.length > 0">
+    <div class="accordion-group">
+        <div class="accordion-heading accordion-opened">
+            <a class="accordion-toggle " data-toggle="collapse" data-parent="#by_pro_accReview" href="#by_pro_accReviewOne">
+            Customer's reviews
+            </a>
+        </div>
+        <div id="by_pro_accReviewOne" class="accordion-body in collapse">
+            <div class="accordion-inner">
+                 <div ng-repeat="review in reviews track by $index" data-index="discussion-articles" data-link="articles.html" ng-include="'app/components/product/product-rate-review/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'" ng-if="review.text && review.text.trim().length > 0 && $index < 2 && showAllReviews===true">
+                </div>
+                <div ng-repeat="review in reviews track by $index" data-index="discussion-articles" data-link="articles.html" ng-include="'app/components/product/product-rate-review/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'" ng-if="review.text && review.text.trim().length > 0 &&  showAllReviews===false">
+                </div>
+                <div  ng-if="showAllReviews===false" class="by_proReviewButton" ng-click="showAllReviewsForm($event);$event.stopPropagation();">
+                    Less
+                </div>
+                <div ng-if="showAllReviews===true && reviews.length > 2" class="by_proReviewButton"  ng-click="showAllReviewsForm($event);$event.stopPropagation();">
+                    More
+                </div>
+            </div>
+        </div>
     </div>
-    <div ng-if="uiData.longDescription">
-        <div class="by_productDetail_contentDescHead">Usage</div>
-        <div class="by_productDetail_contentDescText" ng-bind-html="uiData.longDescription"></div>
-    </div>
-    <div ng-if="uiData.productDetails">
-        <div class="by_productDetail_contentDescHead">Specifications</div>
-        <div class="by_productDetail_contentDescText" ng-bind-html="uiData.productDetails"></div>
-    </div>
+    <div class="clearfix"></div>
 </div>
 
-<div class="clearfix margin-top-20"></div>
+<div class="accordion by_product_accordian  margin-top-20" id="by_pro_accRateReview" >
+    <div class="accordion-group">
+        <div class="accordion-heading ">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#by_pro_accRateReview" href="#by_pro_accRateReviewOne">
+            Rate &amp; Review
+            </a>
+        </div>
+        <div id="by_pro_accRateReviewOne" class="accordion-body  collapse">
+            <div class="accordion-inner">
+                 <div class="row margin-top-10" ng-include="'app/components/product/product-rate-review/reviewRate.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+
+<div class="clearfix"></div>
+<div class="col-md-12 no-padding margin-top-10">
+    <div class="by_proSmiliarLeft"></div>
+    <div class="by_proSmiliarWrap">
+        <div class="by_proSimilarProduct" ng-repeat="product in uiData.similarProduct">
+            <a ng-href="{{productUrl(product.id, product.name)}}" ng-click="$event.stopPropagation();">
+                <img ng-src="{{product.primaryMedia.url}}" alt="{{product.name}}" />
+            </a>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="by_proSmiliarRight"></div>
+</div>    
+   
+<div class="clearfix"></div>
+<!--<div class="clearfix margin-top-20"></div>
 <div class="by_productDetail_contentBg ">
     <div style="clear:both;" id="userReviews"></div>
-    <div ng-if="reviews && reviews.length > 0" class="row">
+    <div  class="row">
         <div class="col-md-12  margin-bottom-20 review-rate-header" style="padding-left:21px; padding-right:21px;">
             <div class="col-md-12 no-padding dp-block " style="border-bottom:1px solid #ccc;">
                 <b>Reviews</b>
@@ -289,49 +359,8 @@
         </div>
     </div>
     <div class="row" ng-include="'app/components/product/product-rate-review/reviewRate.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
-</div>
+</div>-->
 
-<div ng-if="$root.windowWidth < 720">
-    <div class="by_productDetail_leftSimilarTitle col-md-12 no-padding margin-top-20">
-        <span ng-if="uiData.similarProductLength > 0">Similar Products</span>
-        <span ng-if="uiData.similarProductLength === 0">No Similar Products Available</span>
-    </div>
 
-    <div class="col-md-12 no-padding" ng-repeat="product in uiData.similarProduct">
-        <div>
-            <a href="{{productUrl(product.id, product.name)}}" ng-click="$event.stopPropagation();">
-                <div class="by_productDetail_leftSimilarThumb">
-                    <div class="by_productDetail_leftSimilarThumbImage">
-                        <img ng-src="{{product.primaryMedia.url}}" alt="{{product.name}}">
-                    </div>
-                    <div class="by_productDetail_leftSimilarThumbContent">
-                        <div class="by_productDetail_leftSimilarThumbContentName text-capitalize">
-                            {{product.name.substring(0, 25).toLowerCase()}}<span ng-if="product.name.length > 25">...</span>
-                        </div>
-                        <div class="by_productDetail_leftSimilarThumbContentPrice">
-                            <strong ng-if="product.salePrice && product.salePrice.amount">Rs.
-                                {{product.salePrice.amount}}</strong>
-                            <br/>
-                            <strong ng-if="!product.salePrice || !product.salePrice.amount">Rs.
-                                {{product.retailPrice.amount}}</strong>
-                            <br/>
-
-                            <small ng-if="product.retailPrice != null && product.salePrice != null && product.retailPrice.amount != product.salePrice.amount">
-                                <del>Rs {{product.retailPrice.amount}}</del>
-                            </small>
-                        </div>
-
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-    <!--<div class="by_profileDetailed_menuIcon" ng-click="gotoHref('userReviews')">
-            <i class="review-Icon_rate"></i> <span>Rate & Review</span>
-            <div class="clearfix"></div>
-        </div>-->
-</div>
 
 <div class="clearfix" style="height:20px;"></div>
