@@ -13,8 +13,8 @@
                          fallback-src='["assets/img/by.png"]' alt="{{product.name}}">
                 </div>
                 <!--<div class="by_productCard_divider"></div>-->
-                <div class="by_productCard_title ellipsisHead margin-top-10 text-capitalize">{{product.name.toLowerCase()}}</div>
-                <div class="by_productCard_price" ng-init="getDiscountPercentage(product)">
+                <div class="by_productCard_title ellipsisHead margin-top-10  text-capitalize">{{product.name.toLowerCase()}}</div>
+                <!--<div class="by_productCard_price" ng-init="getDiscountPercentage(product)">
                     <div ng-if="product.discountPercentage" class="productDiscount">
                         <del class="greyColor">Rs {{product.retailPrice.amount}}</del>&nbsp;&nbsp;
                         <span class="redColor"><b>({{product.discountPercentage}})% off </b></span><br/>
@@ -23,7 +23,21 @@
                         {{product.salePrice.amount}}</strong></span>
                     <span ng-if="!product.salePrice || !product.salePrice.amount">Our price: <strong>Rs
                         {{product.retailPrice.amount}}</strong></span><br/>
+                </div>-->
+                <div class="ellipsisHead" ng-bind-html="product.productDescription" ng-if="product.productDescription">
                 </div>
+                <div class="by_productCard_price" ng-if="product.salePrice">
+                    <span ng-if="product.salePrice.amount">Price: <strong>Rs
+                        {{product.salePrice.amount}}</strong></span>
+                </div>
+                <div class="by_productCard_price" ng-if="!product.salePrice">
+                    <span ng-if="product.retailPrice.amount">Price: <strong>Rs
+                        {{product.retailPrice.amount}}</strong></span>
+                </div>
+                <div class="clearfix" ></div>
+                <span ng-init="getDiscountPercentage(product)">
+                <div class="by_productCard_ImageOffer"  ng-if="product.discountPercentage">{{product.discountPercentage}}% <br/><small>off</small></div>
+                </span>
             </a>
         </div>
     </div>

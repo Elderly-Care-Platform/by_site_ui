@@ -22,9 +22,9 @@
 {
   margin-bottom: 20px;
   font-family: century_gothic !important;
-  height: 360px;
+  height: 350px;
   border: 1px solid #d2d2d2;
-  padding:15px;
+  padding:0px 15px;
   margin-right:20px;
   width:calc(33% - 20px) !important;
   cursor: pointer;
@@ -44,8 +44,8 @@
 .by_productCard_Image
 {
 	width:100%;
-	height:219px;
-	line-height:219px;
+	height:204px;
+	line-height:204px;
 	text-align:center;
 }
 .by_productCard_Image img
@@ -55,9 +55,9 @@
 }
 .by_productCard_title
 {
-	font-size: 16.181px;
+	font-size: 16px;
   font-weight: bold;
-  line-height: 25.901px;
+  line-height: 23px;
 }
 .ellipsisHead {
   max-height: 50px;
@@ -65,11 +65,17 @@
   overflow: hidden;
   text-overflow: ellipsis;
   width:100%;
+  line-height: 25px;
+}
+.ellipsisHead p
+{
+  margin: 0px !important;
 }
 .by_productCard_price
 {
 	font-size: 15.181px;
   line-height: 25.901px;
+  margin-top: -5px;
 }
 .by_productCard_price small del
 {
