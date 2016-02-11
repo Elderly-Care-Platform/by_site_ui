@@ -156,6 +156,8 @@
     <script type='text/javascript' src="lib/require.js"
             data-main="app/shared/main.js?versionTimeStamp=%PROJECT_VERSION%"></script>
 
+    <!--<script type='text/javascript' src="lib/require.js" data-main="app/final/optimized.js"></script>-->
+
 
     <div id="fb-root"></div>
     <div class="preloader" id="preloader" style="display:none">
@@ -317,7 +319,7 @@
 
                     //?????var img = "<img style = 'height:80px;width:80px' src = 'http://" + response.responseText + "' />";
                     //alert("img path = " + response.responseText.substring(response.responseText.lastIndexOf('/')+1));
-                    var img = "<img src = '/uploaded_files/" + response.responseText.substring(response.responseText.lastIndexOf('/') + 1) + "' />";
+                    var img = "<img src = '" + response.responseText + "' />";
                     tinyMCE.activeEditor.execCommand("mceInsertContent", true, img);
                     //$("#articlePhotoFilename").val(response.responseText);
                 },

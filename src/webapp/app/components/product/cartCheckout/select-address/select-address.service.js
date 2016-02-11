@@ -51,7 +51,7 @@ define([], function () {
                             deferred.reject(errorMsg);
                         });
                     } else {
-                        var pickupAddress = {data: {data: [SharedContextService.getPickupAddress()]}};
+                        var pickupAddress = {data: {data: [SharedContextService.getPickupAddress(addressIdx)]}};
                         deferred.resolve(pickupAddress);
                     }
 

@@ -91,6 +91,8 @@ module.exports = function (grunt) {
                     '<%= cssBaseUrl %>/by/header.css',
                     '<%= cssBaseUrl %>/by/homeNew.css',
                     '<%= cssBaseUrl %>/by/menu.css',
+                    '<%= cssBaseUrl %>/by/expStore.css',
+                    '<%= cssBaseUrl %>/by/by_leftPanel.css'
                 ],
                 dest: 'dist/assets/css/final.css'
             },
@@ -171,7 +173,7 @@ module.exports = function (grunt) {
                 options: {
                     baseUrl: "src/webapp/",
                     mainConfigFile: "src/webapp/app/shared/main.js",
-                    optimize:"none",
+                    //optimize:"none",
                     out: "dist/app/final/optimized.js"
                 }
             }

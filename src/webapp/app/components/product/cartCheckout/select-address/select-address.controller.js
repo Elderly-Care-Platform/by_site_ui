@@ -19,8 +19,7 @@ define(['byProductApp', 'byProdEcomConfig'], function (byProductApp, byProdEcomC
         $scope.shipToAddress = shipToAddress;
         $scope.shipToNewAddress = shipToNewAddress;
         $scope.pickupFromAddress = pickupFromAddress;
-        $scope.pickupDetails = {'id' : 1000};
-
+        $scope.pickupDetails = {};
 
         if (localStorage.getItem("by_cust_id") && !localStorage.getItem("USER_ID") && !SessionIdService.getSessionId()) {
             $scope.customerId = localStorage.getItem("by_cust_id");
@@ -56,6 +55,11 @@ define(['byProductApp', 'byProdEcomConfig'], function (byProductApp, byProdEcomC
             function errorCallBack() {
                 $("#preloader").hide();
                 console.log('can\'t get the data');
+                var pickupDetails = SharedContextService.getPickupAddress();
+                if(pickupDetails){
+                    $scope.pickupDetails = pickupDetails;
+                }
+                $scope.pickupPoints = BY.config.product.pickupPoints;
             }
         }
 
@@ -119,6 +123,7 @@ define(['byProductApp', 'byProdEcomConfig'], function (byProductApp, byProdEcomC
             $scope.submitted = true;
             if(pickupAddressForm.$valid){
                 //$scope.selectedAddress = {};
+                $scope.pickupDetails.id = BY.config.product.pickupPoints[addressIdx].id;
                 $scope.pickupDetails.address = BY.config.product.pickupPoints[addressIdx].address;
                 //$scope.selectedAddress.firstName = otherDetails.firstName;
                 //$scope.selectedAddress.lastName = otherDetails.lastName;
