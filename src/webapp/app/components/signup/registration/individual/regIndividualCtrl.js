@@ -38,7 +38,6 @@ define(['byApp'], function(byApp){
             }
             iterateMenu(menu);
             menu.leafCategories = leafCategories;
-            $scope.expandParent(menu.id);
         };
 
         $scope.showOtherHobby = function(){
