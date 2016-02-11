@@ -101,8 +101,8 @@ define(['byApp', 'byUtil', 'discussService'], function(byApp, byUtil, discussSer
 					function(response){
 						$scope.articlesByUser = response.data.content;
 						$scope.articlesByUserFormat = discussServiceFilter.formatData($scope.articlesByUser);
-						$scope.header1 = "Related Post";
-						$scope.authorName = null;
+						$scope.header1 = "Related Post by";
+						$scope.authorName = BY.byUtil.validateUserName($scope.discuss.username);;
 					},
 					function(error){
 						console.log(error);

@@ -254,12 +254,12 @@
 
     <div class="clearfix"></div>
 
-    <div class="by_product_divider"></div>
+    <div class="by_product_divider" ng-if="uiData.longDescription"></div>
 
     <div ng-if="uiData.longDescription" class="by_productDetail_contentHead ">Usage</div>
     <div class="by_productDetail_contentDescText" ng-if="uiData.longDescription" ng-bind-html="uiData.longDescription"></div>
 
-    <div class="by_product_divider"></div>
+    <div class="by_product_divider" ng-if="uiData.productDescription"></div>
 
     <div ng-if="uiData.productDescription" class="by_productDetail_contentHead ">Description</div>
     <div class="by_productDetail_contentDescText" ng-if="uiData.productDescription" ng-bind-html="uiData.productDescription"></div>

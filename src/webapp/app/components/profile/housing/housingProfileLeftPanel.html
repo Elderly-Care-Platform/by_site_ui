@@ -1,37 +1,150 @@
-<div class="by_menuDetailed col-md-12" ng-if="$root.windowWidth > 720" style="position:fixed; bottom:0px;" ng-init="leftPanelHeight();" >
-       
-         <div class="by_profileDetailed_menu">
-              <a ng-href="{{setHrefCorp(profileData, {'profileId':profileData.userId, 'userName': 'corp'})}}" ng-click="$event.stopPropagation();"><span ng-if="housingFacilityId"> {{label}}</span>
-       		 <span ng-if="!housingFacilityId" ng-click="gotoHref('profileSection')"> {{label}}</span>
-       		 </a>
-        </div>
-
-        <div class="by_profileDetailed_menuIcon" ng-if="postsUser.length > 0 && !housingFacilityId" ng-click="gotoHref('userPosts')" >
-           <span>Posts ({{postsPagination.totalPosts}})</span>
-           <div class="clearfix"></div>
-        </div>
-        <div class="by_profileDetailed_menuIcon" ng-if="qaUser.length > 0 && !housingFacilityId"  ng-click="gotoHref('userQA')">
-           <span>Q&A ({{qaPagination.totalPosts}})</span>
-           <div class="clearfix"></div>
-        </div>
-
-
-        <div ng-controller="housingProfileLeftCtrl" >
-			<div class="panel-group acc-v1 housingCityWrap" id="accordion-1"
+<div class="by_menuDetailed col-md-12 no-padding" ng-if="$root.windowWidth > 720" style="position:fixed; bottom:0px;" ng-init="leftPanelHeight();" >
+	<!--<div class="by_profileDetailed_menu">
+		<a ng-href="{{setHrefCorp(profileData, {'profileId':profileData.userId, 'userName': 'corp'})}}" ng-click="$event.stopPropagation();"><span ng-if="housingFacilityId"> {{label}}</span>
+		<span ng-if="!housingFacilityId" ng-click="gotoHref('profileSection')"> {{label}}</span>
+		</a>
+		</div>
+		
+		<div class="by_profileDetailed_menuIcon" ng-if="postsUser.length > 0 && !housingFacilityId" ng-click="gotoHref('userPosts')" >
+		<span>Posts ({{postsPagination.totalPosts}})</span>
+		<div class="clearfix"></div>
+		</div>
+		<div class="by_profileDetailed_menuIcon" ng-if="qaUser.length > 0 && !housingFacilityId"  ng-click="gotoHref('userQA')">
+		<span>Q&A ({{qaPagination.totalPosts}})</span>
+		<div class="clearfix"></div>
+		</div>
+		
+		
+		<div ng-controller="housingProfileLeftCtrl" >
+		<div class="panel-group acc-v1 housingCityWrap" id="accordion-1"
+		ng-if="relatedFacilities">
+		<div class="housingCityHead">Branches:</div>
+		<div class="panel panel-default"
+		ng-repeat="(key, value) in relatedFacilities">
+		<div class="panel-heading housingCityHeadThumb" ng-if="value.length === 1" ng-class="{'active':facilityData.primaryAddress.city===key && userName!=='corp' && value.length === 1}">
+		<a ng-href="{{setHrefInst(value, {'profileId':profileData.userId, 'housingFacilityId': value[0].id})}}" ng-click="$event.stopPropagation();">
+		{{key}}
+		</a>
+		<a  ng-if="value.length > 1" class="triangle-down" data-toggle="collapse" data-parent="#userTypeaccord"
+		href={{"#collapse"+key}}></a>
+		</div>
+		<div class="panel-heading housingCityHeadThumb" ng-if="value.length > 1" >
+		<a  href={{"#collapse"+key}}  data-toggle="collapse" data-parent="#userTypeaccord" 
+		style="position:relative !important; right:0px; width:100%; top:0px; color:#000;">{{key}} ({{value.length}})
+		</a>
+		<a style="    position: absolute !important; right: 11px; top: 10px; z-index: 5;    width: 1px;" ng-if="value.length > 1" class="triangle-down" data-toggle="collapse" data-parent="#userTypeaccord"
+		href={{"#collapse"+key}}></a>
+		</div>
+		<div id={{"collapse"+key}} style="background:#eee;" class="panel-collapse collapse"
+		ng-class="{'in':value.length > 1 && facilityData.primaryAddress.city===key && userName!=='corp'}"
+		ng-if="value.length > 1">
+		<div class="panel-body" ng-repeat="branch in value">
+		<div class="housingCityHeadThumb" ng-class="{'active':facilityData.id===branch.id && userName!=='corp'}">
+		<a ng-href="{{setHrefInst(branch, {'profileId':profileData.userId, 'housingFacilityId': branch.id})}}" ng-click="$event.stopPropagation();">
+		{{branch.primaryAddress.locality}}
+		</a>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		
+		</div>
+		
+		
+		
+		<div class="by_profileDetailed_menuIcon"  ng-if="isAllowedToReview && housingFacilityId" ng-click="gotoHref('userReviews')">
+		<i class="review-Icon_rate"></i> <span>Rate & Review</span>
+		<div class="clearfix"></div>
+		</div>-->
+	<div class="by_leftPanelLink by_leftPanel_linkArrow">
+		<a ng-href="{{setHrefCorp(profileData, {'profileId':profileData.userId, 'userName': 'corp'})}}" ng-click="$event.stopPropagation();">
+		<span ng-if="housingFacilityId"> {{label}}</span>
+		<span ng-if="!housingFacilityId" ng-click="gotoHref('profileSection')"> {{label}}</span>
+		</a>
+	</div>
+	<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="postsUser.length > 0 && !housingFacilityId" ng-click="gotoHref('userPosts')" >
+		Posts ({{postsPagination.totalPosts}})
+	</div>
+	<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="qaUser.length > 0 && !housingFacilityId"  ng-click="gotoHref('userQA')">
+		Q&A ({{qaPagination.totalPosts}})
+	</div>
+	<div ng-controller="housingProfileLeftCtrl" >
+		<div class="panel-group acc-v1 " id="accordion-1"
+			ng-if="relatedFacilities">
+			<div class="by_leftPanelHead shadow-wrapper">
+				<div class="box-shadow shadow-effect-2 by_leftPanHeadText">
+					Branches:
+				</div>
+			</div>
+			<div class="panel panel-default bgTransparent"
+				ng-repeat="(key, value) in relatedFacilities">
+				<div class="panel-heading by_leftPanelLink by_leftPanel_linkArrow" style="padding: 1px 15px !important;" ng-if="value.length === 1" ng-class="{'by_leftPanelLinkActive':facilityData.primaryAddress.city===key && userName!=='corp' && value.length === 1}">
+					<a ng-href="{{setHrefInst(value, {'profileId':profileData.userId, 'housingFacilityId': value[0].id})}}" ng-click="$event.stopPropagation();">
+					{{key}}
+					</a>
+					<a  ng-if="value.length > 1" class="triangle-down" data-toggle="collapse" data-parent="#userTypeaccord"
+						href={{"#collapse"+key}}></a>
+				</div>
+				<div class="panel-heading housingCityHeadThumb" ng-if="value.length > 1" >
+					<a  href={{"#collapse"+key}}  data-toggle="collapse" data-parent="#userTypeaccord" 
+						style="position:relative !important; right:0px; width:100%; top:0px; color:#000; font-size:16px;">{{key}} ({{value.length}})
+					</a>
+					<a style="    position: absolute !important; right: 11px; top: 10px; z-index: 5;    width: 1px;" ng-if="value.length > 1" class="triangle-down" data-toggle="collapse" data-parent="#userTypeaccord"
+						href={{"#collapse"+key}}></a>
+				</div>
+				<div id={{"collapse"+key}} style="background:#eee;" class="panel-collapse collapse"
+					ng-class="{'in':value.length > 1 && facilityData.primaryAddress.city===key && userName!=='corp'}"
+					ng-if="value.length > 1">
+					<div  ng-repeat="branch in value">
+						<div class="by_leftPanelLink by_leftPanel_linkArrow" style="padding: 1px 15px !important;" ng-class="{'by_leftPanelLinkActive':facilityData.id===branch.id && userName!=='corp'}">
+							<a ng-href="{{setHrefInst(branch, {'profileId':profileData.userId, 'housingFacilityId': branch.id})}}" ng-click="$event.stopPropagation();">
+							{{branch.primaryAddress.locality}}
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="by_leftPanelLink by_leftPanel_accelArrow"  ng-if="isAllowedToReview && housingFacilityId" ng-click="gotoHref('userReviews')">
+		Rate & Review
+	</div>
+</div>
+<div class="by_mobile_leftPanel_hide" ng-if="$root.windowWidth < 720">
+	<div class="by_mobile_leftPanel" >
+		<div class="by_leftPanelLink by_leftPanel_linkArrow">
+			<a ng-href="{{setHrefCorp(profileData, {'profileId':profileData.userId, 'userName': 'corp'})}}" ng-click="$event.stopPropagation();">
+			<span ng-if="housingFacilityId"> {{label}}</span>
+			<span ng-if="!housingFacilityId" ng-click="gotoHref('profileSection')"> {{label}}</span>
+			</a>
+		</div>
+		<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="postsUser.length > 0 && !housingFacilityId" ng-click="gotoHref('userPosts')" >
+			Posts ({{postsPagination.totalPosts}})
+		</div>
+		<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="qaUser.length > 0 && !housingFacilityId"  ng-click="gotoHref('userQA')">
+			Q&A ({{qaPagination.totalPosts}})
+		</div>
+		<div ng-controller="housingProfileLeftCtrl" >
+			<div class="panel-group acc-v1 " id="accordion-1"
 				ng-if="relatedFacilities">
-				<div class="housingCityHead">Branches:</div>
-				<div class="panel panel-default"
+				<div class="by_leftPanelHead shadow-wrapper">
+					<div class="box-shadow shadow-effect-2 by_leftPanHeadText">
+						Branches:
+					</div>
+				</div>
+				<div class="panel panel-default bgTransparent"
 					ng-repeat="(key, value) in relatedFacilities">
-					<div class="panel-heading housingCityHeadThumb" ng-if="value.length === 1" ng-class="{'active':facilityData.primaryAddress.city===key && userName!=='corp' && value.length === 1}">
+					<div class="panel-heading by_leftPanelLink by_leftPanel_linkArrow" style="padding: 1px 15px !important;" ng-if="value.length === 1" ng-class="{'by_leftPanelLinkActive':facilityData.primaryAddress.city===key && userName!=='corp' && value.length === 1}">
 						<a ng-href="{{setHrefInst(value, {'profileId':profileData.userId, 'housingFacilityId': value[0].id})}}" ng-click="$event.stopPropagation();">
-							{{key}}
+						{{key}}
 						</a>
 						<a  ng-if="value.length > 1" class="triangle-down" data-toggle="collapse" data-parent="#userTypeaccord"
 							href={{"#collapse"+key}}></a>
 					</div>
 					<div class="panel-heading housingCityHeadThumb" ng-if="value.length > 1" >
 						<a  href={{"#collapse"+key}}  data-toggle="collapse" data-parent="#userTypeaccord" 
-						style="position:relative !important; right:0px; width:100%; top:0px; color:#000;">{{key}} ({{value.length}})
+							style="position:relative !important; right:0px; width:100%; top:0px; color:#000; font-size:16px;">{{key}} ({{value.length}})
 						</a>
 						<a style="    position: absolute !important; right: 11px; top: 10px; z-index: 5;    width: 1px;" ng-if="value.length > 1" class="triangle-down" data-toggle="collapse" data-parent="#userTypeaccord"
 							href={{"#collapse"+key}}></a>
@@ -39,91 +152,21 @@
 					<div id={{"collapse"+key}} style="background:#eee;" class="panel-collapse collapse"
 						ng-class="{'in':value.length > 1 && facilityData.primaryAddress.city===key && userName!=='corp'}"
 						ng-if="value.length > 1">
-						<div class="panel-body" ng-repeat="branch in value">
-							<div class="housingCityHeadThumb" ng-class="{'active':facilityData.id===branch.id && userName!=='corp'}">
+						<div  ng-repeat="branch in value">
+							<div class="by_leftPanelLink by_leftPanel_linkArrow" style="padding: 1px 15px !important;" ng-class="{'by_leftPanelLinkActive':facilityData.id===branch.id && userName!=='corp'}">
 								<a ng-href="{{setHrefInst(branch, {'profileId':profileData.userId, 'housingFacilityId': branch.id})}}" ng-click="$event.stopPropagation();">
 								{{branch.primaryAddress.locality}}
 								</a>
-								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
-		
-		
-
-         <div class="by_profileDetailed_menuIcon"  ng-if="isAllowedToReview && housingFacilityId" ng-click="gotoHref('userReviews')">
-            <i class="review-Icon_rate"></i> <span>Rate & Review</span>
-            <div class="clearfix"></div>
-        </div>
-		
-		
-    </div>
-
-    <div class="by_mobile_leftPanel_hide" ng-if="$root.windowWidth < 720">
-    <div class="by_mobile_leftPanel" style="padding:0px 15px;">
-       
-        <div class="by_profileDetailed_menu" >
-             <a ng-href="{{setHrefCorp(profileData, {'profileId':profileData.userId, 'userName': 'corp'})}}" ng-click="$event.stopPropagation();"><span ng-if="housingFacilityId"> {{label}}</span>
-       		 <span ng-if="!housingFacilityId" ng-click="gotoHref('profileSection')"> {{label}}</span>
-       		 </a>
-        </div>
-
-        <div class="by_profileDetailed_menuIcon" ng-if="postsUser.length > 0 && !housingFacilityId" ng-click="gotoHref('userPosts')" >
-           <span>Posts ({{postsPagination.totalPosts}})</span>
-           <div class="clearfix"></div>
-        </div>
-        <div class="by_profileDetailed_menuIcon" ng-if="qaUser.length > 0 && !housingFacilityId"  ng-click="gotoHref('userQA')">
-           <span>Q&A ({{qaPagination.totalPosts}})</span>
-           <div class="clearfix"></div>
-        </div>
-
-
-        <div ng-controller="housingProfileLeftCtrl" >
-			<div class="panel-group acc-v1 housingCityWrap" id="accordion-1"
-				ng-if="relatedFacilities">
-				<div class="housingCityHead">Branches:</div>
-				<div class="panel panel-default"
-					ng-repeat="(key, value) in relatedFacilities">
-					<div class="panel-heading housingCityHeadThumb" ng-if="value.length === 1" ng-class="{'active':facilityData.primaryAddress.city===key && userName!=='corp' && value.length === 1}">
-						<a ng-href="{{setHrefInst(value, {'profileId':profileData.userId, 'housingFacilityId': value[0].id})}}" ng-click="$event.stopPropagation();">
-							{{key}}
-						</a>
-						<a ng-if="value.length > 1" class="triangle-down" data-toggle="collapse" data-parent="#userTypeaccord"
-							href={{"#collapse"+key}}></a>
-					</div>
-					<div class="panel-heading housingCityHeadThumb" ng-if="value.length > 1" >
-						<a  href={{"#collapse"+key}}  data-toggle="collapse" data-parent="#userTypeaccord" 
-						style="position:relative !important; right:0px; width:100%; top:0px; color:#000;">{{key}} ({{value.length}})
-						</a>
-						<a style="    position: absolute !important; right: 11px; top: 10px; z-index: 5;    width: 1px;" ng-if="value.length > 1" class="triangle-down" data-toggle="collapse" data-parent="#userTypeaccord"
-							href={{"#collapse"+key}}></a>
-					</div>
-					<div id={{"collapse"+key}} style="background:#eee;" class="panel-collapse collapse"
-						ng-class="{'in':value.length > 1 && facilityData.primaryAddress.city===key && userName!=='corp'}"
-						ng-if="value.length > 1">
-						<div class="panel-body" ng-repeat="branch in value">
-							<div class="housingCityHeadThumb" ng-class="{'active':facilityData.id===branch.id && userName!=='corp'}">
-								<a ng-href="{{setHrefInst(branch, {'profileId':profileData.userId, 'housingFacilityId': branch.id})}}" ng-click="$event.stopPropagation();">
-								{{branch.primaryAddress.locality}}
-								</a>
-								</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
+		<div class="by_leftPanelLink by_leftPanel_accelArrow"  ng-if="isAllowedToReview && housingFacilityId" ng-click="gotoHref('userReviews')">
+			Rate & Review
 		</div>
-		
-		
-
-         <div class="by_profileDetailed_menuIcon"  ng-if="isAllowedToReview && housingFacilityId" ng-click="gotoHref('userReviews')">
-            <i class="review-Icon_rate"></i> <span>Rate & Review</span>
-            <div class="clearfix"></div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="by_mobile_leftPanel_image" ng-init="subMenuTabMobileShow();"></div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="by_mobile_leftPanel_image" ng-init="subMenuTabMobileShow();"></div>
 </div>

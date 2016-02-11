@@ -314,17 +314,21 @@
 {
 	content : '+';
 	top: 4px;
+    font-size: 22px;
+    font-weight: bold;
 }
 .nav>li> a.by_treeMenuIconMinus:after
 {
 	content : '-';
 	top: 4px;
+    font-size: 22px;
+    font-weight: bold;
 }
 .nav>li> a.by_treeMenuIcon
 {
 	font-size: 15px;
 	color: #999 !important;
-	padding: 6px 15px;
+	padding: 0px 15px;
 }
 .nav>li> a.by_treeMenuIcon:hover
 {
@@ -593,7 +597,7 @@
 	padding: 2px 15px;
 	margin-bottom: 10px;
 	color: #fff;
-	font-size: 20px;
+	font-size: 18px;
 	background-color: #FF850F;	
 }
 .by_menuHeadFindArrow

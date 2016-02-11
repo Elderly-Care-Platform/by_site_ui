@@ -1,0 +1,96 @@
+.by_leftPanelHead
+{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+.by_leftPanHeadText
+{
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 0px 15px;
+    background: rgb(228, 228, 228);
+    cursor: pointer;
+}
+.by_leftPanHeadText:after, .by_leftPanHeadText:before
+{
+    top:25% !important;
+}
+.by_leftPanHeadText i
+{
+    float: left;
+}
+.by_leftPanHeadText a
+{
+    color: #000;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.by_leftPanel_linkArrow:after
+{
+   /*background: url('../../img/product/left_menu_arrow.png?versionTimeStamp=%PROJECT_VERSION%');
+    content: '';
+    width: 4px !important;
+    height: 8px !important;
+    display: inline-block;*/
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 10px solid #B5B2B2;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+}
+.by_leftPanel_accelArrow:after
+{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 10px solid #716D6D;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+}
+.by_leftPanelLink
+{
+    width: 100%;
+    padding: 5px 15px !important;
+    cursor: pointer;
+    color: #000;
+    font-size: 15px;
+    line-height: 20px;
+    background: transparent !important;
+    border: 0px !important;
+}
+.by_leftPanelLink:hover
+{
+    font-weight: bold;
+}
+.by_leftPanelLink a:hover
+{
+    text-decoration: none;
+    color: #000 !important;
+}
+.by_leftPanelLink a {
+    display: inline !important;
+    font-size: 15px !important;
+    padding: 0px !important;
+    background: transparent !important;
+}
+.bgTransparent
+{
+    background: transparent !important;
+    border: 0px !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.by_leftPanelLinkActive
+{
+    font-weight: bold;
+    text-decoration: underline;
+    color: #005326;
+}

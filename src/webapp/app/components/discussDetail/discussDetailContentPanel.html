@@ -187,23 +187,24 @@
 </div>
 <!-- mobile bottom -->
 <div ng-if="$root.windowWidth < 720">
-    <div class="by_discussDeatil_card" style="padding:0px 15px;">
+    <div class="by_discussDeatil_card" >
         <div ng-if="articlesByUser.length > 0 " class="by_discDetail_alsoWrap left-container-img-wrapper">
-            <div class="by_commFeaturedHead" >
-                {{header1}} 
-                <a ng-href="{{getHrefProfile(discuss, {'profileId':discuss.userId})}}">
-                {{authorName}}
-                </a>
+            <div class="by_leftPanelHead shadow-wrapper" >
+                <div class="box-shadow shadow-effect-2 by_leftPanHeadText">
+                    {{header1}}  <a ng-href="{{getHrefProfile(discuss, {'profileId':discuss.userId})}}">
+                    {{authorName}}:
+                    </a>
+                </div>
             </div>
             <div style="clear:both;"></div>
             <div  ng-repeat="article in articlesByUserFormat"
-            ng-if="article.id!==discuss.id && !article.linkInfo" class="by_commFeaturedItem">
-            <a ng-href="{{getHref(article, {'id':article.id})}}" >
+                ng-if="article.id!==discuss.id && !article.linkInfo" class="by_commFeaturedItem" style="padding:10px 15px;">
+                <a class="by_leftPanel_linkArrow" ng-href="{{getHref(article, {'id':article.id})}}" >
                 <span>
                 {{article.title}}
                 </span>
-            </a>
-        </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
