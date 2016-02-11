@@ -9,7 +9,7 @@
     
 
     <div class="col-md-5" style="padding:0px;">
-        <div class="main-image" style="text-align:center;">
+        <div class="main-image" style="text-align:center; position:relative;">
             <!--<img style="float:none;" class="by_productMainImage" alt="{{uiData.name}}" ng-elevate-zoom-->
             <!--ng-src="{{uiData.primaryMedia.url}}" zoom-image="{{uiData.primaryMedia.url}}">-->
 
@@ -19,10 +19,15 @@
             <img style="float:none;" ng-src="{{uiData.primaryMedia.url}}" class="by_productMainImage" alt="{{uiData.name}}" ng-if="$root.windowWidth < 983" alt=" {{uiData.name}}">
 
             <div class="clearfix"></div>
+
+            <div class="by_productZoomIcon" ng-if="$root.windowWidth > 982">
+                <img src="assets/img/product/zoomIcon.png?versionTimeStamp=%PROJECT_VERSION%" alt="Zoom" width="30" ng-click="removeZoomIcon();"/>
+            </div>
+            <div class="clearfix"></div>
         </div>
         <div class="col-md-12 by-imageGallery margin-top-20 row" style="padding-left:0px; border:0px;" ng-if="uiData.mediaItems.length > 1">
             <div id="arrow_left" ng-click="slideGallery('l')">
-                <img src="assets/img/icons/arrow_left.gif" style=" height: 40px;  margin-top:10px;" usemap="#Map" border="0" alt="Product Gallery Left Arrow">
+                <img src="assets/img/icons/arrow_left.gif?versionTimeStamp=%PROJECT_VERSION%" style=" height: 40px;  margin-top:10px;" usemap="#Map" border="0" alt="Product Gallery Left Arrow">
             </div>
             <div class="by-gallery-container" style="left:20px;">
                 <a ng-repeat="media in uiData.mediaItems" on-finish-render="ngRepeatFinished">
@@ -45,7 +50,7 @@
                 </a>
             </div>
             <div id="arrow_right" ng-click="slideGallery('r')">
-                <img src="assets/img/icons/arrow_right.gif" alt="Product Gallery Right Arrow" style=" height: 40px;  margin-top:10px;">
+                <img src="assets/img/icons/arrow_right.gif?versionTimeStamp=%PROJECT_VERSION%" alt="Product Gallery Right Arrow" style=" height: 40px;  margin-top:10px;">
             </div>
             <div class="clearfix"></div>
         </div>
@@ -329,6 +334,7 @@
 </div>
 
 <div class="clearfix"></div>
+<div class="by_productDetail_contentDescHead margin-top-20">Similar Products</div>
 <div class="col-md-12 no-padding margin-top-10">
     <div class="by_proSmiliarLeft"></div>
     <div class="by_proSmiliarWrap">

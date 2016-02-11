@@ -456,6 +456,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
             $(".small-width").click(function() {
                 var urlPopup = $(this).attr('src');
                 $(".by_productMainImage").attr('src', urlPopup);
+                $(".by_productZoomIcon").show();
             });
         };
 
@@ -479,6 +480,10 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
                 $scope.slideIndex--;
             }
 
+        };
+
+        $scope.removeZoomIcon = function(){
+            $(".by_productZoomIcon").hide();
         };
 
 
