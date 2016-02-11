@@ -270,18 +270,18 @@
 <div class="clearfix"></div>
 <div class="accordion by_product_accordian" id="by_pro_accSpecification" ng-if="uiData.productDetails">
     <div class="accordion-group">
-        <div class="accordion-heading ">
+        <div class="accordion-heading">
             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#by_pro_accSpecification" href="#by_pro_accSpecificationOne">
             Specifications
             </a>
         </div>
         <div id="by_pro_accSpecificationOne" class="accordion-body  collapse">
-            <div class="accordion-inner" >
+            <div class="accordion-inner" style="padding-bottom:20px;">
             <div ng-if="uiData.manufacturer" class="col-md-12">Manfactured by {{uiData.manufacturer}}</div><div class="clearfix"></div>
-            <div ng-bind-html="uiData.productDetails"></div>
+            <div ng-bind-html="uiData.productDetails" class="col-md-12"></div>
+            <div class="clearfix"></div>
             </div>
-        </div>
-        <div class="clearfix"></div>
+        </div>        
     </div>
 </div>
 
