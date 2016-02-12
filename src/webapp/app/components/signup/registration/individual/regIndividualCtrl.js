@@ -5,6 +5,8 @@ define(['byApp'], function(byApp){
         $scope.galleryImages = [];
         $scope.submitted = false;
         $scope.regConfig = BY.config.regConfig.indvUserRegConfig;
+        $scope.userTypes;
+        
 
         if($rootScope.menuCategoryMapByName[$scope.regConfig.medical_issues.fetchFromMenu]){
             $scope.medicalIssuesOptions = $rootScope.menuCategoryMapByName[$scope.regConfig.medical_issues.fetchFromMenu].children;
@@ -120,6 +122,7 @@ define(['byApp'], function(byApp){
         //Prefill form with previously selected data
         var initRegForm = function () {
             $scope.curiousUser = false;
+            $scope.userTypes = $scope.profile.userTypes[0];
             $scope.basicProfileInfo = $scope.profile.basicProfileInfo;
             $scope.serviceProviderInfo = $scope.profile.serviceProviderInfo;
             $scope.individualInfo = $scope.profile.individualInfo;
@@ -398,10 +401,13 @@ define(['byApp'], function(byApp){
         $scope.postUserProfile = function (isValidForm) {
             $(".by_btn_submit").prop("disabled", true);
             $scope.submitted = true;
+            $scope.profile.userId = localStorage.getItem("USER_ID");
+            var userTypes = [parseInt($scope.userTypes)];
             $scope.basicProfileInfo.profileImage = $scope.profileImage.length > 0 ? $scope.profileImage[0] : $scope.basicProfileInfo.profileImage ;
             $scope.basicProfileInfo.photoGalleryURLs = $scope.basicProfileInfo.photoGalleryURLs.concat($scope.galleryImages);
 
             $scope.basicProfileInfo.description = tinymce.get("registrationDescription").getContent();
+
 
             if($scope.selectedLanguages.length > 0){
                 $scope.individualInfo.language = $.map($scope.selectedLanguages, function(value, key){
@@ -456,14 +462,28 @@ define(['byApp'], function(byApp){
 
                 var userProfile = new UserProfile();
                 angular.extend(userProfile, $scope.profile);
-                userProfile.$update({userId: $scope.userId}, function (profileOld) {
-                    console.log("success");
-                    $scope.submitted = false;
-                    $scope.$parent.exit();
-                }, function (err) {
-                    console.log(err);
-                    $scope.$parent.exit();
-                });
+                userProfile.userTypes = userTypes;
+                if($scope.profile.userTypes.length == 0){
+                    userProfile.userId = $scope.userId;
+                    userProfile.$post( function (profileOld) {
+                        console.log("success");
+                        $scope.submitted = false;
+                        $scope.$parent.exit();
+                    }, function (err) {
+                        console.log(err);
+                        $scope.$parent.exit();
+                    });
+                } else{
+                    userProfile.$update({userId: $scope.userId}, function (profileOld) {
+                        console.log("success");
+                        $scope.submitted = false;
+                        $scope.$parent.exit();
+                    }, function (err) {
+                        console.log(err);
+                        $scope.$parent.exit();
+                    });
+                }
+                
             }
         }
     }

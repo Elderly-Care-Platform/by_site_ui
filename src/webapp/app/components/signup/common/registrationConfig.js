@@ -8,6 +8,11 @@ BY.config.regConfig.userIdType = {
     'mobile': 1
 }
 
+BY.config.regConfig.userTags = {
+    'individual': '1001',
+    'serviceprovider': '1002'
+}
+
 BY.config.regConfig.formConfig = {
     "maxSecondaryPhoneNos": 3,
     "maxSecondaryEmailId": 2,
@@ -29,7 +34,7 @@ BY.config.regConfig.userTypeConfig = {
     '0': {
         'type': '0',
         'contentPanel': 'app/components/signup/registration/individual/regIndividual.html?versionTimeStamp=%PROJECT_VERSION%',
-        'leftPanel': "app/components/signup/registrationLeftPanel.html?versionTimeStamp=%PROJECT_VERSION%",
+        'leftPanel': "app/components/signup/registrationLeftPanelIndividual.html?versionTimeStamp=%PROJECT_VERSION%",
         'controller': 'regIndividualCtrl',
         'category': 'CAREGIVER',
         'label': "About Me",

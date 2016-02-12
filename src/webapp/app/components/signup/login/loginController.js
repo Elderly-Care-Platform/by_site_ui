@@ -15,6 +15,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
         $scope.user.email = '';
         $scope.user.password = '';
         $scope.user.phoneNumber = '';
+        $scope.user.userTags = [];
 
         $scope.newUser = new User();
         $scope.formState = $rootScope.loginFormState;
@@ -127,6 +128,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
                 $scope.user = {};
                 $scope.user.email = '';
                 $scope.user.password = '';
+                $scope.user.userTags = [];
 
                 $scope.newUser = new User();
                 $scope.formState = 0;
@@ -172,6 +174,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
             }
             $scope.user.email = '';
             $scope.user.password = '';
+            $scope.user.userTags = [BY.config.regConfig.userTags.individual];
             $scope.setUserCredential(loginReg.body.data);
 
             if($rootScope.inContextLogin){
@@ -225,6 +228,11 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
 
 //     ************************   create new user start
         $scope.createNewUser = function(newUser) {  
+            $scope.user.userTags = [BY.config.regConfig.userTags.individual];
+            var checked = $("#UserTagsReg:checked").length;
+            if(checked == 1){
+                $scope.user.userTags = [BY.config.regConfig.userTags.serviceprovider];
+            }
         	if($scope.uniqueRegId && (!$scope.uniqueRegId.id || $scope.uniqueRegId.id ==="")){
         		$scope.emailError = "Please enter a valid email-id";
         	} else{              	
@@ -237,6 +245,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
 							$scope.emailError = "";
 							$scope.newUser.userIdType = BY.config.regConfig.userIdType.mobile;
 							$scope.newUser.phoneNumber = $scope.uniqueRegId.id;
+                            $scope.newUser.userTags = $scope.user.userTags;
 							delete $scope.newUser.email;
 
 						} else {
@@ -251,6 +260,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
                             $scope.emailError = "";
                             $scope.newUser.userIdType = BY.config.regConfig.userIdType.email;
     						$scope.newUser.email = $scope.uniqueRegId.id;
+                            $scope.newUser.userTags = $scope.user.userTags;
     						delete $scope.newUser.phoneNumber;
                         }                       
                        

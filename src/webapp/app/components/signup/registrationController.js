@@ -150,7 +150,11 @@ define(['byApp', 'byUtil', 'LoginController', 'registrationConfig', 'modifySignu
                     if ($scope.profile.userTypes.length > 0) {
                         $scope.userTypeConfig = BY.config.regConfig.userTypeConfig[$scope.profile.userTypes[0]];
                     } else {
-                        $scope.userTypeConfig = BY.config.regConfig.userTypeConfig[-1];
+                        if($scope.profile.userTags[0] == BY.config.regConfig.userTags.serviceprovider){
+                            $scope.userTypeConfig = BY.config.regConfig.userTypeConfig[-1];
+                        } else{
+                            $scope.userTypeConfig = BY.config.regConfig.userTypeConfig[0];
+                        }
                     }
 
                     $scope.views.leftPanel = $scope.userTypeConfig.leftPanel;
