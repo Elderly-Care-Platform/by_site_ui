@@ -1,4 +1,4 @@
-/* left pnael */
+/* left panel */
 .productMainImage
 {
 	height:290px;
@@ -352,4 +352,35 @@
 .by_productZoomIcon:hover img
 {
   display: block;
+}
+.by_proSmiliarLeft, .by_proSmiliarRight
+{
+  width: 50px;
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+  float: left;
+}
+.by_proSmiliarWrap
+{
+  width: calc(100% - 100px);
+  float: left;
+  height: 100px;
+  overflow: hidden;
+}
+.by_proSmiliarWrapFull
+{
+  white-space: nowrap;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -webkit-transform:translate3d(0px, 0px, 0px);
+  -moz-transform:    translate3d(0px, 0px, 0px);;
+  -ms-transform:     translate3d(0px, 0px, 0px);;
+  -o-transform:      translate3d(0px, 0px, 0px);;
+  transform: translate3d(0px, 0px, 0px);
+    -webkit-transition-duration: 1000ms; transition-duration: 1000ms;
+    -webkit-transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    height: 100px;
+    overflow: hidden;
 }

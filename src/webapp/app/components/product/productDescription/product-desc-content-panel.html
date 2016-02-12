@@ -334,18 +334,24 @@
 </div>
 
 <div class="clearfix"></div>
-<div class="by_productDetail_contentDescHead margin-top-20">Similar Products</div>
+<div class="by_productDetail_contentDescHead margin-top-20" ng-if="uiData.similarProduct.length > 0">Similar Products</div>
 <div class="col-md-12 no-padding margin-top-10">
-    <div class="by_proSmiliarLeft"></div>
-    <div class="by_proSmiliarWrap">
+    <div class="by_proSmiliarLeft" ng-click="slideSimilarProduct('l')">
+        <img src="assets/img/icons/arrow_left.gif?versionTimeStamp=%PROJECT_VERSION%" alt="Similar Product Left Arrow" />
+    </div>
+    <div class="by_proSmiliarWrap" >
+        <div class="by_proSmiliarWrapFull">
         <div class="by_proSimilarProduct" ng-repeat="product in uiData.similarProduct">
             <a ng-href="{{productUrl(product.id, product.name)}}" ng-click="$event.stopPropagation();">
                 <img ng-src="{{product.primaryMedia.url}}" alt="{{product.name}}" />
             </a>
         </div>
         <div class="clearfix"></div>
+        </div>
     </div>
-    <div class="by_proSmiliarRight"></div>
+    <div class="by_proSmiliarRight" ng-click="slideSimilarProduct('r')">
+         <img src="assets/img/icons/arrow_right.gif?versionTimeStamp=%PROJECT_VERSION%" alt="Similar Product Right Arrow" /> 
+    </div>
 </div>    
    
 <div class="clearfix"></div>
