@@ -31,7 +31,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
 
 
             if($scope.userCredential.signUpErorr===""){
-                $http.post(apiPrefix +'api/v1/users/', newUserCredential)
+                $http.post(BY.config.constants.apiPrefix +'api/v1/users/', newUserCredential)
                     .success(function (response) {
                         $scope.showSuccessMsg = true;
                         $scope.setUserCredential(response.data);

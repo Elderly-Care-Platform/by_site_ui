@@ -1,4 +1,5 @@
-define(['byApp', 'byUtil', 'reviewRateController'], function(byApp, byUtil, reviewRateController) {
+define(['byApp', 'byUtil', 'reviewRateController', 'discussLikeController', 'shareController'],
+    function(byApp, byUtil, reviewRateController, discussLikeController, shareController) {
     function housingProfileCtrl($scope, $rootScope, $location, $route, $routeParams, ReviewRateProfile, $http, broadCastData, $sce){
         $scope.housingProfile = $scope.$parent.profileData;
         $scope.housingFacilityId = $scope.$parent.housingFacilityId;
@@ -16,7 +17,7 @@ define(['byApp', 'byUtil', 'reviewRateController'], function(byApp, byUtil, revi
 
 
         if ($scope.housingFacilityId) {
-            $http.get(apiPrefix + 'api/v1/housing?id=' + $scope.housingFacilityId).success(function (response) {
+            $http.get(BY.config.constants.apiPrefix + 'api/v1/housing?id=' + $scope.housingFacilityId).success(function (response) {
                 $scope.facility = response.data;
                 $scope.profileData = $scope.facility;
                 broadCastData.update(response.data);

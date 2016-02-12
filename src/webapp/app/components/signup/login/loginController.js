@@ -58,7 +58,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
 
         function verifyPasswordCode(passCode){
             $(".by_resetPwd_btn").prop("disabled", true);
-            $http.get(apiPrefix + "api/v1/users/verifyPwdCode?verificationCode="+$routeParams.resetPasswordCode).success(function(res){
+            $http.get(BY.config.constants.apiPrefix + "api/v1/users/verifyPwdCode?verificationCode="+$routeParams.resetPasswordCode).success(function(res){
                 $scope.resetPasswordCode = $routeParams.resetPasswordCode;
                 $(".by_resetPwd_btn").prop("disabled", false);
             }).error(function(errorRes){
@@ -88,7 +88,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
         };
 
         $scope.fbLogin = function(){
-            $http.get(apiPrefix + "api/v1/users/getFbURL").success(function(res){
+            $http.get(BY.config.constants.apiPrefix + "api/v1/users/getFbURL").success(function(res){
                 window.addEventListener("message", socialCallback);
                 var child = window.open(res.data, 'Facebook Login','width=1000,height=650');
                 var timer = setInterval(checkChild, 500);
@@ -151,7 +151,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
 
 
         $scope.ggLogin = function(){
-            $http.get(apiPrefix + "api/v1/users/getGgURL").success(function(res){
+            $http.get(BY.config.constants.apiPrefix + "api/v1/users/getGgURL").success(function(res){
                 window.addEventListener("message", socialCallback);
                 var child = window.open(res.data, 'Google Login','width=500,height=500');
                 var timer = setInterval(checkChild, 500);
@@ -199,7 +199,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
         		}
             $scope.resetError();
             $(".login-btn").prop("disabled", true);
-            $http.post(apiPrefix + 'api/v1/users/login', user).success(function (res) {
+            $http.post(BY.config.constants.apiPrefix + 'api/v1/users/login', user).success(function (res) {
                 var login = res.data;
                 if (login.sessionId === null) {
                     $http.defaults.headers.common.sess = "";
@@ -324,7 +324,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
 
         $scope.emailPwdLink = function(email){
             $(".by_btn_submit").prop("disabled", true);
-            $http.get(apiPrefix +"api/v1/users/resetPassword?email="+encodeURIComponent(email)).success(function(res){
+            $http.get(BY.config.constants.apiPrefix +"api/v1/users/resetPassword?email="+encodeURIComponent(email)).success(function(res){
                 console.log(res);
                 $scope.resetPwd.status = 1;
                 $scope.resetPwd.error = '';
@@ -348,7 +348,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
                     password:$scope.resetPwd.newPwd
                 }
                 $(".by_resetPwd_btn").prop("disabled", true);
-                $http.post(apiPrefix + 'api/v1/users/resetPassword', resetPwdUser).success(function (res) {
+                $http.post(BY.config.constants.apiPrefix + 'api/v1/users/resetPassword', resetPwdUser).success(function (res) {
                     console.log(res);
                     $location.path("/");
                     $scope.setUserCredential(res.data);

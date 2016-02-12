@@ -99,7 +99,7 @@ define(['byApp'], function(byApp){
         //Get language options, create language map and create jquery auto complete specific language option array
         var getLanguages = function(){
             $scope.languageMap = {};
-            $http.get(apiPrefix + "api/v1/by/getLanguages/")
+            $http.get(BY.config.constants.apiPrefix + "api/v1/by/getLanguages/")
                 .success(function (response) {
                     if (response) {
                         $scope.languages = response.data;
@@ -250,7 +250,7 @@ define(['byApp'], function(byApp){
             $scope.address.city = "";
             $scope.address.locality = "";
             $scope.address.country = "";
-            $http.get(apiPrefix + "api/v1/location/getLocationByPincode?pincode=" + $scope.address.zip)
+            $http.get(BY.config.constants.apiPrefix + "api/v1/location/getLocationByPincode?pincode=" + $scope.address.zip)
                 .success(function (response) {
                     if (response) {
                         $scope.address.city = response.districtname;

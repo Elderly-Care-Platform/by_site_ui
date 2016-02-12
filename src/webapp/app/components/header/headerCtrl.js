@@ -33,7 +33,7 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
         
 
         function getProductCount(){
-            $http.get(apiPrefix + BY.config.constants.productHost+"/catalog/productCount").success(function (response) {
+            $http.get(BY.config.constants.apiPrefix + BY.config.constants.productHost+"/catalog/productCount").success(function (response) {
                 $rootScope.totalProductCount = response;
                 $rootScope.$broadcast('productCountAvailable');
             }).error(function (err) {
@@ -42,7 +42,7 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
         }
 
         function getServicesCount(){
-            $http.get(apiPrefix + "api/v1/userProfile/getCount").success(function (response) {
+            $http.get(BY.config.constants.apiPrefix + "api/v1/userProfile/getCount").success(function (response) {
 
                 $rootScope.totalServiceCount = parseInt(response.data[BY.config.profile.userTypeMap['INSTITUTION_BRANCH']])
                     + parseInt(response.data[BY.config.profile.userTypeMap['INDIVIDUAL_PROFESSIONAL']]);

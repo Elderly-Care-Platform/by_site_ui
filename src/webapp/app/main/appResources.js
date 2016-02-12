@@ -83,7 +83,7 @@ define(["byApp", "angular"], function (byApp, angular) {
 
 //BY Menu api
     var byMenu = byServices.factory('BYMenu', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/menu/getMenu?parentId=root', {q: '*'}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/menu/getMenu?parentId=root', {q: '*'}, {
             get: {method: 'GET', params: {}},
             query: {
                 method: 'GET', interceptor: {
@@ -97,7 +97,7 @@ define(["byApp", "angular"], function (byApp, angular) {
 
 //discuss detail page API
     var discussDetail = byServices.factory('DiscussDetail', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/discussDetail', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/discussDetail', {}, {
             remove: {method: 'DELETE', params: {discussId: '@id'}, isArray: false},
             update: {method: 'PUT', params: {discussId: '@id'}, isArray: false},
             get: {method: 'GET', params: {discussId: '@id'}, isArray: false},
@@ -108,13 +108,13 @@ define(["byApp", "angular"], function (byApp, angular) {
 
 //discuss Likes api
     var discussLike = byServices.factory('DiscussLike', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/discussLike', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/discussLike', {}, {
             likeDiscuss: {method: 'POST', params: {type: 0, discussId: '@discussId', url: '@url'}, isArray: false}
         })
     })
 
     var discussReplyLike = byServices.factory('DiscussReplyLike', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/discussReplyLike', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/discussReplyLike', {}, {
             likeComment: {method: 'POST', params: {type: 1, replyId: '@replyId', url: '@url'}, isArray: false},
             likeAnswer: {method: 'POST', params: {type: 2, replyId: '@replyId', url: '@url'}, isArray: false}
         })
@@ -124,13 +124,13 @@ define(["byApp", "angular"], function (byApp, angular) {
 //ContactUs -
 
     var contactUs = byServices.factory('ContactUs', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/discuss/contactUs', {}, {})
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/discuss/contactUs', {}, {})
     });
 
 
 //Find All
     var findServices = byServices.factory('FindServices', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/userProfile/list/serviceProviders', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/userProfile/list/serviceProviders', {}, {
             get: {method: 'GET', params: {city: '@city', services: '@services', page: '@page', size: '@size'}}
 
         })
@@ -138,7 +138,7 @@ define(["byApp", "angular"], function (byApp, angular) {
 
 //Find Housing
     var findHousing = byServices.factory('FindHousing', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/housing/page', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/housing/page', {}, {
             get: {method: 'GET', params: {city: '@city', tags: '@tags', page: '@page', size: '@size'}}
 
         })
@@ -147,7 +147,7 @@ define(["byApp", "angular"], function (byApp, angular) {
 
 //New selected user profile
     var userProfile = byServices.factory('UserProfile', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/userProfile/:userId', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/userProfile/:userId', {}, {
             get: {method: 'GET', params: {}},
             post: {method: 'POST', params: {}},
             update: {method: 'PUT', params: {}}
@@ -156,7 +156,7 @@ define(["byApp", "angular"], function (byApp, angular) {
 
 //User
     var user = byServices.factory('User', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/users/:userId', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/users/:userId', {}, {
             get: {method: 'GET', params: {userId: '@id'}},
             post: {method: 'PUT', params: {userId: '@id'}},
             put: {method: 'PUT', params: {userId: '@id'}}
@@ -165,7 +165,7 @@ define(["byApp", "angular"], function (byApp, angular) {
 
 
     var discussListing = byServices.factory('DiscussPage', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/discuss/page', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/discuss/page', {}, {
             get: {method: 'GET',
                 params: {
                     discussType: '@discussType',
@@ -181,7 +181,7 @@ define(["byApp", "angular"], function (byApp, angular) {
     });
 
     var discussCount = byServices.factory('DiscussCount', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/discuss/count', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/discuss/count', {}, {
             get: {method: 'GET', params: {tags: '@tags', userId: '@userId'}, isArray: false, isArray: false}
         })
     });
@@ -190,7 +190,7 @@ define(["byApp", "angular"], function (byApp, angular) {
 //Discuss -
 
     var discuss = byServices.factory('Discuss', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/discuss', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/discuss', {}, {
 //        remove:{method: 'DELETE', params: {discussId: '@id'}},
 //        update:{method: 'PUT', params: {discussId: '@id'}},
 //        get: {method: 'GET', params: {discussId: '@id'}}
@@ -199,7 +199,7 @@ define(["byApp", "angular"], function (byApp, angular) {
 
 
     var discussComment = byServices.factory('DiscussComment', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/comment/:commentId', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/comment/:commentId', {}, {
             remove: {method: 'DELETE', params: {commentId: '@id'}},
             update: {method: 'PUT', params: {commentId: '@id'}},
             get: {method: 'GET', isArray: true, params: {commentId: '@id'}}
@@ -209,7 +209,7 @@ define(["byApp", "angular"], function (byApp, angular) {
 
     var discussSearch = byServices.factory('DiscussSearch', function ($resource) {
 
-        return $resource(apiPrefix + 'api/v1/search/discussPageSearch', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/search/discussPageSearch', {}, {
             get: {method: 'GET'}
 
         })
@@ -217,20 +217,20 @@ define(["byApp", "angular"], function (byApp, angular) {
 
     var ServicePageSearch = byServices.factory('ServicePageSearch', function ($resource) {
 
-        return $resource(apiPrefix + 'api/v1/search/servicePageSearch', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/search/servicePageSearch', {}, {
             get: {method: 'GET'}
         })
     });
 
     var HousingPageSearch = byServices.factory('HousingPageSearch', function ($resource) {
 
-        return $resource(apiPrefix + 'api/v1/search/housingPageSearch', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/search/housingPageSearch', {}, {
             get: {method: 'GET'}
         })
     });
 
     var searchByDiscussType = byServices.factory('DiscussSearchForDiscussType', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/search/:term/:discussType', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/search/:term/:discussType', {}, {
             get: {method: 'GET', params: {term: '@term', discussType: '@discussType'}}
         })
     });
@@ -254,7 +254,7 @@ define(["byApp", "angular"], function (byApp, angular) {
 
 //FindService types
     var serviceTypeList = byServices.factory('ServiceTypeList', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/service_types/list/all', {q: '*'}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/service_types/list/all', {q: '*'}, {
             get: {method: 'GET', params: {}},
             query: {
                 method: 'GET', interceptor: {
@@ -268,14 +268,14 @@ define(["byApp", "angular"], function (byApp, angular) {
 
 //Review and Rate profile
     var reviewRateProfile = byServices.factory('ReviewRateProfile', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/reviewRate', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/reviewRate', {}, {
             get: {method: 'GET', params: {associatedId: "@associatedId", reviewContentType: "@reviewContentType"}},
             post: {method: 'POST', params: {associatedId: "@associatedId", reviewContentType: "@reviewContentType"}}
         })
     });
 
     var shareDiscuss = byServices.factory('ShareDiscuss', function ($resource) {
-        return $resource(apiPrefix + 'api/v1/discuss/addShare', {}, {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/discuss/addShare', {}, {
             post: {method: 'POST'}
         })
     });

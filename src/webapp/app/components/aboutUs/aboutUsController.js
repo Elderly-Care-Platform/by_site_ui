@@ -1,4 +1,4 @@
-define(['byApp', 'byUtil'], function(byApp, byUtil) {
+define(['byApp', 'byUtil', 'editorController'], function(byApp, byUtil, editorController) {
     function BYAboutUsController($scope, $rootScope, $routeParams, $timeout, $location, $sce) {
         $scope.currentAcceleratorSelected = "";
         $scope.currentView = "aboutUs";

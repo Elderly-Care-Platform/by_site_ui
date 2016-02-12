@@ -124,6 +124,19 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        uglify: {
+            my_target: {
+                options: {
+                    mangle: false
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'dist/app',
+                    src: '**/*.js',
+                    dest: 'dist/app/'
+                }]
+            }
+        },
         replace: {
             version: {
                 options: {
@@ -168,12 +181,22 @@ module.exports = function (grunt) {
                 }
             }
         },
+        //requirejs: {
+        //    compile: {
+        //        options: {
+        //            baseUrl: "dist/",
+        //            mainConfigFile: "dist/app/shared/main.js",
+        //            optimize:"none",
+        //            out: "dist/app/final/optimized.js"
+        //        }
+        //    }
+        //},
         requirejs: {
             compile: {
                 options: {
                     baseUrl: "src/webapp/",
                     mainConfigFile: "src/webapp/app/shared/main.js",
-                    //optimize:"none",
+                    optimize:"none",
                     out: "dist/app/final/optimized.js"
                 }
             }
@@ -211,8 +234,8 @@ module.exports = function (grunt) {
 
     // Default task(s).
     //grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
-    grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version', 'require', 'clean:removeByJs']);
+    grunt.registerTask('default', ['clean:build',  'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version', 'requirejs', 'clean:removeByJs']);
     grunt.registerTask('build', ['default', 'war']);
-    grunt.registerTask('require', ['requirejs']);
+    grunt.registerTask('ug', ['clean:build', 'copy', 'uglify']);
 
 };

@@ -39,7 +39,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
                 delete user.phoneNumber;
             }
             if((user.email && user.email.trim().length > 0) || (user.phoneNumber && user.phoneNumber.trim().length > 0)){
-                $http.post(apiPrefix + 'api/v1/users/login', user).success(function (loginData) {
+                $http.post(BY.config.constants.apiPrefix + 'api/v1/users/login', user).success(function (loginData) {
                     var loginData = loginData.data;
                     setUserCredential(loginData);
                     $rootScope.$broadcast('byUserLogin', loginData);
@@ -108,7 +108,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
             if(errMsg.trim().length > 0){
                 deferred.reject(errMsg);
             } else{
-                $http.post(apiPrefix + 'api/v1/users', newUser).success(function (response) {
+                $http.post(BY.config.constants.apiPrefix + 'api/v1/users', newUser).success(function (response) {
                     var regData = response.data;
                     setUserCredential(regData);
                     $rootScope.$broadcast('byUserLogin', regData);
@@ -143,7 +143,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
 
         function logoutUser(){
             localStorage.removeItem("by_cust_id");
-            $http.get(apiPrefix + "api/v1/users/logout");
+            $http.get(BY.config.constants.apiPrefix + "api/v1/users/logout");
             invalidateSession();
             $rootScope.$broadcast('byUserLogout', '');
             $location.path("/users/login");
@@ -165,7 +165,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
         function validateSession(){
             var deferred = $q.defer();
             $http.defaults.headers.common.sess = localStorage.getItem("SessionId");
-            $http.get(apiPrefix + "api/v1/users/validateSession").success(function (response) {
+            $http.get(BY.config.constants.apiPrefix + "api/v1/users/validateSession").success(function (response) {
                 setUserCredential(response.data);
                 deferred.resolve(response);
             }).error(function (error) {
@@ -184,7 +184,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
 
 
          function googleLogin(){
-            $http.get(apiPrefix + "api/v1/users/getGgURL").success(function(res){
+            $http.get(BY.config.constants.apiPrefix + "api/v1/users/getGgURL").success(function(res){
                 window.addEventListener("message", socialCallback);
                 var child = window.open(res.data, 'Google Login','width=500,height=500');
                 var timer = setInterval(checkChild, 500);
@@ -198,7 +198,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
         };
 
          function fbLogin(){
-            $http.get(apiPrefix + "api/v1/users/getFbURL").success(function(res){
+            $http.get(BY.config.constants.apiPrefix + "api/v1/users/getFbURL").success(function(res){
                 window.addEventListener("message", socialCallback);
                 var child = window.open(res.data, 'Facebook Login','width=1000,height=650');
                 var timer = setInterval(checkChild, 500);
