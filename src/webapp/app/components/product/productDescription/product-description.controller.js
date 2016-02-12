@@ -55,6 +55,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
         $scope.productOptionSelected = productOptionSelected;
         $scope.checkLogisticAvailability = checkLogisticAvailability;
         $scope.slideIndex = 1;
+        $scope.slideIndexSimilar = 1;
         $scope.pincode = localStorage.getItem("LOCATION-PINCODE") ? parseInt(localStorage.getItem("LOCATION-PINCODE")) : null;
         $scope.promise = getProductDescription();
 
@@ -251,7 +252,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
                 }
 
                 angular.forEach(products, function(product) {
-                    if (product.id !== parseInt(($scope.productId), 10) && similarProductList.length < 3) {
+                    if (product.id !== parseInt(($scope.productId), 10)) {
                         similarProductList.push(product);
                     }
                 });
@@ -472,12 +473,48 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
             $scope.w = $scope.bygallerycontainer / $scope.byimageGallery;
             //alert($scope.w);
             if ($scope.slideIndex < $scope.w && dir === "r") {
-                $('.by-gallery-container').css("-webkit-transform", "translate(-" + ($scope.byimageGallery) * ($scope.slideIndex) + "px, 0px)");
+               $('.by-gallery-container').css("-webkit-transform","translate(-"+($scope.byimageGallery)*($scope.slideIndex)+"px, 0px)");
+                $('.by-gallery-container').css("-moz-transform","translate(-"+($scope.byimageGallery)*($scope.slideIndex)+"px, 0px)");
+                $('.by-gallery-container').css("-ms-transform","translate(-"+($scope.byimageGallery)*($scope.slideIndex)+"px, 0px)");
+                $('.by-gallery-container').css("-o-transform","translate(-"+($scope.byimageGallery)*($scope.slideIndex)+"px, 0px)");
+                $('.by-gallery-container').css("transform","translate(-"+($scope.byimageGallery)*($scope.slideIndex)+"px, 0px)");                
                 $scope.slideIndex++;
             }
             if ($scope.slideIndex >= 0 && dir === "l") {
-                $('.by-gallery-container').css("-webkit-transform", "translate(-" + ($scope.byimageGallery) * ($scope.slideIndex - 2) + "px, 0px)");
+                $('.by-gallery-container').css("-webkit-transform","translate(-"+($scope.byimageGallery)*($scope.slideIndex-2)+"px, 0px)");
+                $('.by-gallery-container').css("-moz-transform","translate(-"+($scope.byimageGallery)*($scope.slideIndex-2)+"px, 0px)");
+                $('.by-gallery-container').css("-ms-transform","translate(-"+($scope.byimageGallery)*($scope.slideIndex-2)+"px, 0px)");
+                $('.by-gallery-container').css("-o-transform","translate(-"+($scope.byimageGallery)*($scope.slideIndex-2)+"px, 0px)");
+                $('.by-gallery-container').css("transform","translate(-"+($scope.byimageGallery)*($scope.slideIndex-2)+"px, 0px)");
                 $scope.slideIndex--;
+            }
+
+        };
+
+        
+        $scope.slideSimilarProduct = function(dir) {
+            if ($scope.slideIndexSimilar < 1) {
+                $scope.slideIndexSimilar = 1;
+            }
+            $scope.byimageGallerySimilar = $(".by_productDetail_contentDescHead").outerWidth() - 100;
+            $scope.bygallerycontainerSimilar = 110 * $scope.uiData.similarProductLength;
+            $(".by_proSmiliarWrapFull").width($scope.bygallerycontainerSimilar);
+            $scope.wSimilar = $scope.bygallerycontainerSimilar / $scope.byimageGallerySimilar;
+            if ($scope.slideIndexSimilar < $scope.wSimilar && dir === "r") {
+               $('.by_proSmiliarWrapFull').css("-webkit-transform","translate(-"+($scope.byimageGallerySimilar)*($scope.slideIndexSimilar)+"px, 0px)");
+                $('.by_proSmiliarWrapFull').css("-moz-transform","translate(-"+($scope.byimageGallerySimilar)*($scope.slideIndexSimilar)+"px, 0px)");
+                $('.by_proSmiliarWrapFull').css("-ms-transform","translate(-"+($scope.byimageGallerySimilar)*($scope.slideIndexSimilar)+"px, 0px)");
+                $('.by_proSmiliarWrapFull').css("-o-transform","translate(-"+($scope.byimageGallerySimilar)*($scope.slideIndexSimilar)+"px, 0px)");
+                $('.by_proSmiliarWrapFull').css("transform","translate(-"+($scope.byimageGallerySimilar)*($scope.slideIndexSimilar)+"px, 0px)");                
+                $scope.slideIndexSimilar++;
+            }
+            if ($scope.slideIndexSimilar >= 0 && dir === "l") {
+                $('.by_proSmiliarWrapFull').css("-webkit-transform","translate(-"+($scope.byimageGallerySimilar)*($scope.slideIndexSimilar-2)+"px, 0px)");
+                $('.by_proSmiliarWrapFull').css("-moz-transform","translate(-"+($scope.byimageGallerySimilar)*($scope.slideIndexSimilar-2)+"px, 0px)");
+                $('.by_proSmiliarWrapFull').css("-ms-transform","translate(-"+($scope.byimageGallerySimilar)*($scope.slideIndexSimilar-2)+"px, 0px)");
+                $('.by_proSmiliarWrapFull').css("-o-transform","translate(-"+($scope.byimageGallerySimilar)*($scope.slideIndexSimilar-2)+"px, 0px)");
+                $('.by_proSmiliarWrapFull').css("transform","translate(-"+($scope.byimageGallerySimilar)*($scope.slideIndexSimilar-2)+"px, 0px)");
+                $scope.slideIndexSimilar--;
             }
 
         };
