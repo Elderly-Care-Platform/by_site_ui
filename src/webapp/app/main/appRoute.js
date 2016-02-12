@@ -5,7 +5,7 @@ define([], function () {
                 templateUrl: 'app/components/home/home.html', controller: 'BYHomeController', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['homeController'], function () {
+                        require(['app/components/home/homeController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -19,7 +19,7 @@ define([], function () {
                 templateUrl: 'app/components/experienceStore/experienceStore.html', controller: 'expStoreCtrl', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['expStoreCtrl'], function () {
+                        require(['app/components/experienceStore/expStoreController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -33,7 +33,7 @@ define([], function () {
                 templateUrl: 'app/components/discuss/discussion.html', controller: 'DiscussMenuCtrl', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['discussMenuCtrl', 'editorController'], function (discussMenuCtrl, editorController) {
+                        require(['app/components/discuss/discussMenuCtrl', 'editorController'], function (discussMenuCtrl, editorController) {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -54,7 +54,7 @@ define([], function () {
                 templateUrl: 'app/components/discuss/discussion.html', controller: 'DiscussMenuCtrl', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['discussMenuCtrl', 'editorController'], function (discussMenuCtrl, editorController) {
+                        require(['app/components/discuss/discussMenuCtrl', 'editorController'], function (discussMenuCtrl, editorController) {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -77,7 +77,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['discussDetailCtrl'], function () {
+                        require(['app/components/discussDetail/discussDetailController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -91,7 +91,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['announcementCtrl', 'editorController'], function () {
+                        require(['app/components/announcements/announcementCtrl', 'editorController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -109,7 +109,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['servicesCtrl', 'findMenuCtrl'],
+                        require(["app/components/find/servicesController", "app/components/find/findMenuCtrl"],
                             function (servicesController, findMenuCtrl) {
                                 defered.resolve();
                             });
@@ -133,7 +133,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['servicesCtrl', 'findMenuCtrl'],
+                        require(["app/components/find/servicesController", "app/components/find/findMenuCtrl"],
                             function (servicesController, findMenuCtrl) {
                                 defered.resolve();
                             });
@@ -157,7 +157,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['servicesCtrl', 'findMenuCtrl'],
+                        require(["app/components/find/servicesController", "app/components/find/findMenuCtrl"],
                             function (servicesController, findMenuCtrl) {
                                 defered.resolve();
                             });
@@ -185,7 +185,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['housingCtrl', 'housingMenuCtrl'], function () {
+                        require(["app/components/housing/housingController", "app/components/housing/housingMenuCtrl"], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -208,7 +208,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['housingCtrl', 'housingMenuCtrl', 'editorController'], function () {
+                        require(["app/components/housing/housingController", "app/components/housing/housingMenuCtrl", 'editorController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -231,7 +231,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/housing/housingController.js', 'housingMenuCtrl'], function () {
+                        require(['app/components/housing/housingController.js', 'app/components/housing/housingMenuCtrl'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -258,7 +258,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/signup/registrationController.js'], function () {
+                        require(['app/components/signup/registrationController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -272,7 +272,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/signup/registrationController.js'], function () {
+                        require(['app/components/signup/registrationController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -286,7 +286,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/signup/registrationController.js'], function () {
+                        require(['app/components/signup/registrationController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -300,7 +300,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/signup/login/loginController.js'], function () {
+                        require(['app/components/signup/login/loginController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -322,7 +322,7 @@ define([], function () {
                 controller: 'RegistrationController', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/signup/registrationController.js'], function (registrationCtrl) {
+                        require(['app/components/signup/registrationController'], function (registrationCtrl) {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -336,7 +336,7 @@ define([], function () {
                 controller: 'RegistrationController', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/signup/registrationController.js'], function () {
+                        require(['app/components/signup/registrationController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -349,7 +349,7 @@ define([], function () {
                 controller: 'RegistrationController', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/signup/registrationController.js'], function () {
+                        require(['app/components/signup/registrationController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -363,7 +363,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/signup/login/logoutController.js'], function () {
+                        require(['app/components/signup/login/logoutController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -380,7 +380,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/profile/userProfileCtrl.js'], function () {
+                        require(['app/components/profile/userProfileCtrl'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -417,7 +417,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/shared/footer/contactUsController.js'], function () {
+                        require(['app/shared/footer/contactUsController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -431,7 +431,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/aboutUs/aboutUsController.js'], function () {
+                        require(['app/components/aboutUs/aboutUsController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -445,7 +445,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/search/SearchController.js'], function () {
+                        require(['app/components/search/SearchController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -460,7 +460,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/error/errorController.js'], function () {
+                        require(['app/components/error/errorController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
@@ -490,7 +490,7 @@ define([], function () {
         //    templateUrl: 'app/components/discuss/discussion.html', controller: 'DiscussMenuCtrl', resolve: {
         //        load: ['$q', function ($q) {
         //            var defered = $q.defer();
-        //            require(['app/components/discuss/discussMenuCtrl.js'], function (discussMenuCtrl) {
+        //            require(['app/components/discuss/discussMenuCtrl'], function (discussMenuCtrl) {
         //                defered.resolve();
         //            });
         //            return defered.promise;
@@ -504,7 +504,7 @@ define([], function () {
         //    resolve: {
         //        load: ['$q', function ($q) {
         //            var defered = $q.defer();
-        //            require(['app/components/find/servicesController.js'], function () {
+        //            require(['app/components/find/servicesController'], function () {
         //                defered.resolve();
         //            });
         //            return defered.promise;
@@ -519,7 +519,7 @@ define([], function () {
          resolve: {
          load: ['$q', function ($q) {
          var defered = $q.defer();
-         require(['app/components/profile/userProfileCtrl.js'], function () {
+         require(['app/components/profile/userProfileCtrl'], function () {
          defered.resolve();
          });
          return defered.promise;
