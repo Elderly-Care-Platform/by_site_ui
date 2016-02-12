@@ -270,6 +270,7 @@ require(['jquery', 'jqueryForm', 'jqueryUI', 'bootstrap', 'unifyApp', 'backToTop
             }
         });
 
+        <!-- for inserting images into tinymce -->
         $(document).ready(function () {
             var options1 = {
                 beforeSend: function () {

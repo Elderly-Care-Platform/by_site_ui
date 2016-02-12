@@ -114,7 +114,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
 
             $scope.getProductsData = function(page, size){
                 page = page + 1;
-                $http({method:'GET', url: BY.config.constants.productHost + '/catalog/search/products', params:{q: $rootScope.term, 'page': page, 'pageSize': size}}).then(function(response) {
+                $http({method:'GET', url: BY.config.constants.apiPrefix + BY.config.constants.productHost + '/catalog/search/products', params:{q: $rootScope.term, 'page': page, 'pageSize': size}}).then(function(response) {
                     console.log(response);
                     $scope.products = response.data;
                     $scope.productPagination = {};

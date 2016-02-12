@@ -63,18 +63,6 @@
 </head>
 
 <body ng-cloak>
-    <!--<div id="home" ng-if="$root.BYhomePage"></div>-->
-    <!--<script>-->
-        <!--$(function () {-->
-            <!--$("#home").load("app/components/home/homeStaticNew.html?versionTimeStamp=%PROJECT_VERSION%");-->
-        <!--});-->
-    <!--</script>-->
-
-    <!--&lt;!&ndash; @@production-css starts &ndash;&gt;-->
-    <!--<link rel="stylesheet" href="assets/css/final.css?versionTimeStamp=%PROJECT_VERSION%">-->
-    <!--<link rel="stylesheet" href="assets/css/finalLib.css?versionTimeStamp=%PROJECT_VERSION%">-->
-    <!--&lt;!&ndash; @@production-css ends &ndash;&gt;-->
-
 
     <!-- Third party CSS files from libraries start -->
     <link rel="stylesheet" href="lib/unify/plugins/bootstrap/css/bootstrap.min.css?versionTimeStamp=%PROJECT_VERSION%">
@@ -154,10 +142,9 @@
 
     <!--<script type="text/javascript" src="lib/tinymce/tinymce.min.js?versionTimeStamp=%PROJECT_VERSION%"></script>-->
 
+    <!-- @@dev-js starts -->
     <script type='text/javascript' src="lib/require.js" data-main="app/shared/main.js?versionTimeStamp=%PROJECT_VERSION%"></script>
-
-    <!--<script type='text/javascript' src="lib/require.js" data-main="app/final/optimized.js"></script>-->
-
+    <!-- @@dev-js ends -->
 
     <div id="fb-root"></div>
     <div class="preloader" id="preloader" style="display:none">
@@ -286,53 +273,6 @@
     <script type="text/javascript" async defer
             src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 
-    <!-- script for inserting images into tinymce  start-->
-    <script type="text/javascript">
-        var initMap = function () {
-        };
-
-//        $(document).ready(function () {
-//            var options1 = {
-//                beforeSend: function () {
-//                    //$("#progressbox").show();
-//                    // clear everything
-//                    //$("#progressbar").width('0%');
-//                    //$("#message").empty();
-//                    //$("#percent").html("0%");
-//                },
-//                uploadProgress: function (event, position, total, percentComplete) {
-//                    //$("#progressbar").width(percentComplete + '%');
-//                    //$("#percent").html(percentComplete + '%');
-//
-//                    // change message text to red after 50%
-//                    //if (percentComplete > 50) {
-//                    //$("#message").html("<font color='red'>File Upload is in progress</font>");
-//                    // }
-//                },
-//                success: function () {
-//                    // $("#progressbar").width('100%');
-//                    // $("#percent").html('100%');
-//                },
-//                complete: function (response) {
-//                    //tinyMCE.activeEditor.focus();
-//                    //tinyMCE.get('submit-article').getBody().focus();
-//
-//                    //?????var img = "<img style = 'height:80px;width:80px' src = 'http://" + response.responseText + "' />";
-//                    //alert("img path = " + response.responseText.substring(response.responseText.lastIndexOf('/')+1));
-//                    var img = "<img src = '" + response.responseText + "' />";
-//                    tinyMCE.activeEditor.execCommand("mceInsertContent", true, img);
-//                    //$("#articlePhotoFilename").val(response.responseText);
-//                },
-//                error: function () {
-//                    //$("#articlePhotoFilename").val("<font color='red'> ERROR: unable to upload files</font>");
-//                }
-//            };
-//
-//            $("#UploadImage").ajaxForm(options1);
-//
-//        });
-    </script>
-    <!-- script for inserting images into tinymce  start-->
 
     <!-- Google analytics code snippet start -->
     <script>
