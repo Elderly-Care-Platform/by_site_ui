@@ -52,7 +52,7 @@
                 <input type="text" class="username-textbox textbox" name="zipcode"
                        ng-model="address.address.zip" style="width:50%;" required/>
                 <input type="button" class="btn btn-success pull-right register-btn"
-                       value="Get address" style="padding:4px 12px;"
+                       value="Get address from zip" style="padding:4px 12px;"
                        ng-click="getLocationByPincode($event)"><br/>
                 <span ng-show="addAddressForm.zipcode.$invalid && submitted" class="errorRed">Please enter your zip code</span>
             </div>
