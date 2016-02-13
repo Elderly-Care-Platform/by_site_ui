@@ -99,18 +99,6 @@ require.config({
         jqueryMasonaryGrid: 'lib/jqueryPlugins/jquery.masonry.min',
         lodash: 'lib/lodash.min',
         bootstrapToggle: 'lib/unify/plugins/bootstrap/js/bootstrap-toggle',
-        jquery: 'lib/jqueryPlugins/jquery.min',
-        jqueryForm: 'lib/jqueryPlugins/jquery.form',
-        jqueryUI: 'lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min',
-
-        bootstrap: 'lib/unify/plugins/bootstrap/js/bootstrap.min',
-        unifyApp: 'lib/unify/unify_app',
-        backToTop: 'lib/unify/plugins/back-to-top',
-        sha256: 'lib/payment/sha256',
-        sha512: 'lib/payment/sha512',
-        smoothScroll: 'lib/unify/plugins/smoothScroll',
-        imagezoom: 'lib/jqueryPlugins/imagezoom',
-        tinymce: 'lib/tinymce/tinymce.min',
 
 
         //controllers
@@ -199,9 +187,9 @@ require.config({
             deps: ["angular"]
         },
 
-        // 'bootstrapToggle' : {
-        // 	deps : [ "jquery" ]
-        // },
+        //'bootstrapToggle' : {
+        //	deps : [ "jquery" ]
+        //},
 
         "angularBootstrap": {
             deps: ["angular"]
@@ -217,31 +205,13 @@ require.config({
 
         "angularSanitize": {
             deps: ["angular"]
-        },
+        }
         ////
-        'jqueryForm': ['jquery'],
-        'jqueryUI': ['jquery'],
-        'bootstrap': ['jquery'],
-        'unifyApp' : ['jquery'],
-        'backToTop' : ['jquery'],
-        'sha256' : ['jquery'],
-        'sha512' : ['jquery'],
-        'smoothScroll' : ['jquery'],
-        'imagezoom' : ['jquery'],
-        'tinymce' : ['jquery'],
-        'byUtil' : ['jquery']
-        //
-        //"jquery": {
-        //    //'exports': 'jquery',
-        //    deps: ['jqueryForm', 'jqueryUI', 'bootstrap', 'unifyApp', 'backToTop', 'sha256', 'sha512', 'smoothScroll', 'imagezoom', 'tinymce']
-        //}
     }
 
 });
-require(['jquery', 'jqueryForm', 'jqueryUI', 'bootstrap', 'unifyApp', 'backToTop', 'sha256', 'sha512', 'smoothScroll', 'imagezoom', 'tinymce',
-        'angular', "byApplicationConfig", "byApp", "byUtil", "byDirectives", "lodash"],
-    function (jquery, jqueryForm, jqueryUI, bootstrap, unifyApp, backToTop, sha256, sha512, smoothScroll, imagezoom, tinymce,
-              angular, byApplicationConfig, byApp, byUtil, byDirectives, lodash) {
+require(['angular', "byApplicationConfig", "byApp", "byUtil", "byDirectives", "lodash"],
+    function (angular, byApplicationConfig, byApp, byUtil, byDirectives, lodash) {
         var getProdCategoriesSuccess = function (prodCategories) {
             window.by_prodCategories = JSON.parse(prodCategories);
             angular.bootstrap(document, ["byApp"]);
