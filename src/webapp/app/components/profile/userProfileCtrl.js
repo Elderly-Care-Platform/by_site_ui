@@ -1,5 +1,7 @@
-define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController'],
-    function (byApp, byUtil, userTypeConfig, reviewRateController) {
+define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController', 'indvUserProfileCtrl',
+        'housingProfileLeftCtrl', 'instProfileCtrl', 'instProfileLeftCtrl', 'profUserProfileCtrl', 'housingProfileCtrl'],
+    function (byApp, byUtil, userTypeConfig, reviewRateController, indvUserProfileCtrl,
+              housingProfileLeftCtrl, instProfileCtrl, instProfileLeftCtrl, profUserProfileCtrl, housingProfileCtrl) {
         function ProfileController($scope, $rootScope, $location, $routeParams, ReviewRateProfile, UserProfile, $sce,
                                    DiscussPage, $q, UserValidationFilter, ErrorService) {
             $scope.profileViews = {};

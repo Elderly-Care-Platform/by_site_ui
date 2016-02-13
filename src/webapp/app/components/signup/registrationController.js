@@ -1,7 +1,7 @@
-define(['byApp', 'byUtil', 'LoginController', 'registrationConfig', 'modifySignupCtrl', 'orderHistoryCtrl', 'indvUserProfileCtrl',
-        'housingProfileLeftCtrl', 'instProfileCtrl', 'instProfileLeftCtrl', 'profUserProfileCtrl', 'housingProfileCtrl'],
-    function (byApp, byUtil, LoginController, registrationConfig, modifySignupCtrl, orderHistoryCtrl, indvUserProfileCtrl,
-              housingProfileLeftCtrl, instProfileCtrl, instProfileLeftCtrl, profUserProfileCtrl, housingProfileCtrl) {
+define(['byApp', 'byUtil', 'LoginController', 'registrationConfig', 'modifySignupCtrl', 'orderHistoryCtrl', 'regIndividualCtrl',
+        'regProfessionalCtrl', 'regInstitutionCtrl', 'regHousingCtrl', 'regHousingFacilityCtrl', 'regUserTypeController'],
+    function (byApp, byUtil, LoginController, registrationConfig, modifySignupCtrl, orderHistoryCtrl, regIndividualCtrl,
+              regProfessionalCtrl, regInstitutionCtrl, regHousingCtrl, regHousingFacilityCtrl, regUserTypeController) {
         function RegistrationController($scope, $rootScope, $http, $location, $routeParams, UserProfile) {
             $scope.views = {};
             $scope.views.leftPanel = "";
@@ -150,9 +150,9 @@ define(['byApp', 'byUtil', 'LoginController', 'registrationConfig', 'modifySignu
                     if ($scope.profile.userTypes.length > 0) {
                         $scope.userTypeConfig = BY.config.regConfig.userTypeConfig[$scope.profile.userTypes[0]];
                     } else {
-                        if($scope.profile.userTags[0] == BY.config.regConfig.userTags.serviceprovider){
+                        if ($scope.profile.userTags[0] == BY.config.regConfig.userTags.serviceprovider) {
                             $scope.userTypeConfig = BY.config.regConfig.userTypeConfig[-1];
-                        } else{
+                        } else {
                             $scope.userTypeConfig = BY.config.regConfig.userTypeConfig[0];
                         }
                     }
