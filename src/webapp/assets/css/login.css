@@ -137,9 +137,10 @@
 }
 
 input[type=checkbox] {
-	width: 17px;
-	height: 17px;
+	width: 19px;
+	height: 20px;
 	background-color: #ccc;
+	vertical-align: middle;
 }
 
 .returnButton {

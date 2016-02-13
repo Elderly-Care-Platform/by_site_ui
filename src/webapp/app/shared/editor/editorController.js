@@ -190,7 +190,10 @@ define(['byApp', 'byUtil', 'byEditor', 'userValidation'], function(byApp, byUtil
             $(".by_btn_submit").prop("disabled", true);
             $scope.discuss              = new Discuss();
             $scope.discuss.discussType  = discussType;
-            $scope.discuss.text         = tinyMCE.activeEditor.getContent();
+            if(tinyMCE.activeEditor){
+                $scope.discuss.text         = tinyMCE.activeEditor.getContent();
+            }
+
             $scope.discuss.title        = $scope.editor.subject;
 
             formatContent();
