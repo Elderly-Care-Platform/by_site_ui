@@ -1,64 +1,93 @@
 <!--All classes from Unify start-->
-<div class="by_menuDetailed col-md-12 no-padding" ng-if="$root.windowWidth > 720"  style="position:fixed; bottom:0px;"  ng-init="leftPanelHeight();">
-   
-        <!--<div class="by_profileDetailed_menu" ng-click="gotoHref('profileSection')">
+<div class="by_menuDetailed col-md-12 no-padding" ng-if="$root.windowWidth > 720" style="position:fixed; bottom:0px;"
+     ng-init="leftPanelHeight();">
+
+    <!--<div class="by_profileDetailed_menu" ng-click="gotoHref('profileSection')">
+        {{label}}
+    </div>
+    <div class="by_profileDetailed_menuIcon" ng-if="flags.isByAdminVerified && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )"  ng-click="gotoHref('adminVerified')">
+        <i class="fa fa-pencil-square-o by_faAlign"></i><span>BY Verified</span>
+        <div class="clearfix"></div>
+    </div>
+    <div class="by_profileDetailed_menuIcon" ng-if="isAllowedToReview && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )" ng-click="gotoHref('userReviews')">
+        <i class="review-Icon_rate"></i> <span>Rate & Review</span>
+        <div class="clearfix"></div>
+    </div>
+    <div class="by_profileDetailed_menuIcon" ng-if="postsUser.length > 0"  ng-click="gotoHref('userPosts')">
+       <span>Posts ({{postsPagination.totalPosts}})</span>
+       <div class="clearfix"></div>
+    </div>
+    <div class="by_profileDetailed_menuIcon" ng-if="qaUser.length > 0"  ng-click="gotoHref('userQA')">
+       <span>Q&A ({{qaPagination.totalPosts}})</span>
+       <div class="clearfix"></div>
+    </div>-->
+    <div class="by_leftPanelHead shadow-wrapper" ng-click="gotoHref('profileSection')">
+        <div class="box-shadow shadow-effect-2 by_leftPanHeadText">
             {{label}}
         </div>
-        <div class="by_profileDetailed_menuIcon" ng-if="flags.isByAdminVerified && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )"  ng-click="gotoHref('adminVerified')">
-            <i class="fa fa-pencil-square-o by_faAlign"></i><span>BY Verified</span>
-            <div class="clearfix"></div>
-        </div>
-        <div class="by_profileDetailed_menuIcon" ng-if="isAllowedToReview && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )" ng-click="gotoHref('userReviews')">
-            <i class="review-Icon_rate"></i> <span>Rate & Review</span>
-            <div class="clearfix"></div>
-        </div>
-        <div class="by_profileDetailed_menuIcon" ng-if="postsUser.length > 0"  ng-click="gotoHref('userPosts')">
-           <span>Posts ({{postsPagination.totalPosts}})</span>
-           <div class="clearfix"></div>
-        </div>
-        <div class="by_profileDetailed_menuIcon" ng-if="qaUser.length > 0"  ng-click="gotoHref('userQA')">
-           <span>Q&A ({{qaPagination.totalPosts}})</span>
-           <div class="clearfix"></div>
-        </div>-->
-        <div class="by_leftPanelHead shadow-wrapper"  ng-click="gotoHref('profileSection')">
-            <div class="box-shadow shadow-effect-2 by_leftPanHeadText">
-                {{label}}
-            </div>
-        </div>
-         <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="flags.isByAdminVerified && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )"  ng-click="gotoHref('adminVerified')">
-            BY Verified
-        </div>
-        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="isAllowedToReview && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )" ng-click="gotoHref('userReviews')">
-            Rate & Review
-        </div>
-        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="postsUser.length > 0"  ng-click="gotoHref('userPosts')">
-           Posts ({{postsPagination.totalPosts}})
-        </div>
-        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="qaUser.length > 0"  ng-click="gotoHref('userQA')">
-           Q&A ({{qaPagination.totalPosts}})
-        </div>
-        
     </div>
-    <!--All classes from Unify end-->
+
+    <div class="by_profileDetailed_menuIcon" ng-if="flags.isByAdminVerified && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )"  ng-click="gotoHref('adminVerified')">
+        <i class="fa fa-pencil-square-o by_faAlign"></i><span>BY Verified</span>
+        <div class="clearfix"></div>
+    </div>
+    <div class="by_profileDetailed_menuIcon" ng-if="isAllowedToReview && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )" ng-click="gotoHref('userReviews')">
+        <i class="review-Icon_rate"></i> <span>Rate & Review</span>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="by_profileDetailed_menuIcon" ng-if="postsUser.length > 0"  ng-click="gotoHref('userPosts')">
+        <span>Posts ({{postsPagination.totalPosts}})</span>
+        <div class="clearfix"></div>
+    </div>
+    <div class="by_profileDetailed_menuIcon" ng-if="qaUser.length > 0"  ng-click="gotoHref('userQA')">
+        <span>Q&A ({{qaPagination.totalPosts}})</span>
+        <div class="clearfix"></div>
+    </div>
+
+    <!--<div class="by_leftPanelLink by_leftPanel_accelArrow"-->
+         <!--ng-if="flags.isByAdminVerified && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )"-->
+         <!--ng-click="gotoHref('adminVerified')">-->
+        <!--BY Verified-->
+    <!--</div>-->
+    <!--<div class="by_leftPanelLink by_leftPanel_accelArrow"-->
+         <!--ng-if="isAllowedToReview && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )"-->
+         <!--ng-click="gotoHref('userReviews')">-->
+        <!--Rate & Review-->
+    <!--</div>-->
+    <!--<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="postsUser.length > 0" ng-click="gotoHref('userPosts')">-->
+        <!--Posts ({{postsPagination.totalPosts}})-->
+    <!--</div>-->
+    <!--<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="qaUser.length > 0" ng-click="gotoHref('userQA')">-->
+        <!--Q&A ({{qaPagination.totalPosts}})-->
+    <!--</div>-->
+
+</div>
+<!--All classes from Unify end-->
 <div class="by_mobile_leftPanel_hide" ng-if="$root.windowWidth < 720">
-    <div class="by_mobile_leftPanel" >
-       
-        <div class="by_leftPanelHead shadow-wrapper"  ng-click="gotoHref('profileSection')">
+    <div class="by_mobile_leftPanel">
+
+        <div class="by_leftPanelHead shadow-wrapper" ng-click="gotoHref('profileSection')">
             <div class="box-shadow shadow-effect-2 by_leftPanHeadText">
                 {{label}}
             </div>
         </div>
-         <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="flags.isByAdminVerified && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )"  ng-click="gotoHref('adminVerified')">
+        <div class="by_leftPanelLink by_leftPanel_accelArrow"
+             ng-if="flags.isByAdminVerified && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )"
+             ng-click="gotoHref('adminVerified')">
             BY Verified
         </div>
-        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="isAllowedToReview && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )" ng-click="gotoHref('userReviews')">
+        <div class="by_leftPanelLink by_leftPanel_accelArrow"
+             ng-if="isAllowedToReview && (profileData.userTypes[0] == 7 || profileData.userTypes[0] == 4 )"
+             ng-click="gotoHref('userReviews')">
             Rate & Review
         </div>
-        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="postsUser.length > 0"  ng-click="gotoHref('userPosts')">
-           Posts ({{postsPagination.totalPosts}})
+        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="postsUser.length > 0"
+             ng-click="gotoHref('userPosts')">
+            Posts ({{postsPagination.totalPosts}})
         </div>
-        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="qaUser.length > 0"  ng-click="gotoHref('userQA')">
-           Q&A ({{qaPagination.totalPosts}})
+        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="qaUser.length > 0" ng-click="gotoHref('userQA')">
+            Q&A ({{qaPagination.totalPosts}})
         </div>
         <div class="clearfix"></div>
     </div>
