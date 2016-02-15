@@ -305,8 +305,9 @@
   width: 100px;
   height: 100px;
   float: left;
-  margin-right: 10px;
   line-height: 100px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .by_proSimilarProduct img
 {
@@ -371,6 +372,7 @@
 .by_proSmiliarWrapFull
 {
   white-space: nowrap;
+  background: #F9F9F9;
     -webkit-transition-property: -webkit-transform;
     transition-property: -webkit-transform;
     -webkit-transform:translate3d(0px, 0px, 0px);
