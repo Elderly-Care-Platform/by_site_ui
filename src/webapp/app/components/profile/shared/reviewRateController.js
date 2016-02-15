@@ -14,7 +14,7 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
         $scope.showRateRegister         = showRateRegister;
         $scope.userSessionType          = UserValidationFilter.getUserSessionType();
         $scope.userCredential           = {'email':'', 'pwd':''};
-        $scope.newUserCredential        = {'uniqueRegId':'', 'pwd':'', 'userName': ''};
+        $scope.newUserCredential        = {'uniqueRegId':'', 'pwd':'', 'userName': '', 'userTags': ''};
 
         var postReview                  = new ReviewRateProfile(),
             setReviewText               = setReviewText,

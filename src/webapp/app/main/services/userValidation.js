@@ -63,6 +63,11 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
         }
 
         function registerUser(userObj){
+            userObj.userTags =  [BY.config.regConfig.userTags.individual];
+            var checked = $("#UserTagsReg:checked").length;
+            if(checked == 1){
+                userObj.userTags = [BY.config.regConfig.userTags.serviceprovider];
+            }
             var deferred = $q.defer(), errMsg = "", newUser = {'userName':userObj.userName};
             if(!userObj.uniqueRegId){
                 errMsg = "Please enter a valid email-id";
@@ -76,6 +81,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
                         errMsg = "";
                         newUser.userIdType = BY.config.regConfig.userIdType.mobile;
                         newUser.phoneNumber = regId;
+                        newUser.userTags = userObj.userTags;
                         delete newUser.email;
 
                     } else {
@@ -90,6 +96,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
                         errMsg = "";
                         newUser.userIdType = BY.config.regConfig.userIdType.email;
                         newUser.email = regId;
+                        newUser.userTags = userObj.userTags;
                         delete newUser.phoneNumber;
                     }
                 }

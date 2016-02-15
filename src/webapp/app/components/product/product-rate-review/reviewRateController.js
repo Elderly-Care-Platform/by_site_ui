@@ -16,7 +16,8 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
         $scope.newUserCredential = {
             'uniqueRegId': '',
             'pwd': '',
-            'userName': ''
+            'userName': '',
+            'userTags': ''
         };
 
         var postReview = new ReviewRateProfile(),

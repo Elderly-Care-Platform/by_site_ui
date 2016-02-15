@@ -63,6 +63,9 @@
 								<div class="margin-top-10">
 									<input type="password" class="by_registerEmailId" placeholder="Enter your Password" ng-model="newUserCredential.pwd" />
 								</div>
+								<div class="margin-top-10" ng-model="newUserCredential.userTags" style="font-size:15px; color:#000;">
+									<input type="checkbox" id="UserTagsReg"/> I provide services for seniors
+								</div>
 								<xyz ng-if="!userCredential.email && userCredential.email.trim().length === 0">
 									<div class="margin-top-10">
 										Or
