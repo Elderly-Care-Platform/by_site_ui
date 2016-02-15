@@ -2,9 +2,11 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
     'use strict';
 
     function ProductMenuCtrl($scope, $rootScope, $window, $location, $route, $routeParams) {
-        $scope.selectedMenuId       = $routeParams.menuId;
+        $scope.selectedMenuId       = $routeParams.menuId || $routeParams.productId;
         $scope.selectedMenu         = $rootScope.menuCategoryMap[$scope.selectedMenuId];
-        $scope.selectedParent       = $rootScope.menuCategoryMap[$scope.selectedMenu.ancestorIds[$scope.selectedMenu.ancestorIds.length - 1]];
+        if($scope.selectedMenu && $scope.selectedMenu.ancestorIds){
+            $scope.selectedParent       = $rootScope.menuCategoryMap[$scope.selectedMenu.ancestorIds[$scope.selectedMenu.ancestorIds.length - 1]];
+        }
         $scope.menuConfig           = BY.config.menu;
 
         $scope.expandParent = function (menuId) {

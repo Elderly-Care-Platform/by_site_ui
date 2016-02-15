@@ -1,5 +1,5 @@
-define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory', 'discussLikeController', 'shareController'],
-    function(byProductApp, videoImageDirective, productReviewCtrl, urlFactory, discussLikeController, shareController) {
+define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory', 'discussLikeController', 'shareController', 'productMenuCtrl'],
+    function(byProductApp, videoImageDirective, productReviewCtrl, urlFactory, discussLikeController, shareController, productMenuCtrl) {
 
     function ProductDescriptionController($scope,
         $rootScope,

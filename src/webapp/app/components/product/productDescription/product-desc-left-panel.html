@@ -1,4 +1,4 @@
-<div class="by_menuDetailed col-md-12 no-padding" ng-if="$root.windowWidth > 720"  style="position:fixed; bottom:0px; padding-top:10px;"  ng-init="leftPanelHeight();">
+<!--<div class="by_menuDetailed col-md-12 no-padding" ng-if="$root.windowWidth > 720"  style="position:fixed; bottom:0px; padding-top:10px;"  ng-init="leftPanelHeight();">-->
         <!--<div class="by_productDetail_leftSimilarTitle col-md-12 no-padding">
             <span ng-if="uiData.similarProductLength > 0">Similar Products</span>
             <span ng-if="uiData.similarProductLength === 0">No Similar Products Available</span>
@@ -31,12 +31,102 @@
             </div>
         </div>-->
 
-        <div class="by_profileDetailed_menuIcon" ng-click="gotoHref('userReviews')">
+        <!--<div class="by_profileDetailed_menuIcon" ng-click="gotoHref('userReviews')">
             <i class="review-Icon_rate"></i> <span>Rate & Review</span>
             <div class="clearfix"></div>
-        </div>
+        </div>-->
         <!--<div class="clearfix"></div>-->
         <!--<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-click="gotoHref('userReviews')">-->
             <!--Rate & Review-->
         <!--</div>-->
+<!--</div>-->
+<div ng-controller="ProductMenuCtrl">
+    <!--Desktop Menu-->
+<div class="by_subMenuPlus" ng-if="$root.windowWidth > 720" ng-init="expandParent()" element-resize
+     callback="setContentHeight">
+    <div class="clearfix"></div>
+    <div class="by_menuHeadFind  margin-top-10">
+        Find Products
+    </div>
+    <div class="by_menuHeadFindArrow"></div>
+    <div class="clearfix"></div>
+    <ul class="nav nav-list" ng-init="smartScroll();">
+        <li ng-repeat="menu in $root.menuCategoryMapByName['Shop'].children" id="{{menu.id}}" class="byTreeMenu-wrapper"
+            ng-if="menu.module == menuConfig.modules['product'].moduleId">
+            <a ng-if="menu.children.length === 0" class="by_treeMenuText"
+               ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(menu.displayMenuName)}}/{{menu.id}}"
+               style="display: inline-block; width:100%;"
+               ng-class="{'by_treeMenuTextActive': (menu.id == selectedParent.id) || (menu.id == selectedMenuId)}">
+                {{menu.displayMenuName}}
+            </a>
+
+            <a ng-if="menu.children.length > 0" class="by_treeMenuText tree-toggler nav-header" ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(menu.displayMenuName)}}/{{menu.id}}"
+               ng-click="toggleMenu($event)" style="display: inline-block; width:calc(100% - 40px);"
+               ng-class="{'by_treeMenuTextActive': (menu.id == selectedParent.id) || (menu.id == selectedMenuId)}">
+                {{menu.displayMenuName}}
+            </a>
+            <a ng-if="menu.children.length > 0" class="by_treeMenuIcon tree-toggler nav-header"
+               ng-click="toggleMenu($event)"
+               style="display: inline-block; width:30px;"></a>
+
+            <ul ng-if="menu.children.length > 0" class="nav nav-list tree by_treeSubMenu_Wrapper"
+                ng-init="expandParent(menu.id)">
+                <li ng-repeat="submenu1 in menu.children" id="{{submenu1.id}}" ng-init="expandParent(submenu1.id)">
+                    <a class="by_treeSubMenu"
+                       ng-class="{'by_treeSubMenu_active': submenu1.id == selectedMenuId}"
+                       ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(submenu1.displayMenuName)}}/{{submenu1.id}}">{{submenu1.name}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="clearfix"></div>
+</div>
+<!--Mobile Menu-->
+<div class="by_mobile_leftPanel_hide" ng-if="$root.windowWidth < 720">
+    <div class="by_mobile_leftPanel">
+        <div class="by_subMenuPlus" style="max-width:100%; height:100%; overflow-y:auto;">
+            <div class="clearfix"></div>
+            <div class="by_menuHeadFind  margin-top-10">
+                Find Products
+            </div>
+            <div class="by_menuHeadFindArrow"></div>
+            <div class="clearfix"></div>
+            <ul class="nav nav-list">
+                <li ng-repeat="menu in $root.menuCategoryMapByName['Shop'].children" id="{{menu.id}}"
+                    class="byTreeMenu-wrapper" ng-if="menu.module == menuConfig.modules['product'].moduleId">
+                    <a ng-if="menu.children.length === 0"
+                       ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(menu.displayMenuName)}}/{{menu.id}}"
+                       class="by_treeMenuText"
+                       style="display: inline-block; width:100%;"
+                       ng-class="{'by_treeMenuTextActive': (menu.id == selectedParent.id) || (menu.id == selectedMenuId)}">
+                        {{menu.displayMenuName}}
+                    </a>
+
+                    <a ng-if="menu.children.length > 0" class="by_treeMenuText tree-toggler nav-header" ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(menu.displayMenuName)}}/{{menu.id}}"
+                       ng-click="toggleMenu($event)"
+                       style="display: inline-block; width:calc(100% - 40px);"
+                       ng-class="{'by_treeMenuTextActive': (menu.id == selectedParent.id) || (menu.id == selectedMenuId)}">
+                        {{menu.displayMenuName}}
+                    </a>
+                    <a ng-if="menu.children.length > 0" class="by_treeMenuIcon tree-toggler nav-header"
+                       ng-click="toggleMenu($event)"
+                       style="display: inline-block; width:30px;"></a>
+
+                    <ul ng-if="menu.children.length > 0" class="nav nav-list tree by_treeSubMenu_Wrapper"
+                        ng-init="expandParent(menu.id)">
+                        <li ng-repeat="submenu1 in menu.children" id="{{submenu1.id}}"
+                            ng-init="expandParent(submenu1.id)">
+                            <a class="by_treeSubMenu"
+                               ng-class="{'by_treeSubMenu_active': submenu1.id == selectedMenuId}"
+                               ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(submenu1.displayMenuName)}}/{{submenu1.id}}">{{submenu1.name}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="by_mobile_leftPanel_image" ng-click="subMenuTabMobileShow();"></div>
+</div>
 </div>
