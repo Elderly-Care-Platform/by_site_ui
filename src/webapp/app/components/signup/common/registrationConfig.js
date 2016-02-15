@@ -9,8 +9,8 @@ BY.config.regConfig.userIdType = {
 }
 
 BY.config.regConfig.userTags = {
-    'individual': '1001',
-    'serviceprovider': '1002'
+    'individual': '56c19617e4b07a2da70292cf',
+    'serviceprovider': '56c189c6e4b07a2da70292ce'
 }
 
 BY.config.regConfig.formConfig = {

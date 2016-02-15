@@ -102,10 +102,10 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
             $(".profileRatetext").removeClass("profileRate" + $scope.selectedRating);
             $(".by_btn_submit").removeAttr('disabled');
             value = parseInt(value);
-            $(".by_rating_left .profileRatetext").css('color', '#000');
+            $(".by_rating_left .profileRatetext").css('background', '#f2f2f2');
 
             $(".profileRate" + value).siblings(".profileRatetext").addClass("profileRate" + value);
-            $(".profileRate" + value).siblings(".profileRatetext").css('color', '#fff');
+            $(".profileRate" + value).siblings(".profileRatetext").css('background', '#fff');
             $scope.selectedRating = value;
         }
 
@@ -124,7 +124,8 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
                 $scope.reviewText = "";
                 localStorage.removeItem('pendingReviewByUser');
                 $("#by_rate_hide").hide();
-                $("#by_rate_show").show();
+                $("#by_rate_show").show();                
+                $scope.gotoHref("userReviews");
             }, function(errorResponse) {
                 console.log(errorResponse);
                 $(".by_btn_submit").prop("disabled", false);
