@@ -206,7 +206,7 @@ define(['byProductApp'], function (byProductApp) {
             $rootScope.$broadcast('uiDataChanged', $scope.uiData);
             $scope.uiData.cartItems = result.orderItems;
             if (result.orderItems) {
-                angular.forEach($scope.uiData.cartItems, function (orderItem) {
+                angular.forEach($scope.uiData.cartItems, function (orderItem, idx) {
                     var params = {};
                     params.id = orderItem.productId;
                     function getProductSkuInventorySuccess(result) {
@@ -223,19 +223,19 @@ define(['byProductApp'], function (byProductApp) {
                             if (result[0].inventoryType === 'UNAVAILABLE') {
                                 $scope.quantityAvailable = 0;
                             }
-                            orderItem.quantityAvailable = $scope.quantityAvailable;
-                            orderItem.inventoryType = $scope.inventoryType;
+                            $scope.uiData.cartItems[idx].quantityAvailable = $scope.quantityAvailable;
+                            $scope.uiData.cartItems[idx].inventoryType = $scope.inventoryType;
                         })();
                     }
 
                     function productDescriptionSuccess(result) {
                         return (function () {
-                            orderItem.primaryMedia = result.primaryMedia;
-                            Utility.checkImages(orderItem);
-                            orderItem.productDeliveryCharges = result.productDeliveryCharges;
+                            $scope.uiData.cartItems[idx].primaryMedia = result.primaryMedia;
+                            Utility.checkImages($scope.uiData.cartItems[idx]);
+                            $scope.uiData.cartItems[idx].productDeliveryCharges = result.productDeliveryCharges;
                             var floatValue =
-                                parseFloat(orderItem.orderItemPriceDetails[0].totalAdjustedPrice.amount);
-                            orderItem.orderItemPriceDetails[0].totalAdjustedPrice.amount = floatValue;
+                                parseFloat($scope.uiData.cartItems[idx].orderItemPriceDetails[0].totalAdjustedPrice.amount);
+                            $scope.uiData.cartItems[idx].orderItemPriceDetails[0].totalAdjustedPrice.amount = floatValue;
                             var totalProductDeliveryCharges = 0;
                             angular.forEach($scope.uiData.cartItems, function (item) {
                                 totalProductDeliveryCharges += item.productDeliveryCharges;
