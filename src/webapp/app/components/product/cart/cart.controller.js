@@ -32,7 +32,7 @@ define(['byProductApp'], function (byProductApp) {
         $scope.uiData = {
             cartItems: [],
             totalCartItem: 0,
-            productDeliveryCharges:0,
+            productDeliveryCharges: 0,
             totalProductDeliveryCharges: 0,
             totalAmount: 0,
             subTotalAmount: 0,
@@ -52,9 +52,10 @@ define(['byProductApp'], function (byProductApp) {
         $scope.login = login;
 
 
-        function selectAddress(){
+        function selectAddress() {
             $location.path('/selectAddress/');
         }
+
         /**
          * Set the breadcrum and check cartavailability
          * @return {void}
@@ -68,9 +69,9 @@ define(['byProductApp'], function (byProductApp) {
             //getFedexRateWebService();
         }
 
-        $scope.leftPanelHeight = function(){            
-            var clientHeight = $( window ).height() - 57;
-            $(".by_menuDetailed").css('height', clientHeight+"px");
+        $scope.leftPanelHeight = function () {
+            var clientHeight = $(window).height() - 57;
+            $(".by_menuDetailed").css('height', clientHeight + "px");
         }
 
         $scope.subMenuTabMobileShow = function () {
@@ -167,7 +168,7 @@ define(['byProductApp'], function (byProductApp) {
         function cartAvailabilitySuccess(result) {
             $log.debug('Success in getting cart');
 
-            if(result && result.customer && result.customer.id){
+            if (result && result.customer && result.customer.id) {
                 localStorage.setItem("by_cust_id", result.customer.id);
                 localStorage.setItem("by_cust_cart_id", result.id);
                 customerId = result.customer.id;
@@ -208,43 +209,49 @@ define(['byProductApp'], function (byProductApp) {
                 angular.forEach($scope.uiData.cartItems, function (orderItem) {
                     var params = {};
                     params.id = orderItem.productId;
-                    var getProductSkuInventorySuccess = function(result) {
-                        $log.debug('quantityAvailable:' + result[0].quantityAvailable);
-                        $scope.inventoryType = result[0].inventoryType;
-                        if (result[0].inventoryType === 'CHECK_QUANTITY') {
-                            if (result[0].quantityAvailable) {
-                                $scope.quantityAvailable = parseInt(result[0].quantityAvailable, 10);
-                            } else {
+                    function getProductSkuInventorySuccess(result) {
+                        return (function () {
+                            $log.debug('quantityAvailable:' + result[0].quantityAvailable);
+                            $scope.inventoryType = result[0].inventoryType;
+                            if (result[0].inventoryType === 'CHECK_QUANTITY') {
+                                if (result[0].quantityAvailable) {
+                                    $scope.quantityAvailable = parseInt(result[0].quantityAvailable, 10);
+                                } else {
+                                    $scope.quantityAvailable = 0;
+                                }
+                            }
+                            if (result[0].inventoryType === 'UNAVAILABLE') {
                                 $scope.quantityAvailable = 0;
                             }
-                        }
-                        if (result[0].inventoryType === 'UNAVAILABLE') {
-                            $scope.quantityAvailable = 0;
-                        }
-                        orderItem.quantityAvailable = $scope.quantityAvailable;
-                        orderItem.inventoryType = $scope.inventoryType;
+                            orderItem.quantityAvailable = $scope.quantityAvailable;
+                            orderItem.inventoryType = $scope.inventoryType;
+                        })();
                     }
 
-                    var productDescriptionSuccess = function(result) {
-                        orderItem.primaryMedia = result.primaryMedia;
-                        Utility.checkImages(orderItem);
-                        orderItem.productDeliveryCharges = result.productDeliveryCharges;
-                        var floatValue =
-                            parseFloat(orderItem.orderItemPriceDetails[0].totalAdjustedPrice.amount);
-                        orderItem.orderItemPriceDetails[0].totalAdjustedPrice.amount = floatValue;
-                        var totalProductDeliveryCharges = 0;
-                        angular.forEach($scope.uiData.cartItems, function (item) {
-                            totalProductDeliveryCharges += item.productDeliveryCharges;
-                        });
-                        $scope.uiData.totalProductDeliveryCharges = totalProductDeliveryCharges;
+                    function productDescriptionSuccess(result) {
+                        return (function () {
+                            orderItem.primaryMedia = result.primaryMedia;
+                            Utility.checkImages(orderItem);
+                            orderItem.productDeliveryCharges = result.productDeliveryCharges;
+                            var floatValue =
+                                parseFloat(orderItem.orderItemPriceDetails[0].totalAdjustedPrice.amount);
+                            orderItem.orderItemPriceDetails[0].totalAdjustedPrice.amount = floatValue;
+                            var totalProductDeliveryCharges = 0;
+                            angular.forEach($scope.uiData.cartItems, function (item) {
+                                totalProductDeliveryCharges += item.productDeliveryCharges;
+                            });
+                            $scope.uiData.totalProductDeliveryCharges = totalProductDeliveryCharges;
+                        })();
                     }
 
-                    var getProductSkuSuccess = function (result) {
-                        var params = {};
-                        params.id = result[0].id;
-                        var getProductSkuInventoryPromise = ProductDescriptionService.getProductSkuInventory
-                        (params).then(getProductSkuInventorySuccess, failure);
-                        $scope.promise = getProductSkuInventoryPromise;
+                    function getProductSkuSuccess(result) {
+                        return (function () {
+                            var params = {};
+                            params.id = result[0].id;
+                            var getProductSkuInventoryPromise = ProductDescriptionService.getProductSkuInventory
+                            (params).then(getProductSkuInventorySuccess, failure);
+                            $scope.promise = getProductSkuInventoryPromise;
+                        })();
                     }
 
                     $scope.promise = ProductDescriptionService.getProductDescription(params)
@@ -253,12 +260,8 @@ define(['byProductApp'], function (byProductApp) {
                         .then(getProductSkuSuccess, failure);
 
 
-
-
                 });
             }
-
-
         }
 
         /**
@@ -276,7 +279,7 @@ define(['byProductApp'], function (byProductApp) {
         function createCart(customerId) {
             $log.debug('Create a new Cart');
             var params = {};
-            if (customerId && customerId !== null){
+            if (customerId && customerId !== null) {
                 params.customerId = customerId;
             }
 
@@ -292,7 +295,7 @@ define(['byProductApp'], function (byProductApp) {
          */
         function createCartSuccess(result) {
             $log.debug('Success in creating Cart');
-            if(result && result.customer && result.customer.id){
+            if (result && result.customer && result.customer.id) {
                 localStorage.setItem("by_cust_id", result.customer.id);
                 localStorage.setItem("by_cust_cart_id", result.id);
                 customerId = result.customer.id;
@@ -381,21 +384,22 @@ define(['byProductApp'], function (byProductApp) {
         }
 
 
-        function mergeCartSuccess(){
+        function mergeCartSuccess() {
             CartService.getCartDetail()
                 .then(cartAvailabilitySuccess, cartAvailabilityFailure);
         }
 
 
-        function mergeCartFailure(){
+        function mergeCartFailure() {
             CartService.getCartDetail()
                 .then(cartAvailabilitySuccess, cartAvailabilityFailure);
         }
 
-        function login(){
+        function login() {
             $rootScope.nextLocation = "/selectAddress"
             $location.path('/users/login');
         }
+
         /**
          * To update cart detail when cartDetail chaned in one instance of CartController
          * @param  {object} event
@@ -427,12 +431,12 @@ define(['byProductApp'], function (byProductApp) {
             CartService.getCartDetail(params)
                 .then(cartAvailabilitySuccess, cartAvailabilityFailure);
         });
-        $scope.showCart = function(e){
-        	e.stopPropagation();
-        	$(".badge-open").slideDown();
+        $scope.showCart = function (e) {
+            e.stopPropagation();
+            $(".badge-open").slideDown();
         };
-        $scope.hideCart = function(){
-        	$(".badge-open").slideUp();
+        $scope.hideCart = function () {
+            $(".badge-open").slideUp();
         }
 
 
