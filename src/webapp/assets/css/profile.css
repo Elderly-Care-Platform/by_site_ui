@@ -136,6 +136,25 @@
 .profileRate5 {
 	background-position: -128px 0px;	
 }
+.profileRateBG1 {
+	background:	 rgb(245, 27, 9);
+}
+
+.profileRateBG2 {
+	background:rgb(245, 152, 9);
+}
+
+.profileRateBG3 {
+	background:rgb(245, 215, 9);
+}
+
+.profileRateBG4 {
+	background:rgb(183, 224, 31);
+}
+
+.profileRateBG5 {
+	background:	rgb(31, 224, 33);
+}
 
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 	/* display: none; <- Crashes Chrome on hover */

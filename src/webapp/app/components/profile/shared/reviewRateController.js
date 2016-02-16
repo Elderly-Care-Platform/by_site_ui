@@ -93,13 +93,13 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
 
 
         function selectRating(value){
-            $(".profileRatetext").removeClass("profileRate"+$scope.selectedRating);
+            $(".profileRatetext").removeClass("profileRateBG"+$scope.selectedRating);
             $(".by_btn_submit").removeAttr('disabled');
             value = parseInt(value);
-            $(".by_rating_left .profileRatetext").css('background', '#f2f2f2');
+            $(".by_rating_left .profileRatetext").css('color', '#000');
 
-            $(".profileRate"+value).siblings(".profileRatetext").addClass("profileRate"+value);
-            $(".profileRate"+value).siblings(".profileRatetext").css('background','#fff');
+            $(".profileRate"+value).siblings(".profileRatetext").addClass("profileRateBG"+value);
+            $(".profileRate"+value).siblings(".profileRatetext").css('color','#fff');
             $scope.selectedRating = value;
         }
 
