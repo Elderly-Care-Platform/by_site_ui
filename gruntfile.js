@@ -203,7 +203,7 @@ module.exports = function (grunt) {
                     baseUrl: "src/webapp/",
                     mainConfigFile: "src/webapp/app/shared/main.js",
                     optimize: "none",
-                    out: "dist/app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"
+                    out: "dist/app/final/optimized.js"
                 }
             }
         },
