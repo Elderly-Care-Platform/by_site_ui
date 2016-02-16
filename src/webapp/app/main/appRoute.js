@@ -300,7 +300,7 @@ define([], function () {
                 resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/signup/login/loginController'], function () {
+                        require(['LoginController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
