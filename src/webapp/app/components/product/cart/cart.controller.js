@@ -203,8 +203,9 @@ define(['byProductApp'], function (byProductApp) {
             $rootScope.$broadcast('getCartItemCount', $scope.uiData.totalCartItem);
             $rootScope.totalCartItem = $scope.uiData.totalCartItem;
             $rootScope.$broadcast('uiDataChanged', $scope.uiData);
+            $scope.uiData.cartItems = result.orderItems;
             if (result.orderItems) {
-                angular.forEach(result.orderItems, function (orderItem) {
+                angular.forEach($scope.uiData.cartItems, function (orderItem) {
                     var params = {};
                     params.id = orderItem.productId;
                     $scope.promise = ProductDescriptionService.getProductDescription(params)
@@ -253,7 +254,7 @@ define(['byProductApp'], function (byProductApp) {
                 });
             }
 
-            $scope.uiData.cartItems = result.orderItems;
+
         }
 
         /**
