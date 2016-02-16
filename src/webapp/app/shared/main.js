@@ -19,7 +19,8 @@ require.config({
         'app/shared/footer/contactUsController',
         'app/components/aboutUs/aboutUsController',
         'app/components/search/SearchController',
-        'app/components/error/errorController'
+        'app/components/error/errorController',
+        'app/components/experienceStore/expStoreController'
     ],
 
     paths: {
