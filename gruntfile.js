@@ -181,7 +181,7 @@ module.exports = function (grunt) {
                     {
                         match: /\<\!--\s?@@dev-js\s?starts[\s\S]*@@dev-js\s?ends\s?-->/,
                         replacement: function () {
-                            return '<script type="text/javascript" src="lib/require.js" data-main="app/final/optimized.js"></script>';
+                            return '<script type="text/javascript" src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
                         }
                     }]
                 }
@@ -203,7 +203,7 @@ module.exports = function (grunt) {
                     baseUrl: "src/webapp/",
                     mainConfigFile: "src/webapp/app/shared/main.js",
                     optimize: "none",
-                    out: "dist/app/final/optimized.js"
+                    out: "dist/app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"
                 }
             }
         },
@@ -240,7 +240,7 @@ module.exports = function (grunt) {
 
     // Default task(s).
     //grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
-    grunt.registerTask('default', ['clean:build', 'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:productionHTML', 'replace:version', 'requirejs', 'clean:removeByJs']);
+    grunt.registerTask('default', ['clean:build', 'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:productionHTML', 'requirejs', 'clean:removeByJs', 'replace:version',]);
     grunt.registerTask('build', ['default', 'war']);
     grunt.registerTask('ug', ['clean:build', 'copy', 'uglify']);
 
