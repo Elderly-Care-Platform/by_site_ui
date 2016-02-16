@@ -10,7 +10,7 @@ define(['byApp', 'discussService'],
             var tags = [],
                 queryParams = {
                     sort: "lastModifiedAt",
-                    s: 5
+                    s: 10
                 };
             tags = $.map($scope.selectedMenu.tags, function(value, key) {
                 return value.id;
