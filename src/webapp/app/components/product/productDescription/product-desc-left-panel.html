@@ -79,7 +79,13 @@
             </ul>
         </li>
     </ul>
-
+    <div class="clearfix  margin-top-20"></div>
+    <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['Shop'].children"
+         ng-if="menu.module == menuConfig.modules['discuss'].moduleId">
+        <a href="#!/shop/review/{{menu.id}}/">
+            Questions &amp; Reviews
+        </a>
+    </div>
     <div class="clearfix"></div>
 </div>
 <!--Mobile Menu-->
@@ -124,6 +130,13 @@
                     </ul>
                 </li>
             </ul>
+            <div class="clearfix  margin-top-20"></div>
+            <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['Shop'].children"
+                 ng-if="menu.module == menuConfig.modules['discuss'].moduleId">
+                <a href="#!/shop/review/{{menu.id}}/">
+                    Questions &amp; Reviews
+                </a>
+            </div>
             <div class="clearfix"></div>
         </div>
     </div>
