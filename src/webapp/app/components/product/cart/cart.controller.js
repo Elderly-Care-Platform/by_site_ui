@@ -208,20 +208,7 @@ define(['byProductApp'], function (byProductApp) {
                 angular.forEach($scope.uiData.cartItems, function (orderItem) {
                     var params = {};
                     params.id = orderItem.productId;
-                    $scope.promise = ProductDescriptionService.getProductDescription(params)
-                        .then(productDescriptionSuccess, failure);
-                    $scope.promise = ProductDescriptionService.getProductSku(params)
-                        .then(getProductSkuSuccess, failure);
-
-                    function getProductSkuSuccess(result) {
-                        var params = {};
-                        params.id = result[0].id;
-                        var getProductSkuInventoryPromise = ProductDescriptionService.getProductSkuInventory
-                        (params).then(getProductSkuInventorySuccess, failure);
-                        $scope.promise = getProductSkuInventoryPromise;
-                    }
-
-                    function getProductSkuInventorySuccess(result) {
+                    var getProductSkuInventorySuccess = function(result) {
                         $log.debug('quantityAvailable:' + result[0].quantityAvailable);
                         $scope.inventoryType = result[0].inventoryType;
                         if (result[0].inventoryType === 'CHECK_QUANTITY') {
@@ -238,7 +225,7 @@ define(['byProductApp'], function (byProductApp) {
                         orderItem.inventoryType = $scope.inventoryType;
                     }
 
-                    function productDescriptionSuccess(result) {
+                    var productDescriptionSuccess = function(result) {
                         orderItem.primaryMedia = result.primaryMedia;
                         Utility.checkImages(orderItem);
                         orderItem.productDeliveryCharges = result.productDeliveryCharges;
@@ -251,6 +238,23 @@ define(['byProductApp'], function (byProductApp) {
                         });
                         $scope.uiData.totalProductDeliveryCharges = totalProductDeliveryCharges;
                     }
+
+                    var getProductSkuSuccess = function (result) {
+                        var params = {};
+                        params.id = result[0].id;
+                        var getProductSkuInventoryPromise = ProductDescriptionService.getProductSkuInventory
+                        (params).then(getProductSkuInventorySuccess, failure);
+                        $scope.promise = getProductSkuInventoryPromise;
+                    }
+
+                    $scope.promise = ProductDescriptionService.getProductDescription(params)
+                        .then(productDescriptionSuccess, failure);
+                    $scope.promise = ProductDescriptionService.getProductSku(params)
+                        .then(getProductSkuSuccess, failure);
+
+
+
+
                 });
             }
 
