@@ -4,12 +4,12 @@ BY.config.constants = BY.config.constants || {};
 
 BY.config.constants = {
     //"productHost" : "api/v1/products/beautifulyears/api/v1",
-    //"productImageHost" : "http://www.beautifulyears.com/api/v1/products/images",
-    //"selfHost" : "http://www.beautifulyears.com",
+    //"productImageHost" : "https://www.beautifulyears.com/api/v1/products/images",
+    //"selfHost" : "https://www.beautifulyears.com",
 
     "productHost": "api/v1/products/beautifulyears/api/v1",
-    "productImageHost": "http://dev.beautifulyears.com/BY/api/v1/products/images",
-    "selfHost": "http://dev.beautifulyears.com",
+    "productImageHost": "https://dev.beautifulyears.com/BY/api/v1/products/images",
+    "selfHost": "https://dev.beautifulyears.com",
 
     //  "productHost" : "api/v1/products/beautifulyears/api/v1",
     //  "selfHost" : "http://localhost:8080/ROOT/api/v1/products/images",
