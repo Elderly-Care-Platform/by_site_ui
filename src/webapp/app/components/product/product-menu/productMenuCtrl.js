@@ -36,10 +36,14 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
         $scope.smartScroll = function(){
             var clientHeight = $( window ).height();
              $(".by_subMenuPlus").css('min-height', (clientHeight - 57)+"px");
+             var left = $('.by_subMenuPlus');
+             left.css({
+                 'position': 'relative',
+                 'bottom': 'auto'
+             });
             angular.element($window).bind("scroll", function() {
                 var winTop = $(this).scrollTop(),
                     winBottom = winTop + $(this).height(),
-                    left = $('.by_subMenuPlus'),
                     leftBottom = left.height() + 100;
 
                 //when the user reached the bottom of '#leftShort' set its position to fixed to prevent it from moving on scroll
