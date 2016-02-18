@@ -192,7 +192,7 @@ define(["byApp", "angular"], function (byApp, angular) {
     var discuss = byServices.factory('Discuss', function ($resource) {
         return $resource(BY.config.constants.apiPrefix + 'api/v1/discuss', {}, {
 //        remove:{method: 'DELETE', params: {discussId: '@id'}},
-//        update:{method: 'PUT', params: {discussId: '@id'}},
+       update:{method: 'PUT', params: {discussId: '@id'}},
 //        get: {method: 'GET', params: {discussId: '@id'}}
         })
     });
