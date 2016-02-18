@@ -81,7 +81,7 @@ define(['byProductApp', 'byProdEcomConfig'], function (byProductApp, byProdEcomC
 
         function getOrderHistorySucess(result) {
             $scope.orderListLength = result.totalResult;
-            var allOrderHistory = result.orders;
+            var allOrderHistory = result.orders.reverse();
             $scope.allOrderHistory = $scope.allOrderHistory.concat(angular.copy(allOrderHistory));
             //angular.forEach($scope.allOrderHistory, function (order) {
             //    order.trackingInfo.deliveryDate = new Date(order.trackingInfo.deliveryDate);
