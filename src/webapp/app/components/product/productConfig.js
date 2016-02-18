@@ -1,7 +1,7 @@
 define([], function () {
     function BYProductConfig(byapp) {
         byapp.constant('APPLICATION', {
-            host: BY.config.constants.productHost,
+            host: BY.config.constants.apiPrefix + BY.config.constants.productHost,
             cache: 'byCache',
             paramCache: 'byParamCache',
             pageSize: 100000

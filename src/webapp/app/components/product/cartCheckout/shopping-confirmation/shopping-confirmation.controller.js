@@ -33,9 +33,10 @@ define(['byProductApp'], function (byProductApp) {
             paymentInfo.gatewayType = 'Passthrough';
         }
         $scope.uiData = {
-            oreder: {},
+            order: {},
             noCart: false,
             processingError: false
+
         };
 
         $scope.customerId = null;
@@ -47,7 +48,7 @@ define(['byProductApp'], function (byProductApp) {
         //Functions
         $scope.promise = payment();
         $scope.orderHistory = orderHistory;
-
+        $scope.checkoutSuccessFul = false;
         breadCrumb = {'url': PAGE_URL.cart, 'displayName': 'CART'};
         BreadcrumbService.setBreadCrumb(breadCrumb, 'CONFIRMATION');
 
@@ -179,6 +180,7 @@ define(['byProductApp'], function (byProductApp) {
         function checkoutSuccess(result) {
             $log.debug('Success in checkout' + JSON.stringify(result));
             $scope.uiData.order = result;
+            $scope.checkoutSuccessFul = true;
             $scope.deliveryDate = new Date(result.submittedDate);
             //$scope.trackingNumber = result.trackingInfo.trackingNumber;
             var estiDate = new Date();
@@ -214,6 +216,10 @@ define(['byProductApp'], function (byProductApp) {
 
         function orderHistory() {
             $location.path(PAGE_URL.orderHistory);
+        }
+
+        $scope.printInvoice = function(orderId){
+            ShoppingConfirmationService.printInvoice(orderId);
         }
 
         /*
