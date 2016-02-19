@@ -7,7 +7,7 @@ define([], function () {
 
         $log.debug('Inside ShoppingConfirmationService');
 
-        var confirmationService, urls;
+        var confirmationService, urls, invoicePrintWindow;
         urls = {
             makePayment: urlTemplate(REST_URL.makePayment + '?customerId=:customerId'),
             checkout: urlTemplate(REST_URL.checkout + '?customerId=:customerId')
@@ -39,10 +39,16 @@ define([], function () {
 
 
         function printInvoice(id) {
+            if(invoicePrintWindow){
+                invoicePrintWindow.close();
+
+            }
             $.get(APPLICATION.host+"/cart/checkout/getOrderSummary/"+id, function (data) {
-                var w = window.open('about:blank', 'windowname');
-                w.document.write(data);
-                w.document.close();
+                invoicePrintWindow = window.open('about:blank', id);
+                invoicePrintWindow.document.write(data);
+                invoicePrintWindow.setTimeout(function(){
+                    invoicePrintWindow.print();
+                },2000);
             });
 
         }
