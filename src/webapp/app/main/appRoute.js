@@ -85,19 +85,19 @@ define([], function () {
                 }
             })
 
-            //.when('/edit/communities', {
-            //    templateUrl: 'app/components/editCommunity/editDiscuss.html?versionTimeStamp=%PROJECT_VERSION%',
-            //    controller: 'editDiscussController',
-            //    resolve: {
-            //        load: ['$q', function ($q) {
-            //            var defered = $q.defer();
-            //            require(['app/components/editCommunity/editCommunityController'], function () {
-            //                defered.resolve();
-            //            });
-            //            return defered.promise;
-            //        }]
-            //    }
-            //})
+            .when('/edit/communities', {
+               templateUrl: 'app/components/editCommunity/editDiscuss.html?versionTimeStamp=%PROJECT_VERSION%',
+               controller: 'editDiscussController',
+               resolve: {
+                   load: ['$q', function ($q) {
+                       var defered = $q.defer();
+                       require(['app/components/editCommunity/editDiscussController'], function () {
+                           defered.resolve();
+                       });
+                       return defered.promise;
+                   }]
+               }
+            })
 
             .when('/announcements/:discussTitle/', {
                 templateUrl: 'app/components/announcements/announcementContainer.html?versionTimeStamp=%PROJECT_VERSION%',

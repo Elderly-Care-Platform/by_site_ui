@@ -58,7 +58,7 @@
         <!--  discuss like/share/comment/answer code start -->
         <div class="by_discussDeatil_cardShare" style="border-bottom:1px solid #ccc !important;">
             <ul class="by_discussDeatil_cardShareList col-md-12">
-                <li ng-click="editCommunity();" ng-if="detailResponse.discuss.editableByUser == true">                
+                <li ng-click="editCommunity();" ng-if="detailResponse.discuss.editableByUser == true && detailResponse.discuss.discussType == 'Q'">                
                     <input style="font-size: 12px; padding: 0px 9px;  line-height: 17px;
     margin-top: -11px; border-radius: 2px !important; " type="submit" value="Edit" class="btn btn-sm btn-success by_btn_submit by-editor-submit-btn " />
                 </li>

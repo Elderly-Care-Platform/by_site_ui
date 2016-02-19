@@ -67,7 +67,7 @@
     }
 </script>
 
-<div ng-controller="ng-controller="editPostDiscussController"" class="by_editor_wrap">
+<div ng-controller="editDiscussController" class="by_editor_wrap">
     <!--Upload Video Modal popup-->
     <div id="editorVideoModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -139,7 +139,7 @@
         <div class="col-md-12 no-padding register-page">
             <input type="text" class="username-textbox textbox "
                    placeholder="Please enter a title of your post" name="username"
-                   ng-model="editor.subject" id="shareInputFeild">
+                   ng-model="discuss.title" id="shareInputFeild">
         </div>
         <div class="clearfix"></div>
         <div class="by-editor-view-buttons">
@@ -154,7 +154,7 @@
                     </label>
                 </form>
                 <input type="text" id="articleTitleImage"
-                       ng-model="editor.articlePhotoFilename" value=""
+                       ng-model="discuss.articlePhotoFilename" value=""
                        style="display: none"/>
             </div>
             <div class="col-md-4 col-xs-4 no-padding  register-page by_editor_post_divider">
@@ -221,7 +221,3 @@
         <div class="clearfix"></div>
     </div>
 </div>
-
-<script type="text/javascript">
-    var tinyEditor = BY.byEditor.addEditor({"editorTextArea":"article_textArea"});
-</script>
