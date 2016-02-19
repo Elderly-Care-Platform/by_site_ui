@@ -1,5 +1,12 @@
 <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
 <div>
-	<div class="contentPanel" ng-include="'app/components/editCommunity/editCommunityEditor.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
+	<div class="contentPanel">
+		<div class="by_editorButtonWrap by_editorButtonWrap_thumb col-md-12 margin-bottom-20">
+			<div ng-if="discuss.discussType == 'Q'"
+			    ng-include="'app/components/editCommunity/editQuestion.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
+			<div ng-if="discuss.discussType == 'P'"
+			    ng-include="'app/components/editCommunity/editPost.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
+		</div>  
+	</div>
 	<div class="clearfix"></div>
 </div>

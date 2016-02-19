@@ -1,6 +1,6 @@
 define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
     function editDiscussController($scope, $rootScope, DiscussDetail,
-        $http, $location, $route, $routeParams, Discuss, urlFactoryFilter) {
+        $http, $location, $route, $routeParams, Discuss, urlFactoryFilter, $sce) {
         var discussId = $routeParams.id;
         var initialize = init(); 
         $scope.errorMsg  = "";
@@ -19,6 +19,9 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
             }
             if($scope.discuss.discussType == 'P'){
                 editPostAll();
+            }
+            if($scope.discuss.linkInfo != null){
+                $scope.showLinkView = true;
             }
             $("#preloader").hide();
         },
@@ -66,7 +69,9 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
             $scope.discuss.username = localStorage.getItem("USER_NAME");
 
             //article photo
-            if($scope.discuss.articlePhotoFilename){
+            if($scope.discuss.articlePhotoFilename && $scope.discuss.articlePhotoFilename.original){
+                $scope.discuss.articlePhotoFilename = $scope.discuss.articlePhotoFilename;
+            } else if($scope.discuss.articlePhotoFilename && !$scope.discuss.articlePhotoFilename.original){
                 $scope.discuss.articlePhotoFilename = JSON.parse($scope.discuss.articlePhotoFilename);
             } else{
                 if($("#articleTitleImage") && $("#articleTitleImage").val()){
@@ -76,7 +81,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
 
             if($scope.showLinkView){
                 $scope.discuss.contentType = 2;
-                $scope.discuss.linkInfo = $scope.linkInfo;
+                $scope.discuss.linkInfo = $scope.discuss.linkInfo;
             }else{
                 $scope.discuss.contentType = 0;
             }
@@ -84,7 +89,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
 
         function validateContent(){
             if($scope.showLinkView){
-                if(!$scope.linkInfo){
+                if(!$scope.discuss.linkInfo){
                     $scope.errorMsg = "Invalid shared info";
                 }else{
                     $scope.errorMsg = "";
@@ -112,6 +117,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
             $scope.showLinkView = false;
             $scope.discuss.articlePhotoFilename = "";
             $(".by_uploading_image").hide();
+            $(".by-editor-view-buttons").removeClass('hide');
             $(".by-editor-view-buttons").show();
         };
 
@@ -127,15 +133,15 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
                         $scope.linkImages = [];
                         $scope.linkImagesIdx = 0;
 
-                        $scope.linkInfo = response.data.data;
-                        if($scope.linkInfo.mainImage){
-                            $scope.linkImages.push($scope.linkInfo.mainImage);
+                        $scope.discuss.linkInfo = response.data.data;
+                        if($scope.discuss.linkInfo.mainImage){
+                            $scope.linkImages.push($scope.discuss.linkInfo.mainImage);
                         }
-                        if($scope.linkInfo.otherImages && $scope.linkInfo.otherImages.length > 0){
-                            $scope.linkImages = $scope.linkImages.concat($scope.linkInfo.otherImages);
+                        if($scope.discuss.linkInfo.otherImages && $scope.discuss.linkInfo.otherImages.length > 0){
+                            $scope.linkImages = $scope.linkImages.concat($scope.discuss.linkInfo.otherImages);
                         }
                         if($scope.linkImages.length > 1){
-                            $scope.linkInfo.mainImage = $scope.linkImages[$scope.linkImagesIdx];
+                            $scope.discuss.linkInfo.mainImage = $scope.linkImages[$scope.linkImagesIdx];
                         }
 
                         $scope.linkInfoLoading = false;
@@ -154,13 +160,17 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
 
         $scope.selectPrevLinkImage = function(){
             $scope.linkImagesIdx--;
-            $scope.linkInfo.mainImage = $scope.linkImages[$scope.linkImagesIdx];
+            $scope.discuss.linkInfo.mainImage = $scope.linkImages[$scope.linkImagesIdx];
         }
 
         $scope.selectNextLinkImage = function(){
             $scope.linkImagesIdx++;
-            $scope.linkInfo.mainImage = $scope.linkImages[$scope.linkImagesIdx];
+            $scope.discuss.linkInfo.mainImage = $scope.linkImages[$scope.linkImagesIdx];
         }
+
+        $scope.trustAsResourceUrl = function (url) {
+            return $sce.trustAsResourceUrl(url);
+        };
 
         function editPostAll(){           
 
@@ -206,7 +216,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
 
     }
     editDiscussController.$inject = ['$scope', '$rootScope', 'DiscussDetail', 
-        '$http', '$location', '$route', '$routeParams', 'Discuss', 'UrlFactoryFilter'
+        '$http', '$location', '$route', '$routeParams', 'Discuss', 'UrlFactoryFilter', '$sce'
     ];
     byApp.registerController('editDiscussController', editDiscussController);
 
