@@ -53,7 +53,6 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
 
             $scope.postContent = function(discussType) {
                 $scope.errorMsg = "";
-                $(".by_btn_submit").prop("disabled", true);
                 $scope.discuss.discussType = discussType;
                 if (tinyMCE.activeEditor) {
                     $scope.discuss.text = tinyMCE.activeEditor.getContent();
@@ -115,7 +114,8 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
 
         $scope.resetEditorView = function(){
             $scope.showLinkView = false;
-            $scope.discuss.articlePhotoFilename = "";
+            $scope.discuss.articlePhotoFilename = null;
+            $scope.discuss.linkInfo = null;
             $(".by_uploading_image").hide();
             $(".by-editor-view-buttons").removeClass('hide');
             $(".by-editor-view-buttons").show();
@@ -175,7 +175,6 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
         function editPostAll(){           
 
             $scope.postContent = function(discussType) {
-                $(".by_btn_submit").prop("disabled", true);
                 $scope.discuss.discussType = discussType;
                 if(tinyMCE.activeEditor){
                     $scope.discuss.text         = tinyMCE.activeEditor.getContent();
