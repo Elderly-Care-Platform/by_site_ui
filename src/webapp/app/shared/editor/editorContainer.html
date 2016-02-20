@@ -5,7 +5,8 @@
 
         <div class="clearfix"></div>
         <div class="by_editorButtonText QuestionhidePanel col-md-12" ng-click="showEditorPage($event,'Question')">
-            Type any question about {{selectedMenu.displayMenuName}}
+            Type any question about 
+            <span ng-if="selectedMenu.id == '564b04983b82f7f39e132749'">services & facilities</span><span ng-if="selectedMenu.id == '564b33583b82f7f39e13274a'">products</span>
         </div>
         <div class="QuestionshowPanel"
              ng-include="'app/shared/editor/askEditor.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
@@ -17,7 +18,8 @@
 
         <div class="clearfix"></div>
         <div class="by_editorButtonText ArticlehidePanel col-md-12" ng-click="showEditorPage($event,'Article')">
-            Post your tips and stories about {{selectedMenu.displayMenuName}}
+            Post your tips and stories about 
+            <span ng-if="selectedMenu.id == '564b04983b82f7f39e132749'">services & facilities</span><span ng-if="selectedMenu.id == '564b33583b82f7f39e13274a'">products</span>
         </div>
 
         <div class="ArticleshowPanel"
