@@ -13,9 +13,9 @@ define([], function () {
                 }
             })
 
-            /* expereince stroe */
+            /* experience stroe */
 
-            .when('/expereince-center', {
+            .when('/experience-center', {
                 templateUrl: 'app/components/experienceStore/experienceStore.html', controller: 'expStoreCtrl', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
