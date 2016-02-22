@@ -10,6 +10,8 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
         $scope.linkImagesIdx                    = 0;
         $scope.categoryLists                    = null;
 
+
+
         
 
         function setQuestionText(){
@@ -26,7 +28,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
             }
         }
 
-        function init(){
+        function init(){           
             DiscussDetail.get({
             discussId: discussId
             }, function(discussDetail, header) {
@@ -45,17 +47,19 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
             function(error) {
                 $("#preloader").hide();
                 console.log("error");
-            });           
-            
+            });
         }
 
         $scope.initializeEditor = function() {
-            if($scope.discuss.discussType == 'P'){
-                var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "article_textArea"}, setPostText);
-            }
-            if($scope.discuss.discussType == 'Q'){
-                var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "question_textArea"}, setQuestionText);
-            }
+            $scope.$watch($scope.discuss, function(newValue, oldValue) {
+                if($scope.discuss.discussType == 'P'){
+                    var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "article_textArea"}, setPostText);
+                }
+                if($scope.discuss.discussType == 'Q'){
+                    var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "question_textArea"}, setQuestionText);
+                }   
+            });
+               
         }
 
         function editQuestionAll(){       
@@ -104,7 +108,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
                 }
             } else if($scope.discuss.articlePhotoFilename){
                 $scope.errorMsg = "";
-            } else if($scope.discuss.title.trim().length <= 0 && $scope.discuss.discussType==="P"){
+            } else if($scope.discuss.title.trim().length <= 0){
                 $scope.errorMsg = "Please select title";
             } else if($scope.discuss.text.trim().length <= 0){
                 $scope.errorMsg = "Please add more details";

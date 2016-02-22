@@ -67,7 +67,7 @@
     }
 </script>
 
-<div ng-init="initializeEditor();" class="by_editor_wrap">
+<div  class="by_editor_wrap">
     <!--Upload Video Modal popup-->
     <div id="editorVideoModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -89,7 +89,7 @@
 
                     <div class="clearfix" style="height: 10px;"></div>
 					<textarea rows="" cols="" class="by_editorModalTextArea"
-                              ng-model="sharedLinkUrl"></textarea>
+                              ng-model="sharedLinkUrl" ></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="submit"
@@ -200,7 +200,7 @@
 
 
         <div class="byEditorBg">
-            <div class="col-md-12 no-padding margin-bottom-35 byEditor">
+            <div class="col-md-12 no-padding margin-bottom-35 byEditor" ng-init="initializeEditor();">
                 <textarea id="article_textArea" class="textbox about-dependent" rows="3"></textarea>
             </div>
             <div class="clearfix"></div>
