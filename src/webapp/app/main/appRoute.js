@@ -86,12 +86,12 @@ define([], function () {
             })
 
             .when('/edit/communities', {
-               templateUrl: 'app/components/editCommunity/editDiscuss.html?versionTimeStamp=%PROJECT_VERSION%',
+               templateUrl: 'app/components/editDiscuss/editDiscuss.html?versionTimeStamp=%PROJECT_VERSION%',
                controller: 'editDiscussController',
                resolve: {
                    load: ['$q', function ($q) {
                        var defered = $q.defer();
-                       require(['app/components/editCommunity/editDiscussController'], function () {
+                       require(['app/components/editDiscuss/editDiscussController'], function () {
                            defered.resolve();
                        });
                        return defered.promise;

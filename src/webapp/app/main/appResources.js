@@ -106,6 +106,13 @@ define(["byApp", "angular"], function (byApp, angular) {
         });
     });
 
+    // edit comment
+    var editReply = byServices.factory('EditReply', function ($resource) {
+        return $resource(BY.config.constants.apiPrefix + 'api/v1/discussDetail/editReply/', {}, {
+            update: {method: 'PUT', isArray: false}
+        });
+    });
+
 //discuss Likes api
     var discussLike = byServices.factory('DiscussLike', function ($resource) {
         return $resource(BY.config.constants.apiPrefix + 'api/v1/discussLike', {}, {
