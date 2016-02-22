@@ -9,7 +9,7 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
         $scope.userCredential       = {'email':'', 'pwd':''};
         $scope.likeActionCredential = {'email':'', 'pwd':''};
         $scope.discussLikeObj       = {};
-        $scope.editCommentVar = false;
+        $scope.isNewComment = true;
 
 
         $scope.trustForcefully = function (html) {
@@ -18,7 +18,7 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
 
         $scope.createNewComment = function (editorId) {
             $scope.disposeComment(editorId);
-            $scope.editCommentVar = false;
+            $scope.isNewComment = true;
             $scope.userSessionType  = UserValidationFilter.getUserSessionType();
             if (!$scope.showEditor){
                 $scope.initCommentEditor(editorId);
@@ -37,7 +37,7 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
 
         $scope.editComment  = function (editor) {
             $scope.disposeComment(editor.id);
-            $scope.editCommentVar = true;
+            $scope.isNewComment = false;
             if (!$scope.showEditor){
                 $scope.showEditor = true;
                 BY.byEditor.addEditor({"editorTextArea": editor.id, "commentEditor": true, "autoFocus": true});
@@ -50,7 +50,6 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
                 commentEdit.id = editor.id,
                 commentEdit.text = tinyMCE.activeEditor.getContent();;
             commentEdit.$update( function(commentEdit, header) {
-                $scope.editReply = false;
                 $(".editCommentEditor").hide();
                 broadCastData.update(commentEdit.data);
                 $("#preloader").hide();

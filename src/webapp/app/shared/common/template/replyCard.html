@@ -76,11 +76,11 @@
             </div>
             
             <div class="col-md-6" ng-class="{'full-width': userSessionType}">
-                <button class="inner-comment-submit btn btn-sm btn-success by_btn_submit by-editor-submit-btn" ng-if="editCommentVar ==  false"
+                <button class="inner-comment-submit btn btn-sm btn-success by_btn_submit by-editor-submit-btn" ng-if="isNewComment ==  true"
                 type="submit" disabled ng-click="postComment(reply.discussId, reply.id)">
                 SUBMIT
             </button>
-            <button ng-if="editCommentVar == true" class="inner-comment-submit btn btn-sm btn-success by_btn_submit by-editor-submit-btn"
+            <button ng-if="isNewComment == false" class="inner-comment-submit btn btn-sm btn-success by_btn_submit by-editor-submit-btn"
                 type="submit" disabled ng-click="postEditComment(reply)">
                 SUBMIT
             </button>
