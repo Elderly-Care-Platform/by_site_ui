@@ -13,6 +13,37 @@
 </div>-->
 
 <!--=== Content Part ===-->
+
+
+<!--  banner -->
+<div class="by_productList_banner" ng-controller="ProductMenuCtrl" ng-if="$root.windowWidth > 720">
+  <a href="#!/experience-center">
+    <img src="assets/img/product/Product_HomePage_banner.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Experience Store" />
+  </a>
+</div>
+
+<div ng-if="$root.windowWidth < 721">
+  <div class="by_product_home_mobile">
+    <a href="#!/experience-center">
+      <img src="assets/img/product/Product_HomePage_banner_m.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Experience Store" />
+      <div class="by_product_home_expStore">
+          <div class="by_product_home_expStore_head">
+              Visit our Experience Store
+          </div>
+          <div class="by_product_home_expStore_text">
+              First in Bangalore
+          </div>
+          <a href="#!/experience-center">
+              <div class="by_product_home_expStore_button">
+                  More...
+              </div>
+          </a>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!--=== Content Part ===-->
 <div>
     <!--Product Menu-->
     <div class="leftPanel" ng-include="'app/components/product/product-menu/productMenu.html'"
