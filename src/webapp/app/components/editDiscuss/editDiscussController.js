@@ -5,7 +5,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
         var initialize = init(); 
         $scope.errorMsg  = "";
         $scope.showLinkView                     = false;
-        $scope.sharedLinkUrl                    = "";
+        $scope.sharedLinkInfo                   = {url:''};
         $scope.linkImages                       = [];
         $scope.linkImagesIdx                    = 0;
         $scope.categoryLists                    = null;
@@ -34,10 +34,10 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
             }, function(discussDetail, header) {
                 $scope.discuss = discussDetail.data.discuss;
                 if($scope.discuss.discussType == 'Q'){
-                    editQuestionAll();
+                    editQuestion();
                 }
                 if($scope.discuss.discussType == 'P'){
-                    editPostAll();
+                    editPost();
                 }
                 if($scope.discuss.linkInfo != null){
                     $scope.showLinkView = true;
@@ -62,7 +62,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
                
         }
 
-        function editQuestionAll(){       
+        function editQuestion(){       
 
             $scope.postContent = function(discussType) {
                 $scope.errorMsg = "";
@@ -74,6 +74,23 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
             };
             
         }
+
+        function editPost(){           
+
+            $scope.postContent = function(discussType) {
+                $scope.discuss.discussType = discussType;
+                if(tinyMCE.activeEditor){
+                    $scope.discuss.text         = tinyMCE.activeEditor.getContent();
+                }
+
+                $scope.discuss.title        = $scope.discuss.title;
+
+                formatContent();
+                validateContent();
+                $scope.submitContent();
+            };
+           
+        }  
 
         function formatContent(){
             //putting the userId to discuss being created
@@ -136,12 +153,12 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
 
 
         $scope.postLink = function(){
-            if($scope.sharedLinkUrl && $scope.sharedLinkUrl.trim().length > 0){
+            if($scope.sharedLinkInfo.url && $scope.sharedLinkInfo.url.trim().length > 0){
                 $(".by-editor-view-buttons").hide();
                 //$(".by_share_btn_submit").prop("disabled", true);
                 $scope.showLinkView = true;
                 $scope.linkInfoLoading = true;
-                $http.get(BY.config.constants.apiPrefix + 'api/v1/discuss/getLinkInfo?url='+encodeURIComponent($scope.sharedLinkUrl)).
+                $http.get(BY.config.constants.apiPrefix + 'api/v1/discuss/getLinkInfo?url='+encodeURIComponent($scope.sharedLinkInfo.url)).
                     then(function(response) {
                         $scope.linkImages = [];
                         $scope.linkImagesIdx = 0;
@@ -158,12 +175,12 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
                         }
 
                         $scope.linkInfoLoading = false;
-                        $scope.sharedLinkUrl = "";
+                        $scope.sharedLinkInfo = {url:''};
                         $(".by_btn_submit").prop("disabled", false);
                     }, function(error) {
                         $scope.linkInfoLoading = false;
                         console.log(error);
-                        $scope.sharedLinkUrl = "";
+                        $scope.sharedLinkInfo  = {url:''};
                         $(".by_btn_submit").prop("disabled", false);
                         // called asynchronously if an error occurs
                         // or server returns response with an error status.
@@ -185,22 +202,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
             return $sce.trustAsResourceUrl(url);
         };
 
-        function editPostAll(){           
-
-            $scope.postContent = function(discussType) {
-                $scope.discuss.discussType = discussType;
-                if(tinyMCE.activeEditor){
-                    $scope.discuss.text         = tinyMCE.activeEditor.getContent();
-                }
-
-                $scope.discuss.title        = $scope.discuss.title;
-
-                formatContent();
-                validateContent();
-                $scope.submitContent();
-            };
-           
-        }    
+          
 
         $scope.submitContent = function() {
             if($scope.errorMsg == ""){
