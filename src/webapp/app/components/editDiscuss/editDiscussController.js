@@ -10,25 +10,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
         $scope.linkImagesIdx                    = 0;
         $scope.categoryLists                    = null;
 
-        DiscussDetail.get({
-            discussId: discussId
-        }, function(discussDetail, header) {
-            $scope.discuss = discussDetail.data.discuss;
-            if($scope.discuss.discussType == 'Q'){
-                editQuestionAll();
-            }
-            if($scope.discuss.discussType == 'P'){
-                editPostAll();
-            }
-            if($scope.discuss.linkInfo != null){
-                $scope.showLinkView = true;
-            }
-            $("#preloader").hide();
-        },
-        function(error) {
-            $("#preloader").hide();
-            console.log("error");
-        });
+        
 
         function setQuestionText(){
             if(tinymce.get("question_textArea") && $scope.discuss.text){
@@ -45,8 +27,35 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
         }
 
         function init(){
-            var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "question_textArea"}, setQuestionText);
-            var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "article_textArea"}, setPostText);
+            DiscussDetail.get({
+            discussId: discussId
+            }, function(discussDetail, header) {
+                $scope.discuss = discussDetail.data.discuss;
+                if($scope.discuss.discussType == 'Q'){
+                    editQuestionAll();
+                }
+                if($scope.discuss.discussType == 'P'){
+                    editPostAll();
+                }
+                if($scope.discuss.linkInfo != null){
+                    $scope.showLinkView = true;
+                }
+                $("#preloader").hide();
+            },
+            function(error) {
+                $("#preloader").hide();
+                console.log("error");
+            });           
+            
+        }
+
+        $scope.initializeEditor = function() {
+            if($scope.discuss.discussType == 'P'){
+                var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "article_textArea"}, setPostText);
+            }
+            if($scope.discuss.discussType == 'Q'){
+                var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "question_textArea"}, setQuestionText);
+            }
         }
 
         function editQuestionAll(){       
