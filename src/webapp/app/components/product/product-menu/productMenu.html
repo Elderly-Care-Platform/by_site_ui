@@ -18,18 +18,18 @@
             <a ng-if="menu.children.length === 0" class="by_treeMenuText"
                ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(menu.displayMenuName)}}/{{menu.id}}"
                style="display: inline-block; width:100%;"
-               ng-click="smartScroll();"
+               
                ng-class="{'by_treeMenuTextActive': (menu.id == selectedParent.id) || (menu.id == selectedMenuId)}">
                 {{menu.displayMenuName}}
             </a>
 
             <a ng-if="menu.children.length > 0" class="by_treeMenuText tree-toggler nav-header" ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(menu.displayMenuName)}}/{{menu.id}}"
-               ng-click="toggleMenu($event);smartScroll();" style="display: inline-block; width:calc(100% - 40px);"
+               ng-click="toggleMenu($event);" style="display: inline-block; width:calc(100% - 40px);"
                ng-class="{'by_treeMenuTextActive': (menu.id == selectedParent.id) || (menu.id == selectedMenuId)}">
                 {{menu.displayMenuName}}
             </a>
             <a ng-if="menu.children.length > 0" class="by_treeMenuIcon tree-toggler nav-header"
-               ng-click="toggleMenu($event);smartScroll();"
+               ng-click="toggleMenu($event);"
                style="display: inline-block; width:30px;"></a>
 
             <ul ng-if="menu.children.length > 0" class="nav nav-list tree by_treeSubMenu_Wrapper"
@@ -37,7 +37,7 @@
                 <li ng-repeat="submenu1 in menu.children" id="{{submenu1.id}}" ng-init="expandParent(submenu1.id)">
                     <a class="by_treeSubMenu"
                        ng-class="{'by_treeSubMenu_active': submenu1.id == selectedMenuId}"
-                       ng-click="smartScroll();"
+
                        ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(submenu1.displayMenuName)}}/{{submenu1.id}}">{{submenu1.name}}</a>
                 </li>
             </ul>
