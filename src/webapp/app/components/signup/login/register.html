@@ -3,7 +3,7 @@
 
     <div class="by_registerLogin_left" ng-class="{'by_registerLogin_left_full': uniqueLoginId.id}">
         <form class="" name="userForm" ng-submit="createNewUser(userForm.$valid)" novalidate>
-            <div class="by_registerLogin_head">Register</div>
+            <div class="by_registerLogin_head"><!--Register-->&nbsp;</div>
 
             <div class=" col-md-12 no-padding margin-bottom-10 register-page">
                 <input type="text" class="username-textbox textbox text-center"
@@ -64,18 +64,19 @@
             </div>
             <div class="clearfix" style="height: 20px;"></div>
             <span class="lock-icon"><img src="assets/img/icons/lock.png" width="8" height="11"></span>
-            <span class="by_registerLogin_center2">BeautifulYears do not <br/>share your information</span>
+            <span class="by_registerLogin_center2">BeautifulYears do not share your information</span>
+            <div class="by_registerLogin_center by-register-button" style="margin-top:18px;">
+                Already a BeautifulYears member?
+                <button ng-click="byLoginPage();" class="btn btn-success pull-right register-btn by_btn_submit margin-top-10"
+                        style="width:100%; border-radius:3px !important;">LOGIN
+                </button>
+            </div>
         </div>
 
-        <div class="or-divider desktopSite"></div>
     </xyz>
 
     <div class="clearfix"></div>
-    <div class="by_registerLogin_divider"></div>
-    <div class="by_registerLogin_center">
-        Already a BeautifulYears member?
-        <div ng-click="byLoginPage();">Login</div>
-    </div>
+    
 </div>
 
 

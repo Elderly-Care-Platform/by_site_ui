@@ -378,8 +378,8 @@ button.login-btn {
 .by_registerLogin
 {
 	max-width: 640px;
-	height: 420px;
-	padding: 50px 20px 30px;
+	height: 330px;
+	padding: 10px 20px 10px;
 	background-color: #fff;
 	border-radius: 3px !important;
 	margin-left: auto;
@@ -402,8 +402,8 @@ button.login-btn {
 {
 	float: left;	
 	width: calc(50% - 47px);
-	text-align: center;
 	padding-top: 40px;
+	line-height: 19px;
 }
 .by_registerLogin .or-divider
 {
@@ -436,7 +436,6 @@ button.login-btn {
 .by_registerLogin_center
 {
 	color: #000; 
-	text-align: center;
 }
 .by_registerLogin_center div
 {
@@ -444,7 +443,7 @@ button.login-btn {
 	color: #449d44;
 	cursor: pointer;
 	display: inline-block;
-	font-size: 22px;
+	font-size: 16px;
     line-height: 29px;
     font-weight: bold;
 }
