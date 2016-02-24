@@ -33,8 +33,17 @@ define(['byApp', 'byUtil', 'reviewRateController', 'discussLikeController', 'sha
 
 
             function updateMetaTag() {
-                var metaTagParams = {
-                    title: $scope.branchProfile.basicProfileInfo.firstName ? $scope.branchProfile.basicProfileInfo.firstName : "Institution Profile - Beautiful Years",
+                var title = "Institution Profile - Beautiful Years", metaTagParams;
+                if ($scope.branchProfile.basicProfileInfo.firstName) {
+                    title = $scope.branchProfile.basicProfileInfo.firstName;
+                } else if ($scope.$parent.userName) {
+                    title = $scope.$parent.userName;
+                } else {
+                    title = "User - Beautiful Years"
+                }
+
+                metaTagParams = {
+                    title: title,
                     imageUrl: $scope.branchProfile.basicProfileInfo.profileImage ? $scope.branchProfile.basicProfileInfo.profileImage.original : "",
                     description: $scope.branchProfile.basicProfileInfo.description ? $scope.branchProfile.basicProfileInfo.description : "",
                     keywords: ['senior care services', 'old age services', 'elder care services']

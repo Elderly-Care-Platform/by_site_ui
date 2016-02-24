@@ -1,5 +1,6 @@
 <span ng-if="pageNotFound">Sorry this page is not available</span>
-<div ng-if="detailResponse.discuss">
+<div ng-if="detailResponse.discuss">    
+    <div class="clearfix"></div>
     <div class="by_discussDeatil_card">
         <div class="col-md-12 margin-top-10" ng-if="detailResponse.discuss.promotion == false">
             <ul class="by_discussDeatil_cardList" ng-init="getLeafCategories(detailResponse.discuss)">
@@ -57,6 +58,11 @@
         <!--  discuss like/share/comment/answer code start -->
         <div class="by_discussDeatil_cardShare" style="border-bottom:1px solid #ccc !important;">
             <ul class="by_discussDeatil_cardShareList col-md-12">
+                <li ng-click="editCommunity();" ng-if="detailResponse.discuss.editableByUser == true">                
+                    <!--<input style="font-size: 12px; padding: 0px 9px;  line-height: 17px;
+    margin-top: -11px; border-radius: 2px !important; " type="submit" value="Edit" class="btn btn-sm btn-success by_btn_submit by-editor-submit-btn " />-->
+                    <i class="fa fa-pencil-square-o" style="font-size:18px;"></i>
+                </li>
                 <li ng-if="detailResponse.discuss.discussType == 'P'">
                     <a ng-click="createNewComment(detailResponse.discuss.id)">
                     <i class="rounded-x icon-speech ng-scope" title="Comment"></i>

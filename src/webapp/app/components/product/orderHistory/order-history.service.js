@@ -4,7 +4,7 @@ define(["byProductResources"], function (byProductResources) {
                                  SERVERURL,
                                  CachedRequestHandler, $http, APPLICATION) {
 
-        var orderHistoryService, urls;
+        var orderHistoryService, urls, invoicePrintWindow;
 
         urls = {
             forOrderDetail: urlTemplate(REST_URL.getOrder + '/:orderId'),
@@ -50,10 +50,16 @@ define(["byProductResources"], function (byProductResources) {
         }
 
         function getOrderSummary(id) {
+            if(invoicePrintWindow){
+                invoicePrintWindow.close();
+
+            }
             $.get(APPLICATION.host+"/cart/checkout/getOrderSummary/"+id, function (data) {
-                var w = window.open('about:blank', 'windowname');
-                w.document.write(data);
-                w.document.close();
+                invoicePrintWindow = window.open('about:blank', id);
+                invoicePrintWindow.document.write(data);
+                invoicePrintWindow.setTimeout(function(){
+                    invoicePrintWindow.print();
+                },2000);
             });
 
         }

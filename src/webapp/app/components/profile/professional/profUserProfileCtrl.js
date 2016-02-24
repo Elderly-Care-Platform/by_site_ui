@@ -13,6 +13,10 @@ define(['byApp', 'byUtil', 'reviewRateController', 'discussLikeController', 'sha
                 if ($scope.individualProfile.individualInfo.lastName) {
                     title += " " + $scope.individualProfile.individualInfo.lastName;
                 }
+            } else if ($scope.$parent.userName) {
+                title = $scope.$parent.userName;
+            } else {
+                title = "User - Beautiful Years"
             }
 
             var metaTagParams = {

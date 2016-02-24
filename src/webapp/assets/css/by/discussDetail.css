@@ -139,6 +139,7 @@
     display: inline-block;
     margin-left: 10px;
     position: relative;
+    margin-top: 5px;
 }
 
 .by_discussDeatil_cardShareList li i, .by_discussDeatil_cardShareList li span, .by_discussDeatil_cardShareList li div {
