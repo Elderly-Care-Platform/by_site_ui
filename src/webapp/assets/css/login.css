@@ -415,6 +415,7 @@ button.login-btn {
     width: 1px;
     height: 214px;
     background: #ccc;
+    background-image: none;
 }
 .by_registerLogin_head
 {
@@ -466,12 +467,12 @@ button.login-btn {
 }
 @media screen and (max-width: 720px){
 	.by_registerLogin .or-divider {
-		background: transparent
-			url('../img/icons/or-v.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
+		background: transparent no-repeat center;
 		width: 100%;
 		height: 42px;
 		margin: 10px auto 10px auto !important;
 		float: left;
+		background-image: url('../img/icons/or-v.png?versionTimeStamp=%PROJECT_VERSION%');
 	}
 	.by_registerLogin_left, .by_registerLogin_right
 	{
