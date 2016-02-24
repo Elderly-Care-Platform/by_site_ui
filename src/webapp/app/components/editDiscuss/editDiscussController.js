@@ -117,6 +117,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
         };
 
         function validateContent(){
+            $(".by-editor-submit-btn").prop("disabled", true);
             if($scope.showLinkView){
                 if(!$scope.discuss.linkInfo){
                     $scope.errorMsg = "Invalid shared info";
@@ -131,6 +132,7 @@ define(['byApp', 'byUtil','urlFactory'], function(byApp, byUtil, urlFactory) {
                 $scope.errorMsg = "Please add more details";
             } else{
                 $scope.errorMsg = "";
+                $(".by-editor-submit-btn").prop("disabled", false);
             }
 
 
