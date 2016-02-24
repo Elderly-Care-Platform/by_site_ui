@@ -148,9 +148,9 @@
     margin-left: auto;
     margin-right: auto;
     height: 1px;
-    background: #000;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    background: #ccc;
+    margin-top: 12px;
+    margin-bottom: 8px;
 }
 @media screen and (max-width: 980px){
     .rateReviewDivider
@@ -159,6 +159,38 @@
     }
 }
 .editCommentEditor
+{
+    display: none;
+}
+.by-rateReviewRight
+{
+    float: right;
+    margin-top: -27px;
+}
+.by-rateReviewLeft
+{
+    float: left;
+}
+@media screen and (max-width: 990px){
+   .by-rateReviewRight
+{
+    float: none;
+    margin-top: 0px;
+    width: 100%;
+} 
+.by-rateReviewLeft
+{
+    float: none;
+    width: 100%;
+    margin-top: 65px;
+}
+}
+.by_rateReviewRight_full
+{
+    width: 100% !important;
+    margin-top: 0px;
+}
+#reviewSubmit
 {
     display: none;
 }

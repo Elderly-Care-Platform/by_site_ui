@@ -231,6 +231,7 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
         function hideLoginRegister() {
             $(".by_rateRegisterWrap").hide();
             $(".by_rateLoginWrap").hide();
+            $("#reviewSubmit").show();
         }
 
 
