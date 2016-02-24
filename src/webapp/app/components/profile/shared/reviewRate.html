@@ -146,7 +146,7 @@
 							<div class="col-md-12">
 								<b>Please register to complete the rating</b>
 							</div>
-							<div class="col-md-6 by-rateReviewRight" ng-class="{'by_rateReviewRight_full': userCredential.email.trim().length != 0}">
+							<div class="col-md-6 by-rateReviewRight" >
 								<div class="margin-top-10">
 									<input type="text" class="by_registerEmailId" placeholder="Username (optional)" ng-model="newUserCredential.userName" />
 								</div>
@@ -163,7 +163,7 @@
 									 <button class="btn btn-success pull-right register-btn by_btn_submit"style="width:100%; border-radius:3px !important;">REGISTER &AMP; SUBMIT</button>
 								</div>
 							</div>
-							<div class="col-md-6 by-rateReviewLeft" ng-class="{'by_rateReviewRight_full': userCredential.email.trim().length != 0}">
+							<div class="col-md-6 by-rateReviewLeft" >
 								<xyz ng-if="!userCredential.email || userCredential.email.trim().length === 0">
 									<div class="margin-top-10">
 										Or use your social network account to login
@@ -175,10 +175,11 @@
 											<img src="assets/img/icons/googleplus-login.png" width="82" height="23" class="post-text">
 										</div>
 									</div>
-									<div class="margin-top-20"><img src="assets/img/icons/lock.png" width="8" height="11"> BeautifulYears do not share your information</div>									
+									<div class="margin-top-20"><img src="assets/img/icons/lock.png" width="8" height="11"> BeautifulYears do not share your information</div>	
+									<div class="clearfix"></div>
+									<div class="rateReviewDivider"></div>								
 								</xyz>
-								<div class="clearfix"></div>
-								<div class="rateReviewDivider"></div>
+								
 								<div class=" margin-top-10">
 									<b>Already a BeautifulYears member?</b><br/>
 									<button  ng-click="toggleRegForm(1);" class="btn btn-success pull-left register-btn by_btn_submit"style="border-radius:3px !important; margin-top:10px;">LOGIN</button> 
@@ -191,7 +192,7 @@
 							<div class="col-md-12">
 								<b>Please login to complete the rating</b>
 							</div>
-							<div class="col-md-6 by-rateReviewRight" ng-class="{'by_rateReviewRight_full':  userCredential.email.trim().length != 0}">
+							<div class="col-md-6 by-rateReviewRight" >
 								<div class="margin-top-10">
 									<input type="text" class="by_registerEmailId" placeholder="Enter your email Id" ng-model="userCredential.email" />
 								</div>
@@ -202,7 +203,7 @@
 									 <button class="btn btn-success pull-right register-btn by_btn_submit"style="width:100%; border-radius:3px !important;">LOGIN &AMP; SUBMIT</button>
 								</div>								
 							</div>
-							<div class="col-md-6 by-rateReviewLeft" ng-class="{'by_rateReviewRight_full':  userCredential.email.trim().length != 0}">							
+							<div class="col-md-6 by-rateReviewLeft" >							
 								<xyz ng-if="!userCredential.email || userCredential.email.trim().length === 0">
 									<div class="margin-top-10">
 										Or use your social network account to login
@@ -214,10 +215,11 @@
 											<img src="assets/img/icons/googleplus-login.png" width="82" height="23" class="post-text">
 										</div>
 									</div>
-									<div class="margin-top-20"><img src="assets/img/icons/lock.png" width="8" height="11"> BeautifulYears do not share your information</div>									
+									<div class="margin-top-20"><img src="assets/img/icons/lock.png" width="8" height="11"> BeautifulYears do not share your information</div>	
+									<div class="clearfix"></div>
+									<div class="rateReviewDivider"></div>								
 								</xyz>
-								<div class="clearfix"></div>
-								<div class="rateReviewDivider"></div>
+								
 								<div class="margin-top-10">
 									<b>New user?</b> <br/>
 									<button  ng-click="toggleRegForm(0);" class="btn btn-success pull-left register-btn by_btn_submit"style="border-radius:3px !important; margin-top:10px;">REGISTER</button>
