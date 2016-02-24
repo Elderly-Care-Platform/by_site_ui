@@ -73,7 +73,7 @@
 								</div>
 							</div>
 							<div class="col-md-6 by-rateReviewLeft" >
-								<xyz ng-if="!userCredential.email || userCredential.email.trim().length === 0">
+								<xyz ng-if="!storedUserEmail || storedUserEmail.trim().length === 0">
 									<div class="margin-top-10">
 										Or use your social network account to login
 										<br/>
@@ -113,7 +113,7 @@
 								</div>								
 							</div>
 							<div class="col-md-6 by-rateReviewLeft" >							
-								<xyz ng-if="!userCredential.email || userCredential.email.trim().length === 0">
+								<xyz ng-if="!storedUserEmail || storedUserEmail.trim().length === 0">
 									<div class="margin-top-10">
 										Or use your social network account to login
 										<br/>

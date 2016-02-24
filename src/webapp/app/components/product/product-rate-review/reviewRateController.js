@@ -22,8 +22,9 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
 
         var postReview = new ReviewRateProfile(),
             setReviewText = setReviewText,
-            storedUserEmail = localStorage.getItem("USER_EMAIL"),
             storedUserPhoneNo = localStorage.getItem("USER_PHONENUMBER");
+
+            $scope.storedUserEmail = localStorage.getItem("USER_EMAIL");    
 
         var initialize = init();
 
@@ -45,9 +46,9 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
                 setReviewText();
             }
 
-            if (storedUserEmail && storedUserEmail !== "null" && storedUserEmail !== "") {
-                $scope.userCredential.email = storedUserEmail;
-                $scope.newUserCredential.uniqueRegId = storedUserEmail;
+            if ($scope.storedUserEmail && $scope.storedUserEmail !== "null" && $scope.storedUserEmail !== "") {
+                $scope.userCredential.email = $scope.storedUserEmail;
+                $scope.newUserCredential.uniqueRegId = $scope.storedUserEmail;
             }
 
             if (storedUserPhoneNo && storedUserPhoneNo !== "null" && storedUserPhoneNo !== "") {
