@@ -120,6 +120,13 @@ BY.config.seo = {
             description: 'How to write a proper will? What is a living will? What are senior citizens rights, and how to benefit from them. And more .',
             keywords: ['Legal', 'Finance', 'will writing', 'inheritance']
         },
+        '564073eb3e60f5b66f62df2f' : {
+            title: 'Anti-aging & elders wellbeing',
+            imageUrl: 'assets/img/community/desktop/scientific-breakthroughs.png?versionTimeStamp=%PROJECT_VERSION%',
+            description: 'Do you want to live longer - much longer? Read about scientific breakthroughs in anti-aging, longevity, and immortality',
+            keywords: ['Anti aging', 'longevity', 'immortality']
+        },
+
         '5640746b3e60f5b66f62df31': {
             title: 'Anti-aging Research',
             imageUrl: 'assets/img/community/desktop/scientific-breakthroughs.png?versionTimeStamp=%PROJECT_VERSION%',
