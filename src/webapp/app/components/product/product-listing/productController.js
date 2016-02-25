@@ -393,7 +393,7 @@ define(['byProductApp', 'byUtil',
                 }
 
                 if (discount > 0) {
-                    discount = discount.toFixed(1);
+                    discount = discount.toFixed(0);
                     product.discountPercentage = discount;
                 }
             }
