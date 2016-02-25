@@ -104,24 +104,43 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
          */
         function updateMetaTags() {
             // to eliminate html tags from product description
-            var descDiv1 = document.createElement('div'),  prodKeywords = META_TAGS.keywords.split(','),
-                descText, metaTagParams;
+            var descDiv1 = document.createElement('div'),
+                metaKeywords = META_TAGS.keywords.split(','),
+                metaDescription,
+                metaTagParams,
+                pageTitle,
+                titleRegEx = /title[^=]*=[^\(]*\(\(([^\)]*)\)\)/gmi,
+                titleRegExArr;
+
             if($scope.uiData.productDescription){
                 descDiv1.innerHTML = $scope.uiData.productDescription;
             }else{
                 descDiv1.innerHTML = $scope.uiData.longDescription;
             }
 
-            descText = $.parseHTML(descDiv1.innerText);
+            metaDescription = $.parseHTML(descDiv1.innerText);
 
             if($scope.uiData.productType && $scope.uiData.productType.trim().length > 0){
-                prodKeywords = prodKeywords.concat($scope.uiData.productType.split(','));
+                metaKeywords = $scope.uiData.productType.split(',');
             }
+
+
+            if($scope.uiData.productComment && $scope.uiData.productComment.trim().length > 0){
+                titleRegExArr = titleRegEx.exec($scope.uiData.productComment);
+            }
+
+            if(titleRegExArr && titleRegExArr.length > 0){
+                pageTitle =  titleRegExArr[1];
+            }else{
+                pageTitle = $scope.uiData.name + ' in ' + META_TAGS.title;
+            }
+
+
             metaTagParams = {
-                title:  $scope.uiData.name + ' in ' + META_TAGS.title,
+                title:  pageTitle,
                 imageUrl:      BY.config.constants.productImageHost + $scope.uiData.media[0].url,
-                description:   descText,
-                keywords:      prodKeywords
+                description:   metaDescription,
+                keywords:      metaKeywords
             }
             BY.byUtil.updateMetaTags(metaTagParams);
         }
