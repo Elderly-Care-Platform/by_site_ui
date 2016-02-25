@@ -156,7 +156,11 @@
     font-weight: bold;
     line-height: 24px;
     /*background: url('../../img/product/white_gradient_trans.png?versionTimeStamp=%PROJECT_VERSION%')  bottom right;*/
-    background: rgba(90, 67, 67, 0.11);
+    /*background: rgba(90, 67, 67, 0.11);*/
+    background: linear-gradient(to right, rgba(202, 196, 196,1), rgba(202, 196, 196,0));
+    background: -webkit-linear-gradient(left,rgba(202, 196, 196,1),rgba(202, 196, 196,0)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,rgba(202, 196, 196,1),rgba(202, 196, 196,0)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,rgba(202, 196, 196,1),rgba(202, 196, 196,0)); /*Fx 3.6-15*/
   }
   .by_product_threeRow
   {
@@ -204,7 +208,7 @@
     font-weight: bold;
     line-height: 20px;
     /*background: url('../../img/product/white_gradient_trans.png?versionTimeStamp=%PROJECT_VERSION%')  bottom right;*/
-    background: rgba(90, 67, 67, 0.11);
+    /*background: rgba(90, 67, 67, 0.11);*/
   }
   .by_product_home_expStore
   {

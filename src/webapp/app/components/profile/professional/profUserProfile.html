@@ -19,7 +19,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-12 whiteBg by_profileDetail  margin-bottom-35" style="border-radius:4px !important;" ng-init="individualProfile.showMoreServices=false">
+	<div class="col-md-12 by_profileGrayBg by_profileDetail  margin-bottom-20" ng-init="individualProfile.showMoreServices=false">
 		<div class="col-md-12 profileContainer margin-bottom-15  ">
 			<div class="col-md-5 col-xs-5 by_profileWidth">
 				<div class="main-image  " style="padding-left:0px;">
@@ -73,14 +73,14 @@
 					<div class="no-padding" ng-if="individualProfile.ratingCount > 0 || individualProfile.reviewCount > 0 ">
 						<div class="profileRating"
 							ng-if="individualProfile.ratingCount > 0">
-							<i class="rounded-x profileStar"
-								rate-calculator="{{individualProfile.ratingPercentage}}"></i>Rated
+							<div class="divLeft"><i class="rounded-x profileStar"
+								rate-calculator="{{individualProfile.ratingPercentage}}"></i></div>
+                            <div class="divLeft" style="margin-top:8px;">Rated
 							by 
 							<a href="">
-								{{individualProfile.ratingCount}} user
-								<xy
+								{{individualProfile.ratingCount}} user<xy
 									ng-if="individualProfile.ratingCount > 1">s</xy>
-							</a>
+							</a></div>
 						</div>
 						<div style="clear:both; height:16px;"></div>
 						<div class="profileReview"
@@ -197,40 +197,81 @@
 			</div>
 		</div>
 		<div style="clear:both;"></div>
-		<div id="adminVerified" ng-if="reviewsVerify.length > 0">
-			<img src="assets/img/profile/by_verified.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Verified">
-			<div class="clearfix" style="height:16px;"></div>
-			<div ng-repeat="review in reviewsVerify"  data-index="discussion-articles"
-				data-link="articles.html"
-				ng-include="'app/components/profile/profileVerifiedReview.html?versionTimeStamp=%PROJECT_VERSION%'"
-				ng-if="review.text && review.text.trim().length > 0 ">
-			</div>
-		</div>
-		<div style="clear:both;" id="userReviews"></div>
-		<div ng-if="reviews && reviews.length == 0" class="row">
-			<div class="col-md-12 bg-color-grey2"
-				style=" margin-top: 12px; "></div>
-		</div>
-		<div ng-if="reviews && reviews.length > 0" class="row">
-			<div class="col-md-12 bg-color-grey2" style="margin-bottom: 15px; margin-top: 12px; height:1px;"></div>
-			<div class="col-md-12  margin-bottom-20 review-rate-header" style="padding-left:21px; padding-right:21px;">
-				<div class="col-md-12 no-padding dp-block" style="border-bottom:1px solid #ccc;">
-					Reviews
-				</div>
-				<div class="col-md-12 no-padding">
-					<div class="bg-green-h2" style="width: 75px;"></div>
-				</div>
-			</div>
-			<div ng-repeat="review in reviews" data-index="discussion-articles"
-				data-link="articles.html"
-				ng-include="'app/components/profile/shared/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'"
-				ng-if="review.text && review.text.trim().length > 0">
-			</div>
+	</div>
+
+
+
+	<div id="adminVerified" ng-if="reviewsVerify.length > 0" class="margin-bottom-10 ">
+		<img src="assets/img/profile/by_verified.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Verified">
+		<div class="clearfix" style="height:16px;"></div>
+		<div ng-repeat="review in reviewsVerify"  data-index="discussion-articles"
+			data-link="articles.html"
+			ng-include="'app/components/profile/profileVerifiedReview.html?versionTimeStamp=%PROJECT_VERSION%'"
+			ng-if="review.text && review.text.trim().length > 0 ">
 		</div>
 		<div class="clearfix"></div>
-		<div class="row margin-top-10" ng-include="'app/components/profile/shared/reviewRate.html?versionTimeStamp=%PROJECT_VERSION%'" ng-if="isAllowedToReview"></div>
-		<div class="clearfix margin-top-20"></div>
-		<div ng-include="'app/components/profile/shared/contentByUser.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
 	</div>
+	<div class="clearfix" id="userReviews"></div>
+
+	<!--<div class="accordion by_product_accordian  margin-top-20" id="by_pro_accReview" ng-if="reviews && reviews.length > 0">
+	    <div class="accordion-group">
+	        <div class="accordion-heading accordion-opened">
+	            <a class="accordion-toggle " data-toggle="collapse" data-parent="#by_pro_accReview" href="#by_pro_accReviewOne">
+	            Reviews
+	            </a>
+	        </div>
+	        <div id="by_pro_accReviewOne" class="accordion-body in collapse">
+	            <div class="accordion-inner col-md-12">
+	                 <div ng-repeat="review in reviews track by $index" data-index="discussion-articles" data-link="articles.html"ng-include="'app/components/profile/shared/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'" ng-if="review.text && review.text.trim().length > 0 && $index < 3 && showAllReviews===true">
+	                </div>
+	                <div ng-repeat="review in reviews track by $index" data-index="discussion-articles" data-link="articles.html" ng-include="'app/components/profile/shared/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'" ng-if="review.text && review.text.trim().length > 0 &&  showAllReviews===false">
+	                </div>
+	                <div  ng-if="showAllReviews===false" class="by_proReviewButton" ng-click="showAllReviewsForm($event);$event.stopPropagation();">
+	                    Less
+	                </div>
+	                <div ng-if="showAllReviews===true && reviews.length > 3" class="by_proReviewButton"  ng-click="showAllReviewsForm($event);$event.stopPropagation();">
+	                    More
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="clearfix"></div>
+	</div>-->
+	<div ng-if="reviews && reviews.length > 0" >
+		 <div class="col-md-12 no-padding margin-bottom-20 review-rate-header"
+            style="padding-left:21px; padding-right:21px;">
+            <div class="col-md-12 no-padding dp-block" style="border-bottom:1px solid #ccc;" >
+                Reviews
+            </div>
+            <div class="col-md-12 no-padding">
+                <div class="bg-green-h2" style="width: 75px;"></div>
+            </div>
+        </div>
+		<div ng-repeat="review in reviews" data-index="discussion-articles"
+			data-link="articles.html"
+			ng-include="'app/components/profile/shared/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'"
+			ng-if="review.text && review.text.trim().length > 0">
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="accordion by_product_accordian " id="by_pro_accRateReview" ng-if="isAllowedToReview">
+	    <div class="accordion-group">
+	        <div class="accordion-heading ">
+	            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#by_pro_accRateReview" href="#by_pro_accRateReviewOne">
+	            Rate &amp; Review
+	            </a>
+	        </div>
+	        <div id="by_pro_accRateReviewOne" class="accordion-body  collapse">
+	            <div class="accordion-inner">
+	                 <div class="row margin-top-10" ng-include="'app/components/profile/shared/reviewRate.html?versionTimeStamp=%PROJECT_VERSION%'" ></div>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="clearfix"></div>
+	</div>
+	<!--<div class="clearfix margin-top-10" ng-if="$root.windowWidth < 981"></div>
+	<div class="row margin-top-10" ng-include="'app/components/profile/shared/reviewRate.html?versionTimeStamp=%PROJECT_VERSION%'" ng-if="isAllowedToReview"></div>-->
+	<div class="clearfix margin-top-20"></div>
+	<div class="row" ng-include="'app/components/profile/shared/contentByUser.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
 	<!--/end profile details-->
 </div>
