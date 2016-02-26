@@ -27,6 +27,7 @@ BY.byEditor.addEditor = function(param, initCallback){
     var textAreas = $("textarea");
     var isCommentEditor = param.commentEditor ? param.commentEditor : false, toolbar, plugins;
     var autoFocus = (param.autoFocus && param.autoFocus==="true") ? true : false;
+    var bottomMargin = (param.bottomMargin && param.bottomMargin==="true") ? 0 : 50;
     if(isCommentEditor){
         toolbar = "bold italic | emoticons";
         plugins = [
@@ -56,6 +57,7 @@ BY.byEditor.addEditor = function(param, initCallback){
                 ],
         toolbar: toolbar,
         inline_styles : false,
+        autoresize_bottom_margin: bottomMargin, 
         setup : function(ed) {
             var placeholder = $('#' + ed.id).attr('placeholder');
             if (typeof placeholder !== 'undefined' && placeholder !== false) {

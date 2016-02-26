@@ -58,7 +58,7 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
 
             //initialize tinymce editor
             var tinyEditor = BY.byEditor.addEditor({
-                "editorTextArea": "reviewTextArea"
+                "editorTextArea": "reviewTextArea", "bottomMargin": "true"
             }, setReviewText);
 
 

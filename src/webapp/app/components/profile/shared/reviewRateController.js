@@ -52,7 +52,7 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
             }
 
             //initialize tinymce editor
-            var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "reviewTextArea"}, setReviewText);
+            var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "reviewTextArea", "bottomMargin": "true"}, setReviewText);
 
             //check gender for individual profile
             if($scope.$parent.isIndividualProfile){
