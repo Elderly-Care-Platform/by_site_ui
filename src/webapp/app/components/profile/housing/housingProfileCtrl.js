@@ -6,6 +6,12 @@ define(['byApp', 'byUtil', 'reviewRateController', 'discussLikeController', 'sha
             $scope.slideIndex = 1;
             $scope.profileData = null;
 
+            $scope.showAllReviews =  true;
+
+            $scope.showAllReviewsForm = function ($event) {               
+                $scope.showAllReviews = ($scope.showAllReviews === false) ? true : false;
+            }
+
             var title = "Corporation Profile - Beautiful Years";
             if ($scope.housingProfile.basicProfileInfo.firstName) {
                 title = $scope.housingProfile.basicProfileInfo.firstName;

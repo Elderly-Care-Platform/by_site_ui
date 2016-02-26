@@ -10,6 +10,12 @@ define(['byApp', 'byUtil', 'reviewRateController', 'discussLikeController', 'sha
             var reviewDetails = new ReviewRateProfile();
             var init = initialize();
 
+            $scope.showAllReviews =  true;
+
+            $scope.showAllReviewsForm = function ($event) {               
+                $scope.showAllReviews = ($scope.showAllReviews === false) ? true : false;
+            }
+
             function initialize() {
                 if ($scope.branchId && $scope.institutionProfile.serviceBranches.length > 0) {
                     $scope.branchProfile = $scope.institutionProfile.serviceBranches[0];

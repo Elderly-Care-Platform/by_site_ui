@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12 by_profileGrayBg by_profileDetail  margin-bottom-20" ng-init="branchProfile.showMoreServices=false">
+    <div class="col-md-12 by_profileGrayBg by_profileDetail  margin-bottom-20 no-padding" ng-init="branchProfile.showMoreServices=false">
         <div class="col-md-12 profileContainer margin-bottom-15  ">
             <div class="col-md-5 col-xs-5 by_profileWidth" style="padding-left:0px;">
                 <div class="main-image  " style="padding-left:0px;">
@@ -197,7 +197,31 @@
             <div class="clearfix"></div>
         </div>
         <div class="clearfix" id="userReviews"></div>
-        <div ng-if="reviews && reviews.length > 0" >
+    <div class="accordion by_product_accordian  margin-top-20 margin-bottom-20" id="by_pro_accReview" ng-if="reviews && reviews.length > 0">
+        <div class="accordion-group">
+            <div class="accordion-heading accordion-opened">
+                <a class="accordion-toggle " data-toggle="collapse" data-parent="#by_pro_accReview" href="#by_pro_accReviewOne">
+                Customer's reviews
+                </a>
+            </div>
+            <div id="by_pro_accReviewOne" class="accordion-body in collapse">
+                <div class="accordion-inner col-md-12">
+                     <div ng-repeat="review in reviews track by $index" data-index="discussion-articles" data-link="articles.html"ng-include="'app/components/profile/shared/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'" ng-if="review.text && review.text.trim().length > 0 && $index < 3 && showAllReviews===true">
+                    </div>
+                    <div ng-repeat="review in reviews track by $index" data-index="discussion-articles" data-link="articles.html" ng-include="'app/components/profile/shared/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'" ng-if="review.text && review.text.trim().length > 0 &&  showAllReviews===false">
+                    </div>
+                    <div  ng-if="showAllReviews===false" class="by_proReviewButton" ng-click="showAllReviewsForm($event);$event.stopPropagation();">
+                        Less
+                    </div>
+                    <div ng-if="showAllReviews===true && reviews.length > 3" class="by_proReviewButton"  ng-click="showAllReviewsForm($event);$event.stopPropagation();">
+                        More
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+        <!--<div ng-if="reviews && reviews.length > 0" >
             <div class="col-md-12 no-padding margin-bottom-20 review-rate-header"
                 style="padding-left:21px; padding-right:21px;">
                 <div class="col-md-12 no-padding dp-block" style="border-bottom:1px solid #ccc;" >
@@ -213,7 +237,7 @@
                 ng-if="review.text && review.text.trim().length > 0">
             </div>            
             <div class="clearfix"></div>
-        </div>
+        </div>-->
 
         <div class="accordion by_product_accordian " id="by_pro_accRateReview" ng-if="isAllowedToReview">
             <div class="accordion-group">

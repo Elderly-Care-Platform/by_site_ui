@@ -308,10 +308,10 @@
                 </div>
                 <div ng-repeat="review in reviews track by $index" data-index="discussion-articles" data-link="articles.html" ng-include="'app/components/product/product-rate-review/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'" ng-if="review.text && review.text.trim().length > 0 &&  showAllReviews===false">
                 </div>
-                <div  ng-if="showAllReviews===false" class="by_proReviewButton" ng-click="showAllReviewsForm($event);$event.stopPropagation();">
+                <div  ng-if="showAllReviews===false" class="by_proReviewButton" ng-click="showAllReviewsForm($event);$event.stopPropagation();" style="margin-right:20px;">
                     Less
                 </div>
-                <div ng-if="showAllReviews===true && reviews.length > 2" class="by_proReviewButton"  ng-click="showAllReviewsForm($event);$event.stopPropagation();">
+                <div ng-if="showAllReviews===true && reviews.length > 2" class="by_proReviewButton"  ng-click="showAllReviewsForm($event);$event.stopPropagation();" style="margin-right:20px;">
                     More
                 </div>
             </div>

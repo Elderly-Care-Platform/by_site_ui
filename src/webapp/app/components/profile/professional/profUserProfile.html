@@ -19,7 +19,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-12 by_profileGrayBg by_profileDetail  margin-bottom-20" ng-init="individualProfile.showMoreServices=false">
+	<div class="col-md-12 by_profileGrayBg by_profileDetail  margin-bottom-20 no-padding" ng-init="individualProfile.showMoreServices=false">
 		<div class="col-md-12 profileContainer margin-bottom-15  ">
 			<div class="col-md-5 col-xs-5 by_profileWidth">
 				<div class="main-image  " style="padding-left:0px;">
@@ -213,11 +213,11 @@
 	</div>
 	<div class="clearfix" id="userReviews"></div>
 
-	<!--<div class="accordion by_product_accordian  margin-top-20" id="by_pro_accReview" ng-if="reviews && reviews.length > 0">
+	<div class="accordion by_product_accordian  margin-top-20 margin-bottom-20" id="by_pro_accReview" ng-if="reviews && reviews.length > 0">
 	    <div class="accordion-group">
 	        <div class="accordion-heading accordion-opened">
 	            <a class="accordion-toggle " data-toggle="collapse" data-parent="#by_pro_accReview" href="#by_pro_accReviewOne">
-	            Reviews
+	            Customer's reviews
 	            </a>
 	        </div>
 	        <div id="by_pro_accReviewOne" class="accordion-body in collapse">
@@ -236,8 +236,8 @@
 	        </div>
 	    </div>
 	    <div class="clearfix"></div>
-	</div>-->
-	<div ng-if="reviews && reviews.length > 0" >
+	</div>
+	<!--<div ng-if="reviews && reviews.length > 0" >
 		 <div class="col-md-12 no-padding margin-bottom-20 review-rate-header"
             style="padding-left:21px; padding-right:21px;">
             <div class="col-md-12 no-padding dp-block" style="border-bottom:1px solid #ccc;" >
@@ -253,7 +253,7 @@
 			ng-if="review.text && review.text.trim().length > 0">
 		</div>
 		<div class="clearfix"></div>
-	</div>
+	</div>-->
 	<div class="accordion by_product_accordian " id="by_pro_accRateReview" ng-if="isAllowedToReview">
 	    <div class="accordion-group">
 	        <div class="accordion-heading ">

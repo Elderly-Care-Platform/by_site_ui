@@ -6,6 +6,12 @@ define(['byApp', 'byUtil', 'reviewRateController', 'discussLikeController', 'sha
             $scope.slideIndex = 1;
             var reviewDetails = new ReviewRateProfile();
 
+            $scope.showAllReviews =  true;
+
+            $scope.showAllReviewsForm = function ($event) {               
+                $scope.showAllReviews = ($scope.showAllReviews === false) ? true : false;
+            }
+
 
             var title = "Professional Profile - Beautiful Years";
             if ($scope.individualProfile.basicProfileInfo.firstName) {
