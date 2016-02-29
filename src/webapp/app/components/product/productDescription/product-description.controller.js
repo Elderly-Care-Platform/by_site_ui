@@ -213,6 +213,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
                         mediaItem.poster = STATIC_IMAGE.unsupportedMedia;
                     }
                 });
+                $scope.getDiscountPercentage($scope.uiData);
 
                 updateMetaTags();
                 params = {};
@@ -598,6 +599,21 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
                 }
             };
         // ********** rate & review for products
+
+
+        $scope.getDiscountPercentage = function (product) {
+            var salePrice = product.salePrice ? product.salePrice.amount : 0,
+                retailPrice = product.retailPrice ? product.retailPrice.amount : 0, discount = 0;
+
+            if (salePrice > 0 && retailPrice > 0 && salePrice < retailPrice) {
+                discount = ((retailPrice - salePrice) / retailPrice) * 100;
+            }
+
+            if (discount > 0) {
+                discount = discount.toFixed(0);
+                product.discountPercentage = discount;
+            }
+        }
 
 
 
