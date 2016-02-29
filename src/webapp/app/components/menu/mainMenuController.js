@@ -80,10 +80,10 @@ define(['bySeoConfig'], function(bySeoConfig) {
                 })
             }
 
-            editCategoryOptions(prod_categories.category, [$rootScope.menuCategoryMapByName["Shop"].id]);
+            editCategoryOptions(prod_categories, [$rootScope.menuCategoryMapByName["Shop"].id]);
             angular.forEach($scope.mainMenu, function(menu, index){
                 if(menu.module==3){
-                    menu.children = menu.children.concat(prod_categories.category);
+                    menu.children = menu.children.concat(prod_categories);
                 }
             })
         };
@@ -92,7 +92,12 @@ define(['bySeoConfig'], function(bySeoConfig) {
             removeHiddenMenu($scope.mainMenu);
             createMenuCategoryMap($scope.mainMenu);
             if(window.by_prodCategories){
-                mergeProdCategories(window.by_prodCategories);
+                if(window.by_prodCategories.category[0].name === "ROOT"){
+                    mergeProdCategories(window.by_prodCategories.category[0].subcategories);
+                }else{
+                    mergeProdCategories(window.by_prodCategories.category);
+                }
+
                 delete window.by_prodCategories;
             }
             window.by_menu = null;
