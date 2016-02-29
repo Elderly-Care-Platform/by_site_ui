@@ -340,17 +340,17 @@ define(['byProductApp', 'byUtil',
 
             $scope.feWidth = function () {
                 if ($rootScope.windowWidth > 850) {
-                    $scope.byFeaWid = ($(".by_featuredProduct_wrapper").outerWidth() / 4) - 10;
-                    $scope.byFeaWidSpace = $(".by_featuredProduct_wrapper").outerWidth() / 4;
+                    $scope.byFeaWid = ($(".by_featuredProduct_middle").outerWidth() / 4) - 10;
+                    $scope.byFeaWidSpace = $(".by_featuredProduct_middle").outerWidth() / 4;
                 } else if ($rootScope.windowWidth > 720) {
-                    $scope.byFeaWid = ($(".by_featuredProduct_wrapper").outerWidth() / 3) - 10;
-                    $scope.byFeaWidSpace = $(".by_featuredProduct_wrapper").outerWidth() / 3;
+                    $scope.byFeaWid = ($(".by_featuredProduct_middle").outerWidth() / 3) - 10;
+                    $scope.byFeaWidSpace = $(".by_featuredProduct_middle").outerWidth() / 3;
                 } else if ($rootScope.windowWidth > 400) {
-                    $scope.byFeaWid = ($(".by_featuredProduct_wrapper").outerWidth() / 2) - 10;
-                    $scope.byFeaWidSpace = $(".by_featuredProduct_wrapper").outerWidth() / 2;
+                    $scope.byFeaWid = ($(".by_featuredProduct_middle").outerWidth() / 2) - 10;
+                    $scope.byFeaWidSpace = $(".by_featuredProduct_middle").outerWidth() / 2;
                 } else {
-                    $scope.byFeaWid = ($(".by_featuredProduct_wrapper").outerWidth() / 1) - 10;
-                    $scope.byFeaWidSpace = $(".by_featuredProduct_wrapper").outerWidth() / 1;
+                    $scope.byFeaWid = ($(".by_featuredProduct_middle").outerWidth() / 1) - 10;
+                    $scope.byFeaWidSpace = $(".by_featuredProduct_middle").outerWidth() / 1;
                 }
                 $(".by_featuredProductCard").css('width', $scope.byFeaWid + "px");
             }
@@ -359,7 +359,7 @@ define(['byProductApp', 'byUtil',
                 if ($scope.slideIndex < 1) {
                     $scope.slideIndex = 1;
                 }
-                $scope.byGalleryCount = ($(".by_featuredProduct_wrapper").outerWidth() / $scope.byFeaWidSpace) - 1;
+                $scope.byGalleryCount = ($(".by_featuredProduct_middle").outerWidth() / $scope.byFeaWidSpace) - 1;
                 $scope.byimageGallery = $scope.byFeaWidSpace;
                 $scope.bygallerycontainer = $(".by_featuredProduct_wrapperInside").outerWidth();
                 $scope.w = ($scope.bygallerycontainer / $scope.byimageGallery) - $scope.byGalleryCount;
