@@ -179,7 +179,7 @@
         <img ng-if="product.primaryMedia != null" ng-src="{{product.primaryMedia.url || ''}}"
         fallback-src='["assets/img/by.png"]' alt="{{product.name}}">
         <div class="clearfix"></div>
-        <div class="by_productCard_ImageOffer" ng-if="product.discountPercentage && product.discountPercentage > 5">{{product.discountPercentage}}% <br/><small>off</small></div>
+        <div class="by_productCard_ImageOffer" ng-if="product.discountPercentage && product.discountPercentage >= 5">{{product.discountPercentage}}% <br/><small>off</small></div>
       </div>
       <div class="by_productCard_title ellipsisHead" style="height:50px;">{{product.name}}</div>
       </a>
