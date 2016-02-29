@@ -406,8 +406,8 @@
     min-height: 20px;
     height: auto;
     padding: 5px;
-    position: absolute;
-    top: 20px;
+    position: relative;
+    top: 0px;
     left: 0px;
     z-index: 1;
     color: #000;
@@ -416,4 +416,8 @@
     line-height: 20px;
     /*background: url('../../img/product/white_gradient_trans.png?versionTimeStamp=%PROJECT_VERSION%')  bottom right;*/
     /*background: rgba(90, 67, 67, 0.11);*/
+  }
+  .by_product_home_mobile a:hover
+  {
+  	text-decoration: none !important;
   }
