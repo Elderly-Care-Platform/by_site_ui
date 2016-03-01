@@ -1,4 +1,5 @@
 <div class="by_registerLogin" ng-controller="LoginController">
+<div class="by_joinUsTitle">Join us</div>
 	<div class="by_registerLogin_left" ng-class="{'by_registerLogin_left_full': storedUserEmail}" >
 		<form class="" name="loginForm" ng-submit="loginUser(user)"  novalidate>
 			<div class="by_registerLogin_head"><!--Login-->&nbsp;</div>
@@ -69,7 +70,7 @@
 		
 	</xyz>
 
-	<div class="or-divider desktopSite"></div>
+	<div class="or-divider desktopSite" ng-if="!uniqueLoginId.id || uniqueLoginId.id.trim().length === 0"></div>
 
 	<div class="clearfix"></div>
 	

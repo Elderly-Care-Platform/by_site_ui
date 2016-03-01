@@ -1,4 +1,5 @@
 User-agent: *
 Disallow:*/privacyPolicy$
 Disallow:*/termsCondition$
+Disallow:*/makeSnapshot*
 Sitemap: https://www.beautifulyears.com/sitemap.xml

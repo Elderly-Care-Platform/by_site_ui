@@ -160,20 +160,13 @@
 .by_featuredProduct_prevBtn, .by_featuredProduct_nextBtn
 {
 	position: absolute;
-	top: 80px;
+	top: 65px;
 	left: 0px;
 	height: 71px;
-	width: 29px;
+	width: 34px;
 	z-index: 101;
 	padding: 20px 5px;
-	background-color: rgba(255, 255, 255, 0.52);
-	border: 1px solid #DCDCDC;
 	cursor: pointer;
-	opacity: 0.5;
-}
-.by_featuredProduct_prevBtn:hover, .by_featuredProduct_nextBtn:hover
-{
-	opacity: 1;
 }
 .by_featuredProduct_nextBtn
 {
@@ -331,12 +324,102 @@
 	margin-top: -10px;
 	margin-bottom: 20px;
 }
-.by_productAll a
+.by_productAll a, .by_productAll a:hover
 {
-	color: #fff;
+	color: #fff !important;
 }
 
 .productDiscount{
 	border-top: 1px solid #DCDCDC;
 	border-bottom: 1px solid #DCDCDC;
 }
+
+.by_product_twoRowThumb
+  {
+    width: calc(50% - 10px);
+    height: auto;
+    position: relative;
+    border: 1px solid #ccc;
+  }
+  .by_product_rowText
+  {
+    width: 100%;
+    min-height: 35px;
+    height: auto;
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    left: 1px;
+    z-index: 1;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    /*background: url('../../img/product/white_gradient_trans.png?versionTimeStamp=%PROJECT_VERSION%')  bottom right;*/
+    /*background: rgba(90, 67, 67, 0.11);*/
+    background: linear-gradient(to right, rgba(224, 224, 224,1), rgba(224, 224, 224,0));
+    background: -webkit-linear-gradient(left,rgba(224, 224, 224,1),rgba(224, 224, 224,0)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,rgba(224, 224, 224,1),rgba(224, 224, 224,0)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,rgba(224, 224, 224,1),rgba(224, 224, 224,0)); /*Fx 3.6-15*/
+  }
+  .by_product_threeRow
+  {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .by_product_twoRow
+  {
+  	margin-bottom: 20px;
+  }
+  .by_product_threeRowOne, .by_product_threeRowThree
+  {
+    width: calc(33.3% - 13px);
+    height: auto;
+  }
+  .by_product_threeRowThumb
+  {
+    width:100%;
+    position: relative;
+  }
+  .by_product_threeRowTwoM
+  {
+    width: calc(33.4% - 14px);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .by_product_home_mobile
+  {
+    widows: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .by_product_home_mobile .by_product_rowText
+  {
+    width: 100%;
+    min-height: 20px;
+    height: auto;
+    padding: 5px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    /*background: url('../../img/product/white_gradient_trans.png?versionTimeStamp=%PROJECT_VERSION%')  bottom right;*/
+    /*background: rgba(90, 67, 67, 0.11);*/
+  }
+  .by_product_home_mobile a:hover
+  {
+  	text-decoration: none !important;
+  }
+  .by_featuredProduct_middle
+  {
+  	width: calc(100% - 80px);
+  	margin-left: 35px;
+  	overflow: hidden;
+  }

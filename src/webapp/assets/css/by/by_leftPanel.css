@@ -87,9 +87,9 @@
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }
-.by_leftPanelLinkActive
+.by_leftPanelLinkActive, .by_leftPanelLinkActive a
 {
+    text-decoration: none;
+    color: #000;
     font-weight: bold;
-    text-decoration: underline;
-    color: #005326;
 }

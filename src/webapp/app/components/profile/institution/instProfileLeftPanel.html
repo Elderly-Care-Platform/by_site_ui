@@ -1,45 +1,5 @@
 <div class="by_menuDetailed col-md-12 no-padding" ng-if="$root.windowWidth > 720" style="position:fixed; bottom:0px;"
      ng-init="leftPanelHeight();">
-    <!--<div class="by_profileDetailed_menu" >
-        <a ng-href="{{setHrefCorp(profileData, {'profileId':profileData.userId})}}" ng-click="$event.stopPropagation();"><span ng-if="branchId"> {{label}}</span>
-         <span ng-if="!branchId" ng-click="gotoHref('profileSection')"> {{label}}</span>
-         </a>
-        </div>
-        
-        <div class="by_profileDetailed_menuIcon" ng-if="postsUser.length > 0 && !branchId"
-          ng-click="gotoHref('userPosts')">
-         <span>Posts ({{postsPagination.totalPosts}})</span>
-        
-         <div class="clearfix"></div>
-        </div>
-        <div class="by_profileDetailed_menuIcon" ng-if="qaUser.length > 0 && !branchId"
-          ng-click="gotoHref('userQA')">
-         <span>Q&A ({{qaPagination.totalPosts}})</span>
-        
-         <div class="clearfix"></div>
-        </div>
-        
-        
-        <div ng-controller="instProfileLeftCtrl">
-         <div class="panel-group acc-v1 housingCityWrap" id="accordion-1" ng-if="allBranches.length > 0">
-             <div class="housingCityHead">Branches:</div>
-             <div class="panel panel-default" ng-repeat="branch in allBranches">
-                 <div class="panel-heading housingCityHeadThumb" ng-class="{'active':selectedBranch && branch.id===selectedBranch.id}">
-                     <a ng-href="{{setHrefInst(branch, {'profileId':branch.userId, 'branchId':branch.id})}}" ng-click="$event.stopPropagation();" >
-                             {{branch.basicProfileInfo.firstName}}
-                         </a>
-                 </div>
-             </div>
-         </div>
-         <div class="by_profileDetailed_menuIcon" ng-if="flags.isByAdminVerified"  ng-click="gotoHref('adminVerified')">
-             <i class="fa fa-pencil-square-o by_faAlign"></i><span>BY Verified</span>
-             <div class="clearfix"></div>
-         </div>
-         <div class="by_profileDetailed_menuIcon" ng-if="isAllowedToReview && branchId" ng-click="gotoHref('userReviews')">
-             <i class="review-Icon_rate"></i> <span>Rate & Review</span>
-             <div class="clearfix"></div>
-         </div>
-        </div>-->
     <div class="by_leftPanelLink by_leftPanel_linkArrow">
         <a ng-href="{{setHrefCorp(profileData, {'profileId':profileData.userId})}}"
            ng-click="$event.stopPropagation();">
@@ -47,11 +7,11 @@
             <span ng-if="!branchId" ng-click="gotoHref('profileSection')"> {{label}}</span>
         </a>
     </div>
-    <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="postsUser.length > 0 && !branchId"
+    <div class="by_profileDetailed_menuIcon" ng-if="postsUser.length > 0 && !branchId"
          ng-click="gotoHref('userPosts')">
         Posts ({{postsPagination.totalPosts}})
     </div>
-    <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="qaUser.length > 0 && !branchId"
+    <div class="by_profileDetailed_menuIcon" ng-if="qaUser.length > 0 && !branchId"
          ng-click="gotoHref('userQA')">
         Q&A ({{qaPagination.totalPosts}})
     </div>
@@ -78,19 +38,6 @@
         <i class="fa fa-pencil-square-o by_faAlign"></i><span>BY Verified</span>
         <div class="clearfix"></div>
     </div>
-    <!--<div class="by_profileDetailed_menuIcon" ng-if="isAllowedToReview && branchId" ng-click="gotoHref('userReviews')">
-        <i class="review-Icon_rate"></i> <span>Rate & Review</span>
-        <div class="clearfix"></div>
-    </div>-->
-
-    <!--<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="flags.isByAdminVerified"-->
-         <!--ng-click="gotoHref('adminVerified')">-->
-        <!--BY Verified-->
-    <!--</div>-->
-    <!--<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="isAllowedToReview && branchId"-->
-         <!--ng-click="gotoHref('userReviews')">-->
-        <!--Rate & Review-->
-    <!--</div>-->
 </div>
 <div class="by_mobile_leftPanel_hide" ng-if="$root.windowWidth < 720">
     <div class="by_mobile_leftPanel">
@@ -101,11 +48,11 @@
                 <span ng-if="!branchId" ng-click="gotoHref('profileSection')"> {{label}}</span>
             </a>
         </div>
-        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="postsUser.length > 0 && !branchId"
+        <div class="by_profileDetailed_menuIcon" ng-if="postsUser.length > 0 && !branchId"
              ng-click="gotoHref('userPosts')">
             Posts ({{postsPagination.totalPosts}})
         </div>
-        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="qaUser.length > 0 && !branchId"
+        <div class="by_profileDetailed_menuIcon" ng-if="qaUser.length > 0 && !branchId"
              ng-click="gotoHref('userQA')">
             Q&A ({{qaPagination.totalPosts}})
         </div>
@@ -128,14 +75,11 @@
                 </div>
             </div>
         </div>
-        <div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="flags.isByAdminVerified"
+        <div class="by_profileDetailed_menuIcon" ng-if="flags.isByAdminVerified"
              ng-click="gotoHref('adminVerified')">
-            BY Verified
+             <i class="fa fa-pencil-square-o by_faAlign"></i><span>BY Verified</span>
+            <div class="clearfix"></div>
         </div>
-        <!--<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-if="isAllowedToReview && branchId"
-             ng-click="gotoHref('userReviews')">
-            Rate & Review
-        </div>-->
         <div class="clearfix"></div>
     </div>
     <div class="by_mobile_leftPanel_image" ng-init="subMenuTabMobileShow();"></div>
