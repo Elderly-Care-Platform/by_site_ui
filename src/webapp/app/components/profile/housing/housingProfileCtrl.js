@@ -6,6 +6,12 @@ define(['byApp', 'byUtil', 'reviewRateController', 'discussLikeController', 'sha
             $scope.slideIndex = 1;
             $scope.profileData = null;
 
+            $scope.showAllReviews =  true;
+
+            $scope.showAllReviewsForm = function ($event) {               
+                $scope.showAllReviews = ($scope.showAllReviews === false) ? true : false;
+            }
+
             var title = "Corporation Profile - Beautiful Years";
             if ($scope.housingProfile.basicProfileInfo.firstName) {
                 title = $scope.housingProfile.basicProfileInfo.firstName;
@@ -53,7 +59,7 @@ define(['byApp', 'byUtil', 'reviewRateController', 'discussLikeController', 'sha
                 if ($scope.slideIndex < 1) {
                     $scope.slideIndex = 1;
                 }
-                $scope.byimageGallery = $(".by-imageGallery").outerWidth() - 60;
+                $scope.byimageGallery = $(".by_galleryContainer_outer").outerWidth() - 60;
                 $scope.bygallerycontainer = $(".by-gallery-container").outerWidth();
                 $scope.w = $scope.bygallerycontainer / $scope.byimageGallery;
                 //alert($scope.w);

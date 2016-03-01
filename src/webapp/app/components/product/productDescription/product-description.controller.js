@@ -104,24 +104,43 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
          */
         function updateMetaTags() {
             // to eliminate html tags from product description
-            var descDiv1 = document.createElement('div'),  prodKeywords = META_TAGS.keywords.split(','),
-                descText, metaTagParams;
+            var descDiv1 = document.createElement('div'),
+                metaKeywords = META_TAGS.keywords.split(','),
+                metaDescription,
+                metaTagParams,
+                pageTitle,
+                titleRegEx = /title[^=]*=[^\(]*\(\(([^\)]*)\)\)/gmi,
+                titleRegExArr;
+
             if($scope.uiData.productDescription){
                 descDiv1.innerHTML = $scope.uiData.productDescription;
             }else{
                 descDiv1.innerHTML = $scope.uiData.longDescription;
             }
 
-            descText = $.parseHTML(descDiv1.innerText);
+            metaDescription = $.parseHTML(descDiv1.innerText);
 
             if($scope.uiData.productType && $scope.uiData.productType.trim().length > 0){
-                prodKeywords = prodKeywords.concat($scope.uiData.productType.split(','));
+                metaKeywords = $scope.uiData.productType.split(',');
             }
+
+
+            if($scope.uiData.productComment && $scope.uiData.productComment.trim().length > 0){
+                titleRegExArr = titleRegEx.exec($scope.uiData.productComment);
+            }
+
+            if(titleRegExArr && titleRegExArr.length > 0){
+                pageTitle =  titleRegExArr[1];
+            }else{
+                pageTitle = $scope.uiData.name + ' in ' + META_TAGS.title;
+            }
+
+
             metaTagParams = {
-                title:  $scope.uiData.name + ' in ' + META_TAGS.title,
+                title:  pageTitle,
                 imageUrl:      BY.config.constants.productImageHost + $scope.uiData.media[0].url,
-                description:   descText,
-                keywords:      prodKeywords
+                description:   metaDescription,
+                keywords:      metaKeywords
             }
             BY.byUtil.updateMetaTags(metaTagParams);
         }
@@ -194,6 +213,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
                         mediaItem.poster = STATIC_IMAGE.unsupportedMedia;
                     }
                 });
+                $scope.getDiscountPercentage($scope.uiData);
 
                 updateMetaTags();
                 params = {};
@@ -469,7 +489,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
             if ($scope.slideIndex < 1) {
                 $scope.slideIndex = 1;
             }
-            $scope.byimageGallery = $(".by-imageGallery").outerWidth() - 60;
+            $scope.byimageGallery = $(".by_galleryContainer_outer").outerWidth() - 60;
             $scope.bygallerycontainer = $(".by-gallery-container").outerWidth();
             $scope.w = $scope.bygallerycontainer / $scope.byimageGallery;
             //alert($scope.w);
@@ -579,6 +599,21 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
                 }
             };
         // ********** rate & review for products
+
+
+        $scope.getDiscountPercentage = function (product) {
+            var salePrice = product.salePrice ? product.salePrice.amount : 0,
+                retailPrice = product.retailPrice ? product.retailPrice.amount : 0, discount = 0;
+
+            if (salePrice > 0 && retailPrice > 0 && salePrice < retailPrice) {
+                discount = ((retailPrice - salePrice) / retailPrice) * 100;
+            }
+
+            if (discount > 0) {
+                discount = discount.toFixed(0);
+                product.discountPercentage = discount;
+            }
+        }
 
 
 

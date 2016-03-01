@@ -10,6 +10,12 @@ define(['byApp', 'byUtil', 'reviewRateController', 'discussLikeController', 'sha
             var reviewDetails = new ReviewRateProfile();
             var init = initialize();
 
+            $scope.showAllReviews =  true;
+
+            $scope.showAllReviewsForm = function ($event) {               
+                $scope.showAllReviews = ($scope.showAllReviews === false) ? true : false;
+            }
+
             function initialize() {
                 if ($scope.branchId && $scope.institutionProfile.serviceBranches.length > 0) {
                     $scope.branchProfile = $scope.institutionProfile.serviceBranches[0];
@@ -92,7 +98,7 @@ define(['byApp', 'byUtil', 'reviewRateController', 'discussLikeController', 'sha
                 if ($scope.slideIndex < 1) {
                     $scope.slideIndex = 1;
                 }
-                $scope.byimageGallery = $(".by-imageGallery").outerWidth() - 60;
+                $scope.byimageGallery = $(".by_galleryContainer_outer").outerWidth() - 60;
                 $scope.bygallerycontainer = $(".by-gallery-container").outerWidth();
                 $scope.w = $scope.bygallerycontainer / $scope.byimageGallery;
                 //alert($scope.w);

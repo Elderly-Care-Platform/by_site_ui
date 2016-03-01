@@ -4,8 +4,9 @@
 </div>
 <div class="clearfix"></div>
 <div class="col-md-12 product-main margin-bottom-15 by_pruductDetailed_bgWhite" style="border:0px;">
-    
-    <div class="by_productCard_ImageOffer" style="right:0px;"  ng-if="uiData.salePrice.amount && (uiData.retailPrice.amount - uiData.salePrice.amount) > 0">{{((uiData.retailPrice.amount - uiData.salePrice.amount)/uiData.retailPrice.amount * 100).toFixed(1)}}% <br/><small>off</small></div>
+    <span ng-init="getDiscountPercentage(uiData)">
+    <div class="by_productCard_ImageOffer" style="right:0px;" ng-if="uiData.discountPercentage && uiData.discountPercentage >= 5">{{uiData.discountPercentage}}% <br/><small>off</small></div>
+    </span>
     
 
     <div class="col-md-5" style="padding:0px;">
@@ -25,32 +26,33 @@
             </div>
             <div class="clearfix"></div>
         </div>
-        <div class="col-md-12 by-imageGallery margin-top-20 row" style="padding-left:0px; border:0px;" ng-if="uiData.mediaItems.length > 1">
-            <div id="arrow_left" ng-click="slideGallery('l')">
-                <img src="assets/img/icons/arrow_left.gif?versionTimeStamp=%PROJECT_VERSION%" style=" height: 40px;  margin-top:10px;" usemap="#Map" border="0" alt="Product Gallery Left Arrow">
+        <div class="col-md-12 by-imageGallery margin-top-20 col-md-12" style=" border:0px;" ng-if="uiData.mediaItems.length > 1">
+            <div class="by-gallery-leftArrow" ng-click="slideGallery('l')">
             </div>
-            <div class="by-gallery-container" style="left:20px;">
-                <a ng-repeat="media in uiData.mediaItems" on-finish-render="ngRepeatFinished">
-                    <div ng-if="media.type === 'image' " class="by-imageGallery-item">
-                        <img class="small-width" ng-init="galleryClickHover();" ng-src="{{media.url}}" alt="Product Gallery Thumbnail Image" style="height:70px;">
-                    </div>
-                    <!-- Set image of video -->
-                    <div ng-if="media.type === 'video'" class="by-imageGallery-item">
-                        <img src="{{media.poster}}" style="opacity: 0.5;width:60px;" ng-click="playVideo(media.url)" id="posterImage">
-                        <video src="{{media.url | handleInterpolate}}" crossorigin="anonymous" controls autoplay class="set-video-frame" video-image id="video">
-                        </video>
-                        <canvas id="thecanvas"></canvas>
-                    </div>
-                    <!-- End image video -->
-                    <!--<div ng-if="media.type === 'notSupportedMedia'" class="by-imageGallery-item">
-                        <img data-toggle="tooltip" data-placement="top"
-                        title="Unsupported video file! Application supported only mp4, webm, ogg video files!"
-                        ng-src="{{media.poster}}" style="opacity: 0.5;width:60px;">
-                    </div>-->
-                </a>
+            <div class="by_galleryContainer_outer">
+                <div class="by-gallery-container" >
+                    <a ng-repeat="media in uiData.mediaItems" on-finish-render="ngRepeatFinished">
+                        <div ng-if="media.type === 'image' " class="by-imageGallery-item">
+                            <img class="small-width" ng-init="galleryClickHover();" ng-src="{{media.url}}" alt="Product Gallery Thumbnail Image" style="height:70px;">
+                        </div>
+                        <!-- Set image of video -->
+                        <div ng-if="media.type === 'video'" class="by-imageGallery-item">
+                            <img src="{{media.poster}}" style="opacity: 0.5;width:60px;" ng-click="playVideo(media.url)" id="posterImage">
+                            <video src="{{media.url | handleInterpolate}}" crossorigin="anonymous" controls autoplay class="set-video-frame" video-image id="video">
+                            </video>
+                            <canvas id="thecanvas"></canvas>
+                        </div>
+                        <!-- End image video -->
+                        <!--<div ng-if="media.type === 'notSupportedMedia'" class="by-imageGallery-item">
+                            <img data-toggle="tooltip" data-placement="top"
+                            title="Unsupported video file! Application supported only mp4, webm, ogg video files!"
+                            ng-src="{{media.poster}}" style="opacity: 0.5;width:60px;">
+                        </div>-->
+                    </a>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div id="arrow_right" ng-click="slideGallery('r')">
-                <img src="assets/img/icons/arrow_right.gif?versionTimeStamp=%PROJECT_VERSION%" alt="Product Gallery Right Arrow" style=" height: 40px;  margin-top:10px;">
+            <div class="by-gallery-rightArrow" ng-click="slideGallery('r')">
             </div>
             <div class="clearfix"></div>
         </div>
@@ -104,8 +106,8 @@
                 </div>
                 <div class="pincode-form divLeft">
                     <form name="pincode-form" class="pinCheck">
-                        <input type="number" minlength="6" maxlength="6" placeholder="Pincode" autocomplete="off" name="pincode" id="pincode" ng-model="pincode" class="pincode  textbox-nowidth" min="1" style="width:95px;">
-                        <input type="submit" href="javascript:void(0)" class="btn btn-sm btn-default pull-right grayBg" value="Check" style="height:26px; background:#004f24; color:#fff; padding-right:15px; padding-left:15px;" ng-disabled="!pincode-form.pincode.$valid" ng-click="checkLogisticAvailability(pincode)">
+                        <input type="number" minlength="6" maxlength="6" placeholder="Pincode" autocomplete="off" name="pincode" id="pincode" ng-model="pincode" class="pincode  textbox-nowidth" min="1" style="width:95px; line-height:25px; margin-right:5px; ">
+                        <input type="submit" href="javascript:void(0)" class="btn-u buy-product by_productDetail_buttonBg" value="Check"  ng-disabled="!pincode-form.pincode.$valid" ng-click="checkLogisticAvailability(pincode)" style="width:80px;">
                     </form>
                 </div>
             </div>
@@ -308,10 +310,10 @@
                 </div>
                 <div ng-repeat="review in reviews track by $index" data-index="discussion-articles" data-link="articles.html" ng-include="'app/components/product/product-rate-review/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'" ng-if="review.text && review.text.trim().length > 0 &&  showAllReviews===false">
                 </div>
-                <div  ng-if="showAllReviews===false" class="by_proReviewButton" ng-click="showAllReviewsForm($event);$event.stopPropagation();">
+                <div  ng-if="showAllReviews===false" class="by_proReviewButton" ng-click="showAllReviewsForm($event);$event.stopPropagation();" style="margin-right:20px;">
                     Less
                 </div>
-                <div ng-if="showAllReviews===true && reviews.length > 2" class="by_proReviewButton"  ng-click="showAllReviewsForm($event);$event.stopPropagation();">
+                <div ng-if="showAllReviews===true && reviews.length > 2" class="by_proReviewButton"  ng-click="showAllReviewsForm($event);$event.stopPropagation();" style="margin-right:20px;">
                     More
                 </div>
             </div>
@@ -340,7 +342,7 @@
 <div class="by_productDetail_contentDescHead margin-top-20" ng-if="uiData.similarProduct.length > 0">Similar Products</div>
 <div class="col-md-12 no-padding margin-top-10">
     <div class="by_proSmiliarLeft" ng-click="slideSimilarProduct('l')">
-        <img src="assets/img/icons/arrow_left.gif?versionTimeStamp=%PROJECT_VERSION%" alt="Similar Product Left Arrow" />
+        <img src="assets/img/icons/arrow_left_over.png?versionTimeStamp=%PROJECT_VERSION%" alt="Similar Product Left Arrow" />
     </div>
     <div class="by_proSmiliarWrap" >
         <div class="by_proSmiliarWrapFull">
@@ -353,7 +355,7 @@
         </div>
     </div>
     <div class="by_proSmiliarRight" ng-click="slideSimilarProduct('r')">
-         <img src="assets/img/icons/arrow_right.gif?versionTimeStamp=%PROJECT_VERSION%" alt="Similar Product Right Arrow" /> 
+         <img src="assets/img/icons/arrow_right_over.png?versionTimeStamp=%PROJECT_VERSION%" alt="Similar Product Right Arrow" /> 
     </div>
 </div>    
    

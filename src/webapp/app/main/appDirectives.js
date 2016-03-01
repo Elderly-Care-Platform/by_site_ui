@@ -255,8 +255,8 @@ define(["byApp", "angular"], function (byApp, angular) {
             restrict: 'A',
             link: function (scope, elem, attrs) {
                 var profileRating = BY.byUtil.getAverageRating(attrs.rateCalculator);
-                elem.html(profileRating);
-                elem.addClass("profileRate" + Math.round(profileRating));
+                //elem.html(profileRating);
+                elem.addClass("profileRateSmall" + Math.round(profileRating));
             }
         };
     });

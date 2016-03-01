@@ -102,10 +102,13 @@ define(['byApp',
 
             function updateMetaTags() {
                 var metaTagParams = BY.config.seo.communities[$scope.selectedMenu.id];
-                if (metaTagParams.description) {
+                if (metaTagParams && metaTagParams.description) {
                     metaTagParams.description = "<p>" + metaTagParams.description + "</p>"
                 }
-                BY.byUtil.updateMetaTags(metaTagParams);
+                if(metaTagParams){
+                    BY.byUtil.updateMetaTags(metaTagParams);
+                }
+
 
                 //var metaTagParams = {
                 //    title: $scope.selectedMenu.displayMenuName,

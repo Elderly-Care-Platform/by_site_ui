@@ -138,7 +138,6 @@
     color: #fff;
     font-size: 15px;
     float: right;
-    margin-right: 15px;
     margin-bottom: 20px;
     cursor: pointer;
 }
@@ -166,10 +165,22 @@
 {
     float: right;
     margin-top: -27px;
+    width: calc(50% - 10px);
 }
 .by-rateReviewLeft
 {
     float: left;
+    width: calc(50% - 10px);
+}
+.by_rateReview_divider
+{
+    width: 1px;
+    height: 217px;
+    margin-left: 9px;
+    margin-right: 10px;
+    background: #ccc;
+    float: right;
+    margin-top: -18px;
 }
 @media screen and (max-width: 990px){
    .by-rateReviewRight
@@ -178,6 +189,10 @@
     margin-top: 0px;
     width: 100%;
 } 
+.by_rateReview_divider
+{
+    display: none;
+}
 .by-rateReviewLeft
 {
     float: none;
