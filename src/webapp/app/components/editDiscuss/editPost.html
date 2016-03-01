@@ -1,0 +1,226 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+        var options = {
+            beforeSend: function () {
+            },
+            uploadProgress: function (event, position, total, percentComplete) {
+            },
+            success: function () {
+            },
+            complete: function (response) {
+                $("#articlePhotoFilename").val(response.responseText.substring(response.responseText.lastIndexOf('/') + 1));
+            },
+            error: function () {
+                $("#articlePhotoFilename").val("<span class='redColor'> ERROR: unable to upload files</span>");
+            }
+        };
+
+        try {
+            $("#UploadForm").ajaxForm(options);
+        }
+        catch (e) {
+        }
+    });
+
+    $("#UploadImage12").bind('submit', function (e) {
+        var postData = new FormData(jQuery('#UploadImage12')[0]);
+        $.ajax({
+            url: BY.config.constants.apiPrefix + 'UploadFile?transcoding=true',
+            type: "POST",
+            enctype: "multipart/form-data",
+            data: postData,
+            //  contentType: "application/json",
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (data, textStatus, jqXHR) {
+                $("#articleTitleImage").val(JSON.stringify(data));
+                $("#articleTitleImage").trigger('input');
+                $(".by_uploading_image").show();                
+                $(".by_uploading_imagePreload").hide();
+                $(".by-editor-view-buttons").hide();
+                $(".by_btn_submit").prop("disabled", false);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus);          
+                $(".by_uploading_imagePreload").hide();
+                alert("Image upload failed");
+            }
+        });
+        e.preventDefault();
+    });
+
+    function uploadImage(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.myLabel img').attr('src', e.target.result)
+            }
+
+            reader.readAsDataURL(input.files[0]);
+            $('#UploadImage12').submit();
+            $(".by_uploading_imagePreload").show();
+
+            //input.form.submit();
+        }
+    }
+</script>
+
+<div  class="by_editor_wrap">
+    <!--Upload Video Modal popup-->
+    <div id="editorVideoModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Insert Video</h4>
+                </div>
+                <div class="modal-body">
+                    <p style="margin-bottom: 2px;">Paste your video embedded code</p>
+
+                    <div class="clearfix"></div>
+                    <img src="assets/img/icons/dailymotion.png?versionTimeStamp=%PROJECT_VERSION%"
+                         alt="dailymotion icon"/>
+                    <img src="assets/img/icons/vimeo.png?versionTimeStamp=%PROJECT_VERSION%" alt="vimeo icon"/>
+                    <img src="assets/img/icons/metacafe.png?versionTimeStamp=%PROJECT_VERSION%" alt="metacafe icon"/>
+                    <img src="assets/img/icons/youtube.png?versionTimeStamp=%PROJECT_VERSION%" alt="youtube icon"/>
+
+                    <div class="clearfix" style="height: 10px;"></div>
+					<textarea rows="" cols="" class="by_editorModalTextArea"
+                              ng-model="sharedLinkInfo.url" ></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit"
+                            class="btn btn-sm btn-success comment-submit by_share_btn_submit"
+                            data-dismiss="modal" ng-click="postLink()">Submit
+                    </button>
+                    <button type="button"
+                            class="btn btn-sm btn-success comment-submit by_btn_cancel"
+                            data-dismiss="modal">Cancel
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Upload Share link Modal popup-->
+    <div id="editorLinkModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Insert Link</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Paste link you would like to share</p>
+					<textarea rows="" cols="" class="by_editorModalTextArea"
+                              ng-model="sharedLinkInfo.url"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit"
+                            class="btn btn-sm btn-success comment-submit by_share_btn_submit"
+                            data-dismiss="modal" ng-click="postLink()">Submit
+                    </button>
+                    <button type="button"
+                            class="btn btn-sm btn-success comment-submit by_btn_cancel"
+                            data-dismiss="modal">Cancel
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="by_editor_wrap_bg" style="background:none; border:0px;">
+        <div class="col-md-12 no-padding register-page">
+            <input type="text" class="username-textbox textbox "
+                   placeholder="Please enter a title of your post" name="username"
+                   ng-model="discuss.title" id="shareInputFeild">
+        </div>
+        <div class="clearfix"></div>
+        <div class="by-editor-view-buttons" ng-class="{'hide': discuss.articlePhotoFilename || discuss.linkInfo != null}">
+            <div class="col-md-4 col-xs-4 no-padding register-page by_editor_post_divider">
+                <form id="UploadImage12" action="UploadFile" method="post" enctype="multipart/form-data">
+                    <label ng-click="resetEditorView()">
+                        <input name="sp" id="sp" type="file" required onchange="javascript:uploadImage(this)"/>
+                        <img src="assets/img/icons/photo.png" width="100%" alt="editor uploaded photo"/>
+                        <span style="float: right; min-width: 50px; max-width: 80px; margin-left: 10px; text-align: left;">
+							Upload<br/> your photo
+					    </span>
+                    </label>
+                </form>
+                <input type="text" id="articleTitleImage"
+                       ng-model="discuss.articlePhotoFilename" value=""
+                       style="display: none"/>
+            </div>
+            <div class="col-md-4 col-xs-4 no-padding  register-page by_editor_post_divider">
+                <label data-toggle="modal" data-target="#editorLinkModal" ng-click="resetEditorView()">
+                    <img src="assets/img/icons/link.png" width="100%" alt="beautifulyears share link icon"/>
+                    <span style="float: right; min-width: 50px; max-width: 80px; margin-left: 10px; text-align: left;">Share<br/> a link</span>
+                </label>
+            </div>
+            <div class="col-md-4 col-xs-4 no-padding register-page by_editor_post_divider">
+                <label data-toggle="modal" data-target="#editorVideoModal"
+                       ng-click="resetEditorView()">
+                    <img src="assets/img/icons/video.png" width="100%" alt="beautifulyears share video icon"/>
+                    <span style="float: right; min-width: 50px; max-width: 80px; margin-left: 10px; text-align: left;">Share<br/> a video</span>
+                </label>
+                <!--<label class="by_call_submit_video">-->
+                <!--<img src="assets/img/icons/video.png" width="100%"/>-->
+                <!--<span style="float: right;    min-width: 50px;    max-width: 80px;    margin-left: 10px;    text-align: left;"> Share<br/> a video </span>-->
+                <!--</label>-->
+            </div>
+            <div class="clearfix" style="height: 20px;"></div>
+        </div>
+        <div class="clearfix" ></div>
+        <div class="by-editor-shareInfo by_uploading_imagePreload" >
+            <div class="by-editor-loadingImage"></div>
+        </div>
+        <div class="by_uploading_image" ng-class="{'show': discuss.articlePhotoFilename}">
+            <div class="col-md-6 by_uploading_image_add">
+                <div class="myLabel" style="padding: 0px; width: 100%;">
+                    <img ng-src="{{discuss.articlePhotoFilename.original}}" alt="" style="border: 1px solid #fff;" alt="beautifulyears blank icon"/>
+                </div>
+                <div class="clearfix"></div>
+                <div class="by-imageEditor-view-close" ng-click="resetEditorView()"></div>
+            </div>
+            <div class="col-md-6">
+                This is an original photo and belongs to me 
+                <input type="checkbox" checked data-toggle="toggle" data-offstyle="info" data-size="mini">
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="by_editor_wrap_bg"
+             ng-include="'app/components/editDiscuss/editShareLink.html?versionTimeStamp=%PROJECT_VERSION%'"
+             ng-if="showLinkView" ng-class="{'show': discuss.linkInfo != null}"></div>
+
+
+        <div class="byEditorBg">
+            <div class="col-md-12 no-padding margin-bottom-35 byEditor" ng-init="initializeEditor();">
+                <textarea id="article_textArea" class="textbox about-dependent" rows="3"></textarea>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        
+
+        <div class="clearfix"></div>
+        <span class='redColor'>{{errorMsg}}</span>
+        <div class="clearfix"></div>
+
+        <div class="col-md-12 ">
+            <button class="btn btn-big btn-default pull-right by_btn_submit by-editor-submit-btn"
+                     ng-click="postContent('P')">Submit
+            </button>
+            <button class="btn btn-big btn-default pull-right by-editor-cancel-btn"
+                    ng-click="exitEditorDiscuss()">Cancel
+            </button>
+            <div class="clearfix margin-bottom-20"></div>   
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

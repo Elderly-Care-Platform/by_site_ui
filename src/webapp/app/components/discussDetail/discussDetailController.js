@@ -262,6 +262,10 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
                 }
 
             }
+
+            $scope.editCommunity = function(){
+                $location.path("/edit/communities");
+            }
         }
 
         DiscussDetailController.$inject = ['$scope', '$rootScope', '$routeParams', '$location', 'DiscussDetail', '$sce', 'broadCastData', '$timeout', 'ErrorService'];

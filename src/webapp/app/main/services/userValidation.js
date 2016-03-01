@@ -8,7 +8,8 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
             validateSession     : validateSession,
             registerUser        : registerUser,
             googleLogin         : googleLogin,
-            fbLogin             : fbLogin
+            fbLogin             : fbLogin,
+            registerGuestUser   : registerGuestUser
         };
 
 
@@ -217,6 +218,17 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
                 }
             })
         };
+
+
+        function registerGuestUser(guestEmailId){
+            var guestLogin = {"email":guestEmailId};
+            $http.post(BY.config.constants.apiPrefix + 'api/v1/users/addGuestUser', guestLogin).success(function (response) {
+                console.log("successfully registered guest");
+            }).error(function (error) {
+                console.log("guest registration failed");
+                console.log(error);
+            });
+        }
 
     }
 

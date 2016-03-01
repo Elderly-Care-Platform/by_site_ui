@@ -133,3 +133,121 @@
    height:auto;
  }
   }
+
+  .by_product_twoRowThumb
+  {
+    width: calc(50% - 10px);
+    height: auto;
+    position: relative;
+    border: 1px solid #ccc;
+  }
+  .by_product_rowText
+  {
+    width: 100%;
+    min-height: 35px;
+    height: auto;
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    left: 1px;
+    z-index: 1;
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    /*background: url('../../img/product/white_gradient_trans.png?versionTimeStamp=%PROJECT_VERSION%')  bottom right;*/
+    background: rgba(90, 67, 67, 0.11);
+  }
+  .by_product_threeRow
+  {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .by_product_threeRowOne, .by_product_threeRowThree
+  {
+    width: calc(33.3% - 13px);
+    height: auto;
+  }
+  .by_product_threeRowThumb
+  {
+    width:100%;
+    position: relative;
+  }
+  .by_product_threeRowTwoM
+  {
+    width: calc(33.4% - 14px);
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .by_product_home_mobile
+  {
+    widows: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .by_product_home_mobile .by_product_rowText
+  {
+    width: 100%;
+    min-height: 20px;
+    height: auto;
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    z-index: 1;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    /*background: url('../../img/product/white_gradient_trans.png?versionTimeStamp=%PROJECT_VERSION%')  bottom right;*/
+    background: rgba(90, 67, 67, 0.11);
+  }
+  .by_product_home_expStore
+  {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    padding: 10% 5%;
+    z-index: 1;
+    text-align: center;
+  }
+  .by_product_home_expStore_head
+  {
+     font-size: 25px;
+     font-weight: bold;
+     color: #000;
+     line-height: 25px;
+    padding-top: 10%;
+  }
+  .by_product_home_expStore_text
+  {    
+    font-family: kimberly_geswein !important;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 15px;
+    font-weight: bold;
+  }
+  .by_product_home_expStore_button
+  {
+    width: 190px;
+    height: 35px;
+    background: #004f24;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 35px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+  }
+  .by_product_home_expStore a, .by_product_home_expStore a:hover
+  {
+    text-decoration: none !important;
+  }

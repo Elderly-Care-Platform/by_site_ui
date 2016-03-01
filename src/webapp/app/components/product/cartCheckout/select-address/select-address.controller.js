@@ -1,4 +1,4 @@
-define(['byProductApp', 'byProdEcomConfig'], function (byProductApp, byProdEcomConfig) {
+define(['byProductApp', 'byProdEcomConfig', 'userValidation'], function (byProductApp, byProdEcomConfig, userValidation) {
     function SelectAddressController($scope,
                                      $log,
                                      $location,
@@ -6,7 +6,7 @@ define(['byProductApp', 'byProdEcomConfig'], function (byProductApp, byProdEcomC
                                      SelectAddressService,
                                      CartService,
                                      BreadcrumbService,
-                                     PAGE_URL, SessionIdService, LogisticService, SharedContextService) {
+                                     PAGE_URL, SessionIdService, LogisticService, SharedContextService, UserValidationFilter) {
 
         $log.debug('Inside SelectAddress Controller');
 
@@ -130,6 +130,7 @@ define(['byProductApp', 'byProdEcomConfig'], function (byProductApp, byProdEcomC
                 $scope.pickupDetails.address = BY.config.product.pickupPoints[addressIdx].address;
 
                 SharedContextService.setPickupAddress($scope.pickupDetails);
+                UserValidationFilter.registerGuestUser($scope.pickupDetails.email);
                 $location.path(PAGE_URL.paymentGateway + $scope.pickupDetails.id);
             }
 
@@ -164,7 +165,7 @@ define(['byProductApp', 'byProdEcomConfig'], function (byProductApp, byProdEcomC
         'SelectAddressService',
         'CartService',
         'BreadcrumbService',
-        'PAGE_URL', 'SessionIdService', 'LogisticService', 'SharedContextService'];
+        'PAGE_URL', 'SessionIdService', 'LogisticService', 'SharedContextService', 'UserValidationFilter'];
 
 
     byProductApp.registerController('SelectAddressController', SelectAddressController);

@@ -13,9 +13,9 @@ define([], function () {
                 }
             })
 
-            /* expereince stroe */
+            /* experience stroe */
 
-            .when('/expereince-center', {
+            .when('/experience-center', {
                 templateUrl: 'app/components/experienceStore/experienceStore.html', controller: 'expStoreCtrl', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
@@ -83,6 +83,20 @@ define([], function () {
                         return defered.promise;
                     }]
                 }
+            })
+
+            .when('/edit/communities', {
+               templateUrl: 'app/components/editDiscuss/editDiscuss.html?versionTimeStamp=%PROJECT_VERSION%',
+               controller: 'editDiscussController',
+               resolve: {
+                   load: ['$q', function ($q) {
+                       var defered = $q.defer();
+                       require(['app/components/editDiscuss/editDiscussController'], function () {
+                           defered.resolve();
+                       });
+                       return defered.promise;
+                   }]
+               }
             })
 
             .when('/announcements/:discussTitle/', {

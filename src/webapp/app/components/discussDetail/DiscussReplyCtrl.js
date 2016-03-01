@@ -3,12 +3,13 @@
  */
 define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValidation) {
     function DiscussReplyController($scope, $rootScope, $routeParams, $location, DiscussDetail, $sce, broadCastData,
-                                    ValidateUserCredential, UserValidationFilter, $q){
+                                    ValidateUserCredential, UserValidationFilter, $q, EditReply, $route){
         $scope.showEditor           = false;
         $scope.userSessionType      = UserValidationFilter.getUserSessionType();
         $scope.userCredential       = {'email':'', 'pwd':''};
         $scope.likeActionCredential = {'email':'', 'pwd':''};
         $scope.discussLikeObj       = {};
+        $scope.isNewComment = true;
 
 
         $scope.trustForcefully = function (html) {
@@ -16,6 +17,8 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
         };
 
         $scope.createNewComment = function (editorId) {
+            $scope.disposeComment(editorId);
+            $scope.isNewComment = true;
             $scope.userSessionType  = UserValidationFilter.getUserSessionType();
             if (!$scope.showEditor){
                 $scope.initCommentEditor(editorId);
@@ -23,6 +26,39 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
             $scope.cancelSetCredentialForLike();
             
         };
+
+        function setContent(id){
+            setTimeout(function(){
+                if(tinymce.get(id.id) && id.text){
+                    tinymce.get(id.id).setContent(id.text);
+                } 
+            }, 200);
+        }
+
+        $scope.editComment  = function (editor) {
+            $scope.disposeComment(editor.id);
+            $scope.isNewComment = false;
+            if (!$scope.showEditor){
+                $scope.showEditor = true;
+                BY.byEditor.addEditor({"editorTextArea": editor.id, "commentEditor": true, "autoFocus": true});
+            }
+            setContent(editor); 
+        }
+
+        $scope.postEditComment = function(editor){
+            var commentEdit = new EditReply();
+                commentEdit.id = editor.id,
+                commentEdit.text = tinyMCE.activeEditor.getContent();;
+            commentEdit.$update( function(commentEdit, header) {
+                $(".editCommentEditor").hide();
+                broadCastData.update(commentEdit.data);
+                $("#preloader").hide();
+            },
+            function(error) {
+                $("#preloader").hide();
+                console.log("error");
+            });
+        }
 
         $scope.initCommentEditor = function (editorId) {
             $scope.showEditor = true;
@@ -206,7 +242,7 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
     }
 
     DiscussReplyController.$inject = ['$scope', '$rootScope', '$routeParams', '$location', 'DiscussDetail', '$sce', 'broadCastData',
-        'ValidateUserCredential', 'UserValidationFilter', '$q'];
+        'ValidateUserCredential', 'UserValidationFilter', '$q', 'EditReply', '$route'];
     byApp.registerController('DiscussReplyController', DiscussReplyController);
     return DiscussReplyController;
 });

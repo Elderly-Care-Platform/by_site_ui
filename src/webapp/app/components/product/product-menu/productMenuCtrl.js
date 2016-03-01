@@ -44,7 +44,7 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
             angular.element($window).bind("scroll", function() {
                 var winTop = $(this).scrollTop(),
                     winBottom = winTop + $(this).height(),
-                    leftBottom = left.height() + 100;
+                    leftBottom = left.height() + 100 + $(".by_productList_banner").height();
 
                 //when the user reached the bottom of '#leftShort' set its position to fixed to prevent it from moving on scroll
                 if (winBottom >= leftBottom) {

@@ -3,11 +3,11 @@ define([], function () {
     function ShoppingConfirmationFactory($log,
                                          urlTemplate,
                                          REST_URL,
-                                         CachedRequestHandler) {
+                                         CachedRequestHandler, $http, APPLICATION) {
 
         $log.debug('Inside ShoppingConfirmationService');
 
-        var confirmationService, urls;
+        var confirmationService, urls, invoicePrintWindow;
         urls = {
             makePayment: urlTemplate(REST_URL.makePayment + '?customerId=:customerId'),
             checkout: urlTemplate(REST_URL.checkout + '?customerId=:customerId')
@@ -23,7 +23,8 @@ define([], function () {
             },
             {
                 makePayment: makePayment,
-                checkout: checkout
+                checkout: checkout,
+                printInvoice : printInvoice
             }
         );
         return confirmationService;
@@ -34,6 +35,22 @@ define([], function () {
 
         function checkout(params, postData) {
             return this.$post(urls.checkout(params), postData.order);
+        }
+
+
+        function printInvoice(id) {
+            if(invoicePrintWindow){
+                invoicePrintWindow.close();
+
+            }
+            $.get(APPLICATION.host+"/cart/checkout/getOrderSummary/"+id, function (data) {
+                invoicePrintWindow = window.open('about:blank', id);
+                invoicePrintWindow.document.write(data);
+                invoicePrintWindow.setTimeout(function(){
+                    invoicePrintWindow.print();
+                },2000);
+            });
+
         }
 
     }
