@@ -142,7 +142,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
             // };
 
             $scope.getHrefProfile = function (profile, urlQueryParams) {
-                var newHref = urlFactoryFilter.getdirectoryProfileUrl(profile, urlQueryParams, false);
+                var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
@@ -189,7 +189,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
             // };
 
             $scope.getHrefProfileReply = function (profile, urlQueryParams) {
-                var newHref = urlFactoryFilter.getProfileDetailUrlReply(profile, urlQueryParams, false);
+                var newHref = urlFactoryFilter.getReplyUrl(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };

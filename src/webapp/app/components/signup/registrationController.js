@@ -1,8 +1,8 @@
 define(['byApp', 'byUtil', 'LoginController', 'registrationConfig', 'modifySignupCtrl', 'orderHistoryCtrl', 'regIndividualCtrl',
-        'regProfessionalCtrl', 'regInstitutionCtrl', 'regHousingCtrl', 'regHousingFacilityCtrl', 'regUserTypeController'],
+        'regProfessionalCtrl', 'regInstitutionCtrl', 'regHousingCtrl', 'regHousingFacilityCtrl', 'regUserTypeController', 'urlFactory'],
     function (byApp, byUtil, LoginController, registrationConfig, modifySignupCtrl, orderHistoryCtrl, regIndividualCtrl,
-              regProfessionalCtrl, regInstitutionCtrl, regHousingCtrl, regHousingFacilityCtrl, regUserTypeController) {
-        function RegistrationController($scope, $rootScope, $http, $location, $routeParams, UserProfile) {
+              regProfessionalCtrl, regInstitutionCtrl, regHousingCtrl, regHousingFacilityCtrl, regUserTypeController, urlFactory) {
+        function RegistrationController($scope, $rootScope, $http, $location, $routeParams, UserProfile, urlFactoryFilter) {
             $scope.views = {};
             $scope.views.leftPanel = "";
             $scope.profile = null;
@@ -227,96 +227,96 @@ define(['byApp', 'byUtil', 'LoginController', 'registrationConfig', 'modifySignu
             };
 
             $scope.getHrefProfile = function (profile, urlQueryParams) {
-                var newHref = getProfileDetailUrlS(profile, urlQueryParams, false);
+                var newHref = urlFactoryFilter.getdirectoryProfileUrl(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
 
-            function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation) {
-                var proTitle = "anonymous";
-                if (profile && profile.basicProfileInfo.firstName && profile.basicProfileInfo.firstName.length > 0) {
-                    proTitle = profile.basicProfileInfo.firstName;
-                    if (profile.individualInfo.lastName && profile.individualInfo.lastName != null && profile.individualInfo.lastName.length > 0) {
-                        proTitle = proTitle + " " + profile.individualInfo.lastName;
-                    }
-                } else {
-                    proTitle = "anonymous";
-                }
+            // function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation) {
+            //     var proTitle = "anonymous";
+            //     if (profile && profile.basicProfileInfo.firstName && profile.basicProfileInfo.firstName.length > 0) {
+            //         proTitle = profile.basicProfileInfo.firstName;
+            //         if (profile.individualInfo.lastName && profile.individualInfo.lastName != null && profile.individualInfo.lastName.length > 0) {
+            //             proTitle = proTitle + " " + profile.individualInfo.lastName;
+            //         }
+            //     } else {
+            //         proTitle = "anonymous";
+            //     }
 
-                proTitle = BY.byUtil.getSlug(proTitle);
-                var newHref = "/users/" + proTitle;
+            //     proTitle = BY.byUtil.getSlug(proTitle);
+            //     var newHref = "/users/" + proTitle;
 
 
-                if (urlQueryParams && Object.keys(urlQueryParams).length > 0) {
-                    //Set query params through angular location search method
-                    if (isAngularLocation) {
-                        angular.forEach($location.search(), function (value, key) {
-                            $location.search(key, null);
-                        });
-                        angular.forEach(urlQueryParams, function (value, key) {
-                            $location.search(key, value);
-                        });
-                    } else { //Set query params manually
-                        newHref = newHref + "?"
+            //     if (urlQueryParams && Object.keys(urlQueryParams).length > 0) {
+            //         //Set query params through angular location search method
+            //         if (isAngularLocation) {
+            //             angular.forEach($location.search(), function (value, key) {
+            //                 $location.search(key, null);
+            //             });
+            //             angular.forEach(urlQueryParams, function (value, key) {
+            //                 $location.search(key, value);
+            //             });
+            //         } else { //Set query params manually
+            //             newHref = newHref + "?"
 
-                        angular.forEach(urlQueryParams, function (value, key) {
-                            newHref = newHref + key + "=" + value + "&";
-                        });
+            //             angular.forEach(urlQueryParams, function (value, key) {
+            //                 newHref = newHref + key + "=" + value + "&";
+            //             });
 
-                        //remove the last  '&' symbol from the url, otherwise browser back does not work
-                        newHref = newHref.substr(0, newHref.length - 1);
-                    }
-                }
+            //             //remove the last  '&' symbol from the url, otherwise browser back does not work
+            //             newHref = newHref.substr(0, newHref.length - 1);
+            //         }
+            //     }
 
-                return newHref;
-            };
+            //     return newHref;
+            // };
 
             $scope.getHrefFacilty = function (profile, urlQueryParams) {
-                var newHref = getFaciltyUrl(profile, urlQueryParams, false);
+                var newHref = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
 
-            function getFaciltyUrl(profile, urlQueryParams, isAngularLocation) {
-                var proTitle = "others";
-                if (profile && profile.name && profile.name.length > 0) {
-                    proTitle = profile.name;
-                } else {
-                    proTitle = "others";
-                }
+            // function getFaciltyUrl(profile, urlQueryParams, isAngularLocation) {
+            //     var proTitle = "others";
+            //     if (profile && profile.name && profile.name.length > 0) {
+            //         proTitle = profile.name;
+            //     } else {
+            //         proTitle = "others";
+            //     }
 
-                proTitle = BY.byUtil.getSlug(proTitle);
-                var newHref = "/users/" + proTitle;
+            //     proTitle = BY.byUtil.getSlug(proTitle);
+            //     var newHref = "/users/" + proTitle;
 
 
-                if (urlQueryParams && Object.keys(urlQueryParams).length > 0) {
-                    //Set query params through angular location search method
-                    if (isAngularLocation) {
-                        angular.forEach($location.search(), function (value, key) {
-                            $location.search(key, null);
-                        });
-                        angular.forEach(urlQueryParams, function (value, key) {
-                            $location.search(key, value);
-                        });
-                    } else { //Set query params manually
-                        newHref = newHref + "?"
+            //     if (urlQueryParams && Object.keys(urlQueryParams).length > 0) {
+            //         //Set query params through angular location search method
+            //         if (isAngularLocation) {
+            //             angular.forEach($location.search(), function (value, key) {
+            //                 $location.search(key, null);
+            //             });
+            //             angular.forEach(urlQueryParams, function (value, key) {
+            //                 $location.search(key, value);
+            //             });
+            //         } else { //Set query params manually
+            //             newHref = newHref + "?"
 
-                        angular.forEach(urlQueryParams, function (value, key) {
-                            newHref = newHref + key + "=" + value + "&";
-                        });
+            //             angular.forEach(urlQueryParams, function (value, key) {
+            //                 newHref = newHref + key + "=" + value + "&";
+            //             });
 
-                        //remove the last  '&' symbol from the url, otherwise browser back does not work
-                        newHref = newHref.substr(0, newHref.length - 1);
-                    }
-                }
+            //             //remove the last  '&' symbol from the url, otherwise browser back does not work
+            //             newHref = newHref.substr(0, newHref.length - 1);
+            //         }
+            //     }
 
-                return newHref;
-            };
+            //     return newHref;
+            // };
 
 
         }
 
-        RegistrationController.$inject = ['$scope', '$rootScope', '$http', '$location', '$routeParams', 'UserProfile'];
+        RegistrationController.$inject = ['$scope', '$rootScope', '$http', '$location', '$routeParams', 'UserProfile', 'UrlFactoryFilter'];
         byApp.registerController('RegistrationController', RegistrationController);
 
         return RegistrationController;

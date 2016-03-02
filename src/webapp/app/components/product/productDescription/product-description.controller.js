@@ -585,7 +585,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
         };
 
         $scope.getHrefProfileReview = function(profile, urlQueryParams) {
-            var newHref = urlFactoryFilter.getProfileDetailUrlReview(profile, urlQueryParams, false);
+            var newHref = urlFactoryFilter.getReviewUrl(profile, urlQueryParams, false);
             newHref = "#!" + newHref;
             return newHref;
         };

@@ -178,7 +178,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussReplyController', 's
             };
 
             $scope.getHrefProfile = function(profile, urlQueryParams) {
-                var newHref = UrlFactoryFilter.getIndvProfileUrl(profile, urlQueryParams, false);
+                var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };

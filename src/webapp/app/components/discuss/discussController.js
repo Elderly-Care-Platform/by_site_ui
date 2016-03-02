@@ -255,7 +255,7 @@ define(['byApp',
 
 
             $scope.getHrefProfile = function (profile, urlQueryParams) {
-                var newHref = urlFactoryFilter.getIndvProfileUrl(profile, urlQueryParams, false);
+                var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };

@@ -1,9 +1,9 @@
 define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController', 'indvUserProfileCtrl',
-        'housingProfileLeftCtrl', 'instProfileCtrl', 'instProfileLeftCtrl', 'profUserProfileCtrl', 'housingProfileCtrl'],
+        'housingProfileLeftCtrl', 'instProfileCtrl', 'instProfileLeftCtrl', 'profUserProfileCtrl', 'housingProfileCtrl', 'urlFactory'],
     function (byApp, byUtil, userTypeConfig, reviewRateController, indvUserProfileCtrl,
-              housingProfileLeftCtrl, instProfileCtrl, instProfileLeftCtrl, profUserProfileCtrl, housingProfileCtrl) {
+              housingProfileLeftCtrl, instProfileCtrl, instProfileLeftCtrl, profUserProfileCtrl, housingProfileCtrl, urlFactory) {
         function ProfileController($scope, $rootScope, $location, $routeParams, ReviewRateProfile, UserProfile, $sce,
-                                   DiscussPage, $q, UserValidationFilter, ErrorService) {
+                                   DiscussPage, $q, UserValidationFilter, ErrorService, urlFactoryFilter) {
             $scope.profileViews = {};
             $scope.profileType = $routeParams.profileType;
             $scope.profileId = $routeParams.profileId;
@@ -217,54 +217,54 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController', 'indvUserPr
 
             $scope.go = function ($event, discuss, queryParams) {
                 $event.stopPropagation();
-                var url = getDiscussDetailUrl(discuss, queryParams, true);
+                var url = urlFactoryFilter.getDiscussDetailUrl(discuss, queryParams, true);
                 $location.path(url);
             };
 
             $scope.getHref = function (discuss, queryParams) {
-                var newHref = getDiscussDetailUrl(discuss, queryParams, false);
+                var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, queryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
 
-            function getDiscussDetailUrl(discuss, queryParams, isAngularLocation) {
-                var disTitle = "others";
-                if (discuss.title && discuss.title.trim().length > 0) {
-                    disTitle = discuss.title;
-                } else if (discuss.text && discuss.text.trim().length > 0) {
-                    disTitle = discuss.text;
-                } else if (discuss.linkInfo && discuss.linkInfo.title && discuss.linkInfo.title.trim().length > 0) {
-                    disTitle = discuss.linkInfo.title;
-                } else {
-                    disTitle = "others";
-                }
+            // function getDiscussDetailUrl(discuss, queryParams, isAngularLocation) {
+            //     var disTitle = "others";
+            //     if (discuss.title && discuss.title.trim().length > 0) {
+            //         disTitle = discuss.title;
+            //     } else if (discuss.text && discuss.text.trim().length > 0) {
+            //         disTitle = discuss.text;
+            //     } else if (discuss.linkInfo && discuss.linkInfo.title && discuss.linkInfo.title.trim().length > 0) {
+            //         disTitle = discuss.linkInfo.title;
+            //     } else {
+            //         disTitle = "others";
+            //     }
 
-                disTitle = BY.byUtil.getSlug(disTitle);
-                var newHref = "/communities/" + disTitle;
+            //     disTitle = BY.byUtil.getSlug(disTitle);
+            //     var newHref = "/communities/" + disTitle;
 
 
-                if (queryParams && Object.keys(queryParams).length > 0) {
-                    //Set query params through angular location search method
-                    if (isAngularLocation) {
-                        angular.forEach($location.search(), function (value, key) {
-                            $location.search(key, null);
-                        });
-                        angular.forEach(queryParams, function (value, key) {
-                            $location.search(key, value);
-                        });
-                    } else { //Set query params manually
-                        newHref = newHref + "?"
-                        angular.forEach(queryParams, function (value, key) {
-                            newHref = newHref + key + "=" + value + "&";
-                        });
+            //     if (queryParams && Object.keys(queryParams).length > 0) {
+            //         //Set query params through angular location search method
+            //         if (isAngularLocation) {
+            //             angular.forEach($location.search(), function (value, key) {
+            //                 $location.search(key, null);
+            //             });
+            //             angular.forEach(queryParams, function (value, key) {
+            //                 $location.search(key, value);
+            //             });
+            //         } else { //Set query params manually
+            //             newHref = newHref + "?"
+            //             angular.forEach(queryParams, function (value, key) {
+            //                 newHref = newHref + key + "=" + value + "&";
+            //             });
 
-                        //remove the last  '&' symbol from the url, otherwise browser back does not work
-                        newHref = newHref.substr(0, newHref.length - 1);
-                    }
-                }
+            //             //remove the last  '&' symbol from the url, otherwise browser back does not work
+            //             newHref = newHref.substr(0, newHref.length - 1);
+            //         }
+            //     }
 
-                return newHref;
-            };
+            //     return newHref;
+            // };
 
             $scope.setHrefCorp = function (profile, queryParams) {
                 var newHref = getProfileDetailUrlCorp(profile, queryParams, false);
@@ -487,7 +487,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController', 'indvUserPr
         }
 
         ProfileController.$inject = ['$scope', '$rootScope', '$location', '$routeParams', 'ReviewRateProfile',
-            'UserProfile', '$sce', 'DiscussPage', '$q', 'UserValidationFilter', 'ErrorService'];
+            'UserProfile', '$sce', 'DiscussPage', '$q', 'UserValidationFilter', 'ErrorService', 'UrlFactoryFilter'];
         byApp.registerController('ProfileController', ProfileController);
         return ProfileController;
     });

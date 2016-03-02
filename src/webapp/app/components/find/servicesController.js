@@ -183,12 +183,12 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'],
             
             $scope.location = function($event, profile, urlQueryParams){
                 $event.stopPropagation();
-                var url = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, true);
+                var url = urlFactoryFilter.getdirectoryProfileUrl(profile, urlQueryParams, true);
                 $location.path(url);
             };
             
             $scope.getHrefProfile = function(profile, urlQueryParams){
-            	var newHref = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, false);
+            	var newHref = urlFactoryFilter.getdirectoryProfileUrl(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
