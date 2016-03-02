@@ -176,7 +176,7 @@ define(['byApp',
         };
 
         function getProfileDetailUrl(profile, urlQueryParams, isAngularLocation){
-        	var proTitle = "others";
+        	var proTitle = "anonymous";
         	 /*if(profile.userProfile && profile.userProfile.basicProfileInfo.firstName.length > 0){
         		 proTitle = profile.userProfile.basicProfileInfo.firstName;
         		 if(profile.userProfile.individualInfo.lastName != null && profile.userProfile.individualInfo.lastName.length > 0){
@@ -186,7 +186,7 @@ define(['byApp',
         	if(profile && profile.username && profile.username.length > 0){
         		 proTitle = BY.byUtil.validateUserName(profile.username);
         	 }else{
-        		 proTitle = "others";
+        		 proTitle = "anonymous";
         	 }
 
         	proTitle = BY.byUtil.getSlug(proTitle);

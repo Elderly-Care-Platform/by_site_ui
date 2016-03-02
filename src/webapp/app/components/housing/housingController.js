@@ -156,11 +156,11 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor'], function(byApp, byUtil
         };
         
         function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation){
-        	var proTitle = "others";
+        	var proTitle = "anonymous";
         	 if(profile && profile.name && profile.name.length > 0){
         		 proTitle = profile.name;
         	 }else{
-        		 proTitle = "others";
+        		 proTitle = "anonymous";
         	 }
 
         	proTitle = BY.byUtil.getSlug(proTitle);

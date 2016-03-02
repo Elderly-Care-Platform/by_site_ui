@@ -148,7 +148,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
             };
 
             function getProfileDetailUrl(profile, urlQueryParams, isAngularLocation) {
-                var proTitle = "others";
+                var proTitle = "anonymous";
                 if (profile && profile.userProfile && profile.userProfile.basicProfileInfo.firstName && profile.userProfile.basicProfileInfo.firstName.length > 0) {
                     proTitle = profile.userProfile.basicProfileInfo.firstName;
                     if (profile.userProfile.individualInfo.lastName && profile.userProfile.individualInfo.lastName != null && profile.userProfile.individualInfo.lastName.length > 0) {
@@ -157,7 +157,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
                 } else if (profile && profile.username && profile.username.length > 0) {
                     proTitle = BY.byUtil.validateUserName(profile.username);
                 } else {
-                    proTitle = "others";
+                    proTitle = "anonymous";
                 }
 
                 proTitle = BY.byUtil.getSlug(proTitle);
@@ -195,11 +195,11 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
             };
 
             function getProfileDetailUrlReply(profile, urlQueryParams, isAngularLocation) {
-                var proTitle = "others";
+                var proTitle = "anonymous";
                 if (profile && profile.userName && profile.userName.length > 0) {
                     proTitle = BY.byUtil.validateUserName(profile.userName);
                 } else {
-                    proTitle = "others";
+                    proTitle = "anonymous";
                 }
 
                 proTitle = BY.byUtil.getSlug(proTitle);

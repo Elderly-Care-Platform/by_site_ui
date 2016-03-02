@@ -266,7 +266,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
         };
         
         function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation){
-            var proTitle = "others";
+            var proTitle = "anonymous";
             if(profile.basicProfileInfo){
                 if(profile && profile.basicProfileInfo.firstName && profile.basicProfileInfo.firstName.length > 0){
                    proTitle = profile.basicProfileInfo.firstName;
@@ -274,7 +274,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
                        proTitle = proTitle + " " + profile.individualInfo.lastName;
                    }
                }else{
-                   proTitle = "others";
+                   proTitle = "anonymous";
                }
             } 
             if(profile.name){
