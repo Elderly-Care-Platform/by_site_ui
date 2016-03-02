@@ -6,7 +6,8 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
             getIndvProfileUrl   : getIndvProfileUrl,
             getProfileDetailUrlReview : getProfileDetailUrlReview,
             getdirectoryProfileUrl : getdirectoryProfileUrl,
-            getProfileDetailUrlReply : getProfileDetailUrlReply
+            getProfileDetailUrlReply : getProfileDetailUrlReply, 
+            getProfileDetailUrlS : getProfileDetailUrlS
         };
 
         function getDiscussDetailUrl(discuss, queryParams, isAngularLocation) {
@@ -201,6 +202,46 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
 
             return newHref;
         };
+
+        function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation){
+            var proTitle = "anonymous";
+             if(profile && profile.basicProfileInfo.firstName && profile.basicProfileInfo.firstName.length > 0){
+                 proTitle = profile.basicProfileInfo.firstName;
+                 if(profile.individualInfo.lastName && profile.individualInfo.lastName != null && profile.individualInfo.lastName.length > 0){
+                     proTitle = proTitle + " " + profile.individualInfo.lastName;
+                 }
+             }else{
+                 proTitle = "anonymous";
+             }
+
+            proTitle = BY.byUtil.getSlug(proTitle);
+            var newHref = "/users/"+proTitle;
+
+
+            if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
+                //Set query params through angular location search method
+                if(isAngularLocation){
+                    angular.forEach($location.search(), function (value, key) {
+                        $location.search(key, null);
+                    });
+                    angular.forEach(urlQueryParams, function (value, key) {
+                        $location.search(key, value);
+                    });
+                } else{ //Set query params manually
+                    newHref = newHref + "?"
+
+                    angular.forEach(urlQueryParams, function (value, key) {
+                        newHref = newHref + key + "=" + value + "&";
+                    });
+
+                    //remove the last  '&' symbol from the url, otherwise browser back does not work
+                    newHref = newHref.substr(0, newHref.length - 1);
+                }
+            }
+
+            return newHref;
+        };
+            
     }
 
     byApp.registerService('UrlFactory', UrlFactory);

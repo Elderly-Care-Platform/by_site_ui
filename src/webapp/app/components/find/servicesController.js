@@ -1,8 +1,8 @@
 //DIscuss All
-define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor'],
-    function (byApp, byUtil, userTypeConfig, byEditor) {
+define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'],
+    function (byApp, byUtil, userTypeConfig, byEditor, urlFactory) {
 
-        function ServicesController($scope, $rootScope, $location, $route, $routeParams, FindServices, $sce) {
+        function ServicesController($scope, $rootScope, $location, $route, $routeParams, FindServices, $sce, urlFactoryFilter) {
             $scope.findViews                = {};
             $scope.findViews.leftPanel      = "app/components/find/servicesLeftPanel.html?versionTimeStamp=%PROJECT_VERSION%";
             $scope.findViews.contentPanel   = "app/components/find/servicesContentPanel.html?versionTimeStamp=%PROJECT_VERSION%";
@@ -183,54 +183,54 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor'],
             
             $scope.location = function($event, profile, urlQueryParams){
                 $event.stopPropagation();
-                var url = getProfileDetailUrlS(profile, urlQueryParams, true);
+                var url = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, true);
                 $location.path(url);
             };
             
             $scope.getHrefProfile = function(profile, urlQueryParams){
-            	var newHref = getProfileDetailUrlS(profile, urlQueryParams, false);
+            	var newHref = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
             
-            function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation){
-            	var proTitle = "anonymous";
-            	 if(profile && profile.basicProfileInfo.firstName && profile.basicProfileInfo.firstName.length > 0){
-            		 proTitle = profile.basicProfileInfo.firstName;
-            		 if(profile.individualInfo.lastName && profile.individualInfo.lastName != null && profile.individualInfo.lastName.length > 0){
-            			 proTitle = proTitle + " " + profile.individualInfo.lastName;
-            		 }
-            	 }else{
-            		 proTitle = "anonymous";
-            	 }
+            // function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation){
+            // 	var proTitle = "anonymous";
+            // 	 if(profile && profile.basicProfileInfo.firstName && profile.basicProfileInfo.firstName.length > 0){
+            // 		 proTitle = profile.basicProfileInfo.firstName;
+            // 		 if(profile.individualInfo.lastName && profile.individualInfo.lastName != null && profile.individualInfo.lastName.length > 0){
+            // 			 proTitle = proTitle + " " + profile.individualInfo.lastName;
+            // 		 }
+            // 	 }else{
+            // 		 proTitle = "anonymous";
+            // 	 }
 
-            	proTitle = BY.byUtil.getSlug(proTitle);
-                var newHref = "/users/"+proTitle;
+            // 	proTitle = BY.byUtil.getSlug(proTitle);
+            //     var newHref = "/users/"+proTitle;
 
 
-                if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
-                    //Set query params through angular location search method
-                    if(isAngularLocation){
-                        angular.forEach($location.search(), function (value, key) {
-                            $location.search(key, null);
-                        });
-                        angular.forEach(urlQueryParams, function (value, key) {
-                            $location.search(key, value);
-                        });
-                    } else{ //Set query params manually
-                        newHref = newHref + "?"
+            //     if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
+            //         //Set query params through angular location search method
+            //         if(isAngularLocation){
+            //             angular.forEach($location.search(), function (value, key) {
+            //                 $location.search(key, null);
+            //             });
+            //             angular.forEach(urlQueryParams, function (value, key) {
+            //                 $location.search(key, value);
+            //             });
+            //         } else{ //Set query params manually
+            //             newHref = newHref + "?"
 
-                        angular.forEach(urlQueryParams, function (value, key) {
-                            newHref = newHref + key + "=" + value + "&";
-                        });
+            //             angular.forEach(urlQueryParams, function (value, key) {
+            //                 newHref = newHref + key + "=" + value + "&";
+            //             });
 
-                        //remove the last  '&' symbol from the url, otherwise browser back does not work
-                        newHref = newHref.substr(0, newHref.length - 1);
-                    }
-                }
+            //             //remove the last  '&' symbol from the url, otherwise browser back does not work
+            //             newHref = newHref.substr(0, newHref.length - 1);
+            //         }
+            //     }
 
-                return newHref;
-            };
+            //     return newHref;
+            // };
             
            
 
@@ -239,7 +239,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor'],
         }
 
         ServicesController.$inject = ['$scope', '$rootScope', '$location', '$route', '$routeParams',
-            'FindServices', '$sce'];
+            'FindServices', '$sce', 'UrlFactoryFilter'];
         byApp.registerController('ServicesController', ServicesController);
         return ServicesController;
     });
