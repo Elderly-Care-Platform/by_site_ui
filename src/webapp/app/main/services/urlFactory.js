@@ -11,6 +11,8 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
             getProfileDetailUrlS : getProfileDetailUrlS
         };
 
+        
+
         function getDiscussDetailUrl(discuss, queryParams, isAngularLocation) {
             var disTitle = "detail", newHref;
             if (discuss.title && discuss.title.trim().length > 0) {
