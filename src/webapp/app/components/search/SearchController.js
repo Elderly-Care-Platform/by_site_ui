@@ -255,12 +255,25 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
 
         $scope.location = function($event, profile, urlQueryParams){
             $event.stopPropagation();
-            var url = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, true);
+            if(profile.userTypes[0] == 3){
+                var url = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, true);
+            } else{
+                var url = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, true);
+            }
+            
             $location.path(url);
         };
         
         $scope.getHrefProfile = function(profile, urlQueryParams){
-            var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
+            if(!profile.discussType){
+                if(!profile.userTypes){
+                    var newHref = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, false);
+                } else{
+                    var newHref = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, false);
+                }
+            }else{
+                var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
+            }
             newHref = "#!" + newHref;
             return newHref;
         };
@@ -312,6 +325,18 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
 
         //     return newHref;
         // };
+
+        $scope.housingLocation = function($event, profile, urlQueryParams){
+            $event.stopPropagation();
+            var url = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, true);
+            $location.path(url);
+        };
+        
+        $scope.getHrefProfileHousing = function(profile, urlQueryParams){
+            var newHref = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, false);
+            newHref = "#!" + newHref;
+            return newHref;
+        };
 
             $scope.openProductDescription = function($event, productId, productName) {
                 $event.stopPropagation();

@@ -227,7 +227,7 @@ define(['byApp', 'byUtil', 'LoginController', 'registrationConfig', 'modifySignu
             };
 
             $scope.getHrefProfile = function (profile, urlQueryParams) {
-                var newHref = urlFactoryFilter.getdirectoryProfileUrl(profile, urlQueryParams, false);
+                var newHref = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
