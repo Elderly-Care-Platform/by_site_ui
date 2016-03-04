@@ -25,31 +25,38 @@ define(['byApp', 'serviceOverviewCtrl', 'editorController'], function (byApp, se
             $(".contentPanel").css('min-height', cH + 57);  
         }
 
-        $scope.smartScroll = function () {
-            var clientHeight = $( window ).height();
-            $(".by_subMenuPlus").css('min-height', (clientHeight - 57)+"px");
-            angular.element($window).bind("scroll", function () {
-                var winTop = $(this).scrollTop(),
-                    winBottom = winTop + $(this).height(),
-                    left = $('.by_subMenuPlus'),
-                    leftBottom = left.height() + 261;
+        // $scope.smartScroll = function () {
+        //     var clientHeight = $( window ).height();
+        //     $(".by_subMenuPlus").css('min-height', (clientHeight - 57)+"px");
+        //     angular.element($window).bind("scroll", function () {
+        //         var winTop = $(this).scrollTop(),
+        //             winBottom = winTop + $(this).height(),
+        //             left = $('.by_subMenuPlus'),
+        //             leftBottom = left.height() + 261;
 
-                //when the user reached the bottom of '#leftShort' set its position to fixed to prevent it from moving on scroll
-                if (winBottom >= leftBottom) {
+        //         //when the user reached the bottom of '#leftShort' set its position to fixed to prevent it from moving on scroll
+        //         if (winBottom >= leftBottom) {
 
-                    left.css({
-                        'position': 'fixed',
-                        'bottom': '0px'
-                    });
-                } else {
-                    //when the user scrolls back up revert its position to relative
-                    left.css({
-                        'position': 'relative',
-                        'bottom': 'auto'
-                    });
-                }
-            });
-        };
+        //             left.css({
+        //                 'position': 'fixed',
+        //                 'bottom': '0px'
+        //             });
+        //         } else {
+        //             //when the user scrolls back up revert its position to relative
+        //             left.css({
+        //                 'position': 'relative',
+        //                 'bottom': 'auto'
+        //             });
+        //         }
+        //     });
+        // };
+
+        $scope.smartScroll = function(){
+            setTimeout(function(){
+                $scope.smartHeight = $(".by_directoryBanner").height();
+                BY.byUtil.smartScroll($scope.smartHeight);
+            }, 100);
+        }
 
         $scope.toggleMenu = function ($event) {
             //console.log($($event.target).parent().children('ul.tree'));

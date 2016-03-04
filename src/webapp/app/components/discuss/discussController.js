@@ -362,7 +362,7 @@ define(['byApp',
             
             $scope.smartScroll = function(){
                 setTimeout(function(){
-                    $scope.smartHeight = $(".by_subMenu").height() + 80 + 57;
+                    $scope.smartHeight = $(".by_subMenu").height();
                     BY.byUtil.smartScroll($scope.smartHeight);
                 }, 100);
             }

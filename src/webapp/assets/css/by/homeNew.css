@@ -1332,3 +1332,31 @@
     color: #000;
     font-size: 18px;
 }
+.by_homeContactUsBg
+{
+    background: url('../../img/footer/footer_3_bg.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
+    background-size: cover;
+}
+.by_homeContactFeildBg
+{
+    width: 100%;
+    height: 35px;
+    color: #B1B0B0;
+    font-size: 15px;
+    line-height: 25px;
+    padding: 5px 10px;
+    background-color: #183818;
+    border: 1px solid #0B880B !important;
+}
+.marginLeft20
+{
+    margin-left: 20px;
+    width: calc(50% - 20px);
+}
+@media ( max-width: 990px){
+    .marginLeft20
+    {
+        margin-left: 0px;
+        width: 100%;
+    }
+}

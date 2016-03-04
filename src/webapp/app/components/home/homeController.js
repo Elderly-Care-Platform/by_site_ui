@@ -3,9 +3,9 @@
  */
 //home
 define(['byApp', 'byUtil', 'homePromoController',
-        'userTypeConfig',
-        'byEditor', 'menuConfig', 'editorController', 'userValidation', 'productController'],
-    function (byApp, byUtil, homePromoController, userTypeConfig, byEditor, menuConfig, editorController, userValidation, productController) {
+        'userTypeConfig', 
+        'byEditor', 'menuConfig', 'editorController', 'userValidation', 'productController', 'contactUsCtrl'],
+    function (byApp, byUtil, homePromoController, userTypeConfig, byEditor, menuConfig, editorController, userValidation, productController, contactUsCtrl) {
         function BYHomeController($scope, $rootScope, $routeParams, $location, UserValidationFilter, SessionIdService) {
             $scope.homeSectionConfig = BY.config.menu.home;
             $scope.homeimageConfig = BY.config.menu.homeIcon;
