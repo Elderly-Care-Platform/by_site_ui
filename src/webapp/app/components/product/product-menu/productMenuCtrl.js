@@ -8,6 +8,7 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
             $scope.selectedParent       = $rootScope.menuCategoryMap[$scope.selectedMenu.ancestorIds[$scope.selectedMenu.ancestorIds.length - 1]];
         }
         $scope.menuConfig           = BY.config.menu;
+        window.scrollTo(0, 0);
 
         $scope.expandParent = function (menuId) {
             if (menuId && menuId.toString() == $scope.selectedMenuId) {
@@ -33,35 +34,42 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
             $(".contentPanel").css('min-height', cH);  
         }
 
+        // $scope.smartScroll = function(){
+        //     var clientHeight = $( window ).height();
+        //      $(".by_subMenuPlus").css('min-height', (clientHeight - 57)+"px");
+        //      var left = $('.by_subMenuPlus');
+        //      left.css({
+        //          'position': 'relative',
+        //          'bottom': 'auto'
+        //      });
+        //     angular.element($window).bind("scroll", function() {
+        //         var winTop = $(this).scrollTop(),
+        //             winBottom = winTop + $(this).height(),
+        //             leftBottom = left.height() + 100 + $(".by_productList_banner").height();
+
+        //         //when the user reached the bottom of '#leftShort' set its position to fixed to prevent it from moving on scroll
+        //         if (winBottom >= leftBottom) {
+
+        //             left.css({
+        //                 'position': 'fixed',
+        //                 'bottom': '0px'
+        //             });
+        //         } else {
+        //             //when the user scrolls back up revert its position to relative
+        //             left.css({
+        //                 'position': 'relative',
+        //                 'bottom': 'auto'
+        //             });
+        //         }
+        //     });
+        // };
+
         $scope.smartScroll = function(){
-            var clientHeight = $( window ).height();
-             $(".by_subMenuPlus").css('min-height', (clientHeight - 57)+"px");
-             var left = $('.by_subMenuPlus');
-             left.css({
-                 'position': 'relative',
-                 'bottom': 'auto'
-             });
-            angular.element($window).bind("scroll", function() {
-                var winTop = $(this).scrollTop(),
-                    winBottom = winTop + $(this).height(),
-                    leftBottom = left.height() + 100 + $(".by_productList_banner").height();
-
-                //when the user reached the bottom of '#leftShort' set its position to fixed to prevent it from moving on scroll
-                if (winBottom >= leftBottom) {
-
-                    left.css({
-                        'position': 'fixed',
-                        'bottom': '0px'
-                    });
-                } else {
-                    //when the user scrolls back up revert its position to relative
-                    left.css({
-                        'position': 'relative',
-                        'bottom': 'auto'
-                    });
-                }
-            });
-        };
+            setTimeout(function(){
+                $scope.smartHeight = $(".by_productList_banner").height();;
+                BY.byUtil.smartScroll($scope.smartHeight);
+            }, 100);
+        }
 
         $scope.toggleMenu = function ($event) {
             //console.log($($event.target).parent().children('ul.tree'));

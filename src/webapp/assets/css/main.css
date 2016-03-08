@@ -476,3 +476,47 @@ body a:hover
     color: #555;
     font-size: 16px;
 }
+.by_callToAction
+{
+    width: 100%;
+    height: auto;
+    background: #B0B5B0;
+    text-align: center;
+    padding: 2px 15px;
+    line-height: 34px;
+    font-size: 20px;
+}
+.by_callToAction img
+{
+    margin-right: 5px;
+}
+.by_callToActionButton
+{
+    background-color: #004f24;
+    border-radius: 10px !important;
+    color: #fff;
+    padding: 3px 12px 1px 5px;
+    display: inline-block;
+    line-height: 19px;
+}
+.by_callToActionButton img
+{
+    margin-right: 1px;
+    display:inline-block !important;
+    margin-top: -2px;
+}
+@media ( max-width : 721px){
+    .by_callToAction
+    {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .by_callToAction img
+    {
+        display: none;
+    }
+    .by_callToAction a
+    {
+        color: #000;
+    }
+}

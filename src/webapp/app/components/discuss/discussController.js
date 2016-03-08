@@ -255,7 +255,7 @@ define(['byApp',
 
 
             $scope.getHrefProfile = function (profile, urlQueryParams) {
-                var newHref = urlFactoryFilter.getIndvProfileUrl(profile, urlQueryParams, false);
+                var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
@@ -362,7 +362,7 @@ define(['byApp',
             
             $scope.smartScroll = function(){
                 setTimeout(function(){
-                    $scope.smartHeight = $(".by_subMenu").height() + 80 + 57;
+                    $scope.smartHeight = $(".by_subMenu").height();
                     BY.byUtil.smartScroll($scope.smartHeight);
                 }, 100);
             }

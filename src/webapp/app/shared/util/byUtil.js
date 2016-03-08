@@ -171,16 +171,19 @@ BY.byUtil.validateEmailId = function(emailId){
 
 BY.byUtil.smartScroll = function (smartHeight) {
     var clientHeight = $( window ).height();
+    var footerHeight = $(".by_footer").height();
+    var smartHeightUp = smartHeight + footerHeight + 57;
     $(".by_subMenuPlus").css('min-height', (clientHeight - 57)+"px");
     $('.by_subMenuPlus').css({
         'position': 'relative',
-        'bottom': 'auto'
+        'bottom': 'auto', 
+        'paddingBottom': footerHeight
     });
     $(window).scroll(function () {
         var winTop = $(this).scrollTop(),
         winBottom = winTop + $(this).height(),
         left = $('.by_subMenuPlus'),
-        leftBottom = left.height() + smartHeight;
+        leftBottom = left.height() + smartHeightUp;
 
                 //when the user reached the bottom of '#leftShort' set its position to fixed to prevent it from moving on scroll
                 if (winBottom >= leftBottom) {

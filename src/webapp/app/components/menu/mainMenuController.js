@@ -80,7 +80,7 @@ define(['bySeoConfig'], function(bySeoConfig) {
                 })
             }
 
-            editCategoryOptions(prod_categories, [$rootScope.menuCategoryMapByName["Shop"].id]);
+            editCategoryOptions(prod_categories, [$rootScope.menuCategoryMapByName["E-Shop"].id]);
             angular.forEach($scope.mainMenu, function(menu, index){
                 if(menu.module==3){
                     menu.children = menu.children.concat(prod_categories);

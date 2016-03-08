@@ -1,6 +1,6 @@
 .by_menu
 {
-	width: 320px;
+	width: 327px;
 	margin-top: 10px;
 	height: auto;
 	font-size: 18px;
@@ -460,7 +460,7 @@
 	.by_menu
 	{		
 		margin-left: 27%;
-		width: 259px;
+		width: 264px;
 		font-size: 16px;
 	}	
 	.by_menu a
@@ -519,7 +519,7 @@
 		text-transform: uppercase;
 		margin-top: -23px;
 		padding-bottom: 10px;
-		width: 270px;
+		width: 283px;
 	}
 	.by_menu a
 	{
@@ -540,7 +540,7 @@
 	.by_menu
 	{
 		font-size: 12px;
-		width: 208px;
+		width: 221px;
 		margin-top: -21px;
 	}
 	.by_menu a{
@@ -552,7 +552,7 @@
 }
 @media ( max-width : 385px){
 	.by_menu{
-		width: 195px;
+		width: 205px;
 	}
 	.by_menu a{
 		margin-left: 5px;

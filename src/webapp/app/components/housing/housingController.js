@@ -1,5 +1,5 @@
-define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor'], function(byApp, byUtil, userTypeConfig, byEditor) {
-    function HousingController($scope, $rootScope, $location, $route, $routeParams,  $sce, $http, FindHousing){
+define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'], function(byApp, byUtil, userTypeConfig, byEditor, urlFactory) {
+    function HousingController($scope, $rootScope, $location, $route, $routeParams,  $sce, $http, FindHousing, urlFactoryFilter){
         $scope.housingViews                 = {};
         $scope.housingViews.leftPanel       = "app/components/housing/housingLeftPanel.html?versionTimeStamp=%PROJECT_VERSION%";
         $scope.housingViews.contentPanel    = "app/components/housing/housingContentPanel.html?versionTimeStamp=%PROJECT_VERSION%";
@@ -145,58 +145,58 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor'], function(byApp, byUtil
         
         $scope.location = function($event, profile, urlQueryParams){
             $event.stopPropagation();
-            var url = getProfileDetailUrlS(profile, urlQueryParams, true);
+            var url = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, true);
             $location.path(url);
         };
         
         $scope.getHrefProfile = function(profile, urlQueryParams){
-        	var newHref = getProfileDetailUrlS(profile, urlQueryParams, false);
+        	var newHref = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, false);
             newHref = "#!" + newHref;
             return newHref;
         };
         
-        function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation){
-        	var proTitle = "others";
-        	 if(profile && profile.name && profile.name.length > 0){
-        		 proTitle = profile.name;
-        	 }else{
-        		 proTitle = "others";
-        	 }
+        // function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation){
+        // 	var proTitle = "anonymous";
+        // 	 if(profile && profile.name && profile.name.length > 0){
+        // 		 proTitle = profile.name;
+        // 	 }else{
+        // 		 proTitle = "anonymous";
+        // 	 }
 
-        	proTitle = BY.byUtil.getSlug(proTitle);
-            var newHref = "/users/"+proTitle;
+        // 	proTitle = BY.byUtil.getSlug(proTitle);
+        //     var newHref = "/users/"+proTitle;
 
 
-            if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
-                //Set query params through angular location search method
-                if(isAngularLocation){
-                    angular.forEach($location.search(), function (value, key) {
-                        $location.search(key, null);
-                    });
-                    angular.forEach(urlQueryParams, function (value, key) {
-                        $location.search(key, value);
-                    });
-                } else{ //Set query params manually
-                    newHref = newHref + "?"
+        //     if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
+        //         //Set query params through angular location search method
+        //         if(isAngularLocation){
+        //             angular.forEach($location.search(), function (value, key) {
+        //                 $location.search(key, null);
+        //             });
+        //             angular.forEach(urlQueryParams, function (value, key) {
+        //                 $location.search(key, value);
+        //             });
+        //         } else{ //Set query params manually
+        //             newHref = newHref + "?"
 
-                    angular.forEach(urlQueryParams, function (value, key) {
-                        newHref = newHref + key + "=" + value + "&";
-                    });
+        //             angular.forEach(urlQueryParams, function (value, key) {
+        //                 newHref = newHref + key + "=" + value + "&";
+        //             });
 
-                    //remove the last  '&' symbol from the url, otherwise browser back does not work
-                    newHref = newHref.substr(0, newHref.length - 1);
-                }
-            }
+        //             //remove the last  '&' symbol from the url, otherwise browser back does not work
+        //             newHref = newHref.substr(0, newHref.length - 1);
+        //         }
+        //     }
 
-            return newHref;
-        };
+        //     return newHref;
+        // };
         
        
 
     }
 
     HousingController.$inject = ['$scope', '$rootScope', '$location', '$route', '$routeParams',
-        '$sce', '$http','FindHousing'];
+        '$sce', '$http','FindHousing', 'UrlFactoryFilter'];
     byApp.registerController('HousingController', HousingController);
     return HousingController;
 });
