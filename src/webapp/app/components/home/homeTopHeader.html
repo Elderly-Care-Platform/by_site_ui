@@ -13,6 +13,7 @@
     <div class="clearfix"></div>
     <div ng-if="$root.windowWidth < 720">
           <!--            Home Top Menu           -->
+
     <div class="by_home_topMenu">
         <div class="by_home_topMenu_item">
             <a href="#!/communities/564071623e60f5b66f62df27/all">
@@ -53,11 +54,23 @@
     </div>
     <div class="clearfix"></div>
     <div class="clearfix mobileSite margin-top-20"></div>
+    <div class="by_callToAction">
+        <img src="assets/img/logo_symbol.png?versionTimeStamp=%PROJECT_VERSION%" alt="Logo" /> We help you find best elder care solutions. <a href="tel:{{telNo}}">
+          <div class="by_callToActionButton"><img
+            src="assets/img/home/call.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Call"> Call 
+          </div>
+        </a>
+    </div>
     </div><div class="clearfix"></div>
+
+     
 </div>
 
 <div ng-if="$root.windowWidth > 720">
       <!--            Home Top Menu           -->
+        <div class="by_callToAction">
+            <img src="assets/img/logo_symbol.png?versionTimeStamp=%PROJECT_VERSION%" alt="Logo" /> We help you find best elder care solutions.<i class="fa fa-phone2"></i> {{telNo}}
+        </div>
     <div class="by_home_topMenu by_home_topMenuLatest">
         <div class="by_home_topMenu_item">
             <a href="#!/communities/564071623e60f5b66f62df27/all">
@@ -100,20 +113,3 @@
 </div>
 <div class="clearfix margin-top-20" ng-if="$root.windowWidth > 720"></div>
 <div class="clearfix" ng-if="$root.windowWidth < 720"></div>
-<div class="by_home_topMenu by_home_topMenuLatest margin-top-20 margin-bottom-20">
-    <a href="#!/experience-center">
-         <img src="assets/img/home/solution_banner.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Experience Center" width="100%" />
-    </a>
-</div>
-<!--              Home Mobile section                      -->
-<div class="by_homeCallWrap mobileSite">
-    <div class="by_container">
-        <div class="divLeft">
-            <a ng-href="{{loginDetails.link}}">{{loginDetails.text}}</a>
-        </div>
-        <div class="divRight text-center floatNone">
-            Need help? <a ng-href="{{'tel:'+telNo}}"> <img
-                src="assets/img/home/call.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Call"> Call Now</a>
-        </div>
-    </div>
-</div>
