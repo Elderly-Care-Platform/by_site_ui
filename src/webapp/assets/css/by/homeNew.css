@@ -21,7 +21,7 @@
 .by_home_titleOne
 {
     font-family: kimberly_geswein !important;
-    font-size: 18px;
+    font-size: 21px;
     color: #fff;
     line-height: 31px;
     text-align: left;
@@ -1365,8 +1365,9 @@
 }
 .by_homeExpLeftHead
 {
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 27px;
+    line-height: 29px;
+    margin-bottom: 5px;
 }
 .by_homeExpLefText
 {
@@ -1375,13 +1376,13 @@
 }
 .by_homeExpLeftButton
 {
-    width: 230px;
-    height: 40px;
+    width: 290px;
+    height: 49px;
     margin-top: 5px;
     margin-bottom: 5px;
-    line-height: 40px;
+    line-height: 49px;
     color: #fff;
-    font-size: 20px;
+    font-size: 25px;
     margin-left: auto;
     margin-right: auto;
     background: rgb(5, 48, 14);
