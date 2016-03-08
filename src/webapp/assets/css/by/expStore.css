@@ -3,7 +3,7 @@
     background: url('../../img/experience_store/solution_living.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top center;
     background-size: cover;
     width: 100%;
-    height: 1106px;
+    height: 920px;
 }
 .by_expSt_solutions
 {
@@ -161,7 +161,7 @@
 }
 .by_expSt_homeTop
 {
-    width: 270px;
+    width: 520px;
     height: auto;
     margin-left: 15%;
     padding-top: 90px;
@@ -180,18 +180,35 @@
 {
     width: 100%;
     height: auto;
-    font-family: kimberly_geswein !important;
-    font-size: 20px;
+    font-family: Segoe_Print!important;
+    font-size: 23px;
     line-height: 40px;
-    border-bottom:1px solid #084C08;
-    color: #084C08;
+    border-bottom:1px solid green;
+    color: #084C08;    
+    margin-bottom: 5px;
+    padding-bottom: 5px;
 }
 .by_expSt_homeTopDesc
 {
-    font-size: 15px;
+    font-size: 17px;
     color: #000;
     line-height: 20px;
     padding-top: 5px;
+    border-bottom: 1px solid green;
+    padding-bottom: 5px;
+}
+.by_expSt_homeTopDesc ul
+{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+.by_expSt_homeTopDesc ul li
+{
+    list-style-image: url('../../img/product/left_menu_arrow.png?versionTimeStamp=%PROJECT_VERSION%');
+    margin-left: 11px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .by_expSt_homeTopDescBelow
 {
@@ -202,11 +219,11 @@
 }
 .by_expSt_homeTopButton
 {
-    padding-top: 35px;
+    padding-top: 8px;
 }
 .by_expSt_homeTopButtonGreen
 {
-    width: 50%;
+    width: 40%;
     height: 35px;
     line-height: 35px;
     background: #084C08;
@@ -221,7 +238,7 @@
 }
 .by_expSt_homeTopButtonGray
 {
-    width: 50%;
+    width: 60%;
     height: 35px;
     line-height: 35px;
     background: #ccc;
@@ -386,7 +403,7 @@
 .by_expSt_headerLeftHead span
 {
     font-family: kimberly_geswein !important;
-    font-size: 15px;
+    font-size: 23px;
     font-weight: normal;
     line-height: 30px;
     color: #fff;
@@ -395,17 +412,18 @@
 }
 .by_expSt_headerLeftDesc
 {
-    font-size: 15px;
+    font-size: 19px;
     line-height: 20px;
     color: #fff;
-    padding-top: 6px;
+    padding-top: 1px;
 }
 .by_expSt_headerRightHead
 {
-    width: 132px;
+    width: 142px;
     height: auto;
     color: #fff;
-    font-size: 15px;
+    font-size: 17px;
+    margin-left: -7px;
 }
 .by_expSt_headerRightHead a
 {
@@ -415,7 +433,7 @@
 .by_expSt_headerRightHead a .divLeft
 {
     text-decoration: underline;
-    margin-top: 26px;
+    margin-top: 22px;
     font-style: italic;
     color: #fff;
 }
@@ -424,7 +442,7 @@
     font-size: 15px;
     color: #fff;
     line-height: 20px;
-    padding-top: 10px;
+    padding-top: 12px;
 }
 .by_expArrow
 {
@@ -434,7 +452,7 @@
 .by_expVideo
 {
     width: 100%;
-    max-width: 670px;
+    max-width: 720px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 30px;
@@ -466,12 +484,11 @@
 {
     display: none;
 }
-
 @media ( max-width: 1280px){
     .by_expSt_headerLeft
     {
         width: 50%;
-        padding-top: 50px;
+        padding-top: 40px;
     }
 }
 @media ( max-width: 1280px){
@@ -493,7 +510,7 @@
     {
         background:#FAF6F3 url('../../img/experience_store/solution_living_mobile.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top center;
         width: 100%;
-        min-height: 1410px;
+        min-height: 1120px;
         height: auto;
     }
     .by_expSt_solutions
@@ -535,7 +552,7 @@
         float: none;
         display: block;
         text-align: center;
-        width: 100px;
+        width: 109px;
         margin-right: auto;
         margin-left: auto;
         margin-top: 0px !important;
@@ -618,7 +635,7 @@
     }
     .by_expSt_homeTopHead, .by_expSt_homeTopParent, .by_expSt_homeTopButton
     {
-        width: 270px;
+        width: 280px;
         margin-right: auto;
         margin-left: auto;
     }
@@ -633,10 +650,6 @@
         padding-top: 22px;
         font-size: 22px;
     }
-    .by_expSt_homeTopParent
-    {
-        margin-bottom: 20px;
-    }
     .by_expSt_homeTopButton
     {
         padding-top: 30px;
@@ -644,6 +657,15 @@
     .by_expVideoGrad
     {
         padding-top: 16%;
+    }
+    .by_expSt_homeTopDesc ul
+    {
+        text-align: left;
+    }
+    .by_expSt_homeTopDesc ul li
+    {
+        padding-bottom: 4px;
+        padding-top: 4px;
     }
 }
 @media ( max-width: 600px){

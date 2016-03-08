@@ -80,15 +80,24 @@
     color: #fff;
     line-height: 20px;
 }
-.by_footerAddress:before
+.by_footerAddress a, .by_footerAddress a:hover
+{
+    color: #fff;
+    text-decoration: underline;
+}
+.by_footerAddress .divRight
+{
+    color: #fff;
+    line-height: 26px;
+}
+/*.by_footerAddress:before
 {
     content: '';
-    width: 21px;
-    height: 21px;
-    background: url('../../img/footer/footer_assets.png?versionTimeStamp=%PROJECT_VERSION%');
-    background-position: -14px -14px;
+    width: 30px;
+    height: 46px;
+    background: url('../../img/experience_store/location.png?versionTimeStamp=%PROJECT_VERSION%');
     display: inline-block;
-}
+}*/
 .by_footerNumber
 {
     float: left;
@@ -97,6 +106,7 @@
     color: #fff;
     line-height: 20px;
     margin-left: 7%;
+    margin-top: 24px;
 }
 .by_footerNumber a, .by_footerNumber a:hover
 {
@@ -119,6 +129,7 @@
     font-size: 15px;
     color: #fff;
     line-height: 20px;
+    margin-top: 24px;
 }
 .by_footerMailID:before
 {
@@ -137,7 +148,7 @@
 @media (max-width: 990px){
     .by_footerAddress
     {
-        max-width: 211px;
+        max-width: 241px;
     }
 }
 @media (max-width: 800px){
@@ -158,6 +169,7 @@
         margin-left: 0;
         max-width: 100%;
         padding-top: 2px;
+        margin-top: 0px;
     }
     .by_footerSocial
     {
@@ -167,5 +179,12 @@
     .by_footerLinks
     {
         margin-bottom: 10px;
+    }
+}
+@media (max-width: 376px){
+    .by_footerSocial
+    {
+        text-align: right;
+        margin-top: -90px;
     }
 }
