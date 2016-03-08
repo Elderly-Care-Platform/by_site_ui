@@ -856,7 +856,6 @@
 {
     display: none;
 }
-
 .by_homeShadowImage
 {
     background:#E8E8E8  url('../../img/home/shadow.png?versionTimeStamp=%PROJECT_VERSION%') repeat-x top;
@@ -1344,5 +1343,70 @@
     {
         margin-left: 0px;
         width: 100%;
+    }
+}
+.by_homeExpShadowImage
+{
+    background:url('../../img/experience_store/solution_living.jpg?versionTimeStamp=%PROJECT_VERSION%') repeat-x center center;
+    position: relative;
+}
+.by_homeExpLeft
+{
+    width: 48%;
+    float: left;
+    text-align: center;
+    padding-top: 8%;
+}
+.by_homeExpRight
+{
+    width: 50%;
+    border: 2px solid #fff;
+    float: right;
+}
+.by_homeExpLeftHead
+{
+    font-size: 20px;
+    line-height: 25px;
+}
+.by_homeExpLefText
+{
+    font-size: 18px;
+    line-height: 24px;
+}
+.by_homeExpLeftButton
+{
+    width: 230px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(5, 48, 14);
+    border-radius: 2px !important;
+    text-transform: uppercase;
+}
+.by_homeExpLeftButton a
+{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+.by_homeExpLeftButton a:hover
+{
+    color: #fff;
+    text-decoration: none;
+}
+@media ( max-width: 990px){
+    .by_homeExpRight, .by_homeExpLeft
+    {
+        width: 100%;
+        float: none;
+    }
+    .by_homeExpRight
+    {
+        margin-top: 20px;
     }
 }

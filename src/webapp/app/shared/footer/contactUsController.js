@@ -29,10 +29,10 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
 
         (function(){
             var metaTagParams = {
-                title:  "Contact us",
+                title:  "Beautiful Years",
                 imageUrl:   "",
                 description:   "",
-                keywords:['contact us']
+                keywords:['Beautiful Years']
             }
             BY.byUtil.updateMetaTags(metaTagParams);
         })();
