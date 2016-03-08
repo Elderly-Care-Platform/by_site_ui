@@ -92,7 +92,8 @@ module.exports = function (grunt) {
                     '<%= cssBaseUrl %>/by/homeNew.css',
                     '<%= cssBaseUrl %>/by/menu.css',
                     '<%= cssBaseUrl %>/by/expStore.css',
-                    '<%= cssBaseUrl %>/by/by_leftPanel.css'
+                    '<%= cssBaseUrl %>/by/by_leftPanel.css',
+                    '<%= cssBaseUrl %>/by/by_footer.css'
                 ],
                 dest: 'dist/assets/css/final.css'
             },
