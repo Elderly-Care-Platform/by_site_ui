@@ -1,6 +1,6 @@
-define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareController'],
-    function(byApp, byUtil, userTypeConfig, discussLikeController, shareController) {
-        function SearchController($scope, $rootScope, $http, $route, $location, $routeParams, DiscussSearch, ServiceSearch, HousingSearch, $sce, SERVERURL_IMAGE, Utility, $q, UserValidationFilter){
+define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareController', 'urlFactory'],
+    function(byApp, byUtil, userTypeConfig, discussLikeController, shareController, urlFactory) {
+        function SearchController($scope, $rootScope, $http, $route, $location, $routeParams, DiscussSearch, ServiceSearch, HousingSearch, $sce, SERVERURL_IMAGE, Utility, $q, UserValidationFilter, urlFactoryFilter){
             $rootScope.term = $routeParams.term;
             $scope.userTypeConfig           = BY.config.profile.userTypeMap;
 
@@ -197,7 +197,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
             
             $scope.go = function($event, discuss, queryParams){
                 $event.stopPropagation();
-                var url = getDiscussDetailUrl(discuss, queryParams, true);
+                var url = urlFactoryFilter.getDiscussDetailUrl(discuss, queryParams, true);
                 $location.path(url);
             };
 
@@ -208,108 +208,133 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
             }
             
             $scope.getHref = function(discuss, queryParams){
-            	var newHref = getDiscussDetailUrl(discuss, queryParams, false);
+            	var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, queryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
 
-            function getDiscussDetailUrl(discuss, queryParams, isAngularLocation){
-                var disTitle = "others";
-                if(discuss.title && discuss.title.trim().length > 0){
-                    disTitle = discuss.title;
-                } else if(discuss.text && discuss.text.trim().length > 0){
-                    disTitle = discuss.text;
-                } else if(discuss.linkInfo && discuss.linkInfo.title && discuss.linkInfo.title.trim().length > 0){
-                    disTitle = discuss.linkInfo.title;
-                } else{
-                    disTitle = "others";
-                }
+            // function getDiscussDetailUrl(discuss, queryParams, isAngularLocation){
+            //     var disTitle = "others";
+            //     if(discuss.title && discuss.title.trim().length > 0){
+            //         disTitle = discuss.title;
+            //     } else if(discuss.text && discuss.text.trim().length > 0){
+            //         disTitle = discuss.text;
+            //     } else if(discuss.linkInfo && discuss.linkInfo.title && discuss.linkInfo.title.trim().length > 0){
+            //         disTitle = discuss.linkInfo.title;
+            //     } else{
+            //         disTitle = "others";
+            //     }
 
-                disTitle = BY.byUtil.getSlug(disTitle);
-                var newHref = "/communities/"+disTitle;
+            //     disTitle = BY.byUtil.getSlug(disTitle);
+            //     var newHref = "/communities/"+disTitle;
 
 
-                if(queryParams && Object.keys(queryParams).length > 0){
-                    //Set query params through angular location search method
-                    if(isAngularLocation){
-                        angular.forEach($location.search(), function (value, key) {
-                            $location.search(key, null);
-                        });
-                        angular.forEach(queryParams, function (value, key) {
-                            $location.search(key, value);
-                        });
-                    } else{ //Set query params manually
-                        newHref = newHref + "?"
-                        angular.forEach(queryParams, function (value, key) {
-                            newHref = newHref + key + "=" + value + "&";
-                        });
+            //     if(queryParams && Object.keys(queryParams).length > 0){
+            //         //Set query params through angular location search method
+            //         if(isAngularLocation){
+            //             angular.forEach($location.search(), function (value, key) {
+            //                 $location.search(key, null);
+            //             });
+            //             angular.forEach(queryParams, function (value, key) {
+            //                 $location.search(key, value);
+            //             });
+            //         } else{ //Set query params manually
+            //             newHref = newHref + "?"
+            //             angular.forEach(queryParams, function (value, key) {
+            //                 newHref = newHref + key + "=" + value + "&";
+            //             });
 
-                        //remove the last  '&' symbol from the url, otherwise browser back does not work
-                        newHref = newHref.substr(0, newHref.length - 1);
-                    }
-                }
+            //             //remove the last  '&' symbol from the url, otherwise browser back does not work
+            //             newHref = newHref.substr(0, newHref.length - 1);
+            //         }
+            //     }
 
-                return newHref;
-            };
+            //     return newHref;
+            // };
 
 
         $scope.location = function($event, profile, urlQueryParams){
             $event.stopPropagation();
-            var url = getProfileDetailUrlS(profile, urlQueryParams, true);
+            if(profile.userTypes[0] == 3){
+                var url = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, true);
+            } else{
+                var url = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, true);
+            }
+            
             $location.path(url);
         };
         
         $scope.getHrefProfile = function(profile, urlQueryParams){
-            var newHref = getProfileDetailUrlS(profile, urlQueryParams, false);
+            if(!profile.discussType){
+                if(!profile.userTypes){
+                    var newHref = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, false);
+                } else{
+                    var newHref = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, false);
+                }
+            }else{
+                var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
+            }
             newHref = "#!" + newHref;
             return newHref;
         };
         
-        function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation){
-            var proTitle = "others";
-            if(profile.basicProfileInfo){
-                if(profile && profile.basicProfileInfo.firstName && profile.basicProfileInfo.firstName.length > 0){
-                   proTitle = profile.basicProfileInfo.firstName;
-                   if(profile.individualInfo.lastName  && profile.individualInfo.lastName != null && profile.individualInfo.lastName.length > 0){
-                       proTitle = proTitle + " " + profile.individualInfo.lastName;
-                   }
-               }else{
-                   proTitle = "others";
-               }
-            } 
-            if(profile.name){
-                if(profile && profile.name && profile.name.length > 0){
-                   proTitle = profile.name;
-               }else{
-                   proTitle = "others";
-               }
-            }
+        // function getProfileDetailUrlS(profile, urlQueryParams, isAngularLocation){
+        //     var proTitle = "anonymous";
+        //     if(profile.basicProfileInfo){
+        //         if(profile && profile.basicProfileInfo.firstName && profile.basicProfileInfo.firstName.length > 0){
+        //            proTitle = profile.basicProfileInfo.firstName;
+        //            if(profile.individualInfo.lastName  && profile.individualInfo.lastName != null && profile.individualInfo.lastName.length > 0){
+        //                proTitle = proTitle + " " + profile.individualInfo.lastName;
+        //            }
+        //        }else{
+        //            proTitle = "anonymous";
+        //        }
+        //     } 
+        //     if(profile.name){
+        //         if(profile && profile.name && profile.name.length > 0){
+        //            proTitle = profile.name;
+        //        }else{
+        //            proTitle = "others";
+        //        }
+        //     }
 
-            proTitle = BY.byUtil.getSlug(proTitle);
-            var newHref = "/users/"+proTitle;
+        //     proTitle = BY.byUtil.getSlug(proTitle);
+        //     var newHref = "/users/"+proTitle;
 
 
-            if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
-                //Set query params through angular location search method
-                if(isAngularLocation){
-                    angular.forEach($location.search(), function (value, key) {
-                        $location.search(key, null);
-                    });
-                    angular.forEach(urlQueryParams, function (value, key) {
-                        $location.search(key, value);
-                    });
-                } else{ //Set query params manually
-                    newHref = newHref + "?"
+        //     if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
+        //         //Set query params through angular location search method
+        //         if(isAngularLocation){
+        //             angular.forEach($location.search(), function (value, key) {
+        //                 $location.search(key, null);
+        //             });
+        //             angular.forEach(urlQueryParams, function (value, key) {
+        //                 $location.search(key, value);
+        //             });
+        //         } else{ //Set query params manually
+        //             newHref = newHref + "?"
 
-                    angular.forEach(urlQueryParams, function (value, key) {
-                        newHref = newHref + key + "=" + value + "&";
-                    });
+        //             angular.forEach(urlQueryParams, function (value, key) {
+        //                 newHref = newHref + key + "=" + value + "&";
+        //             });
 
-                    //remove the last  '&' symbol from the url, otherwise browser back does not work
-                    newHref = newHref.substr(0, newHref.length - 1);
-                }
-            }
+        //             //remove the last  '&' symbol from the url, otherwise browser back does not work
+        //             newHref = newHref.substr(0, newHref.length - 1);
+        //         }
+        //     }
 
+        //     return newHref;
+        // };
+
+        $scope.housingLocation = function($event, profile, urlQueryParams){
+            $event.stopPropagation();
+            var url = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, true);
+            $location.path(url);
+        };
+        
+        $scope.getHrefProfileHousing = function(profile, urlQueryParams){
+            var newHref = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, false);
+            newHref = "#!" + newHref;
             return newHref;
         };
 
@@ -416,7 +441,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
         }
 
         SearchController.$inject = ['$scope', '$rootScope', '$http', '$route', '$location', '$routeParams', 'DiscussSearch',
-            'ServicePageSearch', 'HousingPageSearch',  '$sce', 'SERVERURL_IMAGE', 'Utility', '$q', 'UserValidationFilter'];
+            'ServicePageSearch', 'HousingPageSearch',  '$sce', 'SERVERURL_IMAGE', 'Utility', '$q', 'UserValidationFilter', 'UrlFactoryFilter'];
         byApp.registerController('SearchController', SearchController);
         return SearchController;
     });

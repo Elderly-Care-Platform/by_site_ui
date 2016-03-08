@@ -51,7 +51,7 @@
     <div class="by_menuHeadFindArrow"></div>
     <div class="clearfix"></div>
     <ul class="nav nav-list" ng-init="smartScroll();">
-        <li ng-repeat="menu in $root.menuCategoryMapByName['Shop'].children" id="{{menu.id}}" class="byTreeMenu-wrapper"
+        <li ng-repeat="menu in $root.menuCategoryMapByName['E-Shop'].children" id="{{menu.id}}" class="byTreeMenu-wrapper"
             ng-if="menu.module == menuConfig.modules['product'].moduleId">
             <a ng-if="menu.children.length === 0" class="by_treeMenuText"
                ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(menu.displayMenuName)}}/{{menu.id}}"
@@ -80,7 +80,7 @@
         </li>
     </ul>
     <div class="clearfix  margin-top-20"></div>
-    <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['Shop'].children"
+    <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['E-Shop'].children"
          ng-if="menu.module == menuConfig.modules['discuss'].moduleId">
         <a href="#!/shop/review/{{menu.id}}/">
             Questions &amp; Reviews
@@ -99,7 +99,7 @@
             <div class="by_menuHeadFindArrow"></div>
             <div class="clearfix"></div>
             <ul class="nav nav-list">
-                <li ng-repeat="menu in $root.menuCategoryMapByName['Shop'].children" id="{{menu.id}}"
+                <li ng-repeat="menu in $root.menuCategoryMapByName['E-Shop'].children" id="{{menu.id}}"
                     class="byTreeMenu-wrapper" ng-if="menu.module == menuConfig.modules['product'].moduleId">
                     <a ng-if="menu.children.length === 0"
                        ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(menu.displayMenuName)}}/{{menu.id}}"
@@ -131,7 +131,7 @@
                 </li>
             </ul>
             <div class="clearfix  margin-top-20"></div>
-            <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['Shop'].children"
+            <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['E-Shop'].children"
                  ng-if="menu.module == menuConfig.modules['discuss'].moduleId">
                 <a href="#!/shop/review/{{menu.id}}/">
                     Questions &amp; Reviews

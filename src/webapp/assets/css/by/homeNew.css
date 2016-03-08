@@ -21,7 +21,7 @@
 .by_home_titleOne
 {
     font-family: kimberly_geswein !important;
-    font-size: 18px;
+    font-size: 21px;
     color: #fff;
     line-height: 31px;
     text-align: left;
@@ -268,8 +268,8 @@
 }
 .by_homeCallWrap {
     width: 100%;
-    height: 50px;
-    padding: 10px;
+    height: 30px;
+    padding: 0px 10px;
     background: #FF850F;
     font-size: 18px;
 }
@@ -794,11 +794,8 @@
 }
 .by_homeEditor
 {
-    width: calc(50% - 4px);
-    float: left;
-    height: 171px;
-    border: 1px solid #949494;
-    background: #DEDEDE;
+    width: 100%;
+    height: 115px;
 }
 .by_homeTalk
 {
@@ -812,20 +809,17 @@
 .by_homeEditorHead
 {
     width: 100%;
-    padding: 15px;
-    text-align: center;
+    padding:10px 0px 8px 0px;
     color: #000;
     font-size: 20px;
     line-height: 24px;
 }
 .by_homeTextareaShow
 {
-    width: calc(100% - 30px);
     border: 1px solid #C0C0C0;
     font-size: 14px;
     background: #fff;
-    height: 100px;
-    margin: 0px 15px;
+    height: 70px;
     padding: 8px;
     cursor: pointer;
 }
@@ -862,7 +856,6 @@
 {
     display: none;
 }
-
 .by_homeShadowImage
 {
     background:#E8E8E8  url('../../img/home/shadow.png?versionTimeStamp=%PROJECT_VERSION%') repeat-x top;
@@ -1184,14 +1177,6 @@
         text-decoration: none !important;
         padding: 0px !important;
     }
-    .by_homeEditor
-{
-    width: calc(100% - 2px) !important;
-    float: left;
-    height: 171px;
-    border: 1px solid #949494;
-    background: #DEDEDE;
-}
 .by_homeTalk
 {
     display: none;
@@ -1331,4 +1316,98 @@
 {
     color: #000;
     font-size: 18px;
+}
+.by_homeContactUsBg
+{
+    background: url('../../img/footer/footer_3_bg.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
+    background-size: cover;
+}
+.by_homeContactFeildBg
+{
+    width: 100%;
+    height: 35px;
+    color: #B1B0B0;
+    font-size: 15px;
+    line-height: 25px;
+    padding: 5px 10px;
+    background-color: #183818;
+    border: 1px solid #0B880B !important;
+}
+.marginLeft20
+{
+    margin-left: 20px;
+    width: calc(50% - 20px);
+}
+@media ( max-width: 990px){
+    .marginLeft20
+    {
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+.by_homeExpShadowImage
+{
+    background:url('../../img/experience_store/solution_living.jpg?versionTimeStamp=%PROJECT_VERSION%') repeat-x center center;
+    position: relative;
+}
+.by_homeExpLeft
+{
+    width: 48%;
+    float: left;
+    text-align: center;
+    padding-top: 8%;
+}
+.by_homeExpRight
+{
+    width: 50%;
+    border: 2px solid #fff;
+    float: right;
+}
+.by_homeExpLeftHead
+{
+    font-size: 27px;
+    line-height: 29px;
+    margin-bottom: 5px;
+}
+.by_homeExpLefText
+{
+    font-size: 18px;
+    line-height: 24px;
+}
+.by_homeExpLeftButton
+{
+    width: 290px;
+    height: 49px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 49px;
+    color: #fff;
+    font-size: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(5, 48, 14);
+    border-radius: 2px !important;
+    text-transform: uppercase;
+}
+.by_homeExpLeftButton a
+{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+.by_homeExpLeftButton a:hover
+{
+    color: #fff;
+    text-decoration: none;
+}
+@media ( max-width: 990px){
+    .by_homeExpRight, .by_homeExpLeft
+    {
+        width: 100%;
+        float: none;
+    }
+    .by_homeExpRight
+    {
+        margin-top: 20px;
+    }
 }

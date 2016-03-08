@@ -3,9 +3,9 @@
  */
 //home
 define(['byApp', 'byUtil', 'homePromoController',
-        'userTypeConfig',
-        'byEditor', 'menuConfig', 'editorController', 'userValidation', 'productController'],
-    function (byApp, byUtil, homePromoController, userTypeConfig, byEditor, menuConfig, editorController, userValidation, productController) {
+        'userTypeConfig', 
+        'byEditor', 'menuConfig', 'editorController', 'userValidation', 'productController', 'app/shared/footer/contactUsController'],
+    function (byApp, byUtil, homePromoController, userTypeConfig, byEditor, menuConfig, editorController, userValidation, productController, contactUsCtrl) {
         function BYHomeController($scope, $rootScope, $routeParams, $location, UserValidationFilter, SessionIdService) {
             $scope.homeSectionConfig = BY.config.menu.home;
             $scope.homeimageConfig = BY.config.menu.homeIcon;
@@ -76,19 +76,25 @@ define(['byApp', 'byUtil', 'homePromoController',
 
             $scope.exitEditorDiscuss = function (type, event) {
                 event.stopPropagation();
-                $(".by_homeEditor").animate({width: '50%', height: '171px', marginBottom: '20px'}, "500");
+                $(".by_homeEditor").animate({width: '100%', height: '115px', marginBottom: '20px'}, "500");
                 $(".by_homeEditorShow").hide();
                 $(".by_homeTextareaShow").show();
-                $(".by_homeTalk").animate({width: '49%'}, "500");
+                $(".by_homeTalk").animate({width: '100%'}, "500");
                 $(".by_homeEditorShow").slideUp("100", function () {
                     BY.byEditor.removeEditor();
                     //$route.reload();
                 });
 
-
-
-
             }
+
+            $scope.showVideo = function(){       
+                $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/z9LkUOGUyrA?rel=0&showinfo=0&autoplay=1');
+                var frameHeight = $(".by_expVideoShow").outerHeight();
+                   $("#by_expVideoFrame").attr("height", frameHeight);
+                $(".by_expVideoShow").hide();
+                $("#by_expVideoFrame").show();
+            };
+
         }
 
         BYHomeController.$inject = ['$scope', '$rootScope', '$routeParams', '$location', 'UserValidationFilter', 'SessionIdService'];

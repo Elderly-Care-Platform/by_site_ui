@@ -178,7 +178,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussReplyController', 's
             };
 
             $scope.getHrefProfile = function(profile, urlQueryParams) {
-                var newHref = UrlFactoryFilter.getIndvProfileUrl(profile, urlQueryParams, false);
+                var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
@@ -283,7 +283,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussReplyController', 's
 
             $scope.smartScroll = function() {
                 setTimeout(function() {
-                    $scope.smartHeight = $(".by_subMenu").height() + 57;
+                    $scope.smartHeight = $(".by_subMenu").height();
                     BY.byUtil.smartScroll($scope.smartHeight);
                 }, 100);
             }

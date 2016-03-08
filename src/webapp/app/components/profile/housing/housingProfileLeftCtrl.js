@@ -1,8 +1,8 @@
 /**
  * Created by sanjukta on 25-06-2015.
  */
-define(['byApp', 'byUtil'], function(byApp, byUtil) {
-    function housingProfileLeftCtrl($scope, $rootScope, $routeParams, $location, broadCastData, $http){
+define(['byApp', 'byUtil', 'urlFactory'], function(byApp, byUtil, urlFactory) {
+    function housingProfileLeftCtrl($scope, $rootScope, $routeParams, $location, broadCastData, $http, urlFactoryFilter){
         $scope.otherBranches = null;
         $scope.relatedFacilities = null;
 
@@ -26,51 +26,51 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
         });
 
         $scope.setHrefInst = function(profile, queryParams){
-            var newHref = getProfileDetailUrlBrnach(profile, queryParams, false);
+            var newHref = urlFactoryFilter.getHousingProfileUrl(profile, queryParams, false);
             newHref = "#!" + newHref;
             return newHref;
         };
 
-        function getProfileDetailUrlBrnach(profile, urlQueryParams, isAngularLocation){
-            var proTitle = "others";
-            if(profile && profile.name && profile.name.length > 0){
-               proTitle = profile.name;
-           }else{
-               proTitle = "others";
-           }
+        // function getProfileDetailUrlBrnach(profile, urlQueryParams, isAngularLocation){
+        //     var proTitle = "others";
+        //     if(profile && profile.name && profile.name.length > 0){
+        //        proTitle = profile.name;
+        //    }else{
+        //        proTitle = "others";
+        //    }
 
-           proTitle = BY.byUtil.getSlug(proTitle);
-           var newHref = "/users/"+proTitle;
+        //    proTitle = BY.byUtil.getSlug(proTitle);
+        //    var newHref = "/users/"+proTitle;
 
 
-           if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
-                //Set query params through angular location search method
-                if(isAngularLocation){
-                    angular.forEach($location.search(), function (value, key) {
-                        $location.search(key, null);
-                    });
-                    angular.forEach(urlQueryParams, function (value, key) {
-                        $location.search(key, value);
-                    });
-                } else{ //Set query params manually
-                    newHref = newHref + "?"
+        //    if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
+        //         //Set query params through angular location search method
+        //         if(isAngularLocation){
+        //             angular.forEach($location.search(), function (value, key) {
+        //                 $location.search(key, null);
+        //             });
+        //             angular.forEach(urlQueryParams, function (value, key) {
+        //                 $location.search(key, value);
+        //             });
+        //         } else{ //Set query params manually
+        //             newHref = newHref + "?"
 
-                    angular.forEach(urlQueryParams, function (value, key) {
-                        newHref = newHref + key + "=" + value + "&";
-                    });
+        //             angular.forEach(urlQueryParams, function (value, key) {
+        //                 newHref = newHref + key + "=" + value + "&";
+        //             });
 
-                    //remove the last  '&' symbol from the url, otherwise browser back does not work
-                    newHref = newHref.substr(0, newHref.length - 1);
-                }
-            }
+        //             //remove the last  '&' symbol from the url, otherwise browser back does not work
+        //             newHref = newHref.substr(0, newHref.length - 1);
+        //         }
+        //     }
 
-            return newHref;
-        };
+        //     return newHref;
+        // };
 
         
     }
 
-    housingProfileLeftCtrl.$inject = ['$scope', '$rootScope', '$routeParams', '$location', 'broadCastData','$http'];
+    housingProfileLeftCtrl.$inject = ['$scope', '$rootScope', '$routeParams', '$location', 'broadCastData','$http', 'UrlFactoryFilter'];
     byApp.registerController('housingProfileLeftCtrl', housingProfileLeftCtrl);
     return housingProfileLeftCtrl;
 });

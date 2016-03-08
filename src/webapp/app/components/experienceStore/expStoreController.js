@@ -11,7 +11,8 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
        	$(".by_expVideoShow").hide();
        	$("#by_expVideoFrame").show();
        };
-      
+
+             
     }
 
     expStoreCtrl.$inject = ['$scope', '$rootScope', '$routeParams', '$timeout', '$location', '$sce'];
