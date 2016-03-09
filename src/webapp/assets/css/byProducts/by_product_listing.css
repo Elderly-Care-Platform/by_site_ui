@@ -3,6 +3,29 @@
 {
   width: 100%;
   height: auto;
+  position: relative;
+  margin-top: -55px;
+}
+.by_productList_bannerText
+{
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  font-size: 30px;
+  color: #fff;
+  line-height: 37px;
+  z-index: 20;
+  width: 337px;
+  font-weight: bold;
+}
+.by_productList_bannerText span
+{
+  font-size: 18px;
+  color: #fff;
+  line-height: 15px;
+  display: block;
+  margin-top: 8px;
+  font-weight: normal;
 }
 .productFiltering
 {
@@ -132,9 +155,49 @@
    width:100% !important;
    height:auto;
  }
+ .by_productList_banner
+ {
+  margin-top: 0px;
+ }
+ .by_productList_bannerText {
+    position: absolute;
+    top: 18%;
+    left: 15px;
+    font-size: 24px;
+    color: #fff;
+    line-height: 26px;
+    z-index: 20;
+    width: 283px;
+     font-weight: normal; 
+}
+.by_productList_bannerText span {
+    font-size: 15px;
+    color: #fff;
+    line-height: 18px;
+    display: block;
+    margin-top: 8px;
+    font-weight: normal;
+}
   }
 
-  
+ @media screen and (max-width: 490px){
+  .by_productList_bannerText {
+    position: absolute;
+    top: 13%;
+    left: 15px;
+    font-size: 19px;
+    color: #fff;
+    line-height: 18px;
+    z-index: 20;
+    width: 227px;
+    font-weight: normal;
+}
+.by_productList_bannerText span
+{
+  margin-top: -2px;
+  font-size: 13px;
+}
+}  
   .by_product_home_expStore
   {
     width: 100%;

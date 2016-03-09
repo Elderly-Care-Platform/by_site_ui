@@ -66,7 +66,7 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
 
         $scope.smartScroll = function(){
             setTimeout(function(){
-                $scope.smartHeight = $(".by_productList_banner").height();;
+                $scope.smartHeight = $(".by_productList_banner").height() - 55;
                 BY.byUtil.smartScroll($scope.smartHeight);
             }, 100);
         }
