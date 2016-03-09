@@ -1,3 +1,17 @@
+.by_gradYellowColor
+{
+    width:100%px;height:auto;
+    line-height: 40px;
+ background-color:#fff;
+ filter:progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#fff, endColorstr=yellow);
+ background-image:-moz-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
+background-image:linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
+background-image:-webkit-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
+background-image:-o-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
+background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
+ background-image:-webkit-gradient(linear, left bottom, right bottom, color-stop(1%,#fff), color-stop(50%,yellow),color-stop(100%,#fff));
+}
+
 .by_home_bg {
     width: 100%;
     height: 316px;
@@ -888,7 +902,7 @@
 }
 .by_homeCommLeft
 {
-    width: 70%;
+    width: 90%;
     height: auto;
     float: left;
     font-size: 24px;
@@ -968,7 +982,7 @@
 }
 .by_homeShopRightText
 {
-    font-size: 18px;
+    font-size: 20px;
     display: block;
 }
 .by_homeShopRightLeft
@@ -1028,17 +1042,36 @@
 }
 .by_homeDirectoryLeft
 {
-    width: 60%;
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px;
+    text-align: center;
+}
+.by_homeDirectoryLeftThumb
+{
     float: left;
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: auto;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: left;
+}
+.by_homeDirectoryLeftThumb strong
+{
     font-size: 24px;
+    display: block;
 }
 .by_homeDirectoryRight
 {
     float: right;
     height: auto;
-    width: 40%;
-    margin-bottom: -100px;
-    margin-top: 6px;
+    width: 30%;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
 }
 
 .by_homeSectionFooter .by_homeDirectoryLeft
@@ -1174,6 +1207,11 @@
 {
     display: none;
 }
+.by_homeDirectoryLeftThumbRight
+{
+    float: right;
+    width: 217px;
+}
 @media ( max-width: 910px) {
     .by_homeSectionFooter .by_homeCommLeft, .by_homeSectionFooter .by_homeDirectoryLeft, .by_homeSectionFooter .by_homeShopRight, .by_homeSectionFooter .by_homeCommLeft a, .by_homeSectionFooter .by_homeDirectoryLeft a, .by_homeSectionFooter .by_homeShopRight a, .by_homeSectionFooter .by_homeShopRight a, .by_homeSectionFooter .by_homeShopRight a:hover, .by_homeSectionFooter .by_homeDirectoryLeft a, .by_homeSectionFooter .by_homeDirectoryLeft a:hover
     {
@@ -1203,6 +1241,10 @@
     }
 }
 @media ( max-width: 720px) {
+    .by_gradYellowColor
+    {
+        line-height: 25px;
+    }
     .by_homeContactNumber, .by_homeShopRightBorder
     {
         display: none;
@@ -1255,10 +1297,6 @@
     {
         margin-top: -41px;
     }
-    .by_homeDirectoryRight
-    {
-        margin-top: 30px;
-    }
     .by_homeCommRight
     {
         width: 30%;
@@ -1280,6 +1318,23 @@
     .by_homeModalRight span
     {
         font-size: 24px;
+    }
+    .by_homeDirectoryLeft
+    {
+        width: 100%;
+        height: auto;
+        margin-right: 0px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .by_homeDirectoryLeftThumb
+    {
+        margin-bottom: 30px;
+        width: 98%;
+        height: auto;
+        margin-right: 0px;
+        margin-left: 0px;
+        text-align: center;
     }
 }
 @media ( max-width: 590px){
