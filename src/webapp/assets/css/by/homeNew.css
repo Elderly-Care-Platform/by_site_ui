@@ -975,6 +975,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     font-weight: bold;
     display: block;
     font-size: 40px;
+    margin-top: -10px;
 }
 .by_homeSection  a:hover
 {
