@@ -938,20 +938,56 @@
 }
 .by_homeShopBg
 {
-    background: url('../../img/home/shop_back_story.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat center bottom;
+    background: #F1F0F0 url('../../img/home/shop_back_story.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat center bottom;
 }
 .by_homeShopLeft
 {
-    width: 45%;
+    width: 100%;
     float: left;
-    margin-bottom: -66px;
-    margin-top: -21px;
+    margin-bottom: -81px;
+    margin-top: 21px;
 }
 .by_homeShopRight
 {
-    width: 55%;
-    float: right;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     font-size: 24px;
+}
+.by_homeShopRightHead
+{
+    color: #000;
+    font-weight: bold;
+    display: block;
+    font-size: 40px;
+}
+.by_homeSection  a:hover
+{
+    text-decoration: none;
+}
+.by_homeShopRightText
+{
+    font-size: 18px;
+    display: block;
+}
+.by_homeShopRightLeft
+{
+    width: 270px;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+    font-size: 24px;
+    line-height: 40px;
+}
+.by_homeShopRightBorder
+{
+    width: 4px;
+    height: 75px;
+    margin-top: 12px;
+    background: rgb(5, 48, 14);
+    float: left; 
+    margin-right: 16px;
 }
 .by_homeSectionFooter .by_homeShopRight
 {
@@ -985,7 +1021,6 @@
 .by_homeShopRight a:hover
 {
     color: #fff;
-    text-decoration: underline;
 }
 .by_homeDirectoryBg
 {
@@ -1168,9 +1203,24 @@
     }
 }
 @media ( max-width: 720px) {
-    .by_homeContactNumber
+    .by_homeContactNumber, .by_homeShopRightBorder
     {
         display: none;
+    }
+    .by_homeShopRightLeft
+    {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+        line-height: 32px;
+    }
+    .by_homeShopRightHead{
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .by_homeShopRight
+    {
+        width: 100%;
     }
     .by_homeContactNumberM
     {
@@ -1241,15 +1291,6 @@
     font-size: 18px;
     line-height: 24px;
 }
-.by_homeShopLeft
-{
-    width: 45%;
-    margin-top: 10px;
-}
-.by_homeShopRight
-{
-    width: 55%;
-}
 .by_homeSectionFooter .by_homeCommLeft
 {
     line-height: 25px;
@@ -1274,7 +1315,7 @@
 }
 .by_homeShopLeft
 {
-    margin-top: 67px;
+    margin-top: 10px;
 }
 .by_homeDirectoryRight
 {
@@ -1411,7 +1452,7 @@
     color: #fff;
     text-decoration: none;
 }
-@media ( max-width: 990px){
+@media ( max-width: 720px){
     .by_homeExpRight, .by_homeExpLeft
     {
         width: 100%;
