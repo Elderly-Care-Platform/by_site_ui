@@ -1,22 +1,46 @@
 <div class="by_container by_homeDirectoryWhite">
-    <div class="by_homeDirectoryBg">
+    <div class="by_homeDirectoryBg"  style="position:relative;">
         <div class="by_homeSection">
             <div class="by_homeSectionInside">
                 <div class="by_homeDirectoryLeft">
-                    Looking for a nurse or a<br/>
-                    physiotherapist for your elders?<br/>
-                    Considering a retirement home?<br/><br/>
+                   <div class="by_homeDirectoryLeftThumb">
+                       Looking for a
+                       <strong>Nurse or a physiotherapist?</strong>
+                   </div>
+                   <div class="by_homeDirectoryLeftThumb by_homeDirectoryLeftThumbRight" >
+                       Considering a
+                       <strong>Retirement home?</strong>
+                   </div>
+                   <div class="clearfix margin-top-20"></div>
+                   <div class="by_callToAction margin-top-40 by_gradYellowColor">
+                      <img src="assets/img/logo_symbol.png?versionTimeStamp=%PROJECT_VERSION%" alt="Logo" /> Call us to find best elder care services.
+                      <xyz ng-if="$root.windowWidth > 720"> <i class="fa fa-phone2"></i> {{telNo}}</xyz>
+                      <xyz ng-if="$root.windowWidth < 721">
+                        <a href="tel:{{telNo}}" style="background:none;">
+                          <div class="by_callToActionButton"><img
+                            src="assets/img/home/call.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Call"> Call 
+                          </div>
+                        </a>
+                      </xyz>
+                    </div>
+                   <div class="clearfix margin-top-40"></div>
+                   Or browse 
                     <a href="#!/directory/56406cd03e60f5b66f62df26/all"> <h3>Directory</h3> <i class="fa fa-caret-right"></i></a>
+                    <div class="clearfix margin-top-40"></div>
+                    <div class="clearfix margin-top-40"></div>
                 </div>
-                <div class="by_homeDirectoryRight">
-                    <img src="assets/img/home/services.png?versionTimeStamp=%PROJECT_VERSION%" alt="Directory" width="100%" />
+                <div class="by_homeDirectoryRight" >
+                    <img src="assets/img/home/home_directory_new.png?versionTimeStamp=%PROJECT_VERSION%" alt="Directory" width="100%" />
                 </div>
                 <div class="clearfix"></div>
             </div>
+
         </div>
+
+        
     </div>
     <div class="clearfix"></div>
-    <div class="by_homeSectionFooter">
+    <!--<div class="by_homeSectionFooter">
         <div class="by_homeSection paddingZero">
             <div class="by_homeSectionInside">
                 <div class="by_homeDirectoryLeft">
@@ -27,5 +51,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </div>
+

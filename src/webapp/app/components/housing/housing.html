@@ -1,7 +1,7 @@
 <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
 
 <!--  banner -->
-<div class="by_directoryBanner">
+<!--<div class="by_directoryBanner">
     <div class="by_directoryBanner_title">
         Directory of {{$root.totalServiceCount}} services for seniors across India. Listing of
         {{$root.totalHousingCount}} senior living facilities.
@@ -11,7 +11,29 @@
             ng-if="$root.windowWidth < 720"><a ng-href="{{'tel:'+telNo}}">{{telNo}}</a></span> <span
             ng-if="$root.windowWidth > 720">{{telNo}}</span>
     </div>
+</div>-->
+
+<div class="by_directoryBanner">
+    <div class="by_directoryBannerImg" ng-if="$root.windowWidth > 720">
+     <img src="assets/img/section_headers/directory_grandma.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Directory Banner" />
+   </div>
+    <div class="by_directoryBannerText">
+       Directory of
+        <STRONG>Services</STRONG>
+        <span>for seniors across India</span>
+   </div>
+   <div class="by_directoryBannerDivider" ng-if="$root.windowWidth > 720"></div>
+   <div class="by_directoryBannerText by_directoryBannerText2" style="width:250px;">
+        Listing of
+        <STRONG>Senior Living</STRONG>
+        <span>facilites</span>
+   </div>
+   <div class="by_directoryBannerImg" ng-if="$root.windowWidth < 721">
+     <img src="assets/img/section_headers/directory_grandma.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Directory Banner" />
+   </div>
+   <div class="clearfix"></div>
 </div>
+<div class="clearfix"></div>
 
 <!--=== Content Part ===-->
 <div>
