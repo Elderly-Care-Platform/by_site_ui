@@ -1,3 +1,17 @@
+.by_gradYellowColor
+{
+    width:100%px;height:auto;
+    line-height: 40px;
+ background-color:#fff;
+ filter:progid:DXImageTransform.Microsoft.gradient(GradientType=1,startColorstr=#fff, endColorstr=yellow);
+ background-image:-moz-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
+background-image:linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
+background-image:-webkit-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
+background-image:-o-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
+background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
+ background-image:-webkit-gradient(linear, left bottom, right bottom, color-stop(1%,#fff), color-stop(50%,yellow),color-stop(100%,#fff));
+}
+
 .by_home_bg {
     width: 100%;
     height: 316px;
@@ -336,7 +350,9 @@
 {
     display: inline;
     color: #fff;
-    font-size: 24px;
+    font-size: 20px;
+    font-family: century_gothic !important;
+    font-weight: normal;
 }
 @media (max-width: 1280px) {
     .by_homeSection_shopMore_find {
@@ -882,12 +898,11 @@
     width: 30%;
     height: auto;
     float: right;
-    margin-bottom: -66px;
-    margin-top: -76px;
+    margin-top: -160px;
 }
 .by_homeCommLeft
 {
-    width: 70%;
+    width: 90%;
     height: auto;
     float: left;
     font-size: 24px;
@@ -896,11 +911,11 @@
 {
     width: auto;
     height: auto;
-    padding: 8px 18px 10px 18px;
+    padding: 2px 18px 6px 18px;
     text-align: center;
     font-weight: bold;
     color: #fff;
-    background: #004f24;
+    background: rgb(5, 48, 14);
     border-radius: 3px !important;
     font-size: 24px;
 }
@@ -937,20 +952,57 @@
 }
 .by_homeShopBg
 {
-    background: url('../../img/home/shop_back_story.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat center bottom;
+    background: #F1F0F0 url('../../img/home/shop_back_story.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat center bottom;
 }
 .by_homeShopLeft
 {
-    width: 45%;
+    width: 100%;
     float: left;
-    margin-bottom: -66px;
-    margin-top: -21px;
+    margin-bottom: -81px;
+    margin-top: 21px;
 }
 .by_homeShopRight
 {
-    width: 55%;
-    float: right;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     font-size: 24px;
+}
+.by_homeShopRightHead
+{
+    color: #000;
+    font-weight: bold;
+    display: block;
+    font-size: 40px;
+    margin-top: -10px;
+}
+.by_homeSection  a:hover
+{
+    text-decoration: none;
+}
+.by_homeShopRightText
+{
+    font-size: 20px;
+    display: block;
+}
+.by_homeShopRightLeft
+{
+    width: 270px;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+    font-size: 24px;
+    line-height: 40px;
+}
+.by_homeShopRightBorder
+{
+    width: 4px;
+    height: 75px;
+    margin-top: 12px;
+    background: rgb(5, 48, 14);
+    float: left; 
+    margin-right: 16px;
 }
 .by_homeSectionFooter .by_homeShopRight
 {
@@ -969,11 +1021,11 @@
 {
     width: auto;
     height: auto;
-    padding: 8px 18px 10px 18px;
+    padding: 2px 18px 6px 18px;
     text-align: center;
     font-weight: bold;
     color: #fff;
-    background: #004f24;
+    background: rgb(5, 48, 14);
     border-radius: 3px !important;
     font-size: 24px;
 }
@@ -984,7 +1036,6 @@
 .by_homeShopRight a:hover
 {
     color: #fff;
-    text-decoration: underline;
 }
 .by_homeDirectoryBg
 {
@@ -992,17 +1043,36 @@
 }
 .by_homeDirectoryLeft
 {
-    width: 60%;
+    width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 20px;
+    text-align: center;
+}
+.by_homeDirectoryLeftThumb
+{
     float: left;
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: auto;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: left;
+}
+.by_homeDirectoryLeftThumb strong
+{
     font-size: 24px;
+    display: block;
 }
 .by_homeDirectoryRight
 {
     float: right;
     height: auto;
-    width: 40%;
-    margin-bottom: -100px;
-    margin-top: 6px;
+    width: 30%;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
 }
 
 .by_homeSectionFooter .by_homeDirectoryLeft
@@ -1018,15 +1088,24 @@
     background: transparent;
     font-size: 20px;
 }
+.fa-caret-right:before
+{
+    content: '';
+    background: url('../../img/home/arrow_white.png?versionTimeStamp=%PROJECT_VERSION%');
+    display: inline-block;   
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+}
 .by_homeDirectoryLeft a
 {
     width: auto;
     height: auto;
-    padding: 8px 18px 10px 18px;
+    padding: 2px 18px 6px 18px;
     text-align: center;
     font-weight: bold;
     color: #fff;
-    background: #004f24;
+    background: rgb(5, 48, 14);
     border-radius: 3px !important;
     font-size: 24px;
 }
@@ -1129,6 +1208,11 @@
 {
     display: none;
 }
+.by_homeDirectoryLeftThumbRight
+{
+    float: right;
+    width: 217px;
+}
 @media ( max-width: 910px) {
     .by_homeSectionFooter .by_homeCommLeft, .by_homeSectionFooter .by_homeDirectoryLeft, .by_homeSectionFooter .by_homeShopRight, .by_homeSectionFooter .by_homeCommLeft a, .by_homeSectionFooter .by_homeDirectoryLeft a, .by_homeSectionFooter .by_homeShopRight a, .by_homeSectionFooter .by_homeShopRight a, .by_homeSectionFooter .by_homeShopRight a:hover, .by_homeSectionFooter .by_homeDirectoryLeft a, .by_homeSectionFooter .by_homeDirectoryLeft a:hover
     {
@@ -1142,6 +1226,7 @@
     .by_homeCommLeft, .by_homeDirectoryLeft, .by_homeShopRight, .by_homeModalRight, .by_homeCommLeft a, .by_homeDirectoryLeft a, .by_homeShopRight a, .by_homeModalRight a
     {
         font-size: 18px;
+        padding-top: 6px;
     }
     .by_homeModalRight
     {
@@ -1157,9 +1242,28 @@
     }
 }
 @media ( max-width: 720px) {
-    .by_homeContactNumber
+    .by_gradYellowColor
+    {
+        line-height: 25px;
+    }
+    .by_homeContactNumber, .by_homeShopRightBorder
     {
         display: none;
+    }
+    .by_homeShopRightLeft
+    {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+        line-height: 32px;
+    }
+    .by_homeShopRightHead{
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .by_homeShopRight
+    {
+        width: 100%;
     }
     .by_homeContactNumberM
     {
@@ -1194,14 +1298,10 @@
     {
         margin-top: -41px;
     }
-    .by_homeDirectoryRight
-    {
-        margin-top: 30px;
-    }
     .by_homeCommRight
     {
         width: 30%;
-        margin-top: -30px;
+        margin-top: -90px;
     }
     .by_homeShopRight 
     {
@@ -1220,6 +1320,23 @@
     {
         font-size: 24px;
     }
+    .by_homeDirectoryLeft
+    {
+        width: 100%;
+        height: auto;
+        margin-right: 0px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    .by_homeDirectoryLeftThumb
+    {
+        margin-bottom: 30px;
+        width: 98%;
+        height: auto;
+        margin-right: 0px;
+        margin-left: 0px;
+        text-align: center;
+    }
 }
 @media ( max-width: 590px){
     .by_homeSectionFooter .by_homeCommLeft, .by_homeSectionFooter .by_homeDirectoryLeft, .by_homeSectionFooter .by_homeShopRight, .by_homeSectionFooter .by_homeCommLeft a, .by_homeSectionFooter .by_homeDirectoryLeft a, .by_homeSectionFooter .by_homeShopRight a, .by_homeSectionFooter .by_homeShopRight a, .by_homeSectionFooter .by_homeShopRight a:hover, .by_homeSectionFooter .by_homeDirectoryLeft a, .by_homeSectionFooter .by_homeDirectoryLeft a:hover {
@@ -1229,15 +1346,6 @@
 .by_homeCommLeft, .by_homeDirectoryLeft, .by_homeShopRight, .by_homeModalRight, .by_homeCommLeft a, .by_homeDirectoryLeft a, .by_homeShopRight a, .by_homeModalRight a {
     font-size: 18px;
     line-height: 24px;
-}
-.by_homeShopLeft
-{
-    width: 45%;
-    margin-top: 10px;
-}
-.by_homeShopRight
-{
-    width: 55%;
 }
 .by_homeSectionFooter .by_homeCommLeft
 {
@@ -1259,11 +1367,11 @@
 }
 .by_homeCommRight
 {
-    margin-top: 18px;
+    margin-top: -40px;
 }
 .by_homeShopLeft
 {
-    margin-top: 67px;
+    margin-top: 10px;
 }
 .by_homeDirectoryRight
 {
@@ -1400,7 +1508,7 @@
     color: #fff;
     text-decoration: none;
 }
-@media ( max-width: 990px){
+@media ( max-width: 720px){
     .by_homeExpRight, .by_homeExpLeft
     {
         width: 100%;
