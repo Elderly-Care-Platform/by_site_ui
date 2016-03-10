@@ -2,3 +2,4 @@ User-agent: *
 Disallow:*/privacyPolicy$
 Disallow:*/termsCondition$
 Disallow:*/makeSnapshot*
+Disallow:*?afdt=*
