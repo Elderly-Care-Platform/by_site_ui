@@ -1,5 +1,4 @@
-<div class=" by_menuDetailed col-md-12 no-padding" style="position:fixed; overflow-x:hidden; bottom:0px;"
-    ng-init="leftPanelHeight();" ng-if="$root.windowWidth > 720">
+<div class="by_subMenuPlus col-md-12 no-padding-left no-padding-right" ng-init="smartScroll();" ng-if="$root.windowWidth > 720">
     <div class="col-md-12 by-commuityDetailedImage" ng-if="discuss.userProfile && discuss.userProfile.basicProfileInfo.profileImage && discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage">
         <a validate-user-name="{{discuss.username}}"
             ng-href="{{getHrefProfile(discuss, {'profileId':discuss.userId})}}">
@@ -39,5 +38,6 @@
                 </span>
             </a>
         </div>
+        
     </div>
 </div>

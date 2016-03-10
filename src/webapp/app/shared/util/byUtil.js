@@ -170,6 +170,7 @@ BY.byUtil.validateEmailId = function(emailId){
 }
 
 BY.byUtil.smartScroll = function (smartHeight) {
+    window.scrollTo(0, 0);
     var clientHeight = $( window ).height();
     var footerHeight = $(".by_footer").height();
     var smartHeightUp = smartHeight + footerHeight + 57;
