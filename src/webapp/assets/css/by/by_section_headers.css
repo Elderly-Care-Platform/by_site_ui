@@ -27,6 +27,12 @@
     font-size: 20px;
     text-align: center;
 }
+.by_commSectionHeader h1
+{
+    font-size: 20px;
+    color: #000;
+    font-family: century_gothic !important;
+}
 .by_sectionHeader {
     width: 100%;
     height: auto;
