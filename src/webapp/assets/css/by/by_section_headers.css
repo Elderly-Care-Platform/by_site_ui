@@ -91,6 +91,13 @@
 	text-align: center;
 	margin-bottom: 20px;
 }
+.by_sectionHeader h2
+{
+	font-size: 20px;
+	text-align: center;
+	font-family: century_gothic !important;
+	color: #000;
+}
 
 .by_directoryBanner
 {
@@ -117,13 +124,18 @@
 	line-height: 34px;
 	margin-top: 9px;
 }
-.by_directoryBannerText strong
+.by_directoryBannerText h1
+{
+	color: #fff;
+	font-size: 18px;
+}
+.by_directoryBannerText h1 strong, .by_directoryBannerText  strong
 {
 	display: block;
 	text-transform: uppercase;
 	font-size: 35px;
 }
-.by_directoryBannerText span
+.by_directoryBannerText h1 span, .by_directoryBannerText span
 {
 	font-weight: normal;
 	font-size: 18px;
