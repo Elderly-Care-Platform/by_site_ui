@@ -66,10 +66,17 @@ define(['byApp', 'byUtil', 'discussService'], function(byApp, byUtil, discussSer
             $(".contentPanel").css('min-height', cH);  
         }*/
 
-        $scope.leftPanelHeight = function(){            
+        $scope.smartScroll = function(){
+            setTimeout(function(){
+                $scope.smartHeight = $(".by_subMenu").height();
+                BY.byUtil.smartScroll($scope.smartHeight);
+            }, 100);
+        }
+
+        /*$scope.leftPanelHeight = function(){            
             var clientHeight = $( window ).height() - 57;
             $(".by_menuDetailed").css('height', clientHeight+"px");
-        }
+        }*/
 
 		$scope.getTagBasedArticle = function(){
 			var systemTags = [];

@@ -7,8 +7,9 @@
 		ng-src="{{product.primaryMedia.url || ''}}"
 		fallback-src='["assets/img/by.png"]' alt="{{product.name}}">
 	</div>
-	<div class="by_productCard_divider"></div>
-	<div class="by_productCard_title ellipsisHead">{{product.name}}</div>
+	<div class="by_productCard_title ellipsisHead text-capitalize">{{product.name.toLowerCase()}}</div>
+	<div class="ellipsisHead" ng-bind-html="product.productDescription" ng-if="product.productDescription">
+    </div>
 	<div class="by_productCard_price">
 		<span ng-if="product.salePrice && product.salePrice.amount">Our price: <strong>Rs {{product.salePrice.amount}}</strong></span>
 		<span ng-if="!product.salePrice || !product.salePrice.amount">Our price: <strong>Rs {{product.retailPrice.amount}}</strong></span>
@@ -21,6 +22,11 @@
 		<!--ng-if="product.retailPrice != null"><del>Rs {{product.retailPrice.amount}}</del> </small> -->
 		<!--<span class="by_productCard_offer">5% Off</span>-->
 	</div>
+
+	<div class="clearfix" ></div>
+    <span ng-init="getDiscountPercentage(product)">
+    <div class="by_productCard_ImageOffer"  ng-if="product.discountPercentage && product.discountPercentage >= 5">{{product.discountPercentage}}% <br/><small>off</small></div>
+    </span>
 	<!--<div class="by_productCard_divider"></div>
 	<div ng-if="$root.windowWidth > 990">
 		<span class="by_productCard_desc"
