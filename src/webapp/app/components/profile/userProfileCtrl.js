@@ -142,10 +142,17 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController', 'indvUserPr
                 fetchUserPostedContent();
             };
 
-            $scope.leftPanelHeight = function () {
-                var clientHeight = $(window).height() - 57;
-                $(".by_menuDetailed").css('height', clientHeight + "px");
+            $scope.smartScroll = function(){
+                setTimeout(function(){
+                    $scope.smartHeight = $(".by_subMenu").height();
+                    BY.byUtil.smartScroll($scope.smartHeight);
+                }, 100);
             }
+
+            /*$scope.leftPanelHeight = function(){            
+                var clientHeight = $( window ).height() - 57;
+                $(".by_menuDetailed").css('height', clientHeight+"px");
+            }*/
 
             $scope.gotoHref = function (id) {
                 if (id) {

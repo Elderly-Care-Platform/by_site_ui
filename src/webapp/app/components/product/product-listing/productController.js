@@ -385,8 +385,8 @@ define(['byProductApp', 'byUtil',
 
 
             $scope.getDiscountPercentage = function (product) {
-                var salePrice = product.salePrice ? product.salePrice.amount : 0,
-                    retailPrice = product.retailPrice ? product.retailPrice.amount : 0, discount = 0;
+                var salePrice = product.salePrice ? parseInt(product.salePrice.amount) : 0,
+                    retailPrice = product.retailPrice ? parseInt(product.retailPrice.amount) : 0, discount = 0;
 
                 if (salePrice > 0 && retailPrice > 0 && salePrice < retailPrice) {
                     discount = ((retailPrice - salePrice) / retailPrice) * 100;
