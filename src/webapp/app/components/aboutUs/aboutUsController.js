@@ -1,7 +1,9 @@
-define(['byApp', 'byUtil', 'editorController'], function(byApp, byUtil, editorController) {
+define(['byApp', 'byUtil', 'editorController', 'app/shared/footer/contactUsController'], function(byApp, byUtil, editorController, contactUsCtrl) {
     function BYAboutUsController($scope, $rootScope, $routeParams, $timeout, $location, $sce) {
         $scope.currentAcceleratorSelected = "";
         $scope.currentView = "aboutUs";
+
+        $scope.telNo = BY.config.constants.byContactNumber;
 
 
 
@@ -118,10 +120,14 @@ define(['byApp', 'byUtil', 'editorController'], function(byApp, byUtil, editorCo
             }
         }
 
-        $scope.showMore = function(){
-            document.getElementById("more_para").style.display = "block";
-            document.getElementById("more").style.display = "none";
+        $scope.showFounder = function(){
+            document.getElementById("moreParaFounder").style.display = "block";
+            document.getElementById("moreFounder").style.display = "none";
+        }
 
+        $scope.showCompany = function(){
+            document.getElementById("moreParaCompany").style.display = "block";
+            document.getElementById("moreCompany").style.display = "none";
         }
     }
 
