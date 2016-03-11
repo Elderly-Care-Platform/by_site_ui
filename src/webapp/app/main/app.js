@@ -45,7 +45,7 @@ define([
 			$("link[rel='next']").attr("href", "");
     		$("link[rel='prev']").attr("href", "");
 
-			//window.scrollTo(0, 0);
+			window.scrollTo(0, 0);
 			BY.byEditor.removeEditor();
 			$rootScope.$broadcast('currentLocation', $location.path());
 
