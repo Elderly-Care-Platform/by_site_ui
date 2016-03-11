@@ -12,22 +12,22 @@
        
 
         <div class="col-md-12 no-padding margin-bottom-15">
-            <textarea  class="textbox about-dependent by_homeContactFeildBg" ng-change="showSelectInputF()"placeholder="Write to us" rows="3" ng-model="text" style="height:100px; resize:none;"></textarea>
+            <textarea  class="textbox about-dependent by_homeContactFeildBg" ng-change="showSelectInputF()" placeholder="Write to us" rows="3" ng-model="contact.text" style="height:100px; resize:none;"></textarea>
         </div>
 
         <span ng-if="showSelectInput == true" >
 
         <div class="col-md-12 no-padding form-header-content margin-bottom-15">
-            <select ng-model="subjectTitle" class="by_homeContactFeildBg" ng-options="value for (key, value) in subjectOptionsMap">
+            <select ng-model="contact.subjectTitle" class="by_homeContactFeildBg" ng-options="value for (key, value) in subjectOptionsMap">
                 <option value="">Please select your subject here</option>
             </select>
         </div>
 
 		<div class="col-md-6 no-padding" style="margin-bottom:20px;">
-            <input type="text" class="username-textbox textbox by_homeContactFeildBg" name="username" ng-model="username" placeholder="Name">
+            <input type="text" class="username-textbox textbox by_homeContactFeildBg" name="username" ng-model="contact.username" placeholder="Name">
         </div>
         <div class="col-md-6 no-padding marginLeft20" style="margin-bottom:20px;" ng-show="!isLoggedIn">
-            <input type="text" class="username-textbox textbox by_homeContactFeildBg" name="userEmail" ng-model="userEmail" placeholder="E-mail ID">
+            <input type="text" class="username-textbox textbox by_homeContactFeildBg" name="userEmail" ng-model="contact.userEmail" placeholder="E-mail ID">
         </div>
 
         </span>

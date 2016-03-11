@@ -2,50 +2,66 @@
 
 <!--=== End Breadcrumbs ===-->
 
-<div class="container content discussion-page breadCrumbMargin">
+<div class="container content discussion-page breadCrumbMargin" style="padding-top:20px;">
 
-    <div class="row both-container by_editor_wrap" style="margin-top: 50px;">
-        <div class="col-md-12 no-padding margin-bottom-35">
+    <div class="col-md-12 no-padding both-container by_editor_wrap by_contactForm">
 
-            <div class="col-md-6 no-padding  list-head dp-block">CONTACT US
-            </div>
+        <span ng-show="errorMsg && errorMsg.length>0" class="help-block">
+            {{errorMsg}}
+        </span><div class="clearfix"></div>
 
-            <div class="col-md-12 no-padding bg-gray-h1">
-                <div class="bg-green-h2" style="width: 216px;"></div>
-            </div>
+        <div class="col-md-12 no-padding margin-bottom-15">
+            <textarea  class="textbox about-dependent by_homeContactFeildBg by_contactBg" ng-change="showSelectInputF()" placeholder="Write to us" rows="3" ng-model="contact.text" style="height:100px; resize:none;"></textarea>
         </div>
 
-
-        <div class="col-md-6 no-padding margin-bottom-35 register-page">
-            <span ng-show="errorMsg && errorMsg.length>0" class="help-block">
-                    {{errorMsg}}
-                </span>
-            <input type="text" class="username-textbox textbox " name="username" ng-model="username" placeholder="name">
-        </div>
-        <div class="col-md-6 no-padding margin-bottom-35 register-page" ng-show="!isLoggedIn">
-            <input type="text" class="username-textbox textbox " name="userEmail" ng-model="userEmail" placeholder="email">
-        </div>
+        <span ng-if="showSelectInput == true" >
 
         <div class="col-md-12 no-padding form-header-content margin-bottom-15">
-            <select ng-model="subjectTitle" ng-options="value for (key, value) in subjectOptionsMap">
+            <select ng-model="contact.subjectTitle" class="by_homeContactFeildBg by_contactBg" ng-options="value for (key, value) in subjectOptionsMap">
                 <option value="">Please select your subject here</option>
             </select>
         </div>
 
-
-        <div class="col-md-12 no-padding margin-bottom-35 byEditor">
-            <textarea id="feedback_textArea" class="textbox about-dependent" rows="3" ng-model="editor.text"></textarea>
+        <div class="col-md-6 no-padding" style="margin-bottom:20px;">
+            <input type="text" class="username-textbox textbox by_homeContactFeildBg by_contactBg" name="username" ng-model="contact.username" placeholder="Name">
         </div>
+        <div class="col-md-6 no-padding marginLeft20" style="margin-bottom:20px;" ng-show="!isLoggedIn">
+            <input type="text" class="username-textbox textbox by_homeContactFeildBg by_contactBg" name="userEmail" ng-model="contact.userEmail" placeholder="E-mail ID">
+        </div>
+
+        </span>
+        
 
 
         <div class="col-md-12 no-padding margin-bottom-35">
-            <button class="btn btn-big btn-default pull-right by_btn_submit by-editor-submit-btn" disabled
-                    ng-click="postContent('F')">submit
+            <button class="btn btn-big btn-default pull-right by_btn_submit by-editor-submit-btn" 
+                    ng-click="postContent('F')">Submit
             </button>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="col-md-12 no-padding margin-bottom-15 margin-top-20">
+            <div class="col-md-7 no-padding-left">
+                <div class="by_contactAddress"> 
+                    <span>Address:</span> #48, 2nd Main, Kormangala 1st block (near Wipro park),   Bangalore - 560034 
+                </div>
+                <div class="by_contactHours">
+                    <span>Opening hours:</span> 10:30AM - 7:30PM<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp; Sunday: 11-00AM - 5:00PM
+                </div>
+                <div class="by_contactPhone">
+                    <span>Phone:</span> <a href="tel:{{telNo}}">{{telNo}}</a>
+                </div>
+                <div class="by_contactPhone">
+                    <span>E-mail:</span> <a href="mailto:contactus@beautifulyears.com">ContactUs@BeautifulYears.com</a>
+                </div>
+            </div>
+            <div class="col-md-5 no-padding">
+                <a href="https://goo.gl/sSu4BB" target="_blank">
+                    <img src="assets/img/home/map.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Maps" width="100%" />
+                </a>
+            </div>
         </div>
     </div>
 </div>
 
-<script type="text/javascript">
-    var tinyEditor = BY.byEditor.addEditor({"editorTextArea": "feedback_textArea"});
-</script>
