@@ -4,14 +4,16 @@
 define(['byApp', 'byUtil'], function(byApp, byUtil) {
     function contactUsController($scope, $routeParams, $route, $location, ContactUs){
         $scope.isLoggedIn = false;
-        $scope.userEmail ='';
-        $scope.username = '';
         $scope.errorMsg = "";
-        $scope.text = '';
+        $scope.contact = {};        
+        $scope.contact.userEmail ='';
+        $scope.contact.username = '';
+        $scope.contact.text = '';
         $scope.showSelectInput = false;
+        $scope.telNo = BY.config.constants.byContactNumber;
 
         $scope.showSelectInputF = function(){
-           if($scope.text.trim().length > 0)
+           if($scope.contact.text.trim().length > 0)
             {
                 $scope.showSelectInput = true;
             } else{
@@ -23,8 +25,8 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
 
         if(localStorage.getItem("USER_ID")){
             $scope.isLoggedIn = true;
-            $scope.userEmail = localStorage.getItem("USER_ID");
-            $scope.username = BY.byUtil.validateUserName(localStorage.getItem("USER_NAME"));
+            $scope.contact.userEmail = localStorage.getItem("USER_ID");
+            $scope.contact.username = BY.byUtil.validateUserName(localStorage.getItem("USER_NAME"));
         }
 
         (function(){
@@ -39,7 +41,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
 
 
         $scope.subjectOptionsMap = {'0':"FEEDBACK", '1':"SUGGESTION", '2':"READY TO HELP ", '3':"DOING BUSINESS TOGETHER", '4':"WOULD LIKE TO INFORM YOU", '5':"OTHER"};
-        $scope.subjectTitle = $routeParams.subject ? $scope.subjectOptionsMap[$routeParams.subject]:"";
+        $scope.contact.subjectTitle = $routeParams.subject ? $scope.subjectOptionsMap[$routeParams.subject]:"";
 
         $scope.postContent = function (discussType) {
             $scope.contactUs = new ContactUs();
@@ -48,13 +50,13 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
             if(tinyMCE.activeEditor){
                 $scope.contactUs.text = tinyMCE.activeEditor.getContent();
             } else{
-                $scope.contactUs.text = $scope.text;
+                $scope.contactUs.text = $scope.contact.text;
             }           
             
-            $scope.contactUs.title = $scope.subjectTitle;
+            $scope.contactUs.username = $scope.contact.username;
 
-            $scope.contactUs.userId = $scope.userEmail;
-            $scope.contactUs.username = $scope.username;
+            $scope.contactUs.userId = $scope.contact.userEmail;
+            $scope.contactUs.title = $scope.contact.subjectTitle;
 
             if($scope.contactUs.text.trim().length <= 0){
                 $scope.errorMsg = "Please add more details";
@@ -62,7 +64,9 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
                 $scope.errorMsg = "Please add your user name";
             } else if(!$scope.isLoggedIn && !emailValidation.test($scope.contactUs.userId)){
                 $scope.errorMsg = "Please enter valid Email Id";
-            } else{
+            } else if($scope.contactUs.title == undefined){
+                $scope.errorMsg = "Please select your subject title";
+            }else{
                 $scope.errorMsg = "";
             }
 
