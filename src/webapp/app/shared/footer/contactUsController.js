@@ -41,7 +41,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
 
 
         $scope.subjectOptionsMap = {'0':"FEEDBACK", '1':"SUGGESTION", '2':"READY TO HELP ", '3':"DOING BUSINESS TOGETHER", '4':"WOULD LIKE TO INFORM YOU", '5':"OTHER"};
-        $scope.subjectTitle = $routeParams.subject ? $scope.subjectOptionsMap[$routeParams.subject]:"";
+        $scope.contact.subjectTitle = $routeParams.subject ? $scope.subjectOptionsMap[$routeParams.subject]:"";
 
         $scope.postContent = function (discussType) {
             $scope.contactUs = new ContactUs();

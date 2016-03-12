@@ -104,6 +104,7 @@
 .menuPipeline:after
 {
 	content:' |';
+	color:#fff;
 }
 .by_header_right_search_other
 {
