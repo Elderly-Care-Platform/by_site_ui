@@ -334,7 +334,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     margin-right: auto;
     margin-left: auto;
 }
-.mobileSite {
+.mobileSite, .mobileSiteAbout {
     display: none;
 }
 .desktopSite {
@@ -409,6 +409,10 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 @media ( max-width: 720px) {
     .mobileSite {
         display: block;
+    }
+    .mobileSiteAbout
+    {
+        display: inline;
     }
     .by_home_titleThree
     {
