@@ -77,6 +77,27 @@ define(['byProductApp', 'byUtil',
             }
 
             function initialize() {
+                $(".by_header").removeClass("by_header_image"); 
+                $(".by_header").addClass("by_headerBoder");
+                angular.element($window).bind("scroll", function () {
+                    var headerHeight = $(".by_header").height();
+                    if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                        $(".by_header").removeClass("by_header_image"); 
+                        $(".by_header").removeClass("by_aboutUsHeaderImage");
+                        $(".by_header").removeClass("by_directoryHeaderImage");
+                        $(".by_header").addClass("by_productHeaderImage");
+                        $(".by_header").removeClass("by_headerBoder");
+                        $(".by_header").removeClass("by_expStoreHeaderImage");
+                    } else {
+                        $(".by_header").removeClass("by_header_image"); 
+                        $(".by_header").removeClass("by_aboutUsHeaderImage");
+                        $(".by_header").removeClass("by_productHeaderImage");
+                        $(".by_header").removeClass("by_directoryHeaderImage");
+                        $(".by_header").addClass("by_headerBoder");
+                        $(".by_header").removeClass("by_expStoreHeaderImage");
+                    }
+                        
+                });
                 updateMetaTags();
                 if ($scope.slug == 'all' || ($scope.selectedMenu && $scope.selectedMenu.ancestorIds.length > 0)) {
                     if ($scope.selectedMenu.module === BY.config.menu.modules['product'].moduleId && !$scope.showEditor) {

@@ -1,5 +1,5 @@
 define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'], function(byApp, byUtil, userTypeConfig, byEditor, urlFactory) {
-    function HousingController($scope, $rootScope, $location, $route, $routeParams,  $sce, $http, FindHousing, urlFactoryFilter){
+    function HousingController($scope, $rootScope, $location, $route, $routeParams,  $sce, $http, FindHousing, urlFactoryFilter, $window){
         $scope.housingViews                 = {};
         $scope.housingViews.leftPanel       = "app/components/housing/housingLeftPanel.html?versionTimeStamp=%PROJECT_VERSION%";
         $scope.housingViews.contentPanel    = "app/components/housing/housingContentPanel.html?versionTimeStamp=%PROJECT_VERSION%";
@@ -59,6 +59,27 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'], function
         }
 
         function initialize(){
+            $(".by_header").removeClass("by_header_image"); 
+            $(".by_header").addClass("by_headerBoder");
+            angular.element($window).bind("scroll", function () {
+                var headerHeight = $(".by_header").height();
+                if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                    $(".by_header").removeClass("by_header_image"); 
+                    $(".by_header").removeClass("by_aboutUsHeaderImage");
+                    $(".by_header").removeClass("by_productHeaderImage");
+                    $(".by_header").addClass("by_directoryHeaderImage");
+                    $(".by_header").removeClass("by_headerBoder");
+                    $(".by_header").removeClass("by_expStoreHeaderImage");
+                } else {
+                    $(".by_header").removeClass("by_header_image"); 
+                    $(".by_header").removeClass("by_aboutUsHeaderImage");
+                    $(".by_header").removeClass("by_productHeaderImage");
+                    $(".by_header").removeClass("by_directoryHeaderImage");
+                    $(".by_header").addClass("by_headerBoder");
+                    $(".by_header").removeClass("by_expStoreHeaderImage");
+                }
+                    
+            });
             if($scope.selectedMenu){
                 updateMetaTags();
                 tags = $.map($scope.selectedMenu.tags, function(value, key){
@@ -196,7 +217,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'], function
     }
 
     HousingController.$inject = ['$scope', '$rootScope', '$location', '$route', '$routeParams',
-        '$sce', '$http','FindHousing', 'UrlFactoryFilter'];
+        '$sce', '$http','FindHousing', 'UrlFactoryFilter', '$window'];
     byApp.registerController('HousingController', HousingController);
     return HousingController;
 });
