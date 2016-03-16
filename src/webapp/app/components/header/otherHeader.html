@@ -73,12 +73,12 @@
     <div class="clearfix"></div>
     </div>
     <div class="divRight by_mobile_header_profile">
-       <span id="profile_placeHolder_li">
+            <span id="profile_placeHolder_li">
                 <a ng-href="{{profileDetails.link}}" class="greenColor" id="profile_placeholder">
                     {{profileDetails.text}}
                 </a>
             </span>
-        <span id="login_placeHolder_li" class="by_header_right_divider greenColor" ng-show="loginDetails.text.length > 0">|</span>
+        <span id="login_placeHolder_li" class="by_header_right_divider greenColor" ng-show="profileDetails.text.length > 0">|</span>
         <a ng-href="{{loginDetails.link}}" class="greenColor" id="login_placeholder">{{loginDetails.text}}</a>
     </div>
     <div class="clearfix"></div>
