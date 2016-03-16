@@ -1,6 +1,6 @@
 define(['byApp', 'byUtil', 'discussLikeController', 'discussReplyController', 'shareController', 'urlFactory', 'blogMasonary', 'jqueryMasonaryGrid', 'userValidation'],
     function(byApp, byUtil, discussLikeController, discussReplyController, shareController, urlFactory, blogMasonary, jqueryMasonaryGrid, userValidation) {
-        function AnnouncementCtrl($scope, $rootScope, $routeParams, $location, $sce, $timeout, DiscussDetail, DiscussPage, $q, UrlFactoryFilter, UserValidationFilter) {
+        function AnnouncementCtrl($scope, $rootScope, $routeParams, $location, $sce, $timeout, DiscussDetail, DiscussPage, $q, urlFactoryFilter, UserValidationFilter) {
 
             var discussId = $routeParams.id, //discuss Id from url
                 isComment = $routeParams.comment,
@@ -167,12 +167,12 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussReplyController', 's
 
             $scope.nextLocation = function($event, discuss, urlQueryParams) {
                 $event.stopPropagation();
-                var url = UrlFactoryFilter.getDiscussDetailUrl(discuss, urlQueryParams, true);
+                var url = urlFactoryFilter.getDiscussDetailUrl(discuss, urlQueryParams, true);
                 $location.path(url);
             };
 
             $scope.getHref = function(discuss, queryParams) {
-                var newHref = UrlFactoryFilter.getDiscussDetailUrl(discuss, queryParams, false);
+                var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, queryParams, false);
                 newHref = "#!" + newHref;
                 return newHref;
             };
