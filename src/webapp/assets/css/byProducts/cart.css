@@ -179,7 +179,7 @@
   font-size: 11px;
   color: #818181;
 }
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 720px) {
   .by_cart_desc_mobile
   {
     display: block;
@@ -239,5 +239,29 @@
     top: -8px;
 	background:transparent;
 	color:#000 !important;
+}
+}
+@media screen and (max-width: 720px) {
+.by_cart_iconWrap span
+{
+  display: block;
+  float: left;
+  color:#fff !important;
+  margin-left:4px;
+  margin-top:3px;
+  background:  #005826;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  font-size: 12px;
+}
+
+.by_cart_count
+{
+  position:absolute;
+  right: -12px;
+    top: -4px;
+  background:transparent;
+  color:#000 !important;
 }
 }

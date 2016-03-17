@@ -19,10 +19,13 @@ define(['byApp', 'byUtil', 'byEditor', 'userValidation'], function(byApp, byUtil
         $scope.userCredential                   = {'email':'', 'pwd':''};
         $scope.userSessionType                  = UserValidationFilter.getUserSessionType();
 
+        $scope.additionalCategories = $rootScope.menuCategoryMapByName['Communities'].children;
+
         function initialize(){
             //set accordion category list
             if($scope.$parent.categoryLists){
                 $scope.categoryLists = $scope.$parent.categoryLists;
+                $scope.selectedMenuCount = $scope.$parent.categoryLists.length;
             }
 
             if($scope.$parent.editorPostCategories && $scope.$parent.editorPostCategories.length > 0){

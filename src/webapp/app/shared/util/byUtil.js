@@ -97,10 +97,13 @@ BY.byUtil.updateMetaTags = function (param) {
     if (imageUrl != null && imageUrl !== "") {
         var tmpImg = new Image();
         tmpImg.src = imageUrl;
-        $(tmpImg).on('load', function () {
-            $("meta[property='og\\:image\\:width']").attr("content", tmpImg.width);
-            $("meta[property='og\\:image\\:height']").attr("content", tmpImg.height);
-        });
+        setTimeout(function(){ 
+            $(tmpImg).on('load', function () {
+                $("meta[property='og\\:image\\:width']").attr("content", tmpImg.width);
+                $("meta[property='og\\:image\\:height']").attr("content", tmpImg.height);
+            });
+        }, 000);
+        
 
     }
 

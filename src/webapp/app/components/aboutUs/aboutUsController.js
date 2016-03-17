@@ -1,11 +1,34 @@
 define(['byApp', 'byUtil', 'editorController', 'app/shared/footer/contactUsController'], function(byApp, byUtil, editorController, contactUsCtrl) {
-    function BYAboutUsController($scope, $rootScope, $routeParams, $timeout, $location, $sce) {
+    function BYAboutUsController($scope, $rootScope, $routeParams, $timeout, $location, $sce, $window) {
         $scope.currentAcceleratorSelected = "";
         $scope.currentView = "aboutUs";
 
         $scope.telNo = BY.config.constants.byContactNumber;
 
-
+        var init = initialize();
+        function initialize() {
+            $(".by_header").removeClass("by_header_image"); 
+            $(".by_header").addClass("by_headerBoder");
+            angular.element($window).bind("scroll", function () {
+                var headerHeight = $(".by_header").height();
+                if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                    $(".by_header").removeClass("by_header_image"); 
+                    $(".by_header").removeClass("by_directoryHeaderImage");
+                    $(".by_header").removeClass("by_productHeaderImage");
+                    $(".by_header").addClass("by_aboutUsHeaderImage");
+                    $(".by_header").removeClass("by_headerBoder");
+                    $(".by_header").removeClass("by_expStoreHeaderImage");
+                } else {
+                    $(".by_header").removeClass("by_header_image");                     
+                    $(".by_header").removeClass("by_directoryHeaderImage");
+                    $(".by_header").removeClass("by_productHeaderImage");
+                    $(".by_header").removeClass("by_aboutUsHeaderImage");
+                    $(".by_header").addClass("by_headerBoder");
+                    $(".by_header").removeClass("by_expStoreHeaderImage");
+                }
+                    
+            });
+        }
 
         (function(){
             var metaTagParams = {
@@ -131,7 +154,7 @@ define(['byApp', 'byUtil', 'editorController', 'app/shared/footer/contactUsContr
         }
     }
 
-    BYAboutUsController.$inject = ['$scope', '$rootScope', '$routeParams', '$timeout', '$location', '$sce'];
+    BYAboutUsController.$inject = ['$scope', '$rootScope', '$routeParams', '$timeout', '$location', '$sce', '$window'];
     byApp.registerController('BYAboutUsController', BYAboutUsController);
 
     return BYAboutUsController;

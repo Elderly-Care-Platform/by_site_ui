@@ -522,3 +522,21 @@ label input[type="file"] {
 		padding:0px !important;
 	}
 }
+.by_inputCheckbox
+{
+	margin-right: 12px !important;
+    margin-top: 6px !important;
+    float: left !important;
+    margin-left: 0px !important;
+}
+.by_inputCheckboxSpan{
+	display: block;
+    float: left;
+    width: calc(100% - 32px);
+    text-transform: none;
+}
+.by_inputCheckboxSpan a, .by_inputCheckboxSpan a:hover
+{
+	color: #000 !important;
+	text-decoration: none !important;
+}

@@ -1,4 +1,7 @@
-
+.by_headerBoder
+{
+    border-bottom: 1px solid #0AB95A;
+}
 .by_productBanner {
     width: 100%;
     height: 161px;
@@ -50,8 +53,13 @@
     width: 100%;
     height: auto;
     background: url('../../img/section_headers/directory_banner.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
-    background-size: cover;
+    background-size: none;
     padding-top: 50px;
+}
+.by_directoryHeaderImage
+{
+    background: url(../../img/section_headers/directory_banner.png?versionTimeStamp=%PROJECT_VERSION%) no-repeat  center;
+    background-size: none;
 }
 .by_directoryBannerImg {
     width: 360px;
@@ -121,9 +129,13 @@
 .by_productList_banner {
     width: 100%;
     height: auto;
-    margin-top: -55px;
     background: url('../../img/product/products_banner.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
-    background-size: cover;
+    background-size: none;
+}
+.by_productHeaderImage
+{
+    background: url(../../img/product/products_banner.png?versionTimeStamp=%PROJECT_VERSION%) no-repeat  center;
+    background-size: none;
 }
 .by_productList_bannerText {    
     font-size: 18px;
@@ -159,7 +171,12 @@
     width: 100%;
     height: 280px;
     background: url('../../img/aboutUs/header_d.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat right;
-    background-size: cover;
+    background-size: none;
+}
+.by_aboutUsHeaderImage
+{
+    background: url(../../img/aboutUs/header_d.jpg?versionTimeStamp=%PROJECT_VERSION%) no-repeat  right;
+    background-size: none;
 }
 .by_aboutUsBannerText
 {
@@ -168,7 +185,7 @@
     z-index: 20;
     width: 340px;
     font-weight: bold;
-    padding-top: 80px;
+    padding-top: 55px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -207,10 +224,10 @@
         margin-right: 3%;
     }
 }
-@media ( max-width: 830px) {
+@media ( max-width: 840px) {
     .by_directoryBannerText {
         width: 50% !important;
-        margin-top: -45px;
+        margin-top: -44px;
     }
     .by_directoryBannerText2 {
         margin-top: 0px;
@@ -220,7 +237,11 @@
         margin-right: 0;
         height: 1px;
         width: 250px;
-        margin-top: 0px;
+        margin-top: -3px;
+    }
+    .by_directoryBannerImg
+    {
+        margin-top: -57px;
     }
 }
 @media ( max-width: 720px) {
@@ -251,12 +272,24 @@
         width: 100%;
         height: auto;
         text-align: center;
-        margin-top: 30px;
+        margin-top: 40px;
         margin-bottom: 30px;
     }
     .by_productList_bannerImg {
         width: 100%;
         margin-top: 10px;
+    }
+    .by_productList_banner, .by_aboutUsBanner, .by_directoryBanner
+    {
+        background-size: cover;
+    }
+    .by_productHeaderImage, .by_aboutUsHeaderImage, .by_directoryHeaderImage
+    {
+        background-size: none;
+    }
+    .by_header .greenColor 
+    {
+        color: #fff;
     }
 }
 @media ( max-width: 594px) {

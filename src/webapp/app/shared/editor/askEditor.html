@@ -32,7 +32,45 @@
 
         <div class="col-md-12 no-padding margin-bottom-20" ng-if="showCategory">
             <div class="panel-group acc-v1" id="accordion-1">
-                <div class="panel panel-default by_accordian" ng-repeat="category in categoryLists">
+                <div class="panel panel-default by_accordian" ng-repeat="category in additionalCategories">
+                    <div class="panel-heading">
+                        <h4 class="panel-title by_editor_ParentCategories">
+                            <label ng-if="category.children.length == 0">
+                                <input class="by_inputCheckbox" type="checkbox" ng-click="selectTag($event, category)" value="{{category.id}}"
+                                       ng-checked="{{selectedMenuId === category.id}}">
+                                <span class="by_inputCheckboxSpan">{{category.displayMenuName}}</span>
+                            </label>
+                            <label ng-if="category.children.length > 0">
+                                <input class="by_inputCheckbox" type="checkbox" ng-click="selectTag($event, category)" value="{{category.id}}"
+                                       ng-checked="{{selectedMenuId === category.id}}">
+                                <span class="by_inputCheckboxSpan">
+                                    <a class="accordion-toggle collapsed" style="width: calc(100% - 10px); padding:0px;" data-toggle="collapse" data-parent="#accordion-1" href={{"#accord_"+category.id}} onclick="return false;">
+                                        {{category.displayMenuName}}
+                                    </a>
+                                    <a class="triangle-down accordion-toggle collapsed" style="width: auto; padding:0px; margin-right:0px;" data-toggle="collapse" data-parent="#accordion-1" href={{"#accord_"+category.id}} onclick="return false;"></a>
+                                </span>
+                                
+                            </label>
+                        </h4>
+                    </div>
+                    <div id={{"accord_"+category.id}} class="col-md-12 whiteBg by_editor_SubCategories panel-collapse collapse" style="width:calc(100% - 30px) !important;">
+                        <xyz   ng-repeat="subCategory in category.children" ng-if="subCategory.children.length > 0" >
+                        <div class="panel-body col-md-12" ng-repeat="subCategory1 in subCategory.children">
+                            <input class="by_inputCheckbox" type="checkbox" ng-click="selectTag($event, subCategory1)"
+                                value={{subCategory1.id}}
+                                ng-checked="{{selectedMenuId === subCategory1.id}}">
+                            <span class="by_inputCheckboxSpan">{{subCategory1.displayMenuName}}</span>
+                        </div>    
+                        </xyz>
+                        <div class="panel-body col-md-12"  ng-repeat="subCategory in category.children" ng-if="subCategory.children.length == 0">
+                            <input class="by_inputCheckbox" type="checkbox" ng-click="selectTag($event, subCategory)"
+                                value={{subCategory.id}}
+                                ng-checked="{{selectedMenuId === subCategory.id}}">
+                            <span class="by_inputCheckboxSpan">{{subCategory.displayMenuName}}</span>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="panel panel-default by_accordian" ng-repeat="category in categoryLists">
                     <div class="panel-heading">
                         <h4 class="panel-title by_editor_ParentCategories">
                             <label>
@@ -42,7 +80,7 @@
                             </label>
                         </h4>
                     </div>
-                    <!--<div class="panel-heading">
+                    <div class="panel-heading">
                         <h4 class="panel-title by_editor_ParentCategories" ng-if="category.children.length <= 0">
                             <label ng-if="category.parentMenuId">
                                 {{$root.menuCategoryMap[category.parentMenuId].displayMenuName +" >> " + category.displayMenuName}}
@@ -75,9 +113,9 @@
                                 ng-checked="{{selectedMenuId === subCategory.id}}">
                             <span>{{subCategory.displayMenuName}}</span>
                         </div>
-                    </div>-->
+                    </div>
                     <div style="clear: both"></div>
-                </div>
+                </div>-->
             </div>
         </div>
 
