@@ -45,6 +45,11 @@ define([
 			$("link[rel='next']").attr("href", "");
     		$("link[rel='prev']").attr("href", "");
 
+    		$(".by_header").addClass("by_header_image");
+    		$(".by_header").removeClass("by_headerBoder");
+    		$(".by_header_right_mobile").css('width', '23px');
+    		$(".by_header_right_mobile_search").css('display', 'none');
+
 			window.scrollTo(0, 0);
 			BY.byEditor.removeEditor();
 			$rootScope.$broadcast('currentLocation', $location.path());

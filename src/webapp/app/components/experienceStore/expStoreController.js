@@ -1,5 +1,5 @@
 define(['byApp', 'byUtil'], function(byApp, byUtil) {
-    function expStoreCtrl($scope, $rootScope, $routeParams, $timeout, $location, $sce) {
+    function expStoreCtrl($scope, $rootScope, $routeParams, $timeout, $location, $sce, $window) {
         
        $scope.telNo = BY.config.constants.byContactNumber;
        window.scrollTo(0, 0);
@@ -12,10 +12,35 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
        	$("#by_expVideoFrame").show();
        };
 
+       var init = initialize();
+        function initialize() {
+            $(".by_header").removeClass("by_header_image"); 
+            $(".by_header").addClass("by_headerBoder");
+            angular.element($window).bind("scroll", function () {
+                var headerHeight = $(".by_header").height();
+                if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                    $(".by_header").removeClass("by_header_image"); 
+                    $(".by_header").removeClass("by_directoryHeaderImage");
+                    $(".by_header").removeClass("by_productHeaderImage");
+                    $(".by_header").removeClass("by_aboutUsHeaderImage");
+                    $(".by_header").removeClass("by_headerBoder");
+                    $(".by_header").addClass("by_expStoreHeaderImage");
+                } else {
+                    $(".by_header").removeClass("by_header_image");                     
+                    $(".by_header").removeClass("by_directoryHeaderImage");
+                    $(".by_header").removeClass("by_productHeaderImage");
+                    $(".by_header").removeClass("by_aboutUsHeaderImage");
+                    $(".by_header").addClass("by_headerBoder");
+                    $(".by_header").removeClass("by_expStoreHeaderImage");
+                }
+                    
+            });
+        }
+
              
     }
 
-    expStoreCtrl.$inject = ['$scope', '$rootScope', '$routeParams', '$timeout', '$location', '$sce'];
+    expStoreCtrl.$inject = ['$scope', '$rootScope', '$routeParams', '$timeout', '$location', '$sce', '$window'];
     byApp.registerController('expStoreCtrl', expStoreCtrl);
 
     return expStoreCtrl;

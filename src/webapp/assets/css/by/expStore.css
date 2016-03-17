@@ -3,7 +3,7 @@
     background: url('../../img/experience_store/solution_living.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top center;
     background-size: cover;
     width: 100%;
-    height: 920px;
+    height: 1000px;
 }
 .by_expSt_solutions
 {
@@ -352,9 +352,12 @@
 .by_expSt_header
 {
     width: 100%;
-    height: 270px;
+    height: 330px;
     background: rgba(12, 62, 12, 0.71);
-    border-top: 1px solid #196119;
+}
+.by_expStoreHeaderImage
+{
+     background: rgba(12, 62, 12, 0.91);
 }
 .by_expLocBig
 {

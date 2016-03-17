@@ -16,7 +16,12 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     width: 100%;
     height: 316px;
     background: url('../../img/home/Home_banner.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
-    background-size: cover;
+    background-size: none;
+}
+.by_homeHeaderImage
+{
+    background: url('../../img/home/Home_banner.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
+    background-size: none;
 }
 .by_home_title {
     width: 70%;

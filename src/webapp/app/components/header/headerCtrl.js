@@ -59,15 +59,29 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             if (isHomePage == true) {
                 $("#home").removeClass('hide');
                 $("#home").addClass('show');
+                $(".by_header").removeClass("by_header_image");
+                $(".by_header").removeClass("by_headerBoder");
                 //$("#home").load("app/components/home/homeStatic.html?versionTimeStamp=%PROJECT_VERSION%");
                 $scope.templateUrl = 'app/components/header/homeHeader.html?versionTimeStamp=%PROJECT_VERSION%';
                 // on scrolling adding header background
                 angular.element($window).bind("scroll", function () {
                     var headerHeight = $(".by_header").height();
                     if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
-                        $(".by_header").addClass("by_header_image");
+                        $(".by_header").removeClass("by_header_image"); 
+                        $(".by_header").removeClass("by_aboutUsHeaderImage");
+                        $(".by_header").removeClass("by_directoryHeaderImage");
+                        $(".by_header").removeClass("by_productHeaderImage");
+                        $(".by_header").addClass("by_homeHeaderImage");
+                        $(".by_header").removeClass("by_headerBoder");
+                        $(".by_header").removeClass("by_expStoreHeaderImage");
                     } else {
-                        $(".by_header").removeClass("by_header_image");
+                        $(".by_header").removeClass("by_header_image"); 
+                        $(".by_header").removeClass("by_aboutUsHeaderImage");
+                        $(".by_header").removeClass("by_productHeaderImage");
+                        $(".by_header").removeClass("by_directoryHeaderImage");
+                        $(".by_header").removeClass("by_headerBoder");
+                        $(".by_header").removeClass("by_homeHeaderImage");
+                        $(".by_header").removeClass("by_expStoreHeaderImage");
                     }
                     if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= 1) {
                         $("#homeMenuScroll").show();
@@ -82,13 +96,38 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
                 //$("#home").html('');
                 $scope.templateUrl = 'app/components/header/otherHeader.html?versionTimeStamp=%PROJECT_VERSION%';
                 angular.element($window).bind("scroll", function () {
-                    var headerHeight = $(".by_header").height();
-                    if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
-                        $(".by_header").addClass("by_header_image");
+                    var headerHeight = $(".by_header").outerHeight(true);
+                    if(headerHeight > 70){
+                        if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= (headerHeight - 64)) {
+                            $(".by_header").addClass("by_header_image");
+                            $(".by_header").removeClass("by_headerBoder");
+                            $(".by_header").removeClass("by_homeHeaderImage");
+                            if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
+                                $(".by_header").css('top', - (document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset));
+                            } else{
+                                $(".by_header").css('top', '-55px');
+                            }
+                        } else {
+                            $(".by_header").addClass("by_header_image");
+                            $(".by_header").removeClass("by_headerBoder");
+                            $(".by_header").removeClass("by_homeHeaderImage");
+                            if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
+                                $(".by_header").css('top', '0px');
+                            }                            
+                        }
+                    } else{
+                        if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                            $(".by_header").addClass("by_header_image");
+                            $(".by_header").removeClass("by_headerBoder");
+                            $(".by_header").removeClass("by_homeHeaderImage");
 
-                    } else {
-                        $(".by_header").addClass("by_header_image");
+                        } else {
+                            $(".by_header").addClass("by_header_image");
+                            $(".by_header").removeClass("by_headerBoder");
+                            $(".by_header").removeClass("by_homeHeaderImage");
+                        }
                     }
+                    
                 });
             }
         }
@@ -158,6 +197,9 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
         $scope.searchInputShow = function () {
             if ($(".by_header_right_search").css('display') == 'none') {
                 $(".by_header_right_search").fadeIn('1000');
+            } else if($(".by_header_right_mobile_search").css('display') == 'none'){
+                $(".by_header_right_mobile").css('width', '30%');
+                $(".by_header_right_mobile_search").fadeIn('1000');
             } else {
                 $scope.searchResults();
             }
