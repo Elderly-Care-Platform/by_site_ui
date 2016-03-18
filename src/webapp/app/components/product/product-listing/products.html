@@ -60,7 +60,7 @@
 </xyz>
 <xyz ng-if="productSH[selectedMenuId]" ng-controller="ProductMenuCtrl">
   <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
-  <div class="by_productList_banner by_categorySectionHeader"  style=' min-height:250px;'>
+  <div class="by_categorySectionHeader"  style='min-height:230px;'>
     <div class="by_categorySectionHeaderText">
       <div class="by_categorySectionHeaderText1">
         <h1>{{productSH[selectedMenuId].sectionHead}}</h1>
@@ -69,8 +69,15 @@
         <h2>{{productSH[selectedMenuId].sectionDesc}}</h2> 
       </div>
     </div>
-    <div class="by_categorySectionHeaderImage">
-      <img ng-src="{{productSH[selectedMenuId].sectionImage}}" alt="{{productSH[selectedMenuId].sectionHead}}" />
+    <div class="by_categorySectionHeaderImage" >
+      <img ng-if="selectedMenuId != '10214' && selectedMenuId != '10212'" ng-src="{{productSH[selectedMenuId].sectionImage}}" alt="{{productSH[selectedMenuId].sectionHead}}" />
+      <div  ng-if="selectedMenuId == '10214' || selectedMenuId == '10212'" style="position:relative; border:1px solid #fff; height:210px; ">
+          <iframe id="by_productVideoFrame"  width="368" height="208" ng-src="{{trustAsResourceUrl(productSH[selectedMenuId].sectionImage)}}" frameborder="0" allowfullscreen></iframe>
+          <div class="by_expVideoGrad" ng-click="showVideo();" style="font-size:18px; height:208px;">
+            <img src="assets/img/experience_store/play.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Video Icon" style="width:40px;" /><br/>
+            Watch our video
+          </div>
+      </div>
     </div>
     <div class="clearfix"></div>
   </div>

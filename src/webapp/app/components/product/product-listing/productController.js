@@ -334,8 +334,15 @@ define(['byProductApp', 'byUtil',
                 return $sce.trustAsHtml(html);
             }
 
+            $scope.trustAsResourceUrl = function(url) {
+                return $sce.trustAsResourceUrl(url);
+            };
 
-            
+            $scope.showVideo = function(){       
+                var video = $("#by_productVideoFrame").attr("src");
+                $("#by_productVideoFrame").attr("src", video.slice(0,-1) + '1');
+                $(".by_expVideoGrad").hide();
+            };
 
 
             $scope.tabbedSlider = function () {

@@ -421,23 +421,23 @@ BY.config.menu.community = {
 BY.config.menu.productsSH = {
     '10200' : {
         'sectionHead':'Medical Conditions',
-        'sectionDesc':'Find relevant products by condition of a person you are taking care of. Help your elders and yourself by choosing right products. Please call us if you need help and advice! ',
+        'sectionDesc':'Find relevant products by condition of a person you are taking care of. Help your elders and yourself by choosing right products. Please call us if you need help and advice!',
         'sectionImage':'assets/img/section_headers/medical-conditions.png?versionTimeStamp=%PROJECT_VERSION%'
     },
     '10212' : {
         'sectionHead':'Mobility',
-        'sectionDesc':'Life is all about movement, and moving is not easy when you are aging. Make sure your loved ones feel alive - find a solution that fits their needs, from a very wide choice of equipment we have in this section!  ',
-        'sectionImage':'assets/img/section_headers/mobility.png?versionTimeStamp=%PROJECT_VERSION%'
+        'sectionDesc':'Life is all about movement, and moving is not easy when you are aging. Make sure your loved ones feel alive - find a solution that fits their needs, from a wide choice of equipment in this section!  ',
+        'sectionImage':'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=0'
     },
     '10213' : {
         'sectionHead':'Bed and Bedroom',
-        'sectionDesc':'Proper rest and good sleep at night are crucial to prevent early aging and some diseases – but they are not easy to get. Try a memory foam pillow – you might be surprised! Make sure when your parents get out of the bed in the middle of the night, there is always light available – even if there is a power cut. Take good care of bedridden elders - from bedsores prevention to hygiene in bed.  ',
+        'sectionDesc':'Proper rest and good sleep at night are crucial to prevent early aging and some diseases – but they are not easy to get. Try a memory foam pillow – you might be surprised! Make sure when your parents have to get out of the bed at night, there is always light. Take good care of bedridden elders - from bedsores prevention to hygiene in bed.  ',
         'sectionImage':'assets/img/section_headers/bedroom.png?versionTimeStamp=%PROJECT_VERSION%'
     },
     '10214' : {
         'sectionHead':'Washing & Toileting ',
-        'sectionDesc':'Hygiene is a touchy subject; even talking about it makes many of us feel uncomfortable. Put yourself in the shoes of those elders who face challenges with washing and toileting – and imagine how much help, tact, patience, and love they need from us, to help them out with those unavoidable activities… There are products that can really make these mundane matters easier and more enjoyable – choose wisely! ',
-        'sectionImage':'assets/img/section_headers/washing-toileting.png?versionTimeStamp=%PROJECT_VERSION%'
+        'sectionDesc':'Hygiene is a touchy subject. Put yourself in the shoes of those who face challenges with washing and toileting – and imagine how much help, tact, patience, and love they need from us, to help them out with those unavoidable activities… There are products that can make those matters easier and more enjoyable! ',
+        'sectionImage':'https://www.youtube.com/embed/hPR5Wf3MlTc?rel=0&showinfo=0&autoplay=0'
     },
     '10219' : {
         'sectionHead':'Orthopaedic Support',
@@ -446,7 +446,7 @@ BY.config.menu.productsSH = {
     },
     '10225' : {
         'sectionHead':'Daily Aids',
-        'sectionDesc':'Do you realize how simplest daily tasks become complicated with age? When your hand grip is weak, and your eyesight is falling, buttoning your shirt, cutting your nails, picking a newspaper from the floor, turning the key or the door knob, even eating - is not easy at all! We cannot reverse age, but we can provide products that simplify those tasks - and improve lives of those who we love. ',
+        'sectionDesc':'Simple daily tasks become complicated with age. When your hand grip is weak, and your eyesight is falling, buttoning your shirt, cutting your nails, picking a newspaper from the floor, turning the key or the door knob, even eating - is not easy at all! We cannot reverse age, but we can provide products that simplify those tasks. ',
         'sectionImage':'assets/img/section_headers/daily-aids.png?versionTimeStamp=%PROJECT_VERSION%'
     },
     '10231' : {
@@ -456,7 +456,7 @@ BY.config.menu.productsSH = {
     },
     '10600' : {
         'sectionHead':'Gift Ideas',
-        'sectionDesc':'Ever thought about making a nice gift to your grandparents or aging parents and friends? Want to find something classy and useful, which would fit the lifestyle of an elderly lady or a gentleman? We would like to share our ideas of gifts that are both fun and relief! ',
+        'sectionDesc':'Thinking about a nice gift for your aging parents and friends? Want to find something classy and useful, which would fit the lifestyle of an elderly lady or a gentleman? Have a look at those gifts that are both fun and relief! ',
         'sectionImage':'assets/img/section_headers/gift-idea.png?versionTimeStamp=%PROJECT_VERSION%'
     }
 }

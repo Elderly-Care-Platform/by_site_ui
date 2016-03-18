@@ -210,39 +210,45 @@
 {
     width: 100%;
     height: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background: #E0CDC1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: url('../../img/section_headers/product_section_bg.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
+    background-size: cover;
 }
 .by_categorySectionHeaderText
 {
-    width:calc(100% - 330px);
+    width:calc(100% - 435px);
     padding: 10px 15px 20px 15px;
     height: auto;
     color:#000;
     float: left;
-    max-width: 700px;
 }
 .by_categorySectionHeaderText1 h1
 {
-    font-size: 40px;
-    line-height: 45px;
+    font-size: 34px;
+    line-height: 36px;
     color:#000;font-family: century_gothic !important;
+}
+.by_categorySectionHeaderText2{
+    margin-top: 10px;
 }
 .by_categorySectionHeaderText2 h2
 {
     font-size: 18px;
-    line-height: 26px;
+    line-height: 30px;
     color:#000;font-family: century_gothic !important;
 }
 .by_categorySectionHeaderImage
 {
-    width:300px;
+    width:370px;
     float: right;
+    margin-right: 15px;
 }
 .by_categorySectionHeaderImage img
 {
     width: 100%;
+    max-width: 300px;
+    text-align: right;
 }
 @media ( max-width: 1100px) {
     .by_directoryBannerDivider {
@@ -251,6 +257,18 @@
     }
     .by_directoryBannerImg {
         margin-right: 5%;
+    }
+}
+@media ( max-width: 1000px) {
+    .by_categorySectionHeaderText1 h1
+    {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .by_categorySectionHeaderText2 h2
+    {
+        font-size: 15px;
+        line-height: 25px;
     }
 }
 @media ( max-width: 950px) {
@@ -280,6 +298,16 @@
     .by_directoryBannerImg
     {
         margin-top: -57px;
+    }
+}
+@media ( max-width: 820px){    
+    .by_categorySectionHeaderText2 h2
+    {
+        font-size: 14px;
+        line-height: 23px;
+    }
+    .by_categorySectionHeaderText{
+        padding-bottom: 0px;
     }
 }
 @media ( max-width: 720px) {
@@ -340,14 +368,20 @@
     }
     .by_categorySectionHeaderImage
     {
-        width:300px;
+        width:370px;
         float: none;
         margin-left: auto;
         margin-right: auto;
+        text-align: center;
     }
     .by_categorySectionHeaderImage img
     {
         width: 100%;
+    }
+    .by_categorySectionHeaderText2 h2
+    {
+        font-size: 16px;
+        line-height: 25px;
     }
 }
 @media ( max-width: 594px) {

@@ -66,7 +66,11 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
 
         $scope.smartScroll = function(){
             setTimeout(function(){
-                $scope.smartHeight = $(".by_productList_banner").height() - 55;
+                if($scope.selectedMenuId == '55bcad7be4b08970a736784b'){
+                    $scope.smartHeight = $(".by_productList_banner").outerHeight(true) - 55;
+                }else{
+                    $scope.smartHeight = $(".by_categorySectionHeader").outerHeight(true);
+                }                
                 BY.byUtil.smartScroll($scope.smartHeight);
             }, 100);
         }
