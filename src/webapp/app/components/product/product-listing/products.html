@@ -42,6 +42,7 @@
     </a>
   </div>
 </div>-->
+<xyz ng-if="selectedMenuId == headerCheck">
 <div class="by_productList_banner" ng-controller="ProductMenuCtrl">
   <div class="headerHeightNoBreadCrumb margin-bottom-0" ng-if="$root.windowWidth < 721"></div>
   <div class="container">
@@ -56,6 +57,25 @@
        </div>
   </div>   
 </div>
+</xyz>
+<xyz ng-if="productSH[selectedMenuId]" ng-controller="ProductMenuCtrl">
+  <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
+  <div class="by_productList_banner by_categorySectionHeader"  style=' min-height:250px;'>
+    <div class="by_categorySectionHeaderText">
+      <div class="by_categorySectionHeaderText1">
+        <h1>{{productSH[selectedMenuId].sectionHead}}</h1>
+      </div>
+      <div class="by_categorySectionHeaderText2">
+        <h2>{{productSH[selectedMenuId].sectionDesc}}</h2> 
+      </div>
+    </div>
+    <div class="by_categorySectionHeaderImage">
+      <img src="{{productSH[selectedMenuId].sectionImage}}" alt="{{productSH[selectedMenuId].sectionHead}}" />
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</xyz>
+<xyz ng-if="!productSH[selectedMenuId] && (selectedMenuId != headerCheck)"><div class="headerHeightNoBreadCrumb margin-bottom-0"></div></xyz>
 <!--=== Content Part ===-->
 <div>
     <!--Product Menu-->
