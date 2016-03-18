@@ -1,5 +1,5 @@
-<div class="by_sectionHeader" ng-if="selectedMenu && $root.byTopMenuId != selectedMenuId">
-    <h2>{{selectedMenu.name}}</h2>
+<div class="by_sectionHeader" ng-if="!productSH[selectedMenuId] && selectedMenu && $root.byTopMenuId != selectedMenuId">
+    <h1 style="font-size:30px;">{{selectedMenu.name}}</h1>
 </div>
 
 
