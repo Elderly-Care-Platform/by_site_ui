@@ -80,7 +80,7 @@ define(['byProductApp', 'byUtil',
             }
 
             function initialize() {
-                if($scope.selectedMenuId == $scope.headerCheck){
+                if($scope.selectedMenuId == '55bcad7be4b08970a736784b'){
                 $(".by_header").removeClass("by_header_image"); 
                 $(".by_header").addClass("by_headerBoder");
                 angular.element($window).bind("scroll", function () {
