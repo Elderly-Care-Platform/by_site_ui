@@ -20,8 +20,8 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 }
 .by_homeHeaderImage
 {
-    background: url('../../img/home/Home_banner.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
-    background-size: none;
+    background: url('../../img/home/home_top.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
+    background-size: cover;
 }
 .by_home_title {
     width: 70%;

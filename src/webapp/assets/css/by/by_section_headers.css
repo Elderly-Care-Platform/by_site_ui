@@ -43,7 +43,7 @@
     text-align: center;
     margin-bottom: 20px;
 }
-.by_sectionHeader h2 {
+.by_sectionHeader h1 {
     font-size: 20px;
     text-align: center;
     font-family: century_gothic !important;
@@ -206,6 +206,50 @@
     text-transform: lowercase;
     margin-top: -7px;
 }
+.by_categorySectionHeader
+{
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: url('../../img/section_headers/product_section_bg.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
+    background-size: cover;
+}
+.by_categorySectionHeaderText
+{
+    width:calc(100% - 435px);
+    padding: 10px 15px 20px 15px;
+    height: auto;
+    color:#000;
+    float: left;
+}
+.by_categorySectionHeaderText1 h1
+{
+    font-size: 34px;
+    line-height: 36px;
+    color:#000;font-family: century_gothic !important;
+}
+.by_categorySectionHeaderText2{
+    margin-top: 10px;
+}
+.by_categorySectionHeaderText2 h2
+{
+    font-size: 18px;
+    line-height: 30px;
+    color:#000;font-family: century_gothic !important;
+}
+.by_categorySectionHeaderImage
+{
+    width:370px;
+    float: right;
+    margin-right: 15px;
+}
+.by_categorySectionHeaderImage img
+{
+    width: 100%;
+    max-width: 300px;
+    text-align: right;
+}
 @media ( max-width: 1100px) {
     .by_directoryBannerDivider {
         margin-left: 5%;
@@ -213,6 +257,18 @@
     }
     .by_directoryBannerImg {
         margin-right: 5%;
+    }
+}
+@media ( max-width: 1000px) {
+    .by_categorySectionHeaderText1 h1
+    {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .by_categorySectionHeaderText2 h2
+    {
+        font-size: 15px;
+        line-height: 25px;
     }
 }
 @media ( max-width: 950px) {
@@ -242,6 +298,16 @@
     .by_directoryBannerImg
     {
         margin-top: -57px;
+    }
+}
+@media ( max-width: 820px){    
+    .by_categorySectionHeaderText2 h2
+    {
+        font-size: 14px;
+        line-height: 23px;
+    }
+    .by_categorySectionHeaderText{
+        padding-bottom: 0px;
     }
 }
 @media ( max-width: 720px) {
@@ -290,6 +356,32 @@
     .by_header .greenColor 
     {
         color: #fff;
+    }
+    .by_categorySectionHeaderText
+    {
+        width:100%;
+        padding: 20px 15px;
+        height: auto;
+        color:#000;
+        float: none;
+        text-align: center;
+    }
+    .by_categorySectionHeaderImage
+    {
+        width:370px;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .by_categorySectionHeaderImage img
+    {
+        width: 100%;
+    }
+    .by_categorySectionHeaderText2 h2
+    {
+        font-size: 16px;
+        line-height: 25px;
     }
 }
 @media ( max-width: 594px) {

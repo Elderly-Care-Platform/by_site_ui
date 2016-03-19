@@ -60,6 +60,7 @@ define(['byApp', 'byUtil', 'byEditor', 'userValidation'], function(byApp, byUtil
         //select category from accordion
         $scope.selectTag = function(event, category){
            if(event.target.checked){
+                selectParentHierArchy(category);
                $scope.selectedMenuList[category.id] = category;
                $scope.selectedMenuCount++;
            }else{
@@ -136,9 +137,9 @@ define(['byApp', 'byUtil', 'byEditor', 'userValidation'], function(byApp, byUtil
             }
 
             //Add parent hierarchy of the selected menu
-            angular.forEach($scope.selectedMenuList, function (menu, index) {
+            /*angular.forEach($scope.selectedMenuList, function (menu, index) {
                 selectParentHierArchy(menu);
-            })
+            })*/
 
             if($scope.postCategoryTag){
                 $scope.discuss.systemTags = [$scope.postCategoryTag];
