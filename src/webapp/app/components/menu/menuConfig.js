@@ -441,7 +441,7 @@ BY.config.menu.productsSH = {
     },
     '10219' : {
         'sectionHead':'Orthopaedic Support',
-        'sectionDesc':'',
+        'sectionDesc':'Are your dear ones recovering from a fracture? Are you suffering from a knee, wrist, or neck pain? Want to help an elderly person to exercise (even in bed)? Have a look at orthopaedic and rehab products in this section.',
         'sectionImage':'assets/img/section_headers/ortho.png?versionTimeStamp=%PROJECT_VERSION%'
     },
     '10225' : {
