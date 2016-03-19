@@ -1,8 +1,8 @@
 define(['byProductApp', 'byUtil',
         'productMenuCtrl', 'productDescCtrl', 'videoModalController', 'selectAddressController', 'addAddressController',
-        'editAddressController', 'paymentGatewayController', 'shoppingConfirmationCtrl'],
+        'editAddressController', 'paymentGatewayController', 'shoppingConfirmationCtrl', 'menuConfig'],
     function (byProductApp, byUtil, productMenuCtrl, productDescCtrl, videoModalController, selectAddressController, addAddressController,
-              editAddressController, paymentGatewayController, shoppingConfirmationCtrl) {
+              editAddressController, paymentGatewayController, shoppingConfirmationCtrl, menuConfig) {
         function ProductsController($rootScope, $scope,
                                     $log,
                                     $q,
@@ -44,6 +44,8 @@ define(['byProductApp', 'byUtil',
             $scope.showContact.showContactNumber = false;
             $scope.slug = $routeParams.productSlug;
             $scope.pageIdx = $routeParams.pageIdx ? $routeParams.pageIdx : 0;
+            $scope.selectedMenuId = $routeParams.menuId;
+            $scope.productSH = BY.config.menu.productsSH;
 
             //Functions
             $scope.openProductDescription = openProductDescription;
@@ -57,6 +59,7 @@ define(['byProductApp', 'byUtil',
             $scope.trustForcefully = trustForcefully;
             $rootScope.byTopMenuId = $rootScope.mainMenu[2].id;
             $scope.telNo = BY.config.constants.byContactNumber;
+            $scope.headerCheck = '55bcad7be4b08970a736784b';
 
 
             function updateMetaTags() {
@@ -77,6 +80,7 @@ define(['byProductApp', 'byUtil',
             }
 
             function initialize() {
+                if($scope.selectedMenuId == '55bcad7be4b08970a736784b'){
                 $(".by_header").removeClass("by_header_image"); 
                 $(".by_header").addClass("by_headerBoder");
                 angular.element($window).bind("scroll", function () {
@@ -97,7 +101,7 @@ define(['byProductApp', 'byUtil',
                         $(".by_header").removeClass("by_expStoreHeaderImage");
                     }
                         
-                });
+                });}
                 updateMetaTags();
                 if ($scope.slug == 'all' || ($scope.selectedMenu && $scope.selectedMenu.ancestorIds.length > 0)) {
                     if ($scope.selectedMenu.module === BY.config.menu.modules['product'].moduleId && !$scope.showEditor) {
@@ -330,8 +334,15 @@ define(['byProductApp', 'byUtil',
                 return $sce.trustAsHtml(html);
             }
 
+            $scope.trustAsResourceUrl = function(url) {
+                return $sce.trustAsResourceUrl(url);
+            };
 
-            $scope.selectedMenuId = $routeParams.menuId;
+            $scope.showVideo = function(){       
+                var video = $("#by_productVideoFrame").attr("src");
+                $("#by_productVideoFrame").attr("src", video.slice(0,-1) + '1');
+                $(".by_expVideoGrad").hide();
+            };
 
 
             $scope.tabbedSlider = function () {
