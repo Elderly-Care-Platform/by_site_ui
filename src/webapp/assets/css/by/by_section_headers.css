@@ -403,4 +403,8 @@
         padding-top: 25px;
         line-height: 24px;
     }
+    .by_categorySectionHeaderImage
+    {
+        width: 300px;
+    }
 }
