@@ -53,13 +53,13 @@
     width: 100%;
     height: auto;
     background: url('../../img/section_headers/directory_banner.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
-    background-size: none;
+    background-size: cover;
     padding-top: 50px;
 }
 .by_directoryHeaderImage
 {
     background: url(../../img/section_headers/directory_banner.png?versionTimeStamp=%PROJECT_VERSION%) no-repeat  center;
-    background-size: none;
+    background-size: cover;
 }
 .by_directoryBannerImg {
     width: 360px;
@@ -130,12 +130,12 @@
     width: 100%;
     height: auto;
     background: url('../../img/product/products_banner.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
-    background-size: none;
+    background-size: cover;
 }
 .by_productHeaderImage
 {
     background: url(../../img/product/products_banner.png?versionTimeStamp=%PROJECT_VERSION%) no-repeat  center;
-    background-size: none;
+    background-size: cover;
 }
 .by_productList_bannerText {    
     font-size: 18px;
@@ -171,12 +171,12 @@
     width: 100%;
     height: 280px;
     background: url('../../img/aboutUs/header_d.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat right;
-    background-size: none;
+    background-size: cover;
 }
 .by_aboutUsHeaderImage
 {
     background: url(../../img/aboutUs/header_d.jpg?versionTimeStamp=%PROJECT_VERSION%) no-repeat  right;
-    background-size: none;
+    background-size: cover;
 }
 .by_aboutUsBannerText
 {
