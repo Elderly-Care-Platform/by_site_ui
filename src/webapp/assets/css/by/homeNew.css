@@ -1528,3 +1528,78 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
         margin-top: 20px;
     }
 }
+
+.by_homeDiscuss
+{
+    width: 80%;
+    height: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: left;
+    font-size: 15px;
+}
+.by_homeDiscuss a
+{
+    background: transparent!important;
+    text-decoration: none !important;
+    color: #00af50 !important;
+    text-align: left;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 0px;
+}
+.by_homeDiscussHead
+{
+    font-size: 16px;
+    line-height: 25px;
+    display: inline;
+    width: 100%;
+    font-weight: bold;
+}
+.by_homeDiscussDesc
+{
+    font-size: 15px;
+    line-height: 25px;
+    display: inline;
+    width: 100%;
+}
+.ellipsisNews {
+  max-height: 50px;
+  display: inline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width:100%;
+  line-height: 25px;
+}
+
+.by_homeDiscuss a .list-inline a
+{
+    font-size: 15px;
+    color: #000;
+}
+.by_homeDiscussThumb
+{
+    width: 100%;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.by_homeDiscussThumb:last-child
+{
+    border-bottom: 0px;
+}
+.by_homeDiscussWrap
+{
+    width: calc(100% - 100px);
+    float: right;
+    max-height: 87px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 25px;
+}
+.width100
+{
+    width: 100%;
+}
