@@ -250,6 +250,41 @@
     max-width: 300px;
     text-align: right;
 }
+.by_contact_banner {
+    width: 100%;
+    height: auto;
+    background: url('../../img/footer/contactus.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
+    background-size: cover;
+}
+.by_contactHeaderImage
+{
+    background: url(../../img/footer/contactus.png?versionTimeStamp=%PROJECT_VERSION%) no-repeat  center;
+    background-size: cover;
+}
+.by_contact_bannerText {    
+    font-size: 18px;
+    line-height: 34px;
+    color: #fff;
+    z-index: 20;
+    width: 360px;
+    font-weight: bold;
+    float: left;
+    margin-top: 115px;
+}
+.by_contact_bannerText h1 {
+    color: #fff;
+    font-size: 18px;
+}
+.by_contact_bannerText h1 strong {
+    display: block;
+    text-transform: uppercase;
+    font-size: 35px;
+}
+.by_contact_bannerImg {
+    float: right;
+    width: 261px;
+    margin-top: 59px;
+}
 @media ( max-width: 1100px) {
     .by_directoryBannerDivider {
         margin-left: 5%;
@@ -331,19 +366,24 @@
         margin-right: auto;
         margin-left: auto;
     }
-    .by_productList_banner {
+    .by_productList_banner, .by_contact_banner {
         margin-top: 0px;
     }
-    .by_productList_bannerText {
+    .by_productList_bannerText, .by_contact_bannerText {
         width: 100%;
         height: auto;
         text-align: center;
         margin-top: 40px;
         margin-bottom: 30px;
     }
-    .by_productList_bannerImg {
+    .by_productList_bannerImg, .by_contact_bannerImg {
         width: 100%;
         margin-top: 10px;
+        text-align: center;
+    }
+    .by_contact_bannerImg img
+    {
+        max-width: 300px;
     }
     .by_productList_banner, .by_aboutUsBanner, .by_directoryBanner
     {

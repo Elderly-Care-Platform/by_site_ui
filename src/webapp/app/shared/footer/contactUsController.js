@@ -2,7 +2,7 @@
  * Created by sanjukta on 01-07-2015.
  */
 define(['byApp', 'byUtil'], function(byApp, byUtil) {
-    function contactUsController($scope, $routeParams, $route, $location, ContactUs){
+    function contactUsController($scope, $routeParams, $route, $location, ContactUs, $window){
         $scope.isLoggedIn = false;
         $scope.errorMsg = "";
         $scope.contact = {};        
@@ -11,6 +11,24 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
         $scope.contact.text = '';
         $scope.showSelectInput = false;
         $scope.telNo = BY.config.constants.byContactNumber;
+        var init = initialize();
+        function initialize() {
+            $(".by_header").removeClass("by_header_image"); 
+            $(".by_header").addClass("by_headerBoder");
+            angular.element($window).bind("scroll", function () {
+                var headerHeight = $(".by_header").height();
+                if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                    $(".by_header").removeClass("by_header_image"); 
+                    $(".by_header").addClass("by_contactHeaderImage");
+                    $(".by_header").removeClass("by_headerBoder");
+                } else {
+                    $(".by_header").removeClass("by_header_image");          
+                    $(".by_header").addClass("by_headerBoder");
+                    $(".by_header").removeClass("by_contactHeaderImage");
+                }
+                    
+            });
+        }
 
         $scope.showSelectInputF = function(){
            if($scope.contact.text.trim().length > 0)
@@ -86,7 +104,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
         }
     }
 
-    contactUsController.$inject = ['$scope', '$routeParams', '$route', '$location', 'ContactUs'];
+    contactUsController.$inject = ['$scope', '$routeParams', '$route', '$location', 'ContactUs', '$window'];
     byApp.registerController('contactUsController', contactUsController);
     return contactUsController;
 });

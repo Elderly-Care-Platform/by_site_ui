@@ -87,18 +87,12 @@ define(['byProductApp', 'byUtil',
                     var headerHeight = $(".by_header").height();
                     if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
                         $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").removeClass("by_aboutUsHeaderImage");
-                        $(".by_header").removeClass("by_directoryHeaderImage");
                         $(".by_header").addClass("by_productHeaderImage");
                         $(".by_header").removeClass("by_headerBoder");
-                        $(".by_header").removeClass("by_expStoreHeaderImage");
                     } else {
                         $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").removeClass("by_aboutUsHeaderImage");
                         $(".by_header").removeClass("by_productHeaderImage");
-                        $(".by_header").removeClass("by_directoryHeaderImage");
                         $(".by_header").addClass("by_headerBoder");
-                        $(".by_header").removeClass("by_expStoreHeaderImage");
                     }
                         
                 });}
