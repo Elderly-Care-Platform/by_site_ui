@@ -64,10 +64,12 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'], function
             angular.element($window).bind("scroll", function () {
                 var headerHeight = $(".by_header").height();
                 if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                    BY.byUtil.changeHeaderImage();
                     $(".by_header").removeClass("by_header_image"); 
                     $(".by_header").addClass("by_directoryHeaderImage");
                     $(".by_header").removeClass("by_headerBoder");
                 } else {
+                    BY.byUtil.changeHeaderImage();
                     $(".by_header").removeClass("by_header_image"); 
                     $(".by_header").removeClass("by_directoryHeaderImage");
                     $(".by_header").addClass("by_headerBoder");

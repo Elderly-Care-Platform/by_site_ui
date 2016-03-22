@@ -261,4 +261,10 @@ BY.byUtil.paginationSeoUrl = function(queryParams, currentP, lastP) {
 
 
 
-
+BY.byUtil.changeHeaderImage = function(){          
+    $(".by_header").removeClass("by_directoryHeaderImage");
+    $(".by_header").removeClass("by_productHeaderImage");
+    $(".by_header").removeClass("by_aboutUsHeaderImage");
+    $(".by_header").removeClass("by_expStoreHeaderImage");
+    $(".by_header").removeClass("by_contactHeaderImage");
+}

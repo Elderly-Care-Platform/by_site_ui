@@ -27,6 +27,20 @@ define([], function () {
                 }
             })
 
+            /* home modification */
+
+            .when('/home-modification', {
+                templateUrl: 'app/components/homeModifications/homeModifications.html', controller: 'homeModificationCtrl', resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/homeModifications/homeModifications'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
 
             //**************Communities routes start******************************************************************
             .when('/communities/:slug/:menuId/:discussType', {

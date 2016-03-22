@@ -77,3 +77,26 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    
+        var init = initialize();
+        function initialize() {
+            $(".by_header").removeClass("by_header_image"); 
+            $(".by_header").addClass("by_headerBoder");
+            $(window).scroll(function () {
+                var headerHeight = $(".by_header").height();
+                if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                    BY.byUtil.changeHeaderImage();
+                    $(".by_header").removeClass("by_header_image"); 
+                    $(".by_header").addClass("by_contactHeaderImage");
+                    $(".by_header").removeClass("by_headerBoder");
+                } else {
+                    BY.byUtil.changeHeaderImage();
+                    $(".by_header").removeClass("by_header_image");          
+                    $(".by_header").addClass("by_headerBoder");
+                    $(".by_header").removeClass("by_contactHeaderImage");
+                }
+                    
+            });
+        }
+</script>
