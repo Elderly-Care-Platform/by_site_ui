@@ -267,4 +267,5 @@ BY.byUtil.changeHeaderImage = function(){
     $(".by_header").removeClass("by_aboutUsHeaderImage");
     $(".by_header").removeClass("by_expStoreHeaderImage");
     $(".by_header").removeClass("by_contactHeaderImage");
+    $(".by_header").removeClass("by_homeModiBannerHeader");
 }

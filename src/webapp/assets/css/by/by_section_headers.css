@@ -285,6 +285,53 @@
     width: 261px;
     margin-top: 59px;
 }
+.by_homeModiBanner
+{
+    width: 100%;
+    height: 283px;
+    background: url('../../img/home-modification/header_1_BG.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat right;
+    background-size: cover;
+}
+.by_homeModiBannerHeader
+{
+    background: url(../../img/home-modification/header_1_BG.png?versionTimeStamp=%PROJECT_VERSION%) no-repeat  right;
+    background-size: cover;
+}
+.by_homeModiBannerText
+{
+    width: 100%;
+    margin-top: 50px;
+}
+.by_homeModiBannerText span
+{
+    display: block;
+}
+.by_homeModiBannerText span.by_homeModiBannerText1
+{
+    font-family:  Segoe_Print!important;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 30px;
+    color: #fff;
+    width: 100%;
+}
+.by_homeModiBannerText span.by_homeModiBannerText2
+{
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 60px;
+    font-family: century_gothic !important;
+    text-transform: uppercase;
+}
+.by_homeModiBannerText span.by_homeModiBannerText3
+{
+    font-size: 19px;
+    line-height: 20px;
+    color: #fff;
+    padding-top: 1px;
+    font-family: century_gothic !important;
+}
 @media ( max-width: 1100px) {
     .by_directoryBannerDivider {
         margin-left: 5%;

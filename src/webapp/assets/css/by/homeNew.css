@@ -39,7 +39,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 }
 .by_home_titleOne
 {
-    font-family: kimberly_geswein !important;
+    font-family: Segoe_Print!important;
     font-size: 21px;
     color: #fff;
     line-height: 31px;
@@ -1462,9 +1462,26 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
         width: 100%;
     }
 }
+.by_homeExpTitle
+{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: #464646;
+    line-height: 40px;
+}
+.by_homeExpBorder
+{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 1px;
+    background: #666;
+}
 .by_homeExpShadowImage
 {
-    background:url('../../img/experience_store/solution_living.jpg?versionTimeStamp=%PROJECT_VERSION%') repeat-x center center;
+    background:url('../../img/home/home-exp-background.png?versionTimeStamp=%PROJECT_VERSION%') repeat-x center center;
+    background-size: cover;
     position: relative;
 }
 .by_homeExpLeft
@@ -1472,7 +1489,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     width: 48%;
     float: left;
     text-align: center;
-    padding-top: 8%;
+    margin-top: -3px;
 }
 .by_homeExpRight
 {
@@ -1490,18 +1507,24 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 {
     font-size: 18px;
     line-height: 24px;
+    text-align: left;
+}
+.by_homeExpLeftButtonWrap
+{
+    width: 322px;
+    background: #ccc;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .by_homeExpLeftButton
 {
-    width: 290px;
+    width: 316px;
     height: 49px;
-    margin-top: 5px;
     margin-bottom: 5px;
     line-height: 49px;
     color: #fff;
-    font-size: 25px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 20px;
     background: rgb(5, 48, 14);
     border-radius: 2px !important;
     text-transform: uppercase;
