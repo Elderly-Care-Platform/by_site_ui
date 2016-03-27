@@ -1,4 +1,4 @@
-define(['byApp', 'byUtil'], function(byApp, byUtil) {
+define(['byApp', 'byUtil', 'app/shared/footer/contactUsController'], function(byApp, byUtil, contactUsCtrl) {
     function homeModificationCtrl($scope, $rootScope, $routeParams, $timeout, $location, $sce, $window) {
     
         $scope.telNo = BY.config.constants.byContactNumber;
