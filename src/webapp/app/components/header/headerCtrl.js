@@ -67,21 +67,15 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
                 angular.element($window).bind("scroll", function () {
                     var headerHeight = $(".by_header").height();
                     if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                        BY.byUtil.changeHeaderImage();
                         $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").removeClass("by_aboutUsHeaderImage");
-                        $(".by_header").removeClass("by_directoryHeaderImage");
-                        $(".by_header").removeClass("by_productHeaderImage");
                         $(".by_header").addClass("by_homeHeaderImage");
                         $(".by_header").removeClass("by_headerBoder");
-                        $(".by_header").removeClass("by_expStoreHeaderImage");
                     } else {
+                        BY.byUtil.changeHeaderImage();
                         $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").removeClass("by_aboutUsHeaderImage");
-                        $(".by_header").removeClass("by_productHeaderImage");
-                        $(".by_header").removeClass("by_directoryHeaderImage");
                         $(".by_header").removeClass("by_headerBoder");
                         $(".by_header").removeClass("by_homeHeaderImage");
-                        $(".by_header").removeClass("by_expStoreHeaderImage");
                     }
                     if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= 1) {
                         $("#homeMenuScroll").show();

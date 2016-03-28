@@ -46,7 +46,12 @@ define([
     		$("link[rel='prev']").attr("href", "");
 
     		$(".by_header").addClass("by_header_image");
-    		$(".by_header").removeClass("by_headerBoder");
+    		$(".by_header").removeClass("by_headerBoder");              
+            $(".by_header").removeClass("by_directoryHeaderImage");
+            $(".by_header").removeClass("by_productHeaderImage");
+            $(".by_header").removeClass("by_aboutUsHeaderImage");
+            $(".by_header").removeClass("by_expStoreHeaderImage");
+            $(".by_header").removeClass("by_contactHeaderImage");
     		$(".by_header_right_mobile").css('width', '23px');
     		$(".by_header_right_mobile_search").css('display', 'none');
 
