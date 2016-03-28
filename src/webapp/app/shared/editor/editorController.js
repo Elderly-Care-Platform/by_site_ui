@@ -31,6 +31,7 @@ define(['byApp', 'byUtil', 'byEditor', 'userValidation'], function(byApp, byUtil
             if($scope.$parent.editorPostCategories && $scope.$parent.editorPostCategories.length > 0){
                 for(var i=0; i<$scope.$parent.editorPostCategories.length; i++){
                     var editorPostCategory = $scope.$parent.editorPostCategories[i];
+                    selectParentHierArchy(editorPostCategory);
                     $scope.selectedMenuList[editorPostCategory.id] = editorPostCategory;
                 }
             } else {
@@ -44,6 +45,7 @@ define(['byApp', 'byUtil', 'byEditor', 'userValidation'], function(byApp, byUtil
 
                 if($scope.selectedMenu){
                     $scope.selectedMenuId = $scope.selectedMenu.id;
+                    selectParentHierArchy($scope.selectedMenu);
                     $scope.selectedMenuList[$scope.selectedMenuId] = $scope.selectedMenu;
                     $scope.selectedMenuCount++;
                 }
@@ -60,7 +62,7 @@ define(['byApp', 'byUtil', 'byEditor', 'userValidation'], function(byApp, byUtil
         //select category from accordion
         $scope.selectTag = function(event, category){
            if(event.target.checked){
-                selectParentHierArchy(category);
+               selectParentHierArchy(category);
                $scope.selectedMenuList[category.id] = category;
                $scope.selectedMenuCount++;
            }else{
@@ -137,9 +139,9 @@ define(['byApp', 'byUtil', 'byEditor', 'userValidation'], function(byApp, byUtil
             }
 
             //Add parent hierarchy of the selected menu
-            /*angular.forEach($scope.selectedMenuList, function (menu, index) {
+            angular.forEach($scope.selectedMenuList, function (menu, index) {
                 selectParentHierArchy(menu);
-            })*/
+            })
 
             if($scope.postCategoryTag){
                 $scope.discuss.systemTags = [$scope.postCategoryTag];

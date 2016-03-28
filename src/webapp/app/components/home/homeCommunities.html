@@ -4,8 +4,8 @@
         <div class="by_homeSection paddingBottomZero">
             <div class="by_homeSectionInside">
                 <div class="by_homeCommLeft desktopSite">
-                    Want to take better care of ageing parents?<br/>
-                    Want to age happier and to live longer?<br/><br/>
+                    Taking better care of parents<br/>
+                    Ageing happier, living longer<br/><br/>
                     <a href="#!/communities/564071623e60f5b66f62df27/all"> <h3>Communities</h3> <i class="fa fa-caret-right"></i></a>
                 </div>
                 <div class="by_homeCommLeft mobileSite">
@@ -14,6 +14,35 @@
                     <a href="#!/communities/564071623e60f5b66f62df27/all"> <h3>Communities</h3> <i class="fa fa-caret-right"></i></a>
                 </div>
                 <div class="clearfix"></div>
+                <div class="by_homeCommLeft margin-top-20">
+                    <small><b>Recent posts:</b></small>
+                    <div class="by_homeDiscuss">
+                        <div ng-repeat="discuss in discussData" class="by_homeDiscussThumb" ng-click="nextLocation($event, discuss, {'id':discuss.id})">
+                                <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><img ng-if="discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage"
+                                    ng-src="{{discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage||''}}" alt="{{discuss.title}}"
+                                    fallback-src='["{{discuss.userProfile.basicProfileInfo.profileImage.titleImage||""}}"]' width="100" class="divLeft" /></a>
+                                <div class="by_homeDiscussWrap" ng-class="{'width100': !discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage}">
+                                 <x ng-if="discuss.discussType == 'P'">B</x><x ng-if="discuss.discussType == 'Q'"><y class="by_questionLetter">Q</y>uestion b</x>y <a validate-user-name="{{discuss.username}}"
+                                      class="text-capitalize" ng-click="$event.stopPropagation();"
+                                       ng-href="{{getHrefProfile(discuss, {'profileId':discuss.userId})}}">
+                                        {{username}}</a>
+                                        <xyz>|</xyz>
+                                    <xyz time-since="{{discuss.createdAt}}"></xyz>
+                                    <div class="clearfix"  style="height:6px;"></div>
+                                     <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><span class="by_homeDiscussHead"  ng-if="discuss.discussType == 'P'">
+                                       {{discuss.title}}
+                                    </span></a>
+                                    <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><span class="by_homeDiscussDesc" ng-if="discuss.text"
+                                    ng-bind-html="trustForcefully(discuss.text)"></span></a>
+                                </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="divRight">
+                            <a href="#!/communities/564071623e60f5b66f62df27/all">Read more...</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>                    
+                </div>
                 <div class="by_homeCommRight">
                     <img src="assets/img/home/communities.png?versionTimeStamp=%PROJECT_VERSION%" alt="Communities" width="100%" />
                 </div>
@@ -34,3 +63,4 @@
         </div>
     </div>-->
 </div>
+

@@ -2,7 +2,7 @@
  * Created by sanjukta on 01-07-2015.
  */
 define(['byApp', 'byUtil'], function(byApp, byUtil) {
-    function contactUsController($scope, $routeParams, $route, $location, ContactUs){
+    function contactUsController($scope, $routeParams, $route, $location, ContactUs, $window){
         $scope.isLoggedIn = false;
         $scope.errorMsg = "";
         $scope.contact = {};        
@@ -86,7 +86,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
         }
     }
 
-    contactUsController.$inject = ['$scope', '$routeParams', '$route', '$location', 'ContactUs'];
+    contactUsController.$inject = ['$scope', '$routeParams', '$route', '$location', 'ContactUs', '$window'];
     byApp.registerController('contactUsController', contactUsController);
     return contactUsController;
 });

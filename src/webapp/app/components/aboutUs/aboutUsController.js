@@ -12,19 +12,15 @@ define(['byApp', 'byUtil', 'editorController', 'app/shared/footer/contactUsContr
             angular.element($window).bind("scroll", function () {
                 var headerHeight = $(".by_header").height();
                 if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                    BY.byUtil.changeHeaderImage();
                     $(".by_header").removeClass("by_header_image"); 
-                    $(".by_header").removeClass("by_directoryHeaderImage");
-                    $(".by_header").removeClass("by_productHeaderImage");
                     $(".by_header").addClass("by_aboutUsHeaderImage");
                     $(".by_header").removeClass("by_headerBoder");
-                    $(".by_header").removeClass("by_expStoreHeaderImage");
                 } else {
-                    $(".by_header").removeClass("by_header_image");                     
-                    $(".by_header").removeClass("by_directoryHeaderImage");
-                    $(".by_header").removeClass("by_productHeaderImage");
+                     BY.byUtil.changeHeaderImage();
+                    $(".by_header").removeClass("by_header_image");          
                     $(".by_header").removeClass("by_aboutUsHeaderImage");
                     $(".by_header").addClass("by_headerBoder");
-                    $(".by_header").removeClass("by_expStoreHeaderImage");
                 }
                     
             });

@@ -1,4 +1,16 @@
-<div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
+<div class="by_contact_banner" >
+  <div class="headerHeightNoBreadCrumb margin-bottom-0" ng-if="$root.windowWidth < 721"></div>
+  <div class="container">
+         <div class="by_contact_bannerText">
+           <h1> We would love 
+           <strong>to hear from you</strong>
+            </h1>
+       </div>
+       <div class="by_contact_bannerImg">
+         <img src="assets/img/footer/contactAunty.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Contact Banner" />
+       </div>
+  </div>   
+</div>
 
 <!--=== End Breadcrumbs ===-->
 
@@ -65,3 +77,26 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    
+        var init = initialize();
+        function initialize() {
+            $(".by_header").removeClass("by_header_image"); 
+            $(".by_header").addClass("by_headerBoder");
+            $(window).scroll(function () {
+                var headerHeight = $(".by_header").height();
+                if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                    BY.byUtil.changeHeaderImage();
+                    $(".by_header").removeClass("by_header_image"); 
+                    $(".by_header").addClass("by_contactHeaderImage");
+                    $(".by_header").removeClass("by_headerBoder");
+                } else {
+                    BY.byUtil.changeHeaderImage();
+                    $(".by_header").removeClass("by_header_image");          
+                    $(".by_header").addClass("by_headerBoder");
+                    $(".by_header").removeClass("by_contactHeaderImage");
+                }
+                    
+            });
+        }
+</script>

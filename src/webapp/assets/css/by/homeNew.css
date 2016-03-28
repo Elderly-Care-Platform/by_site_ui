@@ -16,7 +16,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     width: 100%;
     height: 316px;
     background: url('../../img/home/Home_banner.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
-    background-size: none;
+    background-size: cover;
 }
 .by_homeHeaderImage
 {
@@ -39,13 +39,12 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 }
 .by_home_titleOne
 {
-    font-family: kimberly_geswein !important;
+    font-family: Segoe_Print!important;
     font-size: 21px;
     color: #fff;
     line-height: 31px;
     text-align: left;
     display: block;
-    font-weight: bold;
 }
 .by_home_titleTwo
 {
@@ -55,6 +54,8 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     font-size: 50px;
     line-height: 52px;
     font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 4px;
 }
 .by_home_titleThree
 {    
@@ -992,7 +993,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 }
 .by_homeShopRightText
 {
-    font-size: 20px;
+    font-size: 28px;
     display: block;
 }
 .by_homeShopRightLeft
@@ -1058,10 +1059,18 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     font-size: 20px;
     text-align: center;
 }
+.by_homeDirectoryDividerLeft
+{
+    width: 4px;
+    height: 60px;
+    background: rgb(5, 48, 14);
+    float: left;
+    margin-left: 8%;
+}
 .by_homeDirectoryLeftThumb
 {
     float: left;
-    width: 48%;
+    width: calc(48% - 4px);
     margin-left: 1%;
     margin-right: 1%;
     height: auto;
@@ -1251,6 +1260,10 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     }
 }
 @media ( max-width: 720px) {
+    .by_homeDirectoryDividerLeft
+    {
+        display: none;
+    }
     .by_gradYellowColor
     {
         line-height: 25px;
@@ -1462,9 +1475,26 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
         width: 100%;
     }
 }
+.by_homeExpTitle
+{
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: #464646;
+    line-height: 40px;
+}
+.by_homeExpBorder
+{
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 1px;
+    background: #666;
+}
 .by_homeExpShadowImage
 {
-    background:url('../../img/experience_store/solution_living.jpg?versionTimeStamp=%PROJECT_VERSION%') repeat-x center center;
+    background:url('../../img/home/home-exp-background.png?versionTimeStamp=%PROJECT_VERSION%') repeat-x center center;
+    background-size: cover;
     position: relative;
 }
 .by_homeExpLeft
@@ -1472,7 +1502,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     width: 48%;
     float: left;
     text-align: center;
-    padding-top: 8%;
+    margin-top: -3px;
 }
 .by_homeExpRight
 {
@@ -1490,21 +1520,29 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 {
     font-size: 18px;
     line-height: 24px;
+    text-align: left;
+}
+.by_homeExpLeftButtonWrap
+{
+    width: 322px;
+    background: #ccc;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .by_homeExpLeftButton
 {
-    width: 290px;
+    width: 316px;
     height: 49px;
-    margin-top: 5px;
     margin-bottom: 5px;
     line-height: 49px;
     color: #fff;
-    font-size: 25px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 20px;
     background: rgb(5, 48, 14);
     border-radius: 2px !important;
     text-transform: uppercase;
+    text-align: left;
+    padding-left: 15px;
 }
 .by_homeExpLeftButton a
 {
@@ -1527,4 +1565,79 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     {
         margin-top: 20px;
     }
+}
+
+.by_homeDiscuss
+{
+    width: 80%;
+    height: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: left;
+    font-size: 15px;
+}
+.by_homeDiscuss a
+{
+    background: transparent!important;
+    text-decoration: none !important;
+    color: #00af50 !important;
+    text-align: left;
+    font-size: 15px;
+    font-weight: normal;
+    padding: 0px;
+}
+.by_homeDiscussHead
+{
+    font-size: 16px;
+    line-height: 25px;
+    display: inline;
+    width: 100%;
+    font-weight: bold;
+}
+.by_homeDiscussDesc
+{
+    font-size: 15px;
+    line-height: 25px;
+    display: inline;
+    width: 100%;
+}
+.ellipsisNews {
+  max-height: 50px;
+  display: inline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width:100%;
+  line-height: 25px;
+}
+
+.by_homeDiscuss a .list-inline a
+{
+    font-size: 15px;
+    color: #000;
+}
+.by_homeDiscussThumb
+{
+    width: 100%;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.by_homeDiscussThumb:last-child
+{
+    border-bottom: 0px;
+}
+.by_homeDiscussWrap
+{
+    width: calc(100% - 110px);
+    float: right;
+    max-height: 87px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 25px;
+}
+.width100
+{
+    width: 100%;
 }

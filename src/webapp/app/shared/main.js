@@ -21,7 +21,8 @@ require.config({
         'app/components/aboutUs/aboutUsController',
         'app/components/search/SearchController',
         'app/components/error/errorController',
-        'app/components/experienceStore/expStoreController'
+        'app/components/experienceStore/expStoreController',
+        'app/components/homeModifications/homeModifications'
     ],
 
     paths: {

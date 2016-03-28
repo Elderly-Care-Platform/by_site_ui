@@ -4,9 +4,9 @@
 //home
 define(['byApp', 'byUtil', 'homePromoController',
         'userTypeConfig', 
-        'byEditor', 'menuConfig', 'editorController', 'userValidation', 'productController', 'app/shared/footer/contactUsController'],
-    function (byApp, byUtil, homePromoController, userTypeConfig, byEditor, menuConfig, editorController, userValidation, productController, contactUsCtrl) {
-        function BYHomeController($scope, $rootScope, $routeParams, $location, UserValidationFilter, SessionIdService) {
+        'byEditor', 'menuConfig', 'editorController', 'userValidation', 'productController', 'app/shared/footer/contactUsController', 'discussService', 'urlFactory'],
+    function (byApp, byUtil, homePromoController, userTypeConfig, byEditor, menuConfig, editorController, userValidation, productController, contactUsCtrl, discussService, urlFactory) {
+        function BYHomeController($scope, $rootScope, $routeParams, $location, UserValidationFilter, SessionIdService, DiscussPage, discussServiceFilter, $sce, urlFactoryFilter) {
             $scope.homeSectionConfig = BY.config.menu.home;
             $scope.homeimageConfig = BY.config.menu.homeIcon;
             $scope.moduleConfig = BY.config.menu.moduleConfig;
@@ -95,9 +95,61 @@ define(['byApp', 'byUtil', 'homePromoController',
                 $("#by_expVideoFrame").show();
             };
 
+            $scope.getDiscussData = getDiscussData;
+
+            var tags = [],
+                queryParams = {
+                    sort: "lastModifiedAt",
+                    s: 3
+                };
+            tags = $.map($scope.selectedMenu.tags, function(value, key) {
+                return value.id;
+            })
+
+            queryParams.tags = tags.toString();            
+            queryParams.isPromotion = false;
+
+            function getDiscussData() {
+                $("#preloader").show();
+                DiscussPage.get(queryParams,
+                    function(value) {
+                        $scope.discussData = value.data.content;
+                        $("#preloader").hide();
+                    },
+                    function(error) {
+                        $("#preloader").hide();
+                        console.log(error);
+                    });
+            }
+            getDiscussData();
+
+            $scope.trustForcefully = function (html) {
+                return $sce.trustAsHtml(html);
+            };
+
+            $scope.getHrefProfile = function (profile, urlQueryParams) {
+                var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
+                newHref = "#!" + newHref;
+                return newHref;
+            };
+
+            $scope.getHref = function (discuss, urlQueryParams) {
+                var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, urlQueryParams, false);
+                newHref = "#!" + newHref;
+                return newHref;
+            };
+
+            $scope.nextLocation = function ($event, discuss, urlQueryParams) {
+                $event.stopPropagation();
+                var url = urlFactoryFilter.getDiscussDetailUrl(discuss, urlQueryParams, true);
+                $location.path(url);
+            };
+
+
+
         }
 
-        BYHomeController.$inject = ['$scope', '$rootScope', '$routeParams', '$location', 'UserValidationFilter', 'SessionIdService'];
+        BYHomeController.$inject = ['$scope', '$rootScope', '$routeParams', '$location', 'UserValidationFilter', 'SessionIdService', 'DiscussPage', 'DisServiceFilter', '$sce', 'UrlFactoryFilter'];
         byApp.registerController('BYHomeController', BYHomeController);
 
         return BYHomeController;
