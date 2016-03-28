@@ -44,6 +44,10 @@
     font-size: 19px;
     margin-left: 23px;
 }
+.by_homeModiListNumber ol li  li
+{
+    list-style-image: url('../../img/home-modification/ellipse-grey.png?versionTimeStamp=%PROJECT_VERSION%') !important;
+}
 .by_homeModiListDisc a
 {
     text-decoration: underline;
@@ -121,16 +125,22 @@
     margin-left: 5%;
     margin-right: 5%;
 }
+.by_homeModiSafComLeft2
+{
+    width: 30%;
+    margin-left: 20%;
+    float: right;
+}
 .by_homeModiTopLi li
 {
     font-size: 20px !important;
 }
 .by_headerBoderHome
 {
-    border-bottom: 2px solid #3B5246;   
+    border-bottom: 1px solid #3B5246;   
 }
 @media ( max-width: 720px){
-    .by_homeModiSafComLeft
+    .by_homeModiSafComLeft, .by_homeModiSafComLeft2
     {
         width: 100%;
         margin-left: 0px;
@@ -155,5 +165,9 @@
     .by_homeModiBannerText span.by_homeModiBannerText2
     {
         font-size: 33px;
+    }
+    .by_homeModiBanner
+    {
+        height: auto;
     }
 }

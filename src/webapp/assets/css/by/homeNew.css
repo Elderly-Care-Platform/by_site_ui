@@ -1528,6 +1528,8 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     background: rgb(5, 48, 14);
     border-radius: 2px !important;
     text-transform: uppercase;
+    text-align: left;
+    padding-left: 15px;
 }
 .by_homeExpLeftButton a
 {
