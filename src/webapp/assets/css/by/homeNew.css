@@ -992,7 +992,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 }
 .by_homeShopRightText
 {
-    font-size: 20px;
+    font-size: 28px;
     display: block;
 }
 .by_homeShopRightLeft
@@ -1058,10 +1058,18 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     font-size: 20px;
     text-align: center;
 }
+.by_homeDirectoryDividerLeft
+{
+    width: 4px;
+    height: 60px;
+    background: rgb(5, 48, 14);
+    float: left;
+    margin-left: 8%;
+}
 .by_homeDirectoryLeftThumb
 {
     float: left;
-    width: 48%;
+    width: calc(48% - 4px);
     margin-left: 1%;
     margin-right: 1%;
     height: auto;
@@ -1251,6 +1259,10 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     }
 }
 @media ( max-width: 720px) {
+    .by_homeDirectoryDividerLeft
+    {
+        display: none;
+    }
     .by_gradYellowColor
     {
         line-height: 25px;
