@@ -288,13 +288,14 @@
 .by_homeModiBanner
 {
     width: 100%;
-    height: 283px;
-    background: url('../../img/home-modification/header_1_BG.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat right;
+    min-height: 283px;
+    height: auto;
+    background: url('../../img/home-modification/header_1_BG.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
     background-size: cover;
 }
 .by_homeModiBannerHeader
 {
-    background: url(../../img/home-modification/header_1_BG.png?versionTimeStamp=%PROJECT_VERSION%) no-repeat  right;
+    background: url(../../img/home-modification/header_1_BG.png?versionTimeStamp=%PROJECT_VERSION%) no-repeat  center;
     background-size: cover;
 }
 .by_homeModiBannerText
