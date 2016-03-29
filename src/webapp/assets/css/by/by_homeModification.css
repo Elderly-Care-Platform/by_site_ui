@@ -2,6 +2,17 @@
 {
     border-bottom:1px solid #ccc;
 }
+.by_homeSecurityThumb
+{
+    width: 45%;
+    float: left;
+    margin-left: 15%;
+}
+.by_homeSecurityThumb2
+{
+    width: 40%;
+    float: left;
+}
 .by_homeModiWhy
 {
     text-align: center;
@@ -140,6 +151,17 @@
     border-bottom: 1px solid #3B5246;   
 }
 @media ( max-width: 720px){
+    .by_homeSecurityThumb
+    {
+        width: 100%;
+        float: none;
+        margin-left: 0%;
+    }
+    .by_homeSecurityThumb2
+    {
+        width: 100%;
+        float: none;
+    }
     .by_homeModiSafComLeft, .by_homeModiSafComLeft2
     {
         width: 100%;
