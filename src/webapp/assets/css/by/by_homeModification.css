@@ -111,22 +111,29 @@
 }
 .by_homeModiSecurityBg
 {
-    background: #e1e1e1;
+    background: url('../../img/home-modification/security_bg.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat bottom;
+    padding-bottom: 60px;
+    background-size: cover;
 }
 .by_homeModiSafComBg
 {
-    background: url('../../img/home-modification/com_saf.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat top;
+    background: url('../../img/home-modification/com_saf.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat bottom;
+    padding-bottom: 60px;
     background-size: cover;
     margin-bottom: 4px;
 }
 .by_homeModiSafBg
 {
-    background: #d7d7d7;
+    background: url('../../img/home-modification/safety_bg.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat bottom;
+    padding-bottom: 60px;
+    background-size: cover;
     margin-bottom: 4px;
 }
 .by_homeModiComBg
 {
-    background: #c2c2c2;
+    background: url('../../img/home-modification/confort_bg.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat bottom;
+    padding-bottom: 60px;
+    background-size: cover;
     margin-bottom: 4px;
 }
 .by_homeModiSafComLeft
