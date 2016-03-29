@@ -25,7 +25,7 @@
                                     ng-src="{{discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage||''}}" alt="{{discuss.title}}"
                                     fallback-src='["{{discuss.userProfile.basicProfileInfo.profileImage.titleImage||""}}"]' width="100" class="divLeft" />
                                 </a>
-                                <div class="by_homeDiscussWrap" ng-class="{'width100': !discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage || !discuss.articlePhotoFilename.original}">
+                                <div class="by_homeDiscussWrap" ng-class="{'width100': (!discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage || !discuss.articlePhotoFilename.original)}">
                                  <x ng-if="discuss.discussType == 'P'">B</x><x ng-if="discuss.discussType == 'Q'"><y class="by_questionLetter">Q</y>uestion b</x>y <a validate-user-name="{{discuss.username}}"
                                       class="text-capitalize" ng-click="$event.stopPropagation();"
                                        ng-href="{{getHrefProfile(discuss, {'profileId':discuss.userId})}}">
