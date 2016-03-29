@@ -18,10 +18,14 @@
                     <small><b>Recent posts:</b></small>
                     <div class="by_homeDiscuss">
                         <div ng-repeat="discuss in discussData" class="by_homeDiscussThumb" ng-click="nextLocation($event, discuss, {'id':discuss.id})">
-                                <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><img ng-if="discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage"
+                                <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();">
+                                <img ng-if="discuss.articlePhotoFilename.thumbnailImage" ng-src="{{discuss.articlePhotoFilename.thumbnailImage ||''}}" alt="{{discuss.title}}"
+                                    fallback-src='["{{discuss.articlePhotoFilename.original ||""}}"]' width="100" class="divLeft" >
+                                <img ng-if="!discuss.articlePhotoFilename.original && discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage"
                                     ng-src="{{discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage||''}}" alt="{{discuss.title}}"
-                                    fallback-src='["{{discuss.userProfile.basicProfileInfo.profileImage.titleImage||""}}"]' width="100" class="divLeft" /></a>
-                                <div class="by_homeDiscussWrap" ng-class="{'width100': !discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage}">
+                                    fallback-src='["{{discuss.userProfile.basicProfileInfo.profileImage.titleImage||""}}"]' width="100" class="divLeft" />
+                                </a>
+                                <div class="by_homeDiscussWrap" ng-class="{'width100': !discuss.articlePhotoFilename.original, 'width100': !discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage}">
                                  <x ng-if="discuss.discussType == 'P'">B</x><x ng-if="discuss.discussType == 'Q'"><y class="by_questionLetter">Q</y>uestion b</x>y <a validate-user-name="{{discuss.username}}"
                                       class="text-capitalize" ng-click="$event.stopPropagation();"
                                        ng-href="{{getHrefProfile(discuss, {'profileId':discuss.userId})}}">
