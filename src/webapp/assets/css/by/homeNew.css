@@ -1602,6 +1602,10 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     display: inline;
     width: 100%;
 }
+.by_homeDiscussDesc img
+{
+    display: none;
+}
 .ellipsisNews {
   max-height: 50px;
   display: inline;

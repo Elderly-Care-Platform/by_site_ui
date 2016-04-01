@@ -36,7 +36,8 @@
                                      <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><span class="by_homeDiscussHead"  ng-if="discuss.discussType == 'P'">
                                        {{discuss.title}}
                                     </span></a>
-                                    <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><span class="by_homeDiscussDesc" ng-if="discuss.text"
+                                    <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><span class="by_homeDiscussDesc" ng-if="discuss.shortSynopsis">{{discuss.shortSynopsis}}</span></a>
+                                    <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><span class="by_homeDiscussDesc" ng-if="!discuss.shortSynopsis && discuss.text"
                                     ng-bind-html="trustForcefully(discuss.text)"></span></a>
                                 </div>
                             <div class="clearfix"></div>
