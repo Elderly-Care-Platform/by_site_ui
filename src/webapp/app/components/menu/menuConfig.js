@@ -432,7 +432,7 @@ BY.config.menu.productsSH = {
     '10213' : {
         'sectionHead':'Bed and Bedroom',
         'sectionDesc':'Proper rest and good sleep at night are crucial to prevent early aging and some diseases – but they are not easy to get. Try a memory foam pillow – you might be surprised! Make sure when your parents have to get out of the bed at night, there is always light. Take good care of bedridden elders - from bedsores prevention to hygiene in bed.  ',
-        'sectionImage':'assets/img/section_headers/bedroom.png?versionTimeStamp=%PROJECT_VERSION%'
+        'sectionImage':'https://www.youtube.com/embed/iZRcPU_yoOE?rel=0&showinfo=0&autoplay=0'
     },
     '10214' : {
         'sectionHead':'Washing & Toileting ',
@@ -447,7 +447,7 @@ BY.config.menu.productsSH = {
     '10225' : {
         'sectionHead':'Daily Aids',
         'sectionDesc':'Simple daily tasks become complicated with age. When your hand grip is weak, and your eyesight is falling, buttoning your shirt, cutting your nails, picking a newspaper from the floor, turning the key or the door knob, even eating - is not easy at all! We cannot reverse age, but we can provide products that simplify those tasks. ',
-        'sectionImage':'assets/img/section_headers/daily-aids.png?versionTimeStamp=%PROJECT_VERSION%'
+        'sectionImage':'https://www.youtube.com/embed/pE8EShECqmA?rel=0&showinfo=0&autoplay=0'
     },
     '10231' : {
         'sectionHead':'Fitness & Rehab',
