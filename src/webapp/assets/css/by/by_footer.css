@@ -150,7 +150,101 @@
 {
     color: #fff;
 }
-
+.by_footerLinksLeft
+{
+    width:337px;
+    margin-right: 10px;
+    height: auto;
+    float: left;
+}
+.by_footerLinksRight
+{
+    float: right;
+    width: 286px;
+    height: auto;
+}
+.by_footerLinksLeft_head
+{
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    font-size: 18px;
+    line-height: 25px;
+}
+.by_footerLinksLeft_head span
+{
+    color: #fff;
+    font-family: Segoe_Print!important;
+}
+.by_footerLinksLeft_text
+{
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+    line-height: 25px;
+    font-size: 16px;
+}
+.by_footerLinksLeft_text a
+{
+    padding-bottom: 4px;
+    color: #CCC9C9;
+    display: block;
+    text-align: justify;
+}
+.by_footerLinksLeft_text a img
+{
+    margin-right: 5px;
+}
+.by_footerLinksLeft_text a:hover
+{
+    color: #CCC9C9;
+}
+.by_footerLinksLeft_text a span, .by_footerLinksLeft_text a span:hover
+{
+    color: #fff;
+}
+.by_footerLinksLeft_text a:after
+{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+    border-left: 10px solid #FF850F;
+    float: right;
+    margin-top: 9px;
+}
+.by_contact_footerLeft
+{
+    float: left;
+    width: 388px;
+}
+.by_contact_footerRight
+{
+    float: right;
+    width: 310px;
+}
+.by_contactPhoneComm
+{
+    width: 100%;
+    height: auto;
+    padding-bottom: 30px;
+    font-size: 17px;
+}
+.by_contactPhoneCommImg
+{
+    width: 25px;
+    float: left;
+    height: auto;
+    margin-right: 10px;
+}
+.by_contactPhoneCommText
+{
+    width: calc(100% - 35px);
+    float: left;
+    height: auto;
+}
 @media (max-width: 990px){
     .by_footerAddress
     {
@@ -184,6 +278,35 @@
     .by_footerLinks
     {
         margin-bottom: 10px;
+    }
+    .by_contact_footerLeft, .by_contact_footerRight
+    {
+        float: none;
+        width: 100%;
+    }
+    .by_contact_footerRight a img
+    {
+        width: 290px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .by_footerLinksLeft
+    {
+        max-width:337px;
+        margin-right: 0px;
+        height: auto;
+        float: none;
+        width: 100%;
+    }
+    .by_footerLinksRight
+    {
+        float: none;
+        width: 286px;
+        height: auto;
+    }
+    .by_contactPhoneComm{
+        font-size: 16px;
+        padding-bottom: 20px;
     }
 }
 @media (max-width: 376px){

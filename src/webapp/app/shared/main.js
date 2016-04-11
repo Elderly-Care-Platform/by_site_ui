@@ -22,7 +22,8 @@ require.config({
         'app/components/search/SearchController',
         'app/components/error/errorController',
         'app/components/experienceStore/expStoreController',
-        'app/components/homeModifications/homeModifications'
+        'app/components/homeModifications/homeModifications',
+        'app/components/calendar/calendar'
     ],
 
     paths: {
