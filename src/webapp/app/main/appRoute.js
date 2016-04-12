@@ -45,10 +45,10 @@ define([], function () {
             /* classes and activities */
 
             .when('/classes-actitivies-for-senior-citizens', {
-                templateUrl: 'app/components/calendar/calendar.html', controller: 'calendarCtrl', resolve: {
+                templateUrl: 'app/components/classes-activities/classes-activities.html', controller: 'classesActivitiesCtrl', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/calendar/calendar'], function () {
+                        require(['app/components/classes-activities/classes-activities'], function () {
                             defered.resolve();
                         });
                         return defered.promise;

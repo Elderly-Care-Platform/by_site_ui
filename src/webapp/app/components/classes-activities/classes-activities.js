@@ -1,5 +1,5 @@
 define(['byApp', 'byUtil'], function(byApp, byUtil) {
-    function calendarCtrl($scope, $rootScope, $routeParams, $timeout, $location, $sce, $window) {
+    function classesActivitiesCtrl($scope, $rootScope, $routeParams, $timeout, $location, $sce, $window) {
     
         $scope.telNo = BY.config.constants.byContactNumber;
 
@@ -26,8 +26,8 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
     }
 
 
-    calendarCtrl.$inject = ['$scope', '$rootScope', '$routeParams', '$timeout', '$location', '$sce', '$window'];
-    byApp.registerController('calendarCtrl', calendarCtrl);
+    classesActivitiesCtrl.$inject = ['$scope', '$rootScope', '$routeParams', '$timeout', '$location', '$sce', '$window'];
+    byApp.registerController('classesActivitiesCtrl', classesActivitiesCtrl);
 
-    return calendarCtrl;
+    return classesActivitiesCtrl;
 });

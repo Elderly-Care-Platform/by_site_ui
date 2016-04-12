@@ -23,7 +23,7 @@ require.config({
         'app/components/error/errorController',
         'app/components/experienceStore/expStoreController',
         'app/components/homeModifications/homeModifications',
-        'app/components/calendar/calendar'
+        'app/components/classes-activities/classes-activities'
     ],
 
     paths: {
