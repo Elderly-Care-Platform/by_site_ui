@@ -492,6 +492,22 @@ body a:hover
     margin-right: 5px;
     width: 33px;
 }
+.by_callToActionArrow a, .by_callToActionArrow a:hover
+{
+    color: #fff;
+    text-decoration: underline;
+}
+.by_callToActionArrow a:after
+{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+    border-left: 10px solid #fff;
+    margin-left: 10px;
+}
 .by_callToActionButton
 {
     background-color: #004f24;
@@ -520,6 +536,11 @@ body a:hover
     .by_callToAction a
     {
         color: #000;
+    }
+    .by_callToActionArrow a, .by_callToActionArrow a:hover
+    {
+        color: #fff;
+        text-decoration: underline;
     }
 }
 

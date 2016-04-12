@@ -47,7 +47,15 @@
     font-size: 20px;
     text-align: center;
     font-family: century_gothic !important;
-    color: #000;
+    color: #565353;
+    font-weight: bold;
+}
+.by_sectionHeader h2{
+    font-size: 30px;
+    text-align: center;
+    font-family: century_gothic !important;
+    color: #565353;
+    font-weight: bold;
 }
 .by_directoryBanner {
     width: 100%;
