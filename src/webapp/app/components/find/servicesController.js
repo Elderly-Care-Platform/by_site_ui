@@ -1,6 +1,6 @@
 //DIscuss All
-define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'],
-    function (byApp, byUtil, userTypeConfig, byEditor, urlFactory) {
+define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactUsShortCtrl'],
+    function (byApp, byUtil, userTypeConfig, byEditor, urlFactory, contactUsShortCtrl) {
 
         function ServicesController($scope, $rootScope, $location, $route, $routeParams, FindServices, $sce, urlFactoryFilter, $window) {
             $scope.findViews                = {};
@@ -250,7 +250,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'],
             // };
             
            
-
+            $scope.subjectTitle = 'Enquiry from ' + $scope.selectedMenu.displayMenuName;
            
 
         }

@@ -586,3 +586,136 @@ body a:hover
     color: #000;
     text-decoration: none;
 }
+
+
+.by_contactUsGreen
+{
+    width: 100%;
+    height: auto;
+    background: #4A7B1D;
+    text-align: center;
+    padding: 2px 15px;
+    line-height: 34px;
+    font-size: 18px;
+    color: #fff;
+}
+.by_contactUsGreen a, .by_contactUsGreen a:hover
+{
+    color: #fff;
+    text-decoration: underline;
+}
+.by_contactUsGreen a:after
+{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+    border-left: 10px solid #fff;
+    margin-left: 5px;
+}
+.by_contactCommon
+{
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #4A7B1D;
+    margin-bottom: 20px;
+    padding: 0px 15px;
+}
+.by_contactCommonFeilds
+{
+    width: 48%;
+    margin-bottom: 20px;
+}
+.by_contact_works
+{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0px 15px;
+    font-size: 15px;
+    position: relative;
+}
+.by_contact_worksLeft
+{
+    width: calc(100% - 270px);
+    float: left;
+    height: auto;
+}
+.by_contact_worksRight
+{
+    width: 250px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.by_contact_worksLeftThumb
+{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+.by_contact_worksLeftItem
+{
+    border: 5px solid #FF850F;
+    border-radius: 50% !important;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 20px;
+}
+.by_contact_worksLeftText
+{
+    float: left;
+    width: calc(100% - 40px);
+    line-height: 20px;
+    font-size: 15px;
+    padding-top: 5px;
+}
+.by_contactThankYou
+{
+    display: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.by_contactCommonFeilds .by-editor-submit-btn
+{
+    background: #4A7B1D !important;
+}
+@media ( max-width : 900px){
+    .by_contact_worksLeft
+    {
+        width: 100%;
+        float: left;
+        height: auto;
+    }
+    .by_contact_worksRight
+    {
+        width: 250px;
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        bottom: 0px;
+        right: 0px;
+    }
+}
+@media ( max-width : 721px){
+    .by_contactCommonFeilds
+    {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        float: none !important;
+    }
+    .by_contactCommon
+    {
+        padding-bottom: 20px;
+    }
+    .by_contactUsGreen
+    {
+        line-height: 24px;
+        font-size: 15px;
+    }
+}

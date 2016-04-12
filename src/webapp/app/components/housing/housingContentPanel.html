@@ -1,9 +1,5 @@
 
 
-<div class="by_sectionHeader" ng-if="selectedMenu" >
-    <h2>{{selectedMenu.displayMenuName}}</h2>
-</div>
-
 <div class="by_callToAction margin-bottom-20">
   <img src="assets/img/logo_symbol.png?versionTimeStamp=%PROJECT_VERSION%" alt="Logo" />We  find <b>best senior care solutions</b> in Bangalore
   <!--<xyz ng-if="$root.windowWidth > 720"> <i class="fa fa-phone2"></i> {{telNo}}</xyz>
@@ -14,6 +10,12 @@
       </div>
     </a>
   </xyz>-->
+</div>
+
+
+
+<div class="by_sectionHeader" ng-if="selectedMenu" >
+    <h2>{{selectedMenu.displayMenuName}}</h2>
 </div>
 
 <div ng-repeat="housing in housing">

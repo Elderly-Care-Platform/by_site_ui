@@ -1,9 +1,4 @@
 
-
-<div class="by_sectionHeader" ng-if="selectedMenu && $root.byTopMenuId != selectedMenuId" >
-    <h2>{{selectedMenu.displayMenuName}} </h2>
-</div>
-
 <div class="by_callToAction margin-bottom-20">
   <img src="assets/img/logo_symbol.png?versionTimeStamp=%PROJECT_VERSION%" alt="Logo" />We  find <b>best senior care solutions</b> in Bangalore
   <!--<xyz ng-if="$root.windowWidth > 720"> <i class="fa fa-phone2"></i> {{telNo}}</xyz>
@@ -14,6 +9,19 @@
       </div>
     </a>
   </xyz>-->
+</div>
+
+
+
+<div class="by_sectionHeader" ng-if="selectedMenu && $root.byTopMenuId != selectedMenuId" >
+    <h2>{{selectedMenu.displayMenuName}} </h2>
+</div>
+
+
+<div ng-include="'app/shared/common/template/contactUsSmall.html?versionTimeStamp=%PROJECT_VERSION%'" ng-controller="contactUsSmallController" ng-if="selectedMenu && $root.byTopMenuId == selectedMenuId"></div>
+
+<div class="by_contactUsGreen margin-bottom-20" ng-if="selectedMenu && $root.byTopMenuId == selectedMenuId">
+	Or browse our Elder care services and Senior living directory
 </div>
 
 <div ng-if="services.length === 0">
