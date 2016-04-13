@@ -23,8 +23,7 @@ require.config({
         'app/components/error/errorController',
         'app/components/experienceStore/expStoreController',
         'app/components/homeModifications/homeModifications',
-        'app/components/classes-activities/classes-activities',
-        'app/shared/common/js/contactUsSmallController'
+        'app/components/classes-activities/classes-activities'
     ],
 
     paths: {

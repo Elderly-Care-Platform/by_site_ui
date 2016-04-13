@@ -15,12 +15,12 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 .by_home_bg {
     width: 100%;
     height: 316px;
-    background: url('../../img/home/Home_banner.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
+    background: url('../../img/home/home-banner.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
     background-size: cover;
 }
 .by_homeHeaderImage
 {
-    background: url('../../img/home/home_top.jpg?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
+    background: url('../../img/home/home-banner-bg.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
     background-size: cover;
 }
 .by_home_title {
@@ -1475,7 +1475,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
         width: 100%;
     }
 }
-.by_homeExpTitle
+/*.by_homeExpTitle
 {
     width: 100%;
     text-align: center;
@@ -1644,4 +1644,125 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 .width100
 {
     width: 100%;
+}*/
+.by_homeSection_wrap_title
+{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 28px;
+    font-family: century_gothic !important;
+    line-height: 30px; 
+    padding-bottom: 30px;
+    font-weight: bold;
+}
+.by_grayBg
+{
+    background: #eee;
+}
+.by_whiteBg
+{
+    background: #fff;
+}
+.by_homeSectionLeft
+{
+    width: 46%;
+    height: auto;
+}
+.by_homeSection_centuryMiddle
+{
+    font-size: 21px;
+    font-family: century_gothic !important;
+    line-height: 22px;   
+}
+.by_homeSection_centurySmall
+{
+    font-size: 18px;
+    font-family: century_gothic !important;
+    line-height: 24px; 
+    padding-top: 4px;
+}
+.by_homeSection_segoBig
+{
+     font-family: Segoe_Print!important;
+     font-size: 26px;
+     line-height: 29px;
+     padding-bottom: 16px;
+}
+.by_homeSection_segoOrange
+{
+    font-family: Segoe_Print!important;
+    font-size: 26px;
+    line-height: 29px;
+    color: #FF850F;
+}
+.by_homeSection_link
+{
+    font-size: 25px;
+    font-family: century_gothic !important;
+    line-height: 22px; 
+}
+.by_homeSection_link a, .by_homeSection_link a:hover
+{
+    text-decoration: underline;
+    color: #000 !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.by_homeSection_link a:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    display: inline-block;
+    border-left: 16px solid #008000;
+    margin-left: 10px;
+}
+.by_homeSection_centuryBig
+{
+    font-size: 24px;
+    font-family: century_gothic !important;
+    line-height: 29px; 
+    margin-top: 18px;
+}
+.by_sallulatesOne
+{
+    width: 100%;
+    height: 70px;
+    background: url('../../img/sillahoutes1.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat top center;
+    background-size: cover;
+    margin-top: 30px;
+}
+.by_borderBottomGreen
+{
+    border-bottom: 1px solid #008000;
+}
+.by_sallulateTwo
+{
+    width: 100%;
+    height: 70px;
+    background: url('../../img/sillahoutes2.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat top center;
+    background-size: cover;
+    margin-top: 30px;
+}
+.by_homeSection_list
+{
+    font-size: 16px;
+    width: 230px;
+    padding: 10px;
+    margin-top: 20px;
+}
+.by_homeSection_list ul
+{
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    margin: 0px 0px 0px 20px;
+}
+.by_homeSection_list ul li
+{
+    width: 50%;
+    float: left;
+    list-style: square;
 }

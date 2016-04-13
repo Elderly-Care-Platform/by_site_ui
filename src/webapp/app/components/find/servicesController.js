@@ -1,5 +1,5 @@
 //DIscuss All
-define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'app/shared/common/js/contactUsSmallController'],
+define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactUsShortCtrl'],
     function (byApp, byUtil, userTypeConfig, byEditor, urlFactory, contactUsShortCtrl) {
 
         function ServicesController($scope, $rootScope, $location, $route, $routeParams, FindServices, $sce, urlFactoryFilter, $window) {
