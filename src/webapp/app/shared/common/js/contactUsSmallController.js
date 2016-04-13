@@ -2,7 +2,7 @@
  * Created by sanjukta on 01-07-2015.
  */
 define(['byApp', 'byUtil'], function(byApp, byUtil) {
-    function contactUsSmallController($scope, $routeParams, $route, $location, ContactUs, $window){
+    function contactUsSmallCtrl($scope, $routeParams, $route, $location, ContactUs, $window){
         $scope.errorMsg = "";
         $scope.contact = {};        
         $scope.contact.userEmail ='';
@@ -78,7 +78,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
         }
     }
 
-    contactUsSmallController.$inject = ['$scope', '$routeParams', '$route', '$location', 'ContactUs', '$window'];
-    byApp.registerController('contactUsSmallController', contactUsSmallController);
-    return contactUsSmallController;
+    contactUsSmallCtrl.$inject = ['$scope', '$routeParams', '$route', '$location', 'ContactUs', '$window'];
+    byApp.registerController('contactUsSmallCtrl', contactUsSmallCtrl);
+    return contactUsSmallCtrl;
 });
