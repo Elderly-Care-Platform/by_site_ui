@@ -133,7 +133,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactU
                 if(menu.module == $scope.menuConfig.modules['discuss'].moduleId){
                     menu = $rootScope.menuCategoryMap['56406cd03e60f5b66f62df26'];
                 }
-                $location.path("/"+$scope.removeSpecialChars(menu.displayMenuName)+"/"+menu.id+"/"+response.name);
+                $location.path("/directory/"+$scope.removeSpecialChars(menu.displayMenuName)+"/"+menu.id+"/"+response.name);
             }
 
             $scope.specialityCallback = function (speciality) {
