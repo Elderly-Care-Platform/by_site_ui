@@ -19,9 +19,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
             $scope.contact.username = BY.byUtil.validateUserName(localStorage.getItem("USER_NAME"));
             $scope.contact.userPhone = localStorage.getItem("USER_PHONENUMBER");
 
-            if($scope.contact.userEmail == "null"){
-                $scope.contact.userEmail = '';
-            } 
+            
             if($scope.contact.userPhone == "null"){
                 $scope.contact.userPhone = '';
             }
@@ -42,7 +40,10 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
             $scope.contactUs = new ContactUs();
             $scope.errorMsg = "";
             $scope.contactUs.discussType = discussType;
-            $scope.contactUs.text = 'Enquiry with phone';        
+            $scope.contactUs.text = 'Enquiry with phone';  
+            if($scope.contact.userEmail == "null"){
+                $scope.contact.userEmail = '';
+            }       
             
             $scope.contactUs.username = $scope.contact.username;
 

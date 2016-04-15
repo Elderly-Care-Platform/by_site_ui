@@ -83,7 +83,13 @@
     font-size: 18px;
     line-height: 34px;
     margin-top: 9px;
+    text-align: right;
     font-family: Segoe_Print!important;
+}
+.by_directoryBannerText2
+{
+    text-align: left;
+    margin-top: 0px;
 }
 .by_directoryBannerText h1 {
     color: #fff;
@@ -389,6 +395,7 @@
     .by_directoryBannerText {
         width: 50% !important;
         margin-top: -44px;
+        text-align: left;
     }
     .by_directoryBannerText2 {
         margin-top: 0px;

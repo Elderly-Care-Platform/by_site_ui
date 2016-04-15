@@ -625,7 +625,8 @@ body a:hover
 }
 .by_contactCommonFeilds
 {
-    width: 48%;
+    width: calc(48% - 38px);
+    margin-right: 2%;
     margin-bottom: 20px;
 }
 .by_contact_works
@@ -702,7 +703,7 @@ body a:hover
     }
 }
 @media ( max-width : 721px){
-    .by_contactCommonFeilds
+    .by_contactCommonFeilds, .by_contactCommonFeildsBUtton 
     {
         width: 300px;
         margin-left: auto;
