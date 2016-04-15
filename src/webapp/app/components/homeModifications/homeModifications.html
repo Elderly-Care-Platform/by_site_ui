@@ -1,18 +1,19 @@
-<div class="by_homeModiBanner by_headerBoderHome">
+<div class="by_homeModiBanner by_headerBoderHome" style="position:relative;">
 <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
-    <div class="container" style="width:100%;">
+    <div class="container" style="width:100%; ">
 	    <div class="by_homeModiBannerText">
 	       <h1>
 	       		<span class="by_homeModiBannerText1">Making your home</span>
 	       		<span class="by_homeModiBannerText2">Senior friendly</span>
-	       		<span class="by_homeModiBannerText3">for SAFETY &AMP; COMFORT of your parents</span>
+	       		<span class="by_homeModiBannerText3">For safety, security and comfort of your parents</span>
 	       </h1>
 	   </div>
+       <img src="assets/img/home-modification/homemodi-img.png?versionTimeStamp=%PROJECT_VERSION%" alt="Home modification" class="by_homeModiHeaderImg" />
    </div><div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
 
-
+<!--
 <div class="by_container by_homeModiTopBg">
     <div class="by_homeSection" style="padding: 20px 0px 40px 0px;">
         <div class="by_homeSectionInside">
@@ -27,6 +28,33 @@
         	<img src="assets/img/home-modification/header_2_img.png?versionTimeStamp=%PROJECT_VERSION%" alt="Home modification" width="100%" />
         </div>
     </div>
+</div>-->
+
+<div class="by_whiteBg">
+<div class="by_container ">
+    <div class="by_homeSection" style="padding: 20px 0px;">        
+        <div class="by_homeSectionInside">
+            <div class="by_homeSectionLeft divRight">
+                 <div class="by_homeModiListNumberTop">
+                    <ol>
+                        <li>Daily tasks become challenging and <b>dangerous</b> as we age</li>
+                        <li>Elder people are prone to <b>fall</b></li>
+                        <li>20% of falls are <b>life-threatening</b></li>
+                    </ol>
+                 </div>
+            </div>
+            <div class="by_homeSectionLeft divLeft">
+                <div style="border:8px solid #eee;">
+                    <div class="by_expVideoShow" ng-click="showVideo();">
+                        <img src="assets/img/home/home-seniorfriendly-videoframe.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Video" width="100%"  />
+                    </div>
+                    <iframe id="by_expVideoFrame" width="100%" height="" src="https://www.youtube.com/embed/iZRcPU_yoOE?rel=0&showinfo=0&autoplay=0" frameborder="0" allowfullscreen ></iframe>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
 </div>
 
 
@@ -35,7 +63,7 @@
     <div class="by_homeSection" style="padding: 6px 0px;">
         <div class="by_homeSectionInside">
             <div class="by_homeModiWhy by_homeModiWhiteColor" style="line-height:34px;">
-            	MOST OF THE <b>FALLS CAN BE PREVENTED!</b><br/> CALL <b>{{telNo}}</b>
+            	Most of the <b>falls can be prevented!</b>
             </div>
         </div>
     </div>
@@ -43,7 +71,7 @@
 
 
 <div class="by_container by_homeModiSafComBg" ng-if="$root.windowWidth > 720">
-    <div class="by_homeSection" style="padding: 20px 0px 40px 0px;">
+    <div class="by_homeSection" style="padding: 20px 0px 20px 0px;">
         <div class="by_homeSectionInside">
            <div class="by_homeModiSafComLeft">
            		 <div class="by_homeModiWhy by_homeModiBlackColor by_homeModiFontBold" style="text-align:left;">
@@ -74,22 +102,23 @@
            </div>
            <div class="by_homeModiSafComLeft2">
            		<div class="by_homeModiWhy by_homeModiBlackColor by_homeModiFontBold"  style="text-align:left;">
-	            	<img src="assets/img/home-modification/comfort.png?versionTimeStamp=%PROJECT_VERSION%" width="" alt="comfort" /> Comfort
+	            	<img src="assets/img/home-modification/security.png?versionTimeStamp=%PROJECT_VERSION%" width="" alt="Security" /> Security
 	            </div>            
 	            <div class="by_homeModiListNumber margin-top-20 by_homeModiBlackColor">
 	            	<ol>
-	        			<li>Staircase solutions</li>
-	            		<li>Daily aids</li>
-	            		<li>Aids for weak grip</li>
-	            		<li> Home automation
+	        			<li>Surveillance cameras</li>
+	            		<li>Video door phones</li>
+	            		<li>Digital door locks</li>
+                        <li>Intrusion alarm</li>
+                        <li>Gas leakage detection</li>
+	            		<li> Alarm buttons & Trackers:
 	            			<div  class="by_homeModiListDisc by_homeModiBlackColor">
 			            		<ul>
-			            			<li>Motion sensor lights</li>
-			            			<li>Lights/fan control</li>
+			            			<li>In-home</li>
+			            			<li>Out-of-home</li>
 			            		</ul>
 		            		</div>
 	            		</li>
-	            		<li>Open door indicator</li>
 	            	</ol>
 	            </div>
            </div>
@@ -99,86 +128,90 @@
 </div>
 
 
-<div class="by_container by_homeModiSafBg" ng-if="$root.windowWidth < 721">
-	<div class="by_homeSection" style="padding: 20px 0px 40px 0px;">
-        <div class="by_homeSectionInside">
-       		<div class="by_homeModiWhy by_homeModiBlackColor by_homeModiFontBold" >
-            	<img src="assets/img/home-modification/comfort.png?versionTimeStamp=%PROJECT_VERSION%" width="" alt="comfort" /> Comfort
-            </div>            
-            <div class="by_homeModiListNumber margin-top-20 by_homeModiBlackColor">
-            	<ol>
-        			<li>Staircase solutions</li>
-            		<li>Daily aids</li>
-            		<li>Aids for weak grip</li>
-            		<li> Home automation
-            			<div  class="by_homeModiListDisc by_homeModiBlackColor ">
-		            		<ul>
-		            			<li>Motion sensor lights</li>
-		            			<li>Lights/fan control</li>
-		            		</ul>
-	            		</div>
-            		</li>
-            		<li>Open door indicator</li>
-            	</ol>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="by_container by_homeModiComBg" ng-if="$root.windowWidth < 721">
-	<div class="by_homeSection" style="padding: 20px 0px 40px 0px;">
+<div class="by_grayBg" ng-if="$root.windowWidth < 721">
+<div class="by_container">
+	<div class="by_homeSection" style="padding: 20px 0px 20px 0px;">
         <div class="by_homeSectionInside">
        		<div class="by_homeModiWhy by_homeModiBlackColor by_homeModiFontBold">
             	<img src="assets/img/home-modification/safety.png?versionTimeStamp=%PROJECT_VERSION%" width="" alt="safety" /> Safety
             </div>            
             <div class="by_homeModiListNumber margin-top-20 by_homeModiBlackColor">
             	<ol>
-            		<li>Bathroom:
-	            		<div  class="by_homeModiListDisc by_homeModiBlackColor ">
-		            		<ul>
-		            			<li>Shower chairs</li>
-		            			<li>Toilet raisers &amp; footrests</li>
-		            			<li>Rails and more</li>
-		            		</ul>
-	            		</div>
-            		</li>
-            		<li>Falls prevention:
-	            		<div  class="by_homeModiListDisc by_homeModiBlackColor">
-		            		<ul>
-		            			<li>Anti-skid tiles treatment</li>
-		            			<li>Anti-skid tapes</li>
-		            		</ul>
-	            		</div>
-            		</li>
-            		<li>Glow-in-the-dark tapes</li>
+            		<li>Surveillance cameras</li>
+                        <li>Video door phones</li>
+                        <li>Digital door locks</li>
+                        <li>Intrusion alarm</li>
+                        <li>Gas leakage detection</li>
+                        <li> Alarm buttons & Trackers:
+                            <div  class="by_homeModiListDisc by_homeModiBlackColor">
+                                <ul>
+                                    <li>In-home</li>
+                                    <li>Out-of-home</li>
+                                </ul>
+                            </div>
+                        </li>
             	</ol>
             </div>
         </div>
     </div>
 </div>
+<div class="by_container by_borderBottomGreen by_sallulatesOne">
+</div>
+</div>
 
-<div class="by_container by_homeModiSecurityBg">
-    <div class="by_homeSection" style="padding: 20px 0px 40px 0px;">
+<div class="by_whiteBg"  ng-if="$root.windowWidth < 721">
+<div class="by_container">
+    <div class="by_homeSection" style="padding: 20px 0px 20px 0px;">
         <div class="by_homeSectionInside">
-            <div class="by_homeModiWhy by_homeModiBlackColor by_homeModiFontBold">
-            	<img src="assets/img/home-modification/security.png?versionTimeStamp=%PROJECT_VERSION%" width="" alt="Security" /> Security
+            <div class="by_homeModiWhy by_homeModiBlackColor by_homeModiFontBold" >
+                <img src="assets/img/home-modification/security.png?versionTimeStamp=%PROJECT_VERSION%" width="" alt="Security" /> Security
             </div>            
             <div class="by_homeModiListNumber margin-top-20 by_homeModiBlackColor">
-            	<div class="col-md-9 no-padding" style="margin-left:auto; margin-right:auto; float:none;">
+                <ol>
+                    <li>Surveillance cameras</li>
+                    <li>Video door phones</li>
+                    <li>Digital door locks</li>
+                    <li>Intrusion alarm</li>
+                    <li>Gas leakage detection</li>
+                    <li> Alarm buttons & Trackers:
+                        <div  class="by_homeModiListDisc by_homeModiBlackColor">
+                            <ul>
+                                <li>In-home</li>
+                                <li>Out-of-home</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="by_container by_borderBottomGreen by_sallulatesOne">
+</div>
+</div>
+
+<div class="by_container by_grayBg">
+    <div class="by_homeSection" style="padding: 20px 0px 20px 0px;">
+        <div class="by_homeSectionInside">
+            <div class="by_homeModiWhy by_homeModiBlackColor by_homeModiFontBold">
+            	<img src="assets/img/home-modification/comfort.png?versionTimeStamp=%PROJECT_VERSION%" width="" alt="comfort" /> Comfort
+            </div>            
+            <div class="by_homeModiListNumber margin-top-20 by_homeModiBlackColor">
+            	<div class="" style="margin-left:auto; margin-right:auto; float:none;">
 	            	<ol>
 	            		<div class="by_homeSecurityThumb by_homeModiBlackColor no-padding">
-	            			<li>Surveillance cameras</li>
-		            		<li>Video door phones</li>
-		            		<li>Digital door locks</li>
-		            		<li>Intrusion alarm</li>
+	            			<li>Staircase solutions</li>
+		            		<li>Daily aids</li>
+		            		<li>Aids for weak grip</li>
 	            		</div>
 	            		<div class="by_homeSecurityThumb2 by_homeModiBlackColor no-padding">
-	            			<li>Gas leakage detection</li>
-		            		<li>Alarm buttons &amp; Trackers:
-		            		<div  class="by_homeModiListDisc by_homeModiBlackColor margin-top-10">
+		            		<li>Home automation
+		            		<div  class="by_homeModiListDisc by_homeModiBlackColor ">
 			            		<ul>
-			            			<li>In-home</li>
-			            			<li>Out-of-home</li>
+			            			<li>Motion sensor lights</li>
+			            			<li>Lights/fan control</li>
+                                    <li>Open door indicator</li>
 			            		</ul>
 		            		</div>
 		            		</li>
@@ -189,6 +222,8 @@
             </div>
         </div>
     </div>
+</div>
+<div class="by_container by_borderBottomGreen by_sallulatesOne">
 </div>
 
 
@@ -203,8 +238,67 @@
     </div>
 </div>
 
+<div class="by_whiteBg" style="position:relative;">
+    <div class="by_container">
+        <div class="by_homeSection" style="padding: 16px 0px;">
+            <div class="by_homeSectionInside">
+                <div class="by_contact_works" style="position:static;">
+                    <STRONG style="font-size:20px;">HOW IT WORKS</STRONG>
+                    <div class="clearfix" style="height:15px;"></div>
+                    <div class="by_contact_worksLeft">
+                        <div class="by_contact_worksLeftThumb">
+                            <div class="by_contact_worksLeftItem">1</div>
+                            <div class="by_contact_worksLeftText">
+                                You call us at {{telNo}} or visit <a class="by_homeModiBlackColor" href="https://goo.gl/sSu4BB" target="_blank"> our office</a> to set up time for a visit of our specialits (free of charge)
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="by_contact_worksLeftThumb">
+                            <div class="by_contact_worksLeftItem">2</div>
+                            <div class="by_contact_worksLeftText">
+                                We  come over to your place to assess what should be done
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="by_contact_worksLeftThumb">
+                            <div class="by_contact_worksLeftItem">3</div>
+                            <div class="by_contact_worksLeftText">
+                                <b>WE GET THE JOB DONE</b>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="by_contact_worksRight">
+                        <img src="assets/img/footer/contactAunty.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Sanjukta"/>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="by_container by_homeModiHowBg" style="position:relative;">
+<div class="by_container" style="background:#FF850F;">
+    <div class="by_homeSection" style="padding: 6px 0px;">
+        <div class="by_homeSectionInside">
+            <div class="by_homeModiWhy by_homeModiWhiteColor" style="line-height:34px;">
+                 <a href="#!/contactUs" style="color:#fff;"><u>Contact us</u></a> or leave us your phone number
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="by_container" style="background:#fff; border-bottom:1px solid #008000;">
+    <div class="by_homeSection" style="padding: 30px 0px 0px 0px;">
+        <div class="by_homeSectionInside">
+            <div ng-include="'app/shared/common/template/contactUsSmall.html?versionTimeStamp=%PROJECT_VERSION%'" ng-controller="contactUsSmallCtrl" ></div>
+         </div>
+    </div>
+</div>
+
+
+
+<!--<div class="by_container by_homeModiHowBg" style="position:relative;">
     <div class="by_homeSection" style="padding: 20px 0px 40px 0px;">
         <div class="by_homeSectionInside">
             <div class="by_homeModiWhy by_homeModiBlackColor by_homeModiFontBold">
@@ -222,7 +316,7 @@
             <img src="assets/img/footer/contactAunty.png?versionTimeStamp=%PROJECT_VERSION%" alt="Home modification" width="100%" />
         </div>
     </div>
-</div>
+</div>-->
 
 
 <div class="by_container">
@@ -243,13 +337,13 @@
     </div>
 </div>
 
-<div class="by_productList_banner" style="margin-top:0px;">
+<!--<div class="by_productList_banner" style="margin-top:0px;">
   <a href="#!/experience-center">
     <img src="assets/img/product/product_exp_store_banner.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Experience Store" />
   </a>
 </div>
 
-<!--<div class="by_container by_homeContactUsBg" ng-controller="contactUsController">
+<div class="by_container by_homeContactUsBg" ng-controller="contactUsController">
     <div class="by_homeSection" style="padding-bottom:20px;">
         <div class="by_homeSectionInside by_editor_wrap">
 
