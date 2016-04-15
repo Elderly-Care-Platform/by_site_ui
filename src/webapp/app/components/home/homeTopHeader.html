@@ -1,10 +1,17 @@
 <div class="by_home_bg">
-    <!--          Home title            -->
-    <div class="by_home_title">
-        <h1>
-        <span class="by_home_titleOne">Everything about</span>
-        <span class="by_home_titleTwo">Elder care <small>in India</small></span>
-        </h1><div class="clearfix"></div>
+    <div class="by_container">
+        <div class="by_homeSection" style="padding:0px;">
+            <div class="by_homeSectionInside">
+                <!--          Home title            -->
+                <div class="by_home_title">
+                    <h1>
+                        <span class="by_home_titleOne">Everything about</span>
+                        <span class="by_home_titleTwo">Elder care <small>in India</small></span>
+                    </h1>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="clearfix"></div>
    <!-- <div ng-if="$root.windowWidth < 720">
@@ -112,22 +119,21 @@
 
 
 <div class="by_whiteBg">
-<div class="by_container" style="position:relative; border-bottom:3px solid #008000;">
-    <div class="by_homeSection" style="padding:20px 15px;">        
-        <div class="by_homeSectionInside">
+<div class="by_container" style="border-bottom:3px solid #008000;">
+    <div class="by_homeSection" style="padding:6px 0px;">        
+        <div class="by_homeSectionInside" style="position:relative; ">
             <div class="by_homeHeaderBelow">
-                <div class="by_homeHeaderBelow1">
-                    We help you find best 
-                </div>
                 <div class="by_homeHeaderBelow2">
-                    senior care solutions
+                    For <xyz ng-if="$root.windowWidth > 531">senior care</xyz> solutions
                 </div>
                 <div class="by_homeHeaderBelow3">
-                   <img src="assets/img/logo_symbol_old.png?versionTimeStamp=1459503470417" alt="Logo" />  Call us <b>{{telNo}} </b>
+                   <!-- <img src="assets/img/logo_symbol_old.png?versionTimeStamp=1459503470417" alt="Logo" /> -->  <xyz ng-if="$root.windowWidth > 720">call <b>{{telNo}} </b></xyz>
+                   <xyz ng-if="$root.windowWidth < 721"><u><a href="tel:{{telNo}}"><xyz ng-if="$root.windowWidth > 425">call</xyz> <b >{{telNo}} </b></a></u></xyz>
                 </div>
             </div>
+            <img src="assets/img/home/home-couple_ss_2.png?versionTimeStamp=%PROJECT_VERSION%" alt="Shop" class="by_homeHeaderBelowImg" />
         </div>
     </div>
-    <img src="assets/img/product/amarnath.png?versionTimeStamp=%PROJECT_VERSION%" alt="Shop" class="by_homeHeaderBelowImg" / style="position:absolute; left:0px; bottom:0px;">
+    
 </div>
 </div>

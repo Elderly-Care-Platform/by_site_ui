@@ -5,7 +5,7 @@
                <div class="by_homeSection_wrap_title">
                 Elder Care Services
                 </div>
-                <div class="by_homeDirectoryLeft">
+                <!--<div class="by_homeDirectoryLeft">
                    <div class="by_homeDirectoryLeftThumb">
                        We can find a trusted
                        <strong>Nurse or a physiotherapist</strong>
@@ -20,11 +20,16 @@
                 </div>
                 <div class="by_homeSection_wrap_title margin-top-10" style="font-size:21px; font-weight:normal;">
                 ... and more!
+                </div>-->
+
+                <div class="by_homeSection_centuryBigDirectory margin-bottom-40">
+                    We can find you a trusted <b>Nurse</b>, a <b>Physiotherapist</b>, <br/>
+                    a <b>Retirement community</b> - anything you need!
                 </div>
 
-                <div class="clearfix margin-top-20" ng-if="$root.windowWidth > 720"></div>
+                
                 <div class="by_homeSection_centuryBigDirectory">
-                    <a title="{{telNo}}" ng-if="$root.windowWidth > 720"> Call us</a> <a href="tel:{{telNo}}" title="{{telNo}}" ng-if="$root.windowWidth < 721"> Call us</a> for a <span>free</span> recommendation, or <br/>browse our directory of senior care <a href="#!/directory/56406cd03e60f5b66f62df26/all">services</a>
+                    <a title="{{telNo}}" ng-if="$root.windowWidth < 721"> Call</a> <xyz ng-if="$root.windowWidth > 720"> <b>Call</b> </xyz> <span>{{telNo}}</span> for  <span>free</span> assistance, or <br/>browse our directory of senior care <a href="#!/directory/56406cd03e60f5b66f62df26/all">services</a>
                 </div>
 
                 <div class="by_homeDirectoryRight" >
