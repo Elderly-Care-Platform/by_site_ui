@@ -1836,10 +1836,6 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     right:0px; 
     bottom:-6px;
 }
-.by_homeSectionLeftComm 
-{
-    margin-top: -50px;
-}
 @media ( max-width: 950px){
     .by_homeSection_centuryBigDirectory
     {
