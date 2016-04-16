@@ -44,7 +44,6 @@ define([
 		$("meta[name='by-status-code']").attr("content","200");
 			$("link[rel='next']").attr("href", "");
     		$("link[rel='prev']").attr("href", "");
-    		$(".by_menu a").removeClass('by_menu_Active');
 
     		$(".by_header").addClass("by_header_image");
     		$(".by_header").removeClass("by_headerBoder");              
