@@ -432,7 +432,7 @@ BY.config.menu.productsSH = {
     '10213' : {
         'sectionHead':'Bed and Bedroom',
         'sectionDesc':'Proper rest and good sleep at night are crucial to prevent early aging and some diseases – but they are not easy to get. Try a memory foam pillow – you might be surprised! Make sure when your parents have to get out of the bed at night, there is always light. Take good care of bedridden elders - from bedsores prevention to hygiene in bed.  ',
-        'sectionImage':'https://www.youtube.com/embed/iZRcPU_yoOE?rel=0&showinfo=0&autoplay=0'
+        'sectionImage':'https://www.youtube.com/embed/G7iQyQM9o78?rel=0&showinfo=0&autoplay=0'
     },
     '10214' : {
         'sectionHead':'Washing & Toileting ',
