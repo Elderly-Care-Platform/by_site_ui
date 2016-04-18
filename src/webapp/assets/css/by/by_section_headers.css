@@ -60,35 +60,64 @@
 .by_directoryBanner {
     width: 100%;
     height: auto;
-    background: url('../../img/section_headers/directory_banner.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
+    background: url('../../img/home/home-banner.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
     background-size: cover;
-    padding-top: 50px;
+    position: relative;
 }
 .by_directoryHeaderImage
 {
     background: url(../../img/section_headers/directory_banner.png?versionTimeStamp=%PROJECT_VERSION%) no-repeat  center;
     background-size: cover;
 }
+.by_directoryBannerTopText, .by_directoryBannerTopTextwrap
+{
+    width:calc(90% - 320px);
+    float: right;
+    margin-right: 10%;
+    margin-bottom: 25px;
+}
+.by_directoryBannerTopText1
+{
+    font-size: 28px;
+    color: #888;
+    line-height: 34px;
+    padding-bottom: 10px;
+}
+.by_directoryBannerTopText2
+{
+    font-size: 20px;
+    color: #888;
+    line-height: 34px;
+}
+.by_directoryBannerTopText2 b
+{
+    color: #000;
+    font-size: 28px;
+}
+.by_directoryBannerTopText2 a
+{
+    text-decoration: underline;
+    font-size: 28px;
+    color: #008000;
+}
 .by_directoryBannerImg {
     width: 360px;
-    float: left;
-    margin-right: 8%;
-    margin-top: -71px;
-    margin-left: -55px;
+    position: absolute;
+    left: -50px;
+    bottom: 0px;
 }
 .by_directoryBannerText {
-    width: 210px;
-    float: left;
+    width: 256px;
     color: #fff;
     font-size: 18px;
     line-height: 34px;
-    margin-top: 9px;
-    text-align: right;
+    margin-top: 49px;
+    text-align: left;
     font-family: Segoe_Print!important;
 }
 .by_directoryBannerText2
 {
-    text-align: left;
+    text-align: right;
 }
 .by_directoryBannerText h1 {
     color: #fff;
@@ -105,8 +134,9 @@
 .by_directoryBannerText h1 span,
 .by_directoryBannerText span {
     font-weight: normal;
-    font-size: 21px;
+    font-size: 25px;
     color: #fff;
+    margin-top: 6px;
 }
 .by_directoryBannerDivider {
     width: 1px;
@@ -116,6 +146,7 @@
     margin-top: 22px;
     margin-right: 7%;
     margin-left: 7%;
+    visibility: hidden;
 }
 .by_directoryBanner_title {
     width: 100%;
@@ -388,34 +419,16 @@
         line-height: 25px;
     }
 }
-@media ( max-width: 950px) {
-    .by_directoryBannerDivider {
-        margin-left: 3%;
-        margin-right: 3%;
-    }
-    .by_directoryBannerImg {
-        margin-right: 3%;
-    }
-}
-@media ( max-width: 840px) {
+
+@media ( max-width: 1010px) {
     .by_directoryBannerText {
         width: 50% !important;
-        margin-top: -44px;
-        text-align: left;
     }
-    .by_directoryBannerText2 {
-        margin-top: 0px;
-    }
-    .by_directoryBannerDivider {
-        margin-left: 0;
-        margin-right: 0;
-        height: 1px;
-        width: 250px;
-        margin-top: -3px;
-    }
-    .by_directoryBannerImg
+    .by_directoryBannerTopText
     {
-        margin-top: -57px;
+        width:90%;
+        margin-left: 5%;
+        margin-right: 5%;
     }
 }
 @media ( max-width: 820px){    
@@ -446,13 +459,7 @@
     .by_directoryBannerText {
         width: 100% !important;
         text-align: center;
-        margin-bottom: 20px;
         margin-top: 20px;
-    }
-    .by_directoryBannerImg {
-        width: 50%;
-        margin-right: auto;
-        margin-left: auto;
     }
     .by_productList_banner, .by_contact_banner {
         margin-top: 0px;
@@ -524,6 +531,23 @@
     {
         font-size: 16px;
         line-height: 21px;
+    }
+    .by_directoryBannerTopTextwrap
+    {
+        width:calc(100% - 30px);
+        margin-left: 15px;
+        margin-right: 15px;
+        text-align: center;
+    }
+    .by_directoryBannerImg
+    {
+        position: relative;
+        background: #fff;
+        display: none;
+    }
+    .by_directoryBannerTop 
+    {
+        background: #fff;
     }
 }
 @media ( max-width: 594px) {

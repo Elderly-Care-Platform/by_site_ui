@@ -49,7 +49,7 @@
                ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{menu.id}}/all" class="by_treeMenuText"
                style="display: inline-block; width:100%; font-size:18px;"
                ng-class="{'by_treeMenuTextActive': menu.id == selectedParent.id, 'by_treeMenuTextActive': menu.id == selectedMenuId}">
-                {{menu.displayMenuName}}
+                <u style="color:#11944D; text-transform:uppercase; font-weight:bold;">{{menu.displayMenuName}}</u>
             </a>
 
             <div ng-if="menu.module == menuConfig.modules['housing'].moduleId" class="by_menuHousingBorderBottom"></div>
@@ -180,7 +180,7 @@
                            class="by_treeMenuText"
                            style="display: inline-block; width:100%; font-size:18px;"
                            ng-class="{'by_treeMenuTextActive': menu.id == selectedParent.id, 'by_treeMenuTextActive': menu.id == selectedMenuId}">
-                            {{menu.displayMenuName}}
+                           <u style="color:#11944D; text-transform:uppercase; font-weight:bold;"> {{menu.displayMenuName}}</u>
                         </a>
 
                     <div ng-if="menu.module == menuConfig.modules['housing'].moduleId" class="by_menuHousingBorderBottom"></div>

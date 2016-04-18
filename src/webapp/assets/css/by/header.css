@@ -9,7 +9,7 @@
 }
 .by_header_image
 {
-	background: url(../../img/Header1.jpg?versionTimeStamp=%PROJECT_VERSION%) no-repeat bottom center;
+	background: url(../../img/home/home-banner-bg.png?versionTimeStamp=%PROJECT_VERSION%) no-repeat bottom center;
 	background-size: cover;
 }
 .by_logo

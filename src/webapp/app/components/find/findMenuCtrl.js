@@ -53,7 +53,7 @@ define(['byApp', 'serviceOverviewCtrl', 'editorController'], function (byApp, se
 
         $scope.smartScroll = function(){
             setTimeout(function(){
-                $scope.smartHeight = $(".by_directoryBanner").height();
+                $scope.smartHeight = $(".by_directoryBannerTop").height();
                 BY.byUtil.smartScroll($scope.smartHeight);
             }, 100);
         }
