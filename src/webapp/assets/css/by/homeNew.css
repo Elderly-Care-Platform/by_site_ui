@@ -1659,6 +1659,15 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     padding-bottom: 30px;
     font-weight: bold;
 }
+.by_homeSection_wrap_title a
+{
+    text-decoration: underline;
+}
+.by_homeSection_wrap_title small
+{
+    font-size: 18px;
+    font-weight: normal;
+}
 .by_grayBg
 {
     background: #eee;
@@ -1688,8 +1697,8 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 .by_homeSection_segoBig
 {
      font-family: Segoe_Print!important;
-     font-size: 26px;
-     line-height: 29px;
+     font-size: 20px;
+     line-height: 15px;
      padding-bottom: 16px;
 }
 .by_homeSection_segoOrange
@@ -1699,6 +1708,27 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     line-height: 29px;
     color: #FF850F;
     font-weight: bold;
+}
+.by_homeSection_centuryArrow
+{
+    font-size: 23px;
+    font-family: century_gothic !important;
+    line-height: 22px; 
+}
+.by_homeSection_centuryArrow small
+{
+    font-size: 16px;
+}
+.by_homeSection_centuryArrow a:after
+{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    display: inline-block;
+    border-left: 16px solid #ccc;
+    margin-left: 5px;
 }
 .by_homeSection_link
 {
@@ -1713,6 +1743,10 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     text-transform: uppercase;
     font-weight: bold;
 }
+.by_homeSection_link small
+{
+    font-size: 18px;
+}
 /*.by_homeSection_link a:after {
     content: '';
     width: 0;
@@ -1725,9 +1759,9 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 }*/
 .by_homeSection_centuryBig
 {
-    font-size: 24px;
+    font-size: 22px;
     font-family: century_gothic !important;
-    line-height: 29px; 
+    line-height: 32px; 
     margin-top: 18px;
 }
 .by_sallulatesOne
@@ -1773,7 +1807,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 }
 .by_homeSection_centuryBigDirectory
 {
-    font-size: 24px;
+    font-size: 23px;
     font-family: century_gothic !important;
     line-height: 37px; 
     width: 70%;
@@ -1901,6 +1935,11 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     .by_homeHeaderBelow1, .by_homeHeaderBelow2, .by_homeHeaderBelow3
     {
         line-height: 35px;
+    }
+    .by_homeSection_centuryBig, .by_homeSection_centuryBigDirectory 
+    {
+        margin-left: auto;
+        margin-right: auto;
     }
 } 
 @media ( max-width: 430px) {

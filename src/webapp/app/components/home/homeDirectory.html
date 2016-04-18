@@ -3,7 +3,7 @@
         <div class="by_homeSection" style="padding-bottom:10px;">
             <div class="by_homeSectionInside" >
                <div class="by_homeSection_wrap_title">
-                Elder Care Services
+                Elder Care <a href="#!/directory/56406cd03e60f5b66f62df26/all">Services</a>
                 </div>
                 <!--<div class="by_homeDirectoryLeft">
                    <div class="by_homeDirectoryLeftThumb">
@@ -22,14 +22,16 @@
                 ... and more!
                 </div>-->
 
-                <div class="by_homeSection_centuryBigDirectory margin-bottom-40">
-                    We can find you a trusted <b>Nurse</b>, a <b>Physiotherapist</b>, <br/>
-                    a <b>Retirement community</b> - and more!
+                <div class="by_homeSection_centuryBigDirectory margin-bottom-40" style="max-width:678px;">
+                   We can recommend you a trusted <b>Nurse</b>, a <b>Physiotherapist</b>, 
+                    a <b>Retirement community</b> – and more!  
+
                 </div>
 
                 
-                <div class="by_homeSection_centuryBigDirectory">
-                    <a title="{{telNo}}" ng-if="$root.windowWidth < 721"> Call</a> <xyz ng-if="$root.windowWidth > 720"> <b>Call </xyz> {{telNo}}</b> for  <span>free</span> assistance, or <br/>browse our <a href="#!/directory/56406cd03e60f5b66f62df26/all" style="font-weight:500; text-transform:none;">directory</a> of senior care services
+                <div class="by_homeSection_centuryBigDirectory" style="max-width:558px;">
+                    <a title="{{telNo}}" href="tel:{{telNo}}" ng-if="$root.windowWidth < 721"> <div class="by_callToActionButton"><img src="assets/img/home/call.png?versionTimeStamp=1459503470417" alt="BeautifulYears Call"> Call 
+          </div></a> <xyz ng-if="$root.windowWidth > 720"> <b>Call </xyz> {{telNo}}</b> for  <span>free</span> assistance, or browse our <a href="#!/directory/56406cd03e60f5b66f62df26/all" style="font-weight:500; text-transform:none;">directory</a> of {{serviceCount}} senior care services
                 </div>
 
                 <div class="by_homeDirectoryRight" >

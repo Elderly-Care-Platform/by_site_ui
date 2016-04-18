@@ -65,6 +65,8 @@ define(['byApp', 'byUtil', 'homePromoController',
                 });
             };
 
+            $scope.serviceCount = $rootScope.totalServiceCount;
+
             $scope.$on('directoryCountAvailable', function (event, args) {
                 animateCounter($rootScope.totalServiceCount, $(".HomeSevicesCnt"));
                 animateCounter($rootScope.totalHousingCount, $(".HomeHousingCnt"));
