@@ -1,3 +1,18 @@
+.by_directoryRegister
+{
+	width: calc(100% - 30px);
+	margin: 10px 15px;
+	color: #000;
+	font-size: 15px;
+	line-height: 22px;
+}
+.by_directoryRegister a
+{
+	font-size: 19px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #004f24 ;
+}
 .by_housingCard
 {
 	position: relative;
