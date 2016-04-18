@@ -176,7 +176,7 @@
 .by_productList_banner {
     width: 100%;
     height: auto;
-    background: url('../../img/product/products_banner.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
+    background: url('../../img/home/home-banner.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;
     background-size: cover;
 }
 .by_productHeaderImage
@@ -196,7 +196,7 @@
 }
 .by_productList_bannerText h1 {
     font-family:  Segoe_Print!important;
-    font-size: 21px;
+    font-size: 25px;
     font-weight: normal;
     line-height: 36px;
     color: #fff;
@@ -204,9 +204,10 @@
 .by_productList_bannerText h1 strong {
     display: block;
     text-transform: uppercase;
-    font-size: 35px;
+    font-size: 40px;
     font-family: century_gothic!important;
-    padding-top: 4px;
+    padding-top: 6px;
+    padding-bottom: 40px;
 }
 .by_productList_bannerText h1 span{
     font-weight: normal;
@@ -214,10 +215,30 @@
     color: #fff;
     font-family: century_gothic!important;
 }
+.by_productList_bannerTextWrap
+{
+    width: 455px;
+    height: auto;
+    color: #888;
+    font-size: 18px;
+}
+.by_productList_bannerTextWrap span
+{
+    color: #000;
+    font-size: 22px;
+    display: block;
+}
+.by_productList_bannerTextWrap span a
+{
+    text-decoration: underline;
+    font-size: 28px;
+    color: #008000;
+}
 .by_productList_bannerImg {
-    float: right;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
     width: 300px;
-    margin-top: 70px;
 }
 .by_aboutUsBanner
 {
@@ -440,6 +461,10 @@
     .by_categorySectionHeaderText{
         padding-bottom: 0px;
     }
+    .by_productList_bannerTextWrap
+    {
+        width: 400px;
+    }
 }
 @media ( max-width: 850px){
     .by_homeModiHeaderImg{
@@ -469,11 +494,16 @@
         height: auto;
         text-align: center;
         margin-top: 40px;
-        margin-bottom: 30px;
     }
     .by_productList_bannerImg, .by_contact_bannerImg {
         width: 100%;
         margin-top: 10px;
+        text-align: center;
+        display: none;
+    }
+    .by_productList_bannerTextWrap
+    {
+        width: 100%;
         text-align: center;
     }
     .by_contact_bannerImg img

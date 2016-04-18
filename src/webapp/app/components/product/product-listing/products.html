@@ -42,7 +42,7 @@
     </a>
   </div>
 </div>-->
-<xyz ng-if="selectedMenuId == headerCheck">
+<!-- <xyz ng-if="selectedMenuId == headerCheck">
 <div class="by_productList_banner" ng-controller="ProductMenuCtrl">
   <div class="headerHeightNoBreadCrumb margin-bottom-0" ng-if="$root.windowWidth < 721"></div>
   <div class="container">
@@ -57,7 +57,31 @@
        </div>
   </div>   
 </div>
-</xyz>
+</xyz> -->
+<div class="by_directoryBannerTop" ng-if="selectedMenuId == headerCheck" style="position:relative; border-bottom:4px solid #008000"  >
+  <div class="by_productList_banner" ng-controller="ProductMenuCtrl">
+    <div class="headerHeightNoBreadCrumb margin-bottom-0" ng-if="$root.windowWidth < 721"></div>
+    <div class="container">
+           <div class="by_productList_bannerText">
+             <h1> Elder care
+             <strong>products</strong>
+              </h1>
+         </div>
+    </div>   
+  </div>
+  <div class="by_whiteBg">
+       <div class="container">
+        <div class="by_productList_bannerTextWrap" style="padding:20px 0px;">
+         <span>Visit our <a href="#!/experience-center">Experience Store</a></span>   
+         to see how our products improve lives of the elderly   
+        </div><div class="clearfix"></div>
+        </div>
+    </div>
+
+<div class="by_productList_bannerImg">
+ <img src="assets/img/product/amarnath.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Product Banner" />
+</div>
+</div>
 <xyz ng-if="productSH[selectedMenuId]" ng-controller="ProductMenuCtrl">
   <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
   <div class="by_categorySectionHeader"  style='min-height:230px;'>
