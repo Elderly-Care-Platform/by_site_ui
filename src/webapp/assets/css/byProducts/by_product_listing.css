@@ -210,3 +210,32 @@
     background: #d9d9d9;
     border: 2px solid #fff;
   }
+
+  @media screen and (max-width: 920px){
+    .by_productVideoThumb1, .by_productVideoThumb3,  .by_productVideoThumb5, .by_productVideoThumb7,  .by_productVideoThumb9
+  {
+    width: 48%;
+    height: auto;
+    float: left;
+    margin-bottom: 20px;
+  }
+  .by_productVideoThumb2, .by_productVideoThumb4, .by_productVideoThumb6, .by_productVideoThumb8
+  {
+    width: 48%;
+    height: auto;
+    float: right !important;
+    margin-bottom: 20px;
+  }
+  .by_productVideoThumb9
+  {
+    margin-top: -30px;
+  }
+  }
+  @media screen and (max-width: 480px){
+    .by_productVideoThumb1, .by_productVideoThumb2, .by_productVideoThumb3, .by_productVideoThumb4, .by_productVideoThumb5, .by_productVideoThumb6, .by_productVideoThumb7, .by_productVideoThumb8, .by_productVideoThumb9
+    {
+      width: 100%;
+      float: none;
+      margin-right: 0px;
+    }
+  }
