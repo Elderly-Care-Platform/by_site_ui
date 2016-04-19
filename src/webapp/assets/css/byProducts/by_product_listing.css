@@ -176,3 +176,37 @@
   {
     text-decoration: none !important;
   }
+  .by_productVideoThumb1, .by_productVideoThumb2,  .by_productVideoThumb4, .by_productVideoThumb5,  .by_productVideoThumb7, .by_productVideoThumb8
+  {
+    width: 32%;
+    height: auto;
+    margin-right: 2%;
+    float: left;
+    margin-bottom: 20px;
+  }
+  .by_productVideoThumb3, .by_productVideoThumb6, .by_productVideoThumb9
+  {
+    width: 32%;
+    height: auto;
+    float: left;
+    margin-bottom: 20px;
+  }
+  .by_productVideoThumbHead
+  {
+    width: 100%;
+    height: auto;
+    line-height: 25px;
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+  .by_productVideoThumbHead a
+  {
+    text-decoration: underline;
+    color: #008000 !important;
+  }
+  .by_productVideoThumbImage, .by_productVideoThumbVideo
+  {
+    width: 100%;
+    background: #d9d9d9;
+    border: 2px solid #fff;
+  }

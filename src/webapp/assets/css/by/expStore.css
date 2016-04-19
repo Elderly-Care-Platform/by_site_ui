@@ -813,7 +813,7 @@
     cursor: pointer;
     padding-top: 20%;
 }
-#by_expVideoFrame, #by_expVideoFrame1
+#by_expVideoFrame, #by_expVideoFrame1, #by_expVideoFrame2, #by_expVideoFrame3
 {
     display: none;
 }
