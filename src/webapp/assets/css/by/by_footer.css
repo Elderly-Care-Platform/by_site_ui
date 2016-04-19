@@ -220,7 +220,7 @@
 .by_contact_footerLeft
 {
     float: left;
-    width: 388px;
+    width: 490px;
 }
 .by_contact_footerRight
 {
@@ -232,7 +232,7 @@
     width: 100%;
     height: auto;
     padding-bottom: 30px;
-    font-size: 17px;
+    font-size: 21px;
 }
 .by_contactPhoneCommImg
 {
@@ -246,6 +246,21 @@
     width: calc(100% - 35px);
     float: left;
     height: auto;
+}
+.by_contactPhoneCommText a, .by_contactPhoneCommText a:hover
+{
+    color: #008000;
+    text-decoration: underline;
+}
+@media (max-width: 1010px){
+    .by_contact_footerLeft
+    {
+        width: 380px;
+    }
+    .by_contactPhoneComm
+    {
+        font-size: 17px;
+    }
 }
 @media (max-width: 990px){
     .by_footerAddress

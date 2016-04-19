@@ -301,6 +301,7 @@
     /*background: url('../../img/section_headers/product_section_bg.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat center;*/
     background: #fff;
     background-size: cover;
+    border-bottom: 4px solid #008000;
 }
 .by_categorySectionHeaderText
 {

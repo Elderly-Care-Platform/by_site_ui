@@ -424,12 +424,12 @@ define(['byProductApp', 'byUtil',
                 }
             }
 
-            $scope.showVideo = function(){       
-                $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=1');
-                var frameHeight = $(".by_expVideoShow").outerHeight();
-                $("#by_expVideoFrame").attr("height", frameHeight);
-                $("#by_expVideoFrame").css("display", 'block');
-                $(".by_expVideoShow").hide();
+            $scope.showVideo4 = function(){       
+                $("#by_expVideoFrame4").attr("src", 'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=1');
+                var frameHeight = $(".by_expVideoShow4").outerHeight();
+                $("#by_expVideoFrame4").attr("height", frameHeight);
+                $("#by_expVideoFrame4").css("display", 'block');
+                $(".by_expVideoShow4").hide();
             };
 
             $scope.showVideo1 = function(){       
