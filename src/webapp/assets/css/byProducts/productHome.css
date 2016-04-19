@@ -312,6 +312,24 @@
 		width: calc(100% - 1px);
 	}
 }
+.by_productAllHome
+{
+	width: 100%;
+	height: auto;
+	padding: 5px 15px;
+	text-align: center;
+	background-color: #008000;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: -10px;
+	margin-bottom: 20px;
+}
+.by_productAllHome a, .by_productAllHome a:hover
+{
+	display: block;
+	color: #fff;
+	font-size: 20px;
+}
 .by_productAll
 {
 	width: 200px;
