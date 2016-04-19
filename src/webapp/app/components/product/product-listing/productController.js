@@ -445,7 +445,7 @@ define(['byProductApp', 'byUtil',
                 var frameHeight = $(".by_expVideoShow2").outerHeight();
                 $("#by_expVideoFrame2").attr("height", frameHeight);
                 $("#by_expVideoFrame2").css("display", 'block');
-                $(".by_expVideoShow21").hide();
+                $(".by_expVideoShow2").hide();
             };
 
             $scope.showVideo3 = function(){       

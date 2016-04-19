@@ -34,7 +34,7 @@
 .by_homeModiListNumberTop ol li
 {
     line-height: 32px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-top: 7px;
     font-size: 23px;
     margin-left: 23px;
@@ -75,11 +75,11 @@
 
 .by_homeModiListDisc ul li
 {
-    list-style-image: url('../../img/home-modification/header_2_bullet.png?versionTimeStamp=%PROJECT_VERSION%') !important;
+    list-style-image: url('../../img/home-modification/arrow.png?versionTimeStamp=%PROJECT_VERSION%') !important;
     line-height: 20px;
-    padding-bottom: 3px;
+    padding-bottom: 7px;
     padding-top: 3px;
-    font-size: 16px;
+    font-size: 18px;
     margin-left: 23px;
 }
 .custom-counter li {

@@ -96,7 +96,7 @@
     color: #000;
     font-size: 28px;
 }
-.by_directoryBannerTopText2 a
+.by_directoryBannerTopText2 a, .by_directoryBannerTopText2 a:hover
 {
     text-decoration: underline;
     font-size: 28px;
@@ -438,7 +438,6 @@
         position: absolute;
         bottom: 0px;
         left: 0px;
-        width: 250px;
     }
 }
 @media ( max-width: 1200px){
@@ -447,6 +446,10 @@
         width: calc(96% - 250px);
         margin-left: 2%;
         margin-right: 2%;
+    }
+    .by_productList_bannerImg
+    {
+        width: 250px;
     }
 }
 @media ( max-width: 1100px) {

@@ -197,11 +197,11 @@
     height: auto;
     line-height: 25px;
     font-size: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 3px;
   }
   .by_productVideoThumbHead a
   {
-    text-decoration: underline;
+    
     color: #008000 !important;
   }
   .by_productVideoThumbImage, .by_productVideoThumbVideo

@@ -1659,7 +1659,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     padding-bottom: 30px;
     font-weight: bold;
 }
-.by_homeSection_wrap_title a
+.by_homeSection_wrap_title a, .by_homeSection_wrap_title a:hover, .by_homeSection_centuryBig a, .by_homeSection_centuryBig a:hover
 {
     text-decoration: underline;
     color: #008000;

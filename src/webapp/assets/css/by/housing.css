@@ -2,16 +2,18 @@
 {
 	width: calc(100% - 30px);
 	margin: 10px 15px;
-	color: #000;
+	color: #fff;
 	font-size: 15px;
 	line-height: 22px;
+	padding: 10px 5px;
+	background: #008000;
 }
-.by_directoryRegister a
+.by_directoryRegister a, .by_directoryRegister a:hover
 {
 	font-size: 19px;
 	font-weight: bold;
 	text-decoration: underline;
-	color: #008000 ;
+	color: #fff ;
 }
 .by_housingCard
 {

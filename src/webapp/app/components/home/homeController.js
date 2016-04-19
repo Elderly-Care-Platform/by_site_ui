@@ -90,7 +90,7 @@ define(['byApp', 'byUtil', 'homePromoController',
             }
 
             $scope.showVideo = function(){       
-                $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/G7iQyQM9o78?rel=0&showinfo=0&autoplay=1');
+                $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/HPHXQ5aMmq0?rel=0&showinfo=0&autoplay=1');
                 var frameHeight = $(".by_expVideoShow").outerHeight();
                 $("#by_expVideoFrame").attr("height", frameHeight);
                 $("#by_expVideoFrame").css("display", 'block');
