@@ -1662,6 +1662,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 .by_homeSection_wrap_title a
 {
     text-decoration: underline;
+    color: #008000;
 }
 .by_homeSection_wrap_title small
 {
@@ -1718,6 +1719,9 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 {
     font-size: 16px;
 }
+.by_homeSection_centuryArrow a{
+    cursor: inherit;
+}
 .by_homeSection_centuryArrow a:after
 {
     content: '';
@@ -1728,6 +1732,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     display: inline-block;
     border-left: 16px solid #ccc;
     margin-left: 5px;
+    cursor: inherit;
 }
 .by_homeSection_link
 {
