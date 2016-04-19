@@ -13,7 +13,7 @@
     <div class="by_menuHeadFindArrow"></div>
     <div class="clearfix"></div>
     <ul class="nav nav-list" ng-init="smartScroll();">
-        <li ng-repeat="menu in $root.menuCategoryMapByName['E-Shop'].children" id="{{menu.id}}" class="byTreeMenu-wrapper"
+        <li ng-repeat="menu in $root.menuCategoryMapByName['Products'].children" id="{{menu.id}}" class="byTreeMenu-wrapper"
             ng-if="menu.module == menuConfig.modules['product'].moduleId">
             <a ng-if="menu.children.length === 0" class="by_treeMenuText"
                ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(menu.displayMenuName)}}/{{menu.id}}"
@@ -71,12 +71,12 @@
         <img src="assets/img/home/line.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" height="1"
              alt="Menu Divider"/>
     </div>
-    <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['E-Shop'].children"
+   <!--  <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['Products'].children"
          ng-if="menu.module == menuConfig.modules['discuss'].moduleId && showContact.showContactNumber == false">
         <a href="#!/shop/review/{{menu.id}}/">
             Questions &amp; Reviews
         </a>
-    </div>
+    </div> -->
     <!--<div ng-if="selectedMenu.id != $root.byTopMenuId">
         <div class="col-md-12">Can't find what you need? Want to rent?</div>
         <div class="clearfix"></div>
@@ -99,7 +99,7 @@
             <div class="by_menuHeadFindArrow"></div>
             <div class="clearfix"></div>
             <ul class="nav nav-list">
-                <li ng-repeat="menu in $root.menuCategoryMapByName['E-Shop'].children" id="{{menu.id}}"
+                <li ng-repeat="menu in $root.menuCategoryMapByName['Products'].children" id="{{menu.id}}"
                     class="byTreeMenu-wrapper" ng-if="menu.module == menuConfig.modules['product'].moduleId">
                     <a ng-if="menu.children.length === 0"
                        ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{getSlug(menu.displayMenuName)}}/{{menu.id}}"
@@ -156,12 +156,12 @@
                 <img src="assets/img/home/line.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" height="1"
                      alt="Menu Divider"/>
             </div>
-            <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['E-Shop'].children"
+            <!-- <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['Products'].children"
                  ng-if="menu.module == menuConfig.modules['discuss'].moduleId && showContact.showContactNumber == false">
                 <a href="#!/shop/review/{{menu.id}}/">
                     Questions &amp; Reviews
                 </a>
-            </div>
+            </div> -->
             <!--<div ng-if="showContact.showContactNumber == true">
                 <div class="col-md-12">Can't find what you need? Want to rent?</div>
                 <div class="clearfix"></div>
