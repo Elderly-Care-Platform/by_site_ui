@@ -99,9 +99,8 @@
       <img ng-if="selectedMenuId != '10214' && selectedMenuId != '10212' && selectedMenuId != '10225' && selectedMenuId != '10213'" ng-src="{{productSH[selectedMenuId].sectionImage}}" alt="{{productSH[selectedMenuId].sectionHead}}" />
       <div  ng-if="selectedMenuId == '10214' || selectedMenuId == '10212' || selectedMenuId == '10225' || selectedMenuId == '10213'" style="position:relative; border:1px solid #fff; height:210px; ">
           <iframe id="by_productVideoFrame"  width="100%" height="208" ng-src="{{trustAsResourceUrl(productSH[selectedMenuId].sectionImage)}}" frameborder="0" allowfullscreen></iframe>
-          <div class="by_expVideoGrad" ng-click="showVideo();" style="font-size:18px; height:208px;">
-            <img src="assets/img/experience_store/play.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Video Icon" style="width:40px;" /><br/>
-            Watch our video
+          <div class="by_expVideoGrad" ng-click="showVideo();" >
+            <div class="by_expVideoShowVideoIcon"></div>
           </div>
       </div>
     </div>

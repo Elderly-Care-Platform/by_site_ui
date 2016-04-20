@@ -183,6 +183,7 @@
     margin-right: 2%;
     float: left;
     margin-bottom: 20px;
+    margin-top: 20px;
   }
   .by_productVideoThumb3, .by_productVideoThumb6, .by_productVideoThumb9
   {
@@ -190,6 +191,7 @@
     height: auto;
     float: left;
     margin-bottom: 20px;
+    margin-top: 20px;
   }
   .by_productVideoThumbHead
   {
