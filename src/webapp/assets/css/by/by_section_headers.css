@@ -205,6 +205,17 @@
     margin-top: 38px;
     text-align: center;
 }
+.by_expBannerTopText .by_productList_bannerText
+{
+    text-align: left;
+}
+.by_expStore_bannerImg
+{
+    width: 360px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
 .by_productList_bannerText h1 {
     font-family:  Segoe_Print!important;
     font-size: 25px;
@@ -521,6 +532,10 @@
         margin-top: 50px;
         margin-left: 300px;
     }
+    .by_expStore_bannerImg
+    {
+        width: 280px;
+    }
 }
 @media ( max-width: 720px) {
     .by_directoryBanner {
@@ -627,7 +642,7 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .by_homeModiHeaderImg
+    .by_homeModiHeaderImg, .by_expStore_bannerImg
     {
         display: none;
     }
@@ -639,6 +654,10 @@
         margin-right: auto;
         padding-left: 15px;
         padding-right: 15px;
+    }
+    .by_expBannerTopText .by_productList_bannerText
+    {
+        text-align: center;
     }
 }
 @media ( max-width: 594px) {
