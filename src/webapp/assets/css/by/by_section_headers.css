@@ -234,7 +234,8 @@
 }
 .by_productList_bannerText h1 span{
     font-weight: normal;
-    font-size: 21px;
+    font-size: 29px;
+    line-height: 35px;
     color: #fff;
     font-family: century_gothic!important;
 }
@@ -452,6 +453,18 @@
     left: 0px;
     bottom: 0px;
 }
+.by_clAc_bannerImg
+{
+    width: 550px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+.by_clAc_BannerTopText
+{
+    width: calc(100% - 570px);
+    float: right;
+}
 @media ( max-width: 1345px){
     .by_productList_bannerImg {
         position: absolute;
@@ -535,6 +548,18 @@
     .by_expStore_bannerImg
     {
         width: 280px;
+    }
+    .by_clAc_bannerImg
+    {
+        width: 300px;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+    .by_clAc_BannerTopText
+    {
+        width: calc(100% - 320px);
+        float: right;
     }
 }
 @media ( max-width: 720px) {
@@ -642,7 +667,7 @@
         margin-left: auto;
         margin-right: auto;
     }
-    .by_homeModiHeaderImg, .by_expStore_bannerImg
+    .by_homeModiHeaderImg, .by_expStore_bannerImg, .by_clAc_bannerImg
     {
         display: none;
     }
@@ -658,6 +683,11 @@
     .by_expBannerTopText .by_productList_bannerText
     {
         text-align: center;
+    }
+    .by_clAc_BannerTopText
+    {
+        width: 100%;
+        float: right;
     }
 }
 @media ( max-width: 594px) {
