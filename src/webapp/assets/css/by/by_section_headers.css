@@ -213,10 +213,11 @@
 .by_productList_bannerText h1 strong {
     display: block;
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 50px;
     font-family: century_gothic!important;
     padding-top: 6px;
     padding-bottom: 40px;
+    line-height: 52px;
 }
 .by_productList_bannerText h1 span{
     font-weight: normal;
@@ -394,8 +395,9 @@
 }
 .by_homeModiBannerText
 {
-    width: 100%;
+    width: calc(100% - 380px);
     margin-top: 50px;
+    margin-left: 380px;
 }
 .by_homeModiBannerText span
 {
@@ -418,6 +420,7 @@
     font-family: century_gothic !important;
     text-transform: uppercase;
     padding-top: 3px;
+    font-weight: bold;
 }
 .by_homeModiBannerText span.by_homeModiBannerText3
 {
@@ -430,10 +433,10 @@
 }
 .by_homeModiHeaderImg
 {
-    width: 210px;
+    width: 350px;
     position: absolute;
-    right: 0px;
-    bottom: -1px;
+    left: 0px;
+    bottom: 0px;
 }
 @media ( max-width: 1345px){
     .by_productList_bannerImg {
@@ -503,7 +506,13 @@
 }
 @media ( max-width: 850px){
     .by_homeModiHeaderImg{
-        width: 180px !important;
+        width: 300 !important;
+    }
+    .by_homeModiBannerText
+    {
+        width: calc(100% - 300px);
+        margin-top: 50px;
+        margin-left: 300px;
     }
 }
 @media ( max-width: 720px) {
@@ -588,15 +597,6 @@
         width: 245px;
         margin-top: 40px;
     }
-    .by_homeModiBannerText span.by_homeModiBannerText2{
-        font-size: 30px;
-        line-height: 42px;
-    }
-    .by_homeModiBannerText span.by_homeModiBannerText3
-    {
-        font-size: 16px;
-        line-height: 21px;
-    }
     .by_directoryBannerTopTextwrap
     {
         width:calc(100% - 30px);
@@ -620,6 +620,19 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .by_homeModiHeaderImg
+    {
+        display: none;
+    }
+    .by_homeModiBannerText
+    {
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 @media ( max-width: 594px) {
     .by_directoryBanner_title {
@@ -630,25 +643,7 @@
         padding-top: 45px;
         line-height: 24px;
     }
-    .by_homeModiHeaderImg
-    {
-        width: 145px !important;
-    }
-    .by_homeModiBannerText span.by_homeModiBannerText1
-    {
-        font-size: 14px;
-    }
-    .by_homeModiBannerText span.by_homeModiBannerText2 {
-        font-size: 18px;
-        line-height: 22px;
-    }
-    .by_homeModiBannerText span.by_homeModiBannerText3 {
-        font-size: 13px;
-        line-height: 21px;
-    }
-    .by_homeModiBannerText{
-        width: 169px;
-    }
+    
 }
 @media ( max-width: 440px) {
     .by_directoryBanner_title {

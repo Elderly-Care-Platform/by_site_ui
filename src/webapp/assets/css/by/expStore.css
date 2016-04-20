@@ -822,11 +822,11 @@
 }
 .by_expVideoShowVideoIcon
 {
-    width: 70px;
-    height: 49px;
+    width: 58px;
+    height: 40px;
     background: url(../../img/product/Play.png?versionTimeStamp=%PROJECT_VERSION%) center no-repeat;
-    left: calc(50% - 35px);
-    top: calc(50% - 24px);
+    left: calc(50% - 28px);
+    top: calc(50% - 20px);
     position: absolute;
 }
 .by_expStoreHeaderImage
