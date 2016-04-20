@@ -4,7 +4,7 @@
     <div class="">
            <div class="by_productList_bannerText">
              <h1> 
-             <strong style=" padding-bottom:0px;">CLASSES & ACTVITIES</strong>
+             <strong style=" padding-bottom:7px;">CLASSES & ACTVITIES</strong>
              <span >for Senior Citizens in Bangalore  </span>
               </h1>
               <div class="clearfix margin-bottom-40"></div>
@@ -15,8 +15,11 @@
   <div class="by_whiteBg">
        <div class="by_clAc_BannerTopText">
         <div class="by_productList_bannerTextWrap" style="padding:30px 0px; width:100%; ">
-        <span>Technology, legal, creative, and more.  <br/>
-        To register, call <b>{{telNo}}</b>
+        <span>
+            Technology, legal, creative, and more.  
+                <div class="clearfix" style="height:5px;"></div>
+            To register, <a href="tel:{{telNo}}" ng-if="$root.windowWidth < 721"><div class="by_callToActionButton" ><img src="assets/img/home/call.png?versionTimeStamp=1459503470417" alt="BeautifulYears Call"> Call
+          </div></a> <xyz ng-if="$root.windowWidth > 720">call</xyz> <b>{{telNo}}</b>
         </span>
         </div><div class="clearfix"></div>
         </div>
