@@ -9,6 +9,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
         $scope.contact.userEmail ='';
         $scope.contact.username = '';
         $scope.contact.text = '';
+        $scope.contact.userPhone = '';
         $scope.showSelectInput = false;
         $scope.telNo = BY.config.constants.byContactNumber;
 
@@ -27,6 +28,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
             $scope.isLoggedIn = true;
             $scope.contact.userEmail = localStorage.getItem("USER_ID");
             $scope.contact.username = BY.byUtil.validateUserName(localStorage.getItem("USER_NAME"));
+            $scope.contact.userPhone = localStorage.getItem("USER_PHONENUMBER");
         }
 
         (function(){
@@ -51,7 +53,12 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
                 $scope.contactUs.text = tinyMCE.activeEditor.getContent();
             } else{
                 $scope.contactUs.text = $scope.contact.text;
-            }           
+            }   
+
+            if($scope.contact.userPhone){
+                $scope.contactUs.text = $scope.contactUs.text + '  Phone Number: ' + $scope.contact.userPhone;
+            }        
+            
             
             $scope.contactUs.username = $scope.contact.username;
 
