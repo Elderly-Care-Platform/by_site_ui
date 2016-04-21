@@ -40,19 +40,16 @@
     width: 100%;
     height: auto;
     font-size: 20px;
-    text-align: center;
     margin-bottom: 30px;
 }
 .by_sectionHeader h1 {
     font-size: 20px;
-    text-align: center;
     font-family: century_gothic !important;
     color: #565353;
     font-weight: bold;
 }
 .by_sectionHeader h2{
     font-size: 30px;
-    text-align: center;
     font-family: century_gothic !important;
     color: #565353;
     font-weight: bold;
@@ -487,6 +484,13 @@
     {
         width: calc(100% - 190px);
     }
+    .by_directoryBannerTopTextwrap, .by_directoryBannerTopText
+    {
+        width: calc(90% - 250px);
+        float: right;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 }
 @media ( max-width: 1100px) {
     .by_directoryBannerDivider {
@@ -510,7 +514,7 @@
     }
 }
 
-@media ( max-width: 1085px) {
+@media ( max-width: 965px) {
     .by_directoryBannerText {
         width: 50% !important;
     }
