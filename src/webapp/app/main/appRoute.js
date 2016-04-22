@@ -42,6 +42,21 @@ define([], function () {
             })
 
 
+            /* classes and activities */
+
+            .when('/classes-actitivies-for-senior-citizens', {
+                templateUrl: 'app/components/classes-activities/classes-activities.html', controller: 'classesActivitiesCtrl', resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/classes-activities/classes-activities'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
+
             //**************Communities routes start******************************************************************
             .when('/communities/:slug/:menuId/:discussType', {
                 templateUrl: 'app/components/discuss/discussion.html', controller: 'DiscussMenuCtrl', resolve: {

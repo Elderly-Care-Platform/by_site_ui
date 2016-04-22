@@ -1,20 +1,22 @@
-<div class="by_contact_banner" >
-  <div class="headerHeightNoBreadCrumb margin-bottom-0" ng-if="$root.windowWidth < 721"></div>
+<div class="by_directoryBanner" >
+  <div class="headerHeightNoBreadCrumb margin-bottom-0" ></div>
   <div class="container">
          <div class="by_contact_bannerText">
-           <h1> We would love 
-           <strong>to hear from you</strong>
+           <h1> We would love to
+           <strong>Keep in touch</strong>
+           <span>with you!</span>
             </h1>
        </div>
        <div class="by_contact_bannerImg">
          <img src="assets/img/footer/contactAunty.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Contact Banner" />
        </div>
+       <div class="clearfix"></div>
   </div>   
 </div>
 
 <!--=== End Breadcrumbs ===-->
 
-<div class="container content discussion-page breadCrumbMargin" style="padding-top:20px;">
+<div class="container content discussion-page breadCrumbMargin" style="padding-top:20px; padding-bottom:0px;">
 
     <div class="col-md-12 no-padding both-container by_editor_wrap by_contactForm">
 
@@ -41,6 +43,12 @@
             <input type="text" class="username-textbox textbox by_homeContactFeildBg by_contactBg" name="userEmail" ng-model="contact.userEmail" placeholder="E-mail ID">
         </div>
 
+        <div class="col-md-6 no-padding" style="margin-bottom:20px;">
+            <input type="text" class="username-textbox textbox by_homeContactFeildBg by_contactBg" name="username" ng-model="contact.userPhone" placeholder="Phone Number (optional)">
+        </div>
+
+        
+
         </span>
         
 
@@ -52,26 +60,82 @@
         </div>
 
         <div class="clearfix"></div>
-        <div class="col-md-12 no-padding margin-bottom-15 margin-top-20">
-            <div class="col-md-7 no-padding-left">
-                <div class="by_contactAddress"> 
-                    <span>Address:</span> #48, 2nd Main, Koramangala 1st block (near Wipro park),   Bangalore - 560034
+        <div class="col-md-12 no-padding margin-top-20">
+            <div class="by_contact_footerLeft">
+                <div class="by_contactPhoneComm">
+                    <div class="by_contactPhoneCommImg">
+                        <img src="assets/img/footer/mail.png?versionTimeStamp=%PROJECT_VERSION%" alt="mail" width="100%" />
+                    </div>
+                    <div class="by_contactPhoneCommText"><strong>Email us:</strong> <u><a href="mailto:contactus@beautifulyears.com">ContactUs@BeautifulYears.com</a></u></div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="by_contactHours">
-                    <span>Opening hours:</span> 10:30AM - 7:30PM<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp; Sunday: 11-00AM - 5:00PM
+                <div class="by_contactPhoneComm">
+                    <div class="by_contactPhoneCommImg">
+                        <img src="assets/img/footer/phone_icon.png?versionTimeStamp=%PROJECT_VERSION%" alt="phone" width="100%" />
+                    </div>
+                    <div class="by_contactPhoneCommText">
+                    <strong>Call us:</strong> <a href="tel:{{telNo}}">{{telNo}}</a>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="by_contactPhone">
-                    <span>Phone:</span> <a href="tel:{{telNo}}">{{telNo}}</a>
+                <div class="by_contactPhoneComm">
+                    <div class="by_contactPhoneCommImg">
+                        <img src="assets/img/footer/home.png?versionTimeStamp=%PROJECT_VERSION%" alt="home" width="100%" />
+                    </div>
+                    <div class="by_contactPhoneCommText"> 
+                    <strong>Visit us:</strong> #48, 2nd Main, Koramangala 1st block (near Wipro park),   Bangalore - 560034
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="by_contactPhone">
-                    <span>E-mail:</span> <a href="mailto:contactus@beautifulyears.com">ContactUs@BeautifulYears.com</a>
+                <div class="by_contactPhoneComm">
+                    <div class="by_contactPhoneCommImg">
+                        <img src="assets/img/footer/clock.png?versionTimeStamp=%PROJECT_VERSION%" alt="clock" width="100%" />
+                    </div>
+                    <div class="by_contactPhoneCommText">
+                    <strong>Opening hours:</strong> 10:30AM - 7:30PM<br/>
+                    <xyz ng-if="$root.windowWidth > 440">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp; &nbsp; Sunday: by appointment
+                    </xyz>
+                    <xyz ng-if="$root.windowWidth < 440">
+                    Sunday: by appointment
+                    </xyz>                    
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
+                
             </div>
-            <div class="col-md-5 no-padding">
+            <div class="by_contact_footerRight no-padding">
+                <div class="by_contactPhoneComm" style="padding-bottom:10px;">
+                    <div class="by_contactPhoneCommImg">
+                        <img src="assets/img/footer/google-map.png?versionTimeStamp=%PROJECT_VERSION%" alt="google map" width="100%" />
+                    </div>
+                    <div class="by_contactPhoneCommText">
+                    <strong><u><a href="https://goo.gl/sSu4BB" target="_blank">Google Maps</a></u></strong> 
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
                 <a href="https://goo.gl/sSu4BB" target="_blank">
-                    <img src="assets/img/home/map.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Maps" width="100%" />
+                    <img src="assets/img/footer/map.png?versionTimeStamp=%PROJECT_VERSION%" alt="Maps" width="100%" />
                 </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="by_container by_whiteBg">
+    <div class="container">
+        <div class="col-md-12">
+            <div class="by_contactus_social">
+                Subscribe to our channel <a href="https://www.youtube.com/channel/UCqdlVJXp7pqXZwj-u2atFOQ?spfreload=10"><img src="assets/img/footer/youtube.png?versionTimeStamp=%PROJECT_VERSION%"  alt="Beautiful years you tube channel" /></a>
+            </div>
+            <div class="by_contactus_social">
+                “Like” our Facebooks page  <a href="https://www.facebook.com/BeautifulYearsIndia/"><img src="assets/img/footer/facebook.png?versionTimeStamp=%PROJECT_VERSION%"  alt="Beautiful years facebook" /></a>
+            </div>
+            <div class="by_contactus_social">
+                Follow us on  Twitter  <a href="https://twitter.com/@beautifulyears1"><img src="assets/img/footer/twitter.png?versionTimeStamp=%PROJECT_VERSION%" alt="Beautiful years twitter" /></a>
+            </div>
+            <div class="by_contactus_social">
+                Follow us on  Linkedin  <a href="https://www.linkedin.com/company/beautiful-years-technologies-&-services-pvt-ltd?trk=biz-companies-cym1"><img src="assets/img/footer/linkedin.png?versionTimeStamp=%PROJECT_VERSION%" alt="Beautiful years twitter" /></a>
             </div>
         </div>
     </div>
@@ -87,14 +151,12 @@
                 var headerHeight = $(".by_header").height();
                 if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
                     BY.byUtil.changeHeaderImage();
-                    $(".by_header").removeClass("by_header_image"); 
-                    $(".by_header").addClass("by_contactHeaderImage");
+                    $(".by_header").addClass("by_header_image"); 
                     $(".by_header").removeClass("by_headerBoder");
                 } else {
                     BY.byUtil.changeHeaderImage();
-                    $(".by_header").removeClass("by_header_image");          
+                    $(".by_header").removeClass("by_header_image"); 
                     $(".by_header").addClass("by_headerBoder");
-                    $(".by_header").removeClass("by_contactHeaderImage");
                 }
                     
             });

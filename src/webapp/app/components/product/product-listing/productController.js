@@ -87,13 +87,11 @@ define(['byProductApp', 'byUtil',
                     var headerHeight = $(".by_header").height();
                     if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
                         BY.byUtil.changeHeaderImage();
-                        $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").addClass("by_productHeaderImage");
+                        $(".by_header").addClass("by_header_image"); 
                         $(".by_header").removeClass("by_headerBoder");
                     } else {
                         BY.byUtil.changeHeaderImage();
                         $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").removeClass("by_productHeaderImage");
                         $(".by_header").addClass("by_headerBoder");
                     }
                         
@@ -425,6 +423,39 @@ define(['byProductApp', 'byUtil',
                     product.discountPercentage = discount;
                 }
             }
+
+            $scope.showVideo4 = function(){       
+                $("#by_expVideoFrame4").attr("src", 'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=1');
+                var frameHeight = $(".by_expVideoShow4").outerHeight();
+                $("#by_expVideoFrame4").attr("height", frameHeight);
+                $("#by_expVideoFrame4").css("display", 'block');
+                $(".by_expVideoShow4").hide();
+            };
+
+            $scope.showVideo1 = function(){       
+                $("#by_expVideoFrame1").attr("src", 'https://www.youtube.com/embed/G7iQyQM9o78?rel=0&showinfo=0&autoplay=1');
+                var frameHeight = $(".by_expVideoShow1").outerHeight();
+                $("#by_expVideoFrame1").attr("height", frameHeight);
+                $("#by_expVideoFrame1").css("display", 'block');
+                $(".by_expVideoShow1").hide();
+            };
+
+            $scope.showVideo2 = function(){       
+                $("#by_expVideoFrame2").attr("src", 'https://www.youtube.com/embed/pE8EShECqmA?rel=0&showinfo=0&autoplay=1');
+                var frameHeight = $(".by_expVideoShow2").outerHeight();
+                $("#by_expVideoFrame2").attr("height", frameHeight);
+                $("#by_expVideoFrame2").css("display", 'block');
+                $(".by_expVideoShow2").hide();
+            };
+
+            $scope.showVideo3 = function(){       
+                $("#by_expVideoFrame3").attr("src", 'https://www.youtube.com/embed/hPR5Wf3MlTc?rel=0&showinfo=0&autoplay=1');
+                var frameHeight = $(".by_expVideoShow3").outerHeight();
+                $("#by_expVideoFrame3").attr("height", frameHeight);
+                $("#by_expVideoFrame3").css("display", 'block');
+                $(".by_expVideoShow3").hide();
+            };
+
         }
 
         ProductsController.$inject = ['$rootScope', '$scope',

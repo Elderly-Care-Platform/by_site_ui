@@ -1,6 +1,6 @@
 //DIscuss All
-define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'],
-    function (byApp, byUtil, userTypeConfig, byEditor, urlFactory) {
+define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactUsShortCtrl'],
+    function (byApp, byUtil, userTypeConfig, byEditor, urlFactory, contactUsShortCtrl) {
 
         function ServicesController($scope, $rootScope, $location, $route, $routeParams, FindServices, $sce, urlFactoryFilter, $window) {
             $scope.findViews                = {};
@@ -65,13 +65,11 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'],
                     var headerHeight = $(".by_header").height();
                     if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
                         BY.byUtil.changeHeaderImage();
-                        $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").addClass("by_directoryHeaderImage");
+                        $(".by_header").addClass("by_header_image"); 
                         $(".by_header").removeClass("by_headerBoder");
                     } else {
                         BY.byUtil.changeHeaderImage();
                         $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").removeClass("by_directoryHeaderImage");
                         $(".by_header").addClass("by_headerBoder");
                     }
                         
@@ -133,7 +131,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'],
                 if(menu.module == $scope.menuConfig.modules['discuss'].moduleId){
                     menu = $rootScope.menuCategoryMap['56406cd03e60f5b66f62df26'];
                 }
-                $location.path("/"+$scope.removeSpecialChars(menu.displayMenuName)+"/"+menu.id+"/"+response.name);
+                $location.path("/directory/"+$scope.removeSpecialChars(menu.displayMenuName)+"/"+menu.id+"/"+response.name);
             }
 
             $scope.specialityCallback = function (speciality) {
@@ -250,7 +248,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'],
             // };
             
            
-
+            $scope.subjectTitle = 'Enquiry from ' + $scope.selectedMenu.displayMenuName;
            
 
         }

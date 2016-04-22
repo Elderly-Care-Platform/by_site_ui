@@ -403,7 +403,7 @@ body a:hover
 {
     color: #fff;
     background: #004f24;
-    margin:10px auto 10px auto;
+    margin:10px auto 30px auto;
     width: 280px;
     text-align: center;
     padding-top: 4px;
@@ -492,6 +492,22 @@ body a:hover
     margin-right: 5px;
     width: 33px;
 }
+.by_callToActionArrow a, .by_callToActionArrow a:hover
+{
+    color: #fff;
+    text-decoration: underline;
+}
+.by_callToActionArrow a:after
+{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+    border-left: 10px solid #fff;
+    margin-left: 10px;
+}
 .by_callToActionButton
 {
     background-color: #004f24;
@@ -520,6 +536,11 @@ body a:hover
     .by_callToAction a
     {
         color: #000;
+    }
+    .by_callToActionArrow a, .by_callToActionArrow a:hover
+    {
+        color: #fff;
+        text-decoration: underline;
     }
 }
 
@@ -564,4 +585,138 @@ body a:hover
 {
     color: #000;
     text-decoration: none;
+}
+
+
+.by_contactUsGreen
+{
+    width: 100%;
+    height: auto;
+    background: #008000 ;
+    text-align: center;
+    padding: 2px 15px;
+    line-height: 34px;
+    font-size: 18px;
+    color: #fff;
+}
+.by_contactUsGreen a, .by_contactUsGreen a:hover
+{
+    color: #fff;
+    text-decoration: underline;
+}
+.by_contactUsGreen a:after
+{
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+    border-left: 10px solid #fff;
+    margin-left: 5px;
+}
+.by_contactCommon
+{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 0px 15px;
+}
+.by_contactCommonFeilds
+{
+    width: calc(48% - 38px);
+    margin-right: 2%;
+    margin-bottom: 20px;
+}
+.by_contact_works
+{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0px 15px;
+    font-size: 15px;
+    position: relative;
+}
+.by_contact_worksLeft
+{
+    width: calc(100% - 270px);
+    float: left;
+    height: auto;
+}
+.by_contact_worksRight
+{
+    width: 250px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+.by_contact_worksLeftThumb
+{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+.by_contact_worksLeftItem
+{
+    border: 5px solid #FF850F;
+    border-radius: 50% !important;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 20px;
+}
+.by_contact_worksLeftText
+{
+    float: left;
+    width: calc(100% - 40px);
+    line-height: 20px;
+    font-size: 15px;
+    padding-top: 5px;
+}
+.by_contactThankYou
+{
+    display: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.by_contactCommonFeilds .by-editor-submit-btn
+{
+    background: #4A7B1D !important;
+}
+@media ( max-width : 900px){
+    .by_contact_worksLeft
+    {
+        width: 100%;
+        float: left;
+        height: auto;
+    }
+    .by_contact_worksRight
+    {
+        width: 250px;
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+        bottom: 0px;
+        right: 0px;
+        margin-bottom: -47px;
+    }
+}
+@media ( max-width : 721px){
+    .by_contactCommonFeilds, .by_contactCommonFeildsBUtton 
+    {
+        width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        float: none !important;
+    }
+    .by_contactCommon
+    {
+        padding-bottom: 20px;
+    }
+    .by_contactUsGreen
+    {
+        line-height: 24px;
+        font-size: 15px;
+    }
 }

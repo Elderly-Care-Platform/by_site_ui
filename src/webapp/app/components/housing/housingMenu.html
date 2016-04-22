@@ -10,7 +10,7 @@
 <div class="by_menuHeadFindArrow"></div><div class="clearfix"></div>
     <!--=== Header v7 Left ===-->
     <ul class="nav nav-list" ng-init="smartScroll();">
-        <li ng-repeat="menu in $root.menuCategoryMapByName['Directory'].children" id="{{menu.id}}"
+        <li ng-repeat="menu in $root.menuCategoryMapByName['Services'].children" id="{{menu.id}}"
             class="byTreeMenu-wrapper" ng-if="menu.module == menuConfig.modules['service'].moduleId">
             <div ng-if="menu.module == menuConfig.modules['housing'].moduleId" class="by_menuHousingBorderTop"></div>
             <a ng-if="menu.children.length === 0"
@@ -41,14 +41,14 @@
             <div ng-if="menu.module == menuConfig.modules['housing'].moduleId" class="by_menuHousingBorderBottom"></div>
         </li>
         
-        <li ng-repeat="menu in $root.menuCategoryMapByName['Directory'].children" id="{{menu.id}}"
+        <li ng-repeat="menu in $root.menuCategoryMapByName['Services'].children" id="{{menu.id}}"
             class="byTreeMenu-wrapper" ng-if=" menu.module == menuConfig.modules['housing'].moduleId">
             <div ng-if="menu.module == menuConfig.modules['housing'].moduleId" class="by_menuHousingBorderTop"></div>
             <a ng-if="menu.children.length === 0"
                ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{menu.id}}/all" class="by_treeMenuText"
                style="display: inline-block; width:100%; font-size:18px;"
                ng-class="{'by_treeMenuTextActive': menu.id == selectedParent.id, 'by_treeMenuTextActive': menu.id == selectedMenuId}">
-                {{menu.displayMenuName}}
+                <b style="color:#008000; text-transform:uppercase;">{{menu.displayMenuName}}</b>
             </a>
             <div ng-if="menu.module == menuConfig.modules['housing'].moduleId" class="by_menuHousingBorderBottom"></div>
         </li>
@@ -87,7 +87,7 @@
     </div>-->
 
     <div class="col-md-12 margin-top-20"></div>
-    <div class="col-md-12 by_editorButtonViews"  ng-repeat="menu in $root.menuCategoryMapByName['Directory'].children"
+    <!-- <div class="col-md-12 by_editorButtonViews"  ng-repeat="menu in $root.menuCategoryMapByName['Directory'].children"
              ng-if="menu.module == menuConfig.modules['discuss'].moduleId && showContact.showContactNumber == false">
             <a href="#!/senior-living/reviews/{{menu.id}}/">
                Questions &amp; Reviews
@@ -99,6 +99,10 @@
         <div class="by_menuContactNumber">
         <i class="fa fa-phone2"></i> {{telNo}}
         </div>
+    </div> -->
+    <div class="clearfix margin-top-10"></div>
+    <div class="by_directoryRegister">
+     Do you <b>provide</b> elder care services? Click to <a href="#!/users/login">REGISTER</a>, or <a href="#!/contactUs">contact us</a>
     </div>
     <div class="clearfix"></div>
 
@@ -114,7 +118,7 @@
           <div class="by_menuHeadFindArrow"></div><div class="clearfix"></div>
             <!--=== Header v7 Left ===-->
             <ul class="nav nav-list">
-                <li ng-repeat="menu in $root.menuCategoryMapByName['Directory'].children" id="{{menu.id}}"
+                <li ng-repeat="menu in $root.menuCategoryMapByName['Services'].children" id="{{menu.id}}"
                     class="byTreeMenu-wrapper" ng-if="menu.module == menuConfig.modules['service'].moduleId">
                     <div ng-if="menu.module == menuConfig.modules['housing'].moduleId" class="by_menuHousingBorderTop"></div>
                     <a ng-if="menu.children.length === 0"
@@ -145,14 +149,14 @@
                     </ul>
                     <div ng-if="menu.module == menuConfig.modules['housing'].moduleId" class="by_menuHousingBorderBottom"></div>
                 </li>
-                <li ng-repeat="menu in $root.menuCategoryMapByName['Directory'].children" id="{{menu.id}}"
+                <li ng-repeat="menu in $root.menuCategoryMapByName['Services'].children" id="{{menu.id}}"
                 class="byTreeMenu-wrapper" ng-if=" menu.module == menuConfig.modules['housing'].moduleId">
                 <div ng-if="menu.module == menuConfig.modules['housing'].moduleId" class="by_menuHousingBorderTop"></div>
                 <a ng-if="menu.children.length === 0"
                 ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{menu.id}}/all" class="by_treeMenuText"
                 style="display: inline-block; width:100%; font-size:18px;"
                 ng-class="{'by_treeMenuTextActive': menu.id == selectedParent.id, 'by_treeMenuTextActive': menu.id == selectedMenuId}">
-                {{menu.displayMenuName}}
+                <b style="color:#008000; text-transform:uppercase; ">{{menu.displayMenuName}}</b>
               </a>
               <div ng-if="menu.module == menuConfig.modules['housing'].moduleId" class="by_menuHousingBorderBottom"></div>
             </li>
@@ -191,13 +195,13 @@
             </div>-->
 
            <div class="col-md-12 margin-top-20"></div>
-            <div class="col-md-12 by_editorButtonViews"  ng-repeat="menu in $root.menuCategoryMapByName['Directory'].children"
+            <!-- <div class="col-md-12 by_editorButtonViews"  ng-repeat="menu in $root.menuCategoryMapByName['Directory'].children"
             ng-if="menu.module == menuConfig.modules['discuss'].moduleId && showContact.showContactNumber == false">
             <a href="#!/senior-living/reviews/{{menu.id}}/">
              Questions &amp; Reviews
            </a>
-         </div>
-         <div ng-if="showContact.showContactNumber == true">
+         </div> -->
+         <!-- <div ng-if="showContact.showContactNumber == true">
           <div class="col-md-12">Can't find what you need?</div>
           <div class="clearfix"></div>
           <a ng-href="{{'tel:'+telNo}}">
@@ -205,8 +209,13 @@
               <i class="fa fa-phone2"></i> {{telNo}}
             </div>
           </a>
-        </div>
+        </div> -->
         <div class="clearfix"></div>
+    <div class="by_directoryRegister">
+     Do you <b>provide</b> elder care services? Click to <a href="#!/users/login">REGISTER</a>, or <a href="#!/contactUs">contact us</a>
+    </div>
+        
+    <div class="clearfix"></div>
 
         </div>
     </div>

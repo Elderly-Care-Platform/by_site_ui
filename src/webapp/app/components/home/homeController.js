@@ -65,6 +65,8 @@ define(['byApp', 'byUtil', 'homePromoController',
                 });
             };
 
+            $scope.serviceCount = $rootScope.totalServiceCount;
+
             $scope.$on('directoryCountAvailable', function (event, args) {
                 animateCounter($rootScope.totalServiceCount, $(".HomeSevicesCnt"));
                 animateCounter($rootScope.totalHousingCount, $(".HomeHousingCnt"));
@@ -88,12 +90,23 @@ define(['byApp', 'byUtil', 'homePromoController',
             }
 
             $scope.showVideo = function(){       
-                $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/z9LkUOGUyrA?rel=0&showinfo=0&autoplay=1');
+                $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/HPHXQ5aMmq0?rel=0&showinfo=0&autoplay=1');
                 var frameHeight = $(".by_expVideoShow").outerHeight();
-                   $("#by_expVideoFrame").attr("height", frameHeight);
+                $("#by_expVideoFrame").attr("height", frameHeight);
+                $("#by_expVideoFrame").css("display", 'block');
                 $(".by_expVideoShow").hide();
                 $("#by_expVideoFrame").show();
             };
+
+            $scope.showVideo1 = function(){       
+                $("#by_expVideoFrame1").attr("src", 'https://www.youtube.com/embed/z9LkUOGUyrA?rel=0&showinfo=0&autoplay=1');
+                var frameHeight = $(".by_expVideoShow1").outerHeight();
+                $("#by_expVideoFrame1").attr("height", frameHeight);
+                $("#by_expVideoFrame1").css("display", 'block');
+                $(".by_expVideoShow1").hide();
+                $("#by_expVideoFrame1").show();
+            };
+
 
             $scope.getDiscussData = getDiscussData;
 
