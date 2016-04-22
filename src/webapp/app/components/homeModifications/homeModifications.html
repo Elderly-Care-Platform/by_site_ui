@@ -341,7 +341,8 @@
     <div class="by_homeSection" style="padding: 10px 0px;">
         <div class="by_homeSectionInside">
             <div class="by_homeModiWhy by_homeModiWhiteColor">
-            	Basic package starts at <b>&#8377; 6,999</b>
+            	Basic package starts at <b>&#8377; 6,999</b>. <a title="{{telNo}}" href="tel:{{telNo}}" ng-if="$root.windowWidth < 721"> <div class="by_callToActionButton"><img src="assets/img/home/call.png?versionTimeStamp=1459503470417" alt="BeautifulYears Call"> Call 
+          </div></a> <xyz ng-if="$root.windowWidth > 720"> Call </xyz> <b>{{telNo}}</b>
             </div>
         </div>
     </div>
