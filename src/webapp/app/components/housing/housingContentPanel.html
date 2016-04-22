@@ -1,11 +1,7 @@
 
 
-<div class="by_sectionHeader" ng-if="selectedMenu" >
-    <h2>{{selectedMenu.displayMenuName}}</h2>
-</div>
-
-<div class="by_callToAction margin-bottom-20">
-  <img src="assets/img/logo_symbol.png?versionTimeStamp=%PROJECT_VERSION%" alt="Logo" />We help you find best elder care services.
+<!-- <div class="by_callToAction margin-bottom-20">
+  <img src="assets/img/logo_symbol.png?versionTimeStamp=%PROJECT_VERSION%" alt="Logo" />We  find <b>best senior care solutions</b> in Bangalore
   <xyz ng-if="$root.windowWidth > 720"> <i class="fa fa-phone2"></i> {{telNo}}</xyz>
   <xyz ng-if="$root.windowWidth < 721">
     <a href="tel:{{telNo}}">
@@ -14,6 +10,12 @@
       </div>
     </a>
   </xyz>
+</div> -->
+
+
+
+<div class="by_sectionHeader" ng-if="selectedMenu" >
+    <h2>Directory of Senior Living Facilities</h2>
 </div>
 
 <div ng-repeat="housing in housing">
@@ -29,3 +31,7 @@
 	<img ng-if="pageInfo.isQueryInProgress" src="assets/img/ajax_scroll_loading.gif">
 	<!--<img src="assets/img/ajax_scroll_loading.gif" style="margin-bottom: 20px">-->
 </div>
+
+<!-- <div class="by_callToAction margin-bottom-20"  >
+     Do you <b>provide</b> elder care services? Click to <a href="#!/users/login">REGISTER</a>, or <a href="#!/contactUs">contact us</a>
+</div> -->

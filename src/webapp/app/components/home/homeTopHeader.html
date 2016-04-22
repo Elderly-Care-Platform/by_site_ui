@@ -1,18 +1,21 @@
 <div class="by_home_bg">
-    <!--          Home title            -->
-    <div class="by_home_title divLeft">
-        <h1>
-        <span class="by_home_titleOne">Everything about</span>
-        <span class="by_home_titleTwo">Senior care &amp; Aging </span>
-        <span class="by_home_titleThree">In India</span>
-        </h1><div class="clearfix"></div>
-    </div>
-    <div class="divRight by_home_agingImage mobileSite">
-        <img src="assets/img/home/ageing_people.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Header" width="100%"/>
+    <div class="by_container">
+        <div class="by_homeSection" style="padding:0px;">
+            <div class="by_homeSectionInside">
+                <!--          Home title            -->
+                <div class="by_home_title">
+                    <h1>
+                        <span class="by_home_titleOne">Everything about</span>
+                        <span class="by_home_titleTwo">Elder care <small>in India</small></span>
+                    </h1>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="clearfix"></div>
-    <div ng-if="$root.windowWidth < 720">
-          <!--            Home Top Menu           -->
+   <!-- <div ng-if="$root.windowWidth < 720">
+         
 
     <div class="by_home_topMenu">
         <div class="by_home_topMenu_item">
@@ -61,13 +64,13 @@
           </div>
         </a>
     </div>
-    </div><div class="clearfix"></div>
+    </div>--><div class="clearfix"></div>
 
      
 </div>
 
-<div ng-if="$root.windowWidth > 720">
-      <!--            Home Top Menu           -->
+<!--<div ng-if="$root.windowWidth > 720">
+     
         <div class="by_callToAction">
             <img src="assets/img/logo_symbol.png?versionTimeStamp=%PROJECT_VERSION%" alt="Logo" /> We help you find best elder care solutions. <i class="fa fa-phone2"></i> {{telNo}}
         </div>
@@ -112,4 +115,34 @@
     <div class="clearfix"></div>
 </div>
 <div class="clearfix margin-top-20" ng-if="$root.windowWidth > 720"></div>
-<div class="clearfix" ng-if="$root.windowWidth < 720"></div>
+<div class="clearfix" ng-if="$root.windowWidth < 720"></div>-->
+
+
+<div class="by_whiteBg">
+<div class="by_container" style="border-bottom:3px solid #008000;">
+    <div class="by_homeSection" style="padding:6px 0px;">        
+        <div class="by_homeSectionInside" style="position:relative; ">
+            <div class="by_homeHeaderBelow">
+                <!-- <div class="by_homeHeaderBelow2">
+                    For <xyz ng-if="$root.windowWidth > 531">senior care</xyz> solutions
+                </div>
+                <div class="by_homeHeaderBelow3">
+                   <xyz ng-if="$root.windowWidth > 720">call <b>{{telNo}} </b></xyz>
+                   <xyz ng-if="$root.windowWidth < 721"><a href="tel:{{telNo}}"><xyz ng-if="$root.windowWidth > 425"><div class="by_callToActionButton"><img src="assets/img/home/call.png?versionTimeStamp=1459503470417" alt="BeautifulYears Call"> Call 
+          </div> </xyz> <b >{{telNo}} </b> </a> </xyz>
+                </div> -->
+                <div class="by_homeHeaderBelow2">
+                    Taking care of aging parents? We are here to help!
+                </div>
+                <div class="by_homeHeaderBelow3">
+                   For elder care solutions <xyz ng-if="$root.windowWidth > 720">call <b>{{telNo}} </b></xyz>
+                   <xyz ng-if="$root.windowWidth < 721"><a href="tel:{{telNo}}"><xyz ><div class="by_callToActionButton"><img src="assets/img/home/call.png?versionTimeStamp=1459503470417" alt="BeautifulYears Call"> Call 
+          </div> </xyz> <b >{{telNo}} </b> </a> </xyz>
+                </div>
+            </div>
+            <img src="assets/img/home/home-couple_ss_2.png?versionTimeStamp=%PROJECT_VERSION%" alt="Shop" class="by_homeHeaderBelowImg" />
+        </div>
+    </div>
+    
+</div>
+</div>

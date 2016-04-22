@@ -1,6 +1,6 @@
 .by_menu
 {
-	width: 327px;
+	width: 333px;
 	margin-top: 10px;
 	height: auto;
 	font-size: 18px;
@@ -316,6 +316,7 @@
 	top: 4px;
     font-size: 22px;
     font-weight: bold;
+    color: #008000;
 }
 .nav>li> a.by_treeMenuIconMinus:after
 {
@@ -323,6 +324,7 @@
 	top: 4px;
     font-size: 22px;
     font-weight: bold;
+    color: #008000;
 }
 .nav>li> a.by_treeMenuIcon
 {
@@ -460,7 +462,7 @@
 	.by_menu
 	{		
 		margin-left: 27%;
-		width: 264px;
+		width: 270px;
 		font-size: 16px;
 		margin-top: -30px;
 	}	
@@ -590,11 +592,12 @@
 {
 	width: 100%;
 	height: auto;
-	padding: 2px 15px;
+	padding: 3px 15px;
 	margin-bottom: 10px;
 	color: #fff;
-	font-size: 18px;
+	font-size: 21px;
 	background-color: #FF850F;	
+	margin-top: 9px;
 }
 .by_menuHeadFindArrow
 {

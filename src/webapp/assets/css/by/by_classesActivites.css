@@ -1,0 +1,134 @@
+.by_clAcHeader
+{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 25px;
+	line-height: 35px;
+}
+.bannerImgClAc
+{
+	width: 100%;
+	margin-top: -300px;
+}
+.by_clAcBannrImag
+{
+	position: absolute;
+	top: 57px;
+	left: 0px;
+}
+.by_clAc_eventHead
+{
+	width:100%;
+	height: auto;
+	padding-bottom: 30px;
+	font-size: 35px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 40px;
+}
+.by_clAc_eventThumb
+{
+	width: 32%;
+	float: left;
+	margin-right: 2%;
+}
+.by_clAc_eventThumbRight
+{
+	width: 32%;
+	float: right;
+}
+.by_clAc_eventThumbText
+{
+	font-weight: bold;
+	color: #000;
+	font-size: 19px;
+	line-height: 26px;
+	padding: 10px 0px;
+}
+.by_clAc_eventThumb2
+{
+	float: left;
+	width: 33.3%;
+	height: auto;
+}
+.by_clAc_participants
+{
+	width: calc(100% - 300px);
+	float: right;
+	padding: 30px 0px 50px 0px;
+	font-size: 31px;
+    line-height: 52px;
+    max-width: 720px;
+    text-align: left;
+}
+.by_clAc_participants a
+{
+	text-decoration: underline;
+	color: #008000;
+}
+.by_clAc_participantsImg
+{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 280px;
+}
+.by_clAc_volunteer
+{
+	width: calc(100% - 380px);
+	float: left;
+	padding: 30px 0px 50px 0px;
+	font-size: 31px;
+    line-height: 52px;
+    max-width: 720px;
+    text-align: right;
+}
+.by_clAc_volunteer a
+{
+	text-decoration: underline;
+	color: #008000;
+}
+.by_clAc_volunteerImg
+{
+	position: absolute;
+	bottom: 0px;
+	right: 80px;
+	width: 280px;
+}
+@media ( max-width: 920px){
+	.by_clAc_volunteer, .by_clAc_participants
+	{
+		line-height: 42px;
+	}
+}
+@media ( max-width: 720px){
+	.by_clAc_eventThumb, .by_clAc_eventThumb2, .by_clAc_eventThumbRight
+	{
+		width: 320px;
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+		margin-bottom: 20px;
+	}
+	.by_clAc_volunteerImg, .by_clAc_participantsImg
+	{
+		position: static !important;
+		width: 320px;		
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.by_clAc_volunteer, .by_clAc_participants
+	{
+		width: 100%;
+		float: none;
+		text-align: center;
+		font-size: 25px;
+		line-height: 35px;
+	}
+	.by_clAcHeader
+	{
+		text-align: center;
+		font-size: 20px;
+	}
+}

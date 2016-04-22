@@ -1,3 +1,20 @@
+.by_directoryRegister
+{
+	width: calc(100% - 30px);
+	margin: 10px 15px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 22px;
+	padding: 10px 5px;
+	background: #008000;
+}
+.by_directoryRegister a, .by_directoryRegister a:hover
+{
+	font-size: 19px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #fff ;
+}
 .by_housingCard
 {
 	position: relative;

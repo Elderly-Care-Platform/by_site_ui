@@ -22,7 +22,8 @@ require.config({
         'app/components/search/SearchController',
         'app/components/error/errorController',
         'app/components/experienceStore/expStoreController',
-        'app/components/homeModifications/homeModifications'
+        'app/components/homeModifications/homeModifications',
+        'app/components/classes-activities/classes-activities'
     ],
 
     paths: {
@@ -166,7 +167,8 @@ require.config({
         aboutUsCtrl: 'app/components/aboutUs/aboutUsController',
         SearchCtrl: 'app/components/search/SearchController',
         errorCtrl: 'app/components/error/errorController',
-        expStoreCtrl: 'app/components/experienceStore/expStoreController'
+        expStoreCtrl: 'app/components/experienceStore/expStoreController', 
+        contactUsShortCtrl: 'app/shared/common/js/contactUsSmallController'
 
     },
 

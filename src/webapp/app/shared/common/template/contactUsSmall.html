@@ -1,0 +1,28 @@
+<div class="by_contactCommon" >
+
+       <span ng-show="errorMsg && errorMsg.length>0" >
+        {{errorMsg}}
+        </span><div class="clearfix"></div>
+         <div class="clearfix" style="height:15px;"></div>
+        <div class="by_contactCommonFeilds divLeft">
+            <input type="text" class="username-textbox textbox by_homeContactFeildBg by_contactBg" name="username" ng-model="contact.username" placeholder="Name (optional)">
+        </div>
+
+
+        <div class="by_contactCommonFeilds divLeft">
+            <input type="text" ng-change="contactButton();" ng-init="contactButton();" class="username-textbox textbox by_homeContactFeildBg by_contactBg" name="userPhone" ng-model="contact.userPhone" placeholder="Phone Number">
+        </div>
+
+       
+        
+        <div class="by_contactCommonFeildsBUtton divRight">
+            <button disabled class="btn btn-big btn-default pull-right by_btn_submit by-editor-submit-btn" style="width:100%; font-size:16px;  padding:5px 10px; " 
+                    ng-click="postContent('F')">Submit
+            </button>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="by_contactThankYou"><img src="assets/img/logo_symbol_old.png?versionTimeStamp=%PROJECT_VERSION%" alt="Logo" width="30" /> Thank you, We will get back to you shortly.</div>
+
+        
+    </div>

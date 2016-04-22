@@ -51,11 +51,11 @@
     font-size: 22px;
     display: block;
 }
-.by_aboutUsText a
+.by_aboutUsText a, .by_aboutUsText a:hover
 {
-    font-style: italic;
-    color: green;
-    text-decoration: underline;
+    color: #008000;
+    text-decoration: underline !important;
+    font-weight: bold;
 }
 .by_aboutUsMember
 {

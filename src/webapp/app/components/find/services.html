@@ -12,28 +12,40 @@
     </div>
 </div>-->
 
-<div class="by_directoryBanner">
-    <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
-    <div class="by_directoryBannerImg" ng-if="$root.windowWidth > 720">
-     <img src="assets/img/section_headers/directory_grandma.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Directory Banner" />
-   </div>
-    <div class="by_directoryBannerText">
-       <h1>Directory of
-        <STRONG>Services</STRONG>
-        <span>for seniors across India</span>
-        </h1>
-   </div>
-   <div class="by_directoryBannerDivider" ></div>
-   <div class="by_directoryBannerText by_directoryBannerText2" style="width:250px;">
-        Listing of
-        <STRONG>Senior Living</STRONG>
-        <span>facilites</span>
-   </div>
-   <div class="by_directoryBannerImg" ng-if="$root.windowWidth < 721">
-     <img src="assets/img/section_headers/directory_grandma.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Directory Banner" />
-   </div>
-   <div class="clearfix"></div>
+<div class="by_directoryBannerTop" style="position:relative; border-bottom:4px solid #008000"  >
+    <div class="by_directoryBanner">
+      <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
+        <div class="by_directoryBannerTopText">
+            <div class="by_directoryBannerText divLeft">
+              <h1>
+                <STRONG>elder care</STRONG>
+                <span>Services</span>
+              </h1>
+            </div>
+            <div class="by_directoryBannerText divRight by_directoryBannerText2">
+              <STRONG>Senior Living</STRONG>
+              <span>Facilites</span>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+         <div class="clearfix"></div>
+    </div>
+    <div class="by_whiteBg">
+        <div class="by_directoryBannerTopTextwrap" style="padding:30px 0px 10px 0px; ">
+          <div class="by_directoryBannerTopText1">
+            To find best senior care <span style="color:#000;">services in Bangalore </span>
+          </div>    
+          <div class="by_directoryBannerTopText2">
+              <a href="tel:{{telNo}}" ng-if="$root.windowWidth < 721"><div class="by_callToActionButton" ><img src="assets/img/home/call.png?versionTimeStamp=1459503470417" alt="BeautifulYears Call"> Call
+          </div></a><b><xyz ng-if="$root.windowWidth > 720">Call</xyz> {{telNo}}</b> or visit our <a href="#!/experience-center">Experience Store</a>
+          </div>      
+        </div><div class="clearfix"></div>
+    </div>
+    <div class="by_directoryBannerImg">
+      <img src="assets/img/section_headers/directory_grandma.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Directory Banner" />
+    </div>
 </div>
+
 <div class="clearfix"></div>
 <!--=== Content Part ===-->
 

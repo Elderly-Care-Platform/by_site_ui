@@ -789,12 +789,13 @@
     margin-right: auto
     float: right;
 }
-.by_expVideoShow
+.by_expVideoShow, .by_expVideoShow1
 {
     width: 100%;
     height: auto;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 .by_expVideoGrad
 {
@@ -802,7 +803,6 @@
     height: 100%;
     position: absolute;
     z-index: 1px;
-    background: rgba(0, 0, 0, 0.52);
     left: 0px;
     top: 0px;
     font-size: 25px;
@@ -810,15 +810,28 @@
     color: #fff;
     text-align: center;
     cursor: pointer;
-    padding-top: 20%;
 }
-#by_expVideoFrame
+#by_expVideoFrame, #by_expVideoFrame1, #by_expVideoFrame2, #by_expVideoFrame3, #by_expVideoFrame4
 {
     display: none;
 }
+.by_expVideoShow1, .by_expVideoShow2, .by_expVideoShow3, .by_expVideoShow4
+{
+    position: relative;
+    cursor: pointer;
+}
+.by_expVideoShowVideoIcon
+{
+    width: 58px;
+    height: 40px;
+    background: url(../../img/product/Play.png?versionTimeStamp=%PROJECT_VERSION%) center no-repeat;
+    left: calc(50% - 28px);
+    top: calc(50% - 20px);
+    position: absolute;
+}
 .by_expStoreHeaderImage
 {
-    background: url(../../img/home-modification/header_1_BG.png?versionTimeStamp=1459154409627) right no-repeat;
+    background: url(../../img/home-modification/header_1_BG.png?versionTimeStamp=%PROJECT_VERSION%) right no-repeat;
     background-size: cover;
 }
 .by_homeExpmage
