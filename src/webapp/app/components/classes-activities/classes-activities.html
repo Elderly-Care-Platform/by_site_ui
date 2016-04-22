@@ -34,7 +34,7 @@
     <div class="by_container">
         <div class="by_homeSection" style="padding: 20px 0px;">        
             <div class="by_homeSectionInside">
-                <div class="by_clAc_eventHead">
+                <!-- <div class="by_clAc_eventHead">
                     Upcoming Events
                 </div>
                 <div class="by_clAc_eventThumb">
@@ -67,7 +67,14 @@
                     </div>
                     </a>
                 </div>
-                <div class="clearfix"></div>
+                <div class="clearfix"></div> -->
+
+                <div class="by_homeModiWhy">                
+                    <img src="assets/img/experience_store/book_full.png?versionTimeStamp=%PROJECT_VERSION%" width="" alt="Events" ng-if="$root.windowWidth > 830" />
+                    <img src="assets/img/experience_store/book_full.png?versionTimeStamp=%PROJECT_VERSION%" width="690" alt="Events" ng-if="$root.windowWidth > 720 && $root.windowWidth < 831" />
+                    <img src="assets/img/experience_store/book_mobile.png?versionTimeStamp=%PROJECT_VERSION%"  alt="Events" ng-if="$root.windowWidth > 440 && $root.windowWidth < 721" />
+                    <img src="assets/img/experience_store/book_mobile.png?versionTimeStamp=%PROJECT_VERSION%" width="100%"  alt="Events" ng-if="$root.windowWidth < 441" />
+                </div>
             </div>
         </div>
     </div>
