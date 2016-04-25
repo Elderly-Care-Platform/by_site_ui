@@ -5,24 +5,17 @@ define(['byApp', 'byUtil', 'app/shared/footer/contactUsController', 'contactUsSh
 
         $scope.subjectTitle = 'Enquiry from Home Modifications';
 
-        var init = initialize();
-        function initialize() {
-            $(".by_header").removeClass("by_header_image"); 
-            $(".by_header").addClass("by_headerBoder");
-            angular.element($window).bind("scroll", function () {
-                var headerHeight = $(".by_header").height();
-                if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
-                    BY.byUtil.changeHeaderImage();
-                    $(".by_header").addClass("by_header_image"); 
-                    $(".by_header").removeClass("by_headerBoder");
-                } else {
-                     BY.byUtil.changeHeaderImage();
-                    $(".by_header").removeClass("by_header_image"); 
-                    $(".by_header").addClass("by_headerBoder");
-                }
-                    
-            });
-        }
+        BY.byUtil.changeHeaderImage();
+
+        (function(){
+            var metaTagParams = {
+                title:  "Home modifications",
+                imageUrl:   "",
+                description:   "",
+                keywords:[]
+            }
+            BY.byUtil.updateMetaTags(metaTagParams);
+        })();
 
         $scope.showVideo = function(){       
             $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/HPHXQ5aMmq0?rel=0&showinfo=0&autoplay=1');

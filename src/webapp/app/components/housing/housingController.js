@@ -58,22 +58,9 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'], function
             BY.byUtil.updateMetaTags(metaTagParams);
         }
 
+        BY.byUtil.changeHeaderImage();
+
         function initialize(){
-            $(".by_header").removeClass("by_header_image"); 
-            $(".by_header").addClass("by_headerBoder");
-            angular.element($window).bind("scroll", function () {
-                var headerHeight = $(".by_header").height();
-                if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
-                    BY.byUtil.changeHeaderImage();
-                    $(".by_header").addClass("by_header_image"); 
-                    $(".by_header").removeClass("by_headerBoder");
-                } else {
-                    BY.byUtil.changeHeaderImage();
-                    $(".by_header").removeClass("by_header_image"); 
-                    $(".by_header").addClass("by_headerBoder");
-                }
-                    
-            });
             if($scope.selectedMenu){
                 updateMetaTags();
                 tags = $.map($scope.selectedMenu.tags, function(value, key){
