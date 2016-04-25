@@ -341,10 +341,6 @@
     }
 }
 @media ( max-width: 600px){
-    .by_homeModiBanner
-    {
-        height: auto;
-    }
     .by_homeModi_sectionsThumbWhiteBg
     {
         background: #fff;
