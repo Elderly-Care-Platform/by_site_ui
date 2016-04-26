@@ -1731,6 +1731,14 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     }
 }
 @media ( max-width: 720px) {
+    .absHomeDirectory
+    {
+        margin-top: 0px   
+    }
+    .absHomeClAc
+    {
+        margin-top: 0px;
+    }
     .by_homeHeaderBelowImg
     {
         width: 185px;
