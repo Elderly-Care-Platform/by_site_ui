@@ -1462,13 +1462,26 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 {
     width: 100%;
     height: auto;
-    text-align: center;
+    text-align: left;
     font-size: 28px;
     font-family: century_gothic !important;
     line-height: 30px; 
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
-.by_homeSection_wrap_title a, .by_homeSection_wrap_title a:hover, .by_homeSection_centuryBig a, .by_homeSection_centuryBig a:hover
+.by_homeSection_wrap_title a, .by_homeSection_wrap_title a:hover
+{
+    text-decoration: none;
+    background: #008000;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 2px 5px;
+}
+.by_homeSection_wrap_title a:hover
+{   
+    text-decoration: underline;
+}
+ .by_homeSection_centuryBig a, .by_homeSection_centuryBig a:hover
+}
 {
     text-decoration: underline;
     color: #008000;
@@ -1509,7 +1522,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
      font-family: Segoe_Print!important;
      font-size: 23px;
      line-height: 15px;
-     padding-bottom: 16px;
+     padding-bottom: 8px;
 }
 .by_homeSection_segoOrange
 {
@@ -1575,7 +1588,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 }*/
 .by_homeSection_centuryBig
 {
-    font-size: 22px;
+    font-size: 20px;
     font-family: century_gothic !important;
     line-height: 29px; 
 }
@@ -1612,6 +1625,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     height: auto;
     padding: 0px;
     margin: 0px 0px 0px 10px;
+    font-size: 17px;
 }
 .by_homeSection_list ul li
 {
@@ -1700,6 +1714,22 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
         line-height: 30px;
     }
 }
+@media ( max-width: 888px){
+    .absHomeClAc
+    {
+        margin-top: 20px;
+    }
+} 
+@media ( max-width: 870px){    
+    .absHomeDirectory
+    {
+        margin-top: 50px   
+    }
+    .absHomeClAc
+    {
+        margin-top: 50px;
+    }
+}
 @media ( max-width: 720px) {
     .by_homeHeaderBelowImg
     {
@@ -1764,6 +1794,10 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     {
         right: calc(50% - 100px);
         margin-top: 20px;
+    }
+    .by_homeSection_wrap_title
+    {
+        text-align: center;
     }
 } 
 @media ( max-width: 430px) {
