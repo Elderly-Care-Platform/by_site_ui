@@ -1467,6 +1467,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     font-family: century_gothic !important;
     line-height: 30px; 
     padding-bottom: 20px;
+    margin-top: 8px;
 }
 .by_homeSection_wrap_title a, .by_homeSection_wrap_title a:hover
 {
