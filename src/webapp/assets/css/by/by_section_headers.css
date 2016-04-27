@@ -728,10 +728,16 @@
 {
     color: #fff;
     display: block;
-    font-size: 50px;
-    line-height: 55px;
+    font-size: 45px;
+    line-height: 50px;
     font-weight: bold;
     text-transform: uppercase;
+}
+.by_headerOne small
+{
+    text-transform: none;
+    color: #fff; 
+    font-size: 20px;
 }
 .by_headerTwo
 {
