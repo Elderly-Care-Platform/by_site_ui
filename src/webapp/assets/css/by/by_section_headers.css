@@ -717,8 +717,9 @@
     background: url('../../img/home/home-banner.png?versionTimeStamp=%PROJECT_VERSION%') no-repeat top right;
     background-size: cover;
     position: relative;
+    margin-top: -5px;
 }
-.by_headerHomeText
+.by_headerHomeText, .by_headerHomeModiText
 {
     padding-top: 80px;
     padding-bottom: 20px;
@@ -770,21 +771,43 @@
 {
     color: #000;
 }
-
+.by_headerOneSego
+{
+    font-family: Segoe_Print!important;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 31px;
+    color: #fff;
+    text-align: left;
+}
 @media ( max-width: 920px) {
-    .by_headerOne, .by_headerTwo, .by_headerBelowBlack, .by_headerBelowGray
+    .by_headerOne, .by_headerTwo, .by_headerBelowBlack, .by_headerBelowGray, .by_headerOneSego
     {
         text-align: center;
     }
+    .by_headerHomeModiText
+    {
+        text-align: center;
+    }
+    .by_headerBelowBlack
+    {
+        max-width: 100% !important;
+    }
 }
 @media ( max-width: 720px) {
+    .by_headerHomeModiText
+    {
+        padding-top: 130px;
+    }
     .by_headerOne
     {
         font-size: 35px;
+        line-height: 45px;
     }
     .by_headerTwo, .by_headerTwo small
     {
         font-size: 25px;
+        line-height: 30px;
     }
     .by_headerBelowBlack
     {
