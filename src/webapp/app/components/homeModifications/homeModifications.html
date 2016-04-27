@@ -47,7 +47,7 @@
                         </ol>
                      </div>
                 </div>
-                <div class="by_homeSectionLeft divRight">
+                <div class="by_homeSectionLeft divRight " ng-class="{'margin-top-20': $root.windowWidth > 720}">
                     <div style="border:2px solid #eee;">
                         <div class="by_expVideoShow" ng-click="showVideo();">
                             <img src="assets/img/home/home-seniorfriendly-videoframe.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Video" width="100%"  />
@@ -59,7 +59,7 @@
                 <div class="clearfix"></div>
                 <div class="clearfix  margin-top-20" ng-if="$root.windowWidth > 720"></div>
                 <div class="by_homeSection_centuryBig">
-                     To see a senior-friendly home <b>demo, visit our Experience Store</b> in Koramangala!  
+                     To see a senior-friendly home <b>demo, visit our <a href="#!/experience-center">Experience Store</a></b> in Koramangala!  
                 </div>
                 <div class="clearfix  margin-top-20" ng-if="$root.windowWidth < 721"></div>
             </div>

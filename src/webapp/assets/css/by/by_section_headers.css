@@ -206,7 +206,7 @@
 }
 .by_expStore_bannerImg
 {
-    width: 360px;
+    width: 320px;
     position: absolute;
     bottom: 0px;
     right: 0px;
@@ -533,10 +533,6 @@
         margin-top: 50px;
         margin-left: 300px;
     }
-    .by_expStore_bannerImg
-    {
-        width: 280px;
-    }
     .by_clAc_bannerImg
     {
         width: 300px;
@@ -761,7 +757,7 @@
     text-transform: none;
     color: #000;
     font-family: century_gothic;  
-    line-height: 30px;
+    line-height: 36px;
     margin: 0px;
 }
 .by_headerBelowGray
@@ -771,7 +767,7 @@
     color: #888;
     font-family: century_gothic;  
     line-height: 30px;
-    margin: 15px 0px 0px 0px;
+    margin: 7px 0px 0px 0px;
 }
 .by_headerBelowGray xyz
 {
@@ -789,7 +785,7 @@
 .by_headerBelowBlack a, .by_headerBelowBlack a:hover
 {
     color: #008000;
-    text-decoration: underline;
+    text-decoration: underline !important;
 }
 @media ( max-width: 920px) {
     .by_headerOne, .by_headerTwo, .by_headerBelowBlack, .by_headerBelowGray, .by_headerOneSego
@@ -803,6 +799,10 @@
     .by_headerBelowBlack
     {
         max-width: 100% !important;
+    }
+    .by_expStore_bannerImg
+    {
+        display: none;
     }
 }
 @media ( max-width: 720px) {

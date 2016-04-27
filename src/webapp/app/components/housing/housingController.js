@@ -58,7 +58,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'], function
             BY.byUtil.updateMetaTags(metaTagParams);
         }
 
-        BY.byUtil.changeHeaderImage();
+        
 
         function initialize(){
             if($scope.selectedMenu){

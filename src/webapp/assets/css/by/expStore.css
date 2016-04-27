@@ -1,4 +1,19 @@
-
+.by_homeSectionExpText
+{
+    margin-right: 4%;
+}
+.by_homeModiListNumberText
+{
+    font-size: 19px;
+    font-family: century_gothic !important;
+    line-height: 31px;
+    padding-right: 10px;
+}
+.by_homeModiListNumberText a, .by_homeModiListNumberText a:hover
+{
+    color: #008000;
+    text-decoration: underline !important;
+}
 .by_expVideoLeft
 {
     width: 350px;

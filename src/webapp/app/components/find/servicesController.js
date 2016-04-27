@@ -58,7 +58,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactU
 
             };
 
-            BY.byUtil.changeHeaderImage();
+            
 
             function initialize(){
             
@@ -78,6 +78,10 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactU
                 if(!$scope.showEditor && $scope.selectedMenu.module===BY.config.menu.modules['service'].moduleId){
                     showFilters();
                     getData(queryParams);
+                }
+
+                if ($scope.selectedMenuId == '56406cd03e60f5b66f62df26'){
+                    BY.byUtil.changeHeaderImage();
                 }
 
             }
