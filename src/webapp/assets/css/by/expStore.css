@@ -5,14 +5,14 @@
 }
 .by_exp_sectionsThumb
 {
-    width: 32%;
-    margin-right: 2%;
+    width: 29%;
+    margin-right: 6.5%;
     float: left;
     margin-bottom: 20px;
 }
 .by_exp_sectionsThumbLast
 {
-    width: 32%;
+    width: 29%;
     float: left;
     margin-bottom: 20px;
 }
@@ -22,6 +22,7 @@
     font-family: century_gothic !important;
     line-height: 31px;
     width: 100%;
+    text-align: justify;
 }
 .by_exp_sectionsThumbText a, .by_exp_sectionsThumbText a:hover
 {
