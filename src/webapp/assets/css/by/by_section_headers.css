@@ -786,6 +786,11 @@
     color: #fff;
     text-align: left;
 }
+.by_headerBelowBlack a, .by_headerBelowBlack a:hover
+{
+    color: #008000;
+    text-decoration: underline;
+}
 @media ( max-width: 920px) {
     .by_headerOne, .by_headerTwo, .by_headerBelowBlack, .by_headerBelowGray, .by_headerOneSego
     {

@@ -1,32 +1,40 @@
-
-
-
-<div class="by_directoryBannerTop" ng-if="selectedMenuId == headerCheck" style="position:relative; border-bottom:4px solid #008000"  >
-  <div class="by_productList_banner" ng-controller="ProductMenuCtrl">
-    <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
-    <div class="by_productBannerTopText">
-           <div class="by_productList_bannerText">
-             <h1> Elder care
-             <strong>products</strong>
-              </h1>
-         </div>
-    </div>   
-    <div class="clearfix"></div>
-  </div>
-  <div class="by_whiteBg">
-       <div class="by_productBannerTopText">
-        <div class="by_productList_bannerTextWrap" style="padding:30px 0px; text-align:center;">
-         <span>Visit our <a href="#!/experience-center">Experience Store</a></span>   
-         to see how our products improve lives of the elderly   
-        </div><div class="clearfix"></div>
+<div class="by_productList_banner" ng-controller="ProductMenuCtrl" ng-if="selectedMenuId == headerCheck">
+  <div class="by_headerTopBg">
+    <div class="by_container">
+        <div class="by_homeSection no-padding">
+            <div class="by_homeSectionInside">  
+                <h1 class="by_headerHomeModiText">
+                    <span class="by_headerOneSego">
+                        Elder care
+                    </span>
+                    <span class="by_headerOne">
+                        products
+                    </span>
+                </h1>
+                <div class="clearfix"></div>
+            </div>
         </div>
-        <div class="clearfix"></div>
     </div>
+  </div>
+  <div class="by_whiteBg" >
+    <div class="by_container by_headerBorder3">
+        <div class="by_homeSection" style="padding:15px 0px;">        
+            <div class="by_homeSectionInside" style="position:relative;">
+                <h2 class="by_headerBelowBlack" style="max-width:585px;">
+                    Visit our <a href="#!/experience-center">Experience Store</a> in Bangalore  
+                </h2>
+                <h2 class="by_headerBelowGray">
+                  to see how our products improve lives of the elderly  
+                </h2>
+                 <img src="assets/img/product/amarnath.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Product Banner" class="by_homeHeaderBelowImg" style="bottom:-15px;" />
+            </div>
+        </div>    
+    </div>
+  </div>
+</div>
 
-<div class="by_productList_bannerImg">
- <img src="assets/img/product/amarnath.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Product Banner" />
-</div>
-</div>
+<div class="clearfix"></div>
+
 <xyz ng-if="productSH[selectedMenuId]" ng-controller="ProductMenuCtrl">
   <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
   <div class="by_categorySectionHeader"  style='min-height:230px;'>
