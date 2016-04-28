@@ -285,7 +285,7 @@
 .by_contactUsResponseImg
 {
     position: absolute;
-    bottom: -15px;
+    bottom: -40px;
     right: 0px;
     width: 300px;
 }
@@ -364,6 +364,17 @@
     .by_contactus_social
     {
         width: 100%;
+    }
+    .by_contactUsResponseLeft 
+    {
+        width: 100%;
+    }
+    .by_contactUsResponseImg
+    {
+        position: relative;
+        width: 300px;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 @media (max-width: 420px){
