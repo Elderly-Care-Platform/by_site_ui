@@ -15,6 +15,11 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
             BY.byUtil.updateMetaTags(metaTagParams);
         })();
 
+        $scope.showAll = function(){
+            document.getElementById("morePastEventsShow").style.display = "block";
+            document.getElementById("morePastEvents").style.display = "none";
+        }
+
     }
 
 

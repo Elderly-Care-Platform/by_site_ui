@@ -4,7 +4,7 @@
             <div class="by_homeSectionInside">  
                 <h1 class="by_headerHomeModiText">
                     <span class="by_headerOne">
-                        CLASSES & ACTVITIES
+                        CLASSES & ACTIVITIES
                     </span>
                     <span class="by_headerTwo">
                         for Senior Citizens in Bangalore
@@ -80,6 +80,23 @@
 </div>
 
 
+<div class="by_container by_homeCallBg">
+    <div class="by_homeSection" style="padding: 10px 0px;">
+        <div class="by_homeSectionInside">
+            <div class="by_homeModiWhy by_homeModiWhiteColor">
+                For registration <a title="{{telNo}}" href="tel:{{telNo}}" ng-if="$root.windowWidth < 721"> 
+                    <div class="by_callToActionButton">
+                        <img src="assets/img/home/call.png?versionTimeStamp=1459503470417" alt="BeautifulYears Call"> 
+                        call 
+                    </div>
+                </a> 
+                <xyz ng-if="$root.windowWidth > 720"> Call </xyz> <b>{{telNo}}</b>
+                or <u><a href="#!/contactUs" style="color:#fff;">contact us</a></u>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <div class="by_whiteBg">
     <div class="by_container">
@@ -88,27 +105,68 @@
                 <div class="by_clAc_eventHead">
                     Past Events
                 </div>
-                <div class="by_clAc_eventThumb2">
-                    <a href="https://www.beautifulyears.com/#!/communities/when-the-gurus-came-to-learn/?id=56f4ee4ee4b01f97c9bd730d">
-                    <div class="by_clAc_eventThumbImage">
-                        <img src="assets/img/classesActivities/photograph_1.png?versionTimeStamp=%PROJECT_VERSION%" alt="Smart phone for seniors" width="100%"  />
-                    </div>
-                    </a>
-                </div>
-                <div class="by_clAc_eventThumb2">
-                    <a href="https://www.beautifulyears.com/#!/communities/where-theres-a-will-theres/?id=56ff28aee4b0ab2c2bef3a87">
-                    <div class="by_clAc_eventThumbImage">
-                        <img src="assets/img/classesActivities/photograph_2.png?versionTimeStamp=%PROJECT_VERSION%" alt="Inheritance laws and wills " width="100%"  />
-                    </div>
-                    </a>
-                </div>
-                <div class="by_clAc_eventThumb2">
+                <div class="by_clAc_eventThumb">
                     <a href="https://www.beautifulyears.com/#!/communities/are-you-game/?id=570b9d47e4b05ba537c6208f">
                     <div class="by_clAc_eventThumbImage">
-                        <img src="assets/img/classesActivities/photograph_3.png?versionTimeStamp=%PROJECT_VERSION%" alt="Time travel with fun and games " width="100%"  />
+                        <img src="assets/img/classesActivities/time_travel.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Wills & Inheritance " width="100%"  />
+                    </div>
+                    <div class="by_clAc_eventThumbImageText">
+                        Are you game?
                     </div>
                     </a>
                 </div>
+                <div class="by_clAc_eventThumb">
+                    <a href="https://www.beautifulyears.com/#!/communities/where-theres-a-will-theres/?id=56ff28aee4b0ab2c2bef3a87">
+                    <div class="by_clAc_eventThumbImage">
+                        <img src="assets/img/classesActivities/inheritance.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Where theres a will theres" width="100%"  />
+                    </div>
+                    <div class="by_clAc_eventThumbImageText">
+                        Where there's a will, there's
+                    </div>
+                    </a>
+                </div>
+
+                <div class="by_clAc_eventThumbRight">
+                        <a href="https://www.beautifulyears.com/#!/communities/when-the-gurus-came-to-learn/?id=56f4ee4ee4b01f97c9bd730d">
+                        <div class="by_clAc_eventThumbImage">
+                            <img src="assets/img/classesActivities/tech_class.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="when the gurus came to learn" width="100%"  />
+                        </div>
+                        <div class="by_clAc_eventThumbImageText">
+                            When the gurus came to learn...
+                        </div>
+                        </a>
+                    </div>
+
+                <div class="clearfix"></div>
+
+                <button id="morePastEvents"  class="nextButton by_btn_submit" ng-click="showAll()">More...
+                </button>
+                <span id="morePastEventsShow">
+                    
+                    <div class="by_clAc_eventThumb">
+                        <a href="https://www.beautifulyears.com/#!/communities/money-matters-workshop/?id=5721ecdce4b02928f2cf3487">
+                        <div class="by_clAc_eventThumbImage">
+                            <img src="assets/img/classesActivities/money_matters.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="money matters" width="100%"  />
+                        </div>
+                        <div class="by_clAc_eventThumbImageText">
+                            Money matters workshop
+                        </div>
+                        </a>
+                    </div>
+                    <div class="by_clAc_eventThumb">
+                        <a href="https://www.beautifulyears.com/#!/communities/the-happiness-project-again/?id=570ccda1e4b05ba537c6288f">
+                        <div class="by_clAc_eventThumbImage">
+                            <img src="assets/img/classesActivities/happiness_project.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="the happiness project again" width="100%"  />
+                        </div>
+                        <div class="by_clAc_eventThumbImageText">
+                            The happiness projest, Again
+                        </div>
+                        </a>
+                    </div>
+
+
+                    <div class="clearfix"></div>
+                </span>
                 <div class="clearfix"></div>
             </div>
         </div>
