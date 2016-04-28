@@ -1,10 +1,10 @@
 .by_contactus_social
 {
     width: 80%;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     font-size: 20px;
     line-height: 25px;
+    max-width: 340px;
 }
 .by_contactus_social img
 {
@@ -303,6 +303,13 @@
     .by_footerAddress
     {
         max-width: 241px;
+    }
+}
+@media (max-width: 920px){
+    .by_contactus_social
+    {
+        float: none !important;
+        width: 100%;
     }
 }
 @media (max-width: 800px){
