@@ -38,6 +38,10 @@
 	width: 32%;
 	float: right;
 }
+.by_clAc_eventThumbImage
+{
+	border: 1px solid #fff;
+}
 .by_clAc_eventThumbText
 {
 	font-weight: bold;
@@ -54,12 +58,11 @@
 }
 .by_clAc_participants
 {
-	width: calc(100% - 300px);
+	width: calc(100% - 52%);
 	float: right;
-	padding: 30px 0px 50px 0px;
-	font-size: 31px;
-    line-height: 52px;
-    max-width: 720px;
+	padding: 20px 0px 30px 0px;
+	font-size: 28px;
+    line-height: 45px;
     text-align: left;
 }
 .by_clAc_participants a
@@ -70,18 +73,22 @@
 .by_clAc_participantsImg
 {
 	position: absolute;
-	bottom: 0px;
+	bottom: -20px;
 	left: 0px;
-	width: 280px;
+	width: 48%;
+}
+.by_clAc_century
+{
+	font-size: 25px;
+    line-height: 45px;
 }
 .by_clAc_volunteer
 {
-	width: calc(100% - 380px);
+	width: calc(100% - 52%);
 	float: left;
-	padding: 30px 0px 50px 0px;
-	font-size: 31px;
-    line-height: 52px;
-    max-width: 720px;
+	padding: 20px 0px 30px 0px;
+	font-size: 28px;
+    line-height: 45px;
     text-align: right;
 }
 .by_clAc_volunteer a
@@ -92,9 +99,9 @@
 .by_clAc_volunteerImg
 {
 	position: absolute;
-	bottom: 0px;
-	right: 80px;
-	width: 280px;
+	bottom: -20px;
+	width: 250px;
+	right: 10%;
 }
 @media ( max-width: 920px){
 	.by_clAc_volunteer, .by_clAc_participants
@@ -117,6 +124,7 @@
 		width: 320px;		
 		margin-left: auto;
 		margin-right: auto;
+		margin-bottom: -20px;
 	}
 	.by_clAc_volunteer, .by_clAc_participants
 	{

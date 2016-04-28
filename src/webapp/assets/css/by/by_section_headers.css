@@ -437,9 +437,9 @@
 }
 .by_clAc_bannerImg
 {
-    width: 550px;
+    width: 300px;
     position: absolute;
-    left: 0px;
+    right: 0px;
     bottom: 0px;
 }
 .by_clAc_BannerTopText
@@ -484,6 +484,10 @@
     }
     .by_directoryBannerImg {
         margin-right: 5%;
+    }
+    .by_clAc_bannerImg
+    {
+        width: 250px;
     }
 }
 @media ( max-width: 1000px) {
@@ -801,7 +805,7 @@
     {
         max-width: 100% !important;
     }
-    .by_expStore_bannerImg, .by_contact_bannerImg
+    .by_expStore_bannerImg, .by_contact_bannerImg, .by_clAc_bannerImg
     {
         display: none;
     }
