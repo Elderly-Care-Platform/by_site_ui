@@ -237,6 +237,20 @@
 	margin-top: 10px;
 	padding: 0px 15px;
 }
+.by_expVideoShowVideoIconVideo
+{
+	width: 100%;
+    height: 33px;
+    background: url(../../img/product/blackmask.png?versionTimeStamp=%PROJECT_VERSION%) center;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    padding: 5px;
+    text-align: right;
+    color: #fff;
+    font-size: 15px;
+    line-height: 19px;
+}
 @media screen and (max-width: 1100px) {
 	.by_productHome_newArrivalThumb
 	{
@@ -247,6 +261,7 @@
 		width: calc(33.3% - 1px);
 	}
 }
+
 @media screen and (max-width: 851px) {
 	.by_productHome_tabSlider .nav-justified
 	{
