@@ -421,22 +421,22 @@ BY.config.menu.community = {
 BY.config.menu.productsSH = {
     '10200' : {
         'sectionHead':'Medical Conditions',
-        'sectionDesc':'Find relevant elder care products by condition of a person you are taking care of. If your aging parents are struggling with diabetes, arthritis, Parkinson’s, stroke, Alzheimer’s and dementia, chronic pain or adult incontinence, please look up products under relevant sections. ',
+        'sectionDesc':'Find relevant elder care products by condition of a person you are taking care of. If your aging parents are struggling with diabetes, arthritis, Parkinson’s and stroke, Alzheimer’s and dementia, chronic pain or adult incontinence, please look up products under relevant sections.',
         'sectionImage':'assets/img/section_headers/medical-conditions.png?versionTimeStamp=%PROJECT_VERSION%'
     },
     '10212' : {
         'sectionHead':'Mobility for the Elderly ',
-        'sectionDesc':'Life is all about movement. Find a mobility solution that fits the needs of your elderly. Consider a motorized wheelchair to make them more independent. Choose the right stroller, walker, or a fashionable walking stick. If your aging parents live in a two-story house, consider chairlifts and other staircase safety solutions for the elderly. ',
+        'sectionDesc':'Find a mobility solution that fits the needs of your elderly. Consider a motorized wheelchair to make them more independent. Choose the right stroller, walker, or a fashionable walking stick. If your aging parents live in a two-story house, consider chairlifts and other staircase safety solutions for the elderly.',
         'sectionImage':'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=0'
     },
     '10213' : {
         'sectionHead':'Bed and Bedroom for the comfort of the elderly',
-        'sectionDesc':'Our elder care products make staying in bed more comfortable for your aging parents. Take good care of bedridden elders - from bedsores prevention to personal hygiene in bed; from bedrests to washing in bed.  Try a memory foam pillow for better sleep. Make sure, when your parents get out of the bed at night, MyLight device provides them light and safety.',
+        'sectionDesc':'Our elder care products make staying in bed more comfortable for your aging parents. Take good care of bedridden elders - from bedsores prevention and bedrests to washing in bed.  Try a memory foam pillow for better sleep. Install  MyLight motion sensors to keep your parents safe, when they get out of bed at night.',
         'sectionImage':'https://www.youtube.com/embed/G7iQyQM9o78?rel=0&showinfo=0&autoplay=0'
     },
     '10214' : {
         'sectionHead':'Washing & Toileting for the Elderly',
-        'sectionDesc':'Personal hygiene for the elderly could become easier and safer. Consider anti-skid solutions and other senior fall prevention products for your bathroom, such as grab rails, raised toilet seats, panic buttons, and more. Find right adult diapers, adult pullups, and other incontinence solutions for your elderly. Make sure your bedridden elders are properly washed and taken care of. ',
+        'sectionDesc':'Personal hygiene for the elderly could become easier and safer. Consider anti-skid and senior fall prevention products for bathroom, such as grab rails and raised toilet seats. Find right adult diapers, adult pullups, and other incontinence solutions for your elderly. Make sure your bedridden elders are well washed and taken care of.',
         'sectionImage':'https://www.youtube.com/embed/hPR5Wf3MlTc?rel=0&showinfo=0&autoplay=0'
     },
     '10219' : {
@@ -451,12 +451,12 @@ BY.config.menu.productsSH = {
     },
     '10231' : {
         'sectionHead':'Fitness & Rehab for Senior Citizens',
-        'sectionDesc':'While recovering from a stroke or coping with Parkinson’s or arthritis, our elderly have to exercise their weakening grip or shivering hands; please help them by choosing right rehab devices! Pamper your mom or dad (or maybe yourself) with a daily neck or feet massage. Check out our fitness equipment and stay younger for longer. ',
+        'sectionDesc':'While recovering from a stroke or coping with Parkinson’s or arthritis, our elderly have to exercise their weakening grip or shivering hands; please help them by choosing right rehab aids! Pamper your mom or dad (or maybe yourself) with a daily neck or feet massage. Stay younger for longer! ',
         'sectionImage':'assets/img/section_headers/fitness-rehab.png?versionTimeStamp=%PROJECT_VERSION%'
     },
     '10600' : {
         'sectionHead':'Gift Ideas',
-        'sectionDesc':'Thinking about a nice gift for your elder friends  or aging parents? Want to find something classy and useful for an elderly lady or a senior gentleman? We have products for seniors that are both fun and relief, such as a fashionable walking stick with flash lights, a massager, or a talking thermometer.  ',
+        'sectionDesc':'Thinking about a nice gift for your elder friends  or aging parents? Want to find something classy and useful for an elderly lady or a senior gentleman? We have products for seniors that are both fun and relief, such as a fashionable walking stick with flash lights, a massager, or a talking thermometer. ',
         'sectionImage':'assets/img/section_headers/gift-idea.png?versionTimeStamp=%PROJECT_VERSION%'
     }
 }

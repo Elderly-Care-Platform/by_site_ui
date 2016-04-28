@@ -16,16 +16,7 @@
                     &nbsp; |
                 </li>
                 <li time-since="{{detailResponse.discuss.createdAt}}" ng-if="detailResponse.discuss.createdAt"></li>
-                <!--<li ng-if="detailResponse.discuss.topicId.length > 0"> | In  </li>
-
-                <li ng-repeat="topicId in detailResponse.discuss.topicId" class="by_discussDeatil_cardlineHeight20">
-                    <p class="first-letter-uc by-systemTags">
-                        <span ng-if="$index > 0">|</span>
-                        <a di-href="#!/discuss/list/{{$root.menuCategoryMap[topicId].slug}}/{{$root.menuCategoryMap[topicId].id}}/all">
-                            {{$root.menuCategoryMap[topicId].displayMenuName}}
-                        </a>
-                    </p>
-                </li>-->
+               
             </ul>
             <div style="clear: both"></div>
         </div>
@@ -65,23 +56,7 @@
         <!--  discuss like/share/comment/answer code start -->
         <div class="by_discussDeatil_cardShare" style="border-bottom:1px solid #ccc !important;">
             <ul class="by_discussDeatil_cardShareList col-md-12">
-                <!--<li ng-if="detailResponse.discuss.discussType == 'P'">-->
-                    <!--<a ng-click="createNewComment(detailResponse.discuss.id)">-->
-                        <!--<i class="rounded-x icon-speech ng-scope" title="Comment"></i>-->
-                        <!--<span ng-if="detailResponse.discuss.aggrReplyCount > 0" class="by_commentSpan">{{detailResponse.discuss.aggrReplyCount}}</span>-->
-                    <!--</a>-->
-                <!--</li>-->
-
-                <!--<li ng-if="detailResponse.discuss.discussType == 'Q'">-->
-                    <!--<a ng-click="createNewComment(detailResponse.discuss.id)">-->
-                        <!--<i class="rounded-x icon-answer" title="Answers"-->
-                           <!--ng-if="detailResponse.discuss.directReplyCount == 0"></i>-->
-                        <!--<i class="rounded-x icon-answer-active" title="Answers"-->
-                           <!--ng-if="detailResponse.discuss.directReplyCount > 0"></i>-->
-                        <!--<span ng-if="detailResponse.discuss.directReplyCount > 0" class="by_answerSpan">{{detailResponse.discuss.directReplyCount}}</span>-->
-                    <!--</a>-->
-                <!--</li>-->
-
+               
                 <li ng-controller="DiscussLikeController">
                     <a ng-click="likeDiscuss(detailResponse.discuss)">
                         <i class="rounded-x icon-heart-liked"
@@ -189,17 +164,7 @@
         <!--discuss like user valisation end-->
 
 
-        <!--discuss detail replies start-->
-        <!--<div ng-if="(detailResponse.replies && detailResponse.replies.length <= 0)"-->
-        <!--ng-init="initCommentEditor(detailResponse.discuss.id)"></div>-->
-
-        <!--<div ng-if="detailResponse.replies && detailResponse.replies.length > 0" style="margin-right:20px;">-->
-        <!--<div ng-repeat="reply in detailResponse.replies" id="comment"-->
-        <!--data-link="articles.html" ng-controller="DiscussReplyController"-->
-        <!--ng-include="'app/shared/common/template/replyCard.html?versionTimeStamp=%PROJECT_VERSION%'"></div>-->
-        <!--</div>-->
-        <!--<div style="clear: both; height:0px; background:#fff !important"></div>-->
-        <!--discuss detail replies end-->
+        
 
         <!--discuss detail share by email start-->
         <div id="shareModal" class="modal fade" role="dialog">

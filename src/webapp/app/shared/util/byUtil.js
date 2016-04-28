@@ -261,11 +261,17 @@ BY.byUtil.paginationSeoUrl = function(queryParams, currentP, lastP) {
 
 
 
-BY.byUtil.changeHeaderImage = function(){          
-    $(".by_header").removeClass("by_directoryHeaderImage");
-    $(".by_header").removeClass("by_productHeaderImage");
-    $(".by_header").removeClass("by_aboutUsHeaderImage");
-    $(".by_header").removeClass("by_expStoreHeaderImage");
-    $(".by_header").removeClass("by_contactHeaderImage");
-    $(".by_header").removeClass("by_homeModiBannerHeader");
+BY.byUtil.changeHeaderImage = function(){    
+    $(".by_header").removeClass("by_header_image"); 
+    $(".by_header").addClass("by_headerBoder");      
+    $(window).scroll(function () {
+        var headerHeight = $(".by_header").height();
+        if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+            $(".by_header").addClass("by_header_image"); 
+            $(".by_header").removeClass("by_headerBoder");
+        } else {
+            $(".by_header").removeClass("by_header_image"); 
+            $(".by_header").addClass("by_headerBoder");
+        }
+    });
 }

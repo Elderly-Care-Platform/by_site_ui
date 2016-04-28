@@ -468,6 +468,20 @@ define([], function () {
                 }
             })
 
+            .when('/contact-us-response', {
+                templateUrl: 'app/shared/footer/contactUsResponse.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'contactUsController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/shared/footer/contactUsController'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
             .when('/aboutUs', {
                 templateUrl: 'app/components/aboutUs/aboutUs.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'BYAboutUsController',

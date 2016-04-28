@@ -1,87 +1,19 @@
-<!-- <div class="clearfix margin-top-20"></div>
-<div class="by_container by_homeShadowImage">
-    <div class="by_homeCommunityBg">
-        <div class="by_homeSection paddingBottomZero">
-            <div class="by_homeSectionInside">
-                <div class="by_homeCommLeft desktopSite">
-                    Taking better care of parents<br/>
-                    Ageing happier, living longer<br/><br/>
-                    <a href="#!/communities/564071623e60f5b66f62df27/all"> <h3>Communities</h3> <i class="fa fa-caret-right"></i></a>
-                </div>
-                <div class="by_homeCommLeft mobileSite">
-                    Taking better care of parents<br/>
-                    Ageing happier, living longer<br/><br/>
-                    <a href="#!/communities/564071623e60f5b66f62df27/all"> <h3>Communities</h3> <i class="fa fa-caret-right"></i></a>
-                </div>
-                <div class="clearfix"></div>
-                    <div class="by_homeCommLeft margin-top-20">
-                    <small><b>Recent posts:</b></small>
-                    <div class="by_homeDiscuss">
-                        <div ng-repeat="discuss in discussData" class="by_homeDiscussThumb" ng-click="nextLocation($event, discuss, {'id':discuss.id})">
-                                <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();">
-                                <img ng-if="discuss.articlePhotoFilename.thumbnailImage" ng-src="{{discuss.articlePhotoFilename.thumbnailImage ||''}}" alt="{{discuss.title}}"
-                                    fallback-src='["{{discuss.articlePhotoFilename.original ||""}}"]' width="100" class="divLeft" >
-                                <img ng-if="!discuss.articlePhotoFilename.original && discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage"
-                                    ng-src="{{discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage||''}}" alt="{{discuss.title}}"
-                                    fallback-src='["{{discuss.userProfile.basicProfileInfo.profileImage.titleImage||""}}"]' width="100" class="divLeft" />
-                                </a>
-                                <div class="by_homeDiscussWrap" ng-class="{'width100': !discuss.articlePhotoFilename.original && !discuss.userProfile.basicProfileInfo.profileImage.thumbnailImage}">
-                                 <x ng-if="discuss.discussType == 'P'">B</x><x ng-if="discuss.discussType == 'Q'"><y class="by_questionLetter">Q</y>uestion b</x>y <a validate-user-name="{{discuss.username}}"
-                                      class="text-capitalize" ng-click="$event.stopPropagation();"
-                                       ng-href="{{getHrefProfile(discuss, {'profileId':discuss.userId})}}">
-                                        {{username}}</a>
-                                        <xyz>|</xyz>
-                                    <xyz time-since="{{discuss.createdAt}}"></xyz>
-                                    <div class="clearfix"  style="height:6px;"></div>
-                                     <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><span class="by_homeDiscussHead"  ng-if="discuss.discussType == 'P'">
-                                       {{discuss.title}}
-                                    </span></a>
-                                    <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><span class="by_homeDiscussDesc" ng-if="discuss.shortSynopsis">{{discuss.shortSynopsis}}</span></a>
-                                    <a ng-href="{{getHref(discuss, {'id':discuss.id})}}" ng-click="$event.stopPropagation();"><span class="by_homeDiscussDesc" ng-if="!discuss.shortSynopsis && discuss.text"
-                                    ng-bind-html="trustForcefully(discuss.text)"></span></a>
-                                </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="divRight">
-                            <a href="#!/communities/564071623e60f5b66f62df27/all">Read more...</a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>                    
-                </div>
-                <div class="by_homeCommRight">
-                    <img src="assets/img/home/communities.png?versionTimeStamp=%PROJECT_VERSION%" alt="Communities" width="100%" />
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-    <div class="clearfix"></div>
-    <div class="by_homeSectionFooter">
-        <div class="by_homeSection paddingZero">
-            <div class="by_homeSectionInside">
-                <div class="by_homeCommLeft">
-                    <a href="#!/communities/564071623e60f5b66f62df27/all?showEditor=true&editorType=Question">Ask</a> any question.
-                    <a href="#!/communities/564071623e60f5b66f62df27/all?showEditor=true&editorType=Article">Share</a> your tips and experiences.
-                    <a href="#!/users/login" ng-if="!isLoggedinUser">Join us!</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
- -->
 <div class="by_grayBg">
  <div class="by_container">
     <div class="by_homeSection" style="padding-bottom:0px;">        
         <div class="by_homeSectionInside">
-            <div class="by_homeSection_wrap_title">
-                <div class="by_homeSection_link">
-                    <a href="#!/communities/564071623e60f5b66f62df27/all">Communites</a>
+            <div class="by_homeSectionLeft by_homeSectionLeftComm divRight">
+                <div class="by_homeSection_wrap_title">
+                    <a href="#!/communities/564071623e60f5b66f62df27/all">Communities</a>
                 </div>
-            </div>                
+                <div style="border:8px solid #eee;">
+                    <img src="assets/img/home/home-communities-img.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Video" width="100%"  />
+                </div>
+            </div>
             <div class="by_homeSectionLeft divLeft">
                 <div class="by_homeSection_centuryBig" >
-                    Connect with experts, with people taking care of their parents, and with Senior citizens in our <a href="#!/communities/564071623e60f5b66f62df27/all"><b>forums</b></a>. Get: 
+                    <b>You are not alone</b>!  Connect with experts, with people taking care of their parents, and with Senior citizens in our  <a href="#!/communities/564071623e60f5b66f62df27/all"><b>forums</b></a>. Get: 
 
                 </div>
                 <div class="by_homeSection_list by_grayBg margin-bottom-20">
@@ -95,14 +27,10 @@
 
                 </div>
                 <div class="by_homeSection_centuryBig">
-                    Read and share touching <b><a href="#!/communities/564071623e60f5b66f62df27/all">stories</a> of caregiving and aging</b>
+                    Read touching <b><a href="#!/communities/564071623e60f5b66f62df27/all">stories</a> of caregiving and aging</b>. <a href="#!/communities/564071623e60f5b66f62df27/all"><b>Share</b></a> you own story!
                 </div>
             </div>
-            <div class="by_homeSectionLeft by_homeSectionLeftComm divRight">
-                <div style="border:8px solid #eee;">
-                    <img src="assets/img/home/home-communities-img.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Video" width="100%"  />
-                </div>
-            </div>
+
             <div class="clearfix"></div>
         </div>
     </div>

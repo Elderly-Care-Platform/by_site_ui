@@ -14,16 +14,7 @@
                 </div>
                 <!--<div class="by_productCard_divider"></div>-->
                 <div class="by_productCard_title ellipsisHead margin-top-10  text-capitalize">{{product.name.toLowerCase()}}</div>
-                <!--<div class="by_productCard_price" ng-init="getDiscountPercentage(product)">
-                    <div ng-if="product.discountPercentage" class="productDiscount">
-                        <del class="greyColor">Rs {{product.retailPrice.amount}}</del>&nbsp;&nbsp;
-                        <span class="redColor"><b>({{product.discountPercentage}})% off </b></span><br/>
-                    </div>
-                    <span ng-if="product.salePrice && product.salePrice.amount">Our price: <strong>Rs
-                        {{product.salePrice.amount}}</strong></span>
-                    <span ng-if="!product.salePrice || !product.salePrice.amount">Our price: <strong>Rs
-                        {{product.retailPrice.amount}}</strong></span><br/>
-                </div>-->
+               
                 <div class="ellipsisHead" ng-bind-html="product.productDescription" ng-if="product.productDescription">
                 </div>
                 <div class="by_productCard_price" ng-if="product.salePrice">

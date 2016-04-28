@@ -133,9 +133,7 @@
                         <div ng-include="'app/components/signup/common/addressTemplate.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
                     </div>
 
-                    <!--<div ng-repeat="address in basicProfileInfo.secondaryUserAddress">-->
-                    <!--<div ng-include="'app/components/login/addressTemplate.html'"></div>-->
-                    <!--</div>-->
+                   
 
                     <div class="row margin-bottom-20 marginRightMinus5" style="padding-left: 15px">
                         <div class="col-md-5">
@@ -180,8 +178,7 @@
                             <input type="email" class="username-textbox textbox" name="primaryEmail"
                                    ng-model="basicProfileInfo.primaryEmail"
                                    placeholder="Email"/>
-                            <!--<span ng-show="individualForm.primaryEmail.$invalid && !individualForm.primaryEmail.$error.email && submitted"-->
-                                  <!--class="errorRed">Please enter your Email Id!</span>-->
+                            
                         <span ng-show="individualForm.primaryEmail.$error.email && submitted" class="errorRed">
                             Not valid Email!
                         </span>
@@ -228,13 +225,7 @@
                 </div>
             </div>
 
-            <!--<div class="row margin-bottom-20">-->
-            <!--<div class="col-md-12">-->
-            <!--<a ng-click="addNewAddress()">-->
-            <!--Add address in another city-->
-            <!--</a>-->
-            <!--</div>-->
-            <!--</div>-->
+            
             
             <div class="row no-padding margin-bottom-20 marginleft0">
                 <div class="col-md-12 no-padding fontSizeIndi  list-head dp-block">

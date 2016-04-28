@@ -1,89 +1,40 @@
-
-
-<!--<div class="headerHeightNoBreadCrumb margin-bottom-0"></div> product banner -->
-<!--<div class="by_productBanner">
-    <div class="by_productBanner_title">
-        Products for seniors
-    </div>
-    <div class="by_productBanner_desc">
-        <img src="assets/img/product/phone.png?versionTimeStamp=%PROJECT_VERSION%"/> Need Help? Call <span
-            ng-if="$root.windowWidth < 720"><a ng-href="{{'tel:'+telNo}}">{{telNo}}</a></span> <span
-            ng-if="$root.windowWidth > 720">{{telNo}}</span>
-    </div>
-</div>-->
-
-<!--=== Content Part ===-->
-
-
-<!--  banner -->
-<!--<div class="by_productList_banner" ng-controller="ProductMenuCtrl" ng-if="$root.windowWidth > 720">
-  <a href="#!/experience-center">
-    <img src="assets/img/product/Product_HomePage_banner.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Experience Store" />
-  </a>
-</div>
-
-<div ng-if="$root.windowWidth < 721">
-  <div class="by_product_home_mobile">
-    <a href="#!/experience-center">
-      <img src="assets/img/product/Product_HomePage_banner_m.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Experience Store" />
-      <div class="by_product_home_expStore">
-          <div class="by_product_home_expStore_head">
-              Visit our Experience Store
-          </div>
-          <div class="by_product_home_expStore_text">
-              First in Bangalore
-          </div>
-          <a href="#!/experience-center">
-              <div class="by_product_home_expStore_button">
-                  More...
-              </div>
-          </a>
-      </div>
-    </a>
-  </div>
-</div>-->
-<!-- <xyz ng-if="selectedMenuId == headerCheck">
-<div class="by_productList_banner" ng-controller="ProductMenuCtrl">
-  <div class="headerHeightNoBreadCrumb margin-bottom-0" ng-if="$root.windowWidth < 721"></div>
-  <div class="container">
-         <div class="by_productList_bannerText">
-           <h1> Elder care
-           <strong>products</strong>
-            <span>Improving lives of the seniors</span>
-            </h1>
-       </div>
-       <div class="by_productList_bannerImg">
-         <img src="assets/img/product/amarnath.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Product Banner" />
-       </div>
-  </div>   
-</div>
-</xyz> -->
-<div class="by_directoryBannerTop" ng-if="selectedMenuId == headerCheck" style="position:relative; border-bottom:4px solid #008000"  >
-  <div class="by_productList_banner" ng-controller="ProductMenuCtrl">
-    <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
-    <div class="by_productBannerTopText">
-           <div class="by_productList_bannerText">
-             <h1> Elder care
-             <strong>products</strong>
-              </h1>
-         </div>
-    </div>   
-    <div class="clearfix"></div>
-  </div>
-  <div class="by_whiteBg">
-       <div class="by_productBannerTopText">
-        <div class="by_productList_bannerTextWrap" style="padding:30px 0px; text-align:center;">
-         <span>Visit our <a href="#!/experience-center">Experience Store</a></span>   
-         to see how our products improve lives of the elderly   
-        </div><div class="clearfix"></div>
+<div class="by_productList_banner" ng-controller="ProductMenuCtrl" ng-if="selectedMenuId == headerCheck">
+  <div class="by_headerTopBg">
+    <div class="by_container">
+        <div class="by_homeSection no-padding">
+            <div class="by_homeSectionInside">  
+                <h1 class="by_headerHomeModiText">
+                    <span class="by_headerOneSego">
+                        Elder care
+                    </span>
+                    <span class="by_headerOne">
+                        products
+                    </span>
+                </h1>
+                <div class="clearfix"></div>
+            </div>
         </div>
-        <div class="clearfix"></div>
     </div>
+  </div>
+  <div class="by_whiteBg" >
+    <div class="by_container by_headerBorder3">
+        <div class="by_homeSection" style="padding:15px 0px;">        
+            <div class="by_homeSectionInside" style="position:relative;">
+                <h2 class="by_headerBelowBlack" style="max-width:585px;">
+                    Visit our <a href="#!/experience-center">Experience Store</a> in Bangalore  
+                </h2>
+                <h2 class="by_headerBelowGray">
+                  to see how our products improve lives of the elderly  
+                </h2>
+                 <img src="assets/img/product/amarnath.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Product Banner" class="by_homeHeaderBelowImg" style="bottom:-15px;" />
+            </div>
+        </div>    
+    </div>
+  </div>
+</div>
 
-<div class="by_productList_bannerImg">
- <img src="assets/img/product/amarnath.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Product Banner" />
-</div>
-</div>
+<div class="clearfix"></div>
+
 <xyz ng-if="productSH[selectedMenuId]" ng-controller="ProductMenuCtrl">
   <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
   <div class="by_categorySectionHeader"  style='min-height:230px;'>
@@ -122,10 +73,7 @@
     <div class="contentPanel" ng-if=" (selectedMenu.module == menuConfig.modules['product'].moduleId && selectedMenu.ancestorIds.length > 0 ) || slug == 'all'"
          ng-include="'app/components/product/product-listing/product-content-panel.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
 
-    <!--<div class="contentPanel" ng-if=" (selectedMenu.module == menuConfig.modules['product'].moduleId && selectedMenu.ancestorIds.length > 0 ) || slug == 'all'"-->
-         <!--ng-include="'app/components/product/product-listing/product-content-panel.html?versionTimeStamp=%PROJECT_VERSION%'"-->
-         <!--infinite-scroll="loadMoreRecords()" infinite-scroll-distance="0"-->
-         <!--infinite-scroll-disabled="lastPage || isQueryInprogress"></div>-->
+    
 
 
     <!--Product reviews-->

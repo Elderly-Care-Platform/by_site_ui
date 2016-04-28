@@ -198,13 +198,21 @@
     width: 100%;
     height: auto;
     line-height: 25px;
-    font-size: 20px;
+    font-size: 19px;
     padding-bottom: 3px;
   }
   .by_productVideoThumbHead a
   {
-    
-    color: #008000 !important;
+    color: #fff;
+    display: block;
+    padding: 2px 2px;
+    text-align: center;
+    background: #008000;
+  }
+  .by_productVideoThumbHead a:hover
+  {
+    color: #fff;
+    text-decoration: underline;
   }
   .by_productVideoThumbImage, .by_productVideoThumbVideo
   {
