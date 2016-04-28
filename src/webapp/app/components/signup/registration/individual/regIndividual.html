@@ -402,7 +402,7 @@
                     <div class="col-md-12 margin-bottom-0 register-page">
                         <div class="col-md-5 no-padding">Medical issues</div>
                         <div class="col-md-7 no-padding register-page">
-                            <!--<dropdown-multiselect class="col-md-12 no-padding register-page form-control grayBgLogin" pre-selected="member.roles" ng-model="selected_items" options="medicalIssuesOptions"></dropdown-multiselect>-->
+                           
                             <div class="panel-group acc-v1" id="accord-medical-issue">
                                 <div class="panel panel-default">
                                     <div class="panel-heading" data-toggle="collapse"
@@ -456,12 +456,7 @@
                                class="username-textbox textbox" placeholder="mm/dd/yyyy"/>
                     </div>
                 </div>
-                <!--<div class="col-md-12 margin-bottom-20  register-page">-->
-                    <!--<div class="col-md-5 no-padding"></div>-->
-                    <!--<div class="col-md-7 no-padding register-page">-->
-                        <!--<a>+ add another significant date</a>-->
-                    <!--</div>-->
-                <!--</div>-->
+                
 
                 <div class="col-md-12 margin-bottom-20 register-page">
                     <div class="col-md-5 no-padding">Marrital status</div>
@@ -546,15 +541,7 @@
                                            ng-checked="selectedHobbies && selectedHobbies.indexOf(option.id) !== -1">
                                     <span style="line-height: 23px;">{{option.displayMenuName}} </span>
                                 </div>
-                                <!--  
-                                <div class="panel-body col-md-12" ng-repeat="option in hobbiesOptions" ng-if="option.children.length > 0">
-                                    <span style="line-height: 23px;">{{option.displayMenuName}} </span>
-                                    <div ng-repeat="option in option.children">
-                                     <input type="checkbox" ng-click="selectHobbies(option)"
-                                           ng-checked="selectedHobbies && selectedHobbies.indexOf(option.id) !== -1">
-                                    <span style="line-height: 23px;">{{option.displayMenuName}}</span>
-                                    </div>
-                                </div>-->
+                                
 								<div class="panel-body col-md-12" style="padding:0px !important;" ng-repeat="option in hobbiesOptions" ng-if="option.children.length > 0">
 
 									<div  id="#accordion2">

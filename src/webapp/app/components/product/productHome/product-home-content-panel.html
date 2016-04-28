@@ -1,175 +1,5 @@
 <div style="overflow-x:hidden;" cg-busy="{promise:promise,backdrop:true,templateUrl:'app/shared/common/template/preloader.html'}" >
 
-<!-- <div class="by_callToAction margin-bottom-20 by_callToActionArrow">
-  <img src="assets/img/logo_symbol.png?versionTimeStamp=%PROJECT_VERSION%" alt="Logo" />Are you in Bangalore? Visit our <a href="#!/experience-center" >Experience Store</a>
-  <xyz ng-if="$root.windowWidth > 720"> <i class="fa fa-phone2"></i> {{telNo}}</xyz>
-  <xyz ng-if="$root.windowWidth < 721">
-    <a href="tel:{{telNo}}">
-      <div class="by_callToActionButton"><img
-        src="assets/img/home/call.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Call"> Call 
-      </div>
-    </a>
-  </xyz>
-</div> -->
-
-<!-- <div class="by_product_threeRow" ng-if="$root.windowWidth > 980"> 
-    <div class="by_product_threeRowOne divLeft">
-      <div class="by_product_threeRowThumb">
-        <a href="#!/shop/bedroom/10213">
-        <img src="assets/img/product/bedroom.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Bedroom" />
-        <div class="clearfix"></div>
-        <div class="by_product_rowText">
-          Bedroom
-          <div class="clearfix"></div>
-        </div>
-        </a>
-      </div>
-      <div class="by_product_threeRowThumb margin-top-20">
-        <a href="#!/shop/fitness-&-rehab/10231">
-        <img src="assets/img/product/fitness_rehab.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Fitness Rehab" />
-        <div class="clearfix"></div>
-        <div class="by_product_rowText">
-          Fitness &amp; Rehab
-          <div class="clearfix"></div>
-        </div>
-        </a>
-      </div>
-    </div>
-    <div class="by_product_threeRowTwoM divLeft">
-      <div class="by_product_threeRowThumb">
-        <a href="#!/shop/mobility/10212">
-        <img src="assets/img/product/mobility.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%"alt="Mobility" />
-        <div class="clearfix"></div>
-        <div class="by_product_rowText">
-          Mobility
-          <div class="clearfix"></div>
-        </div>
-        </a>
-      </div>
-    </div>
-    <div class="by_product_threeRowThree divRight">
-      <div class="by_product_threeRowThumb">
-        <a href="#!/shop/daily-aids/10225">
-        <img src="assets/img/product/daily_aids.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Daily Aids" />
-        <div class="clearfix"></div>
-        <div class="by_product_rowText">
-          Daily Aids
-          <div class="clearfix"></div>
-        </div>
-        </a>
-      </div>
-      <div class="by_product_threeRowThumb margin-top-20">
-        <a href="#!/shop/washing-&-toileting/10214">
-        <img src="assets/img/product/washing_toilets.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Washing &amp; Toileting" />
-        <div class="clearfix"></div>
-        <div class="by_product_rowText">
-          Washing &amp; Toileting
-          <div class="clearfix"></div>
-        </div>
-        </a>
-      </div>
-    </div>
-    <div class="clearfix"></div>
-</div>
-
-<div class="by_product_twoRow" ng-if="$root.windowWidth > 980">
-  <div class="by_product_twoRowThumb divLeft">
-    <a href="#!/shop/medical-conditions/10200">
-    <img src="assets/img/product/medical_conditions.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Medical Conditions" />
-    <div class="clearfix"></div>
-    <div class="by_product_rowText">
-      Medical Conditions
-      <div class="clearfix"></div>
-    </div>
-    </a>
-  </div>
-  <div class="by_product_twoRowThumb divRight">
-    <a href="#!/shop/orthopaedic-support/10219">
-    <img src="assets/img/product/orthopaedics_support.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Orthopaedics Support" />
-    <div class="clearfix"></div>
-    <div class="by_product_rowText">
-      Orthopaedics Support
-      <div class="clearfix"></div>
-    </div>
-    </a>
-  </div>
-  <div class="clearfix"></div>
-</div>
-
-
-<div ng-if="$root.windowWidth < 981">
-  
-  <div class="by_product_home_mobile">
-    <a href="#!/shop/bedroom/10213">
-      <div class="by_product_rowText">
-        Bedroom
-        <div class="clearfix"></div>
-      </div>
-      <img src="assets/img/product/bedroom_m.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Bedroom" />
-      <div class="clearfix"></div>
-    </a>
-  </div>
-  <div class="by_product_home_mobile">
-    <a href="#!/shop/mobility/10212">
-      <div class="by_product_rowText">
-        Mobility
-        <div class="clearfix"></div>
-      </div>
-      <img src="assets/img/product/mobility_m.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%"alt="Mobility" />
-      <div class="clearfix"></div>
-    </a>
-  </div>
-  <div class="by_product_home_mobile">
-    <a href="#!/shop/daily-aids/10225">
-      <div class="by_product_rowText">
-        Daily Aids
-        <div class="clearfix"></div>
-      </div>
-      <img src="assets/img/product/daily_aids_m.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Daily Aids" />
-      <div class="clearfix"></div>
-    </a>
-  </div>
-  <div class="by_product_home_mobile">
-    <a href="#!/shop/fitness-&-rehab/10231">
-      <div class="by_product_rowText">
-        Fitness &amp; Rehab
-        <div class="clearfix"></div>
-      </div>
-      <img src="assets/img/product/fitness_rehab_m.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Fitness Rehab" />
-      <div class="clearfix"></div>
-    </a>
-  </div>
-  <div class="by_product_home_mobile">
-    <a href="#!/shop/washing-&-toileting/10214">
-      <div class="by_product_rowText">
-        Washing &amp; Toileting
-        <div class="clearfix"></div>
-      </div>
-      <img src="assets/img/product/washing_toilets_m.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Washing &amp; Toileting" />
-      <div class="clearfix"></div>
-    </a>
-  </div>
-  <div class="by_product_home_mobile">
-    <a href="#!/shop/medical-conditions/10200">
-      <div class="by_product_rowText">
-        Medical Conditions
-        <div class="clearfix"></div>
-      </div>
-      <img src="assets/img/product/medical_conditions_m.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Medical Conditions" />
-      <div class="clearfix"></div>
-    </a>
-  </div>
-  <div class="by_product_home_mobile">
-    <a href="#!/shop/orthopaedic-support/10219">
-      <div class="by_product_rowText">
-        Orthopaedics Support
-        <div class="clearfix"></div>
-      </div>
-      <img src="assets/img/product/orthopaedics_support_m.jpg?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Orthopaedics Support" />
-      <div class="clearfix"></div>
-    </a>
-  </div>
-</div> -->
 
 
 <div class="by_productVideoThumb1 divLeft" >
@@ -177,9 +7,11 @@
     <a href="#!/shop/mobility/10212">Mobility</a>
   </div>
   <div class="by_productVideoThumbVideo">
-    <div class="by_expVideoShow4" ng-click="showVideo4();">
-      <img src="assets/img/product/mobility.png?versionTimeStamp=%PROJECT_VERSION%" alt="Mobility Video" width="100%"  />
-      <div class="by_expVideoShowVideoIcon"></div>
+    <div class="by_expVideoShow4" >
+      <a href="#!/shop/mobility/10212"><img src="assets/img/product/mobility.png?versionTimeStamp=%PROJECT_VERSION%" alt="Mobility Video" width="100%"  /></a>
+      <div class="by_expVideoShowVideoIconVideo" ng-click="showVideo4();">
+        Watch our video <img src="assets/img/product/Play.png?versionTimeStamp=%PROJECT_VERSION%" alt="Mobility Video" width="33" />
+      </div>
     </div>
     <iframe id="by_expVideoFrame4" width="100%" height="" src="https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=0" frameborder="0" allowfullscreen ></iframe>
   </div>
@@ -190,9 +22,11 @@
     <a href="#!/shop/bed-&-bedroom/10213">Bed and Bedroom</a>
   </div>
   <div class="by_productVideoThumbVideo">
-    <div class="by_expVideoShow1" ng-click="showVideo1();">
-      <img src="assets/img/product/bed-and-bedroom.png?versionTimeStamp=%PROJECT_VERSION%" alt="Bed and Bedroom Video" width="100%"  />
-      <div class="by_expVideoShowVideoIcon"></div>
+    <div class="by_expVideoShow1" >
+      <a href="#!/shop/bed-&-bedroom/10213"><img src="assets/img/product/bed-and-bedroom.png?versionTimeStamp=%PROJECT_VERSION%" alt="Bed and Bedroom Video" width="100%"  /></a>
+      <div class="by_expVideoShowVideoIconVideo" ng-click="showVideo1();">
+        Watch our video <img src="assets/img/product/Play.png?versionTimeStamp=%PROJECT_VERSION%" alt="Bed and Bedroom Video" width="33" />
+      </div>
     </div>
     <iframe id="by_expVideoFrame1" width="100%" height="" src="https://www.youtube.com/embed/G7iQyQM9o78?rel=0&showinfo=0&autoplay=0" frameborder="0" allowfullscreen ></iframe>
   </div>
@@ -203,9 +37,11 @@
     <a href="#!/shop/daily-aids/10225">Daily Aids</a>
   </div>
   <div class="by_productVideoThumbVideo">
-    <div class="by_expVideoShow2" ng-click="showVideo2();">
-      <img src="assets/img/product/daily-aids.png?versionTimeStamp=%PROJECT_VERSION%" alt="Daily Aids Video" width="100%"  />
-      <div class="by_expVideoShowVideoIcon"></div>
+    <div class="by_expVideoShow2" >
+      <a href="#!/shop/daily-aids/10225"><img src="assets/img/product/daily-aids.png?versionTimeStamp=%PROJECT_VERSION%" alt="Daily Aids Video" width="100%"  /></a>
+      <div class="by_expVideoShowVideoIconVideo" ng-click="showVideo2();">
+        Watch our video <img src="assets/img/product/Play.png?versionTimeStamp=%PROJECT_VERSION%" alt="Daily Aids Video" width="33"/>
+      </div>
     </div>
     <iframe id="by_expVideoFrame2" width="100%" height="" src="https://www.youtube.com/embed/pE8EShECqmA?rel=0&showinfo=0&autoplay=0" frameborder="0" allowfullscreen ></iframe>
   </div>
@@ -216,9 +52,11 @@
     <a href="#!/shop/bed-&-bedroom/10213">Washing &amp; Toileting</a>
   </div>
   <div class="by_productVideoThumbVideo">
-    <div class="by_expVideoShow3" ng-click="showVideo3();">
-      <img src="assets/img/product/washing-and-toileting.png?versionTimeStamp=%PROJECT_VERSION%" alt="Washing &amp; Toileting Video" width="100%"  />
-      <div class="by_expVideoShowVideoIcon"></div>
+    <div class="by_expVideoShow3">
+      <a href="#!/shop/bed-&-bedroom/10213"><img src="assets/img/product/washing-and-toileting.png?versionTimeStamp=%PROJECT_VERSION%" alt="Washing &amp; Toileting Video" width="100%"  /></a>
+      <div class="by_expVideoShowVideoIconVideo"  ng-click="showVideo3();">
+        Watch our video <img src="assets/img/product/Play.png?versionTimeStamp=%PROJECT_VERSION%" alt="Washing &amp; Toileting Video"  width="33"/>
+      </div>
     </div>
     <iframe id="by_expVideoFrame3" width="100%" height="" src="https://www.youtube.com/embed/hPR5Wf3MlTc?rel=0&showinfo=0&autoplay=0" frameborder="0" allowfullscreen ></iframe>
   </div>
@@ -265,12 +103,12 @@
 </div>
 
 <div class="by_productVideoThumb9 divLeft" ng-if="$root.windowWidth > 920">
-  <div class="by_productVideoThumbHead">
-    <a href="#!/shop/all/55bcad7be4b08970a736784b" style="text-decoration:none;">&nbsp;</a>
-  </div>
+  <!-- <div class="by_productVideoThumbHead">
+    <a href="#!/shop/all/55bcad7be4b08970a736784b" style="text-decoration:none;">All products</a>
+  </div> -->
   <div class="by_productVideoThumbImage" style="background:#008000">
     <a href="#!/shop/all/55bcad7be4b08970a736784b">
-      <img src="assets/img/section_headers/view-all-products.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="All products" width="82%"  />
+      <img src="assets/img/section_headers/view-all-products.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="All products" width="97%"  />
     </a>
   </div>
 </div>
@@ -320,15 +158,5 @@
 
 </div>
 
- <!-- <div class="by_productAll">
-    <a href="#!/shop/all/55bcad7be4b08970a736784b">
-        View All Products
-    </a>
-</div> -->
+ 
 <div class="clearfix margin-top-20">&nbsp;</div>
-
-<!-- <div class="by_productList_banner margin-bottom-20" style="margin-top:0px;">
-  <a href="#!/experience-center">
-    <img src="assets/img/product/product_exp_store_banner.png?versionTimeStamp=%PROJECT_VERSION%" width="100%" alt="Experience Store" />
-  </a>
-</div> -->

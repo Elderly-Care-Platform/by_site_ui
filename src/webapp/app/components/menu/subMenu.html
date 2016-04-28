@@ -40,14 +40,7 @@
                 </div>
 
                 <div class="row" ng-if="colCount > 2 && colCount <= 3">
-                    <!--<div class="col-md-4 col-sm-6" ng-repeat="leafMenu in submenu.children">-->
-                        <!--<ul class="list-unstyled style-list">-->
-                            <!--<li >-->
-                                <!--<a ng-click="selectMenu(leafMenu)" >{{leafMenu.displayMenuName+""+$index}}</a>-->
-                            <!--</li>-->
-                        <!--</ul>-->
-                        <!--<div ng-if="$index ==3"><img class="list-unstyled style-list" src="assets/img/icons/divider.png"></div>-->
-                    <!--</div>-->
+                    
                     <div class="col-md-4 col-sm-6">
                         <ul class="list-unstyled style-list">
                             <li  ng-repeat="leafMenu in submenu.children" ng-if="$index < 4">

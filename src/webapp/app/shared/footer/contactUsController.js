@@ -29,6 +29,10 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
             $scope.contact.userEmail = localStorage.getItem("USER_ID");
             $scope.contact.username = BY.byUtil.validateUserName(localStorage.getItem("USER_NAME"));
             $scope.contact.userPhone = localStorage.getItem("USER_PHONENUMBER");
+
+            if($scope.contact.userPhone == "null"){
+                $scope.contact.userPhone = '';
+            }
         }
 
         (function(){
@@ -81,7 +85,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
                 $scope.errorMsg = "";
                 $scope.contactUs.$save( //success
                     function (value) {
-                        $location.path("/");
+                        $location.path("/contact-us-response");
                         $route.reload();
                     },
                     //error

@@ -652,12 +652,14 @@ body a:hover
 .by_contact_worksLeftThumb
 {
     width: 100%;
+    max-width: 585px;
     height: auto;
     margin-bottom: 15px;
+    margin-top: 10px;
 }
 .by_contact_worksLeftItem
 {
-    border: 5px solid #FF850F;
+    border: 5px solid #008000;
     border-radius: 50% !important;
     width: 30px;
     height: 30px;
@@ -673,6 +675,11 @@ body a:hover
     line-height: 20px;
     font-size: 15px;
     padding-top: 5px;
+}
+.by_contact_worksLeftText a, .by_contact_worksLeftText a:hover
+{
+    color: #008000;
+    text-decoration: underline !important;
 }
 .by_contactThankYou
 {

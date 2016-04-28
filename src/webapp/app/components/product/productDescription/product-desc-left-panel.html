@@ -1,45 +1,4 @@
-<!--<div class="by_menuDetailed col-md-12 no-padding" ng-if="$root.windowWidth > 720"  style="position:fixed; bottom:0px; padding-top:10px;"  ng-init="leftPanelHeight();">-->
-        <!--<div class="by_productDetail_leftSimilarTitle col-md-12 no-padding">
-            <span ng-if="uiData.similarProductLength > 0">Similar Products</span>
-            <span ng-if="uiData.similarProductLength === 0">No Similar Products Available</span>
-        </div>
 
-        <div class="col-md-12 no-padding" ng-repeat="product in uiData.similarProduct">
-            <div >
-                <a href="{{productUrl(product.id, product.name)}}" ng-click="$event.stopPropagation();">
-                <div class="by_productDetail_leftSimilarThumb">
-                    <div class="by_productDetail_leftSimilarThumbImage">
-                        <img ng-src="{{product.primaryMedia.url}}" alt="{{product.name}}">
-                    </div>
-                    <div class="by_productDetail_leftSimilarThumbContent">
-                        <div class="by_productDetail_leftSimilarThumbContentName text-capitalize">
-                            {{product.name.substring(0, 25).toLowerCase()}}<span ng-if="product.name.length > 25">...</span>
-                        </div>
-                        <div class="by_productDetail_leftSimilarThumbContentPrice">
-                            <strong ng-if="product.salePrice && product.salePrice.amount">Rs. {{product.salePrice.amount}}</strong><br/>
-                            <strong ng-if="!product.salePrice || !product.salePrice.amount">Rs. {{product.retailPrice.amount}}</strong><br/>
-
-                            <small ng-if="product.retailPrice != null && product.salePrice != null && product.retailPrice.amount != product.salePrice.amount">
-                                <del>Rs {{product.retailPrice.amount}}</del>
-                            </small>
-                        </div>
-                        
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                </a>
-            </div>
-        </div>-->
-
-        <!--<div class="by_profileDetailed_menuIcon" ng-click="gotoHref('userReviews')">
-            <i class="review-Icon_rate"></i> <span>Rate & Review</span>
-            <div class="clearfix"></div>
-        </div>-->
-        <!--<div class="clearfix"></div>-->
-        <!--<div class="by_leftPanelLink by_leftPanel_accelArrow" ng-click="gotoHref('userReviews')">-->
-            <!--Rate & Review-->
-        <!--</div>-->
-<!--</div>-->
 <div ng-controller="ProductMenuCtrl">
     <!--Desktop Menu-->
 <div class="by_subMenuPlus" ng-if="$root.windowWidth > 720" ng-init="expandParent()" element-resize
@@ -80,12 +39,7 @@
         </li>
     </ul>
     <div class="clearfix  margin-top-20"></div>
-    <!-- <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['Products'].children"
-         ng-if="menu.module == menuConfig.modules['discuss'].moduleId">
-        <a href="#!/shop/review/{{menu.id}}/">
-            Questions &amp; Reviews
-        </a>
-    </div> -->
+   
     <div class="clearfix"></div>
 </div>
 <!--Mobile Menu-->
@@ -131,12 +85,7 @@
                 </li>
             </ul>
             <div class="clearfix  margin-top-20"></div>
-            <!-- <div class="col-md-12 by_editorButtonViews" ng-repeat="menu in $root.menuCategoryMapByName['Products'].children"
-                 ng-if="menu.module == menuConfig.modules['discuss'].moduleId">
-                <a href="#!/shop/review/{{menu.id}}/">
-                    Questions &amp; Reviews
-                </a>
-            </div> -->
+           
             <div class="clearfix"></div>
         </div>
     </div>

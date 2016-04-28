@@ -30,11 +30,7 @@
   margin-left: -34px;
   background: url(../img/BY_preloader.GIF?versionTimeStamp=%PROJECT_VERSION%);
 }
-.weAreHiring {
-	padding: 5px 0 30px;
-	height: 208px;
-	background: url(../img/weAreHiringBg.png?versionTimeStamp=%PROJECT_VERSION%) repeat center;
-}
+
 .tnymcePopUpwrapper
 {
 	width: 100%;
@@ -405,10 +401,7 @@
 {
 	/*border-right: transparent !important;*/
 }
-.weAreHiring .title-box .title-box-text, .weAreHiring p
-{
-	color: #1B1818;
-}
+
 .padding20S
 {
 	padding: 15px;

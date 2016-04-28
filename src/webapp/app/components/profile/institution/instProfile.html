@@ -166,16 +166,7 @@
         <div class="col-md-12" ng-if="branchProfile.basicProfileInfo.description">
             <div class="row bg-color-grey2" style="margin-bottom: 15px; margin-top: 12px; height:1px;"></div>
             <div class="by_profile_devider "></div>
-            <!--  <div class="articles-story row" ng-if="branchProfile.basicProfileInfo.shortDescription">
-                <p id="profile-shortDesc">
-                    {{branchProfile.basicProfileInfo.shortDescription}}<br/>
-                    <a class="divRight by_readmore" ng-click="showMore()">Read More<i class="fa fa-angle-right"                              style="font-size: 16px; margin-top: -3px;     margin-left: 3px;"></i></a>
-                </p>
-                
-                <p id="profile-desc" style="display: none"
-                   ng-bind-html="trustForcefully(branchProfile.basicProfileInfo.description)">
-                </p>
-                </div>-->
+           
             <div class="articles-story row" ng-if="branchProfile.basicProfileInfo.description">
                 <p id="profile-desc" ng-bind-html="trustForcefully(branchProfile.basicProfileInfo.description)">
                 </p>
@@ -224,23 +215,7 @@
         </div>
         <div class="clearfix"></div>
     </div>
-        <!--<div ng-if="reviews && reviews.length > 0" >
-            <div class="col-md-12 no-padding margin-bottom-20 review-rate-header"
-                style="padding-left:21px; padding-right:21px;">
-                <div class="col-md-12 no-padding dp-block" style="border-bottom:1px solid #ccc;" >
-                    Reviews
-                </div>
-                <div class="col-md-12 no-padding">
-                    <div class="bg-green-h2" style="width: 75px;"></div>
-                </div>
-            </div>
-            <div ng-repeat="review in reviews" data-index="discussion-articles"
-                data-link="articles.html"
-                ng-include="'app/components/profile/shared/profileReviewCard.html?versionTimeStamp=%PROJECT_VERSION%'"
-                ng-if="review.text && review.text.trim().length > 0">
-            </div>            
-            <div class="clearfix"></div>
-        </div>-->
+       
 
         <div class="accordion by_product_accordian " id="by_pro_accRateReview" ng-if="isAllowedToReview">
             <div class="accordion-group">
@@ -257,10 +232,7 @@
             </div>
             <div class="clearfix"></div>
         </div>
-        <!--<div class="clearfix margin-top-10" ng-if="$root.windowWidth < 981"></div>
-        <div class="row margin-top-10" 
-            ng-include="'app/components/profile/shared/reviewRate.html?versionTimeStamp=%PROJECT_VERSION%'"
-            ng-if="isAllowedToReview"></div>-->
+        
         <div class="clearfix margin-top-20" ng-if="isAllowedToReview"></div>
     </div>
     <!--end show review and rate details only if branch id available-->

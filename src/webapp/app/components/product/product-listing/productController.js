@@ -81,21 +81,8 @@ define(['byProductApp', 'byUtil',
 
             function initialize() {
                 if($scope.selectedMenuId == '55bcad7be4b08970a736784b'){
-                $(".by_header").removeClass("by_header_image"); 
-                $(".by_header").addClass("by_headerBoder");
-                angular.element($window).bind("scroll", function () {
-                    var headerHeight = $(".by_header").height();
-                    if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
-                        BY.byUtil.changeHeaderImage();
-                        $(".by_header").addClass("by_header_image"); 
-                        $(".by_header").removeClass("by_headerBoder");
-                    } else {
-                        BY.byUtil.changeHeaderImage();
-                        $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").addClass("by_headerBoder");
-                    }
-                        
-                });}
+                    BY.byUtil.changeHeaderImage();
+                }
                 updateMetaTags();
                 if ($scope.slug == 'all' || ($scope.selectedMenu && $scope.selectedMenu.ancestorIds.length > 0)) {
                     if ($scope.selectedMenu.module === BY.config.menu.modules['product'].moduleId && !$scope.showEditor) {
