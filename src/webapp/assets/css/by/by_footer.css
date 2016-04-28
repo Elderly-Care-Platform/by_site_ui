@@ -265,6 +265,30 @@
     color: #008000;
     text-decoration: underline;
 }
+.by_contactUsResponseLeft
+{
+    width: calc(100% - 320px);
+    font-size: 20px;
+    font-family: century_gothic!important;
+    line-height: 29px;
+}
+.by_contactUsResponseLeft small
+{
+    font-size: 15px;
+}
+.by_contactUsResponseLeft b
+{
+    font-family: Segoe_Print!important;
+    font-size: 25px;
+    font-weight: normal;
+}
+.by_contactUsResponseImg
+{
+    position: absolute;
+    bottom: -15px;
+    right: 0px;
+    width: 300px;
+}
 @media (max-width: 1010px){
     .by_contact_footerLeft
     {
