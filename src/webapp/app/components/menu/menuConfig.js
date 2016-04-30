@@ -460,3 +460,30 @@ BY.config.menu.productsSH = {
         'sectionImage':'assets/img/section_headers/gift-idea.png?versionTimeStamp=%PROJECT_VERSION%'
     }
 }
+
+BY.config.menu.servicesNames = {
+    '56406cd03e60f5b66f62df26' : {
+        'sectionHead':'Directory of Elder Care Services'
+    },
+    '55befb69e4b07cedaa26780d' : {
+        'sectionHead':'Nurses and Attendants for the Elderly'
+    },
+    '55befb86e4b07cedaa26780e' : {
+        'sectionHead':'Physiotherapy for the Elderly'
+    },
+    '55befc45e4b07cedaa26781a' : {
+        'sectionHead':'Home Diagnostics for the Elderly'
+    },
+    '55befb1ae4b07cedaa26780b' : {
+        'sectionHead':'Medical Equipment Supply'
+    },
+    '55befaeee4b07cedaa26780a' : {
+        'sectionHead':'Emergency Services for the Elderly'
+    },
+    '5640801e3e60f5b66f62df37' : {
+        'sectionHead' : 'Others'
+    },
+    '55bcadaee4b08970a736784c' : {
+        'sectionHead' : 'Directory of Senior Living Facilities'
+    }
+}
