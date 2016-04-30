@@ -147,7 +147,7 @@ define(['byApp', 'byUtil', 'LoginController', 'registrationConfig', 'modifySignu
 
                 $scope.userProfile = UserProfile.get({userId: $scope.userId}, function (profile) {
                     $scope.profile = profile.data;
-                    if ($scope.profile.userTypes.length > 0) {
+                    if ($scope.profile.userTypes && $scope.profile.userTypes[0] != null && $scope.profile.userTypes.length > 0) {
                         $scope.userTypeConfig = BY.config.regConfig.userTypeConfig[$scope.profile.userTypes[0]];
                     } else {
                         if ($scope.profile.userTags[0] == BY.config.regConfig.userTags.serviceprovider) {
