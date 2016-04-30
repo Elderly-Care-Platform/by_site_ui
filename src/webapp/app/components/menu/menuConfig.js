@@ -463,7 +463,7 @@ BY.config.menu.productsSH = {
 
 BY.config.menu.servicesNames = {
     '56406cd03e60f5b66f62df26' : {
-        'sectionHead':'Directory of Elder Care Services'
+        'sectionHead':'Elder Care Services in India'
     },
     '55befb69e4b07cedaa26780d' : {
         'sectionHead':'Nurses and Attendants for the Elderly'
