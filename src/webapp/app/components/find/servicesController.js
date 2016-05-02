@@ -21,6 +21,8 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactU
             $scope.showContact.showContactNumber = false;
             $scope.pageIdx                  = $routeParams.pageIdx ? $routeParams.pageIdx : 0;
 
+            $scope.servicesNames            = BY.config.menu.servicesNames;
+
             var city                        = $routeParams.city ? $routeParams.city : 'all',
                 tags                        = [],
                 queryParams                 = {page: $scope.pageIdx, size: 20};

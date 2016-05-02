@@ -2,12 +2,8 @@
 
 
 
-<div class="by_sectionHeader" ng-if="selectedMenu && $root.byTopMenuId != selectedMenuId" >
-    <h2>{{selectedMenu.displayMenuName}} </h2>
-</div>
-
-<div class="by_sectionHeader" ng-if="$root.byTopMenuId == selectedMenuId" >
-    <h2> Directory of Elder Care Services </h2>
+<div class="by_sectionHeader" ng-if="selectedMenu">
+    <h2>{{servicesNames[selectedMenuId].sectionHead}}</h2>
 </div>
 
 
