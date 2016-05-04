@@ -1,13 +1,13 @@
 .by_menu
 {
-	width: 333px;
+	width: 408px;
 	margin-top: 10px;
 	height: auto;
 	font-size: 18px;
 	color: #fff;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: -32px;
+	margin-top: -29px;
 }
 .by_menu a
 {
@@ -462,9 +462,9 @@
 	.by_menu
 	{		
 		margin-left: 27%;
-		width: 270px;
+		width: 330px;
 		font-size: 16px;
-		margin-top: -30px;
+		margin-top: -28px;
 	}	
 	.by_menu a
 	{
@@ -473,11 +473,24 @@
 	}
 }
 @media ( max-width : 900px){
+	.by_header_right_other
+	{
+		width: 226px;
+	}
+	.by_headerPhoneNumber, .by_headerPhoneNumber a{
+		font-size: 16px;
+		margin-right: 6px;
+		margin-top: 21px;
+	}
+	.by_headerPhoneNumber img
+	{
+		width: 17px;
+		margin-top: -3px;
+	}
 	.by_menu
 	{		
-		margin-left: 25%;
+		margin-left: 27%;
 		font-size: 15px;
-		margin-top: -28px;
 	}
 	.by_header_right_other
 	{
@@ -506,6 +519,34 @@
 		color: #000 !important;
 	}
 }
+@media ( max-width : 790px){
+	
+	.by_logo{
+		width: 140px;
+	}
+	.by_header_right_other
+	{
+		width: 216px;
+	}
+	.by_headerPhoneNumber, .by_headerPhoneNumber a {
+	    margin-right: 4px;
+	}
+	.by_header_right_other
+	{
+		margin-top: -2px;
+	}
+	.by_menu
+	{
+		margin-top: -28px;
+		font-size: 15px;
+		width:auto;
+		margin-left: 150px;
+	}
+	.by_header_right_mobile
+	{
+		margin-right: 0px;
+	}
+}
 @media (max-width: 767px){
 	.header-v7 .navbar-default .navbar-nav > li > a {
 		border-bottom: 0px;
@@ -521,15 +562,46 @@
 		float: none;
 		margin-right: 0px;    
 		text-transform: uppercase;
-		margin-top: 2px;
-		padding-bottom: 10px;
+		margin-top: 13px;
+		padding-bottom: 4px;
 		width: 100%;
 		margin-left: 0px;
+		text-align: center;
+		font-size: 15px;
 	}
 	.by_menu a
 	{
-		margin-right: 5px;
-		margin-left: 5px;
+		margin-right: 3px;
+		margin-left: 3px;
+	}
+	.by_headerPhoneNumber, .by_headerPhoneNumber a
+	{
+		margin-top: 26px;
+	}
+	.by_header_right_mobile_search_image
+	{
+		margin-top: 19px;
+	}
+	.by_header_right_mobile_search
+	{
+		margin-top: 17px;
+	}
+	.by_cart_iconWrap
+	{
+		margin-top: 21px;
+	}
+	.by_headerPhoneNumber .fa-phone2:before
+	{
+		font-size: 20px;
+		margin-right: 8px;
+	}
+	.by_header_right_other
+	{
+		margin-top: -7px;
+	}
+	.by_logo
+	{
+		width: 147px;
 	}
 }
 @media ( max-width : 560px){

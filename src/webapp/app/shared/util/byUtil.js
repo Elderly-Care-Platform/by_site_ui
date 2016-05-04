@@ -45,7 +45,14 @@ $(window).scroll(function () {
         $(".topScroll").css('bottom', "37px");
     }
 
+    //////////////////
 
+    if($(".by_headerMoreMenu").css("display") == 'block'){
+        if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) > 100) {
+            $(".by_headerMoreMenu").slideUp();
+            $(".by_menuMore").removeClass('by_menuMore2');
+        }
+    }
 });
 
 $(document).ready(function () {

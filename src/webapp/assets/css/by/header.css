@@ -1,7 +1,7 @@
 .by_header
 {
 	width: 100%;
-	padding:5px 15px 5px 15px;
+	padding:5px 15px 0px 15px;
 	position: fixed;
 	z-index: 90;
 	top: 0px;
@@ -14,7 +14,7 @@
 }
 .by_logo
 {
-	width:180px;
+	width:176px;
 	height:auto;
 }
 .by_header_right
@@ -91,12 +91,11 @@
 }
 .by_header_right_other
 {
-	width:auto;
+	width:266px;
 	height:auto;
-	margin-top: 0px;
 	text-align: right;
 	font-size: 14px;
-	margin-top: -4px;
+	margin-top: 7px;
 }
 .by_header_right_other a, .by_header_right_other a:hover
 {
@@ -161,7 +160,7 @@
 }
 .by_header_right_mobile
 {
-	height: 30px;
+	height: 47px;
 	width: 23px;
 	margin-right: 4px;
 	margin-top: 2px;
@@ -170,7 +169,7 @@
 {
 	width: calc(100% - 25px);
 	height: auto;
-	margin-top: 5px;
+	margin-top: 12px;
 	border-bottom:1px solid #fff;
 	display: none;
 }
@@ -187,7 +186,7 @@
 .by_header_right_mobile_search_image
 {
 	color: #fff;
-	margin-top: 2px;
+	margin-top: 12px;
 	cursor: pointer;
 	font-size: 21px;
 }
@@ -241,10 +240,6 @@
 	{
 		color: #000;
 	}
-	.by_header
-	{
-		height: 47px;
-	}
 	.by_mobileHeaderHeight
 	{
 		height: 100px;
@@ -261,11 +256,194 @@
 		text-align: center;
 		margin-top: 1px;
 	}
-	.by_header
+}
+.by_menuMore2
+{
+	text-decoration: underline;
+	font-weight: bold;
+}
+.by_menuMore:after
+{
+	content: "\00bb";
+	padding-left: 3px;
+}
+.by_menuMore2:after
+{
+	content: "\00ab";
+	padding-left: 3px;
+}
+.by_headerMoreMenu
+{
+	width: 100%;
+	position: fixed;
+	z-index: 90;
+	left: 0px;
+	display: none;	
+}
+.by_headerMoreMenuMask
+{
+	width: 100%;
+	height: auto;
+	background: rgba(8, 60, 8, 0.78);
+}
+.by_menuMoreLeft
+{
+	width: calc(48% - 55px);
+	height: auto;
+	float: left;
+	margin-right: 2%;
+}
+.by_menuMoreThumb
+{
+	width: 100%;
+	padding-bottom: 10px;
+	height: auto;
+}
+.by_menuMoreThumbImg
+{
+	width: 35px;
+	height: auto;
+	margin-top: 1px;
+	float: left;
+}
+.by_menuMoreThumbText
+{
+	width: calc(100% - 35px);
+	height: auto;
+	font-size: 18px;
+	line-height: 20px;
+	color: #000;
+	font-weight: bold;
+}
+.by_menuMoreThumbText:hover
+{
+	text-decoration: underline;
+}
+.by_menuMoreThumbText span
+{
+	font-size: 15px;
+	display: block;
+	color: #A09E9E;
+	font-weight: normal;
+}
+.by_menuMoreThumbText:hover span, .by_menuMoreThumbText span:hover 
+{
+	text-decoration: none !important;
+}
+.by_menuMoreRight
+{
+	width: 110px;
+	height: auto;
+	float: left;
+}
+.by_menuMoreRightThumb
+{
+	font-size: 17px;
+	line-height: 20px;
+	color: #000;
+	padding-bottom: 20px;
+	font-weight: bold;
+	width: 100%;
+}
+.by_menuMoreRightThumb a
+{
+	color: #000;
+	display: block;
+}
+.by_menuMoreRightThumb a:hover
+{
+	color: #000;
+	text-decoration: underline !important;
+}
+.by_menuMoreRightThumb a:after
+{
+	content: '';
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 10px solid #FF850F;
+    border-bottom: 5px solid transparent;
+    display: inline-block;
+    float: right;
+    margin-top: 6px;
+}
+.by_menuMoreRightThumb span
+{
+	font-size: 13px;
+	font-weight: normal;
+}
+.by_menuMoreRightThumb span a:after
+{
+	content: '';
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+    display: inline-block;
+    float: none;
+    margin-top: 0px; 
+}
+.by_headerPhoneNumber, .by_headerPhoneNumber a
+{
+	color: #fff;
+	font-size: 21px;
+	text-decoration: none;
+	margin-right: 8px;
+	margin-top: 15px;
+}
+.by_headerPhoneNumber a:hover
+{
+	text-decoration: none;
+}
+.by_headerPhoneNumber img
+{
+	width: 20px;
+	margin-top: -3px;
+}
+
+@media ( max-width : 700px){
+	.by_headerMoreMenu  .by_container
 	{
-		padding-top: 0px;
+		max-height: calc(100vh - 101px);
+		overflow-y:auto; 
 	}
-	.by_menu{
-		margin-top: 6px !important;
+	.by_menuMoreLeft
+	{
+		width: 300px;
+		float: none;
+		margin-right: 0px;
+	}
+	.by_menuMoreRight
+	{
+		float: none;
+		width: 300px;
+		border-top: 1px solid #777575;
+		margin-top: 10px;
+		padding-top: 18px;
+	}
+	.by_menuMoreRightThumb a:after
+	{
+		float: left;
+		margin-right: 26px;
+	}
+	.by_menuMoreRightThumb
+	{
+		font-size: 18px;
+	}
+}
+@media ( max-width : 420px){
+	.by_header_right_other
+	{
+		width: 176px !important;
+		margin-top: -11px !important;
+	}	
+	.by_menu
+	{
+		font-size: 13px !important;
+	}
+	.by_logo
+	{
+		width: 121px !important;
 	}
 }

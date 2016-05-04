@@ -56,65 +56,97 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
         }
 
         function updateHeaderTemplate() {
-            if (isHomePage == true) {
-                $("#home").removeClass('hide');
-                $("#home").addClass('show');
-                $(".by_header").removeClass("by_header_image");
-                $(".by_header").removeClass("by_headerBoder");
-                //$("#home").load("app/components/home/homeStatic.html?versionTimeStamp=%PROJECT_VERSION%");
-                $scope.templateUrl = 'app/components/header/homeHeader.html?versionTimeStamp=%PROJECT_VERSION%';
-                // on scrolling adding header background
-                angular.element($window).bind("scroll", function () {
-                    var headerHeight = $(".by_header").height();
-                    if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
-                        $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").addClass("by_homeHeaderImage");
-                        $(".by_header").removeClass("by_headerBoder");
-                    } else {
-                        $(".by_header").removeClass("by_header_image"); 
-                        $(".by_header").removeClass("by_headerBoder");
-                        $(".by_header").removeClass("by_homeHeaderImage");
-                    }
-                    if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= 1) {
-                        $("#homeMenuScroll").show();
-                    } else {                        
-                         $("#homeMenuScroll").hide();
-                    }
+            // if (isHomePage == true) {
+            //     $("#home").removeClass('hide');
+            //     $("#home").addClass('show');
+            //     $(".by_header").removeClass("by_header_image");
+            //     $(".by_header").removeClass("by_headerBoder");
+            //     $scope.templateUrl = 'app/components/header/homeHeader.html?versionTimeStamp=%PROJECT_VERSION%';
+                 
+            //     angular.element($window).bind("scroll", function () {
+            //         var headerHeight = $(".by_header").height();
+            //         if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+            //             $(".by_header").removeClass("by_header_image"); 
+            //             $(".by_header").addClass("by_homeHeaderImage");
+            //             $(".by_header").removeClass("by_headerBoder");
+            //         } else {
+            //             $(".by_header").removeClass("by_header_image"); 
+            //             $(".by_header").removeClass("by_headerBoder");
+            //             $(".by_header").removeClass("by_homeHeaderImage");
+            //         }
+            //         if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= 1) {
+            //             $("#homeMenuScroll").show();
+            //         } else {                        
+            //              $("#homeMenuScroll").hide();
+            //         }
                         
-                });
-            } else {
-                $("#home").removeClass('show');
-                $("#home").addClass('hide');
-                //$("#home").html('');
-                $scope.templateUrl = 'app/components/header/otherHeader.html?versionTimeStamp=%PROJECT_VERSION%';
-                angular.element($window).bind("scroll", function () {
-                    var headerHeight = $(".by_header").outerHeight(true);
-                    if(headerHeight > 70){
-                        if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= (headerHeight - 64)) {
-                            $(".by_header").addClass("by_header_image");
-                            $(".by_header").removeClass("by_headerBoder");
-                            $(".by_header").removeClass("by_homeHeaderImage");
-                            if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
-                                $(".by_header").css('top', - (document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset));
-                            } else{
-                                $(".by_header").css('top', '-55px');
-                            }
-                        } else {
-                            $(".by_header").addClass("by_header_image");
-                            $(".by_header").removeClass("by_headerBoder");
-                            $(".by_header").removeClass("by_homeHeaderImage");
-                            if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
-                                $(".by_header").css('top', '0px');
-                            }                            
-                        }
-                    } else{
+            //     });
+            // } else {
+            //     $("#home").removeClass('show');
+            //     $("#home").addClass('hide');
+            //     $scope.templateUrl = 'app/components/header/otherHeader.html?versionTimeStamp=%PROJECT_VERSION%';
+            //     angular.element($window).bind("scroll", function () {
+            //         var headerHeight = $(".by_header").outerHeight(true);
+            //         if(headerHeight > 70){
+            //             if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= (headerHeight - 64)) {
+            //                 $(".by_header").addClass("by_header_image");
+            //                 $(".by_header").removeClass("by_headerBoder");
+            //                 $(".by_header").removeClass("by_homeHeaderImage");
+            //                 if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
+            //                     $(".by_header").css('top', - (document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset));
+            //                 } else{
+            //                     $(".by_header").css('top', '-55px');
+            //                 }
+            //             } else {
+            //                 $(".by_header").addClass("by_header_image");
+            //                 $(".by_header").removeClass("by_headerBoder");
+            //                 $(".by_header").removeClass("by_homeHeaderImage");
+            //                 if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
+            //                     $(".by_header").css('top', '0px');
+            //                 }                            
+            //             }
+            //         } else{
+            //             $(".by_header").addClass("by_header_image");
+            //             $(".by_header").removeClass("by_headerBoder");
+            //             $(".by_header").removeClass("by_homeHeaderImage");
+            //         }
+                    
+            //     });
+            // }
+
+            $scope.templateUrl = 'app/components/header/otherHeader.html?versionTimeStamp=%PROJECT_VERSION%';
+            angular.element($window).bind("scroll", function () {
+                var headerHeight = $(".by_header").outerHeight(true);
+                if(headerHeight > 70){
+                    if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= (headerHeight - 64)) {
                         $(".by_header").addClass("by_header_image");
                         $(".by_header").removeClass("by_headerBoder");
                         $(".by_header").removeClass("by_homeHeaderImage");
+                        if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
+                            $(".by_header").css('top', - (document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset));
+                            $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1 - (document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset));
+                        } else{
+                            $(".by_header").css('top', '-55px');
+                            $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1 - 55);
+                        }
+                    } else {
+                        $(".by_header").addClass("by_header_image");
+                        $(".by_header").removeClass("by_headerBoder");
+                        $(".by_header").removeClass("by_homeHeaderImage");
+                        if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
+                            $(".by_header").css('top', '0px');
+                            $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1);
+                        }                            
                     }
-                    
-                });
-            }
+                } else{
+                    $(".by_header").addClass("by_header_image");
+                    $(".by_header").removeClass("by_headerBoder");
+                    $(".by_header").removeClass("by_homeHeaderImage");
+                }
+                
+            });
+
+
         }
 
         function validateSession() {
@@ -183,7 +215,8 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             if ($(".by_header_right_search").css('display') == 'none') {
                 $(".by_header_right_search").fadeIn('1000');
             } else if($(".by_header_right_mobile_search").css('display') == 'none'){
-                $(".by_header_right_mobile").css('width', '30%');
+                $(".by_headerPhoneNumber").hide();
+                $(".by_header_right_mobile").css('width', 'calc(100% - 60px)');
                 $(".by_header_right_mobile_search").fadeIn('1000');
             } else {
                 $scope.searchResults();
@@ -192,6 +225,34 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
 
         $scope.homeSection = BY.config.menu.home;
         $scope.moduleConfig= BY.config.menu.moduleConfig;
+
+        $scope.showMoreMenuH = function(){
+            $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1);                    
+            if($(".by_headerMoreMenu").css("display") == 'block'){
+                $(".by_headerMoreMenu").slideUp(function(){
+                    var top = $(".by_header").outerHeight() - 1 + $(".by_headerMoreMenu .by_container").outerHeight();
+                    var height = $(window).height() - top;
+                    $(".by_headerMoreMenuMask").css('height', height);
+                });
+                $(".by_menuMore").removeClass('by_menuMore2');
+            } else{
+                $(".by_headerMoreMenu").slideDown(function(){
+                    var top = $(".by_header").outerHeight() - 1 + $(".by_headerMoreMenu .by_container").outerHeight();
+                    var height = $(window).height() - top;
+                    $(".by_headerMoreMenuMask").css('height', height);
+                });
+                $(".by_menuMore").addClass('by_menuMore2');
+            }
+            if($(window).width() < 721){
+                if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
+                    $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1 - (document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset));
+                } else{
+                    $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1 - 55);
+                } 
+            }  
+        };
+
+        
     }
 
     BYHeaderCtrl.$inject = ['$rootScope', '$scope', '$window', '$location', '$http', '$injector'];

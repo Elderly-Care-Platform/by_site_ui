@@ -812,7 +812,7 @@
     }
 }
 @media ( max-width: 720px) {
-    .by_headerHomeModiText
+    .by_headerHomeModiText, .by_headerHomeText
     {
         padding-top: 130px;
     }

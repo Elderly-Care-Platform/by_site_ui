@@ -54,6 +54,8 @@ define([
             $(".by_header").removeClass("by_contactHeaderImage");
     		$(".by_header_right_mobile").css('width', '23px');
     		$(".by_header_right_mobile_search").css('display', 'none');
+    		$(".by_headerMoreMenu").slideUp();
+            $(".by_menuMore").removeClass('by_menuMore2');
 
 			window.scrollTo(0, 0);
 			BY.byEditor.removeEditor();

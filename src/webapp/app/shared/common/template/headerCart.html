@@ -2,9 +2,7 @@
     <ul class="shop-badge" ng-controller="CartController">
         <li class="paddingBottom0Imp"  ng-click="hideCart();">  
             <div class="by_cart_iconWrap" ng-click="showCart($event);" ng-if="uiData.totalCartItem > 0" style="margin-left:10px;">
-                <span ng-if="$root.windowWidth > 720" ><img src="assets/img/product/cart.png?versionTimeStamp=%PROJECT_VERSION%"/></span>
-                <span ng-if="$root.windowWidth < 720" style="background:transparent;"><img src="assets/img/product/cart_white.png?versionTimeStamp=%PROJECT_VERSION%" width="25" /></span>
-                <span ng-if="$root.windowWidth > 720"> Cart</span>
+                <span  style="background:transparent;"><img src="assets/img/product/cart_white.png?versionTimeStamp=%PROJECT_VERSION%" width="25" /></span>
                 <span class="by_cart_count" >{{uiData.totalCartItem}}</span>
             </div>
 
