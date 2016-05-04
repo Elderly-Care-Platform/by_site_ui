@@ -233,7 +233,8 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
                     var top = $(".by_header").outerHeight() - 1 + $(".by_headerMoreMenu .by_container").outerHeight();
                     var height = $(window).height() - top;
                     $(".by_headerMoreMenuMask").css('height', height);
-                });
+                });                
+                $(".by_menuMore2").addClass('by_menuMore');
                 $(".by_menuMore").removeClass('by_menuMore2');
             } else{
                 $(".by_headerMoreMenu").slideDown(function(){
@@ -242,6 +243,7 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
                     $(".by_headerMoreMenuMask").css('height', height);
                 });
                 $(".by_menuMore").addClass('by_menuMore2');
+                $(".by_menuMore2").removeClass('by_menuMore');
             }
             if($(window).width() < 721){
                 if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
