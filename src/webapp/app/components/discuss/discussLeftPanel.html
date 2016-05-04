@@ -24,7 +24,7 @@
         <div class="clearfix"></div>
         <!--=== Header v7 Left ===-->
         <ul class="nav nav-list">
-            <li ng-repeat="menu in $root.menuCategoryMapByName['Communities'].children" id="{{menu.id}}" class="byTreeMenu-wrapper">
+            <li ng-repeat="menu in $root.menuCategoryMapByName['Forums'].children" id="{{menu.id}}" class="byTreeMenu-wrapper">
                 <a ng-if="menu.children.length === 0" class="by_treeMenuText" ng-href="{{menuConfig.moduleConfig[menu.module].baseUrl}}/{{removeSpecialChars(menu.displayMenuName)}}/{{menu.id}}/all" style="display: inline-block; width:100%;" ng-class="{'by_treeMenuTextActive': menu.id == selectedParent.id, 'by_treeMenuTextActive': menu.id == selectedMenuId}">
                 {{menu.displayMenuName}}
                 </a>
