@@ -28,6 +28,9 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             });
             if($("#SearchValue").val() != ''){
                 $location.path('/search/'+ $("#SearchValue").val() +'/All');
+                $(".by_header_right_mobile_search").fadeOut('1000');
+                $(".by_header_right_mobile").css('width', '23px');
+                $(".by_headerPhoneNumber").show();
             }            
         }
         
@@ -219,7 +222,14 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
                 $(".by_header_right_mobile").css('width', 'calc(100% - 60px)');
                 $(".by_header_right_mobile_search").fadeIn('1000');
             } else {
-                $scope.searchResults();
+                if($("#SearchValue").val().length > 0){
+                    $scope.searchResults();
+                } else{
+                    $(".by_header_right_mobile_search").fadeOut('1000');
+                    $(".by_header_right_mobile").css('width', '23px');
+                    $(".by_headerPhoneNumber").show();
+                }
+                
             }
         };
 
