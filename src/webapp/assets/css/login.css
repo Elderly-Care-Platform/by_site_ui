@@ -405,7 +405,7 @@ button.login-btn {
 	padding-top: 20px;
 	line-height: 19px;
 }
-.by_registerLogin .or-divider
+.by_registerLogin .or-divider, .or-divider
 {
 	float: left;
 	text-align: center;
@@ -466,7 +466,7 @@ button.login-btn {
 	}
 }
 @media screen and (max-width: 720px){
-	.by_registerLogin .or-divider {
+	.by_registerLogin .or-divider,  .or-divider {
 		background: transparent no-repeat center;
 		width: 100%;
 		height: 42px;

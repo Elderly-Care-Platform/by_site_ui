@@ -62,6 +62,7 @@
                         </span>
                         <div style="clear: both; height: 6px;"></div>
                     </h1>
+                    <span ng-if="profileLogin == true">
                     <div class="no-padding"
                         ng-if="individualProfile.basicProfileInfo.primaryUserAddress.city || individualProfile.basicProfileInfo.primaryUserAddress.country">
                         <div class="profileRating">
@@ -124,7 +125,9 @@
                         </div>
                         <div style="clear: both; height: 26px;"></div>
                     </div>
+                    </span>
                 </div>
+                <div ng-include="views.loginPanel"></div>
             </div>
             <div class="clearfix"></div>
             <div class="clearfix" style="height:20px;" ng-if="!individualProfile.basicProfileInfo.photoGalleryURLs.length > 0"></div>
