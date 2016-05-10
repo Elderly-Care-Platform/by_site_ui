@@ -562,7 +562,7 @@
 		float: none;
 		margin-right: 0px;    
 		text-transform: uppercase;
-		margin-top: 13px;
+		margin-top: -15px;
 		padding-bottom: 4px;
 		width: 100%;
 		margin-left: 0px;
@@ -576,19 +576,25 @@
 	}
 	.by_headerPhoneNumber, .by_headerPhoneNumber a
 	{
-		margin-top: 26px;
+		float: left;
+		margin-top: 3px;
+	}
+	.by_header_right_mobile
+	{
+		width: 160px;
 	}
 	.by_header_right_mobile_search_image
 	{
-		margin-top: 19px;
+		margin-top: 0px;
 	}
-	.by_header_right_mobile_search
+	.by_header_right_mobile_search2
 	{
-		margin-top: 17px;
+		margin-top: -5px;
+		width: 130px;
 	}
 	.by_cart_iconWrap
 	{
-		margin-top: 21px;
+		margin-top: -2px;
 	}
 	.by_headerPhoneNumber .fa-phone2:before
 	{
@@ -597,7 +603,8 @@
 	}
 	.by_header_right_other
 	{
-		margin-top: -7px;
+		width: 100%;
+		margin-top: 7px;
 	}
 	.by_logo
 	{

@@ -29,7 +29,11 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             if($("#SearchValue").val() != ''){
                 $location.path('/search/'+ $("#SearchValue").val() +'/All');
                 $(".by_header_right_mobile_search").fadeOut('1000');
-                $(".by_header_right_mobile").css('width', '23px');
+                if($rootScope.windowWidth > 720){
+                    $(".by_header_right_mobile").css('width', '23px');
+                } else{
+                    $(".by_header_right_mobile").css('width', '160px');
+                }
                 $(".by_headerPhoneNumber").show();
             }            
         }
@@ -125,18 +129,18 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
                         $(".by_header").addClass("by_header_image");
                         $(".by_header").removeClass("by_headerBoder");
                         $(".by_header").removeClass("by_homeHeaderImage");
-                        if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
+                        if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 45){
                             $(".by_header").css('top', - (document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset));
                             $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1 - (document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset));
                         } else{
-                            $(".by_header").css('top', '-55px');
-                            $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1 - 55);
+                            $(".by_header").css('top', '-45px');
+                            $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1 - 45);
                         }
                     } else {
                         $(".by_header").addClass("by_header_image");
                         $(".by_header").removeClass("by_headerBoder");
                         $(".by_header").removeClass("by_homeHeaderImage");
-                        if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
+                        if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 45){
                             $(".by_header").css('top', '0px');
                             $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1);
                         }                            
@@ -259,7 +263,7 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
                 if((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) < 55){
                     $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1 - (document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset));
                 } else{
-                    $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1 - 55);
+                    $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1 - 45);
                 } 
             }  
         };

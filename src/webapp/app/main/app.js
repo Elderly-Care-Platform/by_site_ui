@@ -52,9 +52,14 @@ define([
             $(".by_header").removeClass("by_aboutUsHeaderImage");
             $(".by_header").removeClass("by_expStoreHeaderImage");
             $(".by_header").removeClass("by_contactHeaderImage");
-    		$(".by_header_right_mobile").css('width', '23px');
+    		if($rootScope.windowWidth > 720){
+                $(".by_header_right_mobile").css('width', '23px');
+            } else{
+                $(".by_header_right_mobile").css('width', '160px');
+            }
     		$(".by_header_right_mobile_search").css('display', 'none');
     		$(".by_headerMoreMenu").slideUp();
+            $(".by_menuMore2").addClass('by_menuMore');
             $(".by_menuMore").removeClass('by_menuMore2');
 
 			window.scrollTo(0, 0);

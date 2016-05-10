@@ -5,6 +5,13 @@
                  width="100%">
         </a>
     </div>
+    <div class="divRight" ng-if="profileDetails.text">
+        <div class="by_headerProfileText" >
+            <a ng-href="{{profileDetails.link}}" >
+                {{profileDetails.text}}
+            </a>                       
+        </div>
+    </div>
 
     <div class="by_header_right_other divRight width272" >
         
@@ -12,17 +19,28 @@
              ng-include="'app/shared/common/template/headerCart.html?versionTimeStamp=%PROJECT_VERSION%'"></div>
 
         <div class="by_header_right_mobile divRight">
-            <div class="by_header_right_mobile_search divLeft">
-                <input type="text" placeholder="Search" ng-model="term" id="SearchValue"
-                       enter-event="searchResults();">
-            </div>
-            <div class="by_header_right_mobile_search_image divRight" ng-click="searchInputShow();">
-                <i class="fa fa-search"></i>
-            </div>
+            <span ng-if="$root.windowWidth > 720">
+                <div class="by_header_right_mobile_search divLeft">
+                    <input type="text" placeholder="Search" ng-model="term" id="SearchValue"
+                           enter-event="searchResults();">
+                </div>
+                <div class="by_header_right_mobile_search_image divRight" ng-click="searchInputShow();">
+                    <i class="fa fa-search"></i>
+                </div>
+            </span>
+            <span ng-if="$root.windowWidth < 721">                
+                <div class="by_header_right_mobile_search_image divRight" ng-click="searchResults();">
+                    <i class="fa fa-search"></i>
+                </div>
+                <div class="by_header_right_mobile_search2 divLeft" >
+                    <input type="text" placeholder="Search" ng-model="term" id="SearchValue"
+                           enter-event="searchResults();">
+                </div>
+            </span>
             <div class="clearfix"></div>
         </div>
         <div class="divRight by_headerPhoneNumber">
-            <a href="tel:{{telNo}}"><xyz ng-if="$root.windowWidth > 415"><img src="assets/img/phone.png?versionTimeStamp=%PROJECT_VERSION%" alt="Beautiful Years call"></xyz> {{telNo}}</a>
+            <a href="tel:{{telNo}}"><img src="assets/img/phone.png?versionTimeStamp=%PROJECT_VERSION%" alt="Beautiful Years call"> {{telNo}}</a>
         </div>
     </div>
     <div class="clearfix"></div>
@@ -115,16 +133,8 @@
                             Contact us
                         </a>
                     </div>
-                    <div class="by_menuMoreRightThumb" ng-if="profileDetails.text" style="padding-bottom:9px;">
-                        <a ng-href="{{profileDetails.link}}" id="profile_placeholder">
-                            {{profileDetails.text}}
-                        </a>
-                        <span>
-                            <a ng-href="{{loginDetails.link}}" id="login_placeholder">{{loginDetails.text}}</a>
-                        </span>                        
-                    </div>
-                    <div class="by_menuMoreRightThumb" ng-if="!profileDetails.text">
-                        <a ng-href="{{loginDetails.link}}" id="login_placeholder">
+                    <div class="by_menuMoreRightThumb">
+                        <a ng-href="{{loginDetails.link}}" >
                             {{loginDetails.text}}
                         </a>
                     </div>

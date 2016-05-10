@@ -50,6 +50,7 @@ $(window).scroll(function () {
     if($(".by_headerMoreMenu").css("display") == 'block'){
         if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) > 100) {
             $(".by_headerMoreMenu").slideUp();
+            $(".by_menuMore2").addClass('by_menuMore');
             $(".by_menuMore").removeClass('by_menuMore2');
         }
     }

@@ -165,15 +165,17 @@
 	margin-right: 4px;
 	margin-top: 2px;
 }
-.by_header_right_mobile_search
+.by_header_right_mobile_search, .by_header_right_mobile_search2
 {
 	width: calc(100% - 25px);
 	height: auto;
 	margin-top: 12px;
 	border-bottom:1px solid #fff;
+}
+.by_header_right_mobile_search{	
 	display: none;
 }
-.by_header_right_mobile_search input
+.by_header_right_mobile_search input, .by_header_right_mobile_search2 input
 {
 	border: 0px;
 	outline: none;
@@ -225,7 +227,30 @@
 {
 	height: 57px;
 }
+.by_headerProfileText
+{
+	position: absolute;
+	right: 15px;
+	width: 110px;
+	color: #fff;
+	font-size: 18px;
+    top: -2px;
+}
+.by_headerProfileText a
+{
+	color: #fff;
+	text-decoration: none;
+}
+.by_headerProfileText a:hover
+{
+	text-decoration: underline;
+	color: #fff;
+}
 @media ( max-width : 720px){
+	.by_headerProfileText
+	{
+		top: 20px;
+	}
 	.by_logo
 	{
 		width: 150px;
@@ -268,25 +293,37 @@
 }
 .by_menuMore:after
 {
-	content: '';
-    width: 0;
+	content: '+';
+    /*width: 0;
     height: 0;
     border-left: 5px solid transparent;
     border-top: 10px solid #FF850F;
-    border-right: 5px solid transparent;
+    border-right: 5px solid transparent;*/
     display: inline-block;
     margin-left: 3px;
+    color: #FF850F;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 19px;
+    vertical-align: middle;
+    margin-top: -4px;
 }
 .by_menuMore2:after
 {
-	content: '';
-    width: 0;
+	content: '-';
+    /*width: 0;
     height: 0;
     border-left: 5px solid transparent;
     border-bottom: 10px solid #FF850F;
-    border-right: 5px solid transparent;
+    border-right: 5px solid transparent;*/
     display: inline-block;
-    margin-left: 3px;
+    margin-left: 6px;
+    color: #FF850F;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 19px;
+    vertical-align: middle;
+    margin-top: -6px;
 }
 .by_headerMoreMenu
 {
@@ -449,17 +486,8 @@
 	}
 }
 @media ( max-width : 420px){
-	.by_header_right_other
-	{
-		width: 176px !important;
-		margin-top: -11px !important;
-	}	
 	.by_menu
 	{
 		font-size: 13px !important;
-	}
-	.by_logo
-	{
-		width: 121px !important;
 	}
 }
