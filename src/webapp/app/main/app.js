@@ -55,7 +55,7 @@ define([
     		if($rootScope.windowWidth > 720){
                 $(".by_header_right_mobile").css('width', '23px');
             } else{
-                $(".by_header_right_mobile").css('width', '160px');
+                $(".by_header_right_mobile").css('width', '130px');
             }
     		$(".by_header_right_mobile_search").css('display', 'none');
     		$(".by_headerMoreMenu").slideUp();

@@ -237,6 +237,19 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             }
         };
 
+        $scope.searchInputShow2 = function () {
+            if ($(".by_header_right_search2").css('display') == 'none') {
+                $(".by_header_right_search2").fadeIn('1000');
+            } else if($(".by_header_right_mobile_search2").css('display') == 'none'){
+                $(".by_header_right_mobile_search2").fadeIn('1000');
+            } else {
+                if($("#SearchValue").val().length > 0){
+                    $scope.searchResults();
+                }
+                
+            }
+        };
+
         $scope.homeSection = BY.config.menu.home;
         $scope.moduleConfig= BY.config.menu.moduleConfig;
 

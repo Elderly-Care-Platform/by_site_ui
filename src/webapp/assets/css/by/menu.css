@@ -522,7 +522,7 @@
 @media ( max-width : 790px){
 	
 	.by_logo{
-		width: 175px;
+		width: 140px;
 	}
 	.by_header_right_other
 	{
@@ -562,7 +562,7 @@
 		float: none;
 		margin-right: 0px;    
 		text-transform: uppercase;
-		margin-top: -15px;
+		margin-top: -8px;
 		padding-bottom: 4px;
 		width: 100%;
 		margin-left: 0px;
@@ -581,20 +581,23 @@
 	}
 	.by_header_right_mobile
 	{
-		width: 160px;
+		width: 130px;
 	}
 	.by_header_right_mobile_search_image
 	{
-		margin-top: 0px;
+		margin-top: 4px;
+		font-size: 13px;
+		line-height: 19px;
+		height: 20px;
 	}
 	.by_header_right_mobile_search2
 	{
 		margin-top: -5px;
-		width: 130px;
+		width: 100px;
 	}
 	.by_cart_iconWrap
 	{
-		margin-top: -2px;
+		margin-top: 0px;
 	}
 	.by_headerPhoneNumber .fa-phone2:before
 	{
@@ -604,7 +607,7 @@
 	.by_header_right_other
 	{
 		width: 100%;
-		margin-top: 7px;
+		margin-top: 14px;
 	}
 	.by_logo
 	{

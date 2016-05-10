@@ -14,7 +14,7 @@
 }
 .by_logo
 {
-	width:220px;
+	width:176px;
 	height:auto;
 }
 .by_header_right
@@ -171,8 +171,6 @@
 	height: auto;
 	margin-top: 12px;
 	border-bottom:1px solid #fff;
-}
-.by_header_right_mobile_search{	
 	display: none;
 }
 .by_header_right_mobile_search input, .by_header_right_mobile_search2 input
@@ -277,7 +275,7 @@
 	}
 	.headerHeightNoBreadCrumb 
 	{
-		height: 90px;
+		height: 126px;
 	}
 }
 @media ( max-width : 590px){
@@ -484,11 +482,5 @@
 	.by_menuMoreRightThumb
 	{
 		font-size: 18px;
-	}
-}
-@media ( max-width : 420px){
-	.by_menu
-	{
-		font-size: 13px !important;
 	}
 }
