@@ -14,7 +14,7 @@
 }
 .by_logo
 {
-	width:176px;
+	width:220px;
 	height:auto;
 }
 .by_header_right
@@ -230,11 +230,12 @@
 .by_headerProfileText
 {
 	position: absolute;
-	right: 15px;
-	width: 110px;
-	color: #fff;
-	font-size: 18px;
-    top: -2px;
+	right: 21px;
+    width: 110px;
+    color: #fff;
+    font-size: 15px;
+    top: 0px;
+    text-align: right;
 }
 .by_headerProfileText a
 {
