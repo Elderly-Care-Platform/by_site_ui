@@ -490,6 +490,32 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController', 'indvUserPr
                 $('#shareModal').modal('show');
             }
 
+            // login
+
+            $scope.views = {};
+
+            $scope.profileLogin = true;
+
+            if (localStorage.getItem('SessionId') == '' || localStorage.getItem('SessionId') == undefined || localStorage.getItem('SESSION_TYPE') != BY.config.sessionType.SESSION_TYPE_FULL) {
+                if (localStorage.getItem('SESSION_TYPE') == BY.config.sessionType.SESSION_TYPE_PARTIAL) {
+                    $scope.views.loginPanel = "app/components/profile/shared/profileLogin.html?versionTimeStamp=%PROJECT_VERSION%";
+                    $scope.profileLogin = false;
+                } else {
+                    $scope.views.loginPanel = "app/components/profile/shared/profileRegister.html?versionTimeStamp=%PROJECT_VERSION%";
+                    $scope.profileLogin = false;
+                }
+
+            }
+
+            
+            $scope.by_ProfileRegisterPage = function(){
+                $scope.views.loginPanel = "app/components/profile/shared/profileRegister.html?versionTimeStamp=%PROJECT_VERSION%";
+            } 
+
+            $scope.by_ProfileLoginPage = function(){
+                $scope.views.loginPanel = "app/components/profile/shared/profileLogin.html?versionTimeStamp=%PROJECT_VERSION%";
+            }
+
 
         }
 

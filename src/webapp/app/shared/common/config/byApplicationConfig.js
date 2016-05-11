@@ -15,7 +15,7 @@ BY.config.constants = {
     //  "selfHost" : "http://localhost:8080/ROOT/api/v1/products/images",
     // "productImageHost" : "http://localhost",
 
-    "byContactNumber": "+91 80694 00333"
+    "byContactNumber": "080 694 00 333"
 }
 
 BY.config.constants.apiPrefix = "/BY/";
