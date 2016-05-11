@@ -41,6 +41,18 @@ define([], function () {
 
             /* home modification */
 
+            .when('/senior-friendly-home', {
+                templateUrl: 'app/components/homeModifications/homeModifications.html', controller: 'homeModificationCtrl', resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/homeModifications/homeModifications'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
             .when('/home-modification', {
                 templateUrl: 'app/components/homeModifications/homeModifications.html', controller: 'homeModificationCtrl', resolve: {
                     load: ['$q', function ($q) {
