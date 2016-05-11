@@ -13,7 +13,7 @@ BY.config.seo = {
 
     'communities': {
         '564071623e60f5b66f62df27': {
-            title: 'Elder care communities and support groups in India',
+            title: 'Elder care forums and support groups in India',
             imageUrl: '',
             description: 'Ask anything about elderly care or aging. Living longer and happier. Community for Alzheimers and Parkinsons. Share your experiences in the support group.',
             keywords: ['caring for parents', 'geriatric care', 'elderly', 'aged', 'elderly care', 'senior care', 'Alzheimers', 'Parkinson', 'dementia', 'bedridden', 'old age', 'Incontinence', 'Personal Hygiene', 'paralysis', 'bedsore']

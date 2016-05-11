@@ -30,7 +30,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
             if(discuss.promotion == true){
                 newHref = "/announcements/" + disTitle;
             }else{
-                newHref = "/communities/" + disTitle;
+                newHref = "/elder-care-forums/" + disTitle;
             }
 
 

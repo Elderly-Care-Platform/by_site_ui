@@ -22,7 +22,7 @@
                 <li ng-repeat="topicId in detailResponse.discuss.leafCategories" class="by_discussDeatil_cardlineHeight20">
                     <p class="first-letter-uc by-systemTags">
                         <span ng-if="$index > 0">|</span>
-                        <a di-href="#!/communities/{{removeSpecialChars($root.menuCategoryMap[topicId].displayMenuName)}}/{{$root.menuCategoryMap[topicId].id}}/all">
+                        <a di-href="#!/elder-care-forums/{{removeSpecialChars($root.menuCategoryMap[topicId].displayMenuName)}}/{{$root.menuCategoryMap[topicId].id}}/all">
                         {{$root.menuCategoryMap[topicId].displayMenuName}}
                         </a>
                     </p>

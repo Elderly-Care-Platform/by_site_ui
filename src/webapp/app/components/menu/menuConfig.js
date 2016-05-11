@@ -6,7 +6,7 @@ BY.config.menu = BY.config.menu || {};
 BY.config.menu.modules = {
     'discuss': {
         'moduleId': 0,
-        'baseUrl': '#!/communities'
+        'baseUrl': '#!/elder-care-forums'
     },
     'service': {
         'moduleId': 1,
@@ -28,7 +28,7 @@ BY.config.menu.seniorLiving = {
 
 BY.config.menu.moduleConfig = {
     '0': {
-        'baseUrl': '#!/communities',
+        'baseUrl': '#!/elder-care-forums',
         'module': 'discuss',
         'defaultType': 'all'
     },
@@ -151,7 +151,7 @@ BY.config.menu.leafProduct = {
 
 BY.config.menu.community = {
     '564071623e60f5b66f62df27':{
-        'name': 'Communities',
+        'name': 'Forums',
         'menuIconImageDesktop': '',
         'menuIconImageMobile': '',
         'desc': '',

@@ -264,7 +264,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
             }
 
             $scope.editCommunity = function(){
-                $location.path("/edit/communities");
+                $location.path("/edit/elder-care-forums");
             }
         }
 
