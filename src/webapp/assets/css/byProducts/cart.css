@@ -1,18 +1,24 @@
 .by_cart_iconWrap
 {
-  width:86px;
+  width:45px;
   height:29px;
   color:#fff;
   font-size:14px;
   text-align: right;
+  margin-top: 14px;
 }
 .by_cart_iconWrap span
 {
   display: block;
-  float: left;
-  color:#fff;
-  margin-left:4px;
-  margin-top:3px;
+    float: left;
+    color: #fff !important;
+    margin-left: 4px;
+    margin-top: 3px;
+    background: #005826;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
 }
 .by_cart_count
 {

@@ -1,6 +1,6 @@
 define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
-    function LoginController($scope, $rootScope, $http, $location, $routeParams, User, SessionIdService, ValidateUserCredential) {
-        window.scrollTo(0, 0);
+    function LoginController($scope, $rootScope, $http, $location, $routeParams, User, SessionIdService, ValidateUserCredential, $route) {
+       
 
         $scope.byLoginPage = function(){
             $scope.views.loginPanel = "app/components/signup/login/login.html?versionTimeStamp=%PROJECT_VERSION%";
@@ -226,6 +226,47 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
             });
         }
 
+         $scope.loginUserProfile = function (user) {
+            var loginUserValue = $scope.uniqueLoginId.id;
+            //var isMobile = !isNaN(parseFloat(loginUserValue)) && isFinite(loginUserValue); 
+            var reg = /^\d+$/;
+            if(reg.test(loginUserValue))
+                {   
+                    $scope.user.userIdType = BY.config.regConfig.userIdType.mobile;
+                    $scope.user.phoneNumber = loginUserValue;
+                    delete $scope.user.email;                                       
+                } else {
+                    $scope.user.userIdType = BY.config.regConfig.userIdType.email;
+                    $scope.user.email = loginUserValue;
+                    delete $scope.user.phoneNumber;
+                }
+            $scope.resetError();
+            $(".login-btn").prop("disabled", true);
+            $http.post(BY.config.constants.apiPrefix + 'api/v1/users/login', user).success(function (res) {
+                var login = res.data;
+                if (login.sessionId === null) {
+                    $http.defaults.headers.common.sess = "";
+                    $scope.setError(login.status);
+                    return;
+                }
+                $scope.user.email = '';
+                $scope.user.password = '';
+                $scope.user.phoneNumber = '';
+                $scope.setUserCredential(login);
+
+                if($rootScope.inContextLogin){
+                    ValidateUserCredential.loginCallback();
+                } else{
+                    $scope.$parent.profileLogin = true;
+                    $route.reload();
+                }
+
+            }).error(function () {
+                $scope.setError("Invalid user/password combination");
+                $(".login-btn").prop("disabled", false);
+            });
+        }
+
 //     ************************   create new user start
         $scope.createNewUser = function(newUser) {  
             $scope.user.userTags = [BY.config.regConfig.userTags.individual];
@@ -287,6 +328,81 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
                         ValidateUserCredential.loginCallback();
                     } else{
                         $scope.$parent.getUserProfile();
+                    }
+
+                }, function (error) {
+                    // failure
+                    console.log(error);
+                    $(".register-btn").prop("disabled", false);
+                    $scope.createUserError = error.data.error.errorMsg;
+                    $scope.createUserSuccess = '';
+
+                });
+            }
+        }
+
+        $scope.createNewUserProfile = function(newUser) {  
+            $scope.user.userTags = [BY.config.regConfig.userTags.individual];
+            var checked = $("#UserTagsReg:checked").length;
+            if(checked == 1){
+                $scope.user.userTags = [BY.config.regConfig.userTags.serviceprovider];
+            }
+            if($scope.uniqueRegId && (!$scope.uniqueRegId.id || $scope.uniqueRegId.id ==="")){
+                $scope.emailError = "Please enter a valid email-id";
+            } else{                 
+                var emailMobile = $scope.uniqueRegId.id;
+                var isMobile = !isNaN(parseFloat(emailMobile)) && isFinite(emailMobile); 
+                if( isMobile == true)
+                    {                       
+                        var reg = /^\d+$/;
+                        if (emailMobile.length === 10 && reg.test(emailMobile)) {
+                            $scope.emailError = "";
+                            $scope.newUser.userIdType = BY.config.regConfig.userIdType.mobile;
+                            $scope.newUser.phoneNumber = $scope.uniqueRegId.id;
+                            $scope.newUser.userTags = $scope.user.userTags;
+                            delete $scope.newUser.email;
+
+                        } else {
+                            $scope.emailError = "Please enter 10 digit mobile number";
+                        }  
+                                            
+                    } else {
+                        var emailValidation = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                        if(!emailValidation.test(emailMobile)){
+                            $scope.emailError = "Please enter valid Email Id";
+                        }else{
+                            $scope.emailError = "";
+                            $scope.newUser.userIdType = BY.config.regConfig.userIdType.email;
+                            $scope.newUser.email = $scope.uniqueRegId.id;
+                            $scope.newUser.userTags = $scope.user.userTags;
+                            delete $scope.newUser.phoneNumber;
+                        }                       
+                       
+                    }
+            }
+            
+            if(!$scope.newUser.password || $scope.newUser.password.trim().length < 6){
+                $scope.pwdError = "Password must be at least 6 character";
+            }else{
+                $scope.pwdError = "";
+            }
+           
+           if($scope.pwdError==="" && $scope.emailError===""){
+                $(".register-btn").prop("disabled", true);
+                $scope.newUser.$save(function (response) {
+                    var login = response.data;
+                    $scope.createUserSuccess = "User registered successfully";
+                    $scope.createUserError = '';
+                    $scope.setUserCredential(login, "reg2");
+
+                    if ($rootScope.nextLocation){                        
+                        $scope.$parent.exit();
+                    } else if($rootScope.inContextLogin){
+                        ValidateUserCredential.loginCallback();
+                    } else{
+                        $scope.$parent.profileLogin = true;
+                        $route.reload();
+                        //$scope.$parent.getUserProfile();
                     }
 
                 }, function (error) {
@@ -371,7 +487,7 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
         }
     }
 
-    LoginController.$inject = ['$scope', '$rootScope', '$http', '$location', '$routeParams', 'User','SessionIdService','ValidateUserCredential'];
+    LoginController.$inject = ['$scope', '$rootScope', '$http', '$location', '$routeParams', 'User','SessionIdService','ValidateUserCredential', '$route'];
     return LoginController;
 });
 

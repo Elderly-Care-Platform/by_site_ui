@@ -63,6 +63,7 @@
                         on BeautifulYears.com. Verification details appear in the review section for the
                         specific establishment as a BeautifulYears Team review."></div>
                     <div style="clear:both;"></div>
+                    <span ng-if="profileLogin == true">
                     <div class="no-padding" ng-if="branchProfile.ratingCount > 0 || branchProfile.reviewCount > 0">
                         <div class="profileRating" ng-if="branchProfile.ratingCount > 0">
                             <div class="divLeft"><i class="rounded-x profileStar" rate-calculator="{{branchProfile.ratingPercentage}}"></i></div>
@@ -124,7 +125,9 @@
                         <span ng-if="branchProfile.serviceProviderInfo.homeVisits"><b>Available</b> for home visit</span>
                         <span ng-if="!branchProfile.serviceProviderInfo.homeVisits"><b>Not available</b> for home visit</span>
                     </div>
+                    </span>
                 </div>
+                <div ng-include="views.loginPanel"></div>
             </div>
         </div>
         <div class="clearfix"></div>

@@ -52,6 +52,7 @@ define(['byApp', 'byUtil', 'homePromoController',
                     $scope.loginDetails.link = "#!/users/login";
                 }
                 updateMetaTags();
+                BY.byUtil.changeHeaderImage();
             }
 
 
