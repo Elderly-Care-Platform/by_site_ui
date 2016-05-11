@@ -18,7 +18,7 @@ BY.config.menu.modules = {
     },
     'product': {
         'moduleId': 3,
-        'baseUrl': '#!/shop'
+        'baseUrl': '#!/elder-care-products'
     }
 }
 
@@ -43,7 +43,7 @@ BY.config.menu.moduleConfig = {
         'defaultType': 'all'
     },
     '3': {
-        'baseUrl': '#!/shop',
+        'baseUrl': '#!/elder-care-products',
         'module': 'product',
         'defaultType': ''
     }

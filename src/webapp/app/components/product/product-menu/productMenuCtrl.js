@@ -113,7 +113,7 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
                 $location.search('showEditor', 'true');
                 BY.byEditor.removeEditor();
                 var menuId = $scope.menuConfig.reveiwsMenuConfig['product_review'].id;
-                $location.path("/shop/reviews/"+menuId);
+                $location.path("/elder-care-products/reviews/"+menuId);
             }
         }
 

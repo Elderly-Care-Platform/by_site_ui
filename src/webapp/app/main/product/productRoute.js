@@ -24,6 +24,29 @@ define([], function () {
                 }
             })
 
+            .when('/elder-care-products/:menuId', {
+                templateUrl: 'app/components/product/product-listing/products.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ProductsController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['productController', 'productMenuCtrl'], function (productController, productMenuCtrl) {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+
             .when('/shop/:menuId', {
                 templateUrl: 'app/components/product/product-listing/products.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'ProductsController',
@@ -48,6 +71,29 @@ define([], function () {
             })
 
             .when('/products/:productSlug/:menuId', {
+                templateUrl: 'app/components/product/product-listing/products.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ProductsController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['productController', 'productMenuCtrl'], function (productController, productMenuCtrl) {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+
+            .when('/elder-care-products/:productSlug/:menuId', {
                 templateUrl: 'app/components/product/product-listing/products.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'ProductsController',
                 resolve: {
@@ -106,6 +152,29 @@ define([], function () {
             //    }
             //})
             .when('/products/reviews/:menuId', {
+                templateUrl: 'app/components/product/product-listing/products.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ProductsController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['productController', 'productMenuCtrl', 'editorController'], function (productController, productMenuCtrl, editorController) {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+
+            .when('/elder-care-products/reviews/:menuId', {
                 templateUrl: 'app/components/product/product-listing/products.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'ProductsController',
                 resolve: {
