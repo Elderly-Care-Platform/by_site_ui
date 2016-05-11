@@ -15,6 +15,18 @@ define([], function () {
 
             /* experience stroe */
 
+            .when('/elder-care-experience-store', {
+                templateUrl: 'app/components/experienceStore/experienceStore.html', controller: 'expStoreCtrl', resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/experienceStore/expStoreController'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
             .when('/experience-center', {
                 templateUrl: 'app/components/experienceStore/experienceStore.html', controller: 'expStoreCtrl', resolve: {
                     load: ['$q', function ($q) {
