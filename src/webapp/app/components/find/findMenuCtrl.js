@@ -95,7 +95,7 @@ define(['byApp', 'serviceOverviewCtrl', 'editorController'], function (byApp, se
                 $location.search('postCategoryTag', JSON.stringify(serviceReviewTag));
                 BY.byEditor.removeEditor();
                 var menuId = $scope.menuConfig.reveiwsMenuConfig['service_review'].id;
-                $location.path("/directory/reviews/"+menuId);
+                $location.path("/elder-care-services/reviews/"+menuId);
             }
         }
 

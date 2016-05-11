@@ -10,7 +10,7 @@ BY.config.menu.modules = {
     },
     'service': {
         'moduleId': 1,
-        'baseUrl': '#!/directory'
+        'baseUrl': '#!/elder-care-services'
     },
     'housing': {
         'moduleId': 2,
@@ -33,7 +33,7 @@ BY.config.menu.moduleConfig = {
         'defaultType': 'all'
     },
     '1': {
-        'baseUrl': '#!/directory',
+        'baseUrl': '#!/elder-care-services',
         'module': 'service',
         'defaultType': 'all'
     },

@@ -216,6 +216,79 @@ define([], function () {
 
 
             //***********Directory routes start*******************************************************************
+            
+            .when('/elder-care-services/:slug/:menuId/:city', {
+                templateUrl: 'app/components/find/services.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ServicesController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(["app/components/find/servicesController", "app/components/find/findMenuCtrl"],
+                            function (servicesController, findMenuCtrl) {
+                                defered.resolve();
+                            });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+
+            .when('/elder-care-services/reviews/:menuId', {
+                templateUrl: 'app/components/find/services.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ServicesController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(["app/components/find/servicesController", "app/components/find/findMenuCtrl"],
+                            function (servicesController, findMenuCtrl) {
+                                defered.resolve();
+                            });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+
+            .when('/elder-care-services/:menuId/:city', {
+                templateUrl: 'app/components/find/services.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ServicesController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(["app/components/find/servicesController", "app/components/find/findMenuCtrl"],
+                            function (servicesController, findMenuCtrl) {
+                                defered.resolve();
+                            });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+            
             .when('/directory/:slug/:menuId/:city', {
                 templateUrl: 'app/components/find/services.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'ServicesController',
