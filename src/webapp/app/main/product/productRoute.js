@@ -220,6 +220,20 @@ define([], function () {
                 }
             })
 
+            .when('/:productSlug/pd/:categoryName/:productId', {
+                templateUrl: 'app/components/product/productDescription/product-desc.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ProductDescriptionController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['productDescCtrl', 'videoModalController'], function (productDescCtrl, videoModalController) {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
             .when('/:productSlug/pd/:productId', {
                 templateUrl: 'app/components/product/productDescription/product-desc.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'ProductDescriptionController',

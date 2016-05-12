@@ -270,10 +270,14 @@ define(['byProductApp', 'byUtil',
                 $location.path(path);
             }
 
-            $scope.productUrl = function (productId, productName) {
+            $scope.productUrl = function (productId, productName, categoryName) {
                 var prodName = productName.replace(/[^a-zA-Z0-9 ]/g, ""),
-                    prodName = prodName.replace(/\s+/g, '-').toLowerCase(),
-                    newHref = '#!/' + prodName + PAGE_URL.productDescription + "/" + productId;
+                    prodName = prodName.replace(/\s+/g, '-').toLowerCase();
+                if(categoryName){
+                    var catName = categoryName.replace(/[^a-zA-Z0-9 ]/g, ""),
+                    catName = catName.replace(/\s+/g, '-').toLowerCase();
+                }                
+                var newHref = '#!/' + prodName + PAGE_URL.productDescription + "/" + catName + "/" + productId;
                 return newHref;
             }
 
