@@ -27,6 +27,7 @@ define([
 	byApp.config(byAppRoute);
 	byApp.config(function($locationProvider) {
 		$locationProvider.hashPrefix('!');
+		$locationProvider.html5Mode(true);
 	});
 
 	byApp.controller('MainMenuController', mainMenuController);
