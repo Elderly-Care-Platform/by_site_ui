@@ -81,7 +81,7 @@
 								rate-calculator="{{individualProfile.ratingPercentage}}"></i></div>
                             <div class="divLeft" style="margin-top:8px;">Rated
 							by 
-							<a href="">
+							<a href="/">
 								{{individualProfile.ratingCount}} user<xy
 									ng-if="individualProfile.ratingCount > 1">s</xy>
 							</a></div>
@@ -122,7 +122,7 @@
 						</div>
 						<div style="clear: both; height: 5px;"></div>
 						<div class="no-padding" ng-if="individualProfile.basicProfileInfo.primaryEmail">
-							<i class="fa fa-envelope"  style="margin-right:9px;"></i> <a href="">{{individualProfile.basicProfileInfo.primaryEmail}}</a>
+							<i class="fa fa-envelope"  style="margin-right:9px;"></i> <a href="/">{{individualProfile.basicProfileInfo.primaryEmail}}</a>
 							<span ng-repeat="mail in individualProfile.basicProfileInfo.secondaryEmails track by $index"
 								ng-if="mail.trim()!==''"> / <a href="mailto:{{mail}}">{{mail}}</a>
 							</span>
