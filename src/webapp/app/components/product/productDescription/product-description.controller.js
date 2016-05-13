@@ -470,7 +470,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
         $scope.productUrl = function(productId, productName) {
             var prodName = productName.replace(/[^a-zA-Z0-9 ]/g, ""),
                 prodName = prodName.replace(/\s+/g, '-').toLowerCase(),
-                newHref = '#!/' + prodName + PAGE_URL.productDescription + "/" + productId;
+                newHref = '' + prodName + PAGE_URL.productDescription + "/" + productId;
             return newHref;
         }
 
@@ -586,7 +586,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
 
         $scope.getHrefProfileReview = function(profile, urlQueryParams) {
             var newHref = urlFactoryFilter.getReviewUrl(profile, urlQueryParams, false);
-            newHref = "#!" + newHref;
+            newHref = "" + newHref;
             return newHref;
         };
 

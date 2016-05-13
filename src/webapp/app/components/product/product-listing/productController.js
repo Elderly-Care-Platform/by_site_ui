@@ -277,7 +277,7 @@ define(['byProductApp', 'byUtil',
                     var catName = categoryName.replace(/[^a-zA-Z0-9 ]/g, ""),
                     catName = catName.replace(/\s+/g, '-').toLowerCase();
                 }                
-                var newHref = '#!/' + prodName + PAGE_URL.productDescription + "/" + catName + "/" + productId;
+                var newHref = '' + prodName + PAGE_URL.productDescription + "/" + catName + "/" + productId;
                 return newHref;
             }
 

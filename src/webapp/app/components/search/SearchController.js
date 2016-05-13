@@ -223,7 +223,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
             
             $scope.getHref = function(discuss, queryParams){
             	var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, queryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
@@ -288,7 +288,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
             }else{
                 var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
             }
-            newHref = "#!" + newHref;
+            newHref = "" + newHref;
             return newHref;
         };
         
@@ -348,7 +348,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
         
         $scope.getHrefProfileHousing = function(profile, urlQueryParams){
             var newHref = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, false);
-            newHref = "#!" + newHref;
+            newHref = "" + newHref;
             return newHref;
         };
 
@@ -367,7 +367,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
                 if(productId) {
                     var prodName = productName.replace(/[^a-zA-Z0-9 ]/g, ""),
                     prodName = prodName.replace(/\s+/g, '-').toLowerCase(),
-                    newHref = '#!/' + prodName + '/pd/' + productId;
+                    newHref = '' + prodName + '/pd/' + productId;
                     return  newHref;
                 }
             }

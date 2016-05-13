@@ -6,19 +6,19 @@ BY.config.menu = BY.config.menu || {};
 BY.config.menu.modules = {
     'discuss': {
         'moduleId': 0,
-        'baseUrl': '#!/elder-care-forums'
+        'baseUrl': 'elder-care-forums'
     },
     'service': {
         'moduleId': 1,
-        'baseUrl': '#!/elder-care-services'
+        'baseUrl': 'elder-care-services'
     },
     'housing': {
         'moduleId': 2,
-        'baseUrl': '#!/senior-living'
+        'baseUrl': 'senior-living'
     },
     'product': {
         'moduleId': 3,
-        'baseUrl': '#!/elder-care-products'
+        'baseUrl': 'elder-care-products'
     }
 }
 
@@ -28,22 +28,22 @@ BY.config.menu.seniorLiving = {
 
 BY.config.menu.moduleConfig = {
     '0': {
-        'baseUrl': '#!/elder-care-forums',
+        'baseUrl': 'elder-care-forums',
         'module': 'discuss',
         'defaultType': 'all'
     },
     '1': {
-        'baseUrl': '#!/elder-care-services',
+        'baseUrl': 'elder-care-services',
         'module': 'service',
         'defaultType': 'all'
     },
     '2': {
-        'baseUrl': '#!/senior-living',
+        'baseUrl': 'senior-living',
         'module': 'housing',
         'defaultType': 'all'
     },
     '3': {
-        'baseUrl': '#!/elder-care-products',
+        'baseUrl': 'elder-care-products',
         'module': 'product',
         'defaultType': ''
     }
@@ -157,7 +157,7 @@ BY.config.menu.community = {
         'desc': '',
         'curator': [
             {
-                'url': '#!/users/elsie?profileId=568f08cfe4b00f4b07a43ee5',
+                'url': 'users/elsie?profileId=568f08cfe4b00f4b07a43ee5',
                 'name': 'Elsie',
                 'desg': 'Elderly care expert',
                 'image': 'assets/img/community/elsie.jpg?versionTimeStamp=%PROJECT_VERSION%'
@@ -171,7 +171,7 @@ BY.config.menu.community = {
         'desc': 'Caring for elders with memory loss, Alzheimer’s, depression, loneliness, insecurity, and other mental conditions.',
         'curator': [
             {
-                'url': '#!/users/lohith?profileId=5653f14ee4b082a5437d1d1b',
+                'url': 'users/lohith?profileId=5653f14ee4b082a5437d1d1b',
                 'name': 'Dr. Lohith',
                 'desg': 'Physician',
                 'image': 'assets/img/home/Lohith.png?versionTimeStamp=%PROJECT_VERSION%'
@@ -191,7 +191,7 @@ BY.config.menu.community = {
         'desc': 'Caring for bedridden elders affected by stroke, paralysis, and other problems.',
         'curator': [
             {
-                'url': '#!/users/elsie?profileId=568f08cfe4b00f4b07a43ee5',
+                'url': 'users/elsie?profileId=568f08cfe4b00f4b07a43ee5',
                 'name': 'Elsie',
                 'desg': 'Elderly care expert',
                 'image': 'assets/img/community/elsie.jpg?versionTimeStamp=%PROJECT_VERSION%'
@@ -205,7 +205,7 @@ BY.config.menu.community = {
         'desc': 'Caring for elders with incontinence (bedwetting) and other personal hygiene problems.',
         'curator': [
             {
-                'url': '#!/users/elsie?profileId=568f08cfe4b00f4b07a43ee5',
+                'url': 'users/elsie?profileId=568f08cfe4b00f4b07a43ee5',
                 'name': 'Elsie',
                 'desg': 'Elderly care expert',
                 'image': 'assets/img/community/elsie.jpg?versionTimeStamp=%PROJECT_VERSION%'
@@ -225,7 +225,7 @@ BY.config.menu.community = {
         'desc': 'Caring for elders with arthritis, osteoporosis, muscle degradation, broken hips, and chronic joints or bones pains.',
         'curator': [
             {
-                'url': '#!/users/elsie?profileId=568f08cfe4b00f4b07a43ee5',
+                'url': 'users/elsie?profileId=568f08cfe4b00f4b07a43ee5',
                 'name': 'Elsie',
                 'desg': 'Elderly care expert',
                 'image': 'assets/img/community/elsie.jpg?versionTimeStamp=%PROJECT_VERSION%'
@@ -240,7 +240,7 @@ BY.config.menu.community = {
         'desc1': 'In cooperation with the Indian Cancer Society, Karnataka branch',
         'curator': [
             {
-                'url': '#!/users/ritu-sharma?profileId=565d7bc5e4b088c160fd90c2',
+                'url': 'users/ritu-sharma?profileId=565d7bc5e4b088c160fd90c2',
                 'name': 'Ms. Ritu Sharma',
                 'desg': 'Counsellor',
                 'image': 'assets/img/community/Ritu_sharma.jpg?versionTimeStamp=%PROJECT_VERSION%'
@@ -321,7 +321,7 @@ BY.config.menu.community = {
         'desc': 'How to write a proper will? What is a living will? What are senior citizens’ rights, and how to benefit from them. And more !',
         'curator': [
             {
-                'url': '#!/users/rukmani-menon?profileId=5653ed92e4b082a5437d1d14',
+                'url': 'users/rukmani-menon?profileId=5653ed92e4b082a5437d1d14',
                 'name': 'Rukmani',
                 'desg': 'Advocate',
                 'image': 'assets/img/home/rukmani.png?versionTimeStamp=%PROJECT_VERSION%'

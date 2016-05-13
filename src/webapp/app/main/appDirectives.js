@@ -34,7 +34,7 @@ define(["byApp", "angular"], function (byApp, angular) {
                         element.attr('href', attrs.diHref);
                         element.bind('click', function (event) {
                             scope.$apply(function () {
-                                if ($location.url() == attrs.diHref || "#!" + $location.url() == attrs.diHref) $route.reload();
+                                if ($location.url() == attrs.diHref || "" + $location.url() == attrs.diHref) $route.reload();
                             });
                         });
                     }
@@ -529,7 +529,7 @@ define(["byApp", "angular"], function (byApp, angular) {
                     if(page < 0 || page > ($scope.totalNoPages - 1)){
                         return null;
                     }else{
-                        var newHref = "#!" + $location.path();
+                        var newHref = "" + $location.path();
                         newHref = newHref + "?";
                         angular.forEach($location.search(), function (value, key) {
                             if (key !== $scope.pageIndexName) {

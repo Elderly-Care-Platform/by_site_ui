@@ -249,14 +249,14 @@ define(['byApp',
 
             $scope.getHref = function (discuss, urlQueryParams) {
                 var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
 
             $scope.getHrefProfile = function (profile, urlQueryParams) {
                 var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 

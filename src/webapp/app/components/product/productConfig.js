@@ -12,7 +12,7 @@ define([], function () {
             })
             .constant('SERVERURL', {
                 hostUrl: BY.config.constants.selfHost,
-                siteName: '/#!',
+                siteName: '',
                 forwardslash: '/'
             })
             .constant('REST_URL', {

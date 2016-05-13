@@ -198,7 +198,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactU
             
             $scope.getHrefProfile = function(profile, urlQueryParams){
             	var newHref = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
             

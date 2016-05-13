@@ -46,10 +46,10 @@ define(['byApp', 'byUtil', 'homePromoController',
 
                 if(isLoggedinUser){
                     $scope.loginDetails.text = "Logout";
-                    $scope.loginDetails.link = "#!/users/logout/" + SessionIdService.getSessionId();
+                    $scope.loginDetails.link = "users/logout/" + SessionIdService.getSessionId();
                 }else{
                     $scope.loginDetails.text = "Join us";
-                    $scope.loginDetails.link = "#!/users/login";
+                    $scope.loginDetails.link = "users/login";
                 }
                 updateMetaTags();
                 BY.byUtil.changeHeaderImage();
@@ -144,13 +144,13 @@ define(['byApp', 'byUtil', 'homePromoController',
 
             $scope.getHrefProfile = function (profile, urlQueryParams) {
                 var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
             $scope.getHref = function (discuss, urlQueryParams) {
                 var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 

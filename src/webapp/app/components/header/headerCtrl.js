@@ -176,10 +176,10 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             }
 
             $scope.loginDetails.text = "Logout";
-            $scope.loginDetails.link = "#!/users/logout/" + sessionId;
+            $scope.loginDetails.link = "users/logout/" + sessionId;
 
             $scope.profileDetails.text = BY.byUtil.validateUserName(userName);
-            $scope.profileDetails.link = "#!/users/registrationProfile/";
+            $scope.profileDetails.link = "users/registrationProfile/";
         }
 
         function inValidateSession() {
@@ -187,7 +187,7 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             $scope.profileDetails.link = "";
 
             $scope.loginDetails.text = "Join us";
-            $scope.loginDetails.link = "#!/users/login";
+            $scope.loginDetails.link = "users/login";
         }
 
         $scope.$on('byUserLogout', function (event, args) {
