@@ -595,7 +595,20 @@ define([], function () {
 
             //********************Login/Registration routes end**************************************************
 
-
+            .when('/elder-care-services/:profileTitle', {
+                templateUrl: 'app/components/profile/profile.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ProfileController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/profile/userProfileCtrl'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+            
             .when('/users/:profileTitle', {
                 templateUrl: 'app/components/profile/profile.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'ProfileController',

@@ -181,7 +181,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
              }
 
             proTitle = BY.byUtil.getSlug(proTitle);
-            var newHref = "/users/"+proTitle;
+            var newHref = "/elder-care-services/"+proTitle;
 
 
             if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
@@ -297,7 +297,7 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
              }
 
             proTitle = BY.byUtil.getSlug(proTitle);
-            var newHref = "/users/"+proTitle;
+            var newHref = "/elder-care-services/"+proTitle;
 
 
             if(urlQueryParams && Object.keys(urlQueryParams).length > 0){
