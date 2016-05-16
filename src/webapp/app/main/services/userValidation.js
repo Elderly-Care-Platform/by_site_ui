@@ -154,6 +154,12 @@ define(['byApp', 'registrationConfig'], function (byApp, registrationConfig) {
             $http.get(BY.config.constants.apiPrefix + "api/v1/users/logout");
             invalidateSession();
             $rootScope.$broadcast('byUserLogout', '');
+            ga('send', {
+              hitType: 'event',
+              eventCategory: 'User',
+              eventAction: 'logoutUser',
+              eventLabel: 'LogoutUser'
+            });
             $location.path("/users/login");
         };
 

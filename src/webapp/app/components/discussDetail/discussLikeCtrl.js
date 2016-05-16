@@ -68,6 +68,12 @@ define(['byApp', 'discussConfig', 'userValidation', 'discussService'], function(
                             $scope.beforePost = false;
                             $scope.aggrLikeCount = likeReply.data.likeCount;
                             $scope.likedByUser = likeReply.data.likedByUser;
+                            ga('send', {
+                              hitType: 'event',
+                              eventCategory: 'Forum',
+                              eventAction: 'likeOnContent',
+                              eventLabel: 'LikeOnContent'
+                            });
                         },
                         function (errorResponse) {
                             console.log(errorResponse);
@@ -81,6 +87,12 @@ define(['byApp', 'discussConfig', 'userValidation', 'discussService'], function(
                             $scope.beforePost = false;
                             $scope.aggrLikeCount = likeReply.data.likeCount;
                             $scope.likedByUser = likeReply.data.likedByUser;
+                            ga('send', {
+                              hitType: 'event',
+                              eventCategory: 'Forum',
+                              eventAction: 'likeOnContent',
+                              eventLabel: 'LikeOnContent'
+                            });
                         },
                         function (errorResponse) {
                             console.log(errorResponse);

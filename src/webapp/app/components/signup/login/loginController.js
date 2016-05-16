@@ -179,6 +179,12 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
 
             if($rootScope.inContextLogin){
                 ValidateUserCredential.loginCallback();
+                ga('send', {
+                  hitType: 'event',
+                  eventCategory: 'User',
+                  eventAction: 'socialLoginUser',
+                  eventLabel: 'SocialLoginUser'
+                });
             } else
             {
                 $location.path("/");
@@ -220,6 +226,13 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
                     $scope.$parent.exit();
                 }
 
+                ga('send', {
+                  hitType: 'event',
+                  eventCategory: 'User',
+                  eventAction: 'loginUser',
+                  eventLabel: 'LoginUser'
+                });
+
             }).error(function () {
                 $scope.setError("Invalid user/password combination");
                 $(".login-btn").prop("disabled", false);
@@ -260,6 +273,13 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
                     $scope.$parent.profileLogin = true;
                     $route.reload();
                 }
+
+                ga('send', {
+                  hitType: 'event',
+                  eventCategory: 'User',
+                  eventAction: 'loginUser',
+                  eventLabel: 'LoginUser'
+                });
 
             }).error(function () {
                 $scope.setError("Invalid user/password combination");
@@ -329,6 +349,13 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
                     } else{
                         $scope.$parent.getUserProfile();
                     }
+
+                    ga('send', {
+                      hitType: 'event',
+                      eventCategory: 'User',
+                      eventAction: 'registerUser',
+                      eventLabel: 'RegisterUser'
+                    });
 
                 }, function (error) {
                     // failure
@@ -404,6 +431,13 @@ define(['byUtil', 'registrationConfig'], function(byUtil, registrationConfig){
                         $route.reload();
                         //$scope.$parent.getUserProfile();
                     }
+
+                    ga('send', {
+                      hitType: 'event',
+                      eventCategory: 'User',
+                      eventAction: 'registerUser',
+                      eventLabel: 'RegisterUser'
+                    });
 
                 }, function (error) {
                     // failure

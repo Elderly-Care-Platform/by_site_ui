@@ -105,7 +105,12 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
             function postHttpComment(data){
                 $scope.discussReply.$postComment(
                     function (discussReply) {
-                        broadCastData.update(discussReply.data); //broadcast data for parent controller to update the view with latest comment/answer
+                        broadCastData.update(discussReply.data); //broadcast data for parent controller to update the view with latest comment/answer                        ga('send', {
+                          hitType: 'event',
+                          eventCategory: 'Forum',
+                          eventAction: 'commentAnswer',
+                          eventLabel: 'CommentAnswer'
+                        });
                         $scope.disposeComment(parentReplyId);           //dispose comment editor and remove tinymce after successful post of comment/answer
                     },
                     function (errorResponse) {
@@ -157,6 +162,12 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
                 if (discussType === "Q") {
                     $scope.discussReply.$postAnswer(function (discussReply, headers) {
                             broadCastData.update(discussReply.data); //broadcast data for parent controller to update the view with latest comment/answer
+                            ga('send', {
+                              hitType: 'event',
+                              eventCategory: 'Forum',
+                              eventAction: 'commentAnswer',
+                              eventLabel: 'CommentAnswer'
+                            });
                             $scope.disposeComment(discussId); //dispose comment editor and remove tinymce after successful post of comment/answer
                         },
                         function (errorResponse) {
@@ -169,6 +180,12 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
                 } else {
                     $scope.discussReply.$postComment(function (discussReply, headers) {
                             broadCastData.update(discussReply.data); //broadcast data for parent controller to update the view with latest comment/answer
+                            ga('send', {
+                              hitType: 'event',
+                              eventCategory: 'Forum',
+                              eventAction: 'commentAnswer',
+                              eventLabel: 'CommentAnswer'
+                            });
                             $scope.disposeComment(discussId); //dispose comment editor and remove tinymce after successful post of comment/answer
                         },
                         function (errorResponse) {
