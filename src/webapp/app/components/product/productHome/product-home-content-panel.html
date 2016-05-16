@@ -140,7 +140,7 @@
 
       <div class="by_featuredProductCard col-md-6" ng-init="feWidth();">
       <!--  ng-click="openProductDescription(product.id, product.name)"-->
-      <a href="{{productUrl(product.id, product.name)}}" ng-click="$event.stopPropagation();">
+      <a href="{{productUrl(product.id, product.name, product.categoryName)}}" ng-click="$event.stopPropagation();">
       <div class="by_productCard_Image" ng-init="getDiscountPercentage(product)">
         <img ng-if="product.primaryMedia != null" ng-src="{{product.primaryMedia.url || ''}}"
         fallback-src='["assets/img/by.png"]' alt="{{product.name}}">

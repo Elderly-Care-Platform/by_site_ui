@@ -319,7 +319,7 @@
     <div class="by_proSmiliarWrap" >
         <div class="by_proSmiliarWrapFull">
         <div class="by_proSimilarProduct" ng-repeat="product in uiData.similarProduct">
-            <a ng-href="{{productUrl(product.id, product.name)}}" ng-click="$event.stopPropagation();">
+            <a ng-href="{{productUrl(product.id, product.name, product.categoryName)}}" ng-click="$event.stopPropagation();">
                 <img ng-src="{{product.primaryMedia.url}}" alt="{{product.name}}" />
             </a>
         </div>
