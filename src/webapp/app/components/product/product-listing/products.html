@@ -43,7 +43,7 @@
         <h1>{{productSH[selectedMenuId].sectionHead}}</h1>
       </div>
       <div class="by_categorySectionHeaderText2">
-        <h2>{{productSH[selectedMenuId].sectionDesc}}</h2> 
+        <h2 ng-bind-html="productSH[selectedMenuId].sectionDesc"></h2> 
       </div>
     </div>
     <div class="by_categorySectionHeaderImage" >

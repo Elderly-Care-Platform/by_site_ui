@@ -421,22 +421,22 @@ BY.config.menu.community = {
 BY.config.menu.productsSH = {
     '10200' : {
         'sectionHead':'Medical Conditions',
-        'sectionDesc':'Find relevant elder care products by condition of a person you are taking care of. If your aging parents are struggling with diabetes, arthritis, Parkinson’s and stroke, Alzheimer’s and dementia, chronic pain or adult incontinence, please look up products under relevant sections.',
+        'sectionDesc':'Find relevant elder care products by condition of a person you are taking care of. If your aging parents are struggling with <a href="elder-care-products/diabetes/10201">diabetes</a>, arthritis, <a href="elder-care-products/parkinsons/10209">Parkinson’s</a> and stroke, Alzheimer’s and <a href="elder-care-products/alzheimers-&-dementia/10250">dementia</a>, chronic <a href="elder-care-products/pain-management/10202">pain</a> or adult <a href="elder-care-products/incontinence-&-hygiene/10301">incontinence</a>, please look up products under relevant sections.',
         'sectionImage':'assets/img/section_headers/medical-conditions.png?versionTimeStamp=%PROJECT_VERSION%'
     },
     '10212' : {
         'sectionHead':'Mobility for the Elderly ',
-        'sectionDesc':'Find a mobility solution that fits the needs of your elderly. Consider a motorized wheelchair to make them more independent. Choose the right stroller, walker, or a fashionable walking stick. If your aging parents live in a two-story house, consider chairlifts and other staircase safety solutions for the elderly.',
+        'sectionDesc':'Find a mobility solution that fits the needs of your elderly. Consider a motorized <a href="elder-care-products/manual-wheelchairs/10550">wheelchair</a> to make them more independent. Choose the right stroller, <a href="elder-care-products/walkers/10500">walker</a>, or a fashionable <a href="elder-care-products/walking-sticks/10551">walking stick</a>. If your aging parents live in a two-story house, consider <a href="acorn-stairlift/pd/motorized-wheelchairs/10950">chairlifts</a> and other staircase safety solutions for the elderly.',
         'sectionImage':'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=0'
     },
     '10213' : {
         'sectionHead':'Bed and Bedroom for the comfort of the elderly',
-        'sectionDesc':'Our elder care products make staying in bed more comfortable for your aging parents. Take good care of bedridden elders - from bedsores prevention and bedrests to washing in bed.  Try a memory foam pillow for better sleep. Install  MyLight motion sensors to keep your parents safe, when they get out of bed at night.',
+        'sectionDesc':'Our elder care products make staying in bed more comfortable for your aging parents. Take good care of bedridden elders - from <a href="elder-care-products/bed-&-bedroom/10213">bedsores</a> prevention and <a href="elder-care-products/pillows-&-bedrests/10554">bedrests</a> to <a href="elder-care-products/washing-for-bedridden/10555">washing</a> in bed.  Try a <a href="cervical-orthopedic-pillow/pd/pillows-bedrests/11254">memory foam</a> pillow for better sleep. Install  <a href="mylight-bedlight-motion-sensor-lights/pd/11250">MyLight</a> motion sensors to keep your parents safe, when they get out of bed at night.',
         'sectionImage':'https://www.youtube.com/embed/G7iQyQM9o78?rel=0&showinfo=0&autoplay=0'
     },
     '10214' : {
         'sectionHead':'Washing & Toileting for the Elderly',
-        'sectionDesc':'Personal hygiene for the elderly could become easier and safer. Consider anti-skid and senior fall prevention products for bathroom, such as grab rails and raised toilet seats. Find right adult diapers, adult pullups, and other incontinence solutions for your elderly. Make sure your bedridden elders are well washed and taken care of.',
+        'sectionDesc':'Personal hygiene for the elderly could become easier and safer. Consider anti-skid and senior fall prevention products for bathroom, such as grab <a href="elder-care-products/rails-&-bars/10560">rails</a> and raised toilet <a href="elder-care-products/raised-toilet-seats/10559">seats</a>. Find right adult diapers, adult pullups, and other <a href="elder-care-products/incontinence-&-hygiene/10301">incontinence</a> solutions for your elderly. Make sure your bedridden elders are well <a href="elder-care-products/washing-for-bedridden/10555">washed</a> and taken care of.',
         'sectionImage':'https://www.youtube.com/embed/hPR5Wf3MlTc?rel=0&showinfo=0&autoplay=0'
     },
     '10219' : {
@@ -446,17 +446,17 @@ BY.config.menu.productsSH = {
     },
     '10225' : {
         'sectionHead':'Daily Aids for Senior Citizens',
-        'sectionDesc':'When your hand grip is weak, and your eyesight is falling, buttoning your shirt, cutting your nails, picking a newspaper from the floor, turning the key or the door knob, even eating, is not easy at all! Our innovative senior care products can simplify those daily tasks for the elderly.',
+        'sectionDesc':'When your hand grip is weak, and your eyesight is falling, <a href="multi-reacher/pd/reaching-aids/10415">buttoning</a> your shirt, cutting your <a href="nail-cutter-with-magnifying-lens/pd/personal-care/10431">nails</a>, <a href="picking-stick-for-elderly/pd/reaching-aids/11201">picking</a> a newspaper from the floor, turning the <a href="elder-care-products/">key</a> or the door knob, even <a href="food-bumper-big/pd/dining-aids/10443">eating</a>, is not easy at all! Our innovative senior care products can simplify those daily tasks for the elderly.',
         'sectionImage':'https://www.youtube.com/embed/pE8EShECqmA?rel=0&showinfo=0&autoplay=0'
     },
     '10231' : {
         'sectionHead':'Fitness & Rehab for Senior Citizens',
-        'sectionDesc':'While recovering from a stroke or coping with Parkinson’s or arthritis, our elderly have to exercise their weakening grip or shivering hands; please help them by choosing right rehab aids! Pamper your mom or dad (or maybe yourself) with a daily neck or feet massage. Stay younger for longer! ',
+        'sectionDesc':'While recovering from a stroke or coping with Parkinson’s or arthritis, our elderly have to exercise their weakening grip or shivering hands; please help them by choosing right <a href="elder-care-products/rehabilitation-aids/10568">rehab</a> aids! Pamper your mom or dad (or maybe yourself) with a daily neck or feet <a href="elder-care-products/massagers/10565">massage</a>. Stay younger for longer! ',
         'sectionImage':'assets/img/section_headers/fitness-rehab.png?versionTimeStamp=%PROJECT_VERSION%'
     },
     '10600' : {
         'sectionHead':'Gift Ideas',
-        'sectionDesc':'Thinking about a nice gift for your elder friends  or aging parents? Want to find something classy and useful for an elderly lady or a senior gentleman? We have products for seniors that are both fun and relief, such as a fashionable walking stick with flash lights, a massager, or a talking thermometer. ',
+        'sectionDesc':'Thinking about a nice gift for your elder friends  or aging parents? Want to find something classy and useful for an elderly lady or a senior gentleman? We have products for seniors that are both fun and relief, such as a fashionable <a href="elder-care-products/walking-sticks/10551">walking stick</a> with flash lights, a <a href="elder-care-products/massagers/10565">massager</a>, or a talking <a href="mc343-thermometer-pencil-type/pd/10755">thermometer</a>. ',
         'sectionImage':'assets/img/section_headers/gift-idea.png?versionTimeStamp=%PROJECT_VERSION%'
     }
 }
