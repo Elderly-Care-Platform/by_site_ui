@@ -106,6 +106,7 @@ define(['byApp', 'byUtil', 'userValidation'], function(byApp, byUtil, userValida
                 $scope.discussReply.$postComment(
                     function (discussReply) {
                         broadCastData.update(discussReply.data); //broadcast data for parent controller to update the view with latest comment/answer                        ga('send', {
+                        ga('send', {
                           hitType: 'event',
                           eventCategory: 'Forum',
                           eventAction: 'commentAnswer',
