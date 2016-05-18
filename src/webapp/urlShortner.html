@@ -19,28 +19,85 @@
 		xhar.send();
 	}
 </script>
+<style type="text/css">
+	.container
+	{
+		width: 90%;
+		padding: 1% 5%;
+		margin: 0px;
+		height: 98%;
+		text-align: center;
+		font-family: Arial;
+		font-size: 15px;
+		color: #000;
+		line-height: 20px;
+	}
+	.container h1
+	{
+		font-size: 20px;
+		color: #000;
+		margin-top: 25px;
+	}
+	.container div
+	{
+		background: #ccc;
+		width: 90%;
+		margin: 0 5%;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#longUrl
+	{
+		width: 90%;
+		height: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		color: #000;
+		margin-top: 20px;
+		padding: 5px;
+	}
+	#button
+	{
+		width: 180px;
+		height: 34px;
+		font-size: 18px;
+		margin-top: 5px;
+		cursor: pointer;
+		padding: 5px;
+		line-height: 20px;
+		color: #fff;
+		background: #000;
+	}
+	#out
+	{
+		width: 90%;
+		height: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		color: #000;
+		margin-top: 20px;
+		padding: 5px;
+		border: none;
+		outline: none;
+		background: #ccc;
+	}
+</style>
 </head>
 
 <body>
 
 
-	<div style="background: rgb(6, 181, 16); height: 100%; width: 100%">
-		<center>
-			<h1
-				style="font-family: cursive; text-align: center; text-shadow: 0 2px #ff1e2f; color: white; font-weight: 700; font-size: 36px; margin-top: 20px; margin-bottom: 10px;">
-				BeautifulYears Short Url Generator</h1>
-			</br>
-			<div style="background: rgba(9, 9, 9, 0.31); width: 50%; height: auto;">
-				<input id="longUrl"
-					style="color: #ff0417; height: 43px; border-width: 0; width: 90%; text-align: left; font-size: 2.0em; margin-top: 20px"
-					placeholder="Input Long URL here"></br> <input
-					style="margin-top: 10px; font-weight: normal; cursor: pointer; line-height: 1.42857143; border-radius: 2px; background-color: #b7000e; background: rgba(0, 0, 0, 0.75); border: 0; border-color: transparent !important; color: #fff; height: 43px; border-width: 0;"
-					type="Button" value="Get Short Url" onclick="getShortUrl()">
-				<input readonly="readonly" type="text" id="out"
-					style="display: block; color: white; padding: 10px; font-weight: bolder; background-color: rgba(192, 61, 71, 0); font-size: 20px; border: none; width: 100%; text-align: center;">
-			</div>
-	</div>
-	</center>
+	<div class="container">
+		<a href="https://www.beautifulyears.com"><img src="https://www.beautifulyears.com/assets/img/home/logo.png" alt="BeautifulYears" /></a>
+		<h1>BeautifulYears Short Url Generator</h1>
+		<div>
+			<input id="longUrl" placeholder="Input Long URL here">
+			<br/>
+			<input type="Button" id="button" value="Get Short Url" onclick="getShortUrl()">
+			<br/>
+			<input readonly="readonly" type="text" id="out">
+		</div>
 	</div>
 
 
