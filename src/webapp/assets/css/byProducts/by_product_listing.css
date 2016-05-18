@@ -203,15 +203,15 @@
   }
   .by_productVideoThumbHead a
   {
-    color: #fff;
+    color: #000;
     display: block;
-    padding: 2px 2px;
-    text-align: center;
-    background: #008000;
+    padding: 2px 0px;
+    /*text-align: center;
+    background: #008000;*/
   }
   .by_productVideoThumbHead a:hover
   {
-    color: #fff;
+    color: #000;
     text-decoration: underline;
   }
   .by_productVideoThumbImage, .by_productVideoThumbVideo
