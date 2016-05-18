@@ -1,0 +1,54 @@
+<hmtl>
+<head>
+<title>BeautifulYears Url Shortner</title>
+<script>
+  function getShortUrl() {
+      var text = document.getElementById("longUrl").value;
+      text = encodeURIComponent(text);
+      var xhar = new XMLHttpRequest();
+      xhar.open("GET", "https://www.beautifulyears.com/BY/api/v1/shortUrl?url="+text);
+      xhar.onreadystatechange = function() {
+          if (xhar.readyState == 4 && xhar.status == 200) {
+              document.getElementById("out").value = xhar.responseText;
+              document.getElementById("out").select();
+          }
+      }
+      xhar.send();
+  }
+</script>
+</head>
+
+<body>
+
+
+<div style="    background: #ff515e;height: 100%;width:100%">
+   <center>
+      <h1 style="text-align: center;text-shadow: 0 2px #ff1e2f;color: white;font-weight: 700;font-size: 36px;margin-top: 20px;margin-bottom: 10px;">
+         BeautifulYears Short Url Generator
+      </h1>
+      </br>
+      <div style="background: rgba(0, 0, 0, 0.25);width:50%;height:50%" >
+         <input id="longUrl" style="color: #ff0417;height: 43px;border-width: 0;width:90%;text-align:left;
+            font-size: 2.0em;margin-top:20px" placeholder="Input Long URL here"></br>
+         <input style="margin-top:10px;font-weight: normal;   
+            cursor: pointer;line-height: 1.42857143;
+            border-radius: 2px;    background-color: #b7000e;
+            background: rgba(0, 0, 0, 0.75);
+            border: 0;border-color: transparent !important;color: #fff;height: 43px;border-width: 0;" type="Button" value="Get Short Url" onclick="getShortUrl()">
+         <input readonly="readonly" type="text" id="out" style="display: block;
+    color: white;
+    padding: 10px;
+    font-weight: bolder;
+    background-color: #C03D47;
+    font-size: 20px;
+    border: none;
+    width: 100%;
+    text-align: center;"></div>
+      </div>
+   </center>
+</div>
+
+
+
+</body>
+</html>
