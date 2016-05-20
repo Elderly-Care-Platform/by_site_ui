@@ -257,16 +257,18 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1);                    
             if($(".by_headerMoreMenu").css("display") == 'block'){
                 $(".by_headerMoreMenu").slideUp(function(){
+                    var padding = $(".by_header").css('top');
                     var top = $(".by_header").outerHeight() - 1 + $(".by_headerMoreMenu .by_container").outerHeight();
-                    var height = $(window).height() - top;
+                    var height = $(window).height() - top + padding;
                     $(".by_headerMoreMenuMask").css('height', height);
                 });                
                 $(".by_menuMore2").addClass('by_menuMore');
                 $(".by_menuMore").removeClass('by_menuMore2');
             } else{
                 $(".by_headerMoreMenu").slideDown(function(){
+                    var padding = $(".by_header").css('top');
                     var top = $(".by_header").outerHeight() - 1 + $(".by_headerMoreMenu .by_container").outerHeight();
-                    var height = $(window).height() - top;
+                    var height = $(window).height() - top + padding;
                     $(".by_headerMoreMenuMask").css('height', height);
                 });
                 $(".by_menuMore").addClass('by_menuMore2');
