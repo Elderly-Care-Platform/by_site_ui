@@ -602,7 +602,7 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
         max-width: 177px;
     }
 }
-#homeMenuScroll {
+.homeMenuScroll {
     display: none;
 }
 .by_expertsPanel_head {
