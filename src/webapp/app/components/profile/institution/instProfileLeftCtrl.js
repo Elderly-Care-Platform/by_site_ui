@@ -27,7 +27,7 @@ define(['byApp', 'byUtil', 'urlFactory'], function(byApp, byUtil, urlFactory) {
         
         $scope.setHrefInst = function(profile, queryParams){
             var newHref = urlFactoryFilter.getProfileDetailUrlS(profile, queryParams, false);
-            newHref = "#!" + newHref;
+            newHref = "" + newHref;
             return newHref;
         };
 

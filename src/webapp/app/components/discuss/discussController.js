@@ -249,14 +249,14 @@ define(['byApp',
 
             $scope.getHref = function (discuss, urlQueryParams) {
                 var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
 
             $scope.getHrefProfile = function (profile, urlQueryParams) {
                 var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
@@ -321,6 +321,12 @@ define(['byApp',
                 if ($scope.userCredential.email && BY.byUtil.validateEmailId($scope.userCredential.email)) {
                     var promise = UserValidationFilter.loginUser($scope.userCredential.email);
                     promise.then(validUser, invalidUser);
+                    ga('send', {
+                      hitType: 'event',
+                      eventCategory: 'Forum',
+                      eventAction: 'likeOnContent',
+                      eventLabel: 'LikeOnContent'
+                    });
                 } else {
                     $scope.likeErrMsg = "Please enter valid email";
                 }
@@ -331,6 +337,7 @@ define(['byApp',
                         $scope.userCredential.defer.resolve();
                         //delete $scope.userCredential.promise;
                     }
+
                     window.setTimeout(function () {
                         $(".masonry").masonry("reload");
                     }, 100);

@@ -98,7 +98,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
 
             $scope.getHref = function (discuss, queryParams) {
                 var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, queryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
@@ -143,7 +143,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
 
             $scope.getHrefProfile = function (profile, urlQueryParams) {
                 var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
@@ -190,7 +190,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
 
             $scope.getHrefProfileReply = function (profile, urlQueryParams) {
                 var newHref = urlFactoryFilter.getReplyUrl(profile, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
@@ -264,7 +264,7 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussDetailLeftController
             }
 
             $scope.editCommunity = function(){
-                $location.path("/edit/communities");
+                $location.path("/edit/elder-care-forums");
             }
         }
 

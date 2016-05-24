@@ -133,6 +133,12 @@ define(['byProductApp'], function (byProductApp) {
             $rootScope.totalCartItem = $scope.uiData.totalCartItem;
             $scope.uiData.totalAmount = parseFloat(result.total.amount);
             $scope.uiData.subTotalAmount = parseFloat(result.subTotal.amount);
+            ga('send', {
+              hitType: 'event',
+              eventCategory: 'Products',
+              eventAction: 'removeFromCart',
+              eventLabel: 'Cart'
+            });
             $window.location.reload();
         }
 
@@ -258,6 +264,12 @@ define(['byProductApp'], function (byProductApp) {
                         .then(productDescriptionSuccess, failure);
                     $scope.promise = ProductDescriptionService.getProductSku(params)
                         .then(getProductSkuSuccess, failure);
+                    ga('send', {
+                      hitType: 'event',
+                      eventCategory: 'Products',
+                      eventAction: 'addToCart',
+                      eventLabel: 'Cart'
+                    });
 
 
                 });

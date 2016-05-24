@@ -1,6 +1,6 @@
 <div class="by_header by_header_image" >
     <div class="by_logo  divLeft">
-        <a di-href="#!/">
+        <a di-href="/">
             <img src="assets/img/home/logo.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Logo"
                  width="100%">
         </a>
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="clearfix"></div>
-    <div class="by_menu">
+    <div class="by_menu" style="display:none;">
         <a href="{{moduleConfig[menu.module].baseUrl}}/{{menu.id}}/{{moduleConfig[menu.module].defaultType}}"
            ng-repeat="menu in $root.mainMenu" ng-class="{'by_menu_Active': menu.id == $root.byTopMenuId }">{{menu.displayMenuName}}</a>
            <a class="by_menuMore" ng-click="showMoreMenuH();">More</a>
@@ -57,7 +57,7 @@
             <div class="by_homeSectionInside">
                 <div class="by_menuMoreLeft" ng-if="$root.windowWidth > 700">
                     <div class="by_menuMoreThumb">
-                        <a href="#!/communities/564071623e60f5b66f62df27/all">
+                        <a href="elder-care-forums/564071623e60f5b66f62df27/all">
                             <div class="by_menuMoreThumbImg">
                                 <img src="assets/img/footer/communities_h.png?versionTimeStamp=%PROJECT_VERSION%" alt="Communities" width="25"/>
                             </div>
@@ -68,7 +68,7 @@
                         </a>
                     </div>
                     <div class="by_menuMoreThumb">
-                        <a href="#!/directory/56406cd03e60f5b66f62df26/all">
+                        <a href="elder-care-services/56406cd03e60f5b66f62df26/all">
                             <div class="by_menuMoreThumbImg">
                                 <img src="assets/img/footer/elder_care_h.png?versionTimeStamp=%PROJECT_VERSION%" alt="Services" width="25"/>
                             </div>
@@ -79,7 +79,7 @@
                         </a>
                     </div>
                     <div class="by_menuMoreThumb">
-                        <a href="#!/shop/55bcad7be4b08970a736784b">
+                        <a href="elder-care-products/55bcad7be4b08970a736784b">
                             <div class="by_menuMoreThumbImg">
                                 <img src="assets/img/footer/shop_h.png?versionTimeStamp=%PROJECT_VERSION%" alt="Products" width="25"/>
                             </div>
@@ -93,7 +93,7 @@
 
                 <div class="by_menuMoreLeft">
                     <div class="by_menuMoreThumb">
-                        <a href="#!/home-modification">
+                        <a href="senior-friendly-home">
                             <div class="by_menuMoreThumbImg">
                                 <img src="assets/img/footer/home-modi_h.png?versionTimeStamp=%PROJECT_VERSION%" alt="Home Modifications" width="25"/>
                             </div>
@@ -104,7 +104,7 @@
                         </a>
                     </div>
                     <div class="by_menuMoreThumb">
-                        <a href="#!/experience-center">
+                        <a href="elder-care-experience-store">
                             <div class="by_menuMoreThumbImg">
                                 <img src="assets/img/footer/expi-store_h.png?versionTimeStamp=%PROJECT_VERSION%" alt="Experience Store" width="25"/>
                             </div>
@@ -115,7 +115,7 @@
                         </a>
                     </div>
                     <div class="by_menuMoreThumb">
-                        <a href="#!/classes-actitivies-for-senior-citizens">
+                        <a href="classes-activities-for-senior-citizens">
                             <div class="by_menuMoreThumbImg">
                                 <img src="assets/img/footer/classes_h.png?versionTimeStamp=%PROJECT_VERSION%" alt="Classes &amp; Activities" width="25"/>
                             </div>
@@ -129,7 +129,7 @@
 
                 <div class="by_menuMoreRight">                    
                     <div class="by_menuMoreRightThumb">
-                        <a href="#!/contactUs">
+                        <a href="contactUs">
                             Contact us
                         </a>
                     </div>
@@ -139,10 +139,10 @@
                         </a>
                     </div>
                     <div class="by_menuMoreRightThumb">
-                        <a di-href="#!/aboutUs" id="aboutUs_placeholder" style="color:#777575;">About us</a>
+                        <a di-href="aboutUs" id="aboutUs_placeholder" style="color:#777575;">About us</a>
                     </div>
                     <div class="by_menuMoreRightThumb">
-                        <a href="#!/" style="color:#777575;">
+                        <a href="/" style="color:#777575;">
                             Home
                         </a>
                     </div>

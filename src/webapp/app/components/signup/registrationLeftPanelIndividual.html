@@ -2,16 +2,16 @@
 <div class="by_menuDetailed col-md-12" ng-if="$root.windowWidth > 720"  style="position:fixed; bottom:0px;"  ng-init="leftPanelHeight();">
        
             <div class="by_profileDetailed_menu  username" style="border:0px;">
-                <a href="#!/users/registration/changeCredential?changeUserName=true">Change Username</a>
+                <a href="users/registration/changeCredential?changeUserName=true">Change Username</a>
             </div>
             <div class="by_profileDetailed_menu password" style="border:0px;">
-                <a href="#!/users/registration/changeCredential?changeUserPwd=true">Change Password</a>
+                <a href="users/registration/changeCredential?changeUserPwd=true">Change Password</a>
             </div>
 
 
             <!-- profile types  -->
             <div class="by_profileDetailed_menu reg-menu-1 by_profileDetailed_menuActive" ng-if="userTypeConfig && userTypeConfig.label ">
-                <a href="#!/users/registrationProfile">{{userTypeConfig.label}}</a>
+                <a href="users/registrationProfile">{{userTypeConfig.label}}</a>
             </div>
             <!-- profile types  ends -->
 
@@ -19,7 +19,7 @@
 
             <!-- order history -->
             <div class="by_profileDetailed_menu orderHistory" ng-if="userTypeConfig && userTypeConfig.showOrderHistory">
-                <a href="#!/users/registrationProfile/orderHistory?showOrderHistory=true">{{userTypeConfig.orderHistoryLabel}}</a>
+                <a href="users/registrationProfile/orderHistory?showOrderHistory=true">{{userTypeConfig.orderHistoryLabel}}</a>
             </div>
             <!-- order history ends --> 
 
@@ -37,17 +37,17 @@
     <div class="by_mobile_leftPanel" style="padding:0px 15px;">
        
          <div class="by_profileDetailed_menu  username" style="border:0px;">
-                <a href="#!/users/registration/changeCredential?changeUserName=true">Change Username</a>
+                <a href="users/registration/changeCredential?changeUserName=true">Change Username</a>
             </div>
             <div class="by_profileDetailed_menu password" style="border:0px;">
-                <a href="#!/users/registration/changeCredential?changeUserPwd=true">Change Password</a>
+                <a href="users/registration/changeCredential?changeUserPwd=true">Change Password</a>
             </div>
 
              
 
             <!-- profile types without housing -->
             <div class="by_profileDetailed_menu reg-menu-1 by_profileDetailed_menuActive" ng-if="userTypeConfig && userTypeConfig.label ">
-                <a href="#!/users/registrationProfile">{{userTypeConfig.label}}</a>
+                <a href="users/registrationProfile">{{userTypeConfig.label}}</a>
             </div>
             <!-- profile types without housing ends -->
 
@@ -56,7 +56,7 @@
 
             <!-- order history -->     
             <div class="by_profileDetailed_menu orderHistory" ng-if="userTypeConfig && userTypeConfig.showOrderHistory">
-                <a href="#!/users/registrationProfile/orderHistory?showOrderHistory=true">{{userTypeConfig.orderHistoryLabel}}</a>
+                <a href="users/registrationProfile/orderHistory?showOrderHistory=true">{{userTypeConfig.orderHistoryLabel}}</a>
             </div>
             <!-- order history ends --> 
             <div class="clearfix" style="height:50px; background:#fff;"></div>

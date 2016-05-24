@@ -153,7 +153,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'], function
         
         $scope.getHrefProfile = function(profile, urlQueryParams){
         	var newHref = urlFactoryFilter.getHousingProfileUrl(profile, urlQueryParams, false);
-            newHref = "#!" + newHref;
+            newHref = "" + newHref;
             return newHref;
         };
         

@@ -122,8 +122,18 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             // }
 
             $scope.templateUrl = 'app/components/header/otherHeader.html?versionTimeStamp=%PROJECT_VERSION%';
-            angular.element($window).bind("scroll", function () {
+                angular.element($window).bind("scroll", function () {
                 var headerHeight = $(".by_header").outerHeight(true);
+                if (isHomePage == true){
+                        if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                            $(".by_menu").show();
+                        } else {                        
+                             $(".by_menu").hide();
+                        }
+                }
+                if (isHomePage != true){
+                    $(".by_menu").show();
+                }
                 if(headerHeight > 70){
                     if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= (headerHeight - 64)) {
                         $(".by_header").addClass("by_header_image");
@@ -176,10 +186,10 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             }
 
             $scope.loginDetails.text = "Logout";
-            $scope.loginDetails.link = "#!/users/logout/" + sessionId;
+            $scope.loginDetails.link = "users/logout/" + sessionId;
 
             $scope.profileDetails.text = BY.byUtil.validateUserName(userName);
-            $scope.profileDetails.link = "#!/users/registrationProfile/";
+            $scope.profileDetails.link = "users/registrationProfile/";
         }
 
         function inValidateSession() {
@@ -187,7 +197,7 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             $scope.profileDetails.link = "";
 
             $scope.loginDetails.text = "Join us";
-            $scope.loginDetails.link = "#!/users/login";
+            $scope.loginDetails.link = "users/login";
         }
 
         $scope.$on('byUserLogout', function (event, args) {
@@ -208,11 +218,13 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
                 $rootScope.BYhomePage = true;
                 isHomePage = true;                
                 $("#ng-scope").css('min-height', "0px");
+                $(".by_menu").hide();
             } else {
                 $rootScope.BYhomePage = false;
                 isHomePage = false;
                 var minimumHeight = $( window ).height() - 46;
                 $("#ng-scope").css('min-height', minimumHeight+"px");
+                $(".by_menu").show();
             }
 
             updateHeaderTemplate();
@@ -257,16 +269,18 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             $(".by_headerMoreMenu").css('top', $(".by_header").outerHeight() - 1);                    
             if($(".by_headerMoreMenu").css("display") == 'block'){
                 $(".by_headerMoreMenu").slideUp(function(){
+                    var padding = $(".by_header").css('top');
                     var top = $(".by_header").outerHeight() - 1 + $(".by_headerMoreMenu .by_container").outerHeight();
-                    var height = $(window).height() - top;
+                    var height = $(window).height() - top + padding;
                     $(".by_headerMoreMenuMask").css('height', height);
                 });                
                 $(".by_menuMore2").addClass('by_menuMore');
                 $(".by_menuMore").removeClass('by_menuMore2');
             } else{
                 $(".by_headerMoreMenu").slideDown(function(){
+                    var padding = $(".by_header").css('top');
                     var top = $(".by_header").outerHeight() - 1 + $(".by_headerMoreMenu .by_container").outerHeight();
-                    var height = $(window).height() - top;
+                    var height = $(window).height() - top + padding;
                     $(".by_headerMoreMenuMask").css('height', height);
                 });
                 $(".by_menuMore").addClass('by_menuMore2');

@@ -173,13 +173,13 @@ define(['byApp', 'byUtil', 'discussLikeController', 'discussReplyController', 's
 
             $scope.getHref = function(discuss, queryParams) {
                 var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, queryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
             $scope.getHrefProfile = function(profile, urlQueryParams) {
                 var newHref = urlFactoryFilter.getProfileUrl(profile, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 

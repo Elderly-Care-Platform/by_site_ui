@@ -467,10 +467,14 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
             $location.path(path);
         }
 
-        $scope.productUrl = function(productId, productName) {
+        $scope.productUrl = function (productId, productName, categoryName) {
             var prodName = productName.replace(/[^a-zA-Z0-9 ]/g, ""),
-                prodName = prodName.replace(/\s+/g, '-').toLowerCase(),
-                newHref = '#!/' + prodName + PAGE_URL.productDescription + "/" + productId;
+                prodName = prodName.replace(/\s+/g, '-').toLowerCase();
+            if(categoryName){
+                var catName = categoryName.replace(/[^a-zA-Z0-9 ]/g, ""),
+                catName = catName.replace(/\s+/g, '-').toLowerCase();
+            }                
+            var newHref = '' + prodName + PAGE_URL.productDescription + "/" + catName + "/" + productId;
             return newHref;
         }
 
@@ -586,7 +590,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
 
         $scope.getHrefProfileReview = function(profile, urlQueryParams) {
             var newHref = urlFactoryFilter.getReviewUrl(profile, urlQueryParams, false);
-            newHref = "#!" + newHref;
+            newHref = "" + newHref;
             return newHref;
         };
 

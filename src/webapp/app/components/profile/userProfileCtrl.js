@@ -230,7 +230,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController', 'indvUserPr
 
             $scope.getHref = function (discuss, queryParams) {
                 var newHref = urlFactoryFilter.getDiscussDetailUrl(discuss, queryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
@@ -275,7 +275,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController', 'indvUserPr
 
             $scope.setHrefCorp = function (profile, queryParams) {
                 var newHref = urlFactoryFilter.getProfileDetailUrlS(profile, queryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
@@ -320,7 +320,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController', 'indvUserPr
 
             $scope.getHrefProfile = function (profile, urlQueryParams) {
                 var newHref = urlFactoryFilter.getdirectoryProfileUrl(profile, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 
@@ -367,7 +367,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'reviewRateController', 'indvUserPr
 
             $scope.getHrefProfileReview = function (profile, urlQueryParams) {
                 var newHref = urlFactoryFilter.getReviewUrl(profile, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
 

@@ -21,7 +21,7 @@ define(['byApp'], function (byApp) {
             }
 
             disTitle = BY.byUtil.getSlug(disTitle);
-            var newHref = "/communities/" + disTitle;
+            var newHref = "/elder-care-forums/" + disTitle;
 
 
             if (urlQueryParams && Object.keys(urlQueryParams).length > 0) {
@@ -90,7 +90,7 @@ define(['byApp'], function (byApp) {
 
         function getDiscussAbsUrl(discuss){
             var discussId = discuss.id, title = BY.byUtil.removeSpecialChars(getShortTitle(discuss)), url = "";
-            url = window.location.origin + "/#!/communities/" + title + "?id=" + discussId
+            url = window.location.origin + "elder-care-forums/" + title + "?id=" + discussId
             return url;
         }
     }

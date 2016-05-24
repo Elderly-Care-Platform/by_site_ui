@@ -245,7 +245,7 @@
     width: 100%;
     height: auto;
     padding-bottom: 30px;
-    font-size: 21px;
+    font-size: 18px;
 }
 .by_contactPhoneCommImg
 {
@@ -263,7 +263,7 @@
 .by_contactPhoneCommText a, .by_contactPhoneCommText a:hover
 {
     color: #008000;
-    text-decoration: underline;
+    text-decoration: none;
 }
 .by_contactUsResponseLeft
 {

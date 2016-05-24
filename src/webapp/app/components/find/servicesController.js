@@ -125,7 +125,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactU
                 if(menu.module == $scope.menuConfig.modules['discuss'].moduleId){
                     menu = $rootScope.menuCategoryMap['56406cd03e60f5b66f62df26'];
                 }
-                $location.path("/directory/"+$scope.removeSpecialChars(menu.displayMenuName)+"/"+menu.id+"/"+response.name);
+                $location.path("/elder-care-services/"+$scope.removeSpecialChars(menu.displayMenuName)+"/"+menu.id+"/"+response.name);
             }
 
             $scope.specialityCallback = function (speciality) {
@@ -198,7 +198,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactU
             
             $scope.getHrefProfile = function(profile, urlQueryParams){
             	var newHref = urlFactoryFilter.getProfileDetailUrlS(profile, urlQueryParams, false);
-                newHref = "#!" + newHref;
+                newHref = "" + newHref;
                 return newHref;
             };
             

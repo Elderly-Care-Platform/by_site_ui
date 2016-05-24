@@ -4355,7 +4355,7 @@ function $AnchorScrollProvider() {
      <example module="anchorScrollOffsetExample">
        <file name="index.html">
          <div class="fixed-header" ng-controller="headerCtrl">
-           <a href="" ng-click="gotoAnchor(x)" ng-repeat="x in [1,2,3,4,5]">
+           <a href="/" ng-click="gotoAnchor(x)" ng-repeat="x in [1,2,3,4,5]">
              Go to anchor {{x}}
            </a>
          </div>
@@ -17732,13 +17732,13 @@ function limitToFilter() {
        <div ng-controller="ExampleController">
          <pre>Sorting predicate = {{predicate}}; reverse = {{reverse}}</pre>
          <hr/>
-         [ <a href="" ng-click="predicate=''">unsorted</a> ]
+         [ <a href="/" ng-click="predicate=''">unsorted</a> ]
          <table class="friend">
            <tr>
-             <th><a href="" ng-click="predicate = 'name'; reverse=false">Name</a>
-                 (<a href="" ng-click="predicate = '-name'; reverse=false">^</a>)</th>
-             <th><a href="" ng-click="predicate = 'phone'; reverse=!reverse">Phone Number</a></th>
-             <th><a href="" ng-click="predicate = 'age'; reverse=!reverse">Age</a></th>
+             <th><a href="/" ng-click="predicate = 'name'; reverse=false">Name</a>
+                 (<a href="/" ng-click="predicate = '-name'; reverse=false">^</a>)</th>
+             <th><a href="/" ng-click="predicate = 'phone'; reverse=!reverse">Phone Number</a></th>
+             <th><a href="/" ng-click="predicate = 'age'; reverse=!reverse">Age</a></th>
            </tr>
            <tr ng-repeat="friend in friends | orderBy:predicate:reverse">
              <td>{{friend.name}}</td>
@@ -17762,10 +17762,10 @@ function limitToFilter() {
       <div ng-controller="ExampleController">
         <table class="friend">
           <tr>
-            <th><a href="" ng-click="reverse=false;order('name', false)">Name</a>
-              (<a href="" ng-click="order('-name',false)">^</a>)</th>
-            <th><a href="" ng-click="reverse=!reverse;order('phone', reverse)">Phone Number</a></th>
-            <th><a href="" ng-click="reverse=!reverse;order('age',reverse)">Age</a></th>
+            <th><a href="/" ng-click="reverse=false;order('name', false)">Name</a>
+              (<a href="/" ng-click="order('-name',false)">^</a>)</th>
+            <th><a href="/" ng-click="reverse=!reverse;order('phone', reverse)">Phone Number</a></th>
+            <th><a href="/" ng-click="reverse=!reverse;order('age',reverse)">Age</a></th>
           </tr>
           <tr ng-repeat="friend in friends">
             <td>{{friend.name}}</td>
@@ -17905,7 +17905,7 @@ function ngDirective(directive) {
  *
  * This change permits the easy creation of action links with the `ngClick` directive
  * without changing the location or causing page reloads, e.g.:
- * `<a href="" ng-click="list.addItem()">Add Item</a>`
+ * `<a href="/" ng-click="list.addItem()">Add Item</a>`
  */
 var htmlAnchorDirective = valueFn({
   restrict: 'E',
@@ -17963,9 +17963,9 @@ var htmlAnchorDirective = valueFn({
       <file name="index.html">
         <input ng-model="value" /><br />
         <a id="link-1" href ng-click="value = 1">link 1</a> (link, don't reload)<br />
-        <a id="link-2" href="" ng-click="value = 2">link 2</a> (link, don't reload)<br />
+        <a id="link-2" href="/" ng-click="value = 2">link 2</a> (link, don't reload)<br />
         <a id="link-3" ng-href="/{{'123'}}">link 3</a> (link, reload!)<br />
-        <a id="link-4" href="" name="xx" ng-click="value = 4">anchor</a> (link, don't reload)<br />
+        <a id="link-4" href="/" name="xx" ng-click="value = 4">anchor</a> (link, don't reload)<br />
         <a id="link-5" name="xxx" ng-click="value = 5">anchor</a> (no link)<br />
         <a id="link-6" ng-href="{{value}}">link</a> (link, change location)
       </file>
@@ -21266,7 +21266,7 @@ var ngCloakDirective = ngDirective({
  *   <file name="index.html">
  *    <div id="ctrl-as-exmpl" ng-controller="SettingsController1 as settings">
  *      Name: <input type="text" ng-model="settings.name"/>
- *      [ <a href="" ng-click="settings.greet()">greet</a> ]<br/>
+ *      [ <a href="/" ng-click="settings.greet()">greet</a> ]<br/>
  *      Contact:
  *      <ul>
  *        <li ng-repeat="contact in settings.contacts">
@@ -21275,10 +21275,10 @@ var ngCloakDirective = ngDirective({
  *             <option>email</option>
  *          </select>
  *          <input type="text" ng-model="contact.value"/>
- *          [ <a href="" ng-click="settings.clearContact(contact)">clear</a>
- *          | <a href="" ng-click="settings.removeContact(contact)">X</a> ]
+ *          [ <a href="/" ng-click="settings.clearContact(contact)">clear</a>
+ *          | <a href="/" ng-click="settings.removeContact(contact)">X</a> ]
  *        </li>
- *        <li>[ <a href="" ng-click="settings.addContact()">add</a> ]</li>
+ *        <li>[ <a href="/" ng-click="settings.addContact()">add</a> ]</li>
  *     </ul>
  *    </div>
  *   </file>
@@ -21349,7 +21349,7 @@ var ngCloakDirective = ngDirective({
  *  <file name="index.html">
  *   <div id="ctrl-exmpl" ng-controller="SettingsController2">
  *     Name: <input type="text" ng-model="name"/>
- *     [ <a href="" ng-click="greet()">greet</a> ]<br/>
+ *     [ <a href="/" ng-click="greet()">greet</a> ]<br/>
  *     Contact:
  *     <ul>
  *       <li ng-repeat="contact in contacts">
@@ -21358,10 +21358,10 @@ var ngCloakDirective = ngDirective({
  *            <option>email</option>
  *         </select>
  *         <input type="text" ng-model="contact.value"/>
- *         [ <a href="" ng-click="clearContact(contact)">clear</a>
- *         | <a href="" ng-click="removeContact(contact)">X</a> ]
+ *         [ <a href="/" ng-click="clearContact(contact)">clear</a>
+ *         | <a href="/" ng-click="removeContact(contact)">X</a> ]
  *       </li>
- *       <li>[ <a href="" ng-click="addContact()">add</a> ]</li>
+ *       <li>[ <a href="/" ng-click="addContact()">add</a> ]</li>
  *    </ul>
  *   </div>
  *  </file>

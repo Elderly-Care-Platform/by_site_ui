@@ -2,18 +2,25 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
     'use strict';
 
     function ProductMenuCtrl($scope, $rootScope, $window, $location, $route, $routeParams) {
-        $scope.selectedMenuId       = $routeParams.menuId || $routeParams.productId;
-        $scope.selectedMenu         = $rootScope.menuCategoryMap[$scope.selectedMenuId];
-        if($scope.selectedMenu && $scope.selectedMenu.ancestorIds){
-            $scope.selectedParent       = $rootScope.menuCategoryMap[$scope.selectedMenu.ancestorIds[$scope.selectedMenu.ancestorIds.length - 1]];
+        $scope.selectedMenuId  = $routeParams.menuId;
+
+        if(!$scope.selectedMenuId){
+            $scope.selectedMenu  = $rootScope.menuCategoryMapByName[$routeParams.categoryName];
+            $scope.selectedMenuId = $scope.selectedMenu.id;
+        }else{
+            $scope.selectedMenu  = $rootScope.menuCategoryMap[$scope.selectedMenuId];
         }
-        $scope.menuConfig           = BY.config.menu;
+
+        if($scope.selectedMenu && $scope.selectedMenu.ancestorIds){
+            $scope.selectedParent  = $rootScope.menuCategoryMap[$scope.selectedMenu.ancestorIds[$scope.selectedMenu.ancestorIds.length - 1]];
+        }
+        $scope.menuConfig  = BY.config.menu;
         window.scrollTo(0, 0);
 
         $scope.expandParent = function (menuId) {
             if (menuId && menuId.toString() == $scope.selectedMenuId) {
                 var expandNodeId;
-                if($scope.selectedParent && $scope.selectedParent.displayMenuName && $scope.selectedParent.displayMenuName.toLowerCase() === "shop"){
+                if($scope.selectedParent && $scope.selectedParent.displayMenuName && $scope.selectedParent.displayMenuName.toLowerCase() === "products"){
                     expandNodeId = $scope.selectedMenuId;
                 }else{
                     expandNodeId = $scope.selectedParent.id;
@@ -113,7 +120,7 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
                 $location.search('showEditor', 'true');
                 BY.byEditor.removeEditor();
                 var menuId = $scope.menuConfig.reveiwsMenuConfig['product_review'].id;
-                $location.path("/shop/reviews/"+menuId);
+                $location.path("/elder-care-products/reviews/"+menuId);
             }
         }
 

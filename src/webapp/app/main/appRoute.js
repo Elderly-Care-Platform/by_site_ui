@@ -15,6 +15,18 @@ define([], function () {
 
             /* experience stroe */
 
+            .when('/elder-care-experience-store', {
+                templateUrl: 'app/components/experienceStore/experienceStore.html', controller: 'expStoreCtrl', resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/experienceStore/expStoreController'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
             .when('/experience-center', {
                 templateUrl: 'app/components/experienceStore/experienceStore.html', controller: 'expStoreCtrl', resolve: {
                     load: ['$q', function ($q) {
@@ -28,6 +40,18 @@ define([], function () {
             })
 
             /* home modification */
+
+            .when('/senior-friendly-home', {
+                templateUrl: 'app/components/homeModifications/homeModifications.html', controller: 'homeModificationCtrl', resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/homeModifications/homeModifications'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
 
             .when('/home-modification', {
                 templateUrl: 'app/components/homeModifications/homeModifications.html', controller: 'homeModificationCtrl', resolve: {
@@ -44,6 +68,18 @@ define([], function () {
 
             /* classes and activities */
 
+            .when('/classes-activities-for-senior-citizens', {
+                templateUrl: 'app/components/classes-activities/classes-activities.html', controller: 'classesActivitiesCtrl', resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/classes-activities/classes-activities'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
             .when('/classes-actitivies-for-senior-citizens', {
                 templateUrl: 'app/components/classes-activities/classes-activities.html', controller: 'classesActivitiesCtrl', resolve: {
                     load: ['$q', function ($q) {
@@ -58,6 +94,76 @@ define([], function () {
 
 
             //**************Communities routes start******************************************************************
+            .when('/elder-care-forums/:slug/:menuId/:discussType', {
+                templateUrl: 'app/components/discuss/discussion.html', controller: 'DiscussMenuCtrl', resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/discuss/discussMenuCtrl', 'editorController'], function (discussMenuCtrl, editorController) {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+
+            .when('/elder-care-forums/:menuId/:discussType', {
+                templateUrl: 'app/components/discuss/discussion.html', controller: 'DiscussMenuCtrl', resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/discuss/discussMenuCtrl', 'editorController'], function (discussMenuCtrl, editorController) {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+
+            .when('/elder-care-forums/:discussTitle/', {
+                templateUrl: 'app/components/discussDetail/discussDetail.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'DiscussDetailController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/discussDetail/discussDetailController'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
+            .when('/edit/elder-care-forums', {
+               templateUrl: 'app/components/editDiscuss/editDiscuss.html?versionTimeStamp=%PROJECT_VERSION%',
+               controller: 'editDiscussController',
+               resolve: {
+                   load: ['$q', function ($q) {
+                       var defered = $q.defer();
+                       require(['app/components/editDiscuss/editDiscussController'], function () {
+                           defered.resolve();
+                       });
+                       return defered.promise;
+                   }]
+               }
+            })
+
             .when('/communities/:slug/:menuId/:discussType', {
                 templateUrl: 'app/components/discuss/discussion.html', controller: 'DiscussMenuCtrl', resolve: {
                     load: ['$q', function ($q) {
@@ -146,6 +252,79 @@ define([], function () {
 
 
             //***********Directory routes start*******************************************************************
+            
+            .when('/elder-care-services/:slug/:menuId/:city', {
+                templateUrl: 'app/components/find/services.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ServicesController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(["app/components/find/servicesController", "app/components/find/findMenuCtrl"],
+                            function (servicesController, findMenuCtrl) {
+                                defered.resolve();
+                            });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+
+            .when('/elder-care-services/reviews/:menuId', {
+                templateUrl: 'app/components/find/services.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ServicesController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(["app/components/find/servicesController", "app/components/find/findMenuCtrl"],
+                            function (servicesController, findMenuCtrl) {
+                                defered.resolve();
+                            });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+
+            .when('/elder-care-services/:menuId/:city', {
+                templateUrl: 'app/components/find/services.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ServicesController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(["app/components/find/servicesController", "app/components/find/findMenuCtrl"],
+                            function (servicesController, findMenuCtrl) {
+                                defered.resolve();
+                            });
+                        return defered.promise;
+                    }],
+                    byMenu: ['$route', '$rootScope', '$q', function ($route, $rootScope, $q) {
+                        var defered = $q.defer();
+                        if($rootScope.menuCategoryMap[$route.current.params.menuId]){
+                            defered.resolve();
+                        }else{
+                            defered.reject();
+                        }
+                        return defered.promise;
+                    }]
+                }
+            })
+            
             .when('/directory/:slug/:menuId/:city', {
                 templateUrl: 'app/components/find/services.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'ServicesController',
@@ -416,7 +595,20 @@ define([], function () {
 
             //********************Login/Registration routes end**************************************************
 
-
+            .when('/elder-care-services/:profileTitle', {
+                templateUrl: 'app/components/profile/profile.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'ProfileController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['app/components/profile/userProfileCtrl'], function () {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+            
             .when('/users/:profileTitle', {
                 templateUrl: 'app/components/profile/profile.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'ProfileController',

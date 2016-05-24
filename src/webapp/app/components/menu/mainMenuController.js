@@ -62,7 +62,11 @@ define(['bySeoConfig'], function(bySeoConfig) {
         function mergeProdCategories(prod_categories){
             function editCategoryOptions(categories, ancestorIdArr){
                 angular.forEach(categories, function(category, index){
+                    var categoryName = category.name.replace(/[^a-zA-Z0-9 ]/g, ""),
+                        categoryName = categoryName.replace(/\s+/g, '-').toLowerCase();
+
                     $rootScope.menuCategoryMap[category.id] = category;
+                    $rootScope.menuCategoryMapByName[categoryName] = category;
                     category.displayMenuName = category.name.replace(/\w+/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
                     category.slug = category.urlKey;
                     category.module = 3;
