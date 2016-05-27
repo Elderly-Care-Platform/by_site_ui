@@ -2,4 +2,7 @@ User-agent: *
 Disallow:*/privacyPolicy$
 Disallow:*/termsCondition$
 Disallow:*/makeSnapshot*
+Disallow:*/cart*
+Disallow:*/selectAddress*
+Disallow:*/paymentGatway*
 Disallow:*?afdt=*
