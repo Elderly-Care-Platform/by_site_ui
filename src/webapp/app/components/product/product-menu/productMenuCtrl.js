@@ -6,7 +6,7 @@ define(['byApp', 'productReviewsCtrl', 'editorController'], function (byApp, pro
 
         if(!$scope.selectedMenuId){
             $scope.selectedMenu  = $rootScope.menuCategoryMapByName[$routeParams.categoryName];
-            $scope.selectedMenuId = $scope.selectedMenu.id;
+            $scope.selectedMenuId = $scope.selectedMenu.id || $routeParams.menuId;
         }else{
             $scope.selectedMenu  = $rootScope.menuCategoryMap[$scope.selectedMenuId];
         }
