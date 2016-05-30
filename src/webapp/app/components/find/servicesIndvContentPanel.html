@@ -1,7 +1,7 @@
 <div ng-click="location($event, service, {'profileId':service.userId})"
 	class="by_serviceCard" data-index="discussion-articles"
 	ng-if="service.systemTags.length > 0 && $root.windowWidth > 600" ng-init="service.showMoreServices=false;">
-	<div class="serviceFeatured" ng-if="service.featured == true"></div>
+	<div class="questionTag postTag" ng-if="service.featured == true"></div>
 	<div class="by_serviceCard_profileImage"
 		aria-label="{{service.basicProfileInfo.firstName}}"
 		ng-if="service.basicProfileInfo.profileImage != null && service.individualInfo.gender == 1"
