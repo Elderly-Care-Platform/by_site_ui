@@ -16,7 +16,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory'], function
 
         var city                            = $routeParams.city;
         var tags                            = [];
-        var queryParams                     = {p:$scope.pageIdx,s:20,sort:"lastModifiedAt"};
+        var queryParams                     = {p:$scope.pageIdx,s:20,sort:"isFeatured"};
         var init                            = initialize();
         $scope.showContact                  = {};
         $scope.showContact.showContactNumber = false;
