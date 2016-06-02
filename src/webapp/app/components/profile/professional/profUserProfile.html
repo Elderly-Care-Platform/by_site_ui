@@ -20,6 +20,7 @@
 		</div>
 	</div>
 	<div class="col-md-12 by_profileGrayBg by_profileDetail  margin-bottom-20 no-padding" ng-init="individualProfile.showMoreServices=false">
+	<div class="questionTag postTag" ng-if="individualProfile.featured == true" style="right: -6px; top: -7px;"></div>
 		<div class="col-md-12 profileContainer margin-bottom-15  ">
 			<div class="col-md-5 col-xs-5 by_profileWidth">
 				<div class="main-image  " style="padding-left:0px;">
@@ -59,14 +60,14 @@
 				<div class="clearfix" style="height:10px;"></div>
 			</div>
 			<div class="col-md-7 col-xs-7 by_profileInfoWidth by-service-padding">
-				<div class="profileMainContent" >
-					<h1 class="profileContentTitle divLeft" style="width: calc(100% - 92px);">
+				<div class="profileMainContent" style="position:relative;">
+					<h1 class="profileContentTitle divLeft" style="width: calc(100% - 122px);">
 						<span ng-if="gender">{{gender}}</span> <span
 							ng-if="individualProfile.basicProfileInfo.firstName">{{individualProfile.basicProfileInfo.firstName.toLowerCase()}}</span>
 						<span ng-if="individualProfile.individualInfo.lastName">
 						{{individualProfile.individualInfo.lastName.toLowerCase()}}</span>
 					</h1>
-					<div class="by_profile_verified divRight" ng-if="individualProfile.verified == true" data-toggle="tooltip" ng-init="tooltipText();" 
+					<div class="by_profile_verified divRight" ng-if="individualProfile.verified == true"  data-toggle="tooltip" data-placement="bottom" ng-init="tooltipText();" 
 						ng-click="$event.stopPropagation();" 
 						title="Information on service providers, professionals and senior living options 
 						has been verified by a BeautifulYears 	representative  at the time of registration
