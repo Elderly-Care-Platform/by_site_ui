@@ -180,13 +180,15 @@ module.exports = function (grunt) {
                         replacement: function () {
                             return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
                         }
-                    },
-                    {
-                        match: /\<\!--\s?@@dev-js\s?starts[\s\S]*@@dev-js\s?ends\s?-->/,
-                        replacement: function () {
-                            return '<script type="text/javascript" src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
-                        }
-                    }]
+                    }
+                    // ,
+                    // {
+                    //     match: /\<\!--\s?@@dev-js\s?starts[\s\S]*@@dev-js\s?ends\s?-->/,
+                    //     replacement: function () {
+                    //         return '<script type="text/javascript" src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
+                    //     }
+                    // }
+                    ]
                 }
             }
         },
