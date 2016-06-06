@@ -1454,9 +1454,10 @@ ul.shop-badge > li:hover .badge-open {
 	text-align:center;
 }
  .badge-open small {
-    color: #FF0000;
+    color: #999;
     font-size: 14px;
 }
+
 
 /*Subtotal*/
 .header-v5 li.subtotal {
@@ -1474,7 +1475,7 @@ li.subtotal span {
 	
 
  li.subtotal .subtotal-cost {
-    color: #FF0000;
+    color: #999;
 }
 
  li.subtotal .btn-u {

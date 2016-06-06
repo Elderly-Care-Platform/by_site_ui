@@ -15,7 +15,7 @@
                             <button type="button" class="close" ng-click="removeItemFromCart(item.id)">×</button>
                             <div class="overflow-h text-capitalize">
                                 <span>{{item.name.toLowerCase()}}</span>
-                                <small>{{item.quantity}} x Rs. {{item.salePrice.amount}}</small>
+                                <small>{{item.quantity}} <small>×</small> Rs. {{item.salePrice.amount}}</small>
                             </div>
                         </li>
                     </div>
@@ -36,8 +36,8 @@
                             ng-if="discount.discountType === discountType.percentOff">-   {{discount.discountAmount.toFixed(2)}} %</span>
                         </div>
                         <div class="overflow-h margin-bottom-10">
-                            <span>Total</span>
-                            <span class="pull-right subtotal-cost">Rs. {{uiData.totalAmount}}</span>
+                            <span style="text-transform:none;">Total&nbsp;</span> 
+                            <span class="pull-right subtotal-cost" style="text-transform:none;"> Rs. {{uiData.totalAmount}}</span>
                         </div>
                         <div class="row">
                             <div class="col-xs-6">

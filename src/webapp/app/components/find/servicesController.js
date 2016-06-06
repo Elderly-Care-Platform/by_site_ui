@@ -25,7 +25,8 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'byEditor', 'urlFactory', 'contactU
 
             var city                        = $routeParams.city ? $routeParams.city : 'all',
                 tags                        = [],
-                queryParams                 = {page: $scope.pageIdx, size: 20};
+                queryParams                 = {page: $scope.pageIdx, size: 20, sort: 'isFeatured'};
+               
 
             var init                        = initialize();
 
