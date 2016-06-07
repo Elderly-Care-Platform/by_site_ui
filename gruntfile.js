@@ -245,7 +245,7 @@ module.exports = function (grunt) {
 
     // Default task(s).
     //grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
-    grunt.registerTask('default', ['clean:build', 'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:productionHTML',  'replace:version',]);
+    grunt.registerTask('default', ['clean:build', 'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:productionHTML', 'requirejs', 'clean:removeByJs', 'replace:version',]);
     grunt.registerTask('build', ['default', 'war']);
     grunt.registerTask('ug', ['clean:build', 'copy', 'uglify']);
 
