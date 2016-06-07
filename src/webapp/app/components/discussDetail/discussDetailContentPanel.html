@@ -1,7 +1,10 @@
 <span ng-if="pageNotFound">Sorry this page is not available</span>
 <div ng-if="detailResponse.discuss">    
     <div class="clearfix"></div>
-    <div class="by_discussDeatil_card">
+    <div class="by_discussDeatil_card" style="position:relative;">
+        <div class="questionTag postTag"
+             ng-if="discuss.featured == true">
+        </div>
         <div class="col-md-12 margin-top-10" ng-if="detailResponse.discuss.promotion == false">
             <ul class="by_discussDeatil_cardList" ng-init="getLeafCategories(detailResponse.discuss)">
                 <li ng-if="detailResponse.discuss.discussType == 'Q'">
