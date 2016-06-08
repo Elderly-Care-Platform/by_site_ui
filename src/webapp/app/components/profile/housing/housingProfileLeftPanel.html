@@ -34,19 +34,19 @@
                     </a>
                     <a ng-if="value.length > 1" class="triangle-down" data-toggle="collapse"
                        data-parent="#userTypeaccord"
-                       href={{"#collapse"+key}}></a>
+                       href='{{"#collapse"+key}}'></a>
                 </div>
                 <div class="panel-heading housingCityHeadThumb" ng-if="value.length > 1">
-                    <a href={{"#collapse"+key}} data-toggle="collapse" data-parent="#userTypeaccord"
+                    <a href='{{"#collapse"+key}}' data-toggle="collapse" data-parent="#userTypeaccord"
                        style="position:relative !important; right:0px; width:100%; top:0px; color:#000; font-size:16px;">{{key}}
                         ({{value.length}})
                     </a>
                     <a style="    position: absolute !important; right: 11px; top: 10px; z-index: 5;    width: 1px;"
                        ng-if="value.length > 1" class="triangle-down" data-toggle="collapse"
                        data-parent="#userTypeaccord"
-                       href={{"#collapse"+key}}></a>
+                       href='{{"#collapse"+key}}'></a>
                 </div>
-                <div id={{"collapse"+key}} style="background:#eee;" class="panel-collapse collapse"
+                <div id='{{"collapse"+key}}' style="background:#eee;" class="panel-collapse collapse"
                      ng-class="{'in':value.length > 1 && facilityData.primaryAddress.city===key && userName!=='corp'}"
                      ng-if="value.length > 1">
                     <div ng-repeat="branch in value">
@@ -99,19 +99,19 @@
                         </a>
                         <a ng-if="value.length > 1" class="triangle-down" data-toggle="collapse"
                            data-parent="#userTypeaccord"
-                           href={{"#collapse"+key}}></a>
+                           href='{{"#collapse"+key}}'></a>
                     </div>
                     <div class="panel-heading housingCityHeadThumb" ng-if="value.length > 1">
-                        <a href={{"#collapse"+key}} data-toggle="collapse" data-parent="#userTypeaccord"
+                        <a href='{{"#collapse"+key}}' data-toggle="collapse" data-parent="#userTypeaccord"
                            style="position:relative !important; right:0px; width:100%; top:0px; color:#000; font-size:16px;">{{key}}
                             ({{value.length}})
                         </a>
                         <a style="    position: absolute !important; right: 11px; top: 10px; z-index: 5;    width: 1px;"
                            ng-if="value.length > 1" class="triangle-down" data-toggle="collapse"
                            data-parent="#userTypeaccord"
-                           href={{"#collapse"+key}}></a>
+                           href='{{"#collapse"+key}}'></a>
                     </div>
-                    <div id={{"collapse"+key}} style="background:#eee;" class="panel-collapse collapse"
+                    <div id='{{"collapse"+key}}' style="background:#eee;" class="panel-collapse collapse"
                          ng-class="{'in':value.length > 1 && facilityData.primaryAddress.city===key && userName!=='corp'}"
                          ng-if="value.length > 1">
                         <div ng-repeat="branch in value">

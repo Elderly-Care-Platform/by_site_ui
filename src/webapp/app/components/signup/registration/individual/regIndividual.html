@@ -547,11 +547,11 @@
 									<div  id="#accordion2">
 										
 											<div style="width:100%; line-height:23px; text-transform:none;  cursor:pointer;padding: 3px 10px 3px 10px;" data-toggle="collapse" data-parent="#accordion2"
-												data-target={{"#collapse"+option.id}}>{{option.displayMenuName}}
+												data-target='{{"#collapse"+option.id}}'>{{option.displayMenuName}}
 												<a class="triangle-down" style="margin-top: 7px; margin-right: 0px;"></a>
 												</div>
 										
-										<div class="collapse" id={{"collapse"+option.id}}  style="margin-left:8px;">
+										<div class="collapse" id='{{"collapse"+option.id}}'  style="margin-left:8px;">
 											<span ng-repeat="option in option.children">
 												<div class="clearfix" style="height:5px;"></div>
 											 <input
@@ -616,22 +616,22 @@
                                     <input type="checkbox" class="by_interestCheckBox" ng-click="selectTopicOfInterest(category)"
                                         ng-checked="selectedInterests && selectedInterests.indexOf(category.id) !== -1">
                                     <a class="accordion-toggle collapsed" data-toggle="collapse"
-                                        data-parent="#interests" href={{"#"+category.id}} onclick="return false;" style="line-height: 23px;"> 
+                                        data-parent="#interests" href='{{"#"+category.id}}' onclick="return false;" style="line-height: 23px;"> 
                                     {{category.displayMenuName}}
                                     </a>
                                     <a ng-if="category.children.length > 0" class="triangle-down accordion-toggle collapsed by-reg-triangle"
-                                        data-toggle="collapse" data-parent="#interests" href={{"#"+category.id}}
+                                        data-toggle="collapse" data-parent="#interests" href='{{"#"+category.id}}'
                                         onclick="return false;" style="width:10px; position:absolute; right:5px; top:3px;"></a>
                                     <div id="{{category.id}}" class="col-md-12 whiteBg by_editor_SubCategories panel-collapse collapse" id="accordion-2" ng-if="category.children.length > 0">
                                         <div ng-repeat="category1 in category.children"  class="panel-body col-md-12">
                                             <input type="checkbox" class="by_interestCheckBox" ng-click="selectTopicOfInterest(category1)"
                                                 ng-checked="selectedInterests && selectedInterests.indexOf(category1.id) !== -1">
                                             <a class="accordion-toggle collapsed" data-toggle="collapse"
-                                                data-parent="#accordion-2" href={{"#"+category1.id}} onclick="return false;" style="line-height: 23px;"> 
+                                                data-parent="#accordion-2" href='{{"#"+category1.id}}' onclick="return false;" style="line-height: 23px;"> 
                                             {{category1.displayMenuName}}
                                             </a>
                                             <a ng-if="category1.children.length > 0" class="triangle-down accordion-toggle collapsed by-reg-triangle"
-                                                data-toggle="collapse" data-parent="#accordion-2" href={{"#"+category1.id}}
+                                                data-toggle="collapse" data-parent="#accordion-2" href='{{"#"+category1.id}}'
                                                 onclick="return false;" style="width:10px; position:absolute; right:5px; top:3px;"></a>
                                              <div id="{{category1.id}}" class="col-md-12 whiteBg by_editor_SubCategories panel-collapse collapse" id="accordion-3" ng-if="category1.children.length > 0">
                                                 <div ng-init="getLeafCategories(category1)">
@@ -639,11 +639,11 @@
                                                         <input type="checkbox" class="by_interestCheckBox" ng-click="selectTopicOfInterest(category2)"
                                                             ng-checked="selectedInterests && selectedInterests.indexOf(category2.id) !== -1">
                                                         <a class="accordion-toggle collapsed" data-toggle="collapse"
-                                                            data-parent="#accordion-3" href={{"#"+category2.id}} onclick="return false;" style="line-height: 23px;"> 
+                                                            data-parent="#accordion-3" href='{{"#"+category2.id}}' onclick="return false;" style="line-height: 23px;"> 
                                                         {{category2.displayMenuName}}
                                                         </a>
                                                         <a ng-if="category2.children.length > 0" class="triangle-down accordion-toggle collapsed by-reg-triangle"
-                                                            data-toggle="collapse" data-parent="#accordion-3" href={{"#"+category2.id}}
+                                                            data-toggle="collapse" data-parent="#accordion-3" href='{{"#"+category2.id}}'
                                                             onclick="return false;" style="width:10px; position:absolute; right:5px; top:3px;"></a>
                                                     </div>
                                                 </div>

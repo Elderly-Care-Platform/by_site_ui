@@ -44,27 +44,27 @@
                                 <input class="by_inputCheckbox" type="checkbox" ng-click="selectTag($event, category)" id="{{category.id}}" value="{{category.id}}"
                                        ng-checked="selectedMenuList[category.id].id == category.id">
                                 <span class="by_inputCheckboxSpan">
-                                    <a class="accordion-toggle collapsed" style="width: calc(100% - 10px); padding:0px;" data-toggle="collapse" data-parent="#accordion-1" href={{"#accord_"+category.id}} onclick="return false;">
+                                    <a class="accordion-toggle collapsed" style="width: calc(100% - 10px); padding:0px;" data-toggle="collapse" data-parent="#accordion-1" href='{{"#accord_"+category.id}}' onclick="return false;">
                                         {{category.displayMenuName}}
                                     </a>
-                                    <a class="triangle-down accordion-toggle collapsed" style="width: auto; padding:0px; margin-right:0px;" data-toggle="collapse" data-parent="#accordion-1" href={{"#accord_"+category.id}} onclick="return false;"></a>
+                                    <a class="triangle-down accordion-toggle collapsed" style="width: auto; padding:0px; margin-right:0px;" data-toggle="collapse" data-parent="#accordion-1" href='{{"#accord_"+category.id}}' onclick="return false;"></a>
                                 </span>
                                 
                             </label>
                         </h4>
                     </div>
-                    <div id={{"accord_"+category.id}} class="col-md-12 whiteBg by_editor_SubCategories panel-collapse collapse" style="width:calc(100% - 30px) !important;">
+                    <div id='{{"accord_"+category.id}}' class="col-md-12 whiteBg by_editor_SubCategories panel-collapse collapse" style="width:calc(100% - 30px) !important;">
                         <xyz   ng-repeat="subCategory in category.children" ng-if="subCategory.children.length > 0" >
                         <div class="panel-body col-md-12" ng-repeat="subCategory1 in subCategory.children">
                             <input class="by_inputCheckbox" type="checkbox" ng-click="selectTag($event, subCategory1)"
-                                value={{subCategory1.id}}
+                                value='{{subCategory1.id}}'
                                 ng-checked="selectedMenuList[subCategory1.id].id == subCategory1.id">
                             <span class="by_inputCheckboxSpan">{{subCategory1.displayMenuName}}</span>
                         </div>    
                         </xyz>
                         <div class="panel-body col-md-12"  ng-repeat="subCategory in category.children" ng-if="subCategory.children.length == 0">
                             <input class="by_inputCheckbox" type="checkbox" ng-click="selectTag($event, subCategory)"
-                                value={{subCategory.id}}
+                                value='{{subCategory.id}}'
                                 ng-checked="selectedMenuList[subCategory.id].id == subCategory.id">
                             <span class="by_inputCheckboxSpan">{{subCategory.displayMenuName}}</span>
                         </div>

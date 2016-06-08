@@ -227,7 +227,27 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-        }
+        },
+        htmlmin: {                                     
+            dist: {                                      
+              options: {                                 
+                removeComments: true,
+                collapseWhitespace: true
+              },
+              files: [{  
+                expand: true,
+                cwd: 'dist/',
+                src: ['*.html', '**/*.html', '**/**/*.html', '**/**/**/*.html', '**/**/**/**/*.html'],
+                dest: 'dist/'
+                // expand: true,  
+                // src: 'dist/**/*.html',
+                // dest: 'dist/'
+                //'dist/webapp/index.html': 'src/webapp/index.html'
+                // ,                             
+                // 'dist/app/components/**/*.html':'src/webapp/app/components/**/*.html'
+              }]
+            }
+          }
 
     });
 
@@ -240,12 +260,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
 
     // Default task(s).
     //grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
-    grunt.registerTask('default', ['clean:build', 'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:productionHTML', 'requirejs', 'clean:removeByJs', 'replace:version',]);
-    grunt.registerTask('build', ['default', 'war']);
+    grunt.registerTask('default', ['clean:build', 'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:productionHTML', 'requirejs', 'clean:removeByJs', 'replace:version', ]);
+    grunt.registerTask('build', ['default', 'htmlmin' , 'war']);
     grunt.registerTask('ug', ['clean:build', 'copy', 'uglify']);
 
 };
