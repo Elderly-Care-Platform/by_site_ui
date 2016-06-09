@@ -53,6 +53,7 @@
     border-left: 10px solid #716D6D;
     border-bottom: 5px solid transparent;
     display: inline-block;
+    margin-left: 5px;
 }
 .by_leftPanelLink
 {
