@@ -232,9 +232,7 @@ module.exports = function (grunt) {
             dist: {                                      
               options: {                                 
                 removeComments: true,
-                collapseWhitespace: true, 
-                removeEmptyAttributes: true,
-                removeEmptyElements: true
+                collapseWhitespace: true
               },
               files: [{  
                 expand: true,
