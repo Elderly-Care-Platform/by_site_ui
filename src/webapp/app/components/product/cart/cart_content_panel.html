@@ -112,7 +112,7 @@
               ng-show="uiData.cartItems.length">
             <input type="text" name="promoCode" class="textbox textItalic by_promoCode_width" ng-model="promoCode"
                    required placeholder="PromoCode">
-            <button class="btn-u button-apply by_cart_button" ng-click="validatePromoCode()">
+            <button class="btn-u button-apply by_cart_button" ng-click="validatePromoCode(promoCode)">
                 Apply
             </button>
             <span class="error-message" ng-if="promoCodeIsValid === 'invalid'"

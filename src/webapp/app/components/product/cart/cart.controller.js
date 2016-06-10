@@ -365,7 +365,8 @@ define(['byProductApp'], function (byProductApp) {
             $log.debug('Failure JSON Data: ' + JSON.stringify(result));
         }
 
-        function validatePromoCode() {
+        function validatePromoCode(promoCode) {
+            $scope.promoCode = promoCode;
             if (angular.isUndefined($scope.promoCode)) {
                 return;
             }

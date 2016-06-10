@@ -43,6 +43,7 @@
     border-left: 10px solid #B5B2B2;
     border-bottom: 5px solid transparent;
     display: inline-block;
+    margin-left: 5px;
 }
 .by_leftPanel_accelArrow:after
 {
@@ -53,6 +54,7 @@
     border-left: 10px solid #716D6D;
     border-bottom: 5px solid transparent;
     display: inline-block;
+    margin-left: 5px;
 }
 .by_leftPanelLink
 {

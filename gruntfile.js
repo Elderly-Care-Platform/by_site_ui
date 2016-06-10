@@ -180,14 +180,13 @@ module.exports = function (grunt) {
                         replacement: function () {
                             return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
                         }
+                    },
+                    {
+                        match: /\<\!--\s?@@dev-js\s?starts[\s\S]*@@dev-js\s?ends\s?-->/,
+                        replacement: function () {
+                            return '<script type="text/javascript" src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
+                        }
                     }
-                    // ,
-                    // {
-                    //     match: /\<\!--\s?@@dev-js\s?starts[\s\S]*@@dev-js\s?ends\s?-->/,
-                    //     replacement: function () {
-                    //         return '<script type="text/javascript" src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
-                    //     }
-                    // }
                     ]
                 }
             }
@@ -228,7 +227,27 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-        }
+        },
+        htmlmin: {                                     
+            dist: {                                      
+              options: {                                 
+                removeComments: true,
+                collapseWhitespace: true
+              },
+              files: [{  
+                expand: true,
+                cwd: 'dist/',
+                src: ['*.html', '**/*.html', '**/**/*.html', '**/**/**/*.html', '**/**/**/**/*.html'],
+                dest: 'dist/'
+                // expand: true,  
+                // src: 'dist/**/*.html',
+                // dest: 'dist/'
+                //'dist/webapp/index.html': 'src/webapp/index.html'
+                // ,                             
+                // 'dist/app/components/**/*.html':'src/webapp/app/components/**/*.html'
+              }]
+            }
+          }
 
     });
 
@@ -241,12 +260,13 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
 
     // Default task(s).
     //grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
-    grunt.registerTask('default', ['clean:build', 'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:productionHTML',  'replace:version',]);
-    grunt.registerTask('build', ['default', 'war']);
+    grunt.registerTask('default', ['clean:build', 'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:productionHTML', 'requirejs', 'clean:removeByJs', 'replace:version', ]);
+    grunt.registerTask('build', ['default', 'htmlmin' , 'war']);
     grunt.registerTask('ug', ['clean:build', 'copy', 'uglify']);
 
 };
