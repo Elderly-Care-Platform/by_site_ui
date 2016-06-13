@@ -103,12 +103,12 @@ module.exports = function (grunt) {
                 src: ['src/webapp/lib/unify/plugins/bootstrap/css/bootstrap.min.css',
                     'src/webapp/lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css',
                     'src/webapp/lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css',
+                    'src/webapp/lib/tagmanager-master/tagmanager.css',
                     'src/webapp/lib/unify/plugins/animate.css',
                     'src/webapp/lib/unify/plugins/line-icons/line-icons.css',
                     'src/webapp/lib/unify/plugins/font-awesome/css/font-awesome.min.css',
                     'src/webapp/lib/unify/plugins/flexslider/flexslider.css',
-                    'src/webapp/lib/unify/plugins/parallax-slider/css/parallax-slider.css',
-                    'src/webapp/lib/tagmanager-master/tagmanager.css'],
+                    'src/webapp/lib/unify/plugins/parallax-slider/css/parallax-slider.css'],
                 dest: 'dist/assets/css/finalLib.css'
             }
 
@@ -121,7 +121,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     //cwd: 'dist/assets/css',
-                    src: ['dist/**/final.css'],
+                    src: ['dist/**/finalLib.css', 'dist/**/final.css'],
                     dest: '',
                     ext: '.min.css'
                 }]
