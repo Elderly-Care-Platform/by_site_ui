@@ -184,7 +184,7 @@ module.exports = function (grunt) {
                     {
                         match: /\<\!--\s?@@dev-js\s?starts[\s\S]*@@dev-js\s?ends\s?-->/,
                         replacement: function () {
-                            return '<script type="text/javascript" src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
+                            return '<script type="text/javascript" async src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
                         }
                     }
                     ]
