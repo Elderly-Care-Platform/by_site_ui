@@ -47,7 +47,17 @@ module.exports = function (grunt) {
         },
         concat: {
             byCSS: {
-                src: ['<%= cssBaseUrl %>/ie8.css',
+                src: [
+                    'src/webapp/lib/unify/plugins/bootstrap/css/bootstrap.min.css',
+                    'src/webapp/lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css',
+                    'src/webapp/lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css',
+                    'src/webapp/lib/tagmanager-master/tagmanager.css',
+                    'src/webapp/lib/unify/plugins/animate.css',
+                    'src/webapp/lib/unify/plugins/line-icons/line-icons.css',
+                    'src/webapp/lib/unify/plugins/font-awesome/css/font-awesome.min.css',
+                    'src/webapp/lib/unify/plugins/flexslider/flexslider.css',
+                    'src/webapp/lib/unify/plugins/parallax-slider/css/parallax-slider.css',
+                    '<%= cssBaseUrl %>/ie8.css',
                     '<%= cssBaseUrl %>/blocks.css',
                     '<%= cssBaseUrl %>/plugins.css',
                     '<%= cssBaseUrl %>/app.css',
@@ -98,19 +108,20 @@ module.exports = function (grunt) {
                     '<%= cssBaseUrl %>/by/by_classesActivites.css'
                 ],
                 dest: 'dist/assets/css/final.css'
-            },
-            libCSS: {
-                src: ['src/webapp/lib/unify/plugins/bootstrap/css/bootstrap.min.css',
-                    'src/webapp/lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css',
-                    'src/webapp/lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css',
-                    'src/webapp/lib/tagmanager-master/tagmanager.css',
-                    'src/webapp/lib/unify/plugins/animate.css',
-                    'src/webapp/lib/unify/plugins/line-icons/line-icons.css',
-                    'src/webapp/lib/unify/plugins/font-awesome/css/font-awesome.min.css',
-                    'src/webapp/lib/unify/plugins/flexslider/flexslider.css',
-                    'src/webapp/lib/unify/plugins/parallax-slider/css/parallax-slider.css'],
-                dest: 'dist/assets/css/finalLib.css'
             }
+            // ,
+            // libCSS: {
+            //     src: ['src/webapp/lib/unify/plugins/bootstrap/css/bootstrap.min.css',
+            //         'src/webapp/lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css',
+            //         'src/webapp/lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css',
+            //         'src/webapp/lib/tagmanager-master/tagmanager.css',
+            //         'src/webapp/lib/unify/plugins/animate.css',
+            //         'src/webapp/lib/unify/plugins/line-icons/line-icons.css',
+            //         'src/webapp/lib/unify/plugins/font-awesome/css/font-awesome.min.css',
+            //         'src/webapp/lib/unify/plugins/flexslider/flexslider.css',
+            //         'src/webapp/lib/unify/plugins/parallax-slider/css/parallax-slider.css'],
+            //     dest: 'dist/assets/css/finalLib.css'
+            // }
 
         },
         cssmin: {
@@ -178,7 +189,7 @@ module.exports = function (grunt) {
                     patterns: [{
                         match: /\<\!--\s?@@dev-css\s?starts[\s\S]*@@dev-css\s?ends\s?-->/,
                         replacement: function () {
-                            return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%" media="all" />';
+                            return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
                         }
                     },
                     {
