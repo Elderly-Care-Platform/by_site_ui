@@ -23,6 +23,8 @@
     // <link rel="stylesheet" href="lib/unify/plugins/parallax-slider/css/parallax-slider.css?versionTimeStamp=%PROJECT_VERSION%"> 
     // Third party CSS files from libraries end 
 
-    document.write('<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">');
+    document.write('<link rel="stylesheet" href="assets/css/final.min.css.css?versionTimeStamp=%PROJECT_VERSION%">');
+
+
 
 
