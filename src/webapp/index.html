@@ -66,90 +66,7 @@
 
 <body ng-cloak>
 
-    <script type="text/javascript" async>
-        
-        setTimeout(function () {
-            var head = document.getElementsByTagName('head')[0];
-            var files = ['lib/unify/plugins/bootstrap/css/bootstrap.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css?versionTimeStamp=%PROJECT_VERSION%', 
-            'lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/tagmanager-master/tagmanager.css?versionTimeStamp=%PROJECT_VERSION%',
-            'lib/unify/plugins/animate.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/line-icons/line-icons.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/font-awesome/css/font-awesome.min.css?versionTimeStamp=%PROJECT_VERSION%',
-            'lib/unify/plugins/flexslider/flexslider.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/parallax-slider/css/parallax-slider.css?versionTimeStamp=%PROJECT_VERSION%','assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%'];
-
-            for (var i = 0, l = files.length; i < l; i++) {
-              var link = document.createElement('link');
-              link.href = files[i];
-              link.rel = "stylesheet";
-              link.type = "text/css";
-
-              head.appendChild(link);
-            }
-        }, 100);
-    </script>
-
-    <!-- Third party CSS files from libraries start -->
-    <!-- <link rel="stylesheet"  href="lib/unify/plugins/bootstrap/css/bootstrap.min.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet"  href="lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet"  href="lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css">
-    <link rel="stylesheet"  href="lib/tagmanager-master/tagmanager.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet"  href="lib/unify/plugins/animate.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet"  href="lib/unify/plugins/line-icons/line-icons.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet"  href="lib/unify/plugins/font-awesome/css/font-awesome.min.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet"  href="lib/unify/plugins/flexslider/flexslider.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet"  href="lib/unify/plugins/parallax-slider/css/parallax-slider.css?versionTimeStamp=%PROJECT_VERSION%"> -->
-    <!-- Third party CSS files from libraries end -->
-
-    <!-- @@dev-css starts -->
-    <!-- BY CSS for Header and Footer starts -->
-    <link rel="stylesheet" href="assets/css/headers/header-default.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by-header.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/footers/footer-v1.css?versionTimeStamp=%PROJECT_VERSION%">
-    <!-- BY CSS for Header and Footer ends -->
-
-    <!-- BY specific CSS starts -->
-    <link rel="stylesheet" href="assets/css/main.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/custom.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/psc.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/style.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/aboutUs.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/by_editor.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/login.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/discussDetail.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/services.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/profile.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/replyCard.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/productSearch.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/image-gallery.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by_quad.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/by_section_headers.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by-menu.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by-modalLogin.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by_userType.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by_regIndvLogin.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by_sprite.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/by_discussCard.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/discuss_list_grid.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/housing.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/byProducts/product-style.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/byProducts/product.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/byProducts/product_housing.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/byProducts/shop-style.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/byProducts/productHome.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/byProducts/by_product_listing.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/byProducts/cart.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/byProducts/cartCheckout.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/byProducts/productDetailed.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/byProducts/order_history.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/share-modal.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/header.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/homeNew.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/menu.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/expStore.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/by_leftPanel.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/by_footer.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/by_homeModification.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet" href="assets/css/by/by_classesActivites.css?versionTimeStamp=%PROJECT_VERSION%">
-	<!-- BY specific CSS ends -->
-    <!-- @@dev-css ends -->
+    
 
      <!-- Third party JS files -->
     <script type="text/javascript" async src="lib/unify/plugins/bootstrap/js/bootstrap.min.js?versionTimeStamp=%PROJECT_VERSION%"></script>
@@ -373,6 +290,93 @@
         <img height="1" width="1" alt="" style="display:none"
              src="https://www.facebook.com/tr?ev=6030136887627&amp;cd[value]=0.01&amp;cd[currency]=INR&amp;noscript=1"/>
     </noscript>
+
+ 
+
+    <script type="text/javascript" async>
+        
+        setTimeout(function () {
+            var head = document.getElementsByTagName('head')[0];
+            var files = ['lib/unify/plugins/bootstrap/css/bootstrap.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css?versionTimeStamp=%PROJECT_VERSION%', 
+            'lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/tagmanager-master/tagmanager.css?versionTimeStamp=%PROJECT_VERSION%',
+            'lib/unify/plugins/animate.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/line-icons/line-icons.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/font-awesome/css/font-awesome.min.css?versionTimeStamp=%PROJECT_VERSION%',
+            'lib/unify/plugins/flexslider/flexslider.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/parallax-slider/css/parallax-slider.css?versionTimeStamp=%PROJECT_VERSION%','assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%'];
+
+            for (var i = 0, l = files.length; i < l; i++) {
+              var link = document.createElement('link');
+              link.href = files[i];
+              link.rel = "stylesheet";
+              link.type = "text/css";
+
+              head.appendChild(link);
+            }
+        }, 100);
+    </script>
+
+    <!-- Third party CSS files from libraries start -->
+    <!-- <link rel="stylesheet"  href="lib/unify/plugins/bootstrap/css/bootstrap.min.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet"  href="lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet"  href="lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css">
+    <link rel="stylesheet"  href="lib/tagmanager-master/tagmanager.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet"  href="lib/unify/plugins/animate.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet"  href="lib/unify/plugins/line-icons/line-icons.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet"  href="lib/unify/plugins/font-awesome/css/font-awesome.min.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet"  href="lib/unify/plugins/flexslider/flexslider.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet"  href="lib/unify/plugins/parallax-slider/css/parallax-slider.css?versionTimeStamp=%PROJECT_VERSION%"> -->
+    <!-- Third party CSS files from libraries end -->
+
+    <!-- @@dev-css starts -->
+    <!-- BY CSS for Header and Footer starts -->
+    <link rel="stylesheet" href="assets/css/headers/header-default.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by-header.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/footers/footer-v1.css?versionTimeStamp=%PROJECT_VERSION%">
+    <!-- BY CSS for Header and Footer ends -->
+
+    <!-- BY specific CSS starts -->
+    <link rel="stylesheet" href="assets/css/main.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/custom.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/psc.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/style.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/aboutUs.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/by_editor.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/login.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/discussDetail.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/services.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/profile.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/replyCard.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/productSearch.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/image-gallery.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by_quad.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/by_section_headers.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by-menu.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by-modalLogin.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by_userType.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by_regIndvLogin.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by_sprite.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/by_discussCard.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/discuss_list_grid.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/housing.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/byProducts/product-style.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/byProducts/product.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/byProducts/product_housing.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/byProducts/shop-style.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/byProducts/productHome.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/byProducts/by_product_listing.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/byProducts/cart.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/byProducts/cartCheckout.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/byProducts/productDetailed.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/byProducts/order_history.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/share-modal.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/header.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/homeNew.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/menu.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/expStore.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/by_leftPanel.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/by_footer.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/by_homeModification.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet" href="assets/css/by/by_classesActivites.css?versionTimeStamp=%PROJECT_VERSION%">
+    <!-- BY specific CSS ends -->
+    <!-- @@dev-css ends -->
 
    
 </body>
