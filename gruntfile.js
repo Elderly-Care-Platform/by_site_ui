@@ -179,19 +179,6 @@ module.exports = function (grunt) {
                         match: /\<\!--\s?@@dev-css\s?starts[\s\S]*@@dev-css\s?ends\s?-->/,
                         replacement: function () {
                             //return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
-                            setTimeout(function () {
-                                var head = document.getElementsByTagName('head')[0];
-                                var files = ['assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%'];
-
-                                for (var i = 0, l = files.length; i < l; i++) {
-                                  var link = document.createElement('link');
-                                  link.href = files[i];
-                                  link.rel = "stylesheet";
-                                  link.type = "text/css";
-
-                                  head.appendChild(link);
-                                }
-                            }, 500);
                         }
                     },
                     {
