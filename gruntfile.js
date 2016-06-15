@@ -178,7 +178,13 @@ module.exports = function (grunt) {
                     patterns: [{
                         match: /\<\!--\s?@@dev-css\s?starts[\s\S]*@@dev-css\s?ends\s?-->/,
                         replacement: function () {
-                            return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
+                           // return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
+                           return'<script type="text/javascript" async>
+                           setTimeout(function () {
+                            var head = document.getElementsByTagName("head")[0];
+                            head.appendChild("<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">");
+                           }, 500);
+                           </script>';
                         }
                     },
                     {
