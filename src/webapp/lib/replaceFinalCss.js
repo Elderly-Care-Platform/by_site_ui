@@ -1,7 +1,15 @@
+
+
 setTimeout(function () {
-    var stylesheet = document.createElement('link');
-    stylesheet.href = 'assets/css/final.min.css';
-    stylesheet.rel = 'stylesheet';
-    stylesheet.type = 'text/css';
-    document.getElementsByTagName('head')[0].appendChild(stylesheet);
-}, 100);
+    var head = document.getElementsByTagName('head')[0];
+    var files = ['assets/css/final.min.css'];
+
+    for (var i = 0, l = files.length; i < l; i++) {
+      var link = document.createElement('link');
+      link.href = files[i];
+      link.rel = "stylesheet";
+      link.type = "text/css";
+
+      head.appendChild(link);
+    }
+}, 500);
