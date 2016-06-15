@@ -178,7 +178,7 @@ module.exports = function (grunt) {
                     patterns: [{
                         match: /\<\!--\s?@@dev-css\s?starts[\s\S]*@@dev-css\s?ends\s?-->/,
                         replacement: function () {
-                            return '<script type="text/javascript" async src="lib/replaceFinalCss.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
+                            return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
                         }
                     },
                     {
