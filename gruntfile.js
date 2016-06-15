@@ -181,8 +181,7 @@ module.exports = function (grunt) {
                            // return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
                            return'<script type="text/javascript" async>
                            setTimeout(function () {
-                            var head = document.getElementsByTagName("head")[0];
-                            head.appendChild("<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">");
+                            <link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">;
                            }, 500);
                            </script>';
                         }
