@@ -103,12 +103,12 @@ module.exports = function (grunt) {
                 src: ['src/webapp/lib/unify/plugins/bootstrap/css/bootstrap.min.css',
                     'src/webapp/lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css',
                     'src/webapp/lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css',
+                    'src/webapp/lib/tagmanager-master/tagmanager.css',
                     'src/webapp/lib/unify/plugins/animate.css',
                     'src/webapp/lib/unify/plugins/line-icons/line-icons.css',
                     'src/webapp/lib/unify/plugins/font-awesome/css/font-awesome.min.css',
                     'src/webapp/lib/unify/plugins/flexslider/flexslider.css',
-                    'src/webapp/lib/unify/plugins/parallax-slider/css/parallax-slider.css',
-                    'src/webapp/lib/tagmanager-master/tagmanager.css'],
+                    'src/webapp/lib/unify/plugins/parallax-slider/css/parallax-slider.css'],
                 dest: 'dist/assets/css/finalLib.css'
             }
 
@@ -178,13 +178,14 @@ module.exports = function (grunt) {
                     patterns: [{
                         match: /\<\!--\s?@@dev-css\s?starts[\s\S]*@@dev-css\s?ends\s?-->/,
                         replacement: function () {
-                            return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
+                            return '';
+                            //return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
                         }
                     },
                     {
                         match: /\<\!--\s?@@dev-js\s?starts[\s\S]*@@dev-js\s?ends\s?-->/,
                         replacement: function () {
-                            return '<script type="text/javascript" src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
+                            return '<script type="text/javascript" async src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
                         }
                     }
                     ]
