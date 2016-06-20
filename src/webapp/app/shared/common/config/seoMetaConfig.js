@@ -5,9 +5,9 @@ BY.config.seo = BY.config.seo || {};
 
 BY.config.seo = {
     'home': {
-        title: "BeautifulYears - Everything about senior care & aging in India",
-        imageUrl: "",
-        "description": "<p>Information, tips and advices on senior care and aging. Find old age homes, retirement home & services like nurse and physiotherapist for seniors. Buy or rent products online that improve lives of seniors.</p>",
+        title: 'BeautifulYears - Everything about senior care & aging in India',
+        imageUrl: 'assets/img/home/logo.png?versionTimeStamp=%PROJECT_VERSION%',
+        description: '<p>Information, tips and advices on senior care and aging. Find old age homes, retirement home & services like nurse and physiotherapist for seniors. Buy or rent products online that improve lives of seniors.</p>',
         keywords: ['senior citizen india', 'aging', 'geriatric care', 'elderly care', 'elder care', 'BeautifulYears', 'Senior living', 'old age home', 'elder care services']
     },
 
