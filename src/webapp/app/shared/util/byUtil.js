@@ -106,7 +106,7 @@ BY.byUtil.updateMetaTags = function (param) {
         var tmpImg = new Image();
         tmpImg.src = imageUrl;
         setTimeout(function(){ 
-            $(tmpImg).load(function () {
+            $(tmpImg).on('load', function () {
                 $("meta[property='og\\:image\\:width']").attr("content", tmpImg.width);
                 $("meta[property='og\\:image\\:height']").attr("content", tmpImg.height);
             });
