@@ -371,6 +371,22 @@
              src="https://www.facebook.com/tr?ev=6030136887627&amp;cd[value]=0.01&amp;cd[currency]=INR&amp;noscript=1"/>
     </noscript>
 
+    <!-- addinf final css -->
+
+    <script type="text/javascript" async>        
+        setTimeout(function () {
+            var head = document.getElementsByTagName('head')[0];
+            var files = ['assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%'];
+
+            for (var i = 0, l = files.length; i < l; i++) {
+              var link = document.createElement('link');
+              link.href = files[i];
+              link.rel = "stylesheet";
+              head.appendChild(link);
+            }
+        }, 100); 
+    </script>
+
    
 </body>
 </html>
