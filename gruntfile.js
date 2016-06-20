@@ -181,13 +181,14 @@ module.exports = function (grunt) {
                             return '';
                             //return '<link rel="stylesheet" href="assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%">';
                         }
-                    },
-                    {
-                        match: /\<\!--\s?@@dev-js\s?starts[\s\S]*@@dev-js\s?ends\s?-->/,
-                        replacement: function () {
-                            return '<script type="text/javascript" async src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
-                        }
                     }
+                    // ,
+                    // {
+                    //     match: /\<\!--\s?@@dev-js\s?starts[\s\S]*@@dev-js\s?ends\s?-->/,
+                    //     replacement: function () {
+                    //         return '<script defer type="text/javascript" src="lib/require.js" data-main="app/final/optimized.js?versionTimeStamp=%PROJECT_VERSION%"></script>';
+                    //     }
+                    // }
                     ]
                 }
             }
@@ -265,8 +266,8 @@ module.exports = function (grunt) {
 
 
     // Default task(s).
-    //grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version']);
-    grunt.registerTask('default', ['clean:build', 'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:productionHTML', 'requirejs', 'clean:removeByJs', 'replace:version', ]);
+    //grunt.registerTask('default', ['clean:build', 'copy', 'concat:byCSS', 'concat:libCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:prodCss', 'replace:version', 'requirejs', 'clean:removeByJs',]);
+    grunt.registerTask('default', ['clean:build', 'copy', 'uglify', 'concat:byCSS', 'replace:cssImagePath', 'cssmin', 'clean:concatCss', 'replace:productionHTML',  'replace:version', ]);
     grunt.registerTask('build', ['default', 'htmlmin' , 'war']);
     grunt.registerTask('ug', ['clean:build', 'copy', 'uglify']);
 

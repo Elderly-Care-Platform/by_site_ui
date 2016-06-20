@@ -59,14 +59,12 @@
             display: none;
         }
     </style>
-    <script  async type="text/javascript"  src="lib/jqueryPlugins/jquery.min.js?versionTimeStamp=%PROJECT_VERSION%"></script>
-    <script async type="text/javascript"  src="lib/jqueryPlugins/jquery.form.js?versionTimeStamp=%PROJECT_VERSION%"></script>
-    <script async type="text/javascript"  src="lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer  type="text/javascript"  src="lib/jqueryPlugins/jquery.min.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type="text/javascript"  src="lib/jqueryPlugins/jquery.form.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type="text/javascript"  src="lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.js?versionTimeStamp=%PROJECT_VERSION%"></script>
 </head>
 
-<body ng-cloak>
-
-     
+<body ng-cloak>     
 
     <!-- Third party CSS files from libraries start -->
     <!-- <link rel="stylesheet"  href="lib/unify/plugins/bootstrap/css/bootstrap.min.css?versionTimeStamp=%PROJECT_VERSION%">
@@ -80,7 +78,7 @@
     <link rel="stylesheet"  href="lib/unify/plugins/parallax-slider/css/parallax-slider.css?versionTimeStamp=%PROJECT_VERSION%"> -->
     <!-- Third party CSS files from libraries end -->
 
-    <script type="text/javascript" async>        
+    <script type="text/javascript" defer>        
         setTimeout(function () {
             var head = document.getElementsByTagName('head')[0];
             var files = ['lib/unify/plugins/bootstrap/css/bootstrap.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/tagmanager-master/tagmanager.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/animate.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/line-icons/line-icons.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/font-awesome/css/font-awesome.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/flexslider/flexslider.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/parallax-slider/css/parallax-slider.css?versionTimeStamp=%PROJECT_VERSION%'];
@@ -94,6 +92,7 @@
         }, 100); 
     </script>
 
+    
     <!-- @@dev-css starts -->
     <!-- BY CSS for Header and Footer starts -->
     <link rel="stylesheet" href="assets/css/headers/header-default.css?versionTimeStamp=%PROJECT_VERSION%">
@@ -149,17 +148,17 @@
 
      
     <!-- Third party JS files -->
-    <script type="text/javascript" async src="lib/unify/plugins/bootstrap/js/bootstrap.min.js?versionTimeStamp=%PROJECT_VERSION%"></script>
-    <script type="text/javascript" async src="lib/unify/unify_app.js?versionTimeStamp=%PROJECT_VERSION%"></script>
-    <script type="text/javascript" async src="lib/unify/plugins/back-to-top.js?versionTimeStamp=%PROJECT_VERSION%"></script>
-    <script type="text/javascript" async src="lib/unify/plugins/smoothScroll.js?versionTimeStamp=%PROJECT_VERSION%"></script>
-    <script type="text/javascript" async src="lib/payment/sha256.js?versionTimeStamp=%PROJECT_VERSION%"></script>
-    <script type="text/javascript" async src="lib/payment/sha512.js?versionTimeStamp=%PROJECT_VERSION%"></script>
-    <script type="text/javascript" async src="lib/jqueryPlugins/imagezoom.js?versionTimeStamp=%PROJECT_VERSION%"></script>
-    <script type="text/javascript" async src="lib/tinymce/tinymce.min.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type="text/javascript"  src="lib/unify/plugins/bootstrap/js/bootstrap.min.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type="text/javascript"  src="lib/unify/unify_app.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type="text/javascript"  src="lib/unify/plugins/back-to-top.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type="text/javascript"  src="lib/unify/plugins/smoothScroll.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type="text/javascript"  src="lib/payment/sha256.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type="text/javascript" src="lib/payment/sha512.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type="text/javascript"  src="lib/jqueryPlugins/imagezoom.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type="text/javascript"  src="lib/tinymce/tinymce.min.js?versionTimeStamp=%PROJECT_VERSION%"></script>
 
     <!-- @@dev-js starts -->
-    <script type='text/javascript' async src="lib/require.js" data-main="app/shared/main.js?versionTimeStamp=%PROJECT_VERSION%"></script>
+    <script defer type='text/javascript'  src="lib/require.js" data-main="app/shared/main.js?versionTimeStamp=%PROJECT_VERSION%"></script>
     <!-- @@dev-js ends -->
     
 
@@ -308,12 +307,12 @@
     </div>
 
 
-    <script type="text/javascript" async defer
+    <script type="text/javascript"  defer
             src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 
 
     <!-- Google analytics code snippet start -->
-    <script async>
+    <script defer>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
@@ -332,7 +331,7 @@
 
     <!-- Facebook Conversion Code for Checkouts - Sourabh Chenni 1 start-->
     <!-- Facebook Pixel Code -->
-    <script async>
+    <script defer>
         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
             n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -349,7 +348,7 @@
 
 
     <!-- Crazy egg analytics snippet start-->
-    <script async type="text/javascript">
+    <script defer type="text/javascript">
         setTimeout(function () {
             var a = document.createElement("script");
             var b = document.getElementsByTagName("script")[0];
@@ -360,20 +359,15 @@
         }, 1);
     </script>
     <!-- Crazy egg analytics snippet end-->
-
     
-    
-
-   
-
     <noscript>
         <img height="1" width="1" alt="" style="display:none"
              src="https://www.facebook.com/tr?ev=6030136887627&amp;cd[value]=0.01&amp;cd[currency]=INR&amp;noscript=1"/>
     </noscript>
 
-    <!-- addinf final css -->
+     <!-- adding final css -->
 
-    <script type="text/javascript" async>        
+    <script type="text/javascript" defer>        
         setTimeout(function () {
             var head = document.getElementsByTagName('head')[0];
             var files = ['assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%'];
