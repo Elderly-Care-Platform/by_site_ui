@@ -67,7 +67,7 @@
 <body ng-cloak>     
 
     <!-- Third party CSS files from libraries start -->
-    <link rel="stylesheet"  href="lib/unify/plugins/bootstrap/css/bootstrap.min.css?versionTimeStamp=%PROJECT_VERSION%">
+    <!-- <link rel="stylesheet"  href="lib/unify/plugins/bootstrap/css/bootstrap.min.css?versionTimeStamp=%PROJECT_VERSION%">
     <link rel="stylesheet"  href="lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css?versionTimeStamp=%PROJECT_VERSION%">
     <link rel="stylesheet"  href="lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css">
     <link rel="stylesheet"  href="lib/tagmanager-master/tagmanager.css?versionTimeStamp=%PROJECT_VERSION%">
@@ -75,8 +75,22 @@
     <link rel="stylesheet"  href="lib/unify/plugins/line-icons/line-icons.css?versionTimeStamp=%PROJECT_VERSION%">
     <link rel="stylesheet"  href="lib/unify/plugins/font-awesome/css/font-awesome.min.css?versionTimeStamp=%PROJECT_VERSION%">
     <link rel="stylesheet"  href="lib/unify/plugins/flexslider/flexslider.css?versionTimeStamp=%PROJECT_VERSION%">
-    <link rel="stylesheet"  href="lib/unify/plugins/parallax-slider/css/parallax-slider.css?versionTimeStamp=%PROJECT_VERSION%">
+    <link rel="stylesheet"  href="lib/unify/plugins/parallax-slider/css/parallax-slider.css?versionTimeStamp=%PROJECT_VERSION%"> -->
     <!-- Third party CSS files from libraries end -->
+
+    <script type="text/javascript" defer>        
+        setTimeout(function () {
+            var head = document.getElementsByTagName('head')[0];
+            var files = ['lib/unify/plugins/bootstrap/css/bootstrap.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/jqueryPlugins/jquery-ui-1.11.4.custom/jquery-ui.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/bootstrap/css/bootstrap-toggle.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/tagmanager-master/tagmanager.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/animate.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/line-icons/line-icons.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/font-awesome/css/font-awesome.min.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/flexslider/flexslider.css?versionTimeStamp=%PROJECT_VERSION%', 'lib/unify/plugins/parallax-slider/css/parallax-slider.css?versionTimeStamp=%PROJECT_VERSION%'];
+
+            for (var i = 0, l = files.length; i < l; i++) {
+              var link = document.createElement('link');
+              link.href = files[i];
+              link.rel = "stylesheet";
+              head.appendChild(link);
+            }
+        }, 100); 
+    </script>
 
     
     <!-- @@dev-css starts -->
@@ -351,7 +365,21 @@
              src="https://www.facebook.com/tr?ev=6030136887627&amp;cd[value]=0.01&amp;cd[currency]=INR&amp;noscript=1"/>
     </noscript>
 
-    
+     <!-- adding final css -->
+
+    <script type="text/javascript" defer>        
+        setTimeout(function () {
+            var head = document.getElementsByTagName('head')[0];
+            var files = ['assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%'];
+
+            for (var i = 0, l = files.length; i < l; i++) {
+              var link = document.createElement('link');
+              link.href = files[i];
+              link.rel = "stylesheet";
+              head.appendChild(link);
+            }
+        }, 100); 
+    </script>
 
    
 </body>
