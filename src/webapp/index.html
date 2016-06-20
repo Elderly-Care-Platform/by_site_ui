@@ -75,7 +75,7 @@
 
 <body ng-cloak>
 
-     <script type="text/javascript" async>
+     <script async type="text/javascript" >
         
         setTimeout(function () {
             var head = document.getElementsByTagName('head')[0];
@@ -194,19 +194,6 @@
               head.appendChild(link);
             }
         }, 100);
-        // setTimeout(function () {
-        //     var head = document.getElementsByTagName('head')[0];
-        //     var files = ['assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%'];
-
-        //     for (var i = 0, l = files.length; i < l; i++) {
-        //       var link = document.createElement('link');
-        //       link.href = files[i];
-        //       link.rel = "stylesheet";
-        //       link.type = "text/css";
-
-        //       head.appendChild(link);
-        //     }
-        // }, 100);
     </script>
 
     <!-- Third party CSS files from libraries start -->
@@ -480,7 +467,22 @@
     <!-- Crazy egg analytics snippet end-->
 
     
-    
+    <!-- add final css -->
+    <script async type="text/javascript">      
+        setTimeout(function () {
+            var head = document.getElementsByTagName('head')[0];
+            var files = ['assets/css/final.min.css?versionTimeStamp=%PROJECT_VERSION%'];
+
+            for (var i = 0, l = files.length; i < l; i++) {
+              var link = document.createElement('link');
+              link.href = files[i];
+              link.rel = "stylesheet";
+              link.type = "text/css";
+
+              head.appendChild(link);
+            }
+        }, 100);
+    </script>
 
    
 
