@@ -124,16 +124,16 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
             $scope.templateUrl = 'app/components/header/otherHeader.html?versionTimeStamp=%PROJECT_VERSION%';
                 angular.element($window).bind("scroll", function () {
                 var headerHeight = $(".by_header").outerHeight(true);
-                if (isHomePage == true){
-                        if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
-                            $(".by_menu").show();
-                        } else {                        
-                             $(".by_menu").hide();
-                        }
-                }
-                if (isHomePage != true){
-                    $(".by_menu").show();
-                }
+                // if (isHomePage == true){
+                //         if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= headerHeight) {
+                //             $(".by_menu").show();
+                //         } else {                        
+                //              $(".by_menu").hide();
+                //         }
+                // }
+                // if (isHomePage != true){
+                //     $(".by_menu").show();
+                // }
                 if(headerHeight > 70){
                     if ((document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset) >= (headerHeight - 64)) {
                         $(".by_header").addClass("by_header_image");
@@ -218,13 +218,13 @@ define(['menuConfig', 'userTypeConfig'], function (menuConfig, userTypeConfig) {
                 $rootScope.BYhomePage = true;
                 isHomePage = true;                
                 $("#ng-scope").css('min-height', "0px");
-                $(".by_menu").hide();
+                //$(".by_menu").hide();
             } else {
                 $rootScope.BYhomePage = false;
                 isHomePage = false;
                 var minimumHeight = $( window ).height() - 46;
                 $("#ng-scope").css('min-height', minimumHeight+"px");
-                $(".by_menu").show();
+                //$(".by_menu").show();
             }
 
             updateHeaderTemplate();
