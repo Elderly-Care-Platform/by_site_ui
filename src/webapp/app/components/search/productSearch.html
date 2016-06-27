@@ -1,7 +1,7 @@
 
 <div ng-repeat="product in products.products">
 	<div class="by_productCard col-md-6">
-	<a href="{{productUrl(product.id, product.name)}}" ng-click="$event.stopPropagation();">
+	<a href="{{productUrl(product.id, product.name, product.categoryName)}}" ng-click="$event.stopPropagation();">
 	<div class="by_productCard_Image">
 		<img ng-if="product.primaryMedia != null"
 		ng-src="{{product.primaryMedia.url || ''}}"
