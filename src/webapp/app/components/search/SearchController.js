@@ -1,6 +1,6 @@
 define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareController', 'urlFactory'],
     function(byApp, byUtil, userTypeConfig, discussLikeController, shareController, urlFactory) {
-        function SearchController($scope, $rootScope, $http, $route, $location, $routeParams, DiscussSearch, ServiceSearch, HousingSearch, $sce, SERVERURL_IMAGE, Utility, $q, UserValidationFilter, urlFactoryFilter){
+        function SearchController($scope, $rootScope, $http, $route, $location, $routeParams, DiscussSearch, ServiceSearch, HousingSearch, $sce, SERVERURL_IMAGE, Utility, $q, UserValidationFilter, urlFactoryFilter, PAGE_URL){
             $rootScope.term = $routeParams.term;
             $scope.userTypeConfig           = BY.config.profile.userTypeMap;
 
@@ -363,14 +363,32 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
                 }
             }
 
-            $scope.productUrl = function(productId, productName){
+            $scope.productUrl = function(productId, productName, categoryName){
                 if(productId) {
                     var prodName = productName.replace(/[^a-zA-Z0-9 ]/g, ""),
-                    prodName = prodName.replace(/\s+/g, '-').toLowerCase(),
-                    newHref = '' + prodName + '/pd/' + productId;
+                    prodName = prodName.replace(/\s+/g, '-').toLowerCase();
+                    if(categoryName){
+                        var catName = categoryName.replace(/[^a-zA-Z0-9 ]/g, ""),
+                        catName = catName.replace(/\s+/g, '-').toLowerCase();
+                    }
+                    //var newHref = '' + prodName + '/pd/' + productId;
+                    var newHref = '' + prodName + PAGE_URL.productDescription + "/" + catName + "/" + productId;
                     return  newHref;
                 }
             }
+
+            // $scope.productUrl = function (productId, productName, categoryName) {
+            //     if(productId){
+            //         var prodName = productName.replace(/[^a-zA-Z0-9 ]/g, ""),
+            //         prodName = prodName.replace(/\s+/g, '-').toLowerCase();
+            //         if(categoryName){
+            //             var catName = categoryName.replace(/[^a-zA-Z0-9 ]/g, ""),
+            //             catName = catName.replace(/\s+/g, '-').toLowerCase();
+            //         }                
+            //         var newHref = '' + prodName + PAGE_URL.productDescription + "/" + catName + "/" + productId;
+            //         return newHref;
+            //     }
+            // }
 
 
             $scope.term = $rootScope.term;
@@ -455,7 +473,7 @@ define(['byApp', 'byUtil', 'userTypeConfig', 'discussLikeController', 'shareCont
         }
 
         SearchController.$inject = ['$scope', '$rootScope', '$http', '$route', '$location', '$routeParams', 'DiscussSearch',
-            'ServicePageSearch', 'HousingPageSearch',  '$sce', 'SERVERURL_IMAGE', 'Utility', '$q', 'UserValidationFilter', 'UrlFactoryFilter'];
+            'ServicePageSearch', 'HousingPageSearch',  '$sce', 'SERVERURL_IMAGE', 'Utility', '$q', 'UserValidationFilter', 'UrlFactoryFilter', 'PAGE_URL'];
         byApp.registerController('SearchController', SearchController);
         return SearchController;
     });
