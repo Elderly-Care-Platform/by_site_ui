@@ -6,9 +6,9 @@ BY.config.seo = BY.config.seo || {};
 BY.config.seo = {
     'home': {
         title: 'BeautifulYears-Products, Services and Community about senior care in India',
-        imageUrl: 'assets/img/home/logo.png?versionTimeStamp=%PROJECT_VERSION%',
-        description: '<p>Buy elderly care products and services online for senior citizens, at lowest prices from Beautifulyears.com. Discuss eldercare issues and problems with care givers across India.</p>',
-        keywords: ['Senior Care, Online shoping for senior citizen, online shopping for elderly, Eldercare Forum, eldercare discussions, elderly care,  ']
+        imageUrl: "",
+        "description":'<p>Buy elderly care products and services online for senior citizens, at lowest prices from Beautifulyears.com. Discuss eldercare issues and problems with care givers across India.</p>',
+        keywords: ['Senior Care, Online shoping for senior citizen, online shopping for elderly, Eldercare Forum, eldercare discussions, elderly care,  senior citizen india, aging, geriatric care, elderly care, elder care, BeautifulYears, Senior living, old age home, elder care services']
     },
 
     'communities': {
