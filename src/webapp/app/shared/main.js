@@ -23,7 +23,9 @@ require.config({
         'app/components/error/errorController',
         'app/components/experienceStore/expStoreController',
         'app/components/homeModifications/homeModifications',
-        'app/components/classes-activities/classes-activities'
+        'app/components/classes-activities/classes-activities',
+        'app/components/walkingSticks/walkingSticks',
+        'app/components/stairLift/stairLift'
     ],
 
     paths: {
@@ -168,7 +170,9 @@ require.config({
         SearchCtrl: 'app/components/search/SearchController',
         errorCtrl: 'app/components/error/errorController',
         expStoreCtrl: 'app/components/experienceStore/expStoreController', 
-        contactUsShortCtrl: 'app/shared/common/js/contactUsSmallController'
+        contactUsShortCtrl: 'app/shared/common/js/contactUsSmallController',
+        walkingSCtrl : 'app/components/walkingSticks/walkingSticks',
+        stairLCtrl : 'app/components/stairLift/stairLift'
 
     },
 

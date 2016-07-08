@@ -95,6 +95,51 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
                     });
             }
         }
+
+        $scope.postContentProduct = function (discussType) {
+            $scope.contactUs = new ContactUs();
+            $scope.errorMsg = "";
+            $scope.contactUs.discussType = discussType;
+            $scope.contactUs.text = "Stair Lift query"; 
+
+            if($scope.contact.userPhone){
+                $scope.contactUs.text = $scope.contactUs.text + '  Phone Number: ' + $scope.contact.userPhone;
+            }        
+            
+            
+            $scope.contactUs.username = $scope.contact.username;
+
+            $scope.contactUs.userId = $scope.contact.userEmail;
+            $scope.contactUs.title = 'Enquiry for stair lift';
+
+            var phoneno = /^\d{10}$/;
+
+            if($scope.contactUs.text.trim().length <= 0){
+                $scope.errorMsg = "Please add more details";
+            } else if($scope.contactUs.username.trim().length <= 0){
+                $scope.errorMsg = "Please add your user name";
+            } else if(!$scope.isLoggedIn && !emailValidation.test($scope.contactUs.userId)){
+                $scope.errorMsg = "Please enter valid Email Id";
+            } else if(!$scope.contact.userPhone.match(phoneno)){
+                $scope.errorMsg = "Please add your 10 digit phone number";
+            }else{
+                $scope.errorMsg = "";
+            }
+
+            if($scope.errorMsg === ""){
+                $scope.errorMsg = "";
+                $scope.contactUs.$save( //success
+                    function (value) {
+                        
+                        $route.reload();
+                    },
+                    //error
+                    function( error ){
+                        console.log("QUErY ERROR");
+//                          alert("error2");
+                    });
+            }
+        }
     }
 
     contactUsController.$inject = ['$scope', '$routeParams', '$route', '$location', 'ContactUs', '$window'];
