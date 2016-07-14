@@ -1,26 +1,28 @@
 .by_productLanding_header
 {
 	position: absolute;
-	width: 520px;
-	height: 100px;
-	left: calc(50% - 260px);
-	top: calc(50% - 50px);
+	width: 560px;
+	height: 110px;
+	left: calc(50% - 280px);
+	top: calc(50% - 55px);
 	padding: 10px;
-	font-size: 46px;
+	font-size: 55px;
 	text-transform: uppercase;
 	color: #fff;
-	line-height: 50px;
+	line-height: 55px;
 	font-weight: bold;
 	background: url("../../img/product/landing/black-backround.png?versionTimeStamp=%PROJECT_VERSION%");
+	font-family: 'helvetica_condensed_bold' !important;
 }
 .by_productLanding_header span
 {
 	font-weight: normal;
 	text-transform: capitalize;
-	font-size: 33px;
-	line-height: 25px;
+	font-size: 35px;
+	line-height: 36px;
 	display: block;
 	color: #fff;
+	font-family: 'helvetica_condensed' !important;
 }
 .by_productLanding_HButton
 {
@@ -28,16 +30,21 @@
 }
 .by_productLanding_HButton
 {
-	width: 211px;
-	height: 52px;
+	width: 164px;
+	height: 40px;
 	background: url("../../img/product/landing/button_largesize.png?versionTimeStamp=%PROJECT_VERSION%");
 	position: absolute;
-	right: calc(50% - 260px);
+	right: calc(50% - 280px);
 	top: calc(50% + 70px);
 	text-align: center;
-	font-size: 28px;
+	font-size: 22px;
 	color: #fff;
-	line-height: 52px;
+	line-height: 40px;
+	font-family: arial !important;
+}
+.by_productLanding_HButton a
+{
+	font-family: arial !important;
 }
 .by_productLanding_HButton a, .by_productLanding_HButton a:hover
 {
@@ -46,7 +53,7 @@
 	text-transform: uppercase;
 	text-decoration: none;
 }
-.by_clAc_eventThumbText2
+.by_prLan_ThumbText
 {
 	text-align: center;
 	color: #000;
@@ -54,6 +61,85 @@
 	line-height: 26px;
 	padding: 10px 0px;
 	text-transform: uppercase;
+	font-family: arial !important;
+}
+.borderBottomd7d7d7
+{
+	border-bottom: 1px solid #d7d7d7;
+}
+.by_prLan_Thumb
+{
+	width: 30%;
+	float: left;
+	margin-right: 5%;
+}
+.by_prLan_ThumbRight
+{
+	width: 30%;
+	float: right;
+}
+.by_prLan_ThumbImage
+{
+	border: 1px solid #fff;
+}
+.by_prLan_ThumbText a, .by_prLan_ThumbText a:hover
+{
+	text-decoration: none;
+	color: #000;
+}
+.by_contactText
+{
+	font-family: arial !important;
+	width: calc(100% - 35px);
+    float: left;
+    height: auto;
+    font-size: 19px;
+    line-height: 28px;
+    color: #898989;
+}
+.by_contactText strong
+{
+	display: block;
+	font-size: 24px;
+	color: #000;
+	margin-bottom: 15px;
+}
+.by_contactfooterLeft
+{
+	width: 48%;
+	float: left;
+}
+.by_contactfooterRight
+{
+	width: 48%;
+	float: right;
+}
+.arialFont
+{
+	font-family: Arial !important;
+	color: #898989;
+}
+.arialFont ul
+{
+	padding: 0px;
+    margin: 0px;
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+}
+.arialFont ul li
+{
+	line-height: 28px;
+    padding-top: 4px;
+    font-size: 19px;
+    margin-left: 23px;
+    list-style-image: url('../../img/home-modification/header_2_bullet.png?versionTimeStamp=%PROJECT_VERSION%');
+}
+ a.arialFont,  a:hover.arialFont
+{
+	font-size: 20px;
+	color: #8cc031;
+
 }
 @media ( max-width : 720px){
 	.by_productLanding_header
@@ -61,35 +147,66 @@
 		width: 400px;
 		height: 80px;
 		left: calc(50% - 200px);
-		top: calc(50% - 40px);
+		top: 40px;
 		padding: 5px;
-		font-size: 33px;
+		font-size: 39px;
 		line-height: 43px;
 	}
 	.by_productLanding_header span
 	{
-		font-size: 25px;
-		line-height: 25px;
+		font-size: 27px;
+		line-height: 27px;
 	}
 	.by_productLanding_HButton
 	{
-		display: none;
+		right: calc(50% - 200px);
+		top: 140px;
+	}
+	.by_prLan_Thumb, .by_prLan_ThumbRight
+	{
+		width: 320px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    float: none;
+	    margin-bottom: 20px; 
+	}
+	.by_contactfooterLeft, .by_contactfooterRight
+	{
+		width: 320px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    float: none;
+	    margin-bottom: 20px; 
+	}
+}
+@media ( max-width : 550px){
+	.by_productLanding_header
+	{
+		top: 30px;
+	}
+	.by_productLanding_HButton
+	{
+		top: 120px;
 	}
 }
 @media ( max-width : 460px){
 	.by_productLanding_header
 	{
 		width: 300px;
-		height: 50px;
+		height: 60px;
 		left: calc(50% - 150px);
-		top: calc(50% - 25px);
+		top: calc(50% - 30px);
 		padding: 5px;
-		font-size: 23px;
-		line-height: 23px;
+		font-size: 29px;
+		line-height: 25px;
 	}
 	.by_productLanding_header span
 	{
 		font-size: 20px;
-		line-height: 20px;
+		line-height: 27px;
+	}
+	.by_productLanding_HButton
+	{
+		display: none;
 	}
 }
