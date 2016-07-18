@@ -63,6 +63,10 @@
 	text-transform: uppercase;
 	font-family: arial !important;
 }
+.by_prLan_ThumbText a
+{
+	font-family: arial !important;
+}
 .borderBottomd7d7d7
 {
 	border-bottom: 1px solid #d7d7d7;
@@ -141,6 +145,128 @@
 	color: #8cc031;
 
 }
+.by_enquiryButton
+{
+	width:63px;
+	height: 194px;
+	position: fixed;
+	top: calc(50% - 89px);
+	right: 0px;
+	z-index: 9;
+	cursor: pointer;
+}
+.by_enquiryWrap
+{
+	width:260px;
+	min-height: 300px;
+	position: fixed;
+	top: calc(50% - 150px);
+	right: -260px;
+	z-index: 9;
+	background: #fff;
+}
+.by_enquiryHead
+{
+	width: 100%;
+	height: auto;
+	font-size: 15px;
+	color: #000;
+	font-family: arial !important;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	margin-top: 15px;
+}
+.by_enquiryText
+{
+	width: 100%;
+	height: auto;
+	font-size: 15px;
+	color: #898989;
+	font-family: arial !important;
+	line-height: 18px;
+	margin-bottom: 10px;
+}
+.by_enquiryInput
+{
+	border: 1px solid #898989;
+	border-radius: 5px !important;
+	font-family: arial !important;
+	padding: 3px 5px;
+}
+.arial
+{
+	font-family: arial !important;
+}
+.by_enquirySubmit
+{
+	padding: 0px !important;
+	border: none !important;
+	background: transparent !important;
+	float: right;
+}
+#by_enquiryOuter
+{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	background: url("../../img/product/landing/black-backround.png?versionTimeStamp=%PROJECT_VERSION%");
+	z-index: 99; 
+	display: none;
+}
+.by_enquiryThanku
+{
+	width: 600px;
+	min-height: 400px;
+	background: #fff;
+	border-radius: 5px !important;
+	margin-top: 10%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+}
+.by_enquiryThankHead
+{
+	text-align: center;
+	font-size: 20px;
+	font-family: arial !important;
+	color: #000;
+	line-height: 22px;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	text-transform: uppercase;
+}
+.by_enquiryThankText{
+	text-align: center;
+	font-size: 15px;
+	color: #898989;
+	font-family: arial !important;
+	line-height: 20px;
+}
+.by_enquiryThankmore
+{
+	text-align: center;
+	font-size: 20px;
+	font-family: arial !important;
+	color: #898989;
+	line-height: 22px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+}
+.by_enquiryThankmore a, .by_enquiryThankmore a:hover
+{
+	color: #898989;
+	text-decoration: none;
+	font-family: arial !important;
+	font-weight: bold;
+}
+.by_enquiryThankMoreBg
+{
+	width: 100%;
+	height: auto;
+}
 @media ( max-width : 720px){
 	.by_productLanding_header
 	{
@@ -178,6 +304,10 @@
 	    float: none;
 	    margin-bottom: 20px; 
 	}
+	.by_enquiryThanku
+	{
+		width: 500px;
+	}
 }
 @media ( max-width : 550px){
 	.by_productLanding_header
@@ -187,6 +317,12 @@
 	.by_productLanding_HButton
 	{
 		top: 120px;
+	}
+	.by_enquiryThanku
+	{
+		width: 400px;
+		max-height: 400px;
+		overflow-y:auto;
 	}
 }
 @media ( max-width : 460px){
@@ -208,5 +344,11 @@
 	.by_productLanding_HButton
 	{
 		display: none;
+	}
+	.by_enquiryThanku
+	{
+		width: 300px;
+		max-height: 400px;
+		overflow-y:auto;
 	}
 }

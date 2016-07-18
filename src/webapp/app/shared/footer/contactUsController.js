@@ -100,7 +100,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
             $scope.contactUs = new ContactUs();
             $scope.errorMsg = "";
             $scope.contactUs.discussType = discussType;
-            $scope.contactUs.text = "Stair Lift query"; 
+            $scope.contactUs.text = $scope.$parent.title;
 
             if($scope.contact.userPhone){
                 $scope.contactUs.text = $scope.contactUs.text + '  Phone Number: ' + $scope.contact.userPhone;
@@ -110,14 +110,14 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
             $scope.contactUs.username = $scope.contact.username;
 
             $scope.contactUs.userId = $scope.contact.userEmail;
-            $scope.contactUs.title = 'Enquiry for stair lift';
+            $scope.contactUs.title = $scope.$parent.title;
 
             var phoneno = /^\d{10}$/;
 
             if($scope.contactUs.text.trim().length <= 0){
                 $scope.errorMsg = "Please add more details";
             } else if($scope.contactUs.username.trim().length <= 0){
-                $scope.errorMsg = "Please add your user name";
+                $scope.errorMsg = "Please add your full name";
             } else if(!$scope.isLoggedIn && !emailValidation.test($scope.contactUs.userId)){
                 $scope.errorMsg = "Please enter valid Email Id";
             } else if(!$scope.contact.userPhone.match(phoneno)){
@@ -130,8 +130,8 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
                 $scope.errorMsg = "";
                 $scope.contactUs.$save( //success
                     function (value) {
-                        
-                        $route.reload();
+                        $("#by_enquiryOuter").fadeIn("500");
+                        //$route.reload();
                     },
                     //error
                     function( error ){
@@ -140,6 +140,8 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
                     });
             }
         }
+
+       
     }
 
     contactUsController.$inject = ['$scope', '$routeParams', '$route', '$location', 'ContactUs', '$window'];

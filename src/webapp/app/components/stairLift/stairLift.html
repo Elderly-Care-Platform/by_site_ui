@@ -1,5 +1,30 @@
-<div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
+<div id="by_enquiryOuter">
+    <div class="by_enquiryThanku">
+        <div class="by_enquiryLogo divLeft">
+            <a href="/"><img src="assets/img/home/logo-orange.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears logo" width="150" ></a>
+        </div>
+        <div class="divRight" style="cursor:pointer;" ng-click="enquiryClose()">
+            <img src="assets/img/product/landing/close.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears popup close" width="25" >
+        </div>
+        <div class="clearfix"></div>
+        <div class="by_enquiryThankHead">
+            Thank you for getting in touch!
+        </div>
+        <div class="by_enquiryThankText">
+            We have received your informantion, one of our customer service collegues will get in touch with you shortly. 
+            In the mean time you can browse through our latest posts by clicking here, or have a look at our latest elder care product by clicking on the banner below.
+        </div>
+        <div class="by_enquiryThankmore">
+            <a href="elder-care-products/55bcad7be4b08970a736784b">Click here for more innovative products</a>
+        </div>
+        <div class="by_enquiryThankMoreBg">
+            <a href="elder-care-products/55bcad7be4b08970a736784b"><img src="assets/img/product/landing/moreproductspopup.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears more innovative products" width="100%" ></a>
+        </div>
+    </div>
+</div>
 
+
+<div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
 
 <div class="by_container" style="position:relative;">
     <a href="acorn-stairlift/pd/motorized-wheelchairs/10950"><img src="assets/img/product/landing/header_image.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Stair Lift Header" width="100%" ></a>
@@ -55,53 +80,57 @@
 
 <div class="clearfix"></div>
 
-<div class="by_container by_borderBottomGreen" ng-controller="contactUsController" >
-    
-    <div class="by_homeSection" style="padding-bottom:0px;">
-        <div class="by_homeSectionInside" > 
-            <div class="by_clAc_eventThumbText2" style="font-size:26px; margin-bottom:10px;">
-                Interested in our Product
-            </div>
-            <div class="col-md-12 no-padding both-container by_editor_wrap by_contactForm">
 
-                <span ng-show="errorMsg && errorMsg.length>0" class="help-block">
-                    {{errorMsg}}
-                </span><div class="clearfix"></div>
-
-                
-
-
-                <div class="col-md-6 no-padding" style="margin-bottom:20px;">
-                    <input type="text" class="username-textbox textbox by_homeContactFeildBg by_contactBg" name="username" ng-model="contact.username" placeholder="Name">
-                </div>
-                <div class="col-md-6 no-padding marginLeft20" style="margin-bottom:20px;" ng-show="!isLoggedIn">
-                    <input type="text" class="username-textbox textbox by_homeContactFeildBg by_contactBg" name="userEmail" ng-model="contact.userEmail" placeholder="E-mail ID">
-                </div>
-
-                <div class="col-md-6 no-padding" style="margin-bottom:20px;">
-                    <input type="text" class="username-textbox textbox by_homeContactFeildBg by_contactBg" name="username" ng-model="contact.userPhone" placeholder="Phone Number">
-                </div>
-
-                
-
-              
-                
-                <div class="clearfix"></div>
-
-                <div class="col-md-12 no-padding ">
-                    <button class="btn btn-big btn-default pull-right by_btn_submit by-editor-submit-btn" 
-                            ng-click="postContentProduct('F')">Submit
-                    </button>
-                </div>
-
-                <div class="clearfix" style="height:35px;"></div>
-               
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
+<div class="by_enquiryButton" ng-click="showEnquiry()">
+    <img src="assets/img/product/landing/enquiry-button.png?versionTimeStamp=%PROJECT_VERSION%" alt="Enquiry Button" width="100%"  />
 </div>
+<div class="by_enquiryWrap" ng-controller="contactUsController">
+   
+    <div class="col-md-12 no-padding both-container by_editor_wrap by_contactForm">
 
+        <div class="col-md-12 by_enquiryHead">
+            Interested in stairlift? 
+        </div>
+        <div class="col-md-12 by_enquiryText">
+            Please fill out this form and we will get in touch with you. 
+        </div>
+
+        <span ng-show="errorMsg && errorMsg.length>0" class="help-block arial col-md-12">
+            {{errorMsg}}
+        </span><div class="clearfix"></div>
+
+        
+
+
+        <div class="col-md-12" style="margin-bottom:20px;">
+            <input type="text" class="username-textbox textbox  by_enquiryInput" name="username" ng-model="contact.username" placeholder="Full Name *">
+        </div>
+        <div class="col-md-12" style="margin-bottom:20px;" ng-show="!isLoggedIn">
+            <input type="text" class="username-textbox textbox  by_enquiryInput" name="userEmail" ng-model="contact.userEmail" placeholder="E-mail ID *">
+        </div>
+
+        <div class="col-md-12" style="margin-bottom:20px;">
+            <input type="text" class="username-textbox textbox  by_enquiryInput" name="username" ng-model="contact.userPhone" placeholder="Phone Number*">
+        </div>
+
+        
+
+      
+        
+        <div class="clearfix"></div>
+
+        <div class="col-md-12">
+            <button class="btn  btn-default  by_btn_submit by_enquirySubmit" 
+                    ng-click="postContentProduct('F')">
+                    <img src="assets/img/product/landing/sendenquiry.png?versionTimeStamp=%PROJECT_VERSION%" alt="Send enquiry submit" width="100%" >
+            </button>
+        </div>
+
+        <div class="clearfix" style="height:35px;"></div>
+       
+    </div>
+    <div class="clearfix"></div>
+</div>
 <div class="borderBottomd7d7d7">
     <div class="by_container">
         <div class="by_homeSection">        
