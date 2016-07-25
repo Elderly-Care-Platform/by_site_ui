@@ -454,7 +454,7 @@ BY.config.menu.productsSH = {
         'sectionDesc':'While recovering from a stroke or coping with Parkinson’s or arthritis, our elderly have to exercise their weakening grip or shivering hands; please help them by choosing right <a href="elder-care-products/rehabilitation-aids/10568">rehab</a> aids! Pamper your mom or dad (or maybe yourself) with a daily neck or feet <a href="elder-care-products/massagers/10565">massage</a>. Stay younger for longer! ',
         'sectionImage':'assets/img/section_headers/fitness-rehab.png?versionTimeStamp=%PROJECT_VERSION%'
     },
-    '10700' : {
+    '10600' : {
         'sectionHead':'Gift Ideas',
         'sectionDesc':'Thinking about a nice gift for your elder friends  or aging parents? Want to find something classy and useful for an elderly lady or a senior gentleman? We have products for seniors that are both fun and relief, such as a fashionable <a href="elder-care-products/walking-sticks/10551">walking stick</a> with flash lights, a <a href="elder-care-products/massagers/10565">massager</a>, or a talking <a href="mc343-thermometer-pencil-type/pd/10755">thermometer</a>. ',
         'sectionImage':'assets/img/section_headers/gift-idea.png?versionTimeStamp=%PROJECT_VERSION%'
