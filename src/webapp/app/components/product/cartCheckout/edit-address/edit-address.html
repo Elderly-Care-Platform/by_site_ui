@@ -1,9 +1,110 @@
 <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
 
-	<div >
+	<!-- <div >
 		<div class="leftPanel" ng-include="'app/components/product/cartCheckout/edit-address/edit-address-left-panel.html?versionTimeStamp=%PROJECT_VERSION%'">
 		</div>
 		<div class="contentPanel" ng-include="'app/components/product/cartCheckout/edit-address/edit-address-content-panel.html?versionTimeStamp=%PROJECT_VERSION%'">
 		</div><div class="clearfix"></div>
 
-	</div><div class="clearfix"></div>
+	</div><div class="clearfix"></div> -->
+<div class="by_contentWrap">
+	<div class="by_cartProcess">
+        <div class="by_cartProcessThumb  divLeft by_cartProcessThumbNone">
+            <span> &#10004;</span> Shopping Cart
+        </div>
+        <div class="by_cartProcessThumbImage divLeft by_cartProcessThumbNone">
+            <img src="assets/img/product/checkout/greenarrowback.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears" width="12" />
+        </div>
+        <div class="by_cartProcessThumb divLeft  by_cartProcessThumbGreen">
+            <span>2</span> Shipping Info
+        </div>
+        <div class="by_cartProcessThumbImage divLeft by_cartProcessThumbNone">
+            <img src="assets/img/product/checkout/greenarrow.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears" width="12" />
+        </div>
+        <div class="by_cartProcessThumb divLeft by_cartProcessThumbNone">
+            <span>3</span> Payment Method
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="by_address_wrap margin-top-20">
+    	<div class="by_address_textHead">
+    		Please edit your shipping address
+    	</div>
+    	<form name="editAddressForm" novalidateclass="by_inputFeildWrap" class="by_inputFeildWrap">
+		    <div class="by_editAdress_wrap">
+
+		        <div class="margin-bottom-20 by_inputFeild">
+	                <input type="text" ng-model="address.firstName" name="firstName"
+	                       placeholder="First Name"
+	                       required/>
+	                <span ng-show="editAddressForm.firstName.$invalid && submitted" class="errorRed">Please enter your name</span>
+		        </div>
+
+		        <div class="margin-bottom-20 by_inputFeild">
+	                <input type="text"  ng-model="address.lastName"
+	                       name="lastName" placeholder="Last Name"/>
+		        </div>
+
+		        <div class="margin-bottom-20 by_inputFeild">
+	                <input type="text" ng-model="address.address.country" 
+	                       placeholder="Country"/>
+		        </div>
+
+		        <div class="margin-bottom-20 by_inputFeild zipCodeWrapper">
+	                <input type="text"  name="zipcode"
+	                       ng-model="address.address.zip"  required placeholder="Zipcode"/>
+	                <span ng-show="editAddressForm.zipcode.$invalid && submitted" class="errorRed">Please enter your zip code</span>
+		        </div>
+
+		        <div class="margin-bottom-20 by_inputFeild">
+	                <input type="text" 
+	                       ng-model="address.address.city" name="city" required placeholder="City"/>
+	                <span ng-show="editAddressForm.city.$invalid && submitted" class="errorRed">Please enter your city</span>
+		        </div>
+
+		        <!-- <div class="margin-bottom-20 by_inputFeild">
+	                <input type="text" ng-model="address.address.locality" name="locality"
+	                       class="name-textbox textbox" ng-google-location options="googleLocationOptions" obj="address"
+	                       callback="addressCallback" id="addressLocality"
+	                       placeholder="Locality" required/>
+	                <span ng-show="editAddressForm.locality.$invalid && submitted" class="errorRed">Please enter your locality</span>
+		        </div> -->
+
+		        <div class="margin-bottom-20 by_inputFeild">
+	                <textarea class="textbox " rows="3" ng-model="address.address.streetAddress" name="streetAddress" required placeholder="Address"></textarea>
+	                <span ng-show="editAddressForm.streetAddress.$invalid && submitted" class="errorRed">Please enter your street address </span>
+		        </div>
+
+		        <div class="margin-bottom-20 by_inputFeild">
+	                <input type="text"  name="phoneNumber"
+	                       ng-model="address.phoneNumber"
+	                       placeholder="Phone number" ng-pattern="/^[+\d-]*\d[\d-]$/" maxlength="17" minlength="10" required>
+	                <span ng-show="(editAddressForm.phoneNumber.$invalid || editAddressForm.phoneNumber.$error.pattern) && submitted" class="errorRed">Not a valid number!</span>
+		        </div>
+
+
+		        <div class=" margin-bottom-20 by_inputFeild">
+	                <input type="email"  name="email" ng-model="address.email"
+	                       placeholder="Email ID" required/>
+	                <span ng-show="editAddressForm.email.$error.email && submitted" class="errorRed">
+	                    Not valid Email!
+	                </span>
+		        </div>
+		        <div class="clearfix"></div>
+		    </div>
+
+		    <div class="col-md-12 form-header-content margin-bottom-25 margin-top-10">
+		        
+
+		        <button type="button" ng-click="updateAddress(editAddressForm)" class="by_cart_button divRight" >
+                    Save <img src="assets/img/product/checkout/next.png?versionTimeStamp=%PROJECT_VERSION%">
+                    </button>
+                <button type="button" ng-click="selectAddress()" class="by_cart_buttonCancel divRight" style="margin-right:10px;" >
+                    Cancel <img src="assets/img/product/checkout/closebuttonicon.png?versionTimeStamp=%PROJECT_VERSION%">
+                    </button>
+                <div class="clearfix"></div>
+		    </div>
+		    <div class="clearfix margin-top-20"></div>
+		</form>
+    </div>
+</div>

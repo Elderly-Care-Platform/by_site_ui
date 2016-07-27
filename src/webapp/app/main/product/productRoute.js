@@ -261,6 +261,19 @@ define([], function () {
                 }
             })
 
+            .when('/pickupAddress', {templateUrl: 'app/components/product/cartCheckout/select-address/pickup-address-content-panel.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'SelectAddressController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['selectAddressController'], function (ctrl) {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
             .when('/selectAddress', {templateUrl: 'app/components/product/cartCheckout/select-address/select-address.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'SelectAddressController',
                 resolve: {
@@ -354,7 +367,7 @@ define([], function () {
                 }
             })
 
-            .when('/stair-lift', {templateUrl: 'app/components/stairLift/stairLift.html?versionTimeStamp=%PROJECT_VERSION%',
+            .when('/stairlift', {templateUrl: 'app/components/stairLift/stairLift.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'stairLCtrl',
                 resolve: {
                     load: ['$q', function ($q) {

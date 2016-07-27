@@ -406,7 +406,7 @@ body a:hover
 }
 .redColor
 {
-    color: red;
+    color: red !important;
 }
 .greenColor
 {
@@ -470,6 +470,8 @@ body a:hover
 .errorRed
 {
     color: red;
+    font-family: arial !important;
+    font-size: 15px;
 }
 .error-v1 {
     padding-bottom: 30px;
@@ -739,5 +741,25 @@ body a:hover
     {
         line-height: 24px;
         font-size: 15px;
+    }
+}
+.by_contentWrap
+{
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    margin-top: 20px;
+}
+@media ( max-width : 981px){
+    .by_contentWrap
+    {
+        width: 90%;
+    }
+}
+@media ( max-width : 721px){
+    .by_contentWrap
+    {
+        width: calc(100% - 30px);
     }
 }

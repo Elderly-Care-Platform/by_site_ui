@@ -1,80 +1,95 @@
-
-
-
-<div class="by_address_wrap">
-    <div class="col-md-12" ng-repeat="address in pickupPoints track by $index" format-address="address.address">
-        <div class="by_address_user">
-            {{address.firstName}}
-            <span ng-if="address.lastName">{{' '+ address.lastName}}</span>
+<div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
+<div cg-busy="{promise:promise,backdrop:true,templateUrl:'app/shared/common/template/preloader.html'}">
+    <!--=== Content Part ===-->
+    <div class="by_contentWrap">
+        <div class="by_cartProcess">
+            <div class="by_cartProcessThumb  divLeft by_cartProcessThumbNone">
+                <span> &#10004;</span> Shopping Cart
+            </div>
+            <div class="by_cartProcessThumbImage divLeft by_cartProcessThumbNone">
+                <img src="assets/img/product/checkout/greenarrowback.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears" width="12" />
+            </div>
+            <div class="by_cartProcessThumb divLeft  by_cartProcessThumbGreen">
+                <span>2</span> Pickup Info
+            </div>
+            <div class="by_cartProcessThumbImage divLeft by_cartProcessThumbNone">
+                <img src="assets/img/product/checkout/greenarrow.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears" width="12" />
+            </div>
+            <div class="by_cartProcessThumb divLeft by_cartProcessThumbNone">
+                <span>3</span> Payment Method
+            </div>
+            <div class="clearfix"></div>
         </div>
-        <div class="by_address_text">
-            <span ng-if="address.address.fullAddress">
-                <strong>Address:&nbsp;</strong>
-                <span>{{address.address.fullAddress}}</span>
-            </span><br/>
-        </div>
-        <form name="pickupAddressForm" novalidate>
-            <div class="by_editAdress_wrap">
-
-                <div class="col-md-12 margin-bottom-20 marginRightMinus5">
-                    <div class="col-md-5 required">
-                        First Name
-                    </div>
-                    <div class="col-md-7 no-padding-right register-page">
-                        <input type="text" ng-model="pickupDetails.firstName" class="username-textbox textbox"
-                               name="firstName"
-                               placeholder="Please enter a name of your company"
-                               required/>
-                        <span ng-show="pickupAddressForm.firstName.$invalid && submitted" class="errorRed">Please enter your name</span>
-                    </div>
+        <div class="by_address_wrap margin-top-20">
+            <div ng-repeat="address in pickupPoints track by $index" format-address="address.address">
+                <div class="by_address_user">
+                    {{address.firstName}}
+                    <span ng-if="address.lastName">{{' '+ address.lastName}}</span>
                 </div>
-
-                <div class="col-md-12 margin-bottom-20 marginRightMinus5">
-                    <div class="col-md-5">
-                        Last Name
-                    </div>
-                    <div class="col-md-7 no-padding-right register-page">
-                        <input type="text" class="username-textbox textbox name-textbox" ng-model="pickupDetails.lastName"
-                               name="lastName"/>
-                    </div>
+                <div class="by_address_text">
+                    <span ng-if="address.address.fullAddress">
+                        <strong>Address:&nbsp;</strong>
+                        <span>{{address.address.fullAddress}}</span>
+                    </span><br/>
                 </div>
+                <form name="pickupAddressForm" novalidate class="by_inputFeildWrap">
+                    <div class="by_editAdress_wrap">
 
-                <div class="col-md-12 margin-bottom-20 marginRightMinus5" style="padding-left: 15px">
-                    <div class="col-md-5 required">
-                        Phone Number
-                    </div>
-                    <div class="col-md-7 no-padding-right register-page">
-                        <input type="text" class="username-textbox textbox" name="phoneNumber"
-                               ng-model="pickupDetails.phoneNumber"
-                               placeholder="Telephone number" ng-pattern="/^[+\d-]*\d[\d-]$/" maxlength="17"
-                               minlength="10" required>
-                        <span ng-show="(pickupAddressForm.phoneNumber.$invalid || pickupAddressForm.phoneNumber.$error.pattern) && submitted"
-                              class="errorRed">Not a valid number!</span>
-                    </div>
-                </div>
+                        <div class="margin-bottom-20 by_inputFeild">
+                            <input type="text" ng-model="pickupDetails.firstName" class="username-textbox textbox"
+                                   name="firstName"
+                                   placeholder="First Name"
+                                   required/>
+                            <span ng-show="pickupAddressForm.firstName.$invalid && submitted" class="errorRed">Please enter your name</span>
+                        </div>
+
+                        <div class="margin-bottom-20 by_inputFeild">
+                            <input type="text" class="username-textbox textbox name-textbox" ng-model="pickupDetails.lastName" placeholder="Last Name"
+                                   name="lastName"/>
+                        </div>
+
+                        <div class="margin-bottom-20 by_inputFeild">
+                            <input type="text" class="username-textbox textbox" name="phoneNumber"
+                                   ng-model="pickupDetails.phoneNumber"
+                                   placeholder="Phone number" ng-pattern="/^[+\d-]*\d[\d-]$/" maxlength="17"
+                                   minlength="10" required>
+                            <span ng-show="(pickupAddressForm.phoneNumber.$invalid || pickupAddressForm.phoneNumber.$error.pattern) && submitted"
+                                  class="errorRed">Not a valid number!</span>
+                        </div>
 
 
-                <div class="col-md-12 margin-bottom-20 marginRightMinus5" style="padding-left: 15px">
-                    <div class="col-md-5 required">
-                        Email ID
+                        <div class="margin-bottom-20 by_inputFeild">
+                            <input type="email" class="username-textbox textbox" name="email" ng-model="pickupDetails.email"
+                                   placeholder="Email ID" required/>
+                            <span ng-show="(pickupAddressForm.email.$invalid || pickupAddressForm.email.$error.email) && submitted" class="errorRed">
+                                Not valid Email!
+                            </span>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
-                    <div class="col-md-7 no-padding-right register-page">
-                        <input type="email" class="username-textbox textbox" name="email" ng-model="pickupDetails.email"
-                               placeholder="Email" required/>
-                        <span ng-show="(pickupAddressForm.email.$invalid || pickupAddressForm.email.$error.email) && submitted" class="errorRed">
-                            Not valid Email!
-                        </span>
-                    </div>
-                </div>
+
+                    <button type="button" ng-click="pickupFromAddress($index, pickupAddressForm)" class="by_cart_button divRight" >
+                    Continue <img src="assets/img/product/checkout/next.png?versionTimeStamp=%PROJECT_VERSION%">
+                    </button>
+
+                    
+                </form>
+
                 <div class="clearfix"></div>
             </div>
-
-            <div class="col-md-12 form-header-content margin-bottom-25 margin-top-20">
-                <input type="button" value="Select &amp; Continue" class="btn btn-success pull-right register-btn by_btn_submit" ng-click="pickupFromAddress($index, pickupAddressForm)" style="padding:5px 40px;"/>
-               
-            </div>
-        </form>
-
+        </div>        
+        
         <div class="clearfix"></div>
+        <div class="col-md-12 no-padding margin-top-20 margin-bottom-20">
+            <a href="cart" class="orangeColor"><i class="fa fa-angle-left"></i> Shopping Cart</a>
+        </div>
+        <div class="clearfix"></div>
+
     </div>
+    <!--/container-->
 </div>
+<!-- wrapper -->
+
+
+
+

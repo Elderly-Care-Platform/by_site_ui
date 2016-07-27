@@ -48,12 +48,26 @@ define(['byProductApp'], function (byProductApp) {
         $scope.validatePromoCode = validatePromoCode;
         $scope.getFedexRateWebService = getFedexRateWebService;
         $scope.selectAddress = selectAddress;
+        $scope.pickupAddress = pickupAddress;
+        $scope.cartPopupClose = cartPopupClose;
+        $scope.cartPopupShow = cartPopupShow;
         $scope.promise = getCartDetails();
         $scope.login = login;
 
 
         function selectAddress() {
             $location.path('/selectAddress/');
+        }
+
+        function pickupAddress() {
+            $location.path('/pickupAddress/');
+        }
+
+        function cartPopupClose(){
+            $(".cartPopupWrapper").hide();
+        }
+        function cartPopupShow(){
+            $(".cartPopupWrapper").show();
         }
 
         /**
