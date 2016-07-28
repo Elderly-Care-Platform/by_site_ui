@@ -35,15 +35,15 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
             }
         }
 
-        (function(){
-            var metaTagParams = {
-                title:  "Beautiful Years",
-                imageUrl:   "",
-                description:   "",
-                keywords:['Beautiful Years']
-            }
-            BY.byUtil.updateMetaTags(metaTagParams);
-        })();
+        // (function(){
+        //     var metaTagParams = {
+        //         title:  "Beautiful Years",
+        //         imageUrl:   "",
+        //         description:   "",
+        //         keywords:['Beautiful Years']
+        //     }
+        //     BY.byUtil.updateMetaTags(metaTagParams);
+        // })();
 
 
         $scope.subjectOptionsMap = {'0':"FEEDBACK", '1':"SUGGESTION", '2':"READY TO HELP ", '3':"DOING BUSINESS TOGETHER", '4':"WOULD LIKE TO INFORM YOU", '5':"OTHER"};

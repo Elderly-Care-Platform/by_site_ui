@@ -23,6 +23,8 @@
 	display: block;
 	color: #fff;
 	font-family: 'helvetica_condensed' !important;
+	text-align: right;
+	padding-right: 9px;
 }
 .by_productLanding_HButton
 {
@@ -100,6 +102,11 @@
     font-size: 19px;
     line-height: 28px;
     color: #898989;
+}
+.by_contactText a
+{
+	font-family: arial !important;
+	color: #898989;
 }
 .by_contactText strong
 {
@@ -267,13 +274,159 @@
 	width: 100%;
 	height: auto;
 }
+.by_stairKeyThumb
+{
+	width: 24%;
+	padding-right: 1%;
+	height: auto;
+	float: left;
+}
+.by_stairKeyThumbImg
+{
+	width: 51px;
+	height: 51px;
+	float: left;
+	margin-top: 5px;
+}
+.by_stairKeyThumbTxt
+{
+	float: right;
+	width: calc(100% - 61px);
+	height: auto;
+	font-size: 25px;
+	line-height: 30px;
+	font-family: arial !important;
+	color:#898989;
+}
+.by_stairKeyList
+{
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+}
+.by_stairKeyListImg
+{
+	width: 335px;
+	height: auto;
+	float: left;
+}
+.by_stairKeyListText
+{
+	float: right;
+	width: calc(100% - 355px);
+	height: auto;
+	margin-top: 15px;
+}
+.by_stairKeyListTextThumb
+{
+	width: 100%;
+	height: auto;
+	padding-bottom: 5px;
+}
+.by_stairKeyListTextThumb span
+{
+	width: 25px;
+	height: 25px;
+	background: #f07d24;
+	border-radius:50% !important;
+	font-size: 18px;
+	line-height: 25px;
+	color: #fff;
+	display: block;
+	float: left;
+	text-align: center;
+	font-family: arial !important;
+}
+.by_stairKeyListTextThumb p
+{
+	display: block;
+	width: calc(100% - 40px);
+	float: right;
+	height: auto;
+	font-size: 18px;
+	padding-top: 2px;
+	color: #898989;
+	line-height: 20px;
+	font-family: arial !important;
+}
+.by_stairLiftHead
+{
+	width: 100%;
+	height: auto;
+	font-size: 40px;
+	color: #000;
+	line-height: 40px;
+	font-family: Arial !important;
+	margin-bottom: 10px;
+}
+.by_stairSpc
+{
+	width: 100%;
+	height: auto;
+}
+.by_stairSpcImg
+{
+	width: 450px;
+	height: auto;
+	float: left;
+}
+.by_stairSpcTxt
+{
+	float: right;
+	width: calc(100% - 470px);
+	height: auto;
+}
+.by_stairSpcTable
+{
+	border-collapse:collapse;
+	font-family: arial !important;
+	font-size: 17px;
+	color: #898989;
+	line-height: 20px;
+	margin-bottom: 20px;
+	border-color: #898989;
+}
+.by_stairSpcTable tr td
+{
+	padding: 5px;
+}
+@media ( max-width : 981px){
+	.by_stairKeyThumb
+	{
+		width: 50%;
+		height: auto;
+		float: left;
+		margin-bottom: 10px;
+	}
+	.by_stairKeyThumbImg
+	{
+		margin-top: 0px;
+	}
+	.by_stairKeyThumbTxt
+	{
+		margin-top: 10px;
+		font-size: 20px;
+	}
+	.by_stairSpcImg
+	{
+		width: 350px;
+		height: auto;
+		float: left;
+	}
+	.by_stairSpcTxt
+	{
+		float: right;
+		width: calc(100% - 370px);
+		height: auto;
+	}
+}
 @media ( max-width : 720px){
 	.by_productLanding_header
 	{
 		width: 400px;
 		height: 80px;
-		left: calc(50% - 200px);
-		top: 40px;
+		left: calc(50% - 200px);		
+		top: calc(50% - 40px);
 		padding: 5px;
 		font-size: 39px;
 		line-height: 43px;
@@ -308,12 +461,45 @@
 	{
 		width: 500px;
 	}
+	.by_stairKeyListImg
+	{
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.by_stairKeyListText
+	{
+		width: 100%;
+	}
+	.by_stairLiftHead
+	{
+		font-size: 30px;
+		line-height: 30px;
+	}
+	.by_stairSpcImg
+	{
+		width: 350px;
+		height: auto;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.by_stairSpcTxt
+	{
+		float: right;
+		width: 100%;
+		height: auto;
+	}
+}
+@media ( max-width : 560px){
+	.by_stairKeyThumb
+	{
+		width: 265px;
+		clear: both;
+	}
 }
 @media ( max-width : 550px){
-	.by_productLanding_header
-	{
-		top: 30px;
-	}
+	
 	.by_productLanding_HButton
 	{
 		top: 120px;
