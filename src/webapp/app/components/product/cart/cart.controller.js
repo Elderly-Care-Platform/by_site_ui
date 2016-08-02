@@ -15,6 +15,12 @@ define(['byProductApp'], function (byProductApp) {
 
         $log.debug('Inside CartController');
 
+
+
+        if($location.url() == "/cart/cartOption"){
+            $(".cartPopupWrapper").show();
+        }
+
         // Variables
         var customerId = null;
 
@@ -62,6 +68,8 @@ define(['byProductApp'], function (byProductApp) {
         function pickupAddress() {
             $location.path('/pickupAddress/');
         }
+
+
 
         function cartPopupClose(){
             $(".cartPopupWrapper").hide();
@@ -423,7 +431,7 @@ define(['byProductApp'], function (byProductApp) {
         }
 
         function login() {
-            $rootScope.nextLocation = "/selectAddress"
+            $rootScope.nextLocation = "/cart/cartOption"
             $location.path('/users/login');
         }
 

@@ -261,6 +261,19 @@ define([], function () {
                 }
             })
 
+            .when('/cart/cartOption', {templateUrl: 'app/components/product/cart/cart.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'CartController',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['cartController'], function (cartController) {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
             .when('/pickupAddress', {templateUrl: 'app/components/product/cartCheckout/select-address/pickup-address-content-panel.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'SelectAddressController',
                 resolve: {
