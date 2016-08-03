@@ -26,7 +26,7 @@ define(['byApp', 'byUtil'], function(byApp, byUtil) {
 
         if(localStorage.getItem("USER_ID")){
             $scope.isLoggedIn = true;
-            $scope.contact.userEmail = localStorage.getItem("USER_ID");
+            $scope.contact.userEmail = localStorage.getItem("USER_EMAIL");
             $scope.contact.username = BY.byUtil.validateUserName(localStorage.getItem("USER_NAME"));
             $scope.contact.userPhone = localStorage.getItem("USER_PHONENUMBER");
 

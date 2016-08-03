@@ -279,8 +279,8 @@
 }
 .by_stairKeyThumb
 {
-	width: 24%;
-	padding-right: 1%;
+	width: 22%;
+	padding-right: 3%;
 	height: auto;
 	float: left;
 }
@@ -407,6 +407,7 @@
 	{
 		width: 50%;
 		height: auto;
+		padding-right: 0px;
 		float: left;
 		margin-bottom: 10px;
 	}
