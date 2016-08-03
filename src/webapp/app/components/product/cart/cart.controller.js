@@ -431,7 +431,7 @@ define(['byProductApp'], function (byProductApp) {
         }
 
         function login() {
-            $rootScope.nextLocation = "/cart/cartOption"
+            $rootScope.nextLocation = "/cart/cartOption";
             $location.path('/users/login');
         }
 

@@ -65,7 +65,8 @@ define([], function () {
                 }
             } else {
                 $("#preloader").hide();
-                $rootScope.nextLocation = "/selectAddress"
+                var url = $location.url();
+                $rootScope.nextLocation = url;
                 $location.path('/users/login');
             }
             return deferred.promise;
