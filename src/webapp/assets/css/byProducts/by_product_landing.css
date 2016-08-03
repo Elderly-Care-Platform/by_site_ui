@@ -72,6 +72,8 @@
 .borderBottomd7d7d7
 {
 	border-bottom: 1px solid #d7d7d7;
+	padding-top: 15px;
+	padding-bottom: 20px;
 }
 .by_prLan_Thumb
 {
@@ -119,10 +121,11 @@
 {
 	width: 48%;
 	float: left;
+	margin-top: 9%;
 }
 .by_contactfooterRight
 {
-	width: 48%;
+	width: 35%;
 	float: right;
 }
 .arialFont
@@ -283,18 +286,17 @@
 }
 .by_stairKeyThumbImg
 {
-	width: 51px;
-	height: 51px;
+	width: 45px;
+	height: auto;
 	float: left;
-	margin-top: 5px;
 }
 .by_stairKeyThumbTxt
 {
 	float: right;
-	width: calc(100% - 61px);
+	width: calc(100% - 55px);
 	height: auto;
-	font-size: 25px;
-	line-height: 30px;
+	font-size: 20px;
+	line-height: 25px;
 	font-family: arial !important;
 	color:#898989;
 }
@@ -309,6 +311,7 @@
 	width: 335px;
 	height: auto;
 	float: left;
+	margin-top: 3%;
 }
 .by_stairKeyListText
 {
@@ -325,17 +328,18 @@
 }
 .by_stairKeyListTextThumb span
 {
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	background: #f07d24;
 	border-radius:50% !important;
-	font-size: 18px;
-	line-height: 25px;
+	font-size: 12px;
+	line-height: 20px;
 	color: #fff;
 	display: block;
 	float: left;
 	text-align: center;
 	font-family: arial !important;
+	margin-top: 2px;
 }
 .by_stairKeyListTextThumb p
 {
@@ -344,7 +348,6 @@
 	float: right;
 	height: auto;
 	font-size: 18px;
-	padding-top: 2px;
 	color: #898989;
 	line-height: 20px;
 	font-family: arial !important;
@@ -353,9 +356,9 @@
 {
 	width: 100%;
 	height: auto;
-	font-size: 40px;
+	font-size: 35px;
 	color: #000;
-	line-height: 40px;
+	line-height: 35px;
 	font-family: Arial !important;
 	margin-bottom: 10px;
 }
@@ -386,9 +389,18 @@
 	margin-bottom: 20px;
 	border-color: #898989;
 }
+.by_stairSpcTable b
+{
+	color: #000;
+}
 .by_stairSpcTable tr td
 {
-	padding: 5px;
+	padding:3px 5px;
+}
+.orangeColorArial
+{
+	color: #f07d24;
+	font-weight: 500;
 }
 @media ( max-width : 981px){
 	.by_stairKeyThumb
@@ -401,10 +413,11 @@
 	.by_stairKeyThumbImg
 	{
 		margin-top: 0px;
+		width: 40px;
 	}
 	.by_stairKeyThumbTxt
 	{
-		margin-top: 10px;
+		margin-top: 8px;
 		font-size: 20px;
 	}
 	.by_stairSpcImg
@@ -418,6 +431,14 @@
 		float: right;
 		width: calc(100% - 370px);
 		height: auto;
+	}
+	.by_contactfooterLeft
+	{
+		margin-top: 2%;
+	}
+	.by_stairKeyListImg
+	{
+		margin-top: 5%;
 	}
 }
 @media ( max-width : 720px){
@@ -466,6 +487,7 @@
 		float: none;
 		margin-left: auto;
 		margin-right: auto;
+		margin-top: 0px;
 	}
 	.by_stairKeyListText
 	{
@@ -494,8 +516,17 @@
 @media ( max-width : 560px){
 	.by_stairKeyThumb
 	{
-		width: 265px;
-		clear: both;
+		width: 46%;
+		padding-right: 4%;
+	}
+	.by_stairKeyThumbTxt {
+	    margin-top: -3px;
+	    font-size: 18px;
+	    line-height: 20px;
+	}
+	.by_stairKeyThumbImg
+	{
+		width: 35px;
 	}
 }
 @media ( max-width : 550px){

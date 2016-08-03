@@ -35,8 +35,8 @@ define(['byApp', 'byUtil', 'app/shared/footer/contactUsController'], function(by
             var metaTagParams = {
                 title:  "Stairlifts in India, chair lifts from global brands available in India with BeautifulYears",
                 imageUrl:   "",
-                description:   "<p>" + "Stairlifts in India for straight, curved and outdoor stairs for home   modifications without any structural change available with BeautifulYears. Call 080 694 00 333" + "</p>",
-                keywords: (["stairlifts", "stair lift", "stair-lift", "chair lift", "home modification", "senior friendly living", "elder friendly living", "elder friendly homes", "accron", "curved stairlift", "mobility solution", "accessibility solution"])
+                description:   "<p>" + "Stairlifts in India available with BeautifulYears for home modifications without any structural change. Call 080 694 00 333 for more details." + "</p>",
+                keywords: (["stairlifts", "stair lift", "stair-lift", "chair lift", "home modification", "senior friendly living", "elder friendly living", "elder friendly homes", "acorn", "curved stairlift", "mobility solution", "accessibility solution"])
             }
             BY.byUtil.updateMetaTags(metaTagParams);
         })();

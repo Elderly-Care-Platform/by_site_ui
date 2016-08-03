@@ -27,8 +27,8 @@
 
 <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
 
-<div class="by_container" style="position:relative;">
-    <a href="acorn-stairlift/pd/motorized-wheelchairs/10950"><img src="assets/img/product/landing/header_image.png?versionTimeStamp=%PROJECT_VERSION%" alt="Stairlifts for elder friendly homes" width="100%" ></a>
+<div class="by_container" style="position:relative;" ng-click="showEnquiry()">
+    <img src="assets/img/product/landing/header_image.png?versionTimeStamp=%PROJECT_VERSION%" alt="Stairlifts for elder friendly homes" width="100%" >
     <h1><div class="by_productLanding_header">
         Staircase solutions
         <span>for senior living</span>
@@ -57,25 +57,25 @@
         <div class="by_stairLiftHead" >
             Stairlift
         </div>
-       <span style="font-size:18px;" class="arialFont">The most advanced and widely used stairlifts in the world, helping thousands of people worldwide to safely and comfortably use their stairs and enjoy mobility in their homes again. These Stairlifts come in three models , the indoor , outdoor and curved . Any one of these can be installed and be a part of your elder friendly home modification with absolutely no structural changes.</span>
+       <span style="font-size:18px;" class="arialFont">The most advanced and widely used stairlifts in the world, helping thousands of people worldwide to safely and comfortably use their stairs and enjoy mobility in their homes again. These Stairlifts come in three models, the indoor, outdoor and curved. Any one of these can be installed and be a part of your elder friendly home with absolutely no structural changes.</span>
 
         <div class="clearfix"></div>
 
-        <!-- <div class="arialFont">
-            <ul style="text-align:left;">
-                <li>We are the first and the only provider of this service in Bangalore</li>
-                <li>We use the best and the most-cost efficient senior care products - local and imported</li>
-                <li>We are a “social” start up - our mission is to improve lives of the elderly and of those who take care of them. We care about you, and we want to help! </li>
+         <div class="arialFont">
+            <ul style="text-align:left; font-size:18px;">
+                <li>The <b class="orangeColorArial">Indoor Stairlift</b> is the perfect choice for anyone with a 2-story home with a straight staircase.</li>
+                <li>The <b class="orangeColorArial">Curved Stairlift</b> will be a better choice for more than 2 story homes or institutions looking for modifications for senior friendly infrastructure.</li>
+                <li>The <b class="orangeColorArial">Outdoor Stairlift</b> option is also available for private homes or institutions looking for mobility solutions for outdoor stairs. </li>
             </ul>
-        </div> -->
+        </div> 
 
-        <div  style="font-size:18px;" class="arialFont">
+        <!-- <div  style="font-size:18px;" class="arialFont">
             <br/>The indoor Stairlift is the perfect choice for anyone with a 2-story home with a traight staircase.<br/>
             The curved stairlifts will be a better choice for more than 2 story homes or institutions looking for modifications for senior friendly infrastructure.<br/>
             The Outdoor stairlift option is also available for private homes or institutions looking for mobility solutions for outdoor stairs.
-        </div>
+        </div> -->
 
-        <a href="acorn-stairlift/pd/motorized-wheelchairs/10950" class="divRight arialFont">Learn more <i style="font-size:23px; color:#000;" class="fa fa-angle-right directoyDetailsArrow"></i></a>
+        <a  class="divRight margin-top-10 arialFont" ng-click="showEnquiry()">Click for free quote <i style="font-size:23px; color:#000;" class="fa fa-angle-right directoyDetailsArrow"></i></a>
         <div class="clearfix"></div>
 
         <div class="clearfix margin-top-20" ng-if="$root.windowWidth < 721"></div>
@@ -87,7 +87,8 @@
 
 
 <div class="by_enquiryButton" ng-click="showEnquiry()">
-    <img src="assets/img/product/landing/enquiry-button.png?versionTimeStamp=%PROJECT_VERSION%" alt="Enquiry Button" width="100%"  />
+    <img src="assets/img/product/landing/enquiry-button.png?versionTimeStamp=%PROJECT_VERSION%" alt="Enquiry Button" width="100%"  ng-if="$root.windowWidth > 720"/>
+    <img src="assets/img/product/landing/enquiry-button-m.png?versionTimeStamp=%PROJECT_VERSION%" alt="Enquiry Button" width="100%"  ng-if="$root.windowWidth < 721" />
 </div>
 <div class="by_enquiryWrap" ng-controller="contactUsController">
    
@@ -110,7 +111,7 @@
         <div class="col-md-12" style="margin-bottom:20px;">
             <input type="text" class="username-textbox textbox  by_enquiryInput" name="username" ng-model="contact.username" placeholder="Full Name *">
         </div>
-        <div class="col-md-12" style="margin-bottom:20px;" ng-show="!isLoggedIn">
+        <div class="col-md-12" style="margin-bottom:20px;" >
             <input type="text" class="username-textbox textbox  by_enquiryInput" name="userEmail" ng-model="contact.userEmail" placeholder="E-mail ID *">
         </div>
 
@@ -142,10 +143,10 @@
         <h2><div class="by_stairLiftHead">
             Key Features of Stairlift
         </div></h2>
-        <div class="clearfix margin-top-20"></div>
+        <div class="clearfix" style="margin-top:30px;"></div>
         <div class="by_stairKeyThumb">
             <div class="by_stairKeyThumbImg">
-                <img src="assets/img/product/landing/rackandpiniondrive.png?versionTimeStamp=%PROJECT_VERSION%" alt="rack and pinion drive" width="51" />
+                <img src="assets/img/product/landing/rackandpiniondrive.png?versionTimeStamp=%PROJECT_VERSION%" alt="rack and pinion drive" width="100%" />
             </div>
             <div class="by_stairKeyThumbTxt">
                 Rack And Pinion Drive
@@ -153,7 +154,7 @@
         </div>
         <div class="by_stairKeyThumb">
             <div class="by_stairKeyThumbImg">
-                <img src="assets/img/product/landing/maxcapacity.png?versionTimeStamp=%PROJECT_VERSION%" alt="max capacity 300 lbs" width="51" />
+                <img src="assets/img/product/landing/maxcapacity.png?versionTimeStamp=%PROJECT_VERSION%" alt="max capacity 300 lbs" width="100%" />
             </div>
             <div class="by_stairKeyThumbTxt">
                 Max Capacity 300 lbs
@@ -161,7 +162,7 @@
         </div>
         <div class="by_stairKeyThumb">
             <div class="by_stairKeyThumbImg">
-                <img src="assets/img/product/landing/lockableswivelseat.png?versionTimeStamp=%PROJECT_VERSION%" alt="lockable swivel seat" width="51" />
+                <img src="assets/img/product/landing/lockableswivelseat.png?versionTimeStamp=%PROJECT_VERSION%" alt="lockable swivel seat" width="100%" />
             </div>
             <div class="by_stairKeyThumbTxt">
                 Lockable Swivel Seat
@@ -169,7 +170,7 @@
         </div>
         <div class="by_stairKeyThumb">
             <div class="by_stairKeyThumbImg">
-                <img src="assets/img/product/landing/fivesafetysensors.png?versionTimeStamp=%PROJECT_VERSION%" alt="five safety sensors" width="51" />
+                <img src="assets/img/product/landing/fivesafetysensors.png?versionTimeStamp=%PROJECT_VERSION%" alt="five safety sensors" width="100%" />
             </div>
             <div class="by_stairKeyThumbTxt">
                 Five Safety Sensors
@@ -179,7 +180,7 @@
         <div class="clearfix margin-top-20"></div>
         <div class="by_stairKeyList">
             <div class="by_stairKeyListImg">
-                <img src="assets/img/product/landing/keyfeatures.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Stairlift installation demo" width="100%" />
+                <img src="assets/img/product/landing/keyfeatures.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Key features - stairlifts for elders" width="100%" />
             </div>
             <div class="by_stairKeyListText">
                 <div class="by_stairKeyListTextThumb">
@@ -247,7 +248,7 @@
         <div class="clearfix margin-top-20"></div>
         <div class="by_stairSpc">
             <div class="by_stairSpcImg">
-                <img src="assets/img/product/landing/specifications.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Stairlift installation demo at beautifulyears" width="100%" />
+                <img src="assets/img/product/landing/specifications.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Specifications - stairlifts for elders" width="100%" />
             </div>
             <div class="by_stairSpcTxt">
                 <table width="100%"  border="1"  class="by_stairSpcTable">
@@ -422,7 +423,7 @@
                      </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="by_contactPhoneComm">
+                <!-- <div class="by_contactPhoneComm">
                     <div class="by_contactPhoneCommImg">
                         <img src="assets/img/footer/time.png?versionTimeStamp=%PROJECT_VERSION%" alt="phone" width="100%" />
                     </div>
@@ -432,12 +433,12 @@
                      Sunday: by appointment
                     </div>
                     <div class="clearfix"></div>
-                </div>
+                </div> -->
                 
             </div>
             <div class="by_contactfooterRight">
                 <a href="https://goo.gl/sSu4BB" target="_blank">
-                    <img src="assets/img/footer/map.png?versionTimeStamp=%PROJECT_VERSION%" alt="Maps" width="100%" />
+                    <img src="assets/img/footer/map.png?versionTimeStamp=%PROJECT_VERSION%" alt="Beautifulyears Elder care experience store" width="100%" />
                 </a>
             </div>
         </div>
@@ -453,32 +454,39 @@
                 <div class="by_prLan_ThumbImage">
                     <img src="assets/img/product/landing/forum.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Senior care issues and solutions, discussion forum" width="100%"  />
                 </div>
-                <div class="by_prLan_ThumbText">
-                    Forums
-                </div>
+                <h2>
+                    <div class="by_prLan_ThumbText">
+                        Senior Care Forum
+                    </div>
+                </h2>
                 </a>
             </div>
             <div class="by_prLan_Thumb">
-                <a href="elder-care-services/56406cd03e60f5b66f62df26/all">
-                <div class="by_prLan_ThumbImage">
-                    <img src="assets/img/product/landing/eldercareservice.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Verified care givers and service providers" width="100%"  />
-                </div>
-                <div class="by_prLan_ThumbText">
-                    Elder care services
-                </div>
-                </a>
-            </div>
-
-            <div class="by_prLan_ThumbRight">
                 <a href="elder-care-products/all/55bcad7be4b08970a736784b">
                 <div class="by_prLan_ThumbImage">
                     <img src="assets/img/product/landing/moreproducts.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Elder care products at best prices" width="100%"  />
                 </div>
-                <div class="by_prLan_ThumbText">
-                    More products
-                </div>
+                <h2>
+                    <div class="by_prLan_ThumbText">
+                        Elder Care Products
+                    </div>
+                </h2>
                 </a>
             </div>
+            <div class="by_prLan_ThumbRight">
+                <a href="elder-care-services/56406cd03e60f5b66f62df26/all">
+                <div class="by_prLan_ThumbImage">
+                    <img src="assets/img/product/landing/eldercareservice.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Verified care givers and service providers" width="100%"  />
+                </div>
+                <h2>
+                    <div class="by_prLan_ThumbText">
+                        Elder Care Services
+                    </div>
+                </h2>
+                </a>
+            </div>
+
+            
             <div class="clearfix"></div>
         </div>
     </div>
