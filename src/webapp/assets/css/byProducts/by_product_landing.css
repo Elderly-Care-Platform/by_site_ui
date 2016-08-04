@@ -6,14 +6,13 @@
 	left: calc(50% - 290px);
 	top: calc(50% - 55px);
 	padding: 10px;
-	font-size: 47px;
+	font-size: 60px;
 	text-transform: uppercase;
 	color: #fff;
 	line-height: 55px;
 	font-weight: bold;
 	background: url("../../img/product/landing/black-backround.png?versionTimeStamp=%PROJECT_VERSION%");
-	font-family: "Helvetica Neue" !important;
-	font-weight: bold;
+	font-family: "Helvetica Neue Condensed Bold" !important;
 }
 .by_productLanding_header span
 {
@@ -458,7 +457,7 @@
 		left: calc(50% - 203px);		
 		top: calc(50% - 40px);
 		padding: 5px;
-		font-size: 33px;
+		font-size: 42px;
 		line-height: 43px;
 	}
 	.by_productLanding_header span
@@ -562,7 +561,7 @@
 		left: calc(50% - 153px);
 		top: calc(50% - 30px);
 		padding: 5px;
-		font-size: 24px;
+		font-size: 31px;
 		line-height: 25px;
 	}
 	.by_productLanding_header span
