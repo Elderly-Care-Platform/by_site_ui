@@ -7,12 +7,12 @@ define(['byApp', 'byUtil', 'app/shared/footer/contactUsController'], function(by
        $scope.title = "Stair life enquiry";
 
        $scope.showVideo = function(){        
+        var video = $("#by_expVideoFrame").attr("src");
+        $("#by_expVideoFrame").attr("src", video.slice(0,-1) + '1');
        	var frameHeight = $(".by_expVideoShow").outerHeight();
     	   $("#by_expVideoFrame").attr("height", frameHeight);
        	$("#by_expVideoFrame").show();
-        $(".by_expVideoShow").hide();
-        var video = $("#by_expVideoFrame").attr("src");
-        $("#by_expVideoFrame").attr("src", video.slice(0,-1) + '1');
+        $(".by_expVideoShow").hide();        
        };
 
        $scope.showEnquiry = function(){
