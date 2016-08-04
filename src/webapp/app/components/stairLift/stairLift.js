@@ -6,12 +6,14 @@ define(['byApp', 'byUtil', 'app/shared/footer/contactUsController'], function(by
 
        $scope.title = "Stair life enquiry";
 
-       $scope.showVideo = function(){               
+       $scope.showVideo = function(){        
        	var frameHeight = $(".by_expVideoShow").outerHeight();
     	   $("#by_expVideoFrame").attr("height", frameHeight);
        	$(".by_expVideoShow").hide();
-       	$("#by_expVideoFrame").show();
-        $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=1');
+       	$("#by_expVideoFrame").show(function(){
+          $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=1');
+        });
+
        };
 
        $scope.showEnquiry = function(){
