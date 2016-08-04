@@ -9,11 +9,11 @@ define(['byApp', 'byUtil', 'app/shared/footer/contactUsController'], function(by
        $scope.showVideo = function(){        
        	var frameHeight = $(".by_expVideoShow").outerHeight();
     	   $("#by_expVideoFrame").attr("height", frameHeight);
-       	$(".by_expVideoShow").hide();
        	$("#by_expVideoFrame").show();
-        setTimeout(function(){
-          $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=1');
-        }, 100);
+        setTimeout(function(){ 
+          $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=1'); 
+        }, 000);        
+        $(".by_expVideoShow").hide();
        };
 
        $scope.showEnquiry = function(){
