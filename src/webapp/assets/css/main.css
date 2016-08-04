@@ -48,20 +48,17 @@ body#tinymce{
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'helvetica_condensed';
-    src: url("../font/helveticaltstd-cond.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
 
-@font-face {
-    font-family: 'helvetica_condensed_bold';
-    src: url("../font/helveticaltstd-boldcond.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-}
 
+@font-face {font-family: "Helvetica Neue";
+  src: url("../font/helvetica/helvetica.eot"); /* IE9*/
+  src: url("../font/helvetica/helvetica.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../font/helvetica/helvetica.woff2") format("woff2"), /* chrome、firefox */
+  url("../font/helvetica/helvetica.woff") format("woff"), /* chrome、firefox */
+  url("../font/helvetica/helvetica.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../font/helvetica/helvetica.svg#Helvetica Neue") format("svg"); /* iOS 4.1- */
+}
+ 
 @font-face {
     font-family: 'Segoe_Print';
     src: url("../font/Segoe Print.ttf") format("opentype");
