@@ -6,7 +6,7 @@
 	left: calc(50% - 290px);
 	top: calc(50% - 55px);
 	padding: 10px;
-	font-size: 60px;
+	font-size: 58px;
 	text-transform: uppercase;
 	color: #fff;
 	line-height: 55px;
@@ -457,7 +457,7 @@
 		left: calc(50% - 203px);		
 		top: calc(50% - 40px);
 		padding: 5px;
-		font-size: 42px;
+		font-size: 40px;
 		line-height: 43px;
 	}
 	.by_productLanding_header span
@@ -561,7 +561,7 @@
 		left: calc(50% - 153px);
 		top: calc(50% - 30px);
 		padding: 5px;
-		font-size: 31px;
+		font-size: 29px;
 		line-height: 25px;
 	}
 	.by_productLanding_header span
