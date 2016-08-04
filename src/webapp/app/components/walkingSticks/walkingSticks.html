@@ -1,1 +1,176 @@
-hi
+<div style="background:#fff;">
+	<div id="by_enquiryOuter">
+	    <div class="by_enquiryThanku">
+	        <div class="by_enquiryLogo divLeft">
+	            <a href="/"><img src="assets/img/home/logo-orange.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears logo" width="150" ></a>
+	        </div>
+	        <div class="divRight" style="cursor:pointer;" ng-click="enquiryClose()">
+	            <img src="assets/img/product/landing/close.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears popup close" width="25" >
+	        </div>
+	        <div class="clearfix"></div>
+	        <div class="by_enquiryThankHead">
+	            Thank you for getting in touch!
+	        </div>
+	        <div class="by_enquiryThankText">
+	            We have received your informantion, one of our customer service collegues will get in touch with you shortly. 
+	            In the mean time you can browse through our latest posts by clicking here, or have a look at our latest elder care product by clicking on the banner below.
+	        </div>
+	        <div class="by_enquiryThankmore">
+	            <a href="elder-care-products/55bcad7be4b08970a736784b">Click here for more innovative products</a>
+	        </div>
+	        <div class="by_enquiryThankMoreBg">
+	            <a href="elder-care-products/55bcad7be4b08970a736784b"><img src="assets/img/product/landing/moreproductspopup.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears more innovative products" width="100%" ></a>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
+
+	<div class="by_container" style="position:relative;">
+	    <a href="acorn-stairlift/pd/motorized-wheelchairs/10950"><img src="assets/img/product/walking/walking-sticks.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Stairlifts for elder friendly homes" width="100%" ></a>
+	    <h1><div class="by_productLanding_header">
+	        Elder care
+	        <span>products and solutions in india</span>
+	        <div class="clearfix"></div>
+	    </div> </h1> <!--       
+	    <div class="by_productLanding_HButton">
+	        <a href="acorn-stairlift/pd/motorized-wheelchairs/10950">Learn More</a>
+	    </div> -->
+	</div>
+
+	<div class="by_enquiryButton" ng-click="showEnquiry()">
+	    <img src="assets/img/product/landing/enquiry-button.png?versionTimeStamp=%PROJECT_VERSION%" alt="Enquiry Button" width="100%"  />
+	</div>
+	<div class="by_enquiryWrap" ng-controller="contactUsController">
+	   
+	    <div class="col-md-12 no-padding both-container by_editor_wrap by_contactForm">
+
+	        <div class="col-md-12 by_enquiryHead">
+	            Interested in stairlift? 
+	        </div>
+	        <div class="col-md-12 by_enquiryText">
+	            Please fill out this form and we will get in touch with you. 
+	        </div>
+
+	        <span ng-show="errorMsg && errorMsg.length>0" class="help-block arial col-md-12">
+	            {{errorMsg}}
+	        </span><div class="clearfix"></div>
+
+	        
+
+
+	        <div class="col-md-12" style="margin-bottom:20px;">
+	            <input type="text" class="username-textbox textbox  by_enquiryInput" name="username" ng-model="contact.username" placeholder="Full Name *">
+	        </div>
+	        <div class="col-md-12" style="margin-bottom:20px;" ng-show="!isLoggedIn">
+	            <input type="text" class="username-textbox textbox  by_enquiryInput" name="userEmail" ng-model="contact.userEmail" placeholder="E-mail ID *">
+	        </div>
+
+	        <div class="col-md-12" style="margin-bottom:20px;">
+	            <input type="text" class="username-textbox textbox  by_enquiryInput" name="username" ng-model="contact.userPhone" placeholder="Phone Number*">
+	        </div>
+
+	        
+
+	      
+	        
+	        <div class="clearfix"></div>
+
+	        <div class="col-md-12">
+	            <button class="btn  btn-default  by_btn_submit by_enquirySubmit" 
+	                    ng-click="postContentProduct('F')">
+	                    <img src="assets/img/product/landing/sendenquiry.png?versionTimeStamp=%PROJECT_VERSION%" alt="Send enquiry submit" width="100%" >
+	            </button>
+	        </div>
+
+	        <div class="clearfix" style="height:35px;"></div>
+	       
+	    </div>
+	    <div class="clearfix"></div>
+	</div>
+
+	<div class="by_footer_text borderBottomd7d7d7"> 
+	    <div class="by_container">
+	        <div class="by_contentWrap" >        
+	            <h2><div class="by_prLan_ThumbText margin-bottom-20" style="font-size:26px; ">
+	                <a href="elder-care-experience-store" style="text-transform:none; font-weight:bold;">For Demo Visit Our Experience Store </a>
+	            </div> </h2>              
+	            
+	            <div class="by_contactfooterLeft">
+	                <div class="by_contactPhoneComm">
+	                    <div class="by_contactPhoneCommImg">
+	                        <img src="assets/img/footer/mapred.png?versionTimeStamp=%PROJECT_VERSION%" alt="mail" width="100%" />
+	                    </div>
+	                    <div class="by_contactText">
+	                    <strong>Address:</strong>
+	                    BeautifulYears Pvt Ltd,<br/>
+	                     #48, 2nd Main,<br/> 
+	                     Koramangala 1st block (near Wipro park),  <br/> 
+	                     Bangalore - 560034<br/>
+	                     Call - <a href="tel:08069400333">080 694 00 333</a>
+	                     </div>
+	                    <div class="clearfix"></div>
+	                </div>
+	                <div class="by_contactPhoneComm">
+	                    <div class="by_contactPhoneCommImg">
+	                        <img src="assets/img/footer/time.png?versionTimeStamp=%PROJECT_VERSION%" alt="phone" width="100%" />
+	                    </div>
+	                    <div class="by_contactText">
+	                    <strong>Opening hours:</strong>
+	                     10:30AM - 7:30PM<br/>
+	                     Sunday: by appointment
+	                    </div>
+	                    <div class="clearfix"></div>
+	                </div>
+	                
+	            </div>
+	            <div class="by_contactfooterRight">
+	                <a href="https://goo.gl/sSu4BB" target="_blank">
+	                    <img src="assets/img/footer/map.png?versionTimeStamp=%PROJECT_VERSION%" alt="Maps" width="100%" />
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	    <div class="clearfix"></div>
+	</div>
+
+	<div class="borderBottomd7d7d7">
+	    <div class="by_container">
+	        <div class="by_contentWrap">
+	            <div class="by_prLan_Thumb">
+	                <a href="elder-care-forums/564071623e60f5b66f62df27/all">
+	                <div class="by_prLan_ThumbImage">
+	                    <img src="assets/img/product/landing/forum.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Senior care issues and solutions, discussion forum" width="100%"  />
+	                </div>
+	                <div class="by_prLan_ThumbText">
+	                    Forums
+	                </div>
+	                </a>
+	            </div>
+	            <div class="by_prLan_Thumb">
+	                <a href="elder-care-services/56406cd03e60f5b66f62df26/all">
+	                <div class="by_prLan_ThumbImage">
+	                    <img src="assets/img/product/landing/eldercareservice.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Verified care givers and service providers" width="100%"  />
+	                </div>
+	                <div class="by_prLan_ThumbText">
+	                    Elder care services
+	                </div>
+	                </a>
+	            </div>
+
+	            <div class="by_prLan_ThumbRight">
+	                <a href="elder-care-products/all/55bcad7be4b08970a736784b">
+	                <div class="by_prLan_ThumbImage">
+	                    <img src="assets/img/product/landing/moreproducts.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Elder care products at best prices" width="100%"  />
+	                </div>
+	                <div class="by_prLan_ThumbText">
+	                    More products
+	                </div>
+	                </a>
+	            </div>
+	            <div class="clearfix"></div>
+	        </div>
+	    </div>
+	</div>
+	
+</div>
