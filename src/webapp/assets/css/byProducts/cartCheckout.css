@@ -107,6 +107,10 @@
 	color: #000;
 	line-height: 20px;
 }
+.by_address_user  span
+{
+	font-family: arial !important;
+}
 .by_address_btn
 {
 	margin-top:40px;

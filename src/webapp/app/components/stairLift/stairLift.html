@@ -12,14 +12,14 @@
             Thank you for getting in touch!
         </div>
         <div class="by_enquiryThankText">
-            We have received your informantion, one of our customer service collegues will get in touch with you shortly. 
-            In the mean time you can browse through our latest posts by <a href="elder-care-forums/564071623e60f5b66f62df27/all">clicking here</a>, or have a look at our latest elder care product by clicking on the banner below.
+            We have received your informantion, one of our customer service collegues will get in touch with you shortly. <!-- 
+            In the mean time you can browse through our latest posts by <a href="elder-care-forums/564071623e60f5b66f62df27/all">clicking here</a>, or have a look at our latest elder care product by clicking on the banner below. -->
+        </div>
+        <div class="by_enquiryThankmore">
+            <a href="assets/img/product/landing/STAIRLIFT.pdf" target="_blank">Click here to download brochure</a>
         </div>
         <div class="by_enquiryThankmore">
             <a href="elder-care-products/55bcad7be4b08970a736784b">Click here for more innovative products</a>
-        </div>
-        <div class="by_enquiryThankmore">
-            <a href="elder-care-products/55bcad7be4b08970a736784b">Click here to download brochure</a>
         </div>
         <!-- <div class="by_enquiryThankMoreBg">
             <a href="elder-care-products/55bcad7be4b08970a736784b"><img src="assets/img/product/landing/moreproductspopup.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears more innovative products" width="100%" ></a>
@@ -88,8 +88,8 @@
 
 
 <div class="by_enquiryButton" ng-click="showEnquiry()">
-    <img src="assets/img/product/landing/sitevisit.png?versionTimeStamp=%PROJECT_VERSION%" alt="Enquiry Button" width="100%"  ng-if="$root.windowWidth > 720"/>
-    <img src="assets/img/product/landing/sitevisitSMALL.png?versionTimeStamp=%PROJECT_VERSION%" alt="Enquiry Button" width="100%"  ng-if="$root.windowWidth < 721" />
+    <img src="assets/img/product/landing/enquirybrochure.png?versionTimeStamp=%PROJECT_VERSION%" alt="Enquiry Button" width="100%"  ng-if="$root.windowWidth > 720"/>
+    <img src="assets/img/product/landing/enquirybrochuresmall.png?versionTimeStamp=%PROJECT_VERSION%" alt="Enquiry Button" width="100%"  ng-if="$root.windowWidth < 721" />
 </div>
 <div class="by_enquiryWrap" ng-controller="contactUsController">
    
@@ -105,7 +105,7 @@
             Please fill out this form for more details on Stairlift 
         </div>
 
-        <span ng-show="errorMsg && errorMsg.length>0" class="help-block arial col-md-12">
+        <span ng-show="errorMsg && errorMsg.length>0" class="help-block arial col-md-12 errorRed" style="line-height:16px;">
             {{errorMsg}}
         </span><div class="clearfix"></div>
 
@@ -130,10 +130,11 @@
         <div class="clearfix"></div>
 
         <div class="col-md-12">
-            <button class="btn  btn-default  by_btn_submit by_enquirySubmit" 
+            <!-- <button class="btn  btn-default  by_btn_submit by_enquirySubmit" 
                     ng-click="postContentProduct('F')">
                     <img src="assets/img/product/landing/sendenquiry.png?versionTimeStamp=%PROJECT_VERSION%" alt="Send enquiry submit" width="100%" >
-            </button>
+            </button> -->
+            <button type="button" ng-click="postContentProduct('F')"  class="by_cart_button divRight">Submit</button>
         </div>
 
         <div class="clearfix" style="height:35px;"></div>
