@@ -21,7 +21,7 @@
 
 <div class="by_shippingLeft divLeft" ng-if="customerAddress.length > 0">
     Existing Shipping Address
-    <div class="by_shippingAddress" ng-repeat="address in customerAddress track by $index" 
+    <div class="by_shippingAddress" ng-repeat="address in customerAddress track by $index" ng-if="$index<4"
          format-address="address.address" >
         <div class="by_shippingAddressText">
             <div class="by_address_user">
