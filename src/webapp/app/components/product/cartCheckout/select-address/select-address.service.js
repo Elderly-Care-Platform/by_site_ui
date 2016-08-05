@@ -39,8 +39,8 @@ define([], function () {
         function getAddress(addressIdx) {
             var userSessionType = UserValidationFilter.getUserSessionType(),
                 userId = localStorage.getItem("USER_ID"),
-                deliveryMode = 0, deferred = $q.defer();
-                //deliveryMode = SharedContextService.getDeliveryMode(), deferred = $q.defer();
+                deliveryMode = SharedContextService.getDeliveryMode(), deferred = $q.defer();
+               // deliveryMode = 0, deferred = $q.defer();
 
             if (userSessionType && userSessionType === BY.config.sessionType.SESSION_TYPE_FULL) {
                 if (addressIdx) {
