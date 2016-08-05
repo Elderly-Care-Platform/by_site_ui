@@ -179,7 +179,7 @@
                 <button class="by_productDetail_contentQuantityButton" type="button" name="add" ng-disabled="userRequiredQuantity === 1" ng-click="updateRequiredQuantity(userRequiredQuantity - 1)">
                     -
                 </button>
-                <input type="number" min="1" class="by_productDetail_contentQuantityFeild" name="qty" id="qty" value="{{userRequiredQuantity}}" ng-model="userRequiredQuantity" required ng-disabled="addToCartDisable || quantityAvailable === 0">
+                <input type="number" min="1" class="by_productDetail_contentQuantityFeild" name="qty" id="qty" value="{{userRequiredQuantity}}" ng-model="userRequiredQuantity" required ng-disabled="addToCartDisable || quantityAvailable === 0" readonly>
                 <button class="by_productDetail_contentQuantityButton" style="float:right !important;" type="button" name="add" ng-click="updateRequiredQuantity(userRequiredQuantity + 1)" ng-disabled="addToCartDisable || quantityAvailable === 0">
                     +
                 </button>

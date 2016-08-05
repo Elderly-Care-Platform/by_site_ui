@@ -49,7 +49,7 @@
 					</button>
 					<input type="number" min="1" ng-blur="updateProductQuantity(cartItem, $event)"
 						class="by_productDetail_contentQuantityFeild" name="qty" ng-model="cartItem.quantity" id="qty"
-						required>
+						required readonly>
 					<button type="button" class="by_productDetail_contentQuantityButton" name="add" value="+"
 						ng-click="updateProductQuantity(cartItem, cartItem.quantity+1)">+
 					</button>
