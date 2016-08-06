@@ -1,0 +1,217 @@
+<div id="by_enquiryOuter">
+    <div class="by_enquiryThanku">
+        <div class="by_enquiryLogo divLeft">
+            <a href="/"><img src="assets/img/home/logo-orange.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears logo" width="150" ></a>
+        </div>
+        <div class="divRight" style="cursor:pointer;" ng-click="enquiryClose()">
+            <img src="assets/img/product/landing/close.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears popup close" width="25" >
+        </div>
+        <div class="clearfix"></div>
+        <div class="by_enquiryThankHead">
+            Thank you for getting in touch!
+        </div>
+        <div class="by_enquiryThankText">
+            We have received your informantion, one of our customer service collegues will get in touch with you shortly. 
+            In the mean time you can browse through our latest posts by clicking here, or have a look at our latest elder care product by clicking on the banner below.
+        </div>
+        <div class="by_enquiryThankmore">
+            <a href="elder-care-products/55bcad7be4b08970a736784b">Click here for more innovative products</a>
+        </div>
+        <div class="by_enquiryThankMoreBg">
+            <a href="elder-care-products/55bcad7be4b08970a736784b"><img src="assets/img/product/landing/moreproductspopup.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears more innovative products" width="100%" ></a>
+        </div>
+    </div>
+</div>
+
+
+<div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
+
+<div class="by_container" style="position:relative;">
+    <a href="acorn-stairlift/pd/motorized-wheelchairs/10950"><img src="assets/img/product/landing/header_image.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Stair Lift Header" width="100%" ></a>
+    <div class="by_productLanding_header">
+        Staircase solutions
+        <span>for senior living</span>
+        <div class="clearfix"></div>
+    </div>        
+    <div class="by_productLanding_HButton">
+        <a href="acorn-stairlift/pd/motorized-wheelchairs/10950">Learn More</a>
+    </div>
+</div>
+
+
+
+
+
+<div class="by_container borderBottomd7d7d7">
+    <div class="by_homeSection">        
+        <div class="by_homeSectionInside" >
+            <div class="by_homeSectionLeft divLeft by_homeSectionExpText" style="margin-top:0px;">
+                <div style="border:2px solid #eee;">
+                    <div class="by_expVideoShow" ng-click="showVideo();">
+                        <img src="assets/img/product/landing/stair-lift-video.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears Video" width="100%"  />
+                        <div class="by_expVideoShowVideoIcon"></div>
+                    </div>
+                    <iframe id="by_expVideoFrame" width="100%" height="" src="https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=0" frameborder="0" allowfullscreen ></iframe>
+                </div>
+            </div>
+            <div class="arialFont" style="font-size:26px; text-transform:uppercase; color:#000; margin-bottom:5px;">
+                Stairlift
+            </div>
+           <span style="font-size:18px;" class="arialFont">The Stairlift is one of the most advanced and widely used stairlifts in the world, helping thousands of people worldwide to safely and comfortably use their stairs and enjoy mobility in their homes again. The Stairlift comes in three models , the indoor , outdoor and curved . The indoor Stairlift is the perfect choice for anyone with a 2-story home with a straight staircase.</span>
+
+            <div class="clearfix"></div>
+
+            <div class="arialFont">
+                <ul style="text-align:left;">
+                    <li>We are the first and the only provider of this service in Bangalore</li>
+                    <li>We use the best and the most-cost efficient senior care products - local and imported</li>
+                    <li>We are a “social” start up - our mission is to improve lives of the elderly and of those who take care of them. We care about you, and we want to help! </li>
+                </ul>
+            </div>
+
+            <a href="acorn-stairlift/pd/motorized-wheelchairs/10950" class="divRight arialFont">Learn more <i style="font-size:23px; color:#000;" class="fa fa-angle-right directoyDetailsArrow"></i></a>
+            <div class="clearfix"></div>
+
+            <div class="clearfix margin-top-20" ng-if="$root.windowWidth < 721"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="clearfix"></div>
+
+
+<div class="by_enquiryButton" ng-click="showEnquiry()">
+    <img src="assets/img/product/landing/enquiry-button.png?versionTimeStamp=%PROJECT_VERSION%" alt="Enquiry Button" width="100%"  />
+</div>
+<div class="by_enquiryWrap" ng-controller="contactUsController">
+   
+    <div class="col-md-12 no-padding both-container by_editor_wrap by_contactForm">
+
+        <div class="col-md-12 by_enquiryHead">
+            Interested in stairlift? 
+        </div>
+        <div class="col-md-12 by_enquiryText">
+            Please fill out this form and we will get in touch with you. 
+        </div>
+
+        <span ng-show="errorMsg && errorMsg.length>0" class="help-block arial col-md-12">
+            {{errorMsg}}
+        </span><div class="clearfix"></div>
+
+        
+
+
+        <div class="col-md-12" style="margin-bottom:20px;">
+            <input type="text" class="username-textbox textbox  by_enquiryInput" name="username" ng-model="contact.username" placeholder="Full Name *">
+        </div>
+        <div class="col-md-12" style="margin-bottom:20px;" ng-show="!isLoggedIn">
+            <input type="text" class="username-textbox textbox  by_enquiryInput" name="userEmail" ng-model="contact.userEmail" placeholder="E-mail ID *">
+        </div>
+
+        <div class="col-md-12" style="margin-bottom:20px;">
+            <input type="text" class="username-textbox textbox  by_enquiryInput" name="username" ng-model="contact.userPhone" placeholder="Phone Number*">
+        </div>
+
+        
+
+      
+        
+        <div class="clearfix"></div>
+
+        <div class="col-md-12">
+            <button class="btn  btn-default  by_btn_submit by_enquirySubmit" 
+                    ng-click="postContentProduct('F')">
+                    <img src="assets/img/product/landing/sendenquiry.png?versionTimeStamp=%PROJECT_VERSION%" alt="Send enquiry submit" width="100%" >
+            </button>
+        </div>
+
+        <div class="clearfix" style="height:35px;"></div>
+       
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="borderBottomd7d7d7">
+    <div class="by_container">
+        <div class="by_homeSection">        
+            <div class="by_homeSectionInside">
+                <div class="by_prLan_Thumb">
+                    <a href="elder-care-forums/564071623e60f5b66f62df27/all">
+                    <div class="by_prLan_ThumbImage">
+                        <img src="assets/img/product/landing/forum.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Elder Care FOrums" width="100%"  />
+                    </div>
+                    <div class="by_prLan_ThumbText">
+                        Forums
+                    </div>
+                    </a>
+                </div>
+                <div class="by_prLan_Thumb">
+                    <a href="elder-care-services/56406cd03e60f5b66f62df26/all">
+                    <div class="by_prLan_ThumbImage">
+                        <img src="assets/img/product/landing/eldercareservice.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Elder Care Services" width="100%"  />
+                    </div>
+                    <div class="by_prLan_ThumbText">
+                        Elder care services
+                    </div>
+                    </a>
+                </div>
+
+                <div class="by_prLan_ThumbRight">
+                    <a href="elder-care-products/all/55bcad7be4b08970a736784b">
+                    <div class="by_prLan_ThumbImage">
+                        <img src="assets/img/product/landing/moreproducts.jpg?versionTimeStamp=%PROJECT_VERSION%" alt="Elder Care Products" width="100%"  />
+                    </div>
+                    <div class="by_prLan_ThumbText">
+                        More products
+                    </div>
+                    </a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="by_footer_text"> 
+    <div class="by_container">
+        <div class="by_homeSection" style="padding-bottom:0px;">
+            <div class="by_homeSectionInside" >        
+                <div class="by_prLan_ThumbText margin-bottom-20" style="font-size:26px; ">
+                    <a href="elder-care-experience-store">Experience Store </a>
+                </div>               
+                
+                <div class="by_contactfooterLeft">
+                    <div class="by_contactPhoneComm">
+                        <div class="by_contactPhoneCommImg">
+                            <img src="assets/img/footer/mapred.png?versionTimeStamp=%PROJECT_VERSION%" alt="mail" width="100%" />
+                        </div>
+                        <div class="by_contactText">
+                        <strong>Address:</strong>
+                         #48, 2nd Main,<br/> 
+                         Koramangala 1st block (near Wipro park),  <br/> Bangalore - 560034
+                         </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="by_contactPhoneComm">
+                        <div class="by_contactPhoneCommImg">
+                            <img src="assets/img/footer/time.png?versionTimeStamp=%PROJECT_VERSION%" alt="phone" width="100%" />
+                        </div>
+                        <div class="by_contactText">
+                        <strong>Opening hours:</strong>
+                         10:30AM - 7:30PM<br/>
+                         Sunday: by appointment
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                <div class="by_contactfooterRight">
+                    <a href="https://goo.gl/sSu4BB" target="_blank">
+                        <img src="assets/img/footer/map.png?versionTimeStamp=%PROJECT_VERSION%" alt="Maps" width="100%" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

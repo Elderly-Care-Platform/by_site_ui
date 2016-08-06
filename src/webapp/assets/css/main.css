@@ -49,6 +49,20 @@ body#tinymce{
 }
 
 @font-face {
+    font-family: 'helvetica_condensed';
+    src: url("../font/helveticaltstd-cond.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helvetica_condensed_bold';
+    src: url("../font/helveticaltstd-boldcond.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Segoe_Print';
     src: url("../font/Segoe Print.ttf") format("opentype");
     font-weight: normal;

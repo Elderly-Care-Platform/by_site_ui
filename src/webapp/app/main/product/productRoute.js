@@ -339,6 +339,34 @@ define([], function () {
                 }
             })
 
+            // landing page for products
+
+            .when('/walking-sticks', {templateUrl: 'app/components/walkingSticks/walkingSticks.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'walkingSCtrl',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['walkingSCtrl'], function (ctrl) {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
+            .when('/stair-lift', {templateUrl: 'app/components/stairLift/stairLift.html?versionTimeStamp=%PROJECT_VERSION%',
+                controller: 'stairLCtrl',
+                resolve: {
+                    load: ['$q', function ($q) {
+                        var defered = $q.defer();
+                        require(['stairLCtrl'], function (ctrl) {
+                            defered.resolve();
+                        });
+                        return defered.promise;
+                    }]
+                }
+            })
+
             .otherwise({
                 redirectTo: '/pageNotFound'
             });

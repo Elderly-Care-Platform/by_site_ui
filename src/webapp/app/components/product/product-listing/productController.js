@@ -73,8 +73,8 @@ define(['byProductApp', 'byUtil',
                 metaTagParams = {
                     title: $scope.selectedMenu.displayMenuName + " " + META_TAGS.title,
                     imageUrl: "",
-                    description: "<p>" + "Products that improve lives of seniors - select from our catalogue" + "</p>",
-                    keywords: seoKeywords
+                    description: "<p>" + "Buy eldercare products online Walker, Security Pole, Bedrails, Home & Bathroom Safety Products useful for Elder Ease." + "</p>",
+                    keywords: seoKeywords.concat(["Elder care products", "senior care products", "products for elders", "products for elders in bangalore", "products for elders in India", "elderly care products", "products for seniors", "products for senior citizens", "Products", "buy producs online", "online eldercare products", "walkers", "grab bars", "wheel chairs", "walking sticks", "canes", "home modification"])
                 }
                 BY.byUtil.updateMetaTags(metaTagParams);
             }
