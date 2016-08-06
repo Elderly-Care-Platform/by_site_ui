@@ -21,7 +21,7 @@
 
 <div class="by_shippingLeft divLeft" ng-if="customerAddress.length > 0">
     Existing Shipping Address
-    <div class="by_shippingAddress" ng-repeat="address in customerAddress track by $index" ng-if="$index<4"
+    <div class="by_shippingAddress" ng-repeat="address in customerAddress track by $index" 
          format-address="address.address" >
         <div class="by_shippingAddressText">
             <div class="by_address_user">
@@ -58,9 +58,9 @@
         </button>
 
 
-        <button type="button" ng-click="editAddress(address.id)" class="by_cart_buttonCancel divRight" style="margin-right:10px;">
+        <!-- <button type="button" ng-click="editAddress(address.id)" class="by_cart_buttonCancel divRight" style="margin-right:10px;">
             Edit
-        </button>
+        </button> -->
         <div class="clearfix"></div>
     </div> 
 </div>
