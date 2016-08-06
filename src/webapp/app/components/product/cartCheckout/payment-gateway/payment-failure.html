@@ -1,9 +1,44 @@
 <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
 <div cg-busy="{promise:promise,backdrop:true,templateUrl:'app/shared/common/template/preloader.html'}">
-	<div  >
+	<!-- <div  >
 		<div class="leftPanel" ng-include="'app/components/product/cartCheckout/payment-gateway/payment-failure-left-panel.html?versionTimeStamp=%PROJECT_VERSION%'">
 		</div>
 		<div class="contentPanel" ng-include="'app/components/product/cartCheckout/payment-gateway/payment-failure-content-panel.html?versionTimeStamp=%PROJECT_VERSION%'">
 		</div><div class="clearfix"></div>
-	</div><div class="clearfix"></div>
+	</div><div class="clearfix"></div> -->
+
+	<div class="by_contentWrap">
+		<div class="by_cartProcess">
+	        <div class="by_cartProcessThumb  divLeft by_cartProcessThumbNone">
+	            <span> &#10004;</span> Shopping Cart
+	        </div>
+	        <div class="by_cartProcessThumbImage divLeft by_cartProcessThumbNone">
+	            <img src="assets/img/product/checkout/greyarrow.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears" width="12" />
+	        </div>
+	        <div class="by_cartProcessThumb divLeft  by_cartProcessThumbNone">
+	            <span>&#10004;</span> Shipping Info
+	        </div>
+	        <div class="by_cartProcessThumbImage divLeft by_cartProcessThumbNone">
+	            <img src="assets/img/product/checkout/greenarrowback.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears" width="12" />
+	        </div>
+	        <div class="by_cartProcessThumb divLeft by_cartProcessThumbGreen">
+	            <span>3</span> Payment Method
+	        </div>
+	        <div class="clearfix"></div>
+	    </div>
+	    <div class="by_shippingLeft by_shippingLeftFull">
+	    	<div class="by_paymentChoose">
+	    		Sorry, your order has not been placed sucessfully
+	    		<br/>
+	    		Please try again
+	    	</div>
+	    	<div style="width:161px; margin-left:auto; margin-right:auto;">
+		    	<a href="paymentGatway/{{addressId}}" >
+			    	<button type="submit"  class="by_cart_button divRight" id="submit">
+				            Payment Options
+				    </button>
+				</a>
+			</div>
+	    </div>
+	</div>
 </div>

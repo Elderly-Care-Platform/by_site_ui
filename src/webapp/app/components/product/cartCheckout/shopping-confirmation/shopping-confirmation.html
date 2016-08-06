@@ -1,11 +1,66 @@
 <div cg-busy="{promise:promise,backdrop:true,templateUrl:'app/shared/common/template/preloader.html'}">
 <div class="headerHeightNoBreadCrumb margin-bottom-0"></div>
 
-<div >
+<!-- <div >
        <div class="leftPanel" ng-include="'app/components/product/cartCheckout/shopping-confirmation/shopping-confirmation-left-panel.html?versionTimeStamp=%PROJECT_VERSION%'">
       </div>
       <div class="contentPanel" ng-include="'app/components/product/cartCheckout/shopping-confirmation/shopping-confirmation-content-panel.html?versionTimeStamp=%PROJECT_VERSION%'">
       </div><div class="clearfix"></div>
-</div><div class="clearfix"></div>
+</div><div class="clearfix"></div> -->
+
+	<div class="by_contentWrap" ng-if="checkoutSuccessFul">
+		<div class="by_cartProcess" >
+	        <div class="by_cartProcessThumb  divLeft by_cartProcessThumbNone">
+	            <span> &#10004;</span> Shopping Cart
+	        </div>
+	        <div class="by_cartProcessThumbImage divLeft by_cartProcessThumbNone">
+	            <img src="assets/img/product/checkout/greyarrow.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears" width="12" />
+	        </div>
+	        <div class="by_cartProcessThumb divLeft  by_cartProcessThumbNone">
+	            <span>&#10004;</span> Shipping Info
+	        </div>
+	        <div class="by_cartProcessThumbImage divLeft by_cartProcessThumbNone">
+	            <img src="assets/img/product/checkout/greyarrow.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears" width="12" />
+	        </div>
+	        <div class="by_cartProcessThumb divLeft by_cartProcessThumbNone">
+	            <span>&#10004;</span> Payment Method
+	        </div>
+	        <div class="clearfix"></div>
+	    </div>
+	    <div class="by_shippingLeft by_shippingLeftFull">
+	    	<xyz ng-hide="uiData.noCart || uiData.processingError">
+		    	<div class="by_paymentAmount">
+		    		Thank you, your order has been placed sucessfully
+		    	</div>
+		    	<div class="by_paymentChoose">
+		    		 Your Order Number is <b>{{uiData.order.orderNumber}}</b><br/>
+		    		 Estimated delivery before: <b> {{estimatedDate | date:"dd MMM yyyy"}}</b><br/><br/>
+		    		 We have sent you an email confirmation.
+		    		 <div style="width:161px; margin-left:auto; margin-right:auto;">
+		    		 	<button type="submit" ng-click="printInvoice(uiData.order.id)"  class="by_cart_button divRight">
+					            Print invoice
+					    </button>
+		    		 </div>
+		    	</div>
+	    	</xyz>
+	    	<xyz ng-show="uiData.noCart">
+	    		<div class="by_paymentAmount">
+	    			Cart is empty
+	    		</div>
+	    		<div style="width:161px; margin-left:auto; margin-right:auto;">
+			    	<a href="elder-care-products/55bcad7be4b08970a736784b" >
+				    	<button type="submit"  class="by_cart_button divRight" >
+					            CONTINUE SHOPPING
+					    </button>
+					</a>
+				</div>
+	    	</xyz>
+	    	<xyz ng-show="uiData.processingError">
+	    		<div class="by_paymentChoose">
+	    			Error while processing order
+	    		</div>
+	    	</xyz>
+	    </div>
+	</div>
 
 </div>

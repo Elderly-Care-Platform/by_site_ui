@@ -48,20 +48,26 @@ body#tinymce{
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'helvetica_condensed';
-    src: url("../font/helveticaltstd-cond.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
+
+
+@font-face {font-family: "Helvetica Neue";
+  src: url("../font/helvetica/helvetica.eot"); /* IE9*/
+  src: url("../font/helvetica/helvetica.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../font/helvetica/helvetica.woff2") format("woff2"), /* chrome、firefox */
+  url("../font/helvetica/helvetica.woff") format("woff"), /* chrome、firefox */
+  url("../font/helvetica/helvetica.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../font/helvetica/helvetica.svg#Helvetica Neue") format("svg"); /* iOS 4.1- */
 }
 
-@font-face {
-    font-family: 'helvetica_condensed_bold';
-    src: url("../font/helveticaltstd-boldcond.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
+@font-face {font-family: "Helvetica Neue Condensed Bold";
+  src: url("../font/helveticabold/helveticabold.eot"); /* IE9*/
+  src: url("../font/helveticabold/helveticabold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../font/helveticabold/helveticabold.woff2") format("woff2"), /* chrome、firefox */
+  url("../font/helveticabold/helveticabold.woff") format("woff"), /* chrome、firefox */
+  url("../font/helveticabold/helveticabold.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../font/helveticabold/helveticabold.svg#Helvetica Neue Condensed Bold") format("svg"); /* iOS 4.1- */
 }
-
+ 
 @font-face {
     font-family: 'Segoe_Print';
     src: url("../font/Segoe Print.ttf") format("opentype");
@@ -406,7 +412,7 @@ body a:hover
 }
 .redColor
 {
-    color: red;
+    color: red !important;
 }
 .greenColor
 {
@@ -470,6 +476,8 @@ body a:hover
 .errorRed
 {
     color: red;
+    font-family: arial !important;
+    font-size: 15px;
 }
 .error-v1 {
     padding-bottom: 30px;
@@ -739,5 +747,25 @@ body a:hover
     {
         line-height: 24px;
         font-size: 15px;
+    }
+}
+.by_contentWrap
+{
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    margin-top: 20px;
+}
+@media ( max-width : 1001px){
+    .by_contentWrap
+    {
+        width: 90%;
+    }
+}
+@media ( max-width : 721px){
+    .by_contentWrap
+    {
+        width: calc(100% - 30px);
     }
 }

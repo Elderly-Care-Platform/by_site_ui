@@ -1,6 +1,93 @@
+.by_address_textHead
+{
+	font-family: arial !important;
+	font-size: 20px;
+	color: #000;
+	line-height: 20px;
+}
+.by_address_text
+{
+	font-family: arial !important;
+	font-size: 15px;
+	color: #000;
+	line-height: 20px;
+}
+.by_address_text span, .by_address_text strong
+{
+	font-family: arial !important;
+	color: #000;
+}
 .by_address_wrap
 {
 	margin-right:-13px;
+}
+.by_inputFeildWrap
+{
+	width: 400px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+.by_inputFeild
+{
+	width: 100%;
+}
+.by_inputFeild input
+{
+	width: 100%;
+	height: 40px;
+	border:1px solid #c7c6c6;
+	outline: none;
+	border-radius: 5px !important;
+	font-family: arial !important;
+	font-size: 15px;
+	color: #000;
+	line-height: 40px;
+	padding: 0px 15px;
+}
+.by_inputFeild textarea
+{
+	width: 100%;
+	height: 90px;
+	border:1px solid #c7c6c6;
+	outline: none;
+	border-radius: 5px !important;
+	font-family: arial !important;
+	font-size: 15px;
+	color: #000;
+	line-height: 20px;
+	padding: 6px 15px;
+}
+.by_shippingLeft
+{
+	width: 46%;
+	height: auto;
+	font-family: arial !important;
+	font-size: 20px;
+	color: #000;
+	line-height: 23px;
+}
+.by_shippingLeftFull
+{
+	float: none;
+	margin-right: auto;
+	margin-left: auto;
+}
+.by_shippingAddress
+{
+	width: 100%;
+	height: auto;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+.by_shippingAddressText
+{
+	width: 100%;
+	border: 1px solid #c7c6c6;
+	border-radius: 5px !important;
+	height: auto;
+	padding: 15px;
+	margin-bottom: 10px;
 }
 .by_address
 {
@@ -16,7 +103,13 @@
 .by_address_user
 {
 	font-size:15px;
-	font-weight: bold;
+	font-family: arial !important;
+	color: #000;
+	line-height: 20px;
+}
+.by_address_user  span
+{
+	font-family: arial !important;
 }
 .by_address_btn
 {
@@ -80,7 +173,6 @@
 .by_editAdress_wrap
 {
 	width:100%;
-	background: #fff;
 	margin-top:10px;
 	padding-top:15px;
 }
@@ -206,4 +298,41 @@
 	width: calc(100% - 50px);
 	color: #fff;
 	margin-right: 10px;
+}
+.by_paymentAmount
+{
+	text-align: center;
+	font-family: Arial !important;
+	font-size: 18px;
+	color: #898989;
+	line-height: 29px;
+	margin-top: 20px;
+	text-transform: uppercase;
+}
+.by_paymentAmount strong
+{
+	font-family: arial !important;
+	color: #000;
+}
+.by_paymentChoose
+{
+	text-align: center;
+	font-family: Arial !important;
+	font-size: 18px;
+	color: #898989;
+	line-height: 29px;
+	margin-top: 30px;
+	padding-bottom: 20px;
+}
+@media screen and (max-width: 721px){
+   .by_shippingLeft{
+   	width: 100%;
+   }
+
+}
+@media screen and (max-width: 480px) {
+	.by_inputFeildWrap
+	{
+		width: 100%;
+	}
 }

@@ -6,12 +6,13 @@ define(['byApp', 'byUtil', 'app/shared/footer/contactUsController'], function(by
 
        $scope.title = "Stair life enquiry";
 
-       $scope.showVideo = function(){       
-        $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/W_OtlOhf0i8?rel=0&showinfo=0&autoplay=1');
+       $scope.showVideo = function(){        
+        var video = $("#by_expVideoFrame").attr("src");
+        $("#by_expVideoFrame").attr("src", video.slice(0,-1) + '1');
        	var frameHeight = $(".by_expVideoShow").outerHeight();
     	   $("#by_expVideoFrame").attr("height", frameHeight);
-       	$(".by_expVideoShow").hide();
        	$("#by_expVideoFrame").show();
+        $(".by_expVideoShow").hide();        
        };
 
        $scope.showEnquiry = function(){
@@ -33,10 +34,10 @@ define(['byApp', 'byUtil', 'app/shared/footer/contactUsController'], function(by
 
         (function(){
             var metaTagParams = {
-                title:  "Stair Lift - Elder care products - BeautifulYears",
+                title:  "Stairlifts in India, chair lifts from global brands available in India with BeautifulYears",
                 imageUrl:   "",
-                description:   "",
-                keywords:[]
+                description:   "<p>" + "Stairlifts in India available with BeautifulYears for home modifications without any structural change. Call 080 694 00 333 for more details." + "</p>",
+                keywords: (["stairlifts", "stair lift", "stair-lift", "chair lift", "home modification", "senior friendly living", "elder friendly living", "elder friendly homes", "acorn", "curved stairlift", "mobility solution", "accessibility solution"])
             }
             BY.byUtil.updateMetaTags(metaTagParams);
         })();

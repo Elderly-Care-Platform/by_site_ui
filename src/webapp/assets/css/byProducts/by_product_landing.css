@@ -1,18 +1,18 @@
 .by_productLanding_header
 {
 	position: absolute;
-	width: 560px;
+	width: 580px;
 	height: 110px;
-	left: calc(50% - 280px);
+	left: calc(50% - 290px);
 	top: calc(50% - 55px);
 	padding: 10px;
-	font-size: 55px;
+	font-size: 58px;
 	text-transform: uppercase;
 	color: #fff;
 	line-height: 55px;
 	font-weight: bold;
 	background: url("../../img/product/landing/black-backround.png?versionTimeStamp=%PROJECT_VERSION%");
-	font-family: 'helvetica_condensed_bold' !important;
+	font-family: "Helvetica Neue Condensed Bold" !important;
 }
 .by_productLanding_header span
 {
@@ -22,7 +22,10 @@
 	line-height: 36px;
 	display: block;
 	color: #fff;
-	font-family: 'helvetica_condensed' !important;
+	font-family: "Helvetica Neue" !important;
+	font-weight: normal;
+	text-align: right;
+	padding-right: 9px;
 }
 .by_productLanding_HButton
 {
@@ -70,6 +73,8 @@
 .borderBottomd7d7d7
 {
 	border-bottom: 1px solid #d7d7d7;
+	padding-top: 15px;
+	padding-bottom: 20px;
 }
 .by_prLan_Thumb
 {
@@ -101,6 +106,11 @@
     line-height: 28px;
     color: #898989;
 }
+.by_contactText a
+{
+	font-family: arial !important;
+	color: #898989;
+}
 .by_contactText strong
 {
 	display: block;
@@ -112,10 +122,11 @@
 {
 	width: 48%;
 	float: left;
+	margin-top: 5%;
 }
 .by_contactfooterRight
 {
-	width: 48%;
+	width: 35%;
 	float: right;
 }
 .arialFont
@@ -162,7 +173,7 @@
 	position: fixed;
 	top: calc(50% - 150px);
 	right: -260px;
-	z-index: 9;
+	z-index: 90;
 	background: #fff;
 }
 .by_enquiryHead
@@ -210,7 +221,7 @@
 	height: 100%;
 	position: fixed;
 	left: 0px;
-	right: 0px;
+	top: 0px;
 	background: url("../../img/product/landing/black-backround.png?versionTimeStamp=%PROJECT_VERSION%");
 	z-index: 99; 
 	display: none;
@@ -218,7 +229,7 @@
 .by_enquiryThanku
 {
 	width: 600px;
-	min-height: 400px;
+	min-height: 280px;
 	background: #fff;
 	border-radius: 5px !important;
 	margin-top: 10%;
@@ -244,6 +255,12 @@
 	font-family: arial !important;
 	line-height: 20px;
 }
+.by_enquiryThankText a
+{
+	color: #898989;
+	font-family: arial !important;
+	text-decoration: none;
+}
 .by_enquiryThankmore
 {
 	text-align: center;
@@ -267,15 +284,180 @@
 	width: 100%;
 	height: auto;
 }
+.by_stairKeyThumb
+{
+	width: 22%;
+	padding-right: 3%;
+	height: auto;
+	float: left;
+}
+.by_stairKeyThumbImg
+{
+	width: 45px;
+	height: auto;
+	float: left;
+}
+.by_stairKeyThumbTxt
+{
+	float: right;
+	width: calc(100% - 55px);
+	height: auto;
+	font-size: 20px;
+	line-height: 25px;
+	font-family: arial !important;
+	color:#898989;
+}
+.by_stairKeyList
+{
+	width: 100%;
+	height: auto;
+	margin-top: 10px;
+}
+.by_stairKeyListImg
+{
+	width: 335px;
+	height: auto;
+	float: left;
+	margin-top: 3%;
+}
+.by_stairKeyListText
+{
+	float: right;
+	width: calc(100% - 355px);
+	height: auto;
+	margin-top: 15px;
+}
+.by_stairKeyListTextThumb
+{
+	width: 100%;
+	height: auto;
+	padding-bottom: 5px;
+}
+.by_stairKeyListTextThumb span
+{
+	width: 20px;
+	height: 20px;
+	background: #f07d24;
+	border-radius:50% !important;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	display: block;
+	float: left;
+	text-align: center;
+	font-family: arial !important;
+	margin-top: 2px;
+}
+.by_stairKeyListTextThumb p
+{
+	display: block;
+	width: calc(100% - 40px);
+	float: right;
+	height: auto;
+	font-size: 18px;
+	color: #898989;
+	line-height: 20px;
+	font-family: arial !important;
+}
+.by_stairLiftHead
+{
+	width: 100%;
+	height: auto;
+	font-size: 35px;
+	color: #000;
+	line-height: 35px;
+	font-family: Arial !important;
+	margin-bottom: 10px;
+}
+.by_stairSpc
+{
+	width: 100%;
+	height: auto;
+}
+.by_stairSpcImg
+{
+	width: 450px;
+	height: auto;
+	float: left;
+}
+.by_stairSpcTxt
+{
+	float: right;
+	width: calc(100% - 470px);
+	height: auto;
+}
+.by_stairSpcTable
+{
+	border-collapse:collapse;
+	font-family: arial !important;
+	font-size: 17px;
+	color: #898989;
+	line-height: 20px;
+	margin-bottom: 20px;
+	border-color: #898989;
+}
+.by_stairSpcTable b
+{
+	color: #000;
+}
+.by_stairSpcTable tr td
+{
+	padding:3px 5px;
+}
+.orangeColorArial
+{
+	color: #f07d24;
+	font-weight: 500;
+}
+@media ( max-width : 981px){
+	.by_stairKeyThumb
+	{
+		width: 50%;
+		height: auto;
+		padding-right: 0px;
+		float: left;
+		margin-bottom: 10px;
+	}
+	.by_stairKeyThumbImg
+	{
+		margin-top: 0px;
+		width: 40px;
+	}
+	.by_stairKeyThumbTxt
+	{
+		margin-top: 8px;
+		font-size: 20px;
+	}
+	.by_stairSpcImg
+	{
+		width: 350px;
+		height: auto;
+		float: left;
+	}
+	.by_stairSpcTxt
+	{
+		float: right;
+		width: calc(100% - 370px);
+		height: auto;
+	}
+	.by_contactfooterLeft
+	{
+		margin-top: 2%;
+	}
+	.by_stairKeyListImg
+	{
+		margin-top: 5%;
+	}
+}
 @media ( max-width : 720px){
 	.by_productLanding_header
 	{
-		width: 400px;
+		width: 406px;
 		height: 80px;
-		left: calc(50% - 200px);
-		top: 40px;
+		left: calc(50% - 203px);		
+		top: calc(50% - 40px);
 		padding: 5px;
-		font-size: 39px;
+		font-size: 40px;
 		line-height: 43px;
 	}
 	.by_productLanding_header span
@@ -308,12 +490,58 @@
 	{
 		width: 500px;
 	}
+	.by_stairKeyListImg
+	{
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 0px;
+		max-width: 335px;
+		width: 90%;
+	}
+	.by_stairKeyListText
+	{
+		width: 100%;
+	}
+	.by_stairLiftHead
+	{
+		font-size: 30px;
+		line-height: 30px;
+	}
+	.by_stairSpcImg
+	{
+		max-width: 350px;
+		height: auto;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+	}
+	.by_stairSpcTxt
+	{
+		float: right;
+		width: 100%;
+		height: auto;
+	}
+}
+@media ( max-width : 560px){
+	.by_stairKeyThumb
+	{
+		width: 46%;
+		padding-right: 4%;
+	}
+	.by_stairKeyThumbTxt {
+	    margin-top: -3px;
+	    font-size: 18px;
+	    line-height: 20px;
+	}
+	.by_stairKeyThumbImg
+	{
+		width: 35px;
+	}
 }
 @media ( max-width : 550px){
-	.by_productLanding_header
-	{
-		top: 30px;
-	}
+	
 	.by_productLanding_HButton
 	{
 		top: 120px;
@@ -328,9 +556,9 @@
 @media ( max-width : 460px){
 	.by_productLanding_header
 	{
-		width: 300px;
+		width: 306px;
 		height: 60px;
-		left: calc(50% - 150px);
+		left: calc(50% - 153px);
 		top: calc(50% - 30px);
 		padding: 5px;
 		font-size: 29px;

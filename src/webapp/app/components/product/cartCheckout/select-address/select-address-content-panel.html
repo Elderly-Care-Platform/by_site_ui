@@ -1,61 +1,153 @@
-<div class="clearfix"></div>
-<!--<div class="col-md-12 margin-bottom-0 darkBgwithText" style="font-size:15px; margin-left:0px;">
-    Please select an address for the goods to be shipped, or
-    enter a new address below:
-
-    <div class="darkBgwithTextArrow">
-        <img src="assets/img/icons/login/arrow-icon.png?versionTimeStamp=%PROJECT_VERSION%" alt="">
+<div class="by_cartProcess">
+    <div class="by_cartProcessThumb  divLeft by_cartProcessThumbNone">
+        <span> &#10004;</span> Shopping Cart
     </div>
+    <div class="by_cartProcessThumbImage divLeft by_cartProcessThumbNone">
+        <img src="assets/img/product/checkout/greenarrowback.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears" width="12" />
+    </div>
+    <div class="by_cartProcessThumb divLeft  by_cartProcessThumbGreen">
+        <span>2</span> Shipping Info
+    </div>
+    <div class="by_cartProcessThumbImage divLeft by_cartProcessThumbNone">
+        <img src="assets/img/product/checkout/greenarrow.png?versionTimeStamp=%PROJECT_VERSION%" alt="BeautifulYears" width="12" />
+    </div>
+    <div class="by_cartProcessThumb divLeft by_cartProcessThumbNone">
+        <span>3</span> Payment Method
+    </div>
+    <div class="clearfix"></div>
 </div>
-<div class="clearfix" style="height:10px;"></div>-->
-<div class="by_address_wrap">
-    <div class="by_address col-md-6" ng-repeat="address in customerAddress track by $index" ng-if="$index<2"
-         format-address="address.address">
 
-        <div class="by_address_user">
-            {{address.firstName}}
-            <span ng-if="address.lastName">{{' '+ address.lastName}}</span>
+<div class="clearfix margin-top-20"></div>
+
+<div class="by_shippingLeft divLeft" ng-if="customerAddress.length > 0">
+    Existing Shipping Address
+    <div class="by_shippingAddress" ng-repeat="address in customerAddress track by $index" 
+         format-address="address.address" >
+        <div class="by_shippingAddressText">
+            <div class="by_address_user">
+                {{address.firstName}}
+                <span ng-if="address.lastName">{{' '+ address.lastName}}</span>
+            </div>
+            <div class="by_address_text">
+                <span ng-if="address.address.fullAddress">
+                    Address:&nbsp;
+                    <span>{{address.address.fullAddress}}</span>
+                </span><br/>
+                <span ng-if="!address.email || !address.address.zip || !address.phoneNumber || !address.firstName"
+                      ng-init="address.shipToAddressDisabled=true"></span>
+                <span ng-if="address.phoneNumber">
+                    Mobile:&nbsp; {{address.phoneNumber}}
+                </span><br>
+
+                <span ng-if="address.email">
+                    E-mail:&nbsp; {{address.email}}
+                </span><br/>
+
+
+                <span ng-if="shipToAddressDisabled || address.shipToAddressDisabled">
+                    <br/><span class='redColor'>*Please edit to add mandatory address fields</span>
+                </span>
+
+                 <span ng-if="address.logisticError">
+                    <br/><span class='redColor'>Sorry! we do not deliver to this pincode</span>
+                </span>
+            </div>
         </div>
-        <div class="by_address_text">
-            <span ng-if="address.address.fullAddress">
-                <strong>Address:&nbsp;</strong>
-                <span>{{address.address.fullAddress}}</span>
-            </span><br/>
-            <span ng-if="!address.email || !address.address.zip || !address.phoneNumber || !address.firstName"
-                  ng-init="address.shipToAddressDisabled=true"></span>
-            <span ng-if="address.phoneNumber">
-                <strong>Mobile:&nbsp;</strong> {{address.phoneNumber}}
-            </span><br>
-
-            <span ng-if="address.email">
-                <strong>E-mail:&nbsp;</strong> {{address.email}}
-            </span><br/>
-
-
-            <span ng-if="shipToAddressDisabled || address.shipToAddressDisabled">
-                <br/><span class='redColor'>*Please edit to add mandatory address fields</span>
-            </span>
-
-             <span ng-if="address.logisticError">
-                <br/><span class='redColor'>Sorry! we do not deliver to this pincode</span>
-            </span>
-        </div>
-
-        <button class="btn btn-success pull-right by_address_btn" style="margin-left:5px;" ng-click="shipToAddress($index)" ng-disabled="shipToAddressDisabled || address.shipToAddressDisabled">
+        <button type="button" ng-click="shipToAddress($index)" ng-disabled="shipToAddressDisabled || address.shipToAddressDisabled" class="by_cart_button divRight">
             Ship to this address
         </button>
 
-        <button class="btn btn-success pull-right by_address_btn by_edit_btn" ng-click="editAddress(address.id)">
+
+        <!-- <button type="button" ng-click="editAddress(address.id)" class="by_cart_buttonCancel divRight" style="margin-right:10px;">
             Edit
-        </button>
+        </button> -->
+        <div class="clearfix"></div>
+    </div> 
+</div>
+
+<div class="by_shippingLeft divRight" ng-controller="AddAddressController" ng-class="{by_shippingLeftFull: customerAddress.length < 1}">
+    Add New Shipping Address
+    <form name="addAddressForm" novalidate>
+    <div class="by_editAdress_wrap" style="padding-top:5px;">
+        <div class="margin-bottom-20 by_inputFeild">
+            <input type="text" ng-model="address.firstName"  name="firstName"
+                   placeholder="First Name"
+                   required/>
+            <span ng-show="addAddressForm.firstName.$invalid && submitted" class="errorRed">Please enter your name</span>
+        </div>
+
+        <div class="margin-bottom-20 by_inputFeild">
+            <input type="text"  ng-model="address.lastName"
+                   name="lastName" placeholder="Last Name"/>
+        </div>
+
+        <div class="margin-bottom-20 by_inputFeild">
+            <input type="text" ng-model="address.address.country" class="name-textbox textbox"
+                   placeholder="Country"/>
+        </div>
+
+        <div class="margin-bottom-20 by_inputFeild zipCodeWrapper">
+            <input type="text"  name="zipcode"
+                   ng-model="address.address.zip" required placeholder="Zipcode"/>
+            <span ng-show="addAddressForm.zipcode.$invalid && submitted" class="errorRed">Please enter your zip code</span>
+        </div>
+
+        <div class="margin-bottom-20 by_inputFeild">
+            <input type="text" placeholder="City"
+                   ng-model="address.address.city" name="city" required/>
+            <span ng-show="addAddressForm.city.$invalid && submitted" class="errorRed">Please enter your city</span>
+        </div>
+
+        <!-- <div class="col-md-12  margin-bottom-20 marginRightMinus5">
+            <div class="col-md-5 required">Locality</div>
+            <div class="col-md-7 no-padding-right register-page">
+                <input type="text" ng-model="address.address.locality" name="locality"
+                       class="name-textbox textbox" ng-google-location options="googleLocationOptions" obj="address"
+                       callback="addressCallback" id="addressLocality"
+                       placeholder="Locality" required/>
+                <span ng-show="addAddressForm.locality.$invalid && submitted" class="errorRed">Please enter your locality</span>
+            </div>
+        </div> -->
+
+        <div class="margin-bottom-20 by_inputFeild">
+            <textarea class="textbox " rows="3" ng-model="address.address.streetAddress" name="streetAddress" required placeholder="Street Address"></textarea>
+            <span ng-show="addAddressForm.streetAddress.$invalid && submitted" class="errorRed">Please enter your streetAddress</span>
+        </div>
+
+        <div class="margin-bottom-20 by_inputFeild">
+            <input type="text"  name="phoneNumber"
+                   ng-model="address.phoneNumber"
+                   placeholder="Phone number" ng-pattern="/^[+\d-]*\d[\d-]$/" maxlength="17" minlength="10" required>
+            <span ng-show="(addAddressForm.phoneNumber.$invalid || addAddressForm.phoneNumber.$error.pattern) && submitted" class="errorRed">Not a valid number!</span>
+        </div>
+
+
+        <div class="margin-bottom-20 by_inputFeild" >
+            <input type="email"  name="email" ng-model="address.email"
+                   placeholder="Email ID" required/>
+            <span ng-show="addAddressForm.email.$invalid && submitted" class="errorRed">
+                Not valid Email!
+            </span>
+        </div>
+
         <div class="clearfix"></div>
     </div>
-</div>
-<div class="clearfix" style="height:15px;"></div>
-<div class="by_address_btn_orange_wrap">
-    <button class="btn btn-success  by_address_btn_orange" ng-click="shipToNewAddress()">
-        Enter new Address
+
+
+    <button type="button" ng-click="saveAddress(addAddressForm)"  class="by_cart_button divRight">
+            Save
     </button>
+
+
+    <button type="button" click="selectAddress()" class="by_cart_buttonCancel divRight" style="margin-right:10px;">
+        Cancel
+    </button>
+    <div class="clearfix"></div>
+    <div class="clearfix margin-top-20"></div>
+</form>
 </div>
 <div class="clearfix"></div>
-<div class="by_cart_call"></div>
+<div class="col-md-12 no-padding margin-top-20 margin-bottom-20">
+    <a href="cart" class="orangeColor"><i class="fa fa-angle-left"></i> Shopping Cart</a>
+</div>
+<div class="clearfix margin-top-20"></div>

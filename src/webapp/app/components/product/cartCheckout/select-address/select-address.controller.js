@@ -1,4 +1,4 @@
-define(['byProductApp', 'byProdEcomConfig', 'userValidation'], function (byProductApp, byProdEcomConfig, userValidation) {
+define(['byProductApp', 'byProdEcomConfig', 'userValidation', 'addAddressController'], function (byProductApp, byProdEcomConfig, userValidation, addAddressController) {
     function SelectAddressController($scope,
                                      $log,
                                      $location,
