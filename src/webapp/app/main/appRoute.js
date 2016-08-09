@@ -733,21 +733,30 @@ define([], function () {
 
             // error page
             .when('/pageNotFound', {
-                templateUrl: 'app/components/error/error.html?versionTimeStamp=%PROJECT_VERSION%',
-                controller: 'errorController',
-                resolve: {
+                templateUrl: 'app/components/home/home.html', controller: 'BYHomeController', resolve: {
                     load: ['$q', function ($q) {
                         var defered = $q.defer();
-                        require(['app/components/error/errorController'], function () {
+                        require(['app/components/home/homeController'], function () {
                             defered.resolve();
                         });
                         return defered.promise;
                     }]
                 }
+                // templateUrl: 'app/components/error/error.html?versionTimeStamp=%PROJECT_VERSION%',
+                // controller: 'errorController',
+                // resolve: {
+                //     load: ['$q', function ($q) {
+                //         var defered = $q.defer();
+                //         require(['app/components/error/errorController'], function () {
+                //             defered.resolve();
+                //         });
+                //         return defered.promise;
+                //     }]
+                // }
             })
 
             .otherwise({
-                redirectTo: '/'
+                redirectTo: '/pageNotFound'
             });
 
 

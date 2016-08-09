@@ -74,7 +74,7 @@ define([
 		});
 
 		$rootScope.$on('$routeChangeError', function(event) {
-			$location.path('/');
+			$location.path('/pageNotFound');
 		});
 
 		window.fbAsyncInit = function() {
