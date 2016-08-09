@@ -367,7 +367,7 @@ define([], function () {
 
             
             .otherwise({
-                redirectTo: '/'
+                redirectTo: '/pageNotFound'
             });
 
             //.when('/orderFeedback', {templateUrl: 'app/components/product/cartCheckout/select-address/select-address.html?versionTimeStamp=%PROJECT_VERSION%',
