@@ -836,6 +836,7 @@ body a:hover
     width: calc(100% - 60px);
     display: block;
     padding-top: 14px;
+    font-family: arial !important;
 }
 .by_errorRightLinks a
 {
