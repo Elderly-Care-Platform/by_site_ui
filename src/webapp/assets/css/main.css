@@ -769,3 +769,102 @@ body a:hover
         width: calc(100% - 30px);
     }
 }
+.by_errorLeft
+{
+    width: 45%;
+    float: left;
+}
+.by_errorLeft img
+{
+    margin-top: 12%;
+}
+.by_errorRight
+{
+    width: 50%;
+    float: right;
+}
+.by_errorRightHead
+{
+    font-family: "Helvetica Neue Condensed Bold" !important;
+    color: #000;
+    font-size: 78px;
+    text-transform: uppercase;
+    line-height: 80px;
+}
+.by_errorRightText
+{
+    font-family: arial !important;
+    font-size: 16px;
+    padding: 10px 0px;
+    line-height: 20px;
+    color: #000;
+}
+.by_errorRightTextSmall
+{
+    font-family: arial !important;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+}
+.by_errorRightTextSmall a, .by_errorRightTextSmall a:hover
+{
+    font-family: arial !important;
+    color: #FF850F;
+    font-weight: bold;
+}
+.by_errorRightLinks
+{
+    width: 48%;
+    height: auto;
+    margin-right: 2%;
+    float: left;
+    font-family: arial !important;
+    font-size: 13px;
+    line-height: 20px;
+    color: #000;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+.by_errorRightLinks img
+{
+    float: left;
+    width:50px;
+}
+.by_errorRightLinks span
+{
+    float: right;
+    width: calc(100% - 60px);
+    display: block;
+    padding-top: 14px;
+    font-family: arial !important;
+}
+.by_errorRightLinks a
+{
+    color: #000;
+    font-family: arial !important;
+}
+.by_errorRightCart
+{
+    font-family: Arial !important;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+.by_errorRightCart a, .by_errorRightCart a:hover
+{
+    color: #FF850F;
+}
+@media ( max-width : 721px){
+    .by_errorLeft
+    {
+        display: none;
+    }
+    .by_errorRight
+    {
+        width: 100%;
+        float: right;
+    }
+}
