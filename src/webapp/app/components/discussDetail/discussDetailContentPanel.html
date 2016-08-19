@@ -7,19 +7,17 @@
         </div>
         <div class="col-md-12 margin-top-10" ng-if="detailResponse.discuss.promotion == false">
             <ul class="by_discussDeatil_cardList" ng-init="getLeafCategories(detailResponse.discuss)">
+            
                 <li ng-if="detailResponse.discuss.discussType == 'Q'">
-                    <span class="by_questionLetter">Q</span>uestion by <a
-                        validate-user-name="{{detailResponse.discuss.username}}" class="text-capitalize"
-                        ng-href="{{getHrefProfile(detailResponse.discuss, {'profileId':detailResponse.discuss.userId})}}">
-                    {{username}} </a>
-                    &nbsp; |
+                   <span class="by_questionLetter">Q</span>uestion by 
                 </li>
                 <li ng-if="detailResponse.discuss.discussType == 'P'">
-                    By <a validate-user-name="{{detailResponse.discuss.username}}" class="text-capitalize"
-                        ng-href="{{getHrefProfile(detailResponse.discuss, {'profileId':detailResponse.discuss.userId})}}">
-                    {{username}} </a>
-                    &nbsp; |
+                    By
                 </li>
+                <li>&nbsp;<a validate-user-name="{{detailResponse.discuss.username}}" class="text-capitalize"
+                        ng-href="{{getHrefProfile(detailResponse.discuss, {'profileId':detailResponse.discuss.userId})}}">
+                    {{username}} </a></li>
+                <li>|</li>
                 <li time-since="{{detailResponse.discuss.createdAt}}" ng-if="detailResponse.discuss.createdAt"></li>
                 <li ng-if="detailResponse.discuss.leafCategories.length > 0"> | In  </li>
                 <li ng-repeat="topicId in detailResponse.discuss.leafCategories" class="by_discussDeatil_cardlineHeight20">

@@ -17,7 +17,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
         MEDIATYPE,
         STATIC_IMAGE,
         TEMPLATE_URL,
-        Utility, LogisticService, ReviewRateProfile, $sce, META_TAGS, urlFactoryFilter, ErrorService) {
+        Utility, LogisticService, ReviewRateProfile, $sce, META_TAGS, urlFactoryFilter, ErrorService, UserValidationFilter) {
 
 
         // Variables
@@ -619,6 +619,33 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
             }
         }
 
+        // login
+
+            $scope.views = {};
+
+            $scope.profileLogin = true;
+
+            if (localStorage.getItem('SessionId') == '' || localStorage.getItem('SessionId') == undefined || localStorage.getItem('SESSION_TYPE') != BY.config.sessionType.SESSION_TYPE_FULL) {
+                if (localStorage.getItem('SESSION_TYPE') == BY.config.sessionType.SESSION_TYPE_PARTIAL) {
+                    $scope.views.loginPanel = "app/components/product/login/login.html?versionTimeStamp=%PROJECT_VERSION%";
+                    $scope.profileLogin = false;
+                } else {
+                    $scope.views.loginPanel = "app/components/product/login/register.html?versionTimeStamp=%PROJECT_VERSION%";
+                    $scope.profileLogin = false;
+                }
+
+            }
+
+            
+            $scope.by_ProfileRegisterPage = function(){
+                $scope.views.loginPanel = "app/components/product/login/register.html?versionTimeStamp=%PROJECT_VERSION%";
+            } 
+
+            $scope.by_ProfileLoginPage = function(){
+                $scope.views.loginPanel = "app/components/product/login/login.html?versionTimeStamp=%PROJECT_VERSION%";
+            }
+
+
 
 
     }
@@ -639,7 +666,7 @@ define(['byProductApp', 'videoImageDirective', 'productReviewCtrl', 'urlFactory'
         'MEDIATYPE',
         'STATIC_IMAGE',
         'TEMPLATE_URL',
-        'Utility', 'LogisticService', 'ReviewRateProfile', '$sce', 'META_TAGS', 'UrlFactoryFilter', 'ErrorService'
+        'Utility', 'LogisticService', 'ReviewRateProfile', '$sce', 'META_TAGS', 'UrlFactoryFilter', 'ErrorService', 'UserValidationFilter'
     ];
 
     byProductApp.registerController('ProductDescriptionController', ProductDescriptionController);

@@ -163,7 +163,7 @@
 
        
         
-        <div class="qty-cart-buy margin-bottom-10">
+        <div class="qty-cart-buy margin-bottom-10" ng-if="profileLogin == true">
             <span class="added-to-cart-message" ng-show="checkLogisticDetail">
             <!--<span class="redColor" ng-if="logisticInfo.deliveryDetail === 'NA'">Please enter your pincode to check availabiity of the product</span>-->
             <span class="redColor" ng-if="!logisticInfo.deliveryDetail">Please enter your pincode to check availabiity of the product</span><br/>
@@ -220,6 +220,9 @@
 
             <div class="clearfix" ></div>
         </div>
+
+        <div ng-include="views.loginPanel"></div>
+
         <div class="by_productDetail_contentCall ">
             <b>Call for assistance</b>
             <span ng-if="(uiData.salePrice.amount && uiData.salePrice.amount > 4999) || (uiData.retailPrice.amount && uiData.retailPrice.amount > 4999)"><b>
