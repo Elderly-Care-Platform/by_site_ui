@@ -6,13 +6,7 @@ define(['byApp', 'byUtil', 'app/shared/footer/contactUsController'], function(by
 
        $scope.title = "Walking sticks enquiry";
 
-       $scope.showVideo = function(){       
-        $("#by_expVideoFrame").attr("src", 'https://www.youtube.com/embed/z9LkUOGUyrA?rel=0&showinfo=0&autoplay=1');
-       	var frameHeight = $(".by_expVideoShow").outerHeight();
-    	   $("#by_expVideoFrame").attr("height", frameHeight);
-       	$(".by_expVideoShow").hide();
-       	$("#by_expVideoFrame").show();
-       };
+       
 
        $scope.showEnquiry = function(){
         if($(".by_enquiryButton").css('right') == '0px'){
@@ -29,14 +23,16 @@ define(['byApp', 'byUtil', 'app/shared/footer/contactUsController'], function(by
             $route.reload();
         };
 
+        
+
        
 
         (function(){
             var metaTagParams = {
-                title:  "Walking stickes - Elder care products - BeautifulYears",
+                title:  "Buy walking sticks, foldable walking sticks for elders on BeautifulYears",
                 imageUrl:   "",
-                description:   "",
-                keywords:[]
+                description:   "<p>" + "Walking stick with LED light and Buzzer, foldable and tripod walking sticks, available in India on discount with BeautifulYears. Call: 080 69400333" + "</p>",
+                keywords:(["Walking Sticks", " walkers", " walking sticks with light", " foldable sticks", "folding sticks", " foldable walking sticks", " walking stick dealers", " senior friendly living", "elder friendly living", " ", " mobility solution", " accessibility solution", " BeautifulYears", "beautiful years"])
             }
             BY.byUtil.updateMetaTags(metaTagParams);
         })();

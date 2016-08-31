@@ -704,7 +704,7 @@ define([], function () {
 
             // landing page for products
 
-            .when('/walking-sticks', {templateUrl: 'app/components/walkingSticks/walkingSticks.html?versionTimeStamp=%PROJECT_VERSION%',
+            .when('/walkingsticks', {templateUrl: 'app/components/walkingSticks/walkingSticks.html?versionTimeStamp=%PROJECT_VERSION%',
                 controller: 'walkingSCtrl',
                 resolve: {
                     load: ['$q', function ($q) {
