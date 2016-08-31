@@ -644,6 +644,13 @@
     font-family: Arial!important;
     margin-bottom: 10px;
 }
+.by_walkingRightTitle h2
+{
+	font-size: 30px;
+    color: #000;
+    line-height: 35px;
+    font-family: Arial!important;
+}
 .by_walkingRightPrice
 {
 	font-weight: bold;
