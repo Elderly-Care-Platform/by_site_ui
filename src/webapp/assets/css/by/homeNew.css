@@ -1736,10 +1736,10 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 }
 
 @media ( max-width: 900px){
-    .by_homeSection_centuryBig
+    /*.by_homeSection_centuryBig
     {
         font-size: 20px;
-    }
+    }*/
 }
 @media ( max-width: 1290px){
     .by_homeHeaderBelowImg
@@ -1866,4 +1866,15 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
     {
         width: 158px;
     }
+}
+.by_homeSection_centuryBig ol
+{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.by_homeSection_centuryBig ol li
+{
+    list-style: none;
 }
