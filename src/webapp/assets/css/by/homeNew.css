@@ -1876,5 +1876,10 @@ background-image:-ms-linear-gradient(left, #fff 1%, yellow 50%,#fff 100%);
 }
 .by_homeSection_centuryBig ol li
 {
-    list-style: none;
+    list-style: circle;
+    margin-left: 22px;
+}
+.by_homeSection_centuryBig ol li a
+{
+    color: #000;
 }
